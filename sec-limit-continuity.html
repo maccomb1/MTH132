@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette: leaves                       *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Continuity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus 1">
+<meta property="book:author" content="Ryan Maccombs">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.15';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="calculus1" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="mth132.html"><span class="title">Calculus 1</span> <span class="subtitle">MSU MTH132</span></a></h1>
+<p class="byline">Ryan Maccombs</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-limit-inf.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-limits.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-limit-ivt.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Introduction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Students: How to Use this Book</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-precalc.html" class="internal"><span class="codenumber">0</span> <span class="title">Precalculus Review</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-basics.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Arithmetic Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-whole-numbers-signs" class="internal"><span class="title">Signs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-fractions" class="internal"><span class="title">Fractions and Rational Expressions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-distributive" class="internal"><span class="title">Distributive Law and Common Errors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-exponents" class="internal"><span class="title">Powers and Rational Exponents</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-rationalizing" class="internal"><span class="title">Rationalizing the Denominator</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-factor.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Factoring</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-gcf" class="internal"><span class="title">Factoring Out a Greatest Common Factor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-difference-squares" class="internal"><span class="title">Difference of Squares</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-perfect-squares" class="internal"><span class="title">Perfect Square Trinomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-general-trinomials" class="internal"><span class="title">Factoring General Trinomials Using the AC Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-precalc-videos-factor" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-funcs.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Functions and Inverses</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-function-review" class="internal"><span class="title">Functions and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-composition" class="internal"><span class="title">Function Composition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-inverses" class="internal"><span class="title">Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-finding-inverses" class="internal"><span class="title">Finding Inverses Algebraically</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-special-inverses" class="internal"><span class="title">Important Examples of Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-precalc-videos-funcs" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-ineq.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Inequalities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-ineq-overview" class="internal"><span class="title">The Test Point Method: Overview</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-ineq-examples" class="internal"><span class="title">Several Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-precalc-videos-ineq" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-absval.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Absolute Values</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-definitions" class="internal"><span class="title">Definitions of Absolute Value</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-basic-equations" class="internal"><span class="title">Solving Basic Absolute Value Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-no-solution" class="internal"><span class="title">When Absolute Value Equations Have No Solution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-precalc-videos" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-exp.html" class="internal"><span class="codenumber">0.6</span> <span class="title">Exponentials</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-def" class="internal"><span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-laws" class="internal"><span class="title">Laws of Exponents</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-equations" class="internal"><span class="title">Solving Exponential Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-base-e" class="internal"><span class="title">The Natural Base <span class="process-math">\(e\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-precalc-videos-exp" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-log.html" class="internal"><span class="codenumber">0.7</span> <span class="title">Logarithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-log-def" class="internal"><span class="title">Logarithms as Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-natural-log" class="internal"><span class="title">The Natural Logarithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-log-laws" class="internal"><span class="title">Laws of Logarithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-solving-exp-log" class="internal"><span class="title">Solving Exponential Equations Using Logarithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-precalc-videos-log" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-trig.html" class="internal"><span class="codenumber">0.8</span> <span class="title">Trigonometry</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-triangle" class="internal"><span class="title">Right Triangle Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-unit-circle" class="internal"><span class="title">The Unit Circle Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-other-functions" class="internal"><span class="title">Other Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-unit-circle-values" class="internal"><span class="title">Key Unit Circle Values</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-range" class="internal"><span class="title">Range and Boundedness</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-pythagorean-identities" class="internal"><span class="title">Pythagorean Identities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-identities-preview" class="internal"><span class="title">Angle Sum and Double Angle Formulas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-precalc-videos-trig" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-limits.html" class="internal"><span class="codenumber">1</span> <span class="title">Limits and Continuity</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-graphical-limits.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Limits from Graphs and Notation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-defn-limits" class="internal"><span class="title">Definition of Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-eval-limits" class="internal"><span class="title">Evaluating Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-one-sided-limits" class="internal"><span class="title">One-sided Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-inf-limits" class="internal"><span class="title">Infinite Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-locating-va" class="internal"><span class="title">Locating Vertical Asymptotes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#additional-limit-graph" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-graphical-limits.html#exercises-limits" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-laws.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Limit Laws and Algebraic Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-limit-laws" class="internal"><span class="title">Operations on Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-plugging-in" class="internal"><span class="title">Limits by Plugging In</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-canceling-zeros" class="internal"><span class="title">Limits by Canceling Zeros</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-cases" class="internal"><span class="title">Limits by Cases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-squeeze" class="internal"><span class="title">Limits by Squeezing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#additional-worked-problems-link" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-laws.html#tf-exercises-limits" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-inf.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Limits at Infinity: Horizontal Asymptotes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#graphs-limits-infinity" class="internal"><span class="title">Visualizing Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#power-functions-infinity" class="internal"><span class="title">Basic Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#dominant-terms" class="internal"><span class="title">Dominant Terms and Rational Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#squeeze-theorem-infinity" class="internal"><span class="title">Squeeze Theorem at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#application-limits-infinity" class="internal"><span class="title">An Application of Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#non-algebraic-limits-infinity" class="internal"><span class="title">Limits at Infinity Beyond Algebraic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#additional-limit-inf" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-inf.html#exercises-limits-infinity-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-limit-continuity.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Continuity</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-defn-continuity" class="internal"><span class="title">Definition and Overview</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-types-discontinuities" class="internal"><span class="title">Removable Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-jump-discontinuity" class="internal"><span class="title">Jump Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-infinite-discontinuity" class="internal"><span class="title">Infinite Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-essential-discontinuity" class="internal"><span class="title">Essential Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-piecewise-continuity" class="internal"><span class="title">Continuity of Piecewise Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-domain-continuity" class="internal"><span class="title">Domain of Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#sec-limit-continuity-10" class="internal"><span class="title">Compositions of Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#additional-cont" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-continuity.html#tf-exercises-continuity" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-ivt.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Intermediate Value Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ivt.html#additional-ivt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-ivt.html#exercises-ivt" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-ww.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-gl" class="internal"><span class="title">Section 1.1 Limits from Graphs and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-alg" class="internal"><span class="title">Section 1.2 Limit Laws and Algebraic Techniques</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-inf" class="internal"><span class="title">Section 1.3 Limits at Infinity: Horizontal Asymptotes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-cont" class="internal"><span class="title">Section 1.4 Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-ivt" class="internal"><span class="title">Section 1.5 Intermediate Value Theorem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derivative.html" class="internal"><span class="codenumber">2</span> <span class="title">The Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-intro.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction and Motivation for Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#instantaneous-velocity" class="internal"><span class="title">Average and Instantaneous Velocity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#secant-and-tangent" class="internal"><span class="title">Slopes of Secant Lines and Slopes of Tangent Lines</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#additional-worked-problems-derivIntro" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-intro.html#exercises-derivative-intro-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-defn.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Definition of the Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-definition" class="internal"><span class="title">Definition of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-computation" class="internal"><span class="title">Computing Derivatives from the Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-function" class="internal"><span class="title">The Derivative Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-fail" class="internal"><span class="title">When the Derivative Fails to Exist</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-differentiable-on-interval" class="internal"><span class="title">Differentiability on an Interval</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#additional-worked-problems-derivDefn" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-defn.html#exercises-derivative-defn-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-rules.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Basic Differentiation Rules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#derivative-notation" class="internal"><span class="title">Notation for the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#basic-derivatives" class="internal"><span class="title">Basic Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#derivative-rules" class="internal"><span class="title">Derivative Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#higher-derivatives" class="internal"><span class="title">Higher Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#additional-worked-problems-derivRules" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-rules.html#exercises-derivative-rules-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-trig.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Trigonometric Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#derivative-of-sine-and-cosine" class="internal"><span class="title">Derivative of Sine and Cosine</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#general-trig-derivatives" class="internal"><span class="title">General Trigonometric Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#foundational-trig-limits" class="internal"><span class="title">Two Fundamental Trigonometric Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#trig-limits-from-sin-over-x" class="internal"><span class="title">Limits of Trigonometric Quotients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#additional-worked-problems-derivTrig" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-trig.html#exercises-derivative-trig-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-expChain.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Exponential Derivatives and the Chain Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#ssec-expChain-key-results" class="internal"><span class="title">Key Derivative Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#ssec-expChain-interpretation" class="internal"><span class="title">The Statement and Applications of The Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#additional-worked-problems-derivExp" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-expChain.html#exercises-derivative-expChain-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-implicit.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Implicit Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#ssec-implicit-motiv" class="internal"><span class="title">A Motivating Example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#implicit-diff-definition" class="internal"><span class="title">Key Idea: Implicit Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#additional-worked-problems-derivImplic" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-implicit.html#exercises-derivative-implicit" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-inverse.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Inverse Functions and Their Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#derivative-inverse-log" class="internal"><span class="title">The Natural Logarithm and Finding Derivatives of Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#implicit-inverse-idea" class="internal"><span class="title">Derivatives of Inverse Trig Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#sample-problems-inverse-trig" class="internal"><span class="title">Select Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#additional-worked-problems-derivInv" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-inverse.html#exercises-derivative-inv-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-ww.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-intro" class="internal"><span class="title">Section 2.1 Introduction and Motivation for Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-defn" class="internal"><span class="title">Section 2.2 Definition of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-rules" class="internal"><span class="title">Section 2.3 Basic Differentiation Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-trig" class="internal"><span class="title">Section 2.4 Trigonometric Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-expChain" class="internal"><span class="title">Section 2.5 Exponential Functions and the Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-implicit" class="internal"><span class="title">Section 2.6 Implicit Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-inverse" class="internal"><span class="title">Section 2.7 Inverse Functions and Their Derivatives</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derivativeApplications.html" class="internal"><span class="codenumber">3</span> <span class="title">Applications of the Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-motion.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Motion in Physics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#functions-of-motion" class="internal"><span class="title">The Basics of Motion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#subsec-SpeedingUp-SlowingDown" class="internal"><span class="title">Speeding Up and Slowing Down</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#additional-worked-problems-derivApp-Motion" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-motion.html#exercises-derivApp-Motion-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-related.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Related Rates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#related-rates-intro" class="internal"><span class="title">Introduction to Related Rates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#related-rates-examples" class="internal"><span class="title">Select Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#additional-worked-problems-derivApp-Related" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-related.html#exercises-derivApp-RRates-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-linear.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Linear Approximation and L’Hopital’s Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#linearization-definition" class="internal"><span class="title">Linearization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#lhopital-statement" class="internal"><span class="title">L’Hôpital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#additional-worked-problems-derivApp-Linear" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-linear.html#exercises-derivApp-Linear-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-extrema.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Extrema</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-absolute-extrema" class="internal"><span class="title">Absolute Maxima and Minima</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#subsec-EVT" class="internal"><span class="title">Extreme Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-local-extrema" class="internal"><span class="title">Local Maxima and Minima</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-derivatives-extrema" class="internal"><span class="title">Derivatives and Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-method-extrema" class="internal"><span class="title">Finding Absolute Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#additional-worked-problems-derivApp-extrema" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#exercises-extrema" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-mvt.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Mean Value Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-rolles" class="internal"><span class="title">Rolle’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-mvt-statement" class="internal"><span class="title">Derivatives versus Difference Quotients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-derivative-controls-direction" class="internal"><span class="title">Derivative Controls Direction</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#additional-worked-examples-mvt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#exercises-mvt" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-curve1.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Curve Sketching Part 1</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#ssec-increasing-decreasing" class="internal"><span class="title">Increasing and Decreasing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#ssec-concavity" class="internal"><span class="title">Concavity and Inflection Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#additional-worked-examples-curve1" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#exercises-curve-sketching-1" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-curve2.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Curve Sketching Part 2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#ssec-second-derivative-test" class="internal"><span class="title">The Second Derivative Test</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#ssec-symmetry" class="internal"><span class="title">Symmetry</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#subsec-allTogether" class="internal"><span class="title">Putting It All Together</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#additional-worked-examples-curve2" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#exercises-curve-sketching-2" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-opt.html" class="internal"><span class="codenumber">3.8</span> <span class="title">Optimization Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#ssec-opt-motivating-example" class="internal"><span class="title">Motivating Example and Overall Technique</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#ssec-opt-examples" class="internal"><span class="title">More Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#additional-worked-examples-opt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-opt.html#exercises-optimization" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-ww.html" class="internal"><span class="codenumber">3.9</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-motion" class="internal"><span class="title">Section 3.1 Motion in Physics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-relatedRates" class="internal"><span class="title">Section 3.2 Related Rates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-linear" class="internal"><span class="title">Section 3.3 Linear Approximation and L’Hopital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-extrema" class="internal"><span class="title">Section 3.4 Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-mvt" class="internal"><span class="title">Section 3.5 Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-curve1" class="internal"><span class="title">Section 3.6 Curve Sketching Part 1</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-curve2" class="internal"><span class="title">Section 3.7 Curve Sketching Part 2</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-opt" class="internal"><span class="title">Section 3.8 Optimization Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integral.html" class="internal"><span class="codenumber">4</span> <span class="title">Integrals and the Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-antiderivatives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Antiderivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-motivation" class="internal"><span class="title">Reversing Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-definition-theorem" class="internal"><span class="title">Definition and the Constant of Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-rules" class="internal"><span class="title">Basic Antidifferentiation Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-reverse-chain" class="internal"><span class="title">A Simple “Reverse Chain Rule” Pattern</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-trig-identity" class="internal"><span class="title">When You Must Rewrite First</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-accel-vel-pos" class="internal"><span class="title">Acceleration, Velocity, and Position</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#additional-worked-problems-integral-antiderivatives" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#exercises-antiderivatives" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-riemannSums.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Riemann Sums and Areas</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-review-derivatives" class="internal"><span class="title">Review: Derivatives as Rates of Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-accumulation" class="internal"><span class="title">Accumulation of Influence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-distance-riemann" class="internal"><span class="title">Riemann Sums for Distance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-total-change" class="internal"><span class="title">The Integral as Total Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-area" class="internal"><span class="title">Area Under a Curve</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-approx-sin-squared" class="internal"><span class="title">Approximating an Integral with Upper and Lower Sums</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#additional-worked-problems-integral-riemannSums" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#exercises-riemann-area" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-defInt.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The Definite Integral</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-precise-definition" class="internal"><span class="title">Precise Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-integrable-functions" class="internal"><span class="title">Integrable Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-negative-integrand" class="internal"><span class="title">Negative Integrands and Signed Area</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-reversing-limits" class="internal"><span class="title">Reversing Limits of Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-rules" class="internal"><span class="title">Integral Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-basic-integrals" class="internal"><span class="title">Basic Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#additional-worked-problems-integral-defInt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-defInt.html#exercises-definite-integral" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-FTC.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-integral-as-antiderivative" class="internal"><span class="title">Integral as Antiderivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-first-ftc" class="internal"><span class="title">The First Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-derivative-of-integral-functions" class="internal"><span class="title">Derivatives of Integral Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-sketching-integral-functions" class="internal"><span class="title">Sketching Integral Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-second-ftc" class="internal"><span class="title">The Second Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#additional-worked-problems-integral-FTC" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-FTC.html#exercises-ftoc" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-net.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Net Change Theorem and Indefinite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-net-change-review" class="internal"><span class="title">Review: Four Meanings of the Definite Integral</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-net-change" class="internal"><span class="title">The Net Change Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-indefinite-integrals" class="internal"><span class="title">Indefinite Integral Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-average-value" class="internal"><span class="title">Average Value of a Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-mvt-integrals" class="internal"><span class="title">Mean Value Theorem for Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#additional-worked-problems-integral-net" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-net.html#exercises-net-change-indef" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-usub.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Substitution Rule for Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-reverse-chain" class="internal"><span class="title">Reversing the Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-method" class="internal"><span class="title">Substitution Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-definite" class="internal"><span class="title">Substitution for Definite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-integral-symmetry" class="internal"><span class="title">Integral Symmetry for Odd Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-heart-flow" class="internal"><span class="title">Application: Heart Flow Rate</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#additional-worked-problems-integral-usub" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-usub.html#exercises-substitution" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-ww.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-antiderivatives" class="internal"><span class="title">Section 4.1 Antiderivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-riemannSums" class="internal"><span class="title">Section 4.2 Riemann Sums and Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-defInt" class="internal"><span class="title">Section 4.3 Definite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-FTC" class="internal"><span class="title">Section 4.4 The Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-net" class="internal"><span class="title">Section 4.5 Net Change Theorem and Indefinite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-usub" class="internal"><span class="title">Section 4.6 Substitution Rule for Integration</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Additional Resources</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-appendix"><div class="toc-title-box"><a href="formula-sheet.html" class="internal"><span class="codenumber">A</span> <span class="title">Quiz / Exam Formula Sheet</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-limit-continuity"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuity</span>
+</h2>
+<article class="objectives goal-like" id="sec-limit-continuity-2"><h3 class="heading"><span class="type">Objectives</span></h3>
+<ul class="disc" id="sec-limit-continuity-2-1">
+<li id="sec-limit-continuity-2-1-1">
+<div class="para" id="p-derived-sec-limit-continuity-2-1-1">Understand the formal definition of continuity at a point and on an interval, and connect it to the intuitive “draw without lifting your pencil” idea.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-limit-continuity-2-1-1" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-limit-continuity-2-1-2">
+<div class="para" id="p-derived-sec-limit-continuity-2-1-2">Identify and classify discontinuities as removable, jump, infinite, or essential, based on their definitions and interpret their graphical representations.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-limit-continuity-2-1-2" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-limit-continuity-2-1-3">
+<div class="para" id="p-derived-sec-limit-continuity-2-1-3">Test piecewise functions for continuity at transition points and determine parameter values that make them continuous.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-limit-continuity-2-1-3" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-limit-continuity-2-1-4">
+<div class="para" id="p-derived-sec-limit-continuity-2-1-4">Determine the domain of continuity for functions involving rational expressions, square roots, and other common operations.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-limit-continuity-2-1-4" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-limit-continuity-2-1-5">
+<div class="para" id="p-derived-sec-limit-continuity-2-1-5">Apply the Composition Law to evaluate limits of compositions of continuous functions.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-limit-continuity-2-1-5" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Objectives 1.4"><a href="#sec-limit-continuity-2" title="Copy heading and permalink for Objectives 1.4" aria-label="Copy heading and permalink for Objectives 1.4">🔗</a></div></article><section class="subsection" id="ssec-defn-continuity"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definition and Overview</span>
+</h3>
+<div class="para" id="ssec-defn-continuity-2">One of the most basic features of a function is whether it is <dfn class="terminology">continuous</dfn>. Roughly, this means that a small change in <span class="process-math">\(x\)</span> always leads to a fairly small change in <span class="process-math">\(f(x)\text{,}\)</span> without instantaneous jumps. In physical terms, the position of a particle moving in space is continuous, but the position displayed in a video could have a gap, making the position function jump discontinuously.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defn-continuity-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="ssec-defn-continuity-3"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="ssec-defn-continuity-3-1-1">
+<div class="para">A function <span class="process-math">\(f(x)\)</span> is <dfn class="terminology">continuous</dfn> at <span class="process-math">\(x=a\)</span> whenever</div>
+<div class="displaymath process-math" id="ssec-defn-continuity-3-1-1-4">
+\begin{equation*}
+\displaystyle\lim_{x\to a} f(x) = f(a).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defn-continuity-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.4.1"><a href="#ssec-defn-continuity-3" title="Copy heading and permalink for Definition 1.4.1" aria-label="Copy heading and permalink for Definition 1.4.1">🔗</a></div></article><div class="para" id="ssec-defn-continuity-4">Graphically, a function is continuous if the curve <span class="process-math">\(y=f(x)\)</span> passes through the point <span class="process-math">\((a,f(a))\)</span> without any jumps or holes. This matches the intuitive idea of continuity — you can draw the graph near <span class="process-math">\(x=a\)</span> without lifting your pencil.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defn-continuity-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-defn-continuity-5">We say <span class="process-math">\(f(x)\)</span> is <dfn class="terminology">continuous on an interval</dfn> whenever it is continuous at each point of the interval. For endpoints of a closed interval <span class="process-math">\([a,b]\text{,}\)</span> we require one-sided limits: <span class="process-math">\(\displaystyle\lim_{x\to a^+} f(x) = f(a)\)</span> and <span class="process-math">\(\displaystyle\lim_{x\to b^-} f(x) = f(b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-defn-continuity-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Definition and Overview"><a href="#ssec-defn-continuity" title="Copy heading and permalink for Subsection: Definition and Overview" aria-label="Copy heading and permalink for Subsection: Definition and Overview">🔗</a></div></section><section class="subsection" id="ssec-types-discontinuities"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Removable Discontinuity</span>
+</h3>
+<article class="definition definition-like" id="ssec-types-discontinuities-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-types-discontinuities-2-1-1">A function has a <dfn class="terminology">removable discontinuity</dfn> at <span class="process-math">\(x=a\)</span> if <span class="process-math">\(\displaystyle\lim_{x\to a} f(x)\)</span> exists but <span class="process-math">\(f(a)\)</span> is either undefined or does not equal that limit.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-types-discontinuities-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-types-discontinuities-2-2">Graphically, a removable discontinuity appears as a hole in the curve <span class="process-math">\(y=f(x)\)</span> at <span class="process-math">\(x=a\text{.}\)</span> The discontinuity is "removable" because we can redefine <span class="process-math">\(f(a)\)</span> to equal the limit, making the function continuous at <span class="process-math">\(x=a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-types-discontinuities-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="discont-removable-pair"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;grid-template-columns:47.3684210526316% 47.3684210526316%;column-gap:5%;">
+<div class="sbspanel sbspanel--top top" style=""><div class="image-box"><img src="external/images/1-8-Discont-i.png" class="contained"></div></div>
+<div class="sbspanel sbspanel--top top" style=""><div class="image-box"><img src="external/images/1-8-Discont-ii.png" class="contained"></div></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Two examples of removable discontinuities: one where <span class="process-math">\(f(a)\)</span> is undefined, and one where the value <span class="process-math">\(f(a)\)</span> does not equal the limit.<div class="autopermalink" data-description="Figure 1.4.3"><a href="#discont-removable-pair" title="Copy heading and permalink for Figure 1.4.3" aria-label="Copy heading and permalink for Figure 1.4.3">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Definition 1.4.2"><a href="#ssec-types-discontinuities-2" title="Copy heading and permalink for Definition 1.4.2" aria-label="Copy heading and permalink for Definition 1.4.2">🔗</a></div></article><article class="example example-like" id="ex-removable-cancel"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-removable-cancel-1-1">Revisit <a href="sec-limit-laws.html#ex-canceling-zeros" class="xref" data-knowl="./knowl/xref/ex-canceling-zeros.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.2.5: Canceling Factors">Example 1.2.5</a>. Verify that the function <span class="process-math">\(f(x)=\dfrac{x^2-4x+4}{x^2-x-2}\)</span> has a removable discontinuity at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-removable-cancel-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-removable-cancel-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-removable-cancel-2-1">At <span class="process-math">\(x=2\text{,}\)</span> both the numerator and denominator vanish, giving us the <span class="process-math">\(\tfrac00\)</span> meaningless expression so the function is undefined. However, we can verify again that <span class="process-math">\(\displaystyle\lim_{x\to 2} f(x) \)</span> exists (is equal to <span class="process-math">\(0\)</span>). This matches the definition of a removable discontinuity. Moreover we can view the picture in <a href="sec-limit-laws.html#ex-canceling-zeros" class="xref" data-knowl="./knowl/xref/ex-canceling-zeros.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.2.5: Canceling Factors">Example 1.2.5</a> to see visually the hole in the graph at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-removable-cancel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.4.1"><a href="#ex-removable-cancel-2" title="Copy heading and permalink for Solution 1.4.4.1" aria-label="Copy heading and permalink for Solution 1.4.4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.4"><a href="#ex-removable-cancel" title="Copy heading and permalink for Example 1.4.4" aria-label="Copy heading and permalink for Example 1.4.4">🔗</a></div></article><article class="example example-like" id="ex-removable-conjugate"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-removable-conjugate-1-1">Revisit <a href="sec-limit-laws.html#ex-conjugate" class="xref" data-knowl="./knowl/xref/ex-conjugate.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.2.8: Using a Conjugate">Example 1.2.8</a>. Verify that this function <span class="process-math">\(f(x)=\dfrac{x-9}{\sqrt{x}-3}\)</span> has a removable discontinuity at <span class="process-math">\(x=9\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-removable-conjugate-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-removable-conjugate-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-removable-conjugate-2-1">
+<div class="para">At <span class="process-math">\(x=9\text{,}\)</span> both the numerator and denominator vanish, giving the undefined form <span class="process-math">\(\tfrac{0}{0}\text{.}\)</span> However, multiplying numerator and denominator by the conjugate simplifies the expression to <span class="process-math">\(\sqrt{x}+3\text{,}\)</span> which is continuous everywhere. Taking the limit, we find</div>
+<div class="displaymath process-math" id="ex-removable-conjugate-2-1-4">
+\begin{equation*}
+\lim_{x\to 9}\frac{x-9}{\sqrt{x}-3} = \lim_{x\to 9} (\sqrt{x}+3) = 6.
+\end{equation*}
+</div>
+<div class="para">Thus, although <span class="process-math">\(f(9)\)</span> is undefined, the limit exists and equals 6. This is exactly the definition of a removable discontinuity, and the graph shows a “hole” at <span class="process-math">\(x=9\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-removable-conjugate-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.5.1"><a href="#ex-removable-conjugate-2" title="Copy heading and permalink for Solution 1.4.5.1" aria-label="Copy heading and permalink for Solution 1.4.5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.5"><a href="#ex-removable-conjugate" title="Copy heading and permalink for Example 1.4.5" aria-label="Copy heading and permalink for Example 1.4.5">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Removable Discontinuity"><a href="#ssec-types-discontinuities" title="Copy heading and permalink for Subsection: Removable Discontinuity" aria-label="Copy heading and permalink for Subsection: Removable Discontinuity">🔗</a></div></section><section class="subsection" id="ssec-jump-discontinuity"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Jump Discontinuity</span>
+</h3>
+<article class="definition definition-like" id="ssec-jump-discontinuity-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="ssec-jump-discontinuity-2-1-1">
+<div class="para">A function has a <dfn class="terminology">jump discontinuity</dfn> at <span class="process-math">\(x=a\)</span> if the left and right limits exist but are unequal:</div>
+<div class="displaymath process-math" id="ssec-jump-discontinuity-2-1-1-3">
+\begin{equation*}
+\displaystyle\lim_{x\to a^-} f(x) \neq \lim_{x\to a^+} f(x).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ssec-jump-discontinuity-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-jump-discontinuity-2-2">Graphically, a jump discontinuity appears as a sudden jump in the curve <span class="process-math">\(y=f(x)\)</span> at <span class="process-math">\(x=a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-jump-discontinuity-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="discont-jump"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/1-8-Discont-iii.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A jump discontinuity where left and right limits differ.<div class="autopermalink" data-description="Figure 1.4.7"><a href="#discont-jump" title="Copy heading and permalink for Figure 1.4.7" aria-label="Copy heading and permalink for Figure 1.4.7">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Definition 1.4.6"><a href="#ssec-jump-discontinuity-2" title="Copy heading and permalink for Definition 1.4.6" aria-label="Copy heading and permalink for Definition 1.4.6">🔗</a></div></article><article class="example example-like" id="ex-jump-abs-value"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-jump-abs-value-1-1">Revisit <a href="sec-limit-laws.html#ex-abs-value" class="xref" data-knowl="./knowl/xref/ex-abs-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.2.10: Absolute Value Example">Example 1.2.10</a>. Verify that the function <span class="process-math">\(f(x)=\dfrac{|x^2-4|}{x-2}\)</span> has a <dfn class="terminology">jump discontinuity</dfn> at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-jump-abs-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-jump-abs-value-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-jump-abs-value-2-1">Notice that <span class="process-math">\(x^2-4=(x-2)(x+2)\text{.}\)</span> For <span class="process-math">\(x&gt;2\text{,}\)</span> the absolute value simplifies to <span class="process-math">\(|x^2-4|=(x-2)(x+2)\text{,}\)</span> so <span class="process-math">\(f(x)=\dfrac{(x-2)(x+2)}{x-2}=x+2\text{.}\)</span> For <span class="process-math">\(x&lt;2\text{,}\)</span> we instead get <span class="process-math">\(|x^2-4|=-(x-2)(x+2)\text{,}\)</span> so <span class="process-math">\(f(x)=\dfrac{-(x-2)(x+2)}{x-2}=-(x+2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-jump-abs-value-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-jump-abs-value-2-2">
+<div class="para">Thus the left-hand limit is</div>
+<div class="displaymath process-math" id="ex-jump-abs-value-2-2-1">
+\begin{equation*}
+\lim_{x\to 2^-} f(x) = \lim_{x\to 2^-} (-(x+2)) = -4,
+\end{equation*}
+</div>
+<div class="para">while the right-hand limit is</div>
+<div class="displaymath process-math" id="ex-jump-abs-value-2-2-2">
+\begin{equation*}
+\lim_{x\to 2^+} f(x) = \lim_{x\to 2^+} (x+2) = 4.
+\end{equation*}
+</div>
+<div class="para">Since these limits are not equal, the two-sided limit does not exist. This confirms that <span class="process-math">\(f\)</span> has a jump discontinuity at <span class="process-math">\(x=2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-jump-abs-value-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.8.1"><a href="#ex-jump-abs-value-2" title="Copy heading and permalink for Solution 1.4.8.1" aria-label="Copy heading and permalink for Solution 1.4.8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.8"><a href="#ex-jump-abs-value" title="Copy heading and permalink for Example 1.4.8" aria-label="Copy heading and permalink for Example 1.4.8">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Jump Discontinuity"><a href="#ssec-jump-discontinuity" title="Copy heading and permalink for Subsection: Jump Discontinuity" aria-label="Copy heading and permalink for Subsection: Jump Discontinuity">🔗</a></div></section><section class="subsection" id="ssec-infinite-discontinuity"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Infinite Discontinuity</span>
+</h3>
+<article class="definition definition-like" id="ssec-infinite-discontinuity-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="ssec-infinite-discontinuity-2-1-1">
+<div class="para">A function has an <dfn class="terminology">infinite discontinuity</dfn> at <span class="process-math">\(x=a\)</span> if one or both one-sided limits diverge to infinity:</div>
+<div class="displaymath process-math" id="ssec-infinite-discontinuity-2-1-1-3">
+\begin{equation*}
+\lim_{x\to a^\pm} f(x) = \pm\infty.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ssec-infinite-discontinuity-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-infinite-discontinuity-2-2">Graphically, an infinite discontinuity appears as a vertical asymptote in the curve <span class="process-math">\(y=f(x)\)</span> at <span class="process-math">\(x=a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-infinite-discontinuity-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="discont-infinite"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/1-8-Discont-iv.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A discontinuity caused by a vertical asymptote.<div class="autopermalink" data-description="Figure 1.4.10"><a href="#discont-infinite" title="Copy heading and permalink for Figure 1.4.10" aria-label="Copy heading and permalink for Figure 1.4.10">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Definition 1.4.9"><a href="#ssec-infinite-discontinuity-2" title="Copy heading and permalink for Definition 1.4.9" aria-label="Copy heading and permalink for Definition 1.4.9">🔗</a></div></article><article class="example example-like" id="ex-infinite-abs"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-infinite-abs-1-1">Revisit <a href="sec-graphical-limits.html#ex-inf-lim" class="xref" data-knowl="./knowl/xref/ex-inf-lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.17">Example 1.1.17</a>. Verify that the function <span class="process-math">\(f(x)=\dfrac{1}{|x|}\)</span> has an <dfn class="terminology">infinite discontinuity</dfn> at <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-infinite-abs-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-infinite-abs-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-infinite-abs-2-1">
+<div class="para">The function <span class="process-math">\(f(x)=\tfrac{1}{|x|}\)</span> is undefined at <span class="process-math">\(x=0\text{.}\)</span> As <span class="process-math">\(x\to 0^+\text{,}\)</span> <span class="process-math">\(|x|=x\text{,}\)</span> so <span class="process-math">\(f(x)=\tfrac{1}{x}\to +\infty\text{.}\)</span> As <span class="process-math">\(x\to 0^−\text{,}\)</span> <span class="process-math">\(|x|=-x\text{,}\)</span> so <span class="process-math">\(f(x)=\tfrac{1}{-x}=\tfrac{1}{|x|}\to +\infty\text{.}\)</span> In both directions the function grows beyond all bounds, so</div>
+<div class="displaymath process-math" id="ex-infinite-abs-2-1-9">
+\begin{equation*}
+\lim_{x\to 0} \tfrac{1}{|x|}=+\infty.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-infinite-abs-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-infinite-abs-2-2">Thus, <span class="process-math">\(f(x)\)</span> has an infinite discontinuity at <span class="process-math">\(x=0\text{.}\)</span> Graphically, this appears as a vertical asymptote along the <span class="process-math">\(y\)</span>-axis.<div class="autopermalink" data-description="Paragraph"><a href="#ex-infinite-abs-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.11.1"><a href="#ex-infinite-abs-2" title="Copy heading and permalink for Solution 1.4.11.1" aria-label="Copy heading and permalink for Solution 1.4.11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.11"><a href="#ex-infinite-abs" title="Copy heading and permalink for Example 1.4.11" aria-label="Copy heading and permalink for Example 1.4.11">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Infinite Discontinuity"><a href="#ssec-infinite-discontinuity" title="Copy heading and permalink for Subsection: Infinite Discontinuity" aria-label="Copy heading and permalink for Subsection: Infinite Discontinuity">🔗</a></div></section><section class="subsection" id="ssec-essential-discontinuity"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Essential Discontinuity</span>
+</h3>
+<article class="definition definition-like" id="ssec-essential-discontinuity-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-essential-discontinuity-2-1-1">A function has an <dfn class="terminology">essential discontinuity</dfn> at <span class="process-math">\(x=a\)</span> if one or both one-sided limits fail to exist in any sense.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-essential-discontinuity-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-essential-discontinuity-2-2">Graphically, an essential discontinuity quite often appears as a wild oscillation in the curve <span class="process-math">\(y=f(x)\)</span> at <span class="process-math">\(x=a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-essential-discontinuity-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="discont-essential"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/1-8-Discont-v.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>An essential discontinuity where one-sided limits fail to exist.<div class="autopermalink" data-description="Figure 1.4.13"><a href="#discont-essential" title="Copy heading and permalink for Figure 1.4.13" aria-label="Copy heading and permalink for Figure 1.4.13">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Definition 1.4.12"><a href="#ssec-essential-discontinuity-2" title="Copy heading and permalink for Definition 1.4.12" aria-label="Copy heading and permalink for Definition 1.4.12">🔗</a></div></article><article class="example example-like" id="ex-essential-sinx-over-x"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-essential-sinx-over-x-1-1">Consider the function <span class="process-math">\(f(x)=\sin\!\left(\tfrac{1}{x}\right)\text{.}\)</span> Show that <span class="process-math">\(f(x)\)</span> has an <dfn class="terminology">essential discontinuity</dfn> at <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-essential-sinx-over-x-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-essential-sinx-over-x-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-essential-sinx-over-x-2-1">The function is not defined at <span class="process-math">\(x=0\text{.}\)</span> As <span class="process-math">\(x\)</span> approaches 0, the reciprocal <span class="process-math">\(\tfrac{1}{x}\)</span> grows without bound in magnitude. Since <span class="process-math">\(\sin(\theta)\)</span> oscillates between <span class="process-math">\(-1\)</span> and <span class="process-math">\(1\)</span> for all values of <span class="process-math">\(\theta\text{,}\)</span> the outputs <span class="process-math">\(\sin\!\left(\tfrac{1}{x}\right)\)</span> continue to oscillate rapidly between <span class="process-math">\(-1\)</span> and <span class="process-math">\(1\)</span> as <span class="process-math">\(x\to 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-essential-sinx-over-x-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-essential-sinx-over-x-2-2">No single limiting value can be assigned: the left-hand and right-hand limits both fail to exist because of these wild oscillations. By definition, this is an <dfn class="terminology">essential discontinuity</dfn> at <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-essential-sinx-over-x-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-essential-sinx-over-x-2-3">Graphically, the curve appears to “wiggle infinitely fast” near the vertical line <span class="process-math">\(x=0\text{,}\)</span> matching the intuition for an essential discontinuity.<div class="autopermalink" data-description="Paragraph"><a href="#ex-essential-sinx-over-x-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.14.1"><a href="#ex-essential-sinx-over-x-2" title="Copy heading and permalink for Solution 1.4.14.1" aria-label="Copy heading and permalink for Solution 1.4.14.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.14"><a href="#ex-essential-sinx-over-x" title="Copy heading and permalink for Example 1.4.14" aria-label="Copy heading and permalink for Example 1.4.14">🔗</a></div></article><article class="remark remark-like" id="rem-essential-discontinuity-scope"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="rem-essential-discontinuity-scope-1">In this course, students are not expected to determine whether a function has an essential discontinuity by analyzing its formula alone. Identifying essential discontinuities rigorously from an equation requires tools from real analysis, which are developed in courses such as MTH 320.<div class="autopermalink" data-description="Paragraph"><a href="#rem-essential-discontinuity-scope-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="rem-essential-discontinuity-scope-2">For MTH 132, essential discontinuities are included primarily so that you recognize that they exist and can identify them from a graph. You will not be asked to classify or prove essential discontinuities using algebraic or analytic arguments on quizzes or exams.<div class="autopermalink" data-description="Paragraph"><a href="#rem-essential-discontinuity-scope-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.4.15"><a href="#rem-essential-discontinuity-scope" title="Copy heading and permalink for Remark 1.4.15" aria-label="Copy heading and permalink for Remark 1.4.15">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Essential Discontinuity"><a href="#ssec-essential-discontinuity" title="Copy heading and permalink for Subsection: Essential Discontinuity" aria-label="Copy heading and permalink for Subsection: Essential Discontinuity">🔗</a></div></section><section class="subsection" id="ssec-piecewise-continuity"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuity of Piecewise Functions</span>
+</h3>
+<div class="para" id="ssec-piecewise-continuity-2">For a function defined by cases, whose graph consists of several continuous pieces, the function is continuous provided the pieces join together at the transition points where the cases meet.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-piecewise-continuity-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-piecewise-ap"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-piecewise-ap-1-1">Consider the piecewise function<div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-ap-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-piecewise-ap-1-2">
+\begin{equation*}
+f(x) =
+\begin{cases}
+x^2 - 1 &amp; \text{for } x &lt; 2, \\[6pt]
+kx - 3 &amp; \text{for } x \geq 2.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="ex-piecewise-ap-1-3">Find the value of <span class="process-math">\(k\)</span> that makes <span class="process-math">\(f(x)\)</span> continuous at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-ap-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-piecewise-ap-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-piecewise-ap-2-1">To check continuity at <span class="process-math">\(x=2\text{,}\)</span> we need three things: (1) the function is defined at <span class="process-math">\(x=2\text{,}\)</span> (2) the limit <span class="process-math">\(\displaystyle\lim_{x\to 2} f(x)\)</span> exists, and (3) the limit equals <span class="process-math">\(f(2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-ap-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-piecewise-ap-2-2">First, <span class="process-math">\(f(2)=k(2)-3=2k-3\text{,}\)</span> so the function is defined at <span class="process-math">\(x=2\)</span> for any value of <span class="process-math">\(k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-ap-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-piecewise-ap-2-3">
+<div class="para">Next, compute the one-sided limits. For <span class="process-math">\(x\to 2^−\text{,}\)</span> we use the left-hand piece <span class="process-math">\(x^2-1\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="ex-piecewise-ap-2-3-3">
+\begin{equation*}
+\lim_{x\to 2^-} f(x) = \lim_{x\to 2^-} (x^2-1) = 2^2-1=3.
+\end{equation*}
+</div>
+<div class="para">For <span class="process-math">\(x\to 2^+\text{,}\)</span> we use the right-hand piece <span class="process-math">\(kx-3\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="ex-piecewise-ap-2-3-6">
+\begin{equation*}
+\lim_{x\to 2^+} f(x) = \lim_{x\to 2^+} (kx-3) = 2k-3.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-ap-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-piecewise-ap-2-4">
+<div class="para">For the limit to exist, these must be equal:</div>
+<div class="displaymath process-math" id="ex-piecewise-ap-2-4-1">
+\begin{equation*}
+3 = 2k - 3.
+\end{equation*}
+</div>
+<div class="para">Solving gives <span class="process-math">\(2k=6\text{,}\)</span> so <span class="process-math">\(k=3\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-ap-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-piecewise-ap-2-5">Finally, with <span class="process-math">\(k=3\)</span> we have <span class="process-math">\(f(2)=3\text{,}\)</span> which matches the limit. Therefore <span class="process-math">\(f(x)\)</span> is continuous at <span class="process-math">\(x=2\)</span> when <span class="process-math">\(k=3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-piecewise-ap-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.16.1"><a href="#ex-piecewise-ap-2" title="Copy heading and permalink for Solution 1.4.16.1" aria-label="Copy heading and permalink for Solution 1.4.16.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.16"><a href="#ex-piecewise-ap" title="Copy heading and permalink for Example 1.4.16" aria-label="Copy heading and permalink for Example 1.4.16">🔗</a></div></article><article class="example example-like" id="ssec-piecewise-continuity-4"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-piecewise-continuity-4-1-1">Suppose a weight is winched from the ground at a constant speed for 8 seconds, is dropped, and lands 2 seconds later.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-piecewise-continuity-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ssec-piecewise-continuity-4-1-2">Then the height <span class="process-math">\(s(t)\)</span> in feet at time <span class="process-math">\(t\)</span> seconds is given by<div class="autopermalink" data-description="Paragraph"><a href="#ssec-piecewise-continuity-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ssec-piecewise-continuity-4-1-3">
+\begin{equation*}
+s(t) = 
+\begin{cases}
+vt &amp; \text{for } t \in [0,8), \\[6pt]
+64 - 16(t-8)^2 &amp; \text{for } t \in [8,10].
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="ssec-piecewise-continuity-4-1-4">How fast should the winch haul upward?<div class="autopermalink" data-description="Paragraph"><a href="#ssec-piecewise-continuity-4-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ssec-piecewise-continuity-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ssec-piecewise-continuity-4-2-1">The function <span class="process-math">\(s(t)\)</span> is defined in two pieces. The first piece, <span class="process-math">\(s(t)=vt\text{,}\)</span> describes the weight being lifted upward from the ground at a constant speed <span class="process-math">\(v\)</span> feet per second, for times <span class="process-math">\(0 \leq t &lt; 8\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-piecewise-continuity-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-piecewise-continuity-4-2-2">The second piece, <span class="process-math">\(s(t)=64-16(t-8)^2\text{,}\)</span> describes what happens once the weight is released at <span class="process-math">\(t=8\text{.}\)</span> Recall that a dropped object falls <span class="process-math">\(16t^2\)</span> feet in <span class="process-math">\(t\)</span> seconds. Since the fall begins at <span class="process-math">\(t=8\text{,}\)</span> we measure the time of fall as <span class="process-math">\((t-8)\text{.}\)</span> Thus, after <span class="process-math">\((t-8)\)</span> seconds of falling, the weight will have fallen <span class="process-math">\(16(t-8)^2\)</span> feet. The weight was released from a height of 64 feet, so its position after <span class="process-math">\(t=8\)</span> seconds is given by <span class="process-math">\(64 - 16(t-8)^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-piecewise-continuity-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ssec-piecewise-continuity-4-2-3">
+<div class="para">To find the correct speed <span class="process-math">\(v\)</span> of the winch, we need the two pieces of the function to “meet up” at <span class="process-math">\(t=8\text{.}\)</span> That means the height from the lifting phase at <span class="process-math">\(t=8\)</span> must equal the height from the falling phase at <span class="process-math">\(t=8\text{.}\)</span> Using the lifting phase we get <span class="process-math">\(s(8)=v\cdot 8\text{.}\)</span> Using the falling phase we get <span class="process-math">\(s(8)=64-16(8-8)^2=64\text{.}\)</span> Setting these equal gives</div>
+<div class="displaymath process-math" id="ssec-piecewise-continuity-4-2-3-7">
+\begin{equation*}
+v \cdot 8 = 64 \quad \Longrightarrow \quad v = \tfrac{64}{8} = 8 \text{ ft/sec}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ssec-piecewise-continuity-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ssec-piecewise-continuity-4-2-4">
+<div class="para">Finally, let us check continuity explicitly at <span class="process-math">\(t=8\text{.}\)</span> From the left-hand side,</div>
+<div class="displaymath process-math" id="ssec-piecewise-continuity-4-2-4-2">
+\begin{equation*}
+\lim_{t \to 8^-} s(t) = \lim_{t \to 8^-} vt = 8 \cdot 8 = 64.
+\end{equation*}
+</div>
+<div class="para">From the right-hand side,</div>
+<div class="displaymath process-math" id="ssec-piecewise-continuity-4-2-4-3">
+\begin{equation*}
+\lim_{t \to 8^+} s(t) = \lim_{t \to 8^+} \big(64 - 16(t-8)^2\big) = 64.
+\end{equation*}
+</div>
+<div class="para">Since both one-sided limits equal 64, the two-sided limit exists and equals 64. Moreover, this matches the value of the function at that point, <span class="process-math">\(s(8)=64\text{.}\)</span> Therefore the function is continuous at <span class="process-math">\(t=8\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ssec-piecewise-continuity-4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.17.1"><a href="#ssec-piecewise-continuity-4-2" title="Copy heading and permalink for Solution 1.4.17.1" aria-label="Copy heading and permalink for Solution 1.4.17.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.17"><a href="#ssec-piecewise-continuity-4" title="Copy heading and permalink for Example 1.4.17" aria-label="Copy heading and permalink for Example 1.4.17">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Continuity of Piecewise Functions"><a href="#ssec-piecewise-continuity" title="Copy heading and permalink for Subsection: Continuity of Piecewise Functions" aria-label="Copy heading and permalink for Subsection: Continuity of Piecewise Functions">🔗</a></div></section><section class="subsection" id="ssec-domain-continuity"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Domain of Continuity</span>
+</h3>
+<div class="para" id="ssec-domain-continuity-2">Almost all functions defined by formulas are continuous, except at points where they are undefined. This follows from our methods for computing limits.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ssec-domain-continuity-3"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-domain-continuity-3-1-1">Find where <span class="process-math">\(g(x)=\dfrac{(x^2-3x+1)\sqrt{x+1}}{x-3}\)</span> is continuous.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ssec-domain-continuity-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ssec-domain-continuity-3-2-1">First, let’s analyze the rational factor outside the square root. Using the Limit Laws from <a href="sec-limit-laws.html" class="internal" title="Section 1.2: Limit Laws and Algebraic Techniques">Section 1.2</a> repeatedly, we compute:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-limit-laws.html" id="ssec-domain-continuity-3-2-2">
+\begin{equation*}
+\lim_{x\to a} \frac{x^2-3x+1}{x-3} 
+= \dfrac{a^2 - 3a + 1}{a - 3},
+\end{equation*}
+</div>
+<div class="para" id="ssec-domain-continuity-3-2-3">as long as the denominator does not vanish. In other words, this step is valid provided <span class="process-math">\(a \neq 3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-domain-continuity-3-2-4">Next, consider the square root factor. By the Limit Laws,<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-limit-laws.html" id="ssec-domain-continuity-3-2-5">
+\begin{equation*}
+\lim_{x\to a} \sqrt{x+1} = \sqrt{a+1},
+\end{equation*}
+</div>
+<div class="para" id="ssec-domain-continuity-3-2-6">but this only makes sense when the inside of the square root is nonnegative. Thus we require <span class="process-math">\(a+1 \geq 0\text{,}\)</span> or equivalently <span class="process-math">\(a &gt; -1\)</span> (strict inequality if we want the square root defined for all nearby <span class="process-math">\(x\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-domain-continuity-3-2-7">We now combine the two factors to evaluate the overall limit:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-limit-laws.html" id="ssec-domain-continuity-3-2-8">
+\begin{equation*}
+\lim_{x\to a} \dfrac{(x^2 - 3x + 1)\sqrt{x+1}}{x-3}.
+\end{equation*}
+</div>
+<div class="para" id="ssec-domain-continuity-3-2-9">By the Limit Laws, the limit of a product equals the product of the limits, provided each individual limit exists. So we can separate this into two pieces:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-limit-laws.html" id="ssec-domain-continuity-3-2-10">
+\begin{equation*}
+\left(\lim_{x\to a} \dfrac{x^2-3x+1}{x-3}\right)\cdot
+\left(\lim_{x\to a} \sqrt{x+1}\right).
+\end{equation*}
+</div>
+<div class="para" id="ssec-domain-continuity-3-2-11">We already computed each factor individually: the rational expression simplifies to <span class="process-math">\(\dfrac{a^2 - 3a + 1}{a - 3}\)</span> (valid when <span class="process-math">\(a \neq 3\)</span>), and the square root tends to <span class="process-math">\(\sqrt{a+1}\)</span> (valid when <span class="process-math">\(a &gt; -1\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-limit-laws.html" id="ssec-domain-continuity-3-2-12">
+\begin{equation*}
+\dfrac{(a^2 - 3a + 1)\sqrt{a+1}}{a-3}.
+\end{equation*}
+</div>
+<div class="para" id="ssec-domain-continuity-3-2-13">Thus, whenever both conditions (<span class="process-math">\(a \neq 3\)</span> and <span class="process-math">\(a &gt; -1\)</span>) are satisfied, this is the value of the limit.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-domain-continuity-3-2-14">Let’s now examine the exceptional cases:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="ssec-domain-continuity-3-2-15">
+<li id="ssec-domain-continuity-3-2-15-1">
+<div class="para" id="ssec-domain-continuity-3-2-15-1-1">
+<span class="process-math">\(a &lt; -1\text{:}\)</span> The square root <span class="process-math">\(\sqrt{x+1}\)</span> is undefined, so the function is not continuous.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-domain-continuity-3-2-15-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ssec-domain-continuity-3-2-15-2">
+<div class="para" id="ssec-domain-continuity-3-2-15-2-1">
+<span class="process-math">\(a = -1\text{:}\)</span> The square root is defined, and since this is the left endpoint of the domain, continuity only requires the right-hand limit. Indeed, <span class="process-math">\(\lim_{x \to -1^+} g(x) = g(-1)\text{,}\)</span> so the function is continuous at <span class="process-math">\(a=-1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-domain-continuity-3-2-15-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ssec-domain-continuity-3-2-15-3">
+<div class="para" id="ssec-domain-continuity-3-2-15-3-1">
+<span class="process-math">\(a = 3\text{:}\)</span> The denominator vanishes, and the graph has a vertical asymptote. This corresponds to an infinite discontinuity (type (iv)).<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-15-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-domain-continuity-3-2-15-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="ssec-domain-continuity-3-2-16">Putting this all together, we conclude that <span class="process-math">\(g(x)\)</span> is continuous everywhere in its domain, which consists of the intervals<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-limit-laws.html" id="ssec-domain-continuity-3-2-17">
+\begin{equation*}
+[-1, 3) \cup (3, \infty).
+\end{equation*}
+</div>
+<div class="para" id="ssec-domain-continuity-3-2-18">The graph below illustrates this behavior:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-domain-continuity-3-2-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;grid-template-columns:100%;column-gap:0%;"><div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="fun-graph"><div class="image-box"><img src="external/images/1-8-Fun.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Graph of <span class="process-math">\(g(x)\)</span> showing its domain of continuity.<div class="autopermalink" data-description="Figure 1.4.19"><a href="#fun-graph" title="Copy heading and permalink for Figure 1.4.19" aria-label="Copy heading and permalink for Figure 1.4.19">🔗</a></div></figcaption></figure></div></div></div>
+<div class="autopermalink" data-description="Solution 1.4.18.1"><a href="#ssec-domain-continuity-3-2" title="Copy heading and permalink for Solution 1.4.18.1" aria-label="Copy heading and permalink for Solution 1.4.18.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.18"><a href="#ssec-domain-continuity-3" title="Copy heading and permalink for Example 1.4.18" aria-label="Copy heading and permalink for Example 1.4.18">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Domain of Continuity"><a href="#ssec-domain-continuity" title="Copy heading and permalink for Subsection: Domain of Continuity" aria-label="Copy heading and permalink for Subsection: Domain of Continuity">🔗</a></div></section><section class="subsection" id="sec-limit-continuity-10"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Compositions of Continuous Functions</span>
+</h3>
+<article class="theorem theorem-like" id="sec-limit-continuity-10-2"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Composition Law.</span>
+</h4>
+<div class="para logical" id="sec-limit-continuity-10-2-2-1">
+<div class="para">If <span class="process-math">\(\displaystyle\lim_{x\to a} g(x)=b\)</span> and <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(x=b\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="sec-limit-continuity-10-2-2-1-4">
+\begin{equation*}
+\lim_{x\to a} f(g(x)) = f(\lim_{x\to a} g(x)).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-limit-continuity-10-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 1.4.20: Composition Law"><a href="#sec-limit-continuity-10-2" title="Copy heading and permalink for Theorem 1.4.20: Composition Law" aria-label="Copy heading and permalink for Theorem 1.4.20: Composition Law">🔗</a></div></article><details id="sec-limit-continuity-10-2-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="sec-limit-continuity-10-2-3-1">A full <span class="process-math">\(\epsilon\)</span>–<span class="process-math">\(\delta\)</span> proof is omitted here; it uses techniques developed in a proof‑based course such as MTH320.<div class="autopermalink" data-description="Paragraph"><a href="#sec-limit-continuity-10-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.4.20.1"><a href="#sec-limit-continuity-10-2-3" title="Copy heading and permalink for Proof 1.4.20.1" aria-label="Copy heading and permalink for Proof 1.4.20.1">🔗</a></div></article></details><article class="example example-like" id="ex-composition-sin"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="ex-composition-sin-1-1">
+<div class="para">Evaluate</div>
+<div class="displaymath process-math" id="ex-composition-sin-1-1-1">
+\begin{equation*}
+\displaystyle \lim_{x\to 1} \sin\!\left(\frac{x^2-1}{x-1}\right).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-composition-sin-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-composition-sin-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-composition-sin-2-1">First, observe that the inside function is <span class="process-math">\(g(x)=\dfrac{x^2-1}{x-1}\text{.}\)</span> Direct substitution gives <span class="process-math">\(\tfrac{0}{0}\text{,}\)</span> so we simplify:<div class="autopermalink" data-description="Paragraph"><a href="#ex-composition-sin-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-composition-sin-2-2">
+\begin{equation*}
+\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1} = x+1, \quad x\neq 1.
+\end{equation*}
+</div>
+<div class="para logical" id="ex-composition-sin-2-3">
+<div class="para">Thus, as <span class="process-math">\(x \to 1\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="ex-composition-sin-2-3-2">
+\begin{equation*}
+\lim_{x\to 1} g(x) = \lim_{x\to 1} (x+1) = 2.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-composition-sin-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-composition-sin-2-4">Since the outer function is <span class="process-math">\(f(u)=\sin(u)\text{,}\)</span> which is continuous everywhere, we may apply the Composition Law:<div class="autopermalink" data-description="Paragraph"><a href="#ex-composition-sin-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-composition-sin-2-5">
+\begin{equation*}
+\lim_{x\to 1} \sin\!\left(\frac{x^2-1}{x-1}\right) 
+= \sin\!\Big(\lim_{x\to 1} \frac{x^2-1}{x-1}\Big)
+= \sin(2).
+\end{equation*}
+</div>
+<div class="para" id="ex-composition-sin-2-6">Therefore, the limit is <span class="process-math">\(\sin(2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-composition-sin-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.21.1"><a href="#ex-composition-sin-2" title="Copy heading and permalink for Solution 1.4.21.1" aria-label="Copy heading and permalink for Solution 1.4.21.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.21"><a href="#ex-composition-sin" title="Copy heading and permalink for Example 1.4.21" aria-label="Copy heading and permalink for Example 1.4.21">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Compositions of Continuous Functions"><a href="#sec-limit-continuity-10" title="Copy heading and permalink for Subsection: Compositions of Continuous Functions" aria-label="Copy heading and permalink for Subsection: Compositions of Continuous Functions">🔗</a></div></section><section class="subsection" id="additional-cont"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additional Worked-Out Examples</span>
+</h3>
+<div class="para" id="additional-cont-2">To keep this section at a reasonable length, we include only a few representative examples directly in the text. If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional fully worked-out examples are available via: <em class="alert"><a href="sec-limit-ww.html#subsec-limit-cont" class="internal" title="Subsection: Section 1.4 Continuity">Additional Examples for Continuity </a></em><div class="autopermalink" data-description="Paragraph"><a href="#additional-cont-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Additional Worked-Out Examples"><a href="#additional-cont" title="Copy heading and permalink for Subsection: Additional Worked-Out Examples" aria-label="Copy heading and permalink for Subsection: Additional Worked-Out Examples">🔗</a></div></section><section class="exercises" id="tf-exercises-continuity"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Practice / Study Problems</span>
+</h3>
+<div class="exercisegroup" id="tf-exercises-continuity-2">
+<h4 class="heading"><span class="title">Some True/False Problems.</span></h4>
+<div class="introduction" id="tf-exercises-continuity-2-2"><div class="para" id="tf-exercises-continuity-2-2-1">Determine whether each statement is true or false and explain your reasoning<div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="tf-exercises-continuity-2-3"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-exercises-continuity-2-3-1-1">If <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(x=2\text{,}\)</span> then <span class="process-math">\(\displaystyle\lim_{x\to 2} f(x)=f(2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-exercises-continuity-2-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-exercises-continuity-2-3-2-1">
+<em class="alert">True.</em> This is exactly the definition of continuity at a point.<div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1"><a href="#tf-exercises-continuity-2-3-2" title="Copy heading and permalink for Solution 1.1" aria-label="Copy heading and permalink for Solution 1.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1"><a href="#tf-exercises-continuity-2-3" title="Copy heading and permalink for Exercise 1" aria-label="Copy heading and permalink for Exercise 1">🔗</a></div></article><article class="exercise exercise-like" id="tf-exercises-continuity-2-4"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-exercises-continuity-2-4-1-1">The function <span class="process-math">\(f(x)=\dfrac{x^2-4}{x-2}\)</span> has a removable discontinuity at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-exercises-continuity-2-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-exercises-continuity-2-4-2-1">
+<em class="alert">True.</em> At <span class="process-math">\(x=2\text{,}\)</span> numerator and denominator both vanish, giving <span class="process-math">\(\tfrac{0}{0}\text{.}\)</span> Simplifying, <span class="process-math">\(f(x)=x+2\)</span> for <span class="process-math">\(x\neq 2\text{,}\)</span> so <span class="process-math">\(\displaystyle\lim_{x\to 2} f(x)=4\text{.}\)</span> Since <span class="process-math">\(f(2)\)</span> is undefined, the discontinuity is removable.<div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.1"><a href="#tf-exercises-continuity-2-4-2" title="Copy heading and permalink for Solution 2.1" aria-label="Copy heading and permalink for Solution 2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 2"><a href="#tf-exercises-continuity-2-4" title="Copy heading and permalink for Exercise 2" aria-label="Copy heading and permalink for Exercise 2">🔗</a></div></article><article class="exercise exercise-like" id="tf-exercises-continuity-2-5"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-exercises-continuity-2-5-1-1">If <span class="process-math">\(\displaystyle\lim_{x\to 3^-} f(x)=2\)</span> and <span class="process-math">\(\displaystyle\lim_{x\to 3^+} f(x)=5\text{,}\)</span> then <span class="process-math">\(f\)</span> has a jump discontinuity at <span class="process-math">\(x=3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-exercises-continuity-2-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-exercises-continuity-2-5-2-1">
+<em class="alert">True.</em> The left and right limits both exist but are unequal, which is the definition of a jump discontinuity.<div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.1"><a href="#tf-exercises-continuity-2-5-2" title="Copy heading and permalink for Solution 3.1" aria-label="Copy heading and permalink for Solution 3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 3"><a href="#tf-exercises-continuity-2-5" title="Copy heading and permalink for Exercise 3" aria-label="Copy heading and permalink for Exercise 3">🔗</a></div></article><article class="exercise exercise-like" id="tf-exercises-continuity-2-6"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-exercises-continuity-2-6-1-1">The function <span class="process-math">\(f(x)=\sqrt{x-1}\)</span> is continuous for all real numbers.<div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-exercises-continuity-2-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-exercises-continuity-2-6-2-1">
+<em class="alert">False.</em> The function is only defined for <span class="process-math">\(x\geq 1\text{.}\)</span> It is continuous on its domain <span class="process-math">\([1,\infty)\text{,}\)</span> but not for all real numbers.<div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1"><a href="#tf-exercises-continuity-2-6-2" title="Copy heading and permalink for Solution 4.1" aria-label="Copy heading and permalink for Solution 4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 4"><a href="#tf-exercises-continuity-2-6" title="Copy heading and permalink for Exercise 4" aria-label="Copy heading and permalink for Exercise 4">🔗</a></div></article><article class="exercise exercise-like" id="tf-exercises-continuity-2-7"><h5 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-exercises-continuity-2-7-1-1">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are both continuous at <span class="process-math">\(x=a\text{,}\)</span> then <span class="process-math">\(f+g\)</span> is also continuous at <span class="process-math">\(x=a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-exercises-continuity-2-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-exercises-continuity-2-7-2-1">
+<em class="alert">True.</em> Can verify using the limit laws and definition of continuity.<div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 5.1"><a href="#tf-exercises-continuity-2-7-2" title="Copy heading and permalink for Solution 5.1" aria-label="Copy heading and permalink for Solution 5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 5"><a href="#tf-exercises-continuity-2-7" title="Copy heading and permalink for Exercise 5" aria-label="Copy heading and permalink for Exercise 5">🔗</a></div></article><article class="exercise exercise-like" id="tf-exercises-continuity-2-8"><h5 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-exercises-continuity-2-8-1-1">The piecewise function <span class="process-math">\(f(x)=\begin{cases} x+1 &amp; x&lt;2 \\ 3x-1 &amp; x\geq 2 \end{cases}\)</span> is continuous at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-exercises-continuity-2-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-exercises-continuity-2-8-2-1">
+<em class="alert">False.</em> <span class="process-math">\(\displaystyle\lim_{x\to 2^-} f(x)=3\)</span> while <span class="process-math">\(\displaystyle\lim_{x\to 2^+} f(x)=5\text{.}\)</span> Since the one-sided limits are unequal, the function has a jump discontinuity at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.1"><a href="#tf-exercises-continuity-2-8-2" title="Copy heading and permalink for Solution 6.1" aria-label="Copy heading and permalink for Solution 6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 6"><a href="#tf-exercises-continuity-2-8" title="Copy heading and permalink for Exercise 6" aria-label="Copy heading and permalink for Exercise 6">🔗</a></div></article><article class="exercise exercise-like" id="tf-exercises-continuity-2-9"><h5 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-exercises-continuity-2-9-1-1">If <span class="process-math">\(\displaystyle\lim_{x\to a} f(x)\)</span> exists, then <span class="process-math">\(f\)</span> must be continuous at <span class="process-math">\(x=a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-exercises-continuity-2-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-exercises-continuity-2-9-2-1">
+<em class="alert">False.</em> Continuity also requires that <span class="process-math">\(f(a)\)</span> is defined and equals the limit. A function can have a removable discontinuity where the limit exists but the function is undefined (or defined to a different value).<div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 7.1"><a href="#tf-exercises-continuity-2-9-2" title="Copy heading and permalink for Solution 7.1" aria-label="Copy heading and permalink for Solution 7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 7"><a href="#tf-exercises-continuity-2-9" title="Copy heading and permalink for Exercise 7" aria-label="Copy heading and permalink for Exercise 7">🔗</a></div></article><article class="exercise exercise-like" id="tf-exercises-continuity-2-10"><h5 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-exercises-continuity-2-10-1-1">The function <span class="process-math">\(f(x)=\dfrac{1}{x^2}\)</span> has an infinite discontinuity at <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-exercises-continuity-2-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-exercises-continuity-2-10-2-1">
+<em class="alert">True.</em> As <span class="process-math">\(x\to 0^\pm\text{,}\)</span> <span class="process-math">\(f(x)\to +\infty\text{.}\)</span> The graph has a vertical asymptote at <span class="process-math">\(x=0\text{,}\)</span> so this is an infinite discontinuity.<div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 8.1"><a href="#tf-exercises-continuity-2-10-2" title="Copy heading and permalink for Solution 8.1" aria-label="Copy heading and permalink for Solution 8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 8"><a href="#tf-exercises-continuity-2-10" title="Copy heading and permalink for Exercise 8" aria-label="Copy heading and permalink for Exercise 8">🔗</a></div></article><article class="exercise exercise-like" id="tf-exercises-continuity-2-11"><h5 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-exercises-continuity-2-11-1-1">The domain of continuity of <span class="process-math">\(f(x)=\dfrac{\sqrt{x}}{x-1}\)</span> is <span class="process-math">\((0,1)\cup(1,\infty)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-exercises-continuity-2-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-exercises-continuity-2-11-2-1">
+<em class="alert">False.</em> The square root requires <span class="process-math">\(x\ge 0\text{,}\)</span> and the denominator excludes <span class="process-math">\(x=1\text{.}\)</span> Thus the domain is <span class="process-math">\([0,\infty)\setminus\{1\}\text{.}\)</span> At the endpoint <span class="process-math">\(x=0\text{,}\)</span> we have <span class="process-math">\(f(0)=0\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="tf-exercises-continuity-2-11-2-2">
+\begin{equation*}
+\displaystyle\lim_{x\to 0^+}\frac{\sqrt{x}}{x-1}=0=f(0).
+\end{equation*}
+</div>
+<div class="para" id="tf-exercises-continuity-2-11-2-3">So the function is continuous at <span class="process-math">\(x=0\)</span> (one-sided at the endpoint). Therefore the domain of continuity is <span class="process-math">\([0,1)\cup(1,\infty)\text{,}\)</span> not <span class="process-math">\((0,1)\cup(1,\infty)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-11-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 9.1"><a href="#tf-exercises-continuity-2-11-2" title="Copy heading and permalink for Solution 9.1" aria-label="Copy heading and permalink for Solution 9.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 9"><a href="#tf-exercises-continuity-2-11" title="Copy heading and permalink for Exercise 9" aria-label="Copy heading and permalink for Exercise 9">🔗</a></div></article><article class="exercise exercise-like" id="tf-exercises-continuity-2-12"><h5 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-exercises-continuity-2-12-1-1">If <span class="process-math">\(\displaystyle\lim_{x\to a^-} f(x)=\infty\)</span> and <span class="process-math">\(\displaystyle\lim_{x\to a^+} f(x)=-\infty\text{,}\)</span> then <span class="process-math">\(f\)</span> has an essential discontinuity at <span class="process-math">\(x=a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-exercises-continuity-2-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-exercises-continuity-2-12-2-1">
+<em class="alert">False.</em> When one-sided limits are infinite (even if they diverge differently), this is classified as an infinite discontinuity, not an essential discontinuity.<div class="autopermalink" data-description="Paragraph"><a href="#tf-exercises-continuity-2-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 10.1"><a href="#tf-exercises-continuity-2-12-2" title="Copy heading and permalink for Solution 10.1" aria-label="Copy heading and permalink for Solution 10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 10"><a href="#tf-exercises-continuity-2-12" title="Copy heading and permalink for Exercise 10" aria-label="Copy heading and permalink for Exercise 10">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 1–10: Some True/False Problems"><a href="#tf-exercises-continuity-2" title="Copy heading and permalink for Exercise Group 1–10: Some True/False Problems" aria-label="Copy heading and permalink for Exercise Group 1–10: Some True/False Problems">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercises: Practice / Study Problems"><a href="#tf-exercises-continuity" title="Copy heading and permalink for Exercises: Practice / Study Problems" aria-label="Copy heading and permalink for Exercises: Practice / Study Problems">🔗</a></div></section><div class="autopermalink" data-description="Section 1.4: Continuity"><a href="#sec-limit-continuity" title="Copy heading and permalink for Section 1.4: Continuity" aria-label="Copy heading and permalink for Section 1.4: Continuity">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-limit-inf.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-limit-ivt.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="feedback-link" href="mailto:maccomb1@msu.edu" target="_blank">Feedback</a><a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

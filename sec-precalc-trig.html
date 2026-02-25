@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette: leaves                       *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Trigonometry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus 1">
+<meta property="book:author" content="Ryan Maccombs">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.15';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="calculus1" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="mth132.html"><span class="title">Calculus 1</span> <span class="subtitle">MSU MTH132</span></a></h1>
+<p class="byline">Ryan Maccombs</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-precalc-log.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-precalc.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-limits.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Introduction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Students: How to Use this Book</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-precalc.html" class="internal"><span class="codenumber">0</span> <span class="title">Precalculus Review</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-basics.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Arithmetic Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-whole-numbers-signs" class="internal"><span class="title">Signs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-fractions" class="internal"><span class="title">Fractions and Rational Expressions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-distributive" class="internal"><span class="title">Distributive Law and Common Errors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-exponents" class="internal"><span class="title">Powers and Rational Exponents</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-rationalizing" class="internal"><span class="title">Rationalizing the Denominator</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-factor.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Factoring</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-gcf" class="internal"><span class="title">Factoring Out a Greatest Common Factor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-difference-squares" class="internal"><span class="title">Difference of Squares</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-perfect-squares" class="internal"><span class="title">Perfect Square Trinomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-general-trinomials" class="internal"><span class="title">Factoring General Trinomials Using the AC Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-precalc-videos-factor" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-funcs.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Functions and Inverses</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-function-review" class="internal"><span class="title">Functions and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-composition" class="internal"><span class="title">Function Composition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-inverses" class="internal"><span class="title">Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-finding-inverses" class="internal"><span class="title">Finding Inverses Algebraically</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-special-inverses" class="internal"><span class="title">Important Examples of Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-precalc-videos-funcs" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-ineq.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Inequalities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-ineq-overview" class="internal"><span class="title">The Test Point Method: Overview</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-ineq-examples" class="internal"><span class="title">Several Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-precalc-videos-ineq" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-absval.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Absolute Values</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-definitions" class="internal"><span class="title">Definitions of Absolute Value</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-basic-equations" class="internal"><span class="title">Solving Basic Absolute Value Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-no-solution" class="internal"><span class="title">When Absolute Value Equations Have No Solution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-precalc-videos" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-exp.html" class="internal"><span class="codenumber">0.6</span> <span class="title">Exponentials</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-def" class="internal"><span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-laws" class="internal"><span class="title">Laws of Exponents</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-equations" class="internal"><span class="title">Solving Exponential Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-base-e" class="internal"><span class="title">The Natural Base <span class="process-math">\(e\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-precalc-videos-exp" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-log.html" class="internal"><span class="codenumber">0.7</span> <span class="title">Logarithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-log-def" class="internal"><span class="title">Logarithms as Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-natural-log" class="internal"><span class="title">The Natural Logarithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-log-laws" class="internal"><span class="title">Laws of Logarithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-solving-exp-log" class="internal"><span class="title">Solving Exponential Equations Using Logarithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-precalc-videos-log" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-precalc-trig.html" class="internal"><span class="codenumber">0.8</span> <span class="title">Trigonometry</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-triangle" class="internal"><span class="title">Right Triangle Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-unit-circle" class="internal"><span class="title">The Unit Circle Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-other-functions" class="internal"><span class="title">Other Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-unit-circle-values" class="internal"><span class="title">Key Unit Circle Values</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-range" class="internal"><span class="title">Range and Boundedness</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-pythagorean-identities" class="internal"><span class="title">Pythagorean Identities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-identities-preview" class="internal"><span class="title">Angle Sum and Double Angle Formulas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-precalc-videos-trig" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-limits.html" class="internal"><span class="codenumber">1</span> <span class="title">Limits and Continuity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-graphical-limits.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Limits from Graphs and Notation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-defn-limits" class="internal"><span class="title">Definition of Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-eval-limits" class="internal"><span class="title">Evaluating Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-one-sided-limits" class="internal"><span class="title">One-sided Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-inf-limits" class="internal"><span class="title">Infinite Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-locating-va" class="internal"><span class="title">Locating Vertical Asymptotes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#additional-limit-graph" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-graphical-limits.html#exercises-limits" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-laws.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Limit Laws and Algebraic Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-limit-laws" class="internal"><span class="title">Operations on Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-plugging-in" class="internal"><span class="title">Limits by Plugging In</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-canceling-zeros" class="internal"><span class="title">Limits by Canceling Zeros</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-cases" class="internal"><span class="title">Limits by Cases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-squeeze" class="internal"><span class="title">Limits by Squeezing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#additional-worked-problems-link" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-laws.html#tf-exercises-limits" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-inf.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Limits at Infinity: Horizontal Asymptotes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#graphs-limits-infinity" class="internal"><span class="title">Visualizing Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#power-functions-infinity" class="internal"><span class="title">Basic Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#dominant-terms" class="internal"><span class="title">Dominant Terms and Rational Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#squeeze-theorem-infinity" class="internal"><span class="title">Squeeze Theorem at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#application-limits-infinity" class="internal"><span class="title">An Application of Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#non-algebraic-limits-infinity" class="internal"><span class="title">Limits at Infinity Beyond Algebraic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#additional-limit-inf" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-inf.html#exercises-limits-infinity-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-continuity.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Continuity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-defn-continuity" class="internal"><span class="title">Definition and Overview</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-types-discontinuities" class="internal"><span class="title">Removable Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-jump-discontinuity" class="internal"><span class="title">Jump Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-infinite-discontinuity" class="internal"><span class="title">Infinite Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-essential-discontinuity" class="internal"><span class="title">Essential Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-piecewise-continuity" class="internal"><span class="title">Continuity of Piecewise Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-domain-continuity" class="internal"><span class="title">Domain of Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#sec-limit-continuity-10" class="internal"><span class="title">Compositions of Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#additional-cont" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-continuity.html#tf-exercises-continuity" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-ivt.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Intermediate Value Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ivt.html#additional-ivt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-ivt.html#exercises-ivt" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-ww.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-gl" class="internal"><span class="title">Section 1.1 Limits from Graphs and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-alg" class="internal"><span class="title">Section 1.2 Limit Laws and Algebraic Techniques</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-inf" class="internal"><span class="title">Section 1.3 Limits at Infinity: Horizontal Asymptotes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-cont" class="internal"><span class="title">Section 1.4 Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-ivt" class="internal"><span class="title">Section 1.5 Intermediate Value Theorem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derivative.html" class="internal"><span class="codenumber">2</span> <span class="title">The Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-intro.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction and Motivation for Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#instantaneous-velocity" class="internal"><span class="title">Average and Instantaneous Velocity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#secant-and-tangent" class="internal"><span class="title">Slopes of Secant Lines and Slopes of Tangent Lines</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#additional-worked-problems-derivIntro" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-intro.html#exercises-derivative-intro-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-defn.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Definition of the Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-definition" class="internal"><span class="title">Definition of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-computation" class="internal"><span class="title">Computing Derivatives from the Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-function" class="internal"><span class="title">The Derivative Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-fail" class="internal"><span class="title">When the Derivative Fails to Exist</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-differentiable-on-interval" class="internal"><span class="title">Differentiability on an Interval</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#additional-worked-problems-derivDefn" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-defn.html#exercises-derivative-defn-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-rules.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Basic Differentiation Rules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#derivative-notation" class="internal"><span class="title">Notation for the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#basic-derivatives" class="internal"><span class="title">Basic Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#derivative-rules" class="internal"><span class="title">Derivative Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#higher-derivatives" class="internal"><span class="title">Higher Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#additional-worked-problems-derivRules" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-rules.html#exercises-derivative-rules-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-trig.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Trigonometric Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#derivative-of-sine-and-cosine" class="internal"><span class="title">Derivative of Sine and Cosine</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#general-trig-derivatives" class="internal"><span class="title">General Trigonometric Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#foundational-trig-limits" class="internal"><span class="title">Two Fundamental Trigonometric Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#trig-limits-from-sin-over-x" class="internal"><span class="title">Limits of Trigonometric Quotients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#additional-worked-problems-derivTrig" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-trig.html#exercises-derivative-trig-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-expChain.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Exponential Derivatives and the Chain Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#ssec-expChain-key-results" class="internal"><span class="title">Key Derivative Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#ssec-expChain-interpretation" class="internal"><span class="title">The Statement and Applications of The Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#additional-worked-problems-derivExp" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-expChain.html#exercises-derivative-expChain-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-implicit.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Implicit Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#ssec-implicit-motiv" class="internal"><span class="title">A Motivating Example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#implicit-diff-definition" class="internal"><span class="title">Key Idea: Implicit Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#additional-worked-problems-derivImplic" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-implicit.html#exercises-derivative-implicit" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-inverse.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Inverse Functions and Their Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#derivative-inverse-log" class="internal"><span class="title">The Natural Logarithm and Finding Derivatives of Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#implicit-inverse-idea" class="internal"><span class="title">Derivatives of Inverse Trig Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#sample-problems-inverse-trig" class="internal"><span class="title">Select Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#additional-worked-problems-derivInv" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-inverse.html#exercises-derivative-inv-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-ww.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-intro" class="internal"><span class="title">Section 2.1 Introduction and Motivation for Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-defn" class="internal"><span class="title">Section 2.2 Definition of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-rules" class="internal"><span class="title">Section 2.3 Basic Differentiation Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-trig" class="internal"><span class="title">Section 2.4 Trigonometric Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-expChain" class="internal"><span class="title">Section 2.5 Exponential Functions and the Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-implicit" class="internal"><span class="title">Section 2.6 Implicit Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-inverse" class="internal"><span class="title">Section 2.7 Inverse Functions and Their Derivatives</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derivativeApplications.html" class="internal"><span class="codenumber">3</span> <span class="title">Applications of the Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-motion.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Motion in Physics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#functions-of-motion" class="internal"><span class="title">The Basics of Motion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#subsec-SpeedingUp-SlowingDown" class="internal"><span class="title">Speeding Up and Slowing Down</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#additional-worked-problems-derivApp-Motion" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-motion.html#exercises-derivApp-Motion-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-related.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Related Rates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#related-rates-intro" class="internal"><span class="title">Introduction to Related Rates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#related-rates-examples" class="internal"><span class="title">Select Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#additional-worked-problems-derivApp-Related" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-related.html#exercises-derivApp-RRates-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-linear.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Linear Approximation and L’Hopital’s Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#linearization-definition" class="internal"><span class="title">Linearization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#lhopital-statement" class="internal"><span class="title">L’Hôpital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#additional-worked-problems-derivApp-Linear" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-linear.html#exercises-derivApp-Linear-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-extrema.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Extrema</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-absolute-extrema" class="internal"><span class="title">Absolute Maxima and Minima</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#subsec-EVT" class="internal"><span class="title">Extreme Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-local-extrema" class="internal"><span class="title">Local Maxima and Minima</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-derivatives-extrema" class="internal"><span class="title">Derivatives and Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-method-extrema" class="internal"><span class="title">Finding Absolute Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#additional-worked-problems-derivApp-extrema" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#exercises-extrema" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-mvt.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Mean Value Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-rolles" class="internal"><span class="title">Rolle’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-mvt-statement" class="internal"><span class="title">Derivatives versus Difference Quotients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-derivative-controls-direction" class="internal"><span class="title">Derivative Controls Direction</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#additional-worked-examples-mvt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#exercises-mvt" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-curve1.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Curve Sketching Part 1</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#ssec-increasing-decreasing" class="internal"><span class="title">Increasing and Decreasing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#ssec-concavity" class="internal"><span class="title">Concavity and Inflection Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#additional-worked-examples-curve1" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#exercises-curve-sketching-1" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-curve2.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Curve Sketching Part 2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#ssec-second-derivative-test" class="internal"><span class="title">The Second Derivative Test</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#ssec-symmetry" class="internal"><span class="title">Symmetry</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#subsec-allTogether" class="internal"><span class="title">Putting It All Together</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#additional-worked-examples-curve2" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#exercises-curve-sketching-2" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-opt.html" class="internal"><span class="codenumber">3.8</span> <span class="title">Optimization Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#ssec-opt-motivating-example" class="internal"><span class="title">Motivating Example and Overall Technique</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#ssec-opt-examples" class="internal"><span class="title">More Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#additional-worked-examples-opt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-opt.html#exercises-optimization" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-ww.html" class="internal"><span class="codenumber">3.9</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-motion" class="internal"><span class="title">Section 3.1 Motion in Physics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-relatedRates" class="internal"><span class="title">Section 3.2 Related Rates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-linear" class="internal"><span class="title">Section 3.3 Linear Approximation and L’Hopital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-extrema" class="internal"><span class="title">Section 3.4 Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-mvt" class="internal"><span class="title">Section 3.5 Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-curve1" class="internal"><span class="title">Section 3.6 Curve Sketching Part 1</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-curve2" class="internal"><span class="title">Section 3.7 Curve Sketching Part 2</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-opt" class="internal"><span class="title">Section 3.8 Optimization Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integral.html" class="internal"><span class="codenumber">4</span> <span class="title">Integrals and the Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-antiderivatives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Antiderivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-motivation" class="internal"><span class="title">Reversing Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-definition-theorem" class="internal"><span class="title">Definition and the Constant of Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-rules" class="internal"><span class="title">Basic Antidifferentiation Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-reverse-chain" class="internal"><span class="title">A Simple “Reverse Chain Rule” Pattern</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-trig-identity" class="internal"><span class="title">When You Must Rewrite First</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-accel-vel-pos" class="internal"><span class="title">Acceleration, Velocity, and Position</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#additional-worked-problems-integral-antiderivatives" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#exercises-antiderivatives" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-riemannSums.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Riemann Sums and Areas</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-review-derivatives" class="internal"><span class="title">Review: Derivatives as Rates of Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-accumulation" class="internal"><span class="title">Accumulation of Influence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-distance-riemann" class="internal"><span class="title">Riemann Sums for Distance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-total-change" class="internal"><span class="title">The Integral as Total Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-area" class="internal"><span class="title">Area Under a Curve</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-approx-sin-squared" class="internal"><span class="title">Approximating an Integral with Upper and Lower Sums</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#additional-worked-problems-integral-riemannSums" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#exercises-riemann-area" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-defInt.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The Definite Integral</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-precise-definition" class="internal"><span class="title">Precise Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-integrable-functions" class="internal"><span class="title">Integrable Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-negative-integrand" class="internal"><span class="title">Negative Integrands and Signed Area</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-reversing-limits" class="internal"><span class="title">Reversing Limits of Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-rules" class="internal"><span class="title">Integral Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-basic-integrals" class="internal"><span class="title">Basic Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#additional-worked-problems-integral-defInt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-defInt.html#exercises-definite-integral" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-FTC.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-integral-as-antiderivative" class="internal"><span class="title">Integral as Antiderivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-first-ftc" class="internal"><span class="title">The First Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-derivative-of-integral-functions" class="internal"><span class="title">Derivatives of Integral Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-sketching-integral-functions" class="internal"><span class="title">Sketching Integral Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-second-ftc" class="internal"><span class="title">The Second Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#additional-worked-problems-integral-FTC" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-FTC.html#exercises-ftoc" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-net.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Net Change Theorem and Indefinite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-net-change-review" class="internal"><span class="title">Review: Four Meanings of the Definite Integral</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-net-change" class="internal"><span class="title">The Net Change Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-indefinite-integrals" class="internal"><span class="title">Indefinite Integral Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-average-value" class="internal"><span class="title">Average Value of a Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-mvt-integrals" class="internal"><span class="title">Mean Value Theorem for Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#additional-worked-problems-integral-net" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-net.html#exercises-net-change-indef" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-usub.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Substitution Rule for Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-reverse-chain" class="internal"><span class="title">Reversing the Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-method" class="internal"><span class="title">Substitution Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-definite" class="internal"><span class="title">Substitution for Definite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-integral-symmetry" class="internal"><span class="title">Integral Symmetry for Odd Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-heart-flow" class="internal"><span class="title">Application: Heart Flow Rate</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#additional-worked-problems-integral-usub" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-usub.html#exercises-substitution" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-ww.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-antiderivatives" class="internal"><span class="title">Section 4.1 Antiderivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-riemannSums" class="internal"><span class="title">Section 4.2 Riemann Sums and Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-defInt" class="internal"><span class="title">Section 4.3 Definite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-FTC" class="internal"><span class="title">Section 4.4 The Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-net" class="internal"><span class="title">Section 4.5 Net Change Theorem and Indefinite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-usub" class="internal"><span class="title">Section 4.6 Substitution Rule for Integration</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Additional Resources</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-appendix"><div class="toc-title-box"><a href="formula-sheet.html" class="internal"><span class="codenumber">A</span> <span class="title">Quiz / Exam Formula Sheet</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-precalc-trig"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Trigonometry</span>
+</h2>
+<div class="para" id="sec-precalc-trig-2">Trigonometric functions are fundamental tools in calculus. They arise in problems involving motion, waves, oscillations, and periodic behavior, and they play a key role in limits, derivatives, and integrals. In this section, we review the core definitions and properties of trigonometric functions that will be used throughout the course.<div class="autopermalink" data-description="Paragraph"><a href="#sec-precalc-trig-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="subsection" id="ssec-trig-triangle"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Right Triangle Definitions</span>
+</h3>
+<div class="para" id="ssec-trig-triangle-2">We begin by defining sine and cosine using right triangles. These definitions apply when the angle is acute.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-triangle-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-trig-triangle"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sine and Cosine (Right Triangle).</span>
+</h4>
+<div class="para" id="def-trig-triangle-2-1">Given a right triangle and an acute angle <span class="process-math">\(\theta\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-trig-triangle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="def-trig-triangle-2-2">
+\begin{equation*}
+\sin(\theta) = \dfrac{\text{opposite}}{\text{hypotenuse}},
+\qquad
+\cos(\theta) = \dfrac{\text{adjacent}}{\text{hypotenuse}}.
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="fig-trig-right-triangle"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/trigRightTriangle.PNG" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A right triangle illustrating the definitions of sine and cosine for an acute angle <span class="process-math">\(\theta\text{.}\)</span><div class="autopermalink" data-description="Figure 0.8.2"><a href="#fig-trig-right-triangle" title="Copy heading and permalink for Figure 0.8.2" aria-label="Copy heading and permalink for Figure 0.8.2">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Definition 0.8.1: Sine and Cosine (Right Triangle)"><a href="#def-trig-triangle" title="Copy heading and permalink for Definition 0.8.1: Sine and Cosine (Right Triangle)" aria-label="Copy heading and permalink for Definition 0.8.1: Sine and Cosine (Right Triangle)">🔗</a></div></article><article class="example example-like" id="ssec-trig-triangle-4"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-trig-triangle-4-1-1">In a right triangle, the side opposite <span class="process-math">\(\theta\)</span> has length 3, the adjacent side has length 4, and the hypotenuse has length 5. Find <span class="process-math">\(\sin(\theta)\)</span> and <span class="process-math">\(\cos(\theta)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-triangle-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ssec-trig-triangle-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="displaymath process-math" id="ssec-trig-triangle-4-2-1">
+\begin{equation*}
+\sin(\theta) = \dfrac{3}{5},
+\qquad
+\cos(\theta) = \dfrac{4}{5}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 0.8.3.1"><a href="#ssec-trig-triangle-4-2" title="Copy heading and permalink for Solution 0.8.3.1" aria-label="Copy heading and permalink for Solution 0.8.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 0.8.3"><a href="#ssec-trig-triangle-4" title="Copy heading and permalink for Example 0.8.3" aria-label="Copy heading and permalink for Example 0.8.3">🔗</a></div></article><article class="remark remark-like" id="ssec-trig-triangle-5"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-trig-triangle-5-1">While these definitions are intuitive, they apply only to acute angles. To extend trigonometric functions to all real numbers, we use the unit circle.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-triangle-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 0.8.4"><a href="#ssec-trig-triangle-5" title="Copy heading and permalink for Remark 0.8.4" aria-label="Copy heading and permalink for Remark 0.8.4">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Right Triangle Definitions"><a href="#ssec-trig-triangle" title="Copy heading and permalink for Subsection: Right Triangle Definitions" aria-label="Copy heading and permalink for Subsection: Right Triangle Definitions">🔗</a></div></section><section class="subsection" id="ssec-trig-unit-circle"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Unit Circle Definition</span>
+</h3>
+<div class="para" id="ssec-trig-unit-circle-2">The unit circle allows us to define trigonometric functions for any real number and is the framework used in calculus.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-unit-circle-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-unit-circle"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sine and Cosine (Unit Circle).</span>
+</h4>
+<div class="para" id="def-unit-circle-2-1">Consider the unit circle centered at the origin. For a real number <span class="process-math">\(\theta\text{,}\)</span> let the point on the unit circle corresponding to angle <span class="process-math">\(\theta\)</span> (measured in radians) have coordinates <span class="process-math">\((x,y)\text{.}\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#def-unit-circle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="def-unit-circle-2-2">
+\begin{equation*}
+\cos(\theta) = x,
+\qquad
+\sin(\theta) = y.
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="fig-unit-circle"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/trigUnitCircle.PNG" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The unit circle definition of sine and cosine. For an angle <span class="process-math">\(\theta\text{,}\)</span> the point <span class="process-math">\((x,y)\)</span> on the unit circle satisfies <span class="process-math">\(x = \cos(\theta)\text{,}\)</span> <span class="process-math">\(y = \sin(\theta)\text{,}\)</span> and <span class="process-math">\(\cos^2(\theta) + \sin^2(\theta) = 1\text{.}\)</span><div class="autopermalink" data-description="Figure 0.8.6"><a href="#fig-unit-circle" title="Copy heading and permalink for Figure 0.8.6" aria-label="Copy heading and permalink for Figure 0.8.6">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Definition 0.8.5: Sine and Cosine (Unit Circle)"><a href="#def-unit-circle" title="Copy heading and permalink for Definition 0.8.5: Sine and Cosine (Unit Circle)" aria-label="Copy heading and permalink for Definition 0.8.5: Sine and Cosine (Unit Circle)">🔗</a></div></article><article class="remark remark-like" id="rmk-radians-calculus"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="rmk-radians-calculus-1">In calculus, angles are always measured in radians. This choice ensures that derivatives and limits involving trigonometric functions behave correctly.<div class="autopermalink" data-description="Paragraph"><a href="#rmk-radians-calculus-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 0.8.7"><a href="#rmk-radians-calculus" title="Copy heading and permalink for Remark 0.8.7" aria-label="Copy heading and permalink for Remark 0.8.7">🔗</a></div></article><article class="example example-like" id="ssec-trig-unit-circle-5"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-trig-unit-circle-5-1-1">Evaluate <span class="process-math">\(\sin(\pi/2)\)</span> and <span class="process-math">\(\cos(\pi)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-unit-circle-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ssec-trig-unit-circle-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="displaymath process-math" id="ssec-trig-unit-circle-5-2-1">
+\begin{equation*}
+\sin(\pi/2) = 1,
+\qquad
+\cos(\pi) = -1.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 0.8.8.1"><a href="#ssec-trig-unit-circle-5-2" title="Copy heading and permalink for Solution 0.8.8.1" aria-label="Copy heading and permalink for Solution 0.8.8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 0.8.8"><a href="#ssec-trig-unit-circle-5" title="Copy heading and permalink for Example 0.8.8" aria-label="Copy heading and permalink for Example 0.8.8">🔗</a></div></article><article class="remark remark-like" id="ssec-trig-unit-circle-6"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-trig-unit-circle-6-1">For acute angles, the unit circle and right triangle definitions of sine and cosine agree. The unit circle framework extends these ideas to all real angles.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-unit-circle-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 0.8.9"><a href="#ssec-trig-unit-circle-6" title="Copy heading and permalink for Remark 0.8.9" aria-label="Copy heading and permalink for Remark 0.8.9">🔗</a></div></article><article class="remark remark-like" id="ssec-trig-unit-circle-7"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-trig-unit-circle-7-1">Because rotating by <span class="process-math">\(2\pi\)</span> returns to the same point on the unit circle, sine and cosine are periodic with period <span class="process-math">\(2\pi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-unit-circle-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 0.8.10"><a href="#ssec-trig-unit-circle-7" title="Copy heading and permalink for Remark 0.8.10" aria-label="Copy heading and permalink for Remark 0.8.10">🔗</a></div></article><div class="autopermalink" data-description="Subsection: The Unit Circle Definition"><a href="#ssec-trig-unit-circle" title="Copy heading and permalink for Subsection: The Unit Circle Definition" aria-label="Copy heading and permalink for Subsection: The Unit Circle Definition">🔗</a></div></section><section class="subsection" id="ssec-trig-other-functions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Other Trigonometric Functions</span>
+</h3>
+<div class="para" id="ssec-trig-other-functions-2">In addition to sine and cosine, four other trigonometric functions are commonly used in calculus: tangent, secant, cosecant, and cotangent. These functions are defined in terms of sine and cosine.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-other-functions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-trig-ratios"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definitions of Tangent, Secant, Cosecant, and Cotangent.</span>
+</h4>
+<div class="para" id="def-trig-ratios-2-1">For an angle <span class="process-math">\(\theta\)</span> such that the expressions are defined,<div class="autopermalink" data-description="Paragraph"><a href="#def-trig-ratios-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="def-trig-ratios-2-2">
+\begin{equation*}
+\tan(\theta) = \dfrac{\sin(\theta)}{\cos(\theta)},
+\qquad
+\sec(\theta) = \dfrac{1}{\cos(\theta)},
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="def-trig-ratios-2-3">
+\begin{equation*}
+\csc(\theta) = \dfrac{1}{\sin(\theta)},
+\qquad
+\cot(\theta) = \dfrac{\cos(\theta)}{\sin(\theta)}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Definition 0.8.11: Definitions of Tangent, Secant, Cosecant, and Cotangent"><a href="#def-trig-ratios" title="Copy heading and permalink for Definition 0.8.11: Definitions of Tangent, Secant, Cosecant, and Cotangent" aria-label="Copy heading and permalink for Definition 0.8.11: Definitions of Tangent, Secant, Cosecant, and Cotangent">🔗</a></div></article><article class="remark remark-like" id="ssec-trig-other-functions-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-trig-other-functions-4-1">Because these functions are defined as ratios, they are undefined whenever their denominators are zero. For example, since <span class="process-math">\(\cos(\pi/2)=0\text{,}\)</span> both <span class="process-math">\(\tan(\pi/2)\)</span> and <span class="process-math">\(\sec(\pi/2)\)</span> are undefined.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-other-functions-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 0.8.12"><a href="#ssec-trig-other-functions-4" title="Copy heading and permalink for Remark 0.8.12" aria-label="Copy heading and permalink for Remark 0.8.12">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Other Trigonometric Functions"><a href="#ssec-trig-other-functions" title="Copy heading and permalink for Subsection: Other Trigonometric Functions" aria-label="Copy heading and permalink for Subsection: Other Trigonometric Functions">🔗</a></div></section><section class="subsection" id="ssec-trig-unit-circle-values"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Key Unit Circle Values</span>
+</h3>
+<div class="para" id="ssec-trig-unit-circle-values-2">Because calculus problems often require exact values rather than decimal approximations, it is important to know certain unit circle values without a calculator.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-unit-circle-values-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-trig-unit-circle-values-3">The most important angles on the unit circle are<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-unit-circle-values-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ssec-trig-unit-circle-values-4">
+\begin{equation*}
+0, \; \frac{\pi}{6}, \; \frac{\pi}{4}, \; \frac{\pi}{3}, \; \frac{\pi}{2}.
+\end{equation*}
+</div>
+<div class="para" id="ssec-trig-unit-circle-values-5">The corresponding sine and cosine values are:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-unit-circle-values-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ssec-trig-unit-circle-values-6">
+\begin{equation*}
+\begin{array}{c|cc}
+\theta &amp; \sin(\theta) &amp; \cos(\theta) \\ \hline
+0 &amp; 0 &amp; 1 \\
+\dfrac{\pi}{6} &amp; \dfrac{1}{2} &amp; \dfrac{\sqrt{3}}{2} \\
+\dfrac{\pi}{4} &amp; \dfrac{\sqrt{2}}{2} &amp; \dfrac{\sqrt{2}}{2} \\
+\dfrac{\pi}{3} &amp; \dfrac{\sqrt{3}}{2} &amp; \dfrac{1}{2} \\
+\dfrac{\pi}{2} &amp; 1 &amp; 0
+\end{array}
+\end{equation*}
+</div>
+<article class="example example-like" id="ssec-trig-unit-circle-values-7"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-trig-unit-circle-values-7-1-1">Evaluate <span class="process-math">\(\sin(\pi/3)\)</span> and <span class="process-math">\(\cos(\pi/4)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-unit-circle-values-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ssec-trig-unit-circle-values-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ssec-trig-unit-circle-values-7-2-1">These values can be read directly from the table:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-unit-circle-values-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ssec-trig-unit-circle-values-7-2-2">
+\begin{equation*}
+\sin(\pi/3) = \dfrac{\sqrt{3}}{2},
+\qquad
+\cos(\pi/4) = \dfrac{\sqrt{2}}{2}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 0.8.13.1"><a href="#ssec-trig-unit-circle-values-7-2" title="Copy heading and permalink for Solution 0.8.13.1" aria-label="Copy heading and permalink for Solution 0.8.13.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 0.8.13"><a href="#ssec-trig-unit-circle-values-7" title="Copy heading and permalink for Example 0.8.13" aria-label="Copy heading and permalink for Example 0.8.13">🔗</a></div></article><div class="para" id="ssec-trig-unit-circle-values-8">Values in other quadrants can be determined using symmetry and the signs of sine and cosine on the unit circle. On quizzes and exams, these values are expected to be known without a calculator.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-unit-circle-values-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ssec-trig-unit-circle-values-9"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-trig-unit-circle-values-9-1-1">Evaluate <span class="process-math">\(\sin(5\pi/6)\)</span> and <span class="process-math">\(\cos(5\pi/6)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-unit-circle-values-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ssec-trig-unit-circle-values-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ssec-trig-unit-circle-values-9-2-1">The angle <span class="process-math">\(5\pi/6\)</span> lies in Quadrant II and has reference angle <span class="process-math">\(\pi/6\text{.}\)</span> In Quadrant II, sine is positive and cosine is negative.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-unit-circle-values-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ssec-trig-unit-circle-values-9-2-2">
+\begin{equation*}
+\sin(5\pi/6) = \sin(\pi/6) = \dfrac{1}{2},
+\qquad
+\cos(5\pi/6) = -\cos(\pi/6) = -\dfrac{\sqrt{3}}{2}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 0.8.14.1"><a href="#ssec-trig-unit-circle-values-9-2" title="Copy heading and permalink for Solution 0.8.14.1" aria-label="Copy heading and permalink for Solution 0.8.14.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 0.8.14"><a href="#ssec-trig-unit-circle-values-9" title="Copy heading and permalink for Example 0.8.14" aria-label="Copy heading and permalink for Example 0.8.14">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Key Unit Circle Values"><a href="#ssec-trig-unit-circle-values" title="Copy heading and permalink for Subsection: Key Unit Circle Values" aria-label="Copy heading and permalink for Subsection: Key Unit Circle Values">🔗</a></div></section><section class="subsection" id="ssec-trig-range"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Range and Boundedness</span>
+</h3>
+<div class="para" id="ssec-trig-range-2">One of the most important properties of sine and cosine in calculus is that their values are bounded.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-range-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-sin-cos-range"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Range of Sine and Cosine.</span>
+</h4>
+<div class="para" id="thm-sin-cos-range-2-1">For all real numbers <span class="process-math">\(\theta\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-sin-cos-range-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="thm-sin-cos-range-2-2">
+\begin{equation*}
+-1 \le \sin(\theta) \le 1,
+\qquad
+-1 \le \cos(\theta) \le 1.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Theorem 0.8.15: Range of Sine and Cosine"><a href="#thm-sin-cos-range" title="Copy heading and permalink for Theorem 0.8.15: Range of Sine and Cosine" aria-label="Copy heading and permalink for Theorem 0.8.15: Range of Sine and Cosine">🔗</a></div></article><article class="remark remark-like" id="ssec-trig-range-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-trig-range-4-1">This boundedness property is used frequently in calculus, especially when applying the Squeeze Theorem to evaluate limits.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-range-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 0.8.16"><a href="#ssec-trig-range-4" title="Copy heading and permalink for Remark 0.8.16" aria-label="Copy heading and permalink for Remark 0.8.16">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Range and Boundedness"><a href="#ssec-trig-range" title="Copy heading and permalink for Subsection: Range and Boundedness" aria-label="Copy heading and permalink for Subsection: Range and Boundedness">🔗</a></div></section><section class="subsection" id="ssec-trig-pythagorean-identities"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pythagorean Identities</span>
+</h3>
+<div class="para" id="ssec-trig-pythagorean-identities-2">One of the most important consequences of the unit circle definition of sine and cosine is a collection of identities that come directly from the Pythagorean Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-pythagorean-identities-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-pythagorean-trig"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pythagorean Identities.</span>
+</h4>
+<div class="displaymath process-math" id="thm-pythagorean-trig-2-1">
+\begin{equation*}
+\begin{array}{rcl}
+\sin^2(\theta) + \cos^2(\theta) &amp; = &amp; 1 \\[4pt]
+1 + \tan^2(\theta) &amp; = &amp; \sec^2(\theta) \\[4pt]
+1 + \cot^2(\theta) &amp; = &amp; \csc^2(\theta)
+\end{array}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Theorem 0.8.17: Pythagorean Identities"><a href="#thm-pythagorean-trig" title="Copy heading and permalink for Theorem 0.8.17: Pythagorean Identities" aria-label="Copy heading and permalink for Theorem 0.8.17: Pythagorean Identities">🔗</a></div></article><div class="para" id="ssec-trig-pythagorean-identities-4">Only the first identity, <span class="process-math">\(\sin^2(\theta) + \cos^2(\theta) = 1\text{,}\)</span> needs to be memorized. The other two identities follow directly from it by dividing both sides by <span class="process-math">\(\cos^2(\theta)\)</span> or <span class="process-math">\(\sin^2(\theta)\text{,}\)</span> respectively.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-pythagorean-identities-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="ssec-trig-pythagorean-identities-5"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-trig-pythagorean-identities-5-1">These identities provide different ways to express the same geometric relationship. In calculus, choosing the appropriate form often simplifies a computation.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-pythagorean-identities-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 0.8.18"><a href="#ssec-trig-pythagorean-identities-5" title="Copy heading and permalink for Remark 0.8.18" aria-label="Copy heading and permalink for Remark 0.8.18">🔗</a></div></article><article class="example example-like" id="ssec-trig-pythagorean-identities-6"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-trig-pythagorean-identities-6-1-1">Simplify the expression <span class="process-math">\(1 + \tan^2(\theta)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-pythagorean-identities-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ssec-trig-pythagorean-identities-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="displaymath process-math" id="ssec-trig-pythagorean-identities-6-2-1">
+\begin{equation*}
+1 + \tan^2(\theta) = \sec^2(\theta).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 0.8.19.1"><a href="#ssec-trig-pythagorean-identities-6-2" title="Copy heading and permalink for Solution 0.8.19.1" aria-label="Copy heading and permalink for Solution 0.8.19.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 0.8.19"><a href="#ssec-trig-pythagorean-identities-6" title="Copy heading and permalink for Example 0.8.19" aria-label="Copy heading and permalink for Example 0.8.19">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Pythagorean Identities"><a href="#ssec-trig-pythagorean-identities" title="Copy heading and permalink for Subsection: Pythagorean Identities" aria-label="Copy heading and permalink for Subsection: Pythagorean Identities">🔗</a></div></section><section class="subsection" id="ssec-trig-identities-preview"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Angle Sum and Double Angle Formulas</span>
+</h3>
+<div class="para" id="ssec-trig-identities-preview-2">Trigonometric functions do not satisfy distributive or additive properties. Instead, they obey specific identities that describe how sine and cosine behave when angles are added or multiplied.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-trig-identities-preview-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-angle-sum"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Angle Sum Formulas.</span>
+</h4>
+<div class="displaymath process-math" id="thm-angle-sum-2-1">
+\begin{equation*}
+\begin{array}{rcl}
+\sin(A+B) &amp; = &amp; \sin(A)\cos(B) + \cos(A)\sin(B) \\
+\cos(A+B) &amp; = &amp; \cos(A)\cos(B) - \sin(A)\sin(B)
+\end{array}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Theorem 0.8.20: Angle Sum Formulas"><a href="#thm-angle-sum" title="Copy heading and permalink for Theorem 0.8.20: Angle Sum Formulas" aria-label="Copy heading and permalink for Theorem 0.8.20: Angle Sum Formulas">🔗</a></div></article><article class="theorem theorem-like" id="thm-double-angle"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.8.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Double Angle Formulas.</span>
+</h4>
+<div class="para" id="thm-double-angle-2-1">The double angle formulas are obtained by setting <span class="process-math">\(B = A\)</span> in the angle sum formulas.<div class="autopermalink" data-description="Paragraph"><a href="#thm-double-angle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="thm-double-angle-2-2">
+\begin{equation*}
+\begin{array}{rcl}
+\sin(2A) &amp; = &amp; 2\sin(A)\cos(A) \\
+\cos(2A) &amp; = &amp; \cos^2(A) - \sin^2(A) \\
+&amp; = &amp; 2\cos^2(A) - 1 \\
+&amp; = &amp; 1 - 2\sin^2(A)
+\end{array}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Theorem 0.8.21: Double Angle Formulas"><a href="#thm-double-angle" title="Copy heading and permalink for Theorem 0.8.21: Double Angle Formulas" aria-label="Copy heading and permalink for Theorem 0.8.21: Double Angle Formulas">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Angle Sum and Double Angle Formulas"><a href="#ssec-trig-identities-preview" title="Copy heading and permalink for Subsection: Angle Sum and Double Angle Formulas" aria-label="Copy heading and permalink for Subsection: Angle Sum and Double Angle Formulas">🔗</a></div></section><section class="subsection" id="ssec-precalc-videos-trig"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Supplemental Video Resources</span>
+</h3>
+<div class="para" id="ssec-precalc-videos-trig-2">The following is a curated set of videos that many students find helpful. They provide additional explanations and visual intuition for logarithms and their relationship to exponential functions.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-precalc-videos-trig-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ssec-precalc-videos-trig-3">
+<ul class="disc" id="ssec-precalc-videos-trig-3-1">
+<li id="ssec-precalc-videos-trig-3-1-1">
+<div class="para" id="p-derived-ssec-precalc-videos-trig-3-1-1"><a class="external" href="https://youtu.be/e7QjCL7lQM4" target="_blank">All the trig you need for calculus actually explained</a></div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-precalc-videos-trig-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ssec-precalc-videos-trig-3-1-2">
+<div class="para" id="p-derived-ssec-precalc-videos-trig-3-1-2"><a class="external" href="https://youtu.be/gdJq1QunN-o?si=bJKWmmYZ_jcBLVNy" target="_blank">How To Remember The Unit Circle Fast!</a></div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-precalc-videos-trig-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ssec-precalc-videos-trig-3-1-3">
+<div class="para" id="p-derived-ssec-precalc-videos-trig-3-1-3"><a class="external" href="https://youtu.be/4tQX198STxM" target="_blank">The Trigonometric Functions and the Unit Circle</a></div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-precalc-videos-trig-3-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ssec-precalc-videos-trig-3-1-4">
+<div class="para" id="p-derived-ssec-precalc-videos-trig-3-1-4"><a class="external" href="https://www.youtube.com/watch?v=m1OitPmkydY" target="_blank">Common trig identities explained</a></div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-precalc-videos-trig-3-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ssec-precalc-videos-trig-3-1-5">
+<div class="para" id="p-derived-ssec-precalc-videos-trig-3-1-5"><a class="external" href="https://www.youtube.com/watch?v=fo_q9mEAFp4" target="_blank">Trigonometric graph properties and transformations</a></div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-precalc-videos-trig-3-1-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ssec-precalc-videos-trig-3-1-6">
+<div class="para" id="p-derived-ssec-precalc-videos-trig-3-1-6"><a class="external" href="https://youtu.be/dUkCgTOOpQ0?si=gds064XGUPRVjE1U" target="_blank">Visual connection of all six trig functions</a></div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-precalc-videos-trig-3-1-6" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#ssec-precalc-videos-trig-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Supplemental Video Resources"><a href="#ssec-precalc-videos-trig" title="Copy heading and permalink for Subsection: Supplemental Video Resources" aria-label="Copy heading and permalink for Subsection: Supplemental Video Resources">🔗</a></div></section><div class="autopermalink" data-description="Section 0.8: Trigonometry"><a href="#sec-precalc-trig" title="Copy heading and permalink for Section 0.8: Trigonometry" aria-label="Copy heading and permalink for Section 0.8: Trigonometry">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-precalc-log.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-limits.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="feedback-link" href="mailto:maccomb1@msu.edu" target="_blank">Feedback</a><a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

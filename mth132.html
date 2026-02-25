@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette: leaves                       *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calculus 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus 1">
+<meta property="book:author" content="Ryan Maccombs">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.15';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="calculus1" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="mth132.html"><span class="title">Calculus 1</span> <span class="subtitle">MSU MTH132</span></a></h1>
+<p class="byline">Ryan Maccombs</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><span class="up-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></span><a class="next-button button" href="frontmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Introduction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Students: How to Use this Book</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-precalc.html" class="internal"><span class="codenumber">0</span> <span class="title">Precalculus Review</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-basics.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Arithmetic Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-whole-numbers-signs" class="internal"><span class="title">Signs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-fractions" class="internal"><span class="title">Fractions and Rational Expressions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-distributive" class="internal"><span class="title">Distributive Law and Common Errors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-exponents" class="internal"><span class="title">Powers and Rational Exponents</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-rationalizing" class="internal"><span class="title">Rationalizing the Denominator</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-factor.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Factoring</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-gcf" class="internal"><span class="title">Factoring Out a Greatest Common Factor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-difference-squares" class="internal"><span class="title">Difference of Squares</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-perfect-squares" class="internal"><span class="title">Perfect Square Trinomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-general-trinomials" class="internal"><span class="title">Factoring General Trinomials Using the AC Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-precalc-videos-factor" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-funcs.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Functions and Inverses</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-function-review" class="internal"><span class="title">Functions and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-composition" class="internal"><span class="title">Function Composition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-inverses" class="internal"><span class="title">Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-finding-inverses" class="internal"><span class="title">Finding Inverses Algebraically</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-special-inverses" class="internal"><span class="title">Important Examples of Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-precalc-videos-funcs" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-ineq.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Inequalities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-ineq-overview" class="internal"><span class="title">The Test Point Method: Overview</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-ineq-examples" class="internal"><span class="title">Several Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-precalc-videos-ineq" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-absval.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Absolute Values</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-definitions" class="internal"><span class="title">Definitions of Absolute Value</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-basic-equations" class="internal"><span class="title">Solving Basic Absolute Value Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-no-solution" class="internal"><span class="title">When Absolute Value Equations Have No Solution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-precalc-videos" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-exp.html" class="internal"><span class="codenumber">0.6</span> <span class="title">Exponentials</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-def" class="internal"><span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-laws" class="internal"><span class="title">Laws of Exponents</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-equations" class="internal"><span class="title">Solving Exponential Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-base-e" class="internal"><span class="title">The Natural Base <span class="process-math">\(e\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-precalc-videos-exp" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-log.html" class="internal"><span class="codenumber">0.7</span> <span class="title">Logarithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-log-def" class="internal"><span class="title">Logarithms as Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-natural-log" class="internal"><span class="title">The Natural Logarithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-log-laws" class="internal"><span class="title">Laws of Logarithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-solving-exp-log" class="internal"><span class="title">Solving Exponential Equations Using Logarithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-precalc-videos-log" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-trig.html" class="internal"><span class="codenumber">0.8</span> <span class="title">Trigonometry</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-triangle" class="internal"><span class="title">Right Triangle Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-unit-circle" class="internal"><span class="title">The Unit Circle Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-other-functions" class="internal"><span class="title">Other Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-unit-circle-values" class="internal"><span class="title">Key Unit Circle Values</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-range" class="internal"><span class="title">Range and Boundedness</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-pythagorean-identities" class="internal"><span class="title">Pythagorean Identities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-identities-preview" class="internal"><span class="title">Angle Sum and Double Angle Formulas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-precalc-videos-trig" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-limits.html" class="internal"><span class="codenumber">1</span> <span class="title">Limits and Continuity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-graphical-limits.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Limits from Graphs and Notation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-defn-limits" class="internal"><span class="title">Definition of Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-eval-limits" class="internal"><span class="title">Evaluating Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-one-sided-limits" class="internal"><span class="title">One-sided Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-inf-limits" class="internal"><span class="title">Infinite Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-locating-va" class="internal"><span class="title">Locating Vertical Asymptotes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#additional-limit-graph" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-graphical-limits.html#exercises-limits" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-laws.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Limit Laws and Algebraic Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-limit-laws" class="internal"><span class="title">Operations on Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-plugging-in" class="internal"><span class="title">Limits by Plugging In</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-canceling-zeros" class="internal"><span class="title">Limits by Canceling Zeros</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-cases" class="internal"><span class="title">Limits by Cases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-squeeze" class="internal"><span class="title">Limits by Squeezing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#additional-worked-problems-link" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-laws.html#tf-exercises-limits" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-inf.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Limits at Infinity: Horizontal Asymptotes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#graphs-limits-infinity" class="internal"><span class="title">Visualizing Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#power-functions-infinity" class="internal"><span class="title">Basic Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#dominant-terms" class="internal"><span class="title">Dominant Terms and Rational Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#squeeze-theorem-infinity" class="internal"><span class="title">Squeeze Theorem at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#application-limits-infinity" class="internal"><span class="title">An Application of Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#non-algebraic-limits-infinity" class="internal"><span class="title">Limits at Infinity Beyond Algebraic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#additional-limit-inf" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-inf.html#exercises-limits-infinity-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-continuity.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Continuity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-defn-continuity" class="internal"><span class="title">Definition and Overview</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-types-discontinuities" class="internal"><span class="title">Removable Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-jump-discontinuity" class="internal"><span class="title">Jump Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-infinite-discontinuity" class="internal"><span class="title">Infinite Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-essential-discontinuity" class="internal"><span class="title">Essential Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-piecewise-continuity" class="internal"><span class="title">Continuity of Piecewise Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-domain-continuity" class="internal"><span class="title">Domain of Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#sec-limit-continuity-10" class="internal"><span class="title">Compositions of Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#additional-cont" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-continuity.html#tf-exercises-continuity" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-ivt.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Intermediate Value Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ivt.html#additional-ivt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-ivt.html#exercises-ivt" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-ww.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-gl" class="internal"><span class="title">Section 1.1 Limits from Graphs and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-alg" class="internal"><span class="title">Section 1.2 Limit Laws and Algebraic Techniques</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-inf" class="internal"><span class="title">Section 1.3 Limits at Infinity: Horizontal Asymptotes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-cont" class="internal"><span class="title">Section 1.4 Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-ivt" class="internal"><span class="title">Section 1.5 Intermediate Value Theorem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derivative.html" class="internal"><span class="codenumber">2</span> <span class="title">The Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-intro.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction and Motivation for Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#instantaneous-velocity" class="internal"><span class="title">Average and Instantaneous Velocity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#secant-and-tangent" class="internal"><span class="title">Slopes of Secant Lines and Slopes of Tangent Lines</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#additional-worked-problems-derivIntro" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-intro.html#exercises-derivative-intro-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-defn.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Definition of the Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-definition" class="internal"><span class="title">Definition of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-computation" class="internal"><span class="title">Computing Derivatives from the Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-function" class="internal"><span class="title">The Derivative Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-fail" class="internal"><span class="title">When the Derivative Fails to Exist</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-differentiable-on-interval" class="internal"><span class="title">Differentiability on an Interval</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#additional-worked-problems-derivDefn" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-defn.html#exercises-derivative-defn-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-rules.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Basic Differentiation Rules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#derivative-notation" class="internal"><span class="title">Notation for the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#basic-derivatives" class="internal"><span class="title">Basic Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#derivative-rules" class="internal"><span class="title">Derivative Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#higher-derivatives" class="internal"><span class="title">Higher Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#additional-worked-problems-derivRules" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-rules.html#exercises-derivative-rules-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-trig.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Trigonometric Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#derivative-of-sine-and-cosine" class="internal"><span class="title">Derivative of Sine and Cosine</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#general-trig-derivatives" class="internal"><span class="title">General Trigonometric Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#foundational-trig-limits" class="internal"><span class="title">Two Fundamental Trigonometric Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#trig-limits-from-sin-over-x" class="internal"><span class="title">Limits of Trigonometric Quotients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#additional-worked-problems-derivTrig" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-trig.html#exercises-derivative-trig-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-expChain.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Exponential Derivatives and the Chain Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#ssec-expChain-key-results" class="internal"><span class="title">Key Derivative Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#ssec-expChain-interpretation" class="internal"><span class="title">The Statement and Applications of The Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#additional-worked-problems-derivExp" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-expChain.html#exercises-derivative-expChain-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-implicit.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Implicit Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#ssec-implicit-motiv" class="internal"><span class="title">A Motivating Example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#implicit-diff-definition" class="internal"><span class="title">Key Idea: Implicit Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#additional-worked-problems-derivImplic" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-implicit.html#exercises-derivative-implicit" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-inverse.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Inverse Functions and Their Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#derivative-inverse-log" class="internal"><span class="title">The Natural Logarithm and Finding Derivatives of Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#implicit-inverse-idea" class="internal"><span class="title">Derivatives of Inverse Trig Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#sample-problems-inverse-trig" class="internal"><span class="title">Select Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#additional-worked-problems-derivInv" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-inverse.html#exercises-derivative-inv-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-ww.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-intro" class="internal"><span class="title">Section 2.1 Introduction and Motivation for Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-defn" class="internal"><span class="title">Section 2.2 Definition of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-rules" class="internal"><span class="title">Section 2.3 Basic Differentiation Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-trig" class="internal"><span class="title">Section 2.4 Trigonometric Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-expChain" class="internal"><span class="title">Section 2.5 Exponential Functions and the Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-implicit" class="internal"><span class="title">Section 2.6 Implicit Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-inverse" class="internal"><span class="title">Section 2.7 Inverse Functions and Their Derivatives</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derivativeApplications.html" class="internal"><span class="codenumber">3</span> <span class="title">Applications of the Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-motion.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Motion in Physics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#functions-of-motion" class="internal"><span class="title">The Basics of Motion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#subsec-SpeedingUp-SlowingDown" class="internal"><span class="title">Speeding Up and Slowing Down</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#additional-worked-problems-derivApp-Motion" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-motion.html#exercises-derivApp-Motion-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-related.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Related Rates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#related-rates-intro" class="internal"><span class="title">Introduction to Related Rates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#related-rates-examples" class="internal"><span class="title">Select Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#additional-worked-problems-derivApp-Related" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-related.html#exercises-derivApp-RRates-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-linear.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Linear Approximation and L’Hopital’s Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#linearization-definition" class="internal"><span class="title">Linearization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#lhopital-statement" class="internal"><span class="title">L’Hôpital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#additional-worked-problems-derivApp-Linear" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-linear.html#exercises-derivApp-Linear-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-extrema.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Extrema</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-absolute-extrema" class="internal"><span class="title">Absolute Maxima and Minima</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#subsec-EVT" class="internal"><span class="title">Extreme Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-local-extrema" class="internal"><span class="title">Local Maxima and Minima</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-derivatives-extrema" class="internal"><span class="title">Derivatives and Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-method-extrema" class="internal"><span class="title">Finding Absolute Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#additional-worked-problems-derivApp-extrema" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#exercises-extrema" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-mvt.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Mean Value Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-rolles" class="internal"><span class="title">Rolle’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-mvt-statement" class="internal"><span class="title">Derivatives versus Difference Quotients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-derivative-controls-direction" class="internal"><span class="title">Derivative Controls Direction</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#additional-worked-examples-mvt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#exercises-mvt" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-curve1.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Curve Sketching Part 1</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#ssec-increasing-decreasing" class="internal"><span class="title">Increasing and Decreasing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#ssec-concavity" class="internal"><span class="title">Concavity and Inflection Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#additional-worked-examples-curve1" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#exercises-curve-sketching-1" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-curve2.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Curve Sketching Part 2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#ssec-second-derivative-test" class="internal"><span class="title">The Second Derivative Test</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#ssec-symmetry" class="internal"><span class="title">Symmetry</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#subsec-allTogether" class="internal"><span class="title">Putting It All Together</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#additional-worked-examples-curve2" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#exercises-curve-sketching-2" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-opt.html" class="internal"><span class="codenumber">3.8</span> <span class="title">Optimization Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#ssec-opt-motivating-example" class="internal"><span class="title">Motivating Example and Overall Technique</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#ssec-opt-examples" class="internal"><span class="title">More Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#additional-worked-examples-opt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-opt.html#exercises-optimization" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-ww.html" class="internal"><span class="codenumber">3.9</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-motion" class="internal"><span class="title">Section 3.1 Motion in Physics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-relatedRates" class="internal"><span class="title">Section 3.2 Related Rates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-linear" class="internal"><span class="title">Section 3.3 Linear Approximation and L’Hopital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-extrema" class="internal"><span class="title">Section 3.4 Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-mvt" class="internal"><span class="title">Section 3.5 Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-curve1" class="internal"><span class="title">Section 3.6 Curve Sketching Part 1</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-curve2" class="internal"><span class="title">Section 3.7 Curve Sketching Part 2</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-opt" class="internal"><span class="title">Section 3.8 Optimization Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integral.html" class="internal"><span class="codenumber">4</span> <span class="title">Integrals and the Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-antiderivatives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Antiderivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-motivation" class="internal"><span class="title">Reversing Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-definition-theorem" class="internal"><span class="title">Definition and the Constant of Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-rules" class="internal"><span class="title">Basic Antidifferentiation Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-reverse-chain" class="internal"><span class="title">A Simple “Reverse Chain Rule” Pattern</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-trig-identity" class="internal"><span class="title">When You Must Rewrite First</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-accel-vel-pos" class="internal"><span class="title">Acceleration, Velocity, and Position</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#additional-worked-problems-integral-antiderivatives" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#exercises-antiderivatives" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-riemannSums.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Riemann Sums and Areas</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-review-derivatives" class="internal"><span class="title">Review: Derivatives as Rates of Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-accumulation" class="internal"><span class="title">Accumulation of Influence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-distance-riemann" class="internal"><span class="title">Riemann Sums for Distance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-total-change" class="internal"><span class="title">The Integral as Total Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-area" class="internal"><span class="title">Area Under a Curve</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-approx-sin-squared" class="internal"><span class="title">Approximating an Integral with Upper and Lower Sums</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#additional-worked-problems-integral-riemannSums" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#exercises-riemann-area" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-defInt.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The Definite Integral</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-precise-definition" class="internal"><span class="title">Precise Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-integrable-functions" class="internal"><span class="title">Integrable Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-negative-integrand" class="internal"><span class="title">Negative Integrands and Signed Area</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-reversing-limits" class="internal"><span class="title">Reversing Limits of Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-rules" class="internal"><span class="title">Integral Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-basic-integrals" class="internal"><span class="title">Basic Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#additional-worked-problems-integral-defInt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-defInt.html#exercises-definite-integral" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-FTC.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-integral-as-antiderivative" class="internal"><span class="title">Integral as Antiderivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-first-ftc" class="internal"><span class="title">The First Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-derivative-of-integral-functions" class="internal"><span class="title">Derivatives of Integral Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-sketching-integral-functions" class="internal"><span class="title">Sketching Integral Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-second-ftc" class="internal"><span class="title">The Second Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#additional-worked-problems-integral-FTC" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-FTC.html#exercises-ftoc" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-net.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Net Change Theorem and Indefinite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-net-change-review" class="internal"><span class="title">Review: Four Meanings of the Definite Integral</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-net-change" class="internal"><span class="title">The Net Change Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-indefinite-integrals" class="internal"><span class="title">Indefinite Integral Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-average-value" class="internal"><span class="title">Average Value of a Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-mvt-integrals" class="internal"><span class="title">Mean Value Theorem for Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#additional-worked-problems-integral-net" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-net.html#exercises-net-change-indef" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-usub.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Substitution Rule for Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-reverse-chain" class="internal"><span class="title">Reversing the Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-method" class="internal"><span class="title">Substitution Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-definite" class="internal"><span class="title">Substitution for Definite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-integral-symmetry" class="internal"><span class="title">Integral Symmetry for Odd Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-heart-flow" class="internal"><span class="title">Application: Heart Flow Rate</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#additional-worked-problems-integral-usub" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-usub.html#exercises-substitution" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-ww.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-antiderivatives" class="internal"><span class="title">Section 4.1 Antiderivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-riemannSums" class="internal"><span class="title">Section 4.2 Riemann Sums and Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-defInt" class="internal"><span class="title">Section 4.3 Definite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-FTC" class="internal"><span class="title">Section 4.4 The Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-net" class="internal"><span class="title">Section 4.5 Net Change Theorem and Indefinite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-usub" class="internal"><span class="title">Section 4.6 Substitution Rule for Integration</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Additional Resources</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-appendix"><div class="toc-title-box"><a href="formula-sheet.html" class="internal"><span class="codenumber">A</span> <span class="title">Quiz / Exam Formula Sheet</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="book" id="mth132"><nav class="summary-links"><ul>
+<li><a href="frontmatter.html" class="internal"><span class="title">Introduction</span></a></li>
+<li><a href="ch-precalc.html" class="internal"><span class="codenumber">0</span> <span class="title">Precalculus Review</span></a></li>
+<li><a href="ch-limits.html" class="internal"><span class="codenumber">1</span> <span class="title">Limits and Continuity</span></a></li>
+<li><a href="ch-derivative.html" class="internal"><span class="codenumber">2</span> <span class="title">The Derivative</span></a></li>
+<li><a href="ch-derivativeApplications.html" class="internal"><span class="codenumber">3</span> <span class="title">Applications of the Derivative</span></a></li>
+<li><a href="ch-integral.html" class="internal"><span class="codenumber">4</span> <span class="title">Integrals and the Fundamental Theorem of Calculus</span></a></li>
+<li><a href="backmatter.html" class="internal"><span class="title">Additional Resources</span></a></li>
+</ul></nav><div class="autopermalink" data-description="Book: Calculus 1"><a href="#mth132" title="Copy heading and permalink for Book: Calculus 1" aria-label="Copy heading and permalink for Book: Calculus 1">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="frontmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="feedback-link" href="mailto:maccomb1@msu.edu" target="_blank">Feedback</a><a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

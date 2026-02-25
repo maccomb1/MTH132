@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette: leaves                       *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Curve Sketching Part 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus 1">
+<meta property="book:author" content="Ryan Maccombs">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.15';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="calculus1" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="mth132.html"><span class="title">Calculus 1</span> <span class="subtitle">MSU MTH132</span></a></h1>
+<p class="byline">Ryan Maccombs</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-derivApp-mvt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-derivativeApplications.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-derivApp-curve2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Introduction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Students: How to Use this Book</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-precalc.html" class="internal"><span class="codenumber">0</span> <span class="title">Precalculus Review</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-basics.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Arithmetic Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-whole-numbers-signs" class="internal"><span class="title">Signs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-fractions" class="internal"><span class="title">Fractions and Rational Expressions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-distributive" class="internal"><span class="title">Distributive Law and Common Errors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-exponents" class="internal"><span class="title">Powers and Rational Exponents</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-rationalizing" class="internal"><span class="title">Rationalizing the Denominator</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-factor.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Factoring</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-gcf" class="internal"><span class="title">Factoring Out a Greatest Common Factor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-difference-squares" class="internal"><span class="title">Difference of Squares</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-perfect-squares" class="internal"><span class="title">Perfect Square Trinomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-general-trinomials" class="internal"><span class="title">Factoring General Trinomials Using the AC Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-precalc-videos-factor" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-funcs.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Functions and Inverses</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-function-review" class="internal"><span class="title">Functions and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-composition" class="internal"><span class="title">Function Composition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-inverses" class="internal"><span class="title">Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-finding-inverses" class="internal"><span class="title">Finding Inverses Algebraically</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-special-inverses" class="internal"><span class="title">Important Examples of Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-precalc-videos-funcs" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-ineq.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Inequalities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-ineq-overview" class="internal"><span class="title">The Test Point Method: Overview</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-ineq-examples" class="internal"><span class="title">Several Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-precalc-videos-ineq" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-absval.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Absolute Values</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-definitions" class="internal"><span class="title">Definitions of Absolute Value</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-basic-equations" class="internal"><span class="title">Solving Basic Absolute Value Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-no-solution" class="internal"><span class="title">When Absolute Value Equations Have No Solution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-precalc-videos" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-exp.html" class="internal"><span class="codenumber">0.6</span> <span class="title">Exponentials</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-def" class="internal"><span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-laws" class="internal"><span class="title">Laws of Exponents</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-equations" class="internal"><span class="title">Solving Exponential Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-base-e" class="internal"><span class="title">The Natural Base <span class="process-math">\(e\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-precalc-videos-exp" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-log.html" class="internal"><span class="codenumber">0.7</span> <span class="title">Logarithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-log-def" class="internal"><span class="title">Logarithms as Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-natural-log" class="internal"><span class="title">The Natural Logarithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-log-laws" class="internal"><span class="title">Laws of Logarithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-solving-exp-log" class="internal"><span class="title">Solving Exponential Equations Using Logarithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-precalc-videos-log" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-trig.html" class="internal"><span class="codenumber">0.8</span> <span class="title">Trigonometry</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-triangle" class="internal"><span class="title">Right Triangle Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-unit-circle" class="internal"><span class="title">The Unit Circle Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-other-functions" class="internal"><span class="title">Other Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-unit-circle-values" class="internal"><span class="title">Key Unit Circle Values</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-range" class="internal"><span class="title">Range and Boundedness</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-pythagorean-identities" class="internal"><span class="title">Pythagorean Identities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-identities-preview" class="internal"><span class="title">Angle Sum and Double Angle Formulas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-precalc-videos-trig" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-limits.html" class="internal"><span class="codenumber">1</span> <span class="title">Limits and Continuity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-graphical-limits.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Limits from Graphs and Notation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-defn-limits" class="internal"><span class="title">Definition of Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-eval-limits" class="internal"><span class="title">Evaluating Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-one-sided-limits" class="internal"><span class="title">One-sided Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-inf-limits" class="internal"><span class="title">Infinite Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-locating-va" class="internal"><span class="title">Locating Vertical Asymptotes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#additional-limit-graph" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-graphical-limits.html#exercises-limits" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-laws.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Limit Laws and Algebraic Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-limit-laws" class="internal"><span class="title">Operations on Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-plugging-in" class="internal"><span class="title">Limits by Plugging In</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-canceling-zeros" class="internal"><span class="title">Limits by Canceling Zeros</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-cases" class="internal"><span class="title">Limits by Cases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-squeeze" class="internal"><span class="title">Limits by Squeezing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#additional-worked-problems-link" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-laws.html#tf-exercises-limits" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-inf.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Limits at Infinity: Horizontal Asymptotes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#graphs-limits-infinity" class="internal"><span class="title">Visualizing Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#power-functions-infinity" class="internal"><span class="title">Basic Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#dominant-terms" class="internal"><span class="title">Dominant Terms and Rational Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#squeeze-theorem-infinity" class="internal"><span class="title">Squeeze Theorem at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#application-limits-infinity" class="internal"><span class="title">An Application of Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#non-algebraic-limits-infinity" class="internal"><span class="title">Limits at Infinity Beyond Algebraic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#additional-limit-inf" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-inf.html#exercises-limits-infinity-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-continuity.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Continuity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-defn-continuity" class="internal"><span class="title">Definition and Overview</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-types-discontinuities" class="internal"><span class="title">Removable Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-jump-discontinuity" class="internal"><span class="title">Jump Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-infinite-discontinuity" class="internal"><span class="title">Infinite Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-essential-discontinuity" class="internal"><span class="title">Essential Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-piecewise-continuity" class="internal"><span class="title">Continuity of Piecewise Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-domain-continuity" class="internal"><span class="title">Domain of Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#sec-limit-continuity-10" class="internal"><span class="title">Compositions of Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#additional-cont" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-continuity.html#tf-exercises-continuity" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-ivt.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Intermediate Value Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ivt.html#additional-ivt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-ivt.html#exercises-ivt" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-ww.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-gl" class="internal"><span class="title">Section 1.1 Limits from Graphs and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-alg" class="internal"><span class="title">Section 1.2 Limit Laws and Algebraic Techniques</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-inf" class="internal"><span class="title">Section 1.3 Limits at Infinity: Horizontal Asymptotes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-cont" class="internal"><span class="title">Section 1.4 Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-ivt" class="internal"><span class="title">Section 1.5 Intermediate Value Theorem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derivative.html" class="internal"><span class="codenumber">2</span> <span class="title">The Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-intro.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction and Motivation for Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#instantaneous-velocity" class="internal"><span class="title">Average and Instantaneous Velocity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#secant-and-tangent" class="internal"><span class="title">Slopes of Secant Lines and Slopes of Tangent Lines</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#additional-worked-problems-derivIntro" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-intro.html#exercises-derivative-intro-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-defn.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Definition of the Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-definition" class="internal"><span class="title">Definition of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-computation" class="internal"><span class="title">Computing Derivatives from the Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-function" class="internal"><span class="title">The Derivative Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-fail" class="internal"><span class="title">When the Derivative Fails to Exist</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-differentiable-on-interval" class="internal"><span class="title">Differentiability on an Interval</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#additional-worked-problems-derivDefn" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-defn.html#exercises-derivative-defn-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-rules.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Basic Differentiation Rules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#derivative-notation" class="internal"><span class="title">Notation for the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#basic-derivatives" class="internal"><span class="title">Basic Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#derivative-rules" class="internal"><span class="title">Derivative Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#higher-derivatives" class="internal"><span class="title">Higher Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#additional-worked-problems-derivRules" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-rules.html#exercises-derivative-rules-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-trig.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Trigonometric Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#derivative-of-sine-and-cosine" class="internal"><span class="title">Derivative of Sine and Cosine</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#general-trig-derivatives" class="internal"><span class="title">General Trigonometric Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#foundational-trig-limits" class="internal"><span class="title">Two Fundamental Trigonometric Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#trig-limits-from-sin-over-x" class="internal"><span class="title">Limits of Trigonometric Quotients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#additional-worked-problems-derivTrig" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-trig.html#exercises-derivative-trig-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-expChain.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Exponential Derivatives and the Chain Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#ssec-expChain-key-results" class="internal"><span class="title">Key Derivative Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#ssec-expChain-interpretation" class="internal"><span class="title">The Statement and Applications of The Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#additional-worked-problems-derivExp" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-expChain.html#exercises-derivative-expChain-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-implicit.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Implicit Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#ssec-implicit-motiv" class="internal"><span class="title">A Motivating Example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#implicit-diff-definition" class="internal"><span class="title">Key Idea: Implicit Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#additional-worked-problems-derivImplic" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-implicit.html#exercises-derivative-implicit" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-inverse.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Inverse Functions and Their Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#derivative-inverse-log" class="internal"><span class="title">The Natural Logarithm and Finding Derivatives of Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#implicit-inverse-idea" class="internal"><span class="title">Derivatives of Inverse Trig Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#sample-problems-inverse-trig" class="internal"><span class="title">Select Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#additional-worked-problems-derivInv" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-inverse.html#exercises-derivative-inv-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-ww.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-intro" class="internal"><span class="title">Section 2.1 Introduction and Motivation for Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-defn" class="internal"><span class="title">Section 2.2 Definition of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-rules" class="internal"><span class="title">Section 2.3 Basic Differentiation Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-trig" class="internal"><span class="title">Section 2.4 Trigonometric Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-expChain" class="internal"><span class="title">Section 2.5 Exponential Functions and the Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-implicit" class="internal"><span class="title">Section 2.6 Implicit Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-inverse" class="internal"><span class="title">Section 2.7 Inverse Functions and Their Derivatives</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-derivativeApplications.html" class="internal"><span class="codenumber">3</span> <span class="title">Applications of the Derivative</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-motion.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Motion in Physics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#functions-of-motion" class="internal"><span class="title">The Basics of Motion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#subsec-SpeedingUp-SlowingDown" class="internal"><span class="title">Speeding Up and Slowing Down</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#additional-worked-problems-derivApp-Motion" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-motion.html#exercises-derivApp-Motion-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-related.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Related Rates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#related-rates-intro" class="internal"><span class="title">Introduction to Related Rates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#related-rates-examples" class="internal"><span class="title">Select Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#additional-worked-problems-derivApp-Related" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-related.html#exercises-derivApp-RRates-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-linear.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Linear Approximation and L’Hopital’s Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#linearization-definition" class="internal"><span class="title">Linearization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#lhopital-statement" class="internal"><span class="title">L’Hôpital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#additional-worked-problems-derivApp-Linear" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-linear.html#exercises-derivApp-Linear-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-extrema.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Extrema</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-absolute-extrema" class="internal"><span class="title">Absolute Maxima and Minima</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#subsec-EVT" class="internal"><span class="title">Extreme Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-local-extrema" class="internal"><span class="title">Local Maxima and Minima</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-derivatives-extrema" class="internal"><span class="title">Derivatives and Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-method-extrema" class="internal"><span class="title">Finding Absolute Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#additional-worked-problems-derivApp-extrema" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#exercises-extrema" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-mvt.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Mean Value Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-rolles" class="internal"><span class="title">Rolle’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-mvt-statement" class="internal"><span class="title">Derivatives versus Difference Quotients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-derivative-controls-direction" class="internal"><span class="title">Derivative Controls Direction</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#additional-worked-examples-mvt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#exercises-mvt" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-derivApp-curve1.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Curve Sketching Part 1</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#ssec-increasing-decreasing" class="internal"><span class="title">Increasing and Decreasing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#ssec-concavity" class="internal"><span class="title">Concavity and Inflection Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#additional-worked-examples-curve1" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#exercises-curve-sketching-1" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-curve2.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Curve Sketching Part 2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#ssec-second-derivative-test" class="internal"><span class="title">The Second Derivative Test</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#ssec-symmetry" class="internal"><span class="title">Symmetry</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#subsec-allTogether" class="internal"><span class="title">Putting It All Together</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#additional-worked-examples-curve2" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#exercises-curve-sketching-2" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-opt.html" class="internal"><span class="codenumber">3.8</span> <span class="title">Optimization Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#ssec-opt-motivating-example" class="internal"><span class="title">Motivating Example and Overall Technique</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#ssec-opt-examples" class="internal"><span class="title">More Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#additional-worked-examples-opt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-opt.html#exercises-optimization" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-ww.html" class="internal"><span class="codenumber">3.9</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-motion" class="internal"><span class="title">Section 3.1 Motion in Physics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-relatedRates" class="internal"><span class="title">Section 3.2 Related Rates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-linear" class="internal"><span class="title">Section 3.3 Linear Approximation and L’Hopital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-extrema" class="internal"><span class="title">Section 3.4 Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-mvt" class="internal"><span class="title">Section 3.5 Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-curve1" class="internal"><span class="title">Section 3.6 Curve Sketching Part 1</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-curve2" class="internal"><span class="title">Section 3.7 Curve Sketching Part 2</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-opt" class="internal"><span class="title">Section 3.8 Optimization Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integral.html" class="internal"><span class="codenumber">4</span> <span class="title">Integrals and the Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-antiderivatives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Antiderivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-motivation" class="internal"><span class="title">Reversing Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-definition-theorem" class="internal"><span class="title">Definition and the Constant of Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-rules" class="internal"><span class="title">Basic Antidifferentiation Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-reverse-chain" class="internal"><span class="title">A Simple “Reverse Chain Rule” Pattern</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-trig-identity" class="internal"><span class="title">When You Must Rewrite First</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-accel-vel-pos" class="internal"><span class="title">Acceleration, Velocity, and Position</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#additional-worked-problems-integral-antiderivatives" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#exercises-antiderivatives" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-riemannSums.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Riemann Sums and Areas</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-review-derivatives" class="internal"><span class="title">Review: Derivatives as Rates of Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-accumulation" class="internal"><span class="title">Accumulation of Influence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-distance-riemann" class="internal"><span class="title">Riemann Sums for Distance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-total-change" class="internal"><span class="title">The Integral as Total Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-area" class="internal"><span class="title">Area Under a Curve</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-approx-sin-squared" class="internal"><span class="title">Approximating an Integral with Upper and Lower Sums</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#additional-worked-problems-integral-riemannSums" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#exercises-riemann-area" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-defInt.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The Definite Integral</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-precise-definition" class="internal"><span class="title">Precise Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-integrable-functions" class="internal"><span class="title">Integrable Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-negative-integrand" class="internal"><span class="title">Negative Integrands and Signed Area</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-reversing-limits" class="internal"><span class="title">Reversing Limits of Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-rules" class="internal"><span class="title">Integral Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-basic-integrals" class="internal"><span class="title">Basic Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#additional-worked-problems-integral-defInt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-defInt.html#exercises-definite-integral" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-FTC.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-integral-as-antiderivative" class="internal"><span class="title">Integral as Antiderivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-first-ftc" class="internal"><span class="title">The First Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-derivative-of-integral-functions" class="internal"><span class="title">Derivatives of Integral Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-sketching-integral-functions" class="internal"><span class="title">Sketching Integral Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-second-ftc" class="internal"><span class="title">The Second Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#additional-worked-problems-integral-FTC" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-FTC.html#exercises-ftoc" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-net.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Net Change Theorem and Indefinite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-net-change-review" class="internal"><span class="title">Review: Four Meanings of the Definite Integral</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-net-change" class="internal"><span class="title">The Net Change Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-indefinite-integrals" class="internal"><span class="title">Indefinite Integral Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-average-value" class="internal"><span class="title">Average Value of a Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-mvt-integrals" class="internal"><span class="title">Mean Value Theorem for Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#additional-worked-problems-integral-net" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-net.html#exercises-net-change-indef" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-usub.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Substitution Rule for Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-reverse-chain" class="internal"><span class="title">Reversing the Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-method" class="internal"><span class="title">Substitution Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-definite" class="internal"><span class="title">Substitution for Definite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-integral-symmetry" class="internal"><span class="title">Integral Symmetry for Odd Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-heart-flow" class="internal"><span class="title">Application: Heart Flow Rate</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#additional-worked-problems-integral-usub" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-usub.html#exercises-substitution" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-ww.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-antiderivatives" class="internal"><span class="title">Section 4.1 Antiderivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-riemannSums" class="internal"><span class="title">Section 4.2 Riemann Sums and Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-defInt" class="internal"><span class="title">Section 4.3 Definite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-FTC" class="internal"><span class="title">Section 4.4 The Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-net" class="internal"><span class="title">Section 4.5 Net Change Theorem and Indefinite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-usub" class="internal"><span class="title">Section 4.6 Substitution Rule for Integration</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Additional Resources</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-appendix"><div class="toc-title-box"><a href="formula-sheet.html" class="internal"><span class="codenumber">A</span> <span class="title">Quiz / Exam Formula Sheet</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-derivApp-curve1"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Curve Sketching Part 1</span>
+</h2>
+<article class="objectives goal-like" id="sec-derivApp-curve1-2"><h3 class="heading"><span class="type">Objectives</span></h3>
+<ul class="disc" id="sec-derivApp-curve1-2-1">
+<li id="sec-derivApp-curve1-2-1-1">
+<div class="para" id="p-derived-sec-derivApp-curve1-2-1-1">Determine where a function is increasing or decreasing using the sign of <span class="process-math">\(f'(x)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-derivApp-curve1-2-1-1" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-derivApp-curve1-2-1-2">
+<div class="para" id="p-derived-sec-derivApp-curve1-2-1-2">Use the First Derivative Test to classify critical points as local maxima, local minima, or neither.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-derivApp-curve1-2-1-2" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-derivApp-curve1-2-1-3">
+<div class="para" id="p-derived-sec-derivApp-curve1-2-1-3">Determine concavity using the sign of <span class="process-math">\(f''(x)\)</span> and identify inflection points.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-derivApp-curve1-2-1-3" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-derivApp-curve1-2-1-4">
+<div class="para" id="p-derived-sec-derivApp-curve1-2-1-4">Combine derivative information with intercepts and asymptotes to sketch a reasonable graph.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-derivApp-curve1-2-1-4" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Objectives 3.6"><a href="#sec-derivApp-curve1-2" title="Copy heading and permalink for Objectives 3.6" aria-label="Copy heading and permalink for Objectives 3.6">🔗</a></div></article><article class="warning remark-like" id="wrn-curve1-prereq"><h3 class="heading">
+<span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Prerequisite Review.</span>
+</h3>
+<div class="para logical" id="wrn-curve1-prereq-2">
+<div class="para">A key skill needed for curve sketching is the ability to solve equations and inequalities involving derivatives. If you feel a bit out of practice with your inequality solving techniques, it may be helpful to revisit those ideas before diving into the calculus.</div>
+<ul class="disc" id="wrn-curve1-prereq-2-1"><li id="wrn-curve1-prereq-2-1-1">
+<div class="para" id="wrn-curve1-prereq-2-1-1-1">
+<a href="sec-precalc-ineq.html#ssec-ineq-overview" class="internal" title="Subsection: The Test Point Method: Overview">Review section on inequalities </a><div class="autopermalink" data-description="Paragraph"><a href="#wrn-curve1-prereq-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#wrn-curve1-prereq-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li></ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#wrn-curve1-prereq-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Warning 3.6.1: Prerequisite Review"><a href="#wrn-curve1-prereq" title="Copy heading and permalink for Warning 3.6.1: Prerequisite Review" aria-label="Copy heading and permalink for Warning 3.6.1: Prerequisite Review">🔗</a></div></article><div class="para" id="sec-derivApp-curve1-4">Derivatives do more than provide slopes at individual points. They also reveal the overall shape of a graph. In this section, we build a toolkit for sketching the graph of <span class="process-math">\(y=f(x)\)</span> by analyzing <span class="process-math">\(f'(x)\)</span> and <span class="process-math">\(f''(x)\text{.}\)</span> The goal is not a perfect drawing, but a reliable picture that captures the key features.<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivApp-curve1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="subsection" id="ssec-increasing-decreasing"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Increasing and Decreasing</span>
+</h3>
+<article class="definition definition-like" id="def-increasing-decreasing"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Increasing and Decreasing.</span>
+</h4>
+<div class="para" id="def-increasing-decreasing-2-1">A function <span class="process-math">\(f\)</span> is <dfn class="terminology">increasing</dfn> on an interval <span class="process-math">\([a,b]\)</span> if <span class="process-math">\(f(x_1)&lt;f(x_2)\)</span> whenever <span class="process-math">\(x_1&lt;x_2\)</span> in <span class="process-math">\([a,b]\text{.}\)</span> A function <span class="process-math">\(f\)</span> is <dfn class="terminology">decreasing</dfn> on <span class="process-math">\([a,b]\)</span> if <span class="process-math">\(f(x_1)&gt;f(x_2)\)</span> whenever <span class="process-math">\(x_1&lt;x_2\)</span> in <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-increasing-decreasing-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 3.6.2: Increasing and Decreasing"><a href="#def-increasing-decreasing" title="Copy heading and permalink for Definition 3.6.2: Increasing and Decreasing" aria-label="Copy heading and permalink for Definition 3.6.2: Increasing and Decreasing">🔗</a></div></article><div class="para" id="ssec-increasing-decreasing-3">The derivative provides an efficient test: the graph rises where slopes are positive and falls where slopes are negative.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-increasing-decreasing-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-inc-dec"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Increasing/Decreasing Test.</span>
+</h4>
+<div class="para" id="thm-inc-dec-2-1">Let <span class="process-math">\(f\)</span> be continuous on <span class="process-math">\([a,b]\)</span> and differentiable on <span class="process-math">\((a,b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-inc-dec-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ul class="disc" id="thm-inc-dec-2-2">
+<li id="thm-inc-dec-2-2-1">
+<div class="para" id="thm-inc-dec-2-2-1-1">If <span class="process-math">\(f'(x)&gt;0\)</span> for all <span class="process-math">\(x\in(a,b)\text{,}\)</span> then <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-inc-dec-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-inc-dec-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-inc-dec-2-2-2">
+<div class="para" id="thm-inc-dec-2-2-2-1">If <span class="process-math">\(f'(x)&lt;0\)</span> for all <span class="process-math">\(x\in(a,b)\text{,}\)</span> then <span class="process-math">\(f\)</span> is decreasing on <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-inc-dec-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-inc-dec-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Theorem 3.6.3: Increasing/Decreasing Test"><a href="#thm-inc-dec" title="Copy heading and permalink for Theorem 3.6.3: Increasing/Decreasing Test" aria-label="Copy heading and permalink for Theorem 3.6.3: Increasing/Decreasing Test">🔗</a></div></article><details id="thm-inc-dec-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-inc-dec-3-1">Assume <span class="process-math">\(f'(x)&gt;0\)</span> for all <span class="process-math">\(x\in(a,b)\text{,}\)</span> and choose any <span class="process-math">\(x_1&lt;x_2\)</span> in <span class="process-math">\([a,b]\text{.}\)</span> By the Mean Value Theorem, there exists <span class="process-math">\(c\in(x_1,x_2)\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#thm-inc-dec-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="thm-inc-dec-3-2">
+\begin{equation*}
+f'(c)=\frac{f(x_2)-f(x_1)}{x_2-x_1}.
+\end{equation*}
+</div>
+<div class="para" id="thm-inc-dec-3-3">Since <span class="process-math">\(x_2-x_1&gt;0\)</span> and <span class="process-math">\(f'(c)&gt;0\text{,}\)</span> we have <span class="process-math">\(f(x_2)-f(x_1)&gt;0\text{,}\)</span> so <span class="process-math">\(f(x_2)&gt;f(x_1)\text{.}\)</span> Therefore <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\([a,b]\text{.}\)</span> The decreasing case is similar.<div class="autopermalink" data-description="Paragraph"><a href="#thm-inc-dec-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.6.3.1"><a href="#thm-inc-dec-3" title="Copy heading and permalink for Proof 3.6.3.1" aria-label="Copy heading and permalink for Proof 3.6.3.1">🔗</a></div></article></details><article class="example example-like" id="ex-inc-dec-poly"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-inc-dec-poly-1-1">Let <span class="process-math">\(f(x)=x^5-15x^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-inc-dec-poly-1-2">(a) Identify all critical points of <span class="process-math">\(f\)</span> and determine where it is increasing and decreasing.<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-inc-dec-poly-1-3">(b) Use your results from (a) to plot a sketch of the graph of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-inc-dec-poly-1-4">(c) Use your sketch from (b) to classify the critical points as local maxima, minima, or neither.<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-inc-dec-poly-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Video Solution</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-inc-dec-poly-2-2">Here is a video solution to this problem.<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-inc-dec-poly-2-3">
+<div class="video-box" style="width: 90%;padding-top: 50.625%; margin-left: 5%; margin-right: 5%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/eYcCeFBrLqc?&amp;modestbranding=1&amp;rel=0" id="ex-inc-dec-poly-2-3-1"></iframe></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.6.4.1: Video Solution"><a href="#ex-inc-dec-poly-2" title="Copy heading and permalink for Solution 3.6.4.1: Video Solution" aria-label="Copy heading and permalink for Solution 3.6.4.1: Video Solution">🔗</a></div>
+</div></details><details id="ex-inc-dec-poly-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Solution</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-inc-dec-poly-3-2">(a) Differentiate:<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-inc-dec-poly-3-3">
+\begin{equation*}
+f'(x)=5x^4-45x^2=5x^2(x^2-9)=5x^2(x-3)(x+3).
+\end{equation*}
+</div>
+<div class="para" id="ex-inc-dec-poly-3-4">The critical points occur where <span class="process-math">\(f'(x)=0\)</span> (since it is never undefined), so <span class="process-math">\(x=-3,0,3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-inc-dec-poly-3-5">Since we will need to plot the graph, we should also compute the <span class="process-math">\(y\)</span>-coordinates of the critical points:<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-inc-dec-poly-3-6">
+\begin{equation*}
+\begin{array}{rcl}
+f(-3) &amp; = &amp; (-3)^5-15(-3)^3  = 162\\
+f(0) &amp; = &amp; 0^5-15\cdot 0^3 = 0\\
+f(3) &amp; = &amp; 3^5-15\cdot 3^3 = -162
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-inc-dec-poly-3-7">Now we will use the test point method to determine where <span class="process-math">\(f'(x) \gt 0\)</span> (i.e., where the function is increasing) and where <span class="process-math">\(f'(x) \lt 0\)</span> (i.e., where the function is decreasing).<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-inc-dec-poly-3-8">Choose test points in each of the intervals determined by the critical points:<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-inc-dec-poly-3-9">
+\begin{equation*}
+\begin{array}{c|c|c}
+\text{Interval} &amp; \text{Test Point} &amp; \text{Sign of } f'(x) \\ \hline
+(-\infty,-3) &amp; -4 &amp; (+)(-)(-)\to(+) \\ \hline
+(-3,0) &amp; -1 &amp; (+)(-)(+)\to(-) \\ \hline
+(0,3) &amp; 1 &amp; (+)(-)(+)\to(-) \\ \hline
+(3,\infty) &amp; 4 &amp; (+)(+)(+)\to(+) \\ \hline
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-inc-dec-poly-3-10">
+<em class="emphasis">Remember:</em> That the value of the derivative at the test point is not important; only the sign matters. The sign of <span class="process-math">\(f'(x)\)</span> is determined by the signs of the factors <span class="process-math">\(5x^2\text{,}\)</span> <span class="process-math">\((x-3)\text{,}\)</span> and <span class="process-math">\((x+3)\)</span> (hence the short-hand notation in the table above).<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-inc-dec-poly-3-11">A sign chart is summarized below.<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-inc-dec-poly-3-12">
+\begin{equation*}
+\begin{array}{c|c|c|c|c|c|c|c}
+x &amp; -4 &amp; -3 &amp; -1 &amp; 0 &amp; 1 &amp; 3 &amp; 4 \\ \hline
+f'(x) &amp; (+) &amp; 0 &amp; (-) &amp; 0 &amp; (-) &amp; 0 &amp; (+) \\ \hline
+f(x) &amp; \nearrow &amp; 162 &amp; \searrow &amp; 0 &amp; \searrow &amp; -162 &amp; \nearrow
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-inc-dec-poly-3-13">(b) To sketch the graph we can first plot the critical points and then use the increasing/decreasing behavior to connect them.<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-3-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-inc-dec-poly-3-14">Here is a good place to start<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-3-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-inc-dec-intervals"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="external/images/curvePlot1.PNG" class="contained" alt="A graph with vertical dashed lines at x = -3, 0, and 3 dividing the real line into four intervals. The leftmost and rightmost regions are labeled INC (increasing), while the two middle regions are labeled DEC (decreasing). Points marking critical values are shown on the graph."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A sign chart indicating where a function is increasing and decreasing. Along with the critical points.<div class="autopermalink" data-description="Figure 3.6.5"><a href="#fig-inc-dec-intervals" title="Copy heading and permalink for Figure 3.6.5" aria-label="Copy heading and permalink for Figure 3.6.5">🔗</a></div></figcaption></figure><div class="para" id="ex-inc-dec-poly-3-16">And here is a good final sketch. Remember at the critical points the slope is zero so the graph should flatten out near these points. Also polynomial functions are differentiable everywhere so we should not have any sharp corners or cusps.<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-3-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-inc-dec-intervals2"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="external/images/curvePlot2.PNG" class="contained" alt="A graph with vertical dashed lines at x = -3, 0, and 3 dividing the real line into four intervals. The leftmost and rightmost regions are labeled INC (increasing), while the two middle regions are labeled DEC (decreasing). Points marking critical values are shown on the graph. A curve connects the critical points, rising from the left to the first critical point at (-3, 162), then falling to the second critical point at (0, 0), then falling again to the third critical point at (3, -162), and finally rising again to the right."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A sign chart indicating where a function is increasing and decreasing, the critical points, and a sketch of the graph connecting them.<div class="autopermalink" data-description="Figure 3.6.6"><a href="#fig-inc-dec-intervals2" title="Copy heading and permalink for Figure 3.6.6" aria-label="Copy heading and permalink for Figure 3.6.6">🔗</a></div></figcaption></figure><div class="para" id="ex-inc-dec-poly-3-18">(c) The function changes from increasing to decreasing at <span class="process-math">\(x=-3\text{,}\)</span> so there is a local maximum at <span class="process-math">\(x=-3\text{.}\)</span> The function changes from decreasing to increasing at <span class="process-math">\(x=3\text{,}\)</span> so there is a local minimum at <span class="process-math">\(x=3\text{.}\)</span> At <span class="process-math">\(x=0\text{,}\)</span> the derivative is zero but the function is decreasing on both sides, so <span class="process-math">\(x=0\)</span> is neither a local maximum nor a local minimum.<div class="autopermalink" data-description="Paragraph"><a href="#ex-inc-dec-poly-3-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.6.4.2: Written Solution"><a href="#ex-inc-dec-poly-3" title="Copy heading and permalink for Solution 3.6.4.2: Written Solution" aria-label="Copy heading and permalink for Solution 3.6.4.2: Written Solution">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 3.6.4"><a href="#ex-inc-dec-poly" title="Copy heading and permalink for Example 3.6.4" aria-label="Copy heading and permalink for Example 3.6.4">🔗</a></div></article><div class="para" id="ssec-increasing-decreasing-6">Now let’s formalize the classification of critical points like we did in the last example using the first derivative.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-increasing-decreasing-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-first-derivative-test"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">First Derivative Test.</span>
+</h4>
+<div class="para" id="thm-first-derivative-test-2-1">Let <span class="process-math">\(f\)</span> be differentiable on an interval around <span class="process-math">\(c\)</span> and suppose <span class="process-math">\(f'(c)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-first-derivative-test-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ul class="disc" id="thm-first-derivative-test-2-2">
+<li id="thm-first-derivative-test-2-2-1">
+<div class="para" id="thm-first-derivative-test-2-2-1-1">If <span class="process-math">\(f'(x)&gt;0\)</span> for <span class="process-math">\(x&lt;c\)</span> and <span class="process-math">\(f'(x)&lt;0\)</span> for <span class="process-math">\(x&gt;c\text{,}\)</span> then <span class="process-math">\(x=c\)</span> is a local maximum.<div class="autopermalink" data-description="Paragraph"><a href="#thm-first-derivative-test-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-first-derivative-test-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-first-derivative-test-2-2-2">
+<div class="para" id="thm-first-derivative-test-2-2-2-1">If <span class="process-math">\(f'(x)&lt;0\)</span> for <span class="process-math">\(x&lt;c\)</span> and <span class="process-math">\(f'(x)&gt;0\)</span> for <span class="process-math">\(x&gt;c\text{,}\)</span> then <span class="process-math">\(x=c\)</span> is a local minimum.<div class="autopermalink" data-description="Paragraph"><a href="#thm-first-derivative-test-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-first-derivative-test-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-first-derivative-test-2-2-3">
+<div class="para" id="thm-first-derivative-test-2-2-3-1">If <span class="process-math">\(f'(x)\)</span> has the same sign on both sides of <span class="process-math">\(c\text{,}\)</span> then <span class="process-math">\(x=c\)</span> is neither a local maximum nor a local minimum.<div class="autopermalink" data-description="Paragraph"><a href="#thm-first-derivative-test-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-first-derivative-test-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Theorem 3.6.7: First Derivative Test"><a href="#thm-first-derivative-test" title="Copy heading and permalink for Theorem 3.6.7: First Derivative Test" aria-label="Copy heading and permalink for Theorem 3.6.7: First Derivative Test">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Increasing and Decreasing"><a href="#ssec-increasing-decreasing" title="Copy heading and permalink for Subsection: Increasing and Decreasing" aria-label="Copy heading and permalink for Subsection: Increasing and Decreasing">🔗</a></div></section><div class="para" id="sec-derivApp-curve1-6">So with only the first derivative, we can determine where a function is increasing or decreasing and classify critical points as local maxima, minima, or neither. However, there are other features of the graph that we can analyze using the second derivative.<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivApp-curve1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="subsection" id="ssec-concavity"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Concavity and Inflection Points</span>
+</h3>
+<div class="para" id="ssec-concavity-2">Increasing and decreasing behavior describes whether the graph rises or falls. Concavity describes how the graph bends.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-concavity-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-concavity"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="def-concavity-1-1">A graph is <dfn class="terminology">concave up</dfn> when it looks like a smile, the curve is bending upwards. The graph is <dfn class="terminology">concave down</dfn> when it looks like a frown, the curve is bending downwards. An <dfn class="terminology">inflection point</dfn> is a point where the concavity changes.<div class="autopermalink" data-description="Paragraph"><a href="#def-concavity-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 3.6.8"><a href="#def-concavity" title="Copy heading and permalink for Definition 3.6.8" aria-label="Copy heading and permalink for Definition 3.6.8">🔗</a></div></article><article class="remark remark-like" id="rem-concavity-visual"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="rem-concavity-visual-1">Concavity is independent of increasing/decreasing behavior. A graph can be increasing and concave down at the same time, for example. Here are some examples of graphs with different combinations of increasing/decreasing and concavity.<div class="autopermalink" data-description="Paragraph"><a href="#rem-concavity-visual-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-basic-inc-dec"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/fig-basic-inc-dec-2.svg" role="img" class="contained" alt="Six small coordinate graphs arranged in two columns and three rows. Top left: an increasing curve that is concave down, labeled “INC and CON down.” Top right: a decreasing curve that is concave down, labeled “DEC and CON down.” Middle left: an increasing curve that is concave up, labeled “INC and CON up.” Middle right: a decreasing curve that is concave up, labeled “DEC and CON up.” Bottom left: a cubic-shaped curve with an inflection point at x = 2 marked by a dot, labeled “INFLECTION POINT.” Bottom right: a reflected cubic-shaped curve with an inflection point at x = 2 marked by a dot, labeled “INFLECTION POINT.”"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A diagram showing what concavity looks like for increasing and decreasing functions.<div class="autopermalink" data-description="Figure 3.6.10"><a href="#fig-basic-inc-dec" title="Copy heading and permalink for Figure 3.6.10" aria-label="Copy heading and permalink for Figure 3.6.10">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Remark 3.6.9"><a href="#rem-concavity-visual" title="Copy heading and permalink for Remark 3.6.9" aria-label="Copy heading and permalink for Remark 3.6.9">🔗</a></div></article><div class="para" id="ssec-concavity-5">A helpful way to connect this to derivatives is to think about slopes. When a function is concave up, its slopes tend to increase as <span class="process-math">\(x\)</span> increases. When a function is concave down, its slopes tend to decrease.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-concavity-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-concavity-test"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Concavity Test.</span>
+</h4>
+<div class="para" id="thm-concavity-test-2-1">Let <span class="process-math">\(f\)</span> be twice differentiable on an interval <span class="process-math">\((a,b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-concavity-test-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ul class="disc" id="thm-concavity-test-2-2">
+<li id="thm-concavity-test-2-2-1">
+<div class="para" id="thm-concavity-test-2-2-1-1">If <span class="process-math">\(f''(x)&gt;0\)</span> for all <span class="process-math">\(x\in(a,b)\text{,}\)</span> then <span class="process-math">\(f\)</span> is concave up on <span class="process-math">\((a,b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-concavity-test-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-concavity-test-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-concavity-test-2-2-2">
+<div class="para" id="thm-concavity-test-2-2-2-1">If <span class="process-math">\(f''(x)&lt;0\)</span> for all <span class="process-math">\(x\in(a,b)\text{,}\)</span> then <span class="process-math">\(f\)</span> is concave down on <span class="process-math">\((a,b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-concavity-test-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-concavity-test-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-concavity-test-2-2-3">
+<div class="para" id="thm-concavity-test-2-2-3-1">If <span class="process-math">\(f''(c)=0\)</span> and <span class="process-math">\(f''\)</span> changes sign at <span class="process-math">\(x=c\text{,}\)</span> then <span class="process-math">\((c,f(c))\)</span> is an inflection point.<div class="autopermalink" data-description="Paragraph"><a href="#thm-concavity-test-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-concavity-test-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Theorem 3.6.11: Concavity Test"><a href="#thm-concavity-test" title="Copy heading and permalink for Theorem 3.6.11: Concavity Test" aria-label="Copy heading and permalink for Theorem 3.6.11: Concavity Test">🔗</a></div></article><details id="thm-concavity-test-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-concavity-test-3-1">Apply the Increasing/Decreasing Test to <span class="process-math">\(g(x)=f'(x)\text{.}\)</span> If <span class="process-math">\(g'(x)&gt;0\text{,}\)</span> then <span class="process-math">\(g\)</span> is increasing. Since <span class="process-math">\(g'(x)=(f'(x))'=f''(x)\text{,}\)</span> the condition <span class="process-math">\(f''(x)&gt;0\)</span> means <span class="process-math">\(f'(x)\)</span> is increasing, which corresponds to concave up behavior. The concave down case is similar, and the inflection point criterion follows from a sign change in <span class="process-math">\(f''\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-concavity-test-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.6.11.1"><a href="#thm-concavity-test-3" title="Copy heading and permalink for Proof 3.6.11.1" aria-label="Copy heading and permalink for Proof 3.6.11.1">🔗</a></div></article></details><article class="example example-like" id="ex-concavity-poly"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-concavity-poly-1-1">Continue with <span class="process-math">\(f(x)=x^5-15x^3\text{.}\)</span> Find where the graph is concave up or concave down, and identify inflection points.<div class="autopermalink" data-description="Paragraph"><a href="#ex-concavity-poly-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-concavity-poly-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Video Solution</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-concavity-poly-2-2">Here is a video solution to this problem.<div class="autopermalink" data-description="Paragraph"><a href="#ex-concavity-poly-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-concavity-poly-2-3">
+<div class="video-box" style="width: 90%;padding-top: 50.625%; margin-left: 5%; margin-right: 5%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/eYcCeFBrLqc?&amp;modestbranding=1&amp;rel=0" id="ex-concavity-poly-2-3-1"></iframe></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-concavity-poly-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.6.12.1: Video Solution"><a href="#ex-concavity-poly-2" title="Copy heading and permalink for Solution 3.6.12.1: Video Solution" aria-label="Copy heading and permalink for Solution 3.6.12.1: Video Solution">🔗</a></div>
+</div></details><details id="ex-concavity-poly-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Solution</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-concavity-poly-3-2">We already computed <span class="process-math">\(f'(x)=5x^4-45x^2\text{.}\)</span> Differentiate again:<div class="autopermalink" data-description="Paragraph"><a href="#ex-concavity-poly-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-concavity-poly-3-3">
+\begin{equation*}
+f''(x)=20x^3-90x=10x(2x^2-9).
+\end{equation*}
+</div>
+<div class="para" id="ex-concavity-poly-3-4">Candidate inflection points occur where <span class="process-math">\(f''(x)=0\)</span> or where <span class="process-math">\(f''(x)\)</span> is undefined (while <span class="process-math">\(f\)</span> is defined). However since <span class="process-math">\(f''(x)\)</span> is defined for all real <span class="process-math">\(x\text{,}\)</span> we only consider where <span class="process-math">\(f''(x)=0\text{.}\)</span> So either <span class="process-math">\(10x=0 \implies x=0\)</span> or <span class="process-math">\(2x^2-9=0\text{,}\)</span> which gives <span class="process-math">\(x=\pm\dfrac{3}{\sqrt{2}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-concavity-poly-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-concavity-poly-3-5">Remember that <span class="process-math">\(\sqrt{2}\approx 1.4\)</span> so the inflection points are approximately at <span class="process-math">\(x=-2.1\text{,}\)</span> <span class="process-math">\(x=0\text{,}\)</span> and <span class="process-math">\(x=2.1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-concavity-poly-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-concavity-poly-3-6">Now we will use the test point method to determine where <span class="process-math">\(f''(x) \gt 0\)</span> (i.e., where the function is concave up) and where <span class="process-math">\(f''(x) \lt 0\)</span> (i.e., where the function is concave down).<div class="autopermalink" data-description="Paragraph"><a href="#ex-concavity-poly-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-concavity-poly-3-7">Choose test points in each of the intervals and check the sign of <span class="process-math">\(f''(x)=(2x^2-9)\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-concavity-poly-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-concavity-poly-3-8">
+\begin{equation*}
+\begin{array}{c|c|c}
+\text{Interval} &amp; \text{Test Point} &amp; \text{Sign of } f''(x) \\ \hline
+(-\infty,-\tfrac{3}{\sqrt{2}}) &amp; -4 &amp; (-)(+) \to (-) \\ \hline
+(-\tfrac{3}{\sqrt{2}},0) &amp; -1 &amp; (-)(-)\to(+) \\ \hline
+(0,\tfrac{3}{\sqrt{2}}) &amp; 1 &amp; (+)(-)\to(-) \\ \hline
+(\tfrac{3}{\sqrt{2}},\infty) &amp; 4 &amp; (+)(+)\to(+) \\ \hline
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-concavity-poly-3-9">So therefore <span class="process-math">\(f\)</span> is concave down on <span class="process-math">\((-\infty,-\frac{3}{\sqrt{2}}) \cup (0,\frac{3}{\sqrt{2}})\text{,}\)</span> and concave up on <span class="process-math">\((-\frac{3}{\sqrt{2}},0) \cup (\frac{3}{\sqrt{2}},\infty)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-concavity-poly-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-concavity-poly-3-10">Because <span class="process-math">\(f''\)</span> changes sign at each of the three candidates, there are inflection points at <span class="process-math">\(x=-\frac{3}{\sqrt{2}}\text{,}\)</span> <span class="process-math">\(x=0\text{,}\)</span> and <span class="process-math">\(x=\frac{3}{\sqrt{2}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-concavity-poly-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.6.12.2: Written Solution"><a href="#ex-concavity-poly-3" title="Copy heading and permalink for Solution 3.6.12.2: Written Solution" aria-label="Copy heading and permalink for Solution 3.6.12.2: Written Solution">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 3.6.12"><a href="#ex-concavity-poly" title="Copy heading and permalink for Example 3.6.12" aria-label="Copy heading and permalink for Example 3.6.12">🔗</a></div></article><div class="para" id="ssec-concavity-8">Let’s illustrate these ideas with a more complicated example that combines all of the features we have discussed so far.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-concavity-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-concavity-9">This upcoming example will also utilize vertical asymptotes from <a href="sec-graphical-limits.html#ssec-locating-va" class="internal" title="Subsection: Locating Vertical Asymptotes">Locating Vertical Asymptotes </a> as well as horizontal asymptotes from <a href="sec-limit-inf.html#dominant-terms" class="internal" title="Subsection: Dominant Terms and Rational Functions">Calculating Horizontal Asymptotes </a> back in Chapter 1.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-concavity-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-curvesketch-rational"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Longer Example.</span>
+</h4>
+<div class="para" id="ex-curvesketch-rational-2-1">Consider the function <span class="process-math">\(f(x)=x+\dfrac{1}{x+1}-\dfrac{3}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-curvesketch-rational-2-2">(a) Identify intercepts, vertical asymptotes, and horizontal asymptotes of the graph of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-curvesketch-rational-2-3">(b) Locate critical points and intervals of increase/decrease.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-curvesketch-rational-2-4">(c) Determine concavity and inflection points.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-curvesketch-rational-2-5">(d) Use your results from (a)-(c) to sketch the graph of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ex-curvesketch-rational-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Video Solution</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-curvesketch-rational-3-2">Here is a video solution to this problem.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-curvesketch-rational-3-3">
+<div class="video-box" style="width: 90%;padding-top: 50.625%; margin-left: 5%; margin-right: 5%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/eYcCeFBrLqc?&amp;modestbranding=1&amp;rel=0" id="ex-curvesketch-rational-3-3-1"></iframe></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.6.13.1: Video Solution"><a href="#ex-curvesketch-rational-3" title="Copy heading and permalink for Solution 3.6.13.1: Video Solution" aria-label="Copy heading and permalink for Solution 3.6.13.1: Video Solution">🔗</a></div>
+</div></details><details id="ex-curvesketch-rational-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Solution</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-curvesketch-rational-4-2">
+<div class="para">(a) The <span class="process-math">\(y\)</span>-intercept occurs at <span class="process-math">\(f(0)=\frac{-1}{2}\text{.}\)</span> Setting <span class="process-math">\(f(x)=0\)</span> and solving for <span class="process-math">\(x\text{,}\)</span> we find:</div>
+<div class="displaymath process-math" id="ex-curvesketch-rational-4-2-5">
+\begin{equation*}
+\begin{array}{rcl}
+0 &amp; = &amp; x+\dfrac{1}{x+1}-\dfrac{3}{2} \\
+2(x+1) (0) &amp; = &amp; 2(x+1) ( x+\dfrac{1}{x+1} - \dfrac{3}{2} ) \\
+0 &amp; = &amp; 2x(x+1) + 2 - 3(x+1) \\
+0 &amp; = &amp; 2x^2 + 2x + 2 - 3x - 3 \\
+0 &amp; = &amp; 2x^2 - x - 1 \\
+0 &amp; = &amp; (2x+1)(x-1)
+\end{array}
+\end{equation*}
+</div>
+<div class="para">so the <span class="process-math">\(x\)</span>-intercepts are at <span class="process-math">\(x=-\frac{1}{2}\)</span> and <span class="process-math">\(x=1\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-curvesketch-rational-4-3">
+<div class="para">There is a vertical asymptote at <span class="process-math">\(x=-1\)</span> since the denominator of the rational part is zero there and the numerator is not. To find horizontal asymptotes, we compute limits as <span class="process-math">\(x\to\pm\infty\text{.}\)</span> We can use dominant term analysis to find that</div>
+<div class="displaymath process-math" id="ex-curvesketch-rational-4-3-3">
+\begin{equation*}
+\displaystyle \lim_{x\to\pm\infty} f(x) \approx \lim_{x\to\pm\infty} x = \pm\infty
+\end{equation*}
+</div>
+<div class="para">so there are no horizontal asymptotes.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-curvesketch-rational-4-4">(b) To find critical points, we first compute the derivative:<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-curvesketch-rational-4-5">
+\begin{equation*}
+f'(x) = 1 - \dfrac{1}{(x+1)^2} = \dfrac{(x+1)^2 - 1}{(x+1)^2} = \dfrac{x^2 + 2x}{(x+1)^2}.
+\end{equation*}
+</div>
+<div class="para logical" id="ex-curvesketch-rational-4-6">
+<div class="para">The critical points occur where <span class="process-math">\(f'(x)=0\)</span> or where <span class="process-math">\(f'(x)\)</span> is undefined (while <span class="process-math">\(f\)</span> is defined). Since <span class="process-math">\(f'(x)\)</span> only undefined when <span class="process-math">\(x=-1\)</span> (since the denominator is zero there), and <span class="process-math">\(f\)</span> is undefined at <span class="process-math">\(x=-1\text{,}\)</span> we only consider where <span class="process-math">\(f'(x)=0\text{.}\)</span> Setting the derivative equal to zero and solving for <span class="process-math">\(x\text{,}\)</span> we find:</div>
+<div class="displaymath process-math" id="ex-curvesketch-rational-4-6-10">
+\begin{equation*}
+\begin{array}{rcl}
+0 &amp; = &amp; \dfrac{x^2 + 2x}{(x+1)^2} \\
+0 &amp; = &amp; x^2+2x \\
+0 &amp; = &amp; x(x+2)
+\end{array}
+\end{equation*}
+</div>
+<div class="para">so the critical points are at <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=-2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-curvesketch-rational-4-7">To determine where <span class="process-math">\(f\)</span> is increasing or decreasing, we can use the test point method to check the sign of <span class="process-math">\(f'(x)\)</span> in each interval determined by the critical points and vertical asymptote:<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-curvesketch-rational-4-8">
+\begin{equation*}
+\begin{array}{c|c|c}
+\text{Interval} &amp; \text{Test Point} &amp; \text{Sign of } f'(x) \\ \hline
+(-\infty,-2) &amp; -3 &amp; \dfrac{(-)(-)}{(+)} \to (+) \\ \hline
+(-2,-1) &amp; -\frac{3}{2} &amp; \dfrac{(-)(+)}{(+)} \to (-) \\ \hline
+(-1,0) &amp; -\frac{1}{2} &amp; \dfrac{(-)(+)}{(+)} \to (-) \\ \hline
+(0,\infty) &amp; 1 &amp; \dfrac{(+)(+)}{(+)} \to (+)
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-curvesketch-rational-4-9">So <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\((-\infty,-2) \cup (0,\infty)\)</span> and decreasing on <span class="process-math">\((-2,-1) \cup (-1,0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-curvesketch-rational-4-10">(c) To determine concavity, we compute the second derivative:<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-curvesketch-rational-4-11">
+\begin{equation*}
+\begin{array}{rcl}
+f''(x) &amp; = &amp; \left(1 - \dfrac{1}{(x+1)^2}\right)' \\
+&amp; = &amp; 0 - \dfrac{2}{(x+1)^3}
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-curvesketch-rational-4-12">Candidate inflection points occur where <span class="process-math">\(f''(x)=0\)</span> or where <span class="process-math">\(f''(x)\)</span> is undefined (while <span class="process-math">\(f\)</span> is defined). Since <span class="process-math">\(f''(x)\)</span> is undefined at <span class="process-math">\(x=-1\text{,}\)</span> we do not consider that point since <span class="process-math">\(f\)</span> is also undefined there. Setting the second derivative equal to zero and solving for <span class="process-math">\(x\text{,}\)</span> we find:<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-curvesketch-rational-4-13">
+\begin{equation*}
+\begin{array}{rcl}
+0 &amp; = &amp; \dfrac{-2}{(x+1)^3} \\
+0 &amp; = &amp; -2
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-curvesketch-rational-4-14">Since there is no value of <span class="process-math">\(x\)</span> that makes <span class="process-math">\(f''(x)=0\text{,}\)</span> there are no inflection points.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-curvesketch-rational-4-15">To determine where <span class="process-math">\(f\)</span> is concave up or concave down, we can use the test point method to check the sign of <span class="process-math">\(f''(x)\)</span> in each interval determined by the vertical asymptote:<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-curvesketch-rational-4-16">
+\begin{equation*}
+\begin{array}{c|c|c}
+\text{Interval} &amp; \text{Test Point} &amp; \text{Sign of } f''(x) \\ \hline
+(-\infty,-1) &amp; -2 &amp; \dfrac{-2}{(-)} \to (+) \\ \hline
+(-1,\infty) &amp; 0 &amp; \dfrac{-2}{(+)} \to (-) \\ \hline 
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-curvesketch-rational-4-17">So <span class="process-math">\(f\)</span> is concave up on <span class="process-math">\((-\infty,-1)\)</span> and concave down on <span class="process-math">\((-1,\infty)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-curvesketch-rational-4-18">(d) We can now combine all of this information to sketch the graph of <span class="process-math">\(f\text{.}\)</span> First I would plot the intercepts, asymptotes, and critical points. Then I would use the intervals of increase/decrease and concavity to determine the shape of the graph in each region.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-inc-dec-concavity-intervals-2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/curvePlot3.PNG" class="contained" alt="A coordinate plane divided by a vertical dashed line marking a critical or inflection value. The leftmost region is shaded and labeled “INC, CON DOWN.” The next region is labeled “DEC.” To the right of the dashed line the region is labeled “DEC, CON UP.” The far right region is labeled “INC.” Several points are marked on the graph to indicate function values in different intervals."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A sign chart showing intervals of increase, decrease, and concavity along with some key points on the graph of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Figure 3.6.14"><a href="#fig-inc-dec-concavity-intervals-2" title="Copy heading and permalink for Figure 3.6.14" aria-label="Copy heading and permalink for Figure 3.6.14">🔗</a></div></figcaption></figure><div class="para" id="ex-curvesketch-rational-4-20">Now we can use the information from the sign chart, asymptotes and critical points to connect all the key points into a coherent sketch of the graph.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curvesketch-rational-4-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-inc-dec-concavity-intervals-3"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/curvePlot4.PNG" class="contained" alt="A coordinate plane divided by a vertical dashed line marking a critical or inflection value. The leftmost region is shaded and labeled “INC, CON DOWN.” The next region is labeled “DEC.” To the right of the dashed line the region is labeled “DEC, CON UP.” The far right region is labeled “INC.” Several points are marked on the graph to indicate function values in different intervals. A curve is drawn through the points that matches the increasing/decreasing and concavity behavior indicated by the sign chart."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Our final sketch of the graph of <span class="process-math">\(f\)</span> based on the intervals of increase/decrease and concavity along with key points and asymptotes.<div class="autopermalink" data-description="Figure 3.6.15"><a href="#fig-inc-dec-concavity-intervals-3" title="Copy heading and permalink for Figure 3.6.15" aria-label="Copy heading and permalink for Figure 3.6.15">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 3.6.13.2: Written Solution"><a href="#ex-curvesketch-rational-4" title="Copy heading and permalink for Solution 3.6.13.2: Written Solution" aria-label="Copy heading and permalink for Solution 3.6.13.2: Written Solution">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 3.6.13: Longer Example"><a href="#ex-curvesketch-rational" title="Copy heading and permalink for Example 3.6.13: Longer Example" aria-label="Copy heading and permalink for Example 3.6.13: Longer Example">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Concavity and Inflection Points"><a href="#ssec-concavity" title="Copy heading and permalink for Subsection: Concavity and Inflection Points" aria-label="Copy heading and permalink for Subsection: Concavity and Inflection Points">🔗</a></div></section><section class="subsection" id="additional-worked-examples-curve1"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additional Worked-Out Examples</span>
+</h3>
+<div class="para" id="additional-worked-examples-curve1-2">To keep this section at a reasonable length, we include only a few representative examples directly in the text. If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional fully worked-out examples are available in: <em class="alert"><a href="sec-derivApp-ww.html#subsec-derivApp-curve1" class="internal" title="Subsection: Section 3.6 Curve Sketching Part 1">Additional Examples for Curve Sketching Part 1 </a></em><div class="autopermalink" data-description="Paragraph"><a href="#additional-worked-examples-curve1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Additional Worked-Out Examples"><a href="#additional-worked-examples-curve1" title="Copy heading and permalink for Subsection: Additional Worked-Out Examples" aria-label="Copy heading and permalink for Subsection: Additional Worked-Out Examples">🔗</a></div></section><section class="exercises" id="exercises-curve-sketching-1"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Practice / Study Problems</span>
+</h3>
+<div class="exercisegroup" id="exercises-curve-sketching-1-2">
+<h4 class="heading"><span class="title">Some True/False Problems.</span></h4>
+<div class="introduction" id="exercises-curve-sketching-1-2-2"><div class="para" id="exercises-curve-sketching-1-2-2-1">Determine whether each statement is true or false and briefly justify your reasoning.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-curve-sketching-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="tf-curve1-01"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-curve1-01-1-1">If <span class="process-math">\(f'(x)&gt;0\)</span> for all <span class="process-math">\(x\)</span> in an interval <span class="process-math">\((a,b)\text{,}\)</span> then <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\((a,b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-01-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-curve1-01-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-curve1-01-2-1">
+<em class="emphasis">True.</em> This is exactly the Increasing/Decreasing Test.<div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-01-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1"><a href="#tf-curve1-01-2" title="Copy heading and permalink for Solution 1.1" aria-label="Copy heading and permalink for Solution 1.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1"><a href="#tf-curve1-01" title="Copy heading and permalink for Exercise 1" aria-label="Copy heading and permalink for Exercise 1">🔗</a></div></article><article class="exercise exercise-like" id="tf-curve1-02"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-curve1-02-1-1">If <span class="process-math">\(f'(3)=0\text{,}\)</span> then <span class="process-math">\(f\)</span> has a local maximum or a local minimum at <span class="process-math">\(x=3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-02-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-curve1-02-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-curve1-02-2-1">
+<em class="emphasis">False.</em> A critical point can be neither. For example, consider <span class="process-math">\(f(x)=x^3\)</span> at <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-02-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.1"><a href="#tf-curve1-02-2" title="Copy heading and permalink for Solution 2.1" aria-label="Copy heading and permalink for Solution 2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 2"><a href="#tf-curve1-02" title="Copy heading and permalink for Exercise 2" aria-label="Copy heading and permalink for Exercise 2">🔗</a></div></article><article class="exercise exercise-like" id="tf-curve1-05"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-curve1-05-1-1">If <span class="process-math">\(f'(x)\)</span> changes sign from negative to positive at <span class="process-math">\(x=2\text{,}\)</span> then <span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-05-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-curve1-05-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-curve1-05-2-1">
+<em class="emphasis">True.</em> This is the First Derivative Test for a local minimum.<div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-05-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.1"><a href="#tf-curve1-05-2" title="Copy heading and permalink for Solution 3.1" aria-label="Copy heading and permalink for Solution 3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 3"><a href="#tf-curve1-05" title="Copy heading and permalink for Exercise 3" aria-label="Copy heading and permalink for Exercise 3">🔗</a></div></article><article class="exercise exercise-like" id="tf-curve1-07"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-curve1-07-1-1">If <span class="process-math">\(f''(x)&gt;0\)</span> on an interval, then the slopes of <span class="process-math">\(f\)</span> are increasing on that interval.<div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-07-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-curve1-07-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-curve1-07-2-1">
+<em class="emphasis">True.</em> <span class="process-math">\(f''(x)&gt;0\)</span> means <span class="process-math">\(f'(x)\)</span> is increasing.<div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-07-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1"><a href="#tf-curve1-07-2" title="Copy heading and permalink for Solution 4.1" aria-label="Copy heading and permalink for Solution 4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 4"><a href="#tf-curve1-07" title="Copy heading and permalink for Exercise 4" aria-label="Copy heading and permalink for Exercise 4">🔗</a></div></article><article class="exercise exercise-like" id="tf-curve1-08"><h5 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-curve1-08-1-1">If <span class="process-math">\(f\)</span> is increasing on an interval, then it must be concave up on that interval.<div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-08-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-curve1-08-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-curve1-08-2-1">
+<em class="emphasis">False.</em> A function can be increasing and concave down.<div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-08-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 5.1"><a href="#tf-curve1-08-2" title="Copy heading and permalink for Solution 5.1" aria-label="Copy heading and permalink for Solution 5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 5"><a href="#tf-curve1-08" title="Copy heading and permalink for Exercise 5" aria-label="Copy heading and permalink for Exercise 5">🔗</a></div></article><article class="exercise exercise-like" id="tf-curve1-09"><h5 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-curve1-09-1-1">If <span class="process-math">\(f\)</span> is concave down on an interval, then <span class="process-math">\(f'(x)\)</span> is decreasing on that interval.<div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-09-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-curve1-09-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-curve1-09-2-1">
+<em class="emphasis">True.</em> Concave down means <span class="process-math">\(f''(x)&lt;0\text{,}\)</span> so <span class="process-math">\(f'(x)\)</span> decreases.<div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-09-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.1"><a href="#tf-curve1-09-2" title="Copy heading and permalink for Solution 6.1" aria-label="Copy heading and permalink for Solution 6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 6"><a href="#tf-curve1-09" title="Copy heading and permalink for Exercise 6" aria-label="Copy heading and permalink for Exercise 6">🔗</a></div></article><article class="exercise exercise-like" id="tf-curve1-10"><h5 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-curve1-10-1-1">If <span class="process-math">\(f''(5)=0\text{,}\)</span> then <span class="process-math">\((5,f(5))\)</span> must be an inflection point.<div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-curve1-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-curve1-10-2-1">
+<em class="emphasis">False.</em> You also need <span class="process-math">\(f''\)</span> to change sign at <span class="process-math">\(x=5\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 7.1"><a href="#tf-curve1-10-2" title="Copy heading and permalink for Solution 7.1" aria-label="Copy heading and permalink for Solution 7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 7"><a href="#tf-curve1-10" title="Copy heading and permalink for Exercise 7" aria-label="Copy heading and permalink for Exercise 7">🔗</a></div></article><article class="exercise exercise-like" id="tf-curve1-11"><h5 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-curve1-11-1-1">It is possible for <span class="process-math">\(f\)</span> to have an inflection point at <span class="process-math">\(x=-1\)</span> even if <span class="process-math">\(f'(-1)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-curve1-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-curve1-11-2-1">
+<em class="emphasis">True.</em> Inflection points concern concavity; the slope can be zero there.<div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 8.1"><a href="#tf-curve1-11-2" title="Copy heading and permalink for Solution 8.1" aria-label="Copy heading and permalink for Solution 8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 8"><a href="#tf-curve1-11" title="Copy heading and permalink for Exercise 8" aria-label="Copy heading and permalink for Exercise 8">🔗</a></div></article><article class="exercise exercise-like" id="tf-curve1-12"><h5 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-curve1-12-1-1">If <span class="process-math">\(f''(x)\)</span> is undefined at <span class="process-math">\(x=4\text{,}\)</span> then <span class="process-math">\(x=4\)</span> cannot be an inflection point.<div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-curve1-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-curve1-12-2-1">
+<em class="emphasis">False.</em> An inflection point can occur where <span class="process-math">\(f''\)</span> is undefined, as long as concavity changes and <span class="process-math">\(f\)</span> is defined.<div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 9.1"><a href="#tf-curve1-12-2" title="Copy heading and permalink for Solution 9.1" aria-label="Copy heading and permalink for Solution 9.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 9"><a href="#tf-curve1-12" title="Copy heading and permalink for Exercise 9" aria-label="Copy heading and permalink for Exercise 9">🔗</a></div></article><article class="exercise exercise-like" id="tf-curve1-13"><h5 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-curve1-13-1-1">Consider the graph of <span class="process-math">\(f\)</span> below. On this graph <span class="process-math">\(f'(2) \gt f''(2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/latex-image/tf-curve1-13-1-2.svg" role="img" class="contained" alt="A coordinate plane showing a curve labeled f(x). The curve is increasing from left to right and gradually flattening, meaning its slope is positive but decreasing as x increases. The graph bends downward, indicating it is concave down. A solid point is marked on the curve directly above x equals 2, with a dashed vertical line dropping from the point to the x-axis at 2."></div>
+<div class="solutions"><details id="tf-curve1-13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-curve1-13-2-1">
+<em class="emphasis">True.</em> The slope at <span class="process-math">\(x=2\)</span> is positive (the curve is increasing), so therefore <span class="process-math">\(f'(2) \gt 0\text{.}\)</span> The concavity is downward (the curve is bending down), so <span class="process-math">\(f''(2) \lt 0\text{.}\)</span> Therefore, <span class="process-math">\(f'(2) \gt f''(2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-curve1-13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 10.1"><a href="#tf-curve1-13-2" title="Copy heading and permalink for Solution 10.1" aria-label="Copy heading and permalink for Solution 10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 10"><a href="#tf-curve1-13" title="Copy heading and permalink for Exercise 10" aria-label="Copy heading and permalink for Exercise 10">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 1–10: Some True/False Problems"><a href="#exercises-curve-sketching-1-2" title="Copy heading and permalink for Exercise Group 1–10: Some True/False Problems" aria-label="Copy heading and permalink for Exercise Group 1–10: Some True/False Problems">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercises: Practice / Study Problems"><a href="#exercises-curve-sketching-1" title="Copy heading and permalink for Exercises: Practice / Study Problems" aria-label="Copy heading and permalink for Exercises: Practice / Study Problems">🔗</a></div></section><article class="remark remark-like" id="sec-derivApp-curve1-10"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-derivApp-curve1-10-1">While these True / False problems are good for quickly testing your understanding of the concepts, you should also practice applying these ideas to more complicated and complete problems (like those that appear on WeBWork) and can possibly appear on quizzes and exams.<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivApp-curve1-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivApp-curve1-10-2">
+<em class="alert">Reminder:</em> There are more fully worked-out examples available in <a href="sec-derivApp-ww.html#subsec-derivApp-curve1" class="internal" title="Subsection: Section 3.6 Curve Sketching Part 1">Additional Examples for Curve Sketching Part 1 </a> that you can use to practice with and to check your work against.<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivApp-curve1-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 3.6.16"><a href="#sec-derivApp-curve1-10" title="Copy heading and permalink for Remark 3.6.16" aria-label="Copy heading and permalink for Remark 3.6.16">🔗</a></div></article><div class="autopermalink" data-description="Section 3.6: Curve Sketching Part 1"><a href="#sec-derivApp-curve1" title="Copy heading and permalink for Section 3.6: Curve Sketching Part 1" aria-label="Copy heading and permalink for Section 3.6: Curve Sketching Part 1">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-derivApp-mvt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-derivApp-curve2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="feedback-link" href="mailto:maccomb1@msu.edu" target="_blank">Feedback</a><a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

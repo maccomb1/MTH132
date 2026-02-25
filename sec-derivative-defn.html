@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette: leaves                       *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Definition of the Derivative</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus 1">
+<meta property="book:author" content="Ryan Maccombs">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.15';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="calculus1" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="mth132.html"><span class="title">Calculus 1</span> <span class="subtitle">MSU MTH132</span></a></h1>
+<p class="byline">Ryan Maccombs</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-derivative-intro.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-derivative.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-derivative-rules.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Introduction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Students: How to Use this Book</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-precalc.html" class="internal"><span class="codenumber">0</span> <span class="title">Precalculus Review</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-basics.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Arithmetic Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-whole-numbers-signs" class="internal"><span class="title">Signs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-fractions" class="internal"><span class="title">Fractions and Rational Expressions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-distributive" class="internal"><span class="title">Distributive Law and Common Errors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-exponents" class="internal"><span class="title">Powers and Rational Exponents</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-basics.html#ssec-rationalizing" class="internal"><span class="title">Rationalizing the Denominator</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-factor.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Factoring</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-gcf" class="internal"><span class="title">Factoring Out a Greatest Common Factor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-difference-squares" class="internal"><span class="title">Difference of Squares</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-perfect-squares" class="internal"><span class="title">Perfect Square Trinomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-factor-general-trinomials" class="internal"><span class="title">Factoring General Trinomials Using the AC Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-factor.html#ssec-precalc-videos-factor" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-funcs.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Functions and Inverses</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-function-review" class="internal"><span class="title">Functions and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-composition" class="internal"><span class="title">Function Composition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-inverses" class="internal"><span class="title">Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-finding-inverses" class="internal"><span class="title">Finding Inverses Algebraically</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-special-inverses" class="internal"><span class="title">Important Examples of Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-funcs.html#ssec-precalc-videos-funcs" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-ineq.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Inequalities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-ineq-overview" class="internal"><span class="title">The Test Point Method: Overview</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-ineq-examples" class="internal"><span class="title">Several Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-ineq.html#ssec-precalc-videos-ineq" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-absval.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Absolute Values</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-definitions" class="internal"><span class="title">Definitions of Absolute Value</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-basic-equations" class="internal"><span class="title">Solving Basic Absolute Value Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-abs-no-solution" class="internal"><span class="title">When Absolute Value Equations Have No Solution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-absval.html#ssec-precalc-videos" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-exp.html" class="internal"><span class="codenumber">0.6</span> <span class="title">Exponentials</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-def" class="internal"><span class="title">Exponential Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-laws" class="internal"><span class="title">Laws of Exponents</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-exp-equations" class="internal"><span class="title">Solving Exponential Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-base-e" class="internal"><span class="title">The Natural Base <span class="process-math">\(e\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-exp.html#ssec-precalc-videos-exp" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-log.html" class="internal"><span class="codenumber">0.7</span> <span class="title">Logarithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-log-def" class="internal"><span class="title">Logarithms as Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-natural-log" class="internal"><span class="title">The Natural Logarithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-log-laws" class="internal"><span class="title">Laws of Logarithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-solving-exp-log" class="internal"><span class="title">Solving Exponential Equations Using Logarithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-log.html#ssec-precalc-videos-log" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-precalc-trig.html" class="internal"><span class="codenumber">0.8</span> <span class="title">Trigonometry</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-triangle" class="internal"><span class="title">Right Triangle Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-unit-circle" class="internal"><span class="title">The Unit Circle Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-other-functions" class="internal"><span class="title">Other Trigonometric Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-unit-circle-values" class="internal"><span class="title">Key Unit Circle Values</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-range" class="internal"><span class="title">Range and Boundedness</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-pythagorean-identities" class="internal"><span class="title">Pythagorean Identities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-trig-identities-preview" class="internal"><span class="title">Angle Sum and Double Angle Formulas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-precalc-trig.html#ssec-precalc-videos-trig" class="internal"><span class="title">Supplemental Video Resources</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-limits.html" class="internal"><span class="codenumber">1</span> <span class="title">Limits and Continuity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-graphical-limits.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Limits from Graphs and Notation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-defn-limits" class="internal"><span class="title">Definition of Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-eval-limits" class="internal"><span class="title">Evaluating Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-one-sided-limits" class="internal"><span class="title">One-sided Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-inf-limits" class="internal"><span class="title">Infinite Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#ssec-locating-va" class="internal"><span class="title">Locating Vertical Asymptotes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graphical-limits.html#additional-limit-graph" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-graphical-limits.html#exercises-limits" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-laws.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Limit Laws and Algebraic Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-limit-laws" class="internal"><span class="title">Operations on Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-plugging-in" class="internal"><span class="title">Limits by Plugging In</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-canceling-zeros" class="internal"><span class="title">Limits by Canceling Zeros</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-cases" class="internal"><span class="title">Limits by Cases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#ssec-squeeze" class="internal"><span class="title">Limits by Squeezing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-laws.html#additional-worked-problems-link" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-laws.html#tf-exercises-limits" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-inf.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Limits at Infinity: Horizontal Asymptotes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#graphs-limits-infinity" class="internal"><span class="title">Visualizing Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#power-functions-infinity" class="internal"><span class="title">Basic Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#dominant-terms" class="internal"><span class="title">Dominant Terms and Rational Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#squeeze-theorem-infinity" class="internal"><span class="title">Squeeze Theorem at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#application-limits-infinity" class="internal"><span class="title">An Application of Limits at Infinity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#non-algebraic-limits-infinity" class="internal"><span class="title">Limits at Infinity Beyond Algebraic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-inf.html#additional-limit-inf" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-inf.html#exercises-limits-infinity-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-continuity.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Continuity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-defn-continuity" class="internal"><span class="title">Definition and Overview</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-types-discontinuities" class="internal"><span class="title">Removable Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-jump-discontinuity" class="internal"><span class="title">Jump Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-infinite-discontinuity" class="internal"><span class="title">Infinite Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-essential-discontinuity" class="internal"><span class="title">Essential Discontinuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-piecewise-continuity" class="internal"><span class="title">Continuity of Piecewise Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#ssec-domain-continuity" class="internal"><span class="title">Domain of Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#sec-limit-continuity-10" class="internal"><span class="title">Compositions of Continuous Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-continuity.html#additional-cont" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-continuity.html#tf-exercises-continuity" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-ivt.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Intermediate Value Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ivt.html#additional-ivt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-limit-ivt.html#exercises-ivt" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-limit-ww.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-gl" class="internal"><span class="title">Section 1.1 Limits from Graphs and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-alg" class="internal"><span class="title">Section 1.2 Limit Laws and Algebraic Techniques</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-inf" class="internal"><span class="title">Section 1.3 Limits at Infinity: Horizontal Asymptotes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-cont" class="internal"><span class="title">Section 1.4 Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-limit-ww.html#subsec-limit-ivt" class="internal"><span class="title">Section 1.5 Intermediate Value Theorem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-derivative.html" class="internal"><span class="codenumber">2</span> <span class="title">The Derivative</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-intro.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction and Motivation for Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#instantaneous-velocity" class="internal"><span class="title">Average and Instantaneous Velocity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#secant-and-tangent" class="internal"><span class="title">Slopes of Secant Lines and Slopes of Tangent Lines</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-intro.html#additional-worked-problems-derivIntro" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-intro.html#exercises-derivative-intro-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-derivative-defn.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Definition of the Derivative</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-definition" class="internal"><span class="title">Definition of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-computation" class="internal"><span class="title">Computing Derivatives from the Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-function" class="internal"><span class="title">The Derivative Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-derivative-fail" class="internal"><span class="title">When the Derivative Fails to Exist</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#ssec-differentiable-on-interval" class="internal"><span class="title">Differentiability on an Interval</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-defn.html#additional-worked-problems-derivDefn" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-defn.html#exercises-derivative-defn-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-rules.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Basic Differentiation Rules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#derivative-notation" class="internal"><span class="title">Notation for the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#basic-derivatives" class="internal"><span class="title">Basic Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#derivative-rules" class="internal"><span class="title">Derivative Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#higher-derivatives" class="internal"><span class="title">Higher Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-rules.html#additional-worked-problems-derivRules" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-rules.html#exercises-derivative-rules-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-trig.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Trigonometric Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#derivative-of-sine-and-cosine" class="internal"><span class="title">Derivative of Sine and Cosine</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#general-trig-derivatives" class="internal"><span class="title">General Trigonometric Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#foundational-trig-limits" class="internal"><span class="title">Two Fundamental Trigonometric Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#trig-limits-from-sin-over-x" class="internal"><span class="title">Limits of Trigonometric Quotients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-trig.html#additional-worked-problems-derivTrig" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-trig.html#exercises-derivative-trig-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-expChain.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Exponential Derivatives and the Chain Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#ssec-expChain-key-results" class="internal"><span class="title">Key Derivative Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#ssec-expChain-interpretation" class="internal"><span class="title">The Statement and Applications of The Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-expChain.html#additional-worked-problems-derivExp" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-expChain.html#exercises-derivative-expChain-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-implicit.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Implicit Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#ssec-implicit-motiv" class="internal"><span class="title">A Motivating Example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#implicit-diff-definition" class="internal"><span class="title">Key Idea: Implicit Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-implicit.html#additional-worked-problems-derivImplic" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-implicit.html#exercises-derivative-implicit" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-inverse.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Inverse Functions and Their Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#derivative-inverse-log" class="internal"><span class="title">The Natural Logarithm and Finding Derivatives of Inverse Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#implicit-inverse-idea" class="internal"><span class="title">Derivatives of Inverse Trig Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#sample-problems-inverse-trig" class="internal"><span class="title">Select Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-inverse.html#additional-worked-problems-derivInv" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivative-inverse.html#exercises-derivative-inv-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivative-ww.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-intro" class="internal"><span class="title">Section 2.1 Introduction and Motivation for Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-defn" class="internal"><span class="title">Section 2.2 Definition of the Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-rules" class="internal"><span class="title">Section 2.3 Basic Differentiation Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-trig" class="internal"><span class="title">Section 2.4 Trigonometric Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-expChain" class="internal"><span class="title">Section 2.5 Exponential Functions and the Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-implicit" class="internal"><span class="title">Section 2.6 Implicit Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivative-ww.html#subsec-deriv-inverse" class="internal"><span class="title">Section 2.7 Inverse Functions and Their Derivatives</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derivativeApplications.html" class="internal"><span class="codenumber">3</span> <span class="title">Applications of the Derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-motion.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Motion in Physics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#functions-of-motion" class="internal"><span class="title">The Basics of Motion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#subsec-SpeedingUp-SlowingDown" class="internal"><span class="title">Speeding Up and Slowing Down</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-motion.html#additional-worked-problems-derivApp-Motion" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-motion.html#exercises-derivApp-Motion-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-related.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Related Rates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#related-rates-intro" class="internal"><span class="title">Introduction to Related Rates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#related-rates-examples" class="internal"><span class="title">Select Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-related.html#additional-worked-problems-derivApp-Related" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-related.html#exercises-derivApp-RRates-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-linear.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Linear Approximation and L’Hopital’s Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#linearization-definition" class="internal"><span class="title">Linearization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#lhopital-statement" class="internal"><span class="title">L’Hôpital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-linear.html#additional-worked-problems-derivApp-Linear" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-linear.html#exercises-derivApp-Linear-tf" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-extrema.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Extrema</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-absolute-extrema" class="internal"><span class="title">Absolute Maxima and Minima</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#subsec-EVT" class="internal"><span class="title">Extreme Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-local-extrema" class="internal"><span class="title">Local Maxima and Minima</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-derivatives-extrema" class="internal"><span class="title">Derivatives and Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#ssec-method-extrema" class="internal"><span class="title">Finding Absolute Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#additional-worked-problems-derivApp-extrema" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-extrema.html#exercises-extrema" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-mvt.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Mean Value Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-rolles" class="internal"><span class="title">Rolle’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-mvt-statement" class="internal"><span class="title">Derivatives versus Difference Quotients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#ssec-derivative-controls-direction" class="internal"><span class="title">Derivative Controls Direction</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#additional-worked-examples-mvt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-mvt.html#exercises-mvt" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-curve1.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Curve Sketching Part 1</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#ssec-increasing-decreasing" class="internal"><span class="title">Increasing and Decreasing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#ssec-concavity" class="internal"><span class="title">Concavity and Inflection Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#additional-worked-examples-curve1" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-curve1.html#exercises-curve-sketching-1" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-curve2.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Curve Sketching Part 2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#ssec-second-derivative-test" class="internal"><span class="title">The Second Derivative Test</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#ssec-symmetry" class="internal"><span class="title">Symmetry</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#subsec-allTogether" class="internal"><span class="title">Putting It All Together</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#additional-worked-examples-curve2" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-curve2.html#exercises-curve-sketching-2" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-opt.html" class="internal"><span class="codenumber">3.8</span> <span class="title">Optimization Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#ssec-opt-motivating-example" class="internal"><span class="title">Motivating Example and Overall Technique</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#ssec-opt-examples" class="internal"><span class="title">More Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-opt.html#additional-worked-examples-opt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-derivApp-opt.html#exercises-optimization" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derivApp-ww.html" class="internal"><span class="codenumber">3.9</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-motion" class="internal"><span class="title">Section 3.1 Motion in Physics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-relatedRates" class="internal"><span class="title">Section 3.2 Related Rates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-linear" class="internal"><span class="title">Section 3.3 Linear Approximation and L’Hopital’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-extrema" class="internal"><span class="title">Section 3.4 Extrema</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-mvt" class="internal"><span class="title">Section 3.5 Mean Value Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-curve1" class="internal"><span class="title">Section 3.6 Curve Sketching Part 1</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-curve2" class="internal"><span class="title">Section 3.7 Curve Sketching Part 2</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derivApp-ww.html#subsec-derivApp-opt" class="internal"><span class="title">Section 3.8 Optimization Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integral.html" class="internal"><span class="codenumber">4</span> <span class="title">Integrals and the Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-antiderivatives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Antiderivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-motivation" class="internal"><span class="title">Reversing Differentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-definition-theorem" class="internal"><span class="title">Definition and the Constant of Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-rules" class="internal"><span class="title">Basic Antidifferentiation Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-reverse-chain" class="internal"><span class="title">A Simple “Reverse Chain Rule” Pattern</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-trig-identity" class="internal"><span class="title">When You Must Rewrite First</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-accel-vel-pos" class="internal"><span class="title">Acceleration, Velocity, and Position</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#additional-worked-problems-integral-antiderivatives" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#exercises-antiderivatives" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-riemannSums.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Riemann Sums and Areas</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-review-derivatives" class="internal"><span class="title">Review: Derivatives as Rates of Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-accumulation" class="internal"><span class="title">Accumulation of Influence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-distance-riemann" class="internal"><span class="title">Riemann Sums for Distance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-total-change" class="internal"><span class="title">The Integral as Total Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-area" class="internal"><span class="title">Area Under a Curve</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-approx-sin-squared" class="internal"><span class="title">Approximating an Integral with Upper and Lower Sums</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#additional-worked-problems-integral-riemannSums" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#exercises-riemann-area" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-defInt.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The Definite Integral</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-precise-definition" class="internal"><span class="title">Precise Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-integrable-functions" class="internal"><span class="title">Integrable Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-negative-integrand" class="internal"><span class="title">Negative Integrands and Signed Area</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-reversing-limits" class="internal"><span class="title">Reversing Limits of Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-rules" class="internal"><span class="title">Integral Rules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-basic-integrals" class="internal"><span class="title">Basic Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#additional-worked-problems-integral-defInt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-defInt.html#exercises-definite-integral" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-FTC.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-integral-as-antiderivative" class="internal"><span class="title">Integral as Antiderivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-first-ftc" class="internal"><span class="title">The First Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-derivative-of-integral-functions" class="internal"><span class="title">Derivatives of Integral Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-sketching-integral-functions" class="internal"><span class="title">Sketching Integral Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#ssec-ftoc-second-ftc" class="internal"><span class="title">The Second Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-FTC.html#additional-worked-problems-integral-FTC" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-FTC.html#exercises-ftoc" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-net.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Net Change Theorem and Indefinite Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-net-change-review" class="internal"><span class="title">Review: Four Meanings of the Definite Integral</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-net-change" class="internal"><span class="title">The Net Change Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-indefinite-integrals" class="internal"><span class="title">Indefinite Integral Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-average-value" class="internal"><span class="title">Average Value of a Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#ssec-mvt-integrals" class="internal"><span class="title">Mean Value Theorem for Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-net.html#additional-worked-problems-integral-net" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-net.html#exercises-net-change-indef" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-usub.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Substitution Rule for Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-reverse-chain" class="internal"><span class="title">Reversing the Chain Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-method" class="internal"><span class="title">Substitution Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-substitution-definite" class="internal"><span class="title">Substitution for Definite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-integral-symmetry" class="internal"><span class="title">Integral Symmetry for Odd Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#ssec-heart-flow" class="internal"><span class="title">Application: Heart Flow Rate</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-usub.html#additional-worked-problems-integral-usub" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-usub.html#exercises-substitution" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-integral-ww.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Additional Worked-Out Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-antiderivatives" class="internal"><span class="title">Section 4.1 Antiderivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-riemannSums" class="internal"><span class="title">Section 4.2 Riemann Sums and Areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-defInt" class="internal"><span class="title">Section 4.3 Definite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-FTC" class="internal"><span class="title">Section 4.4 The Fundamental Theorem of Calculus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-net" class="internal"><span class="title">Section 4.5 Net Change Theorem and Indefinite Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-ww.html#subsec-integral-usub" class="internal"><span class="title">Section 4.6 Substitution Rule for Integration</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Additional Resources</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-appendix"><div class="toc-title-box"><a href="formula-sheet.html" class="internal"><span class="codenumber">A</span> <span class="title">Quiz / Exam Formula Sheet</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-derivative-defn"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definition of the Derivative</span>
+</h2>
+<article class="objectives goal-like" id="sec-derivative-defn-2"><h3 class="heading"><span class="type">Objectives</span></h3>
+<ul class="disc" id="sec-derivative-defn-2-1">
+<li id="sec-derivative-defn-2-1-1">
+<div class="para" id="p-derived-sec-derivative-defn-2-1-1">Compute the derivative <span class="process-math">\(f'(a)\)</span> using the limit definition.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-derivative-defn-2-1-1" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-derivative-defn-2-1-2">
+<div class="para" id="p-derived-sec-derivative-defn-2-1-2">Interpret the derivative as an instantaneous rate of change and as the slope of a tangent line.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-derivative-defn-2-1-2" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-derivative-defn-2-1-3">
+<div class="para" id="p-derived-sec-derivative-defn-2-1-3">Rewrite the derivative definition using either <span class="process-math">\(h\to 0\)</span> or <span class="process-math">\(x\to a\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-derivative-defn-2-1-3" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-derivative-defn-2-1-4">
+<div class="para" id="p-derived-sec-derivative-defn-2-1-4">Define the derivative function <span class="process-math">\(f'(x)\)</span> and interpret it as a new function.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-derivative-defn-2-1-4" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-derivative-defn-2-1-5">
+<div class="para" id="p-derived-sec-derivative-defn-2-1-5">Recognize common situations where a derivative fails to exist (vertical tangents, corners, discontinuities).</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-derivative-defn-2-1-5" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-derivative-defn-2-1-6">
+<div class="para" id="p-derived-sec-derivative-defn-2-1-6">Identify where a function is differentiable on an interval by locating vertical tangents, corners/cusps, and discontinuities.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-derivative-defn-2-1-6" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Objectives 2.2"><a href="#sec-derivative-defn-2" title="Copy heading and permalink for Objectives 2.2" aria-label="Copy heading and permalink for Objectives 2.2">🔗</a></div></article><section class="subsection" id="ssec-derivative-definition"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definition of the Derivative</span>
+</h3>
+<div class="para" id="ssec-derivative-definition-2">In the last section, we saw that instantaneous velocity can be obtained as a limit of average velocities over shorter and shorter time increments. Likewise, the slope of a tangent line can be obtained as a limit of secant slopes as the secant point moves closer and closer to the point of tangency.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-definition-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-derivative-definition-3">Both ideas measure an instantaneous rate of change. For a general function <span class="process-math">\(f(x)\text{,}\)</span> we define its instantaneous rate of change at <span class="process-math">\(x=a\)</span> using the following limit.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-definition-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-derivative-at-a"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Derivative at a Point.</span>
+</h4>
+<div class="para" id="def-derivative-at-a-2-1">The <dfn class="terminology">derivative</dfn> of a function <span class="process-math">\(f(x)\)</span> at <span class="process-math">\(x=a\text{,}\)</span> denoted <span class="process-math">\(f'(a)\text{,}\)</span> is defined by<div class="autopermalink" data-description="Paragraph"><a href="#def-derivative-at-a-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="def-derivative-at-a-2-2">
+\begin{equation*}
+\displaystyle
+f'(a)=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h},
+\end{equation*}
+</div>
+<div class="para" id="def-derivative-at-a-2-3">provided the limit exists.<div class="autopermalink" data-description="Paragraph"><a href="#def-derivative-at-a-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.2.1: Derivative at a Point"><a href="#def-derivative-at-a" title="Copy heading and permalink for Definition 2.2.1: Derivative at a Point" aria-label="Copy heading and permalink for Definition 2.2.1: Derivative at a Point">🔗</a></div></article><div class="para" id="ssec-derivative-definition-5">Here <span class="process-math">\(f(a+h)-f(a)\)</span> is the change in the output, and <span class="process-math">\(h\)</span> is the change in the input. The quotient <span class="process-math">\(\displaystyle\frac{f(a+h)-f(a)}{h}\)</span> is the average rate of change over the interval from <span class="process-math">\(a\)</span> to <span class="process-math">\(a+h\text{,}\)</span> and the derivative is the limit as the increment <span class="process-math">\(h\)</span> shrinks to 0.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-definition-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-derivative-definition-6">Another common form comes from substituting <span class="process-math">\(x=a+h\)</span> (so that <span class="process-math">\(h=x-a\)</span>):<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-definition-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ssec-derivative-definition-7">
+\begin{equation*}
+\displaystyle
+f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}.
+\end{equation*}
+</div>
+<div class="para" id="ssec-derivative-definition-8">Geometrically, if <span class="process-math">\(f'(a)\)</span> exists, then it is the slope of the tangent line to <span class="process-math">\(y=f(x)\)</span> at the point <span class="process-math">\((a,f(a))\text{.}\)</span> The tangent line has equation<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-definition-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ssec-derivative-definition-9">
+\begin{equation*}
+y=f(a)+f'(a)(x-a).
+\end{equation*}
+</div>
+<article class="remark remark-like" id="rem-differentiable-language"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="rem-differentiable-language-1">If the limit defining <span class="process-math">\(f'(a)\)</span> exists, we say <span class="process-math">\(f\)</span> is <dfn class="terminology">differentiable</dfn> at <span class="process-math">\(x=a\text{.}\)</span> If the limit does not exist, then <span class="process-math">\(f'(a)\)</span> is undefined and <span class="process-math">\(f\)</span> is not differentiable at <span class="process-math">\(x=a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rem-differentiable-language-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.2.2"><a href="#rem-differentiable-language" title="Copy heading and permalink for Remark 2.2.2" aria-label="Copy heading and permalink for Remark 2.2.2">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Definition of the Derivative"><a href="#ssec-derivative-definition" title="Copy heading and permalink for Subsection: Definition of the Derivative" aria-label="Copy heading and permalink for Subsection: Definition of the Derivative">🔗</a></div></section><section class="subsection" id="ssec-derivative-computation"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Computing Derivatives from the Definition</span>
+</h3>
+<div class="para" id="ssec-derivative-computation-2">A derivative is always a limit of a difference quotient, so direct substitution usually produces the meaningless expression <span class="process-math">\(\tfrac{0}{0}\text{.}\)</span> The goal is to simplify the difference quotient until the limit can be evaluated.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-computation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-derivative-reciprocal"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Rational Example.</span>
+</h4>
+<div class="para" id="ex-derivative-reciprocal-2-1">Find <span class="process-math">\(f'(2)\)</span> for <span class="process-math">\(f(x)=\dfrac{1}{x+1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-reciprocal-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-derivative-reciprocal-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-derivative-reciprocal-3-1">First let’s start by writing out the difference quotient:<div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-reciprocal-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-derivative-reciprocal-3-2">
+\begin{equation*}
+\begin{array}{rcl}
+\displaystyle \dfrac{f(2+h)-f(2)}{h} &amp;=\amp \displaystyle \frac{\frac{1}{(2+h)+1}-\frac{1}{2+1}}{h} \\
+&amp;=\amp \displaystyle \frac{\frac{1}{3+h}-\frac{1}{3}}{h} \\
+&amp;=\amp \displaystyle \frac{\frac{3-(3+h)}{3(3+h)}}{h} \\
+&amp;=\amp \displaystyle \frac{\frac{-h}{3(3+h)}}{h} \\
+&amp;=\amp \displaystyle \frac{-1}{3(3+h)}.
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-derivative-reciprocal-3-3">Now we can evaluate the limit as <span class="process-math">\(h\to 0\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-reciprocal-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-derivative-reciprocal-3-4">
+\begin{equation*}
+\displaystyle f'(2)=\lim_{h\to 0}\frac{-1}{3(3+h)}=\frac{-1}{9}.
+\end{equation*}
+</div>
+<div class="para" id="ex-derivative-reciprocal-3-5">So the slope of the tangent line to <span class="process-math">\(y=\frac{1}{x+1}\)</span> at <span class="process-math">\(x=2\)</span> is <span class="process-math">\(-1/9\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-reciprocal-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.2.3.1"><a href="#ex-derivative-reciprocal-3" title="Copy heading and permalink for Solution 2.2.3.1" aria-label="Copy heading and permalink for Solution 2.2.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 2.2.3: A Rational Example"><a href="#ex-derivative-reciprocal" title="Copy heading and permalink for Example 2.2.3: A Rational Example" aria-label="Copy heading and permalink for Example 2.2.3: A Rational Example">🔗</a></div></article><article class="example example-like" id="ex-derivative-sqrt"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Radical Example.</span>
+</h4>
+<div class="para" id="ex-derivative-sqrt-2-1">Find <span class="process-math">\(f'(2)\)</span> for <span class="process-math">\(f(x)=\sqrt{x}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-sqrt-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-derivative-sqrt-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-derivative-sqrt-3-1">We multiply by the conjugate to eliminate the radical in the numerator.<div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-sqrt-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-derivative-sqrt-3-2">
+\begin{equation*}
+\begin{array}{rcll}
+\displaystyle f'(2)
+\amp=\amp \displaystyle\lim_{h\to 0}\frac{\sqrt{2+h}-\sqrt{2}}{h}
+\\[1.2em]
+\amp=\amp \displaystyle\lim_{h\to 0}\frac{\sqrt{2+h}-\sqrt{2}}{h}\cdot
+\frac{\sqrt{2+h}+\sqrt{2}}{\sqrt{2+h}+\sqrt{2}}
+\\[1.6em]
+\amp=\amp \displaystyle\lim_{h\to 0}\frac{(2+h)-2}{h(\sqrt{2+h}+\sqrt{2})}
+\\[1.2em]
+\amp=\amp \displaystyle\lim_{h\to 0}\frac{1}{\sqrt{2+h}+\sqrt{2}}
+\ =\ \frac{1}{2\sqrt{2}}.
+\end{array}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 2.2.4.1"><a href="#ex-derivative-sqrt-3" title="Copy heading and permalink for Solution 2.2.4.1" aria-label="Copy heading and permalink for Solution 2.2.4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 2.2.4: A Radical Example"><a href="#ex-derivative-sqrt" title="Copy heading and permalink for Example 2.2.4: A Radical Example" aria-label="Copy heading and permalink for Example 2.2.4: A Radical Example">🔗</a></div></article><article class="example example-like" id="ex-derivative-cuberoot"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Cube Root Example.</span>
+</h4>
+<div class="para" id="ex-derivative-cuberoot-2-1">Find <span class="process-math">\(f'(a)\)</span> for <span class="process-math">\(f(x)=\sqrt[3]{x}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-cuberoot-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-derivative-cuberoot-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-derivative-cuberoot-3-1">Here we use the difference of cubes identity <span class="process-math">\((A-B)(A^2+AB+B^2)=A^3-B^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-cuberoot-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-derivative-cuberoot-3-2">
+\begin{align*}
+f'(a)
+= \amp
+\lim_{h\to 0}\frac{\sqrt[3]{a+h}-\sqrt[3]{a}}{h}\\
+= \amp
+\lim_{h\to 0}
+\frac{\sqrt[3]{a+h}-\sqrt[3]{a}}{h}
+\cdot
+\frac{
+\left(\sqrt[3]{a+h}\right)^2
++\sqrt[3]{a+h}\sqrt[3]{a}
++\left(\sqrt[3]{a}\right)^2
+}{
+\left(\sqrt[3]{a+h}\right)^2
++\sqrt[3]{a+h}\sqrt[3]{a}
++\left(\sqrt[3]{a}\right)^2
+}\\
+= \amp
+\lim_{h\to 0}
+\frac{(a+h)-a}{
+h\left(
+\left(\sqrt[3]{a+h}\right)^2
++\sqrt[3]{a+h}\sqrt[3]{a}
++\left(\sqrt[3]{a}\right)^2
+\right)
+}\\
+= \amp
+\lim_{h\to 0}
+\frac{1}{
+\left(\sqrt[3]{a+h}\right)^2
++\sqrt[3]{a+h}\sqrt[3]{a}
++\left(\sqrt[3]{a}\right)^2
+}\\
+= \amp
+\frac{1}{3\left(\sqrt[3]{a}\right)^2}
+\end{align*}
+</div>
+<div class="para" id="ex-derivative-cuberoot-3-3">This example is a good preview of why we will soon develop derivative rules: computing derivatives from the limit definition can become algebraically heavy.<div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-cuberoot-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.2.5.1"><a href="#ex-derivative-cuberoot-3" title="Copy heading and permalink for Solution 2.2.5.1" aria-label="Copy heading and permalink for Solution 2.2.5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 2.2.5: A Cube Root Example"><a href="#ex-derivative-cuberoot" title="Copy heading and permalink for Example 2.2.5: A Cube Root Example" aria-label="Copy heading and permalink for Example 2.2.5: A Cube Root Example">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Computing Derivatives from the Definition"><a href="#ssec-derivative-computation" title="Copy heading and permalink for Subsection: Computing Derivatives from the Definition" aria-label="Copy heading and permalink for Subsection: Computing Derivatives from the Definition">🔗</a></div></section><section class="subsection" id="ssec-derivative-function"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Derivative Function</span>
+</h3>
+<div class="para" id="ssec-derivative-function-2">The derivative at a point <span class="process-math">\(f'(a)\)</span> is a single number. But we can compute the derivative for many input values, producing a new function.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-function-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-derivative-function-3">For example, consider <span class="process-math">\(f(x)=\sqrt[3]{x}\)</span> from the previous example. At each value of <span class="process-math">\(x\text{,}\)</span> the function has a slope. Plotting these slopes as points creates a new graph, which we call the graph of the <dfn class="terminology">derivative function</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-function-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<a class="external" href="https://www.desmos.com/calculator/42zkvlqlkt" target="_blank"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;grid-template-columns:100%;column-gap:0%;"><div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="ssec-derivative-function-4-1-1"><div class="image-box"><img src="external/images/derivativeFunc.gif" class="contained" alt="Animated graph showing the cube root function with tangent lines at various points. For each point, the slope of the tangent line is recorded and plotted separately. As these slope values are connected, they form a new curve representing the derivative function."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Slopes of tangent lines to <span class="process-math">\(f(x)=\sqrt[3]{x}\)</span> at many values of <span class="process-math">\(x\text{,}\)</span> plotted as points and connected to form the graph of the derivative function.<div class="autopermalink" data-description="Figure 2.2.6"><a href="#ssec-derivative-function-4-1-1" title="Copy heading and permalink for Figure 2.2.6" aria-label="Copy heading and permalink for Figure 2.2.6">🔗</a></div></figcaption></figure></div></div></div></a><article class="definition definition-like" id="def-derivative-function"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Derivative Function.</span>
+</h4>
+<div class="para" id="def-derivative-function-2-1">The <dfn class="terminology">derivative function</dfn> of <span class="process-math">\(f\text{,}\)</span> denoted <span class="process-math">\(f'\text{,}\)</span> is defined by<div class="autopermalink" data-description="Paragraph"><a href="#def-derivative-function-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="def-derivative-function-2-2">
+\begin{equation*}
+\displaystyle
+f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h},
+\end{equation*}
+</div>
+<div class="para" id="def-derivative-function-2-3">for all <span class="process-math">\(x\)</span> where this limit exists.<div class="autopermalink" data-description="Paragraph"><a href="#def-derivative-function-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.2.7: Derivative Function"><a href="#def-derivative-function" title="Copy heading and permalink for Definition 2.2.7: Derivative Function" aria-label="Copy heading and permalink for Definition 2.2.7: Derivative Function">🔗</a></div></article><article class="example example-like" id="ex-derivative-function-quadratic"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Computing a Derivative Function.</span>
+</h4>
+<div class="para" id="ex-derivative-function-quadratic-2-1">Let <span class="process-math">\(f(x)=x(x-2)\text{.}\)</span> Find <span class="process-math">\(f'(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-function-quadratic-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-derivative-function-quadratic-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-derivative-function-quadratic-3-1">
+<em class="alert">Step by Step:</em><div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-function-quadratic-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-derivative-function-quadratic-3-2">
+\begin{equation*}
+\begin{array}{rcl}
+\displaystyle f'(x)
+\amp=\amp \displaystyle\lim_{h\to 0}\frac{(x+h)(x+h-2)-x(x-2)}{h}
+\\[1.2em]
+\amp=\amp \displaystyle\lim_{h\to 0}\frac{x^2+2xh+h^2-2x-2h-x^2+2x}{h}
+\\[1.2em]
+\amp=\amp \displaystyle\lim_{h\to 0}\frac{2xh-2h+h^2}{h}
+\\[1.2em]
+\amp=\amp \displaystyle\lim_{h\to 0}\left(2x-2+h\right)
+\ =\ 2x-2.
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-derivative-function-quadratic-3-3">Graphically this is what we have accomplished<div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-function-quadratic-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<a class="external" href="https://www.desmos.com/calculator/8bbhwk4mrq" target="_blank"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;grid-template-columns:100%;column-gap:0%;"><div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="ex-derivative-function-quadratic-3-4-1-1"><div class="image-box"><img src="external/images/funcAndDerivative01.png" class="contained" alt="Graph showing the quadratic function f(x)=x(x-2). At several points along the curve, tangent lines are drawn and their slopes are labeled with values such as −4, −2, 0, 2, and 4. A separate straight line representing the derivative f’(x)=2x-2 is shown, illustrating how each slope of f corresponds to a point on the derivative graph."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The function <span class="process-math">\(f(x)=x(x-2)\)</span> with tangent lines drawn at several points. The slopes of these tangent lines are labeled and shown to align with the values of the derivative function <span class="process-math">\(f'(x)=2x-2\text{.}\)</span><div class="autopermalink" data-description="Figure 2.2.9"><a href="#ex-derivative-function-quadratic-3-4-1-1" title="Copy heading and permalink for Figure 2.2.9" aria-label="Copy heading and permalink for Figure 2.2.9">🔗</a></div></figcaption></figure></div></div></div></a><div class="autopermalink" data-description="Solution 2.2.8.1"><a href="#ex-derivative-function-quadratic-3" title="Copy heading and permalink for Solution 2.2.8.1" aria-label="Copy heading and permalink for Solution 2.2.8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 2.2.8: Computing a Derivative Function"><a href="#ex-derivative-function-quadratic" title="Copy heading and permalink for Example 2.2.8: Computing a Derivative Function" aria-label="Copy heading and permalink for Example 2.2.8: Computing a Derivative Function">🔗</a></div></article><div class="autopermalink" data-description="Subsection: The Derivative Function"><a href="#ssec-derivative-function" title="Copy heading and permalink for Subsection: The Derivative Function" aria-label="Copy heading and permalink for Subsection: The Derivative Function">🔗</a></div></section><section class="subsection" id="ssec-derivative-fail"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">When the Derivative Fails to Exist</span>
+</h3>
+<div class="para" id="ssec-derivative-fail-2">Even if a function is defined at a point, the derivative may fail to exist there. Graphically, this happens when the curve does not have a single well-defined tangent line.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-fail-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-derivative-fail-3">Common ways differentiability can fail include:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-fail-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="ssec-derivative-fail-4">
+<li id="ssec-derivative-fail-4-1">
+<div class="para" id="p-derived-ssec-derivative-fail-4-1">
+<em class="emphasis">Vertical Tangent:</em> slopes become infinite (unbounded).</div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-derivative-fail-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ssec-derivative-fail-4-2">
+<div class="para" id="p-derived-ssec-derivative-fail-4-2">
+<em class="emphasis">Corner:</em> the left-hand and right-hand slopes are different.</div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-derivative-fail-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ssec-derivative-fail-4-3">
+<div class="para" id="p-derived-ssec-derivative-fail-4-3">
+<em class="emphasis">Discontinuity:</em> if a function is not continuous at a point, then it cannot be differentiable there.</div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-derivative-fail-4-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="ssec-derivative-fail-5">We first consider what happens when a function has a vertical tangent. Recall that the derivative at a point represents the slope of the tangent line. Because vertical lines have undefined slope, the derivative cannot exist at any point where the tangent line is vertical.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-fail-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-derivative-fail-cuberoot"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Vertical Tangent.</span>
+</h4>
+<div class="para" id="ex-derivative-fail-cuberoot-2-1">Consider the function <span class="process-math">\(f(x)=\sqrt[3]{x}\text{,}\)</span> which we analyzed previously in <a href="sec-derivative-defn.html#ex-derivative-cuberoot" class="xref" data-knowl="./knowl/xref/ex-derivative-cuberoot.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.5: A Cube Root Example">Example 2.2.5</a>. Show that <span class="process-math">\(f\)</span> has a vertical tangent at <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-fail-cuberoot-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-derivative-fail-cuberoot-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-derivative-fail-cuberoot-3-1">From <a href="sec-derivative-defn.html#ex-derivative-cuberoot" class="xref" data-knowl="./knowl/xref/ex-derivative-cuberoot.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.5: A Cube Root Example">Example 2.2.5</a>, the derivative of <span class="process-math">\(f(x)=\sqrt[3]{x}\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-fail-cuberoot-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-derivative-cuberoot.html ./knowl/xref/ssec-inf-limits.html" id="ex-derivative-fail-cuberoot-3-2">
+\begin{equation*}
+\displaystyle f'(a)=\frac{1}{3(\sqrt[3]{a})^2}.
+\end{equation*}
+</div>
+<div class="para" id="ex-derivative-fail-cuberoot-3-3">Trying to substitute in <span class="process-math">\(a=0\text{,}\)</span> the denominator <span class="process-math">\((\sqrt[3]{a})^2\)</span> yields <span class="process-math">\(0\text{,}\)</span> causing the derivative <span class="process-math">\(f'(x)\)</span> to grow without bound like we saw in <a href="sec-graphical-limits.html#ssec-inf-limits" class="internal" title="Subsection: Infinite Limits">our section on infinite limits </a>. In other words, the slopes of the tangent lines become arbitrarily large in magnitude.<div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-fail-cuberoot-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-derivative-fail-cuberoot-3-4">Graphically, this behavior appears as the tangent lines becoming steeper and steeper near <span class="process-math">\(x=0\text{,}\)</span> eventually approaching a vertical line. Since vertical lines have undefined slope, the derivative does not exist at <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-fail-cuberoot-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="ex-derivative-fail-cuberoot-3-5"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/cubeRootAt0.png" class="contained" alt="Graph of the cube root function near the origin. The curve becomes very steep as it approaches zero. A vertical line is drawn at zero to represent the tangent line at that point. Because the tangent line is vertical, its slope is undefined and the derivative does not exist there."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Graph of <span class="process-math">\(f(x)=\sqrt[3]{x}\)</span> near <span class="process-math">\(x=0\text{,}\)</span> showing a vertical tangent line at the origin where the slope is undefined.<div class="autopermalink" data-description="Figure 2.2.11"><a href="#ex-derivative-fail-cuberoot-3-5" title="Copy heading and permalink for Figure 2.2.11" aria-label="Copy heading and permalink for Figure 2.2.11">🔗</a></div></figcaption></figure><div class="para" id="ex-derivative-fail-cuberoot-3-6">Therefore, <span class="process-math">\(f(x)=\sqrt[3]{x}\)</span> is not differentiable at <span class="process-math">\(x=0\)</span> due to the presence of a vertical tangent line.<div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-fail-cuberoot-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.2.10.1"><a href="#ex-derivative-fail-cuberoot-3" title="Copy heading and permalink for Solution 2.2.10.1" aria-label="Copy heading and permalink for Solution 2.2.10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 2.2.10: A Vertical Tangent"><a href="#ex-derivative-fail-cuberoot" title="Copy heading and permalink for Example 2.2.10: A Vertical Tangent" aria-label="Copy heading and permalink for Example 2.2.10: A Vertical Tangent">🔗</a></div></article><div class="para" id="ssec-derivative-fail-7">Next we consider two other common ways differentiability can fail: corners and discontinuities. In these situations, it is helpful to introduce <em class="emphasis">right-hand</em> and <em class="emphasis">left-hand</em> derivatives, defined using one-sided limits in the same spirit as one-sided limits for functions. These allow us to determine whether the derivative exists by comparing the slopes approaching a point from the right and from the left.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-fail-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-right-derivative"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Right-Hand Derivative.</span>
+</h4>
+<div class="para" id="def-right-derivative-2-1">Let <span class="process-math">\(f\)</span> be a function and let <span class="process-math">\(a\)</span> be a point in its domain. The <dfn class="terminology">right-hand derivative</dfn> of <span class="process-math">\(f\)</span> at <span class="process-math">\(x=a\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#def-right-derivative-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="def-right-derivative-2-2">
+\begin{equation*}
+\displaystyle f'(a^+)=\lim_{h\to 0^+}\frac{f(a+h)-f(a)}{h},
+\end{equation*}
+</div>
+<div class="para" id="def-right-derivative-2-3">provided this limit exists.<div class="autopermalink" data-description="Paragraph"><a href="#def-right-derivative-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.2.12: Right-Hand Derivative"><a href="#def-right-derivative" title="Copy heading and permalink for Definition 2.2.12: Right-Hand Derivative" aria-label="Copy heading and permalink for Definition 2.2.12: Right-Hand Derivative">🔗</a></div></article><article class="definition definition-like" id="def-left-derivative"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Left-Hand Derivative.</span>
+</h4>
+<div class="para" id="def-left-derivative-2-1">Let <span class="process-math">\(f\)</span> be a function and let <span class="process-math">\(a\)</span> be a point in its domain. The <dfn class="terminology">left-hand derivative</dfn> of <span class="process-math">\(f\)</span> at <span class="process-math">\(x=a\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#def-left-derivative-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="def-left-derivative-2-2">
+\begin{equation*}
+\displaystyle f'(a^-)=\lim_{h\to 0^-}\frac{f(a+h)-f(a)}{h},
+\end{equation*}
+</div>
+<div class="para" id="def-left-derivative-2-3">provided this limit exists.<div class="autopermalink" data-description="Paragraph"><a href="#def-left-derivative-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.2.13: Left-Hand Derivative"><a href="#def-left-derivative" title="Copy heading and permalink for Definition 2.2.13: Left-Hand Derivative" aria-label="Copy heading and permalink for Definition 2.2.13: Left-Hand Derivative">🔗</a></div></article><article class="remark remark-like" id="rem-left-right-derivative"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="rem-left-right-derivative-1">Remember that the derivative is defined as a limit. A two-sided limit exists only when the corresponding one-sided limits both exist and agree. Therefore, <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(x=a\)</span> only if both <span class="process-math">\(f'(a^-)\)</span> and <span class="process-math">\(f'(a^+)\)</span> exist and satisfy <span class="process-math">\(f'(a^-)=f'(a^+)\text{.}\)</span> If the left-hand and right-hand derivatives do not agree, then the derivative <span class="process-math">\(f'(a)\)</span> does not exist.<div class="autopermalink" data-description="Paragraph"><a href="#rem-left-right-derivative-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.2.14"><a href="#rem-left-right-derivative" title="Copy heading and permalink for Remark 2.2.14" aria-label="Copy heading and permalink for Remark 2.2.14">🔗</a></div></article><article class="example example-like" id="ex-absvalue-not-differentiable"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Corner.</span>
+</h4>
+<div class="para" id="ex-absvalue-not-differentiable-2-1">Show that the function <span class="process-math">\(f(x)=|x|\)</span> is not differentiable at <span class="process-math">\(x=0\)</span> by computing the left-hand and right-hand derivatives at that point.<div class="autopermalink" data-description="Paragraph"><a href="#ex-absvalue-not-differentiable-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-absvalue-not-differentiable-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-absvalue-not-differentiable-3-1">We compute the one-sided derivatives at <span class="process-math">\(a=0\text{.}\)</span> First note that <span class="process-math">\(f(0)=|0|=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-absvalue-not-differentiable-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-absvalue-not-differentiable-3-2">To evaluate the limits, we recall the definition of absolute value from <a href="sec-precalc-absval.html#def-absolute-value" class="xref" data-knowl="./knowl/xref/def-absolute-value.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.5.1: Absolute Value">Definition 0.5.1</a>. This definition tells us how <span class="process-math">\(|h|\)</span> behaves depending on whether <span class="process-math">\(h\)</span> is positive or negative.<div class="autopermalink" data-description="Paragraph"><a href="#ex-absvalue-not-differentiable-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-absvalue-not-differentiable-3-3">The right-hand derivative is<div class="autopermalink" data-description="Paragraph"><a href="#ex-absvalue-not-differentiable-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-absolute-value.html" id="ex-absvalue-not-differentiable-3-4">
+\begin{equation*}
+\displaystyle f'(0^+)
+=\lim_{h\to 0^+}\frac{f(0+h)-f(0)}{h}
+=\lim_{h\to 0^+}\frac{|h|}{h}.
+\end{equation*}
+</div>
+<div class="para" id="ex-absvalue-not-differentiable-3-5">For <span class="process-math">\(h&gt;0\text{,}\)</span> we have <span class="process-math">\(|h|=h\text{,}\)</span> so<div class="autopermalink" data-description="Paragraph"><a href="#ex-absvalue-not-differentiable-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-absolute-value.html" id="ex-absvalue-not-differentiable-3-6">
+\begin{equation*}
+\displaystyle f'(0^+)=\lim_{h\to 0^+}\frac{h}{h}=1.
+\end{equation*}
+</div>
+<div class="para" id="ex-absvalue-not-differentiable-3-7">The left-hand derivative is<div class="autopermalink" data-description="Paragraph"><a href="#ex-absvalue-not-differentiable-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-absolute-value.html" id="ex-absvalue-not-differentiable-3-8">
+\begin{equation*}
+\displaystyle f'(0^-)
+=\lim_{h\to 0^-}\frac{f(0+h)-f(0)}{h}
+=\lim_{h\to 0^-}\frac{|h|}{h}.
+\end{equation*}
+</div>
+<div class="para" id="ex-absvalue-not-differentiable-3-9">For <span class="process-math">\(h&lt;0\text{,}\)</span> we have <span class="process-math">\(|h|=-h\text{,}\)</span> so<div class="autopermalink" data-description="Paragraph"><a href="#ex-absvalue-not-differentiable-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-absolute-value.html" id="ex-absvalue-not-differentiable-3-10">
+\begin{equation*}
+\displaystyle f'(0^-)=\lim_{h\to 0^-}\frac{-h}{h}=-1.
+\end{equation*}
+</div>
+<div class="para" id="ex-absvalue-not-differentiable-3-11">Since <span class="process-math">\(f'(0^-)\neq f'(0^+)\text{,}\)</span> the derivative at <span class="process-math">\(x=0\)</span> does not exist. This corresponds graphically to a sharp corner at the origin, where the slopes approaching from the left and right are different.<div class="autopermalink" data-description="Paragraph"><a href="#ex-absvalue-not-differentiable-3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.2.15.1"><a href="#ex-absvalue-not-differentiable-3" title="Copy heading and permalink for Solution 2.2.15.1" aria-label="Copy heading and permalink for Solution 2.2.15.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 2.2.15: A Corner"><a href="#ex-absvalue-not-differentiable" title="Copy heading and permalink for Example 2.2.15: A Corner" aria-label="Copy heading and permalink for Example 2.2.15: A Corner">🔗</a></div></article><div class="para" id="ssec-derivative-fail-12">The function <span class="process-math">\(f(x)=|x|\)</span> is continuous at <span class="process-math">\(x=0\text{,}\)</span> yet it is not differentiable there because of a sharp corner. Next, we examine a case where the function is not even continuous. In this situation, the derivative must fail to exist.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-fail-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-derivative-fail-discontinuous"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Discontinuity.</span>
+</h4>
+<div class="para" id="ex-derivative-fail-discontinuous-2-1">Consider the function<div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-fail-discontinuous-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-derivative-fail-discontinuous-2-2">
+\begin{equation*}
+f(x)=
+\begin{cases}
+1, &amp; \text{if } x&lt;2, \\
+3x-1, &amp; \text{if } x\ge 2.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="ex-derivative-fail-discontinuous-2-3">Determine whether <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-fail-discontinuous-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-derivative-fail-discontinuous-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-derivative-fail-discontinuous-3-1">Using the definitions of <a href="sec-derivative-defn.html#def-left-derivative" class="xref" data-knowl="./knowl/xref/def-left-derivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.2.13: Left-Hand Derivative">Definition 2.2.13</a> and <a href="sec-derivative-defn.html#def-right-derivative" class="xref" data-knowl="./knowl/xref/def-right-derivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.2.12: Right-Hand Derivative">Definition 2.2.12</a>, we compute:<div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-fail-discontinuous-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-derivative-fail-discontinuous-3-2">The left-hand derivative at <span class="process-math">\(x=2\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-fail-discontinuous-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-left-derivative.html ./knowl/xref/def-right-derivative.html" id="ex-derivative-fail-discontinuous-3-3">
+\begin{equation*}
+\displaystyle f'(2^-)
+=\lim_{h\to 0^-}\frac{f(2+h)-f(2)}{h}
+=\lim_{h\to 0^-}\frac{1-5}{h}.
+\end{equation*}
+</div>
+<div class="para" id="ex-derivative-fail-discontinuous-3-4">This limit does not exist because the numerator is constant while the denominator approaches zero. The right-hand derivative is<div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-fail-discontinuous-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-left-derivative.html ./knowl/xref/def-right-derivative.html" id="ex-derivative-fail-discontinuous-3-5">
+\begin{equation*}
+\displaystyle f'(2^+)
+=\lim_{h\to 0^+}\frac{(3(2+h)-1)-5}{h}
+=\lim_{h\to 0^+}\frac{3h}{h}=3.
+\end{equation*}
+</div>
+<div class="para" id="ex-derivative-fail-discontinuous-3-6">Since the one-sided derivatives do not both exist and agree, the derivative <span class="process-math">\(f'(2)\)</span> does not exist.<div class="autopermalink" data-description="Paragraph"><a href="#ex-derivative-fail-discontinuous-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.2.16.1"><a href="#ex-derivative-fail-discontinuous-3" title="Copy heading and permalink for Solution 2.2.16.1" aria-label="Copy heading and permalink for Solution 2.2.16.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 2.2.16: A Discontinuity"><a href="#ex-derivative-fail-discontinuous" title="Copy heading and permalink for Example 2.2.16: A Discontinuity" aria-label="Copy heading and permalink for Example 2.2.16: A Discontinuity">🔗</a></div></article><div class="para" id="ssec-derivative-fail-14">In all of the situations we have examined so far, differentiability has required the function to behave continuously at the point in question. This relationship between differentiability and continuity is fundamental and can be stated precisely as a theorem.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-fail-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-diff-implies-cont"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Differentiability Implies Continuity.</span>
+</h4>
+<div class="para" id="thm-diff-implies-cont-2-1">If <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(x=a\text{,}\)</span> then <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(x=a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-diff-implies-cont-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.2.17: Differentiability Implies Continuity"><a href="#thm-diff-implies-cont" title="Copy heading and permalink for Theorem 2.2.17: Differentiability Implies Continuity" aria-label="Copy heading and permalink for Theorem 2.2.17: Differentiability Implies Continuity">🔗</a></div></article><article class="remark remark-like" id="rem-contrapositive"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="rem-contrapositive-1">The contrapositive is often the useful version in practice: if <span class="process-math">\(f\)</span> is not continuous at <span class="process-math">\(x=a\text{,}\)</span> then <span class="process-math">\(f\)</span> is not differentiable at <span class="process-math">\(x=a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rem-contrapositive-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.2.18"><a href="#rem-contrapositive" title="Copy heading and permalink for Remark 2.2.18" aria-label="Copy heading and permalink for Remark 2.2.18">🔗</a></div></article><div class="para" id="ssec-derivative-fail-17">Now that we have studied the main ways a derivative can fail to exist, we will put these ideas together and identify the regions where a function is differentiable (that is, where the derivative exists).<div class="autopermalink" data-description="Paragraph"><a href="#ssec-derivative-fail-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: When the Derivative Fails to Exist"><a href="#ssec-derivative-fail" title="Copy heading and permalink for Subsection: When the Derivative Fails to Exist" aria-label="Copy heading and permalink for Subsection: When the Derivative Fails to Exist">🔗</a></div></section><section class="subsection" id="ssec-differentiable-on-interval"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Differentiability on an Interval</span>
+</h3>
+<article class="definition definition-like" id="def-differentiable-on-interval"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Differentiable on an Interval.</span>
+</h4>
+<div class="para" id="def-differentiable-on-interval-2-1">Let <span class="process-math">\(I\)</span> be an interval. We say that <span class="process-math">\(f\)</span> is <dfn class="terminology">differentiable on</dfn> <span class="process-math">\(I\)</span> if <span class="process-math">\(f'(x)\)</span> exists for every point <span class="process-math">\(x\)</span> in <span class="process-math">\(I\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-differentiable-on-interval-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="def-differentiable-on-interval-2-2">We say that <span class="process-math">\(f\)</span> is <dfn class="terminology">differentiable on</dfn> <span class="process-math">\((a,b)\)</span> if <span class="process-math">\(f'(x)\)</span> exists for all <span class="process-math">\(a&lt;x&lt;b\text{.}\)</span> We say that <span class="process-math">\(f\)</span> is <dfn class="terminology">differentiable on</dfn> <span class="process-math">\([a,b]\)</span> if <span class="process-math">\(f'(x)\)</span> exists for all <span class="process-math">\(a&lt;x&lt;b\)</span> and the one-sided derivatives <span class="process-math">\(f'(a^+)\)</span> and <span class="process-math">\(f'(b^-)\)</span> exist.<div class="autopermalink" data-description="Paragraph"><a href="#def-differentiable-on-interval-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.2.19: Differentiable on an Interval"><a href="#def-differentiable-on-interval" title="Copy heading and permalink for Definition 2.2.19: Differentiable on an Interval" aria-label="Copy heading and permalink for Definition 2.2.19: Differentiable on an Interval">🔗</a></div></article><div class="para" id="ssec-differentiable-on-interval-3">Problems that ask where a function is differentiable often come in two common forms. In the first, only a graph is given, with no algebraic expression for the function.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-differentiable-on-interval-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-differentiable-intervals-graph"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Differentiability from a Graph.</span>
+</h4>
+<div class="para" id="ex-differentiable-intervals-graph-2-1">The graph below represents a function <span class="process-math">\(y=f(x)\text{.}\)</span> Identify all values of <span class="process-math">\(x\)</span> where <span class="process-math">\(f\)</span> is differentiable. Give your answer in interval notation. <figure class="figure figure-like" id="ex-differentiable-intervals-graph-2-1-4"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/whereDiff.png" class="contained" alt="Graph of a piecewise function defined for x greater than negative three and less than or equal to five. The graph has a sharp corner at x equals negative one. There is a jump at x equals zero, with a filled point above and an open point at the origin. A vertical dashed line at x equals two indicates another discontinuity. Away from these points, the graph is smooth."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A function illustrating multiple ways differentiability can fail.<div class="autopermalink" data-description="Figure 2.2.21"><a href="#ex-differentiable-intervals-graph-2-1-4" title="Copy heading and permalink for Figure 2.2.21" aria-label="Copy heading and permalink for Figure 2.2.21">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Paragraph"><a href="#ex-differentiable-intervals-graph-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-differentiable-intervals-graph-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-differentiable-intervals-graph-3-1">A function is differentiable at a point only if it is continuous there and has a well-defined tangent line. We examine each notable feature of the graph.<div class="autopermalink" data-description="Paragraph"><a href="#ex-differentiable-intervals-graph-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-differentiable-intervals-graph-3-2">At <span class="process-math">\(x=-1\text{,}\)</span> the graph has a sharp corner. The slopes approaching from the left and right are different, so the derivative does not exist at this point.<div class="autopermalink" data-description="Paragraph"><a href="#ex-differentiable-intervals-graph-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-differentiable-intervals-graph-3-3">At <span class="process-math">\(x=0\text{,}\)</span> the graph has a jump discontinuity. Because the function is not continuous at <span class="process-math">\(x=0\text{,}\)</span> it cannot be differentiable there.<div class="autopermalink" data-description="Paragraph"><a href="#ex-differentiable-intervals-graph-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-differentiable-intervals-graph-3-4">At <span class="process-math">\(x=2\text{,}\)</span> the graph has another discontinuity, indicated by the vertical dashed line. Since the function does not have a defined value that matches nearby behavior, the derivative does not exist at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-differentiable-intervals-graph-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-differentiable-intervals-graph-3-5">On all other intervals where the graph is defined, smooth, and continuous, the function is differentiable. Therefore, <span class="process-math">\(f\)</span> is differentiable on the intervals<div class="autopermalink" data-description="Paragraph"><a href="#ex-differentiable-intervals-graph-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-differentiable-intervals-graph-3-6">
+\begin{equation*}
+(-3,-1)\cup(-1,0)\cup(0,2)\cup(2,5].
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 2.2.20.1"><a href="#ex-differentiable-intervals-graph-3" title="Copy heading and permalink for Solution 2.2.20.1" aria-label="Copy heading and permalink for Solution 2.2.20.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 2.2.20: Differentiability from a Graph"><a href="#ex-differentiable-intervals-graph" title="Copy heading and permalink for Example 2.2.20: Differentiability from a Graph" aria-label="Copy heading and permalink for Example 2.2.20: Differentiability from a Graph">🔗</a></div></article><div class="para" id="ssec-differentiable-on-interval-5">In the second common type of problem, the function is given by an explicit formula, often defined piecewise, and we must use algebraic reasoning to determine where the derivative exists.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-differentiable-on-interval-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-diff-interval-piecewise"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Determining Differentiability for a Piecewise Function.</span>
+</h4>
+<div class="para" id="ex-diff-interval-piecewise-2-1">Let<div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-diff-interval-piecewise-2-2">
+\begin{equation*}
+f(x)=
+\begin{cases}
+x+1, &amp; \text{if } x&lt;0, \\
+|x|, &amp; \text{if } 0\le x&lt;2, \\
+-\frac14x^2+2x-1, &amp; \text{if } x\ge 2.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="ex-diff-interval-piecewise-2-3">Determine where <span class="process-math">\(f\)</span> is differentiable. Give your answer in interval notation.<div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-diff-interval-piecewise-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-diff-interval-piecewise-3-1">On each open interval where a single formula applies, the function is differentiable: <span class="process-math">\(x+1\)</span> is differentiable for <span class="process-math">\(x&lt;0\text{,}\)</span> <span class="process-math">\(|x|\)</span> is differentiable for <span class="process-math">\(0&lt;x&lt;2\text{,}\)</span> and <span class="process-math">\(-\frac14x^2+2x-1\)</span> is differentiable for <span class="process-math">\(x&gt;2\text{.}\)</span> Therefore, the only points we need to check are the junctions <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-diff-interval-piecewise-3-2">At <span class="process-math">\(x=0\text{,}\)</span> we first check continuity: for <span class="process-math">\(x&lt;0\text{,}\)</span> <span class="process-math">\(f(x)=x+1\text{,}\)</span> so <span class="process-math">\(\lim_{x\to 0^-}f(x)=1\text{.}\)</span> Also <span class="process-math">\(f(0)=|0|=0\text{.}\)</span> Since <span class="process-math">\(\displaystyle\lim_{x\to 0^-}f(x)\neq f(0)\text{,}\)</span> the function is not continuous at <span class="process-math">\(x=0\text{,}\)</span> and therefore it is not differentiable at <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-diff-interval-piecewise-3-3">At <span class="process-math">\(x=2\text{,}\)</span> we again check continuity: for <span class="process-math">\(0\le x&lt;2\text{,}\)</span> <span class="process-math">\(f(x)=|x|\text{,}\)</span> so <span class="process-math">\(\displaystyle\lim_{x\to 2^-}f(x)=|2|=2\text{.}\)</span> For <span class="process-math">\(x\ge 2\text{,}\)</span> <span class="process-math">\(f(2)=-\frac14(2^2)+2(2)-1=-1+4-1=2\text{.}\)</span> Since the left-hand limit equals the function value, <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(x=2\text{.}\)</span> To determine differentiability, we compare one-sided derivatives.<div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-diff-interval-piecewise-3-4">The left-hand derivative at <span class="process-math">\(x=2\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-diff-interval-piecewise-3-5">
+\begin{equation*}
+\displaystyle f'(2^-)=\lim_{h\to 0^-}\frac{f(2+h)-f(2)}{h}.
+\end{equation*}
+</div>
+<div class="para" id="ex-diff-interval-piecewise-3-6">For <span class="process-math">\(h&lt;0\)</span> close to 0, we have <span class="process-math">\(2+h\in(0,2)\text{,}\)</span> so <span class="process-math">\(f(2+h)=|2+h|=2+h\text{.}\)</span> Also <span class="process-math">\(f(2)=2\text{.}\)</span> Hence<div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-diff-interval-piecewise-3-7">
+\begin{equation*}
+\displaystyle f'(2^-)=\lim_{h\to 0^-}\frac{(2+h)-2}{h}
+=\lim_{h\to 0^-}\frac{h}{h}=1.
+\end{equation*}
+</div>
+<div class="para" id="ex-diff-interval-piecewise-3-8">The right-hand derivative at <span class="process-math">\(x=2\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-diff-interval-piecewise-3-9">
+\begin{equation*}
+\displaystyle f'(2^+)=\lim_{h\to 0^+}\frac{f(2+h)-f(2)}{h}.
+\end{equation*}
+</div>
+<div class="para" id="ex-diff-interval-piecewise-3-10">For <span class="process-math">\(h&gt;0\text{,}\)</span> we have <span class="process-math">\(2+h\ge 2\text{,}\)</span> so <span class="process-math">\(f(2+h)=-\frac14(2+h)^2+2(2+h)-1\text{.}\)</span> Using <span class="process-math">\(f(2)=2\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-diff-interval-piecewise-3-11">
+\begin{equation*}
+\displaystyle
+f'(2^+)=\lim_{h\to 0^+}\frac{-\frac14(2+h)^2+2(2+h)-1-2}{h}.
+\end{equation*}
+</div>
+<div class="para" id="ex-diff-interval-piecewise-3-12">Expand the numerator. Since <span class="process-math">\((2+h)^2=4+4h+h^2\text{,}\)</span> we have<div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-diff-interval-piecewise-3-13">
+\begin{align*}
+-\frac14(2+h)^2+2(2+h)-3
+= \amp
+-\frac14(4+4h+h^2)+4+2h-3\\
+= \amp
+\left(-1-h-\frac14h^2\right)+1+2h\\
+= \amp
+h-\frac14h^2
+\end{align*}
+</div>
+<div class="para" id="ex-diff-interval-piecewise-3-14">Therefore,<div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-3-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-diff-interval-piecewise-3-15">
+\begin{equation*}
+\displaystyle
+f'(2^+)=\lim_{h\to 0^+}\frac{h-\frac14h^2}{h}
+=\lim_{h\to 0^+}\left(1-\frac14h\right)=1.
+\end{equation*}
+</div>
+<div class="para" id="ex-diff-interval-piecewise-3-16">Since <span class="process-math">\(f'(2^-)=f'(2^+)=1\text{,}\)</span> the derivative exists at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-3-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-diff-interval-piecewise-3-17">Putting everything together, <span class="process-math">\(f\)</span> is differentiable for all real numbers except at <span class="process-math">\(x=0\text{.}\)</span> In interval notation, <span class="process-math">\(f\)</span> is differentiable on<div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-3-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-diff-interval-piecewise-3-18">
+\begin{equation*}
+(-\infty,0)\cup(0,\infty).
+\end{equation*}
+</div>
+<div class="para" id="ex-diff-interval-piecewise-3-19">To help us check/visualize here is a graph of the function<div class="autopermalink" data-description="Paragraph"><a href="#ex-diff-interval-piecewise-3-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="ex-diff-interval-piecewise-3-20"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/whereDiff2.png" class="contained" alt="Graph of a piecewise function. For x less than zero, the graph is a straight line ending at a filled point above the x-axis. At x equals zero, there is an open circle at the origin indicating a jump. From zero to two, the graph increases linearly. For x greater than or equal to two, the graph follows a smooth downward-opening curve. The graph highlights points where the function changes behavior and where differentiability must be checked."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Graph of the piecewise-defined function used to determine where it is differentiable.<div class="autopermalink" data-description="Figure 2.2.23"><a href="#ex-diff-interval-piecewise-3-20" title="Copy heading and permalink for Figure 2.2.23" aria-label="Copy heading and permalink for Figure 2.2.23">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 2.2.22.1"><a href="#ex-diff-interval-piecewise-3" title="Copy heading and permalink for Solution 2.2.22.1" aria-label="Copy heading and permalink for Solution 2.2.22.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 2.2.22: Determining Differentiability for a Piecewise Function"><a href="#ex-diff-interval-piecewise" title="Copy heading and permalink for Example 2.2.22: Determining Differentiability for a Piecewise Function" aria-label="Copy heading and permalink for Example 2.2.22: Determining Differentiability for a Piecewise Function">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Differentiability on an Interval"><a href="#ssec-differentiable-on-interval" title="Copy heading and permalink for Subsection: Differentiability on an Interval" aria-label="Copy heading and permalink for Subsection: Differentiability on an Interval">🔗</a></div></section><section class="subsection" id="additional-worked-problems-derivDefn"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additional Worked-Out Examples</span>
+</h3>
+<div class="para" id="additional-worked-problems-derivDefn-2">To keep this section at a reasonable length, we include only a few representative examples directly in the text. If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional fully worked-out examples are available via: <em class="alert"><a href="sec-derivative-ww.html#subsec-deriv-defn" class="internal" title="Subsection: Section 2.2 Definition of the Derivative">Additional Examples for Definition of the Derivative </a></em><div class="autopermalink" data-description="Paragraph"><a href="#additional-worked-problems-derivDefn-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Additional Worked-Out Examples"><a href="#additional-worked-problems-derivDefn" title="Copy heading and permalink for Subsection: Additional Worked-Out Examples" aria-label="Copy heading and permalink for Subsection: Additional Worked-Out Examples">🔗</a></div></section><section class="exercises" id="exercises-derivative-defn-tf"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Practice / Study Problems</span>
+</h3>
+<div class="exercisegroup" id="exercises-derivative-defn-tf-2">
+<h4 class="heading"><span class="title">Some True/False Problems.</span></h4>
+<div class="introduction" id="exercises-derivative-defn-tf-2-2"><div class="para" id="exercises-derivative-defn-tf-2-2-1">Determine whether each statement is true or false and explain your reasoning.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-derivative-defn-tf-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="tf-derivative-defn-01"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-01-1-1">If <span class="process-math">\(f(x)=x^2\text{,}\)</span> then <span class="process-math">\(f'(4)=16\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-01-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-01-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-01-2-1">
+<em class="emphasis">False.</em> We can calculate the derivative <span class="process-math">\(f'(x)=2x\text{,}\)</span> so <span class="process-math">\(f'(4)=8\text{,}\)</span> not 16.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-01-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1"><a href="#tf-derivative-defn-01-2" title="Copy heading and permalink for Solution 1.1" aria-label="Copy heading and permalink for Solution 1.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1"><a href="#tf-derivative-defn-01" title="Copy heading and permalink for Exercise 1" aria-label="Copy heading and permalink for Exercise 1">🔗</a></div></article><article class="exercise exercise-like" id="tf-derivative-defn-02"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-02-1-1">If <span class="process-math">\(f(x)=3x-5\text{,}\)</span> then the limit definition shows that <span class="process-math">\(f'(a)=3a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-02-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-02-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-02-2-1">
+<em class="emphasis">False.</em> The derivative of a linear function is constant. Using the limit definition gives <span class="process-math">\(f'(a)=3\text{,}\)</span> not <span class="process-math">\(3a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-02-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.1"><a href="#tf-derivative-defn-02-2" title="Copy heading and permalink for Solution 2.1" aria-label="Copy heading and permalink for Solution 2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 2"><a href="#tf-derivative-defn-02" title="Copy heading and permalink for Exercise 2" aria-label="Copy heading and permalink for Exercise 2">🔗</a></div></article><article class="exercise exercise-like" id="tf-derivative-defn-03"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-03-1-1">If <span class="process-math">\(f(x)=\dfrac{1}{x}\text{,}\)</span> then <span class="process-math">\(f'(x)=-\dfrac{1}{x^2}\)</span> for all <span class="process-math">\(x\neq 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-03-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-03-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-03-2-1">
+<em class="emphasis">True.</em> For <span class="process-math">\(x\neq 0\)</span> the derivative exists, and <span class="process-math">\(f'(x)=-\dfrac{1}{x^2}\text{.}\)</span> This can be verified directly from the limit definition by combining the fractions and simplifying the difference quotient.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-03-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.1"><a href="#tf-derivative-defn-03-2" title="Copy heading and permalink for Solution 3.1" aria-label="Copy heading and permalink for Solution 3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 3"><a href="#tf-derivative-defn-03" title="Copy heading and permalink for Exercise 3" aria-label="Copy heading and permalink for Exercise 3">🔗</a></div></article><article class="exercise exercise-like" id="tf-derivative-defn-04"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-04-1-1">The derivative function <span class="process-math">\(f'(x)\)</span> assigns to each input <span class="process-math">\(x\)</span> the slope of the tangent line to <span class="process-math">\(f\)</span> at that input.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-04-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-04-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-04-2-1">
+<em class="emphasis">True.</em> Where the derivative exists, it equals the slope of the tangent line to the graph of <span class="process-math">\(y=f(x)\)</span> at that point.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-04-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1"><a href="#tf-derivative-defn-04-2" title="Copy heading and permalink for Solution 4.1" aria-label="Copy heading and permalink for Solution 4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 4"><a href="#tf-derivative-defn-04" title="Copy heading and permalink for Exercise 4" aria-label="Copy heading and permalink for Exercise 4">🔗</a></div></article><article class="exercise exercise-like" id="tf-derivative-defn-05"><h5 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-05-1-1">The derivative function <span class="process-math">\(f'(x)\)</span> can exist at some values of <span class="process-math">\(x\)</span> but fail to exist at others.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-05-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-05-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-05-2-1">
+<em class="emphasis">True.</em> Many functions are differentiable on part of their domain but not everywhere, for example at corners, discontinuities, or vertical tangents.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-05-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 5.1"><a href="#tf-derivative-defn-05-2" title="Copy heading and permalink for Solution 5.1" aria-label="Copy heading and permalink for Solution 5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 5"><a href="#tf-derivative-defn-05" title="Copy heading and permalink for Exercise 5" aria-label="Copy heading and permalink for Exercise 5">🔗</a></div></article><article class="exercise exercise-like" id="tf-derivative-defn-06"><h5 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-06-1-1">If <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(x=a\text{,}\)</span> then the graph of <span class="process-math">\(f\)</span> must be smooth near <span class="process-math">\(x=a\)</span> with no corners or jumps.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-06-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-06-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-06-2-1">
+<em class="emphasis">True.</em> Differentiability requires both continuity and a well-defined tangent line.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-06-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.1"><a href="#tf-derivative-defn-06-2" title="Copy heading and permalink for Solution 6.1" aria-label="Copy heading and permalink for Solution 6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 6"><a href="#tf-derivative-defn-06" title="Copy heading and permalink for Exercise 6" aria-label="Copy heading and permalink for Exercise 6">🔗</a></div></article><article class="exercise exercise-like" id="tf-derivative-defn-07"><h5 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-07-1-1">If <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(x=a\text{,}\)</span> then <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(x=a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-07-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-07-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-07-2-1">
+<em class="emphasis">False.</em> A function can be continuous but not differentiable. For example, <span class="process-math">\(f(x)=|x|\)</span> is continuous at <span class="process-math">\(x=0\)</span> but has a corner there, so <span class="process-math">\(f'(0)\)</span> does not exist.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-07-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 7.1"><a href="#tf-derivative-defn-07-2" title="Copy heading and permalink for Solution 7.1" aria-label="Copy heading and permalink for Solution 7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 7"><a href="#tf-derivative-defn-07" title="Copy heading and permalink for Exercise 7" aria-label="Copy heading and permalink for Exercise 7">🔗</a></div></article><article class="exercise exercise-like" id="tf-derivative-defn-08"><h5 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-08-1-1">If <span class="process-math">\(\displaystyle f'(x)&gt;0\)</span> for all <span class="process-math">\(x\)</span> in an interval, then <span class="process-math">\(f\)</span> is increasing on that interval.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-08-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-08-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-08-2-1">
+<em class="emphasis">True.</em> A positive derivative means tangent slopes are positive, which corresponds to increasing behavior.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-08-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 8.1"><a href="#tf-derivative-defn-08-2" title="Copy heading and permalink for Solution 8.1" aria-label="Copy heading and permalink for Solution 8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 8"><a href="#tf-derivative-defn-08" title="Copy heading and permalink for Exercise 8" aria-label="Copy heading and permalink for Exercise 8">🔗</a></div></article><article class="exercise exercise-like" id="tf-derivative-defn-09"><h5 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-09-1-1">If <span class="process-math">\(f'(a)\)</span> exists, then <span class="process-math">\(\displaystyle\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\)</span> must be a finite number.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-09-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-09-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-09-2-1">
+<em class="emphasis">True.</em> By definition, <span class="process-math">\(f'(a)\)</span> is the value of this limit. If the limit were infinite or did not exist, then <span class="process-math">\(f'(a)\)</span> would be undefined.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-09-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 9.1"><a href="#tf-derivative-defn-09-2" title="Copy heading and permalink for Solution 9.1" aria-label="Copy heading and permalink for Solution 9.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 9"><a href="#tf-derivative-defn-09" title="Copy heading and permalink for Exercise 9" aria-label="Copy heading and permalink for Exercise 9">🔗</a></div></article><article class="exercise exercise-like" id="tf-derivative-defn-11"><h5 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-11-1-1">A vertical tangent line corresponds to a derivative value of zero.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-11-2-1">
+<em class="emphasis">False.</em> A vertical tangent line has undefined slope. This corresponds to the derivative failing to exist (the slopes become unbounded), not to a derivative of zero.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 10.1"><a href="#tf-derivative-defn-11-2" title="Copy heading and permalink for Solution 10.1" aria-label="Copy heading and permalink for Solution 10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 10"><a href="#tf-derivative-defn-11" title="Copy heading and permalink for Exercise 10" aria-label="Copy heading and permalink for Exercise 10">🔗</a></div></article><article class="exercise exercise-like" id="tf-derivative-defn-12"><h5 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-12-1-1">Algebraic simplification of the difference quotient is used to eliminate the <span class="process-math">\(\tfrac{0}{0}\)</span> form before taking the limit.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-12-2-1">
+<em class="emphasis">True.</em> Direct substitution often yields <span class="process-math">\(\tfrac{0}{0}\text{,}\)</span> so we simplify the difference quotient (factor, combine fractions, use conjugates, identities) to evaluate the limit.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 11.1"><a href="#tf-derivative-defn-12-2" title="Copy heading and permalink for Solution 11.1" aria-label="Copy heading and permalink for Solution 11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 11"><a href="#tf-derivative-defn-12" title="Copy heading and permalink for Exercise 11" aria-label="Copy heading and permalink for Exercise 11">🔗</a></div></article><article class="exercise exercise-like" id="tf-derivative-defn-13"><h5 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-13-1-1">The right-hand derivative <span class="process-math">\(f'(a^+)\)</span> uses only values of the function for inputs greater than <span class="process-math">\(a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-13-2-1">
+<em class="emphasis">True.</em> The limit <span class="process-math">\(\displaystyle\lim_{h\to 0^+}\frac{f(a+h)-f(a)}{h}\)</span> uses <span class="process-math">\(h&gt;0\text{,}\)</span> so <span class="process-math">\(a+h&gt;a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 12.1"><a href="#tf-derivative-defn-13-2" title="Copy heading and permalink for Solution 12.1" aria-label="Copy heading and permalink for Solution 12.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 12"><a href="#tf-derivative-defn-13" title="Copy heading and permalink for Exercise 12" aria-label="Copy heading and permalink for Exercise 12">🔗</a></div></article><article class="exercise exercise-like" id="tf-derivative-defn-14"><h5 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-derivative-defn-14-1-1">If <span class="process-math">\(f'(a^-)\)</span> and <span class="process-math">\(f'(a^+)\)</span> both exist and are equal, then <span class="process-math">\(f'(a)\)</span> exists.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-derivative-defn-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-derivative-defn-14-2-1">
+<em class="emphasis">True.</em> The derivative <span class="process-math">\(f'(a)\)</span> is a two-sided limit. If the one-sided limits exist and agree, then the two-sided limit exists and equals their common value.<div class="autopermalink" data-description="Paragraph"><a href="#tf-derivative-defn-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 13.1"><a href="#tf-derivative-defn-14-2" title="Copy heading and permalink for Solution 13.1" aria-label="Copy heading and permalink for Solution 13.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 13"><a href="#tf-derivative-defn-14" title="Copy heading and permalink for Exercise 13" aria-label="Copy heading and permalink for Exercise 13">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 1–13: Some True/False Problems"><a href="#exercises-derivative-defn-tf-2" title="Copy heading and permalink for Exercise Group 1–13: Some True/False Problems" aria-label="Copy heading and permalink for Exercise Group 1–13: Some True/False Problems">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercises: Practice / Study Problems"><a href="#exercises-derivative-defn-tf" title="Copy heading and permalink for Exercises: Practice / Study Problems" aria-label="Copy heading and permalink for Exercises: Practice / Study Problems">🔗</a></div></section><div class="autopermalink" data-description="Section 2.2: Definition of the Derivative"><a href="#sec-derivative-defn" title="Copy heading and permalink for Section 2.2: Definition of the Derivative" aria-label="Copy heading and permalink for Section 2.2: Definition of the Derivative">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-derivative-intro.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-derivative-rules.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="feedback-link" href="mailto:maccomb1@msu.edu" target="_blank">Feedback</a><a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
