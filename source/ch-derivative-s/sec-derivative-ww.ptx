@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US" xml:id="sec-derivative-ww">
+  <title>Additional Worked-Out Problems</title>
+
+   <subsection xml:id="subsec-deriv-intro">
+      <title><xref ref="sec-derivative-intro"/> Introduction and Motivation for Derivatives</title>
+
+      <example xml:id="ex-deriv-ww-1">
+        <statement>
+          <p>
+            Find the average rate of change of the function <m>f(x) = \tan(x)-x</m> on the interval <m>[-\frac{\pi}{4}, \frac{\pi}{4}]</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            To find the average rate of change of the function <m>f(x) = \tan(x)-x</m> on the interval <m>[-\frac{\pi}{4}, \frac{\pi}{4}]</m>, 
+            we use the formula for the average rate of change:
+          </p>
+          <me> \text{Average Rate of Change} = \frac{f(b) - f(a)}{b - a} </me>
+          <p>
+            where <m>a = -\frac{\pi}{4}</m> and <m>b = \frac{\pi}{4}</m>.
+          </p>
+          <p>
+            First, we calculate <m>f(a)</m> and <m>f(b)</m>:
+          </p>
+          <me> f\left(-\frac{\pi}{4}\right) = \tan\left(-\frac{\pi}{4}\right) - \left(-\frac{\pi}{4}\right) = -1 + \frac{\pi}{4} </me>
+          <me> f\left(\frac{\pi}{4}\right) = \tan\left(\frac{\pi}{4}\right) - \frac{\pi}{4} = 1 - \frac{\pi}{4} </me>
+          <p>
+            Now, we substitute these values into the average rate of change formula and simplify:
+          </p>
+          <me> 
+            \begin{array}{rcl}
+            \text{Average Rate of Change} &amp; = &amp; \dfrac{\left(1 - \frac{\pi}{4}\right) - \left(-1 + \frac{\pi}{4}\right)}{\frac{\pi}{4} - \left(-\frac{\pi}{4}\right)} \\
+            &amp; = &amp; \dfrac{1 - \frac{\pi}{4} + 1 - \frac{\pi}{4}}{\frac{\pi}{4} + \frac{\pi}{4}} \\
+            &amp; = &amp; \dfrac{2 - \frac{\pi}{2}}{\frac{\pi}{2}} \\
+            &amp; = &amp; \dfrac{2}{\frac{\pi}{2}} - 1 \\
+            &amp; = &amp; \dfrac{4}{\pi} - 1
+            \end{array}
+          </me>
+          <p>
+            Therefore, the average rate of change of the function <m>f(x) = \tan(x)-x</m> on the interval <m>[-\frac{\pi}{4}, \frac{\pi}{4}]</m> is <m>\frac{4}{\pi} - 1</m>.
+          </p>
+        </solution>
+      </example>
+
+
+<example xml:id="ex-secant-tangent-polynomial">
+  <statement>
+    <p>
+      Let <m>f(x)=x^2 - 4x + 1</m>.
+    </p>
+
+<p> 
+      (a) 
+        Find the slope of the secant line joining 
+        <m>P(1,f(1))</m> and <m>Q(5,f(5))</m>.
+      </p>
+
+      <p> (b) 
+        Find the slope of the secant line joining 
+        <m>P(2,f(2))</m> and <m>Q(2+h,f(2+h))</m>.
+      </p>
+      
+       <p> (c) 
+        Find the slope of the tangent line at 
+        <m>P(2,f(2))</m>.
+      </p>
+      <p> (d)
+        Find the equation of the tangent line at 
+        <m>P(2,f(2))</m>.
+      </p>
+  </statement>
+
+  <solution>
+    <p>(a) The slope of the secant line is</p>
+
+    <me>
+      \frac{f(5)-f(1)}{5-1}.
+    </me>
+
+    <p>Compute the function values:</p>
+
+    <me>
+      \begin{array}{rcl}
+      f(1) &amp; =&amp; 1 - 4 + 1 = -2, \\
+      f(5) &amp; =&amp; 25 - 20 + 1 = 6.
+      \end{array}
+    </me>
+
+    <me>
+      \frac{6-(-2)}{4} = \frac{8}{4} = 2.
+    </me>
+
+    <p>
+      So the slope of the secant line is <m>2</m>.
+    </p>
+
+    <p>(b) The slope of the secant line is</p>
+
+    <me>
+      \frac{f(2+h)-f(2)}{h}.
+    </me>
+
+    <p>First compute:</p>
+
+    <me>
+      f(2) = 4 - 8 + 1 = -3.
+    </me>
+
+    <me>
+      f(2+h) = (2+h)^2 - 4(2+h) + 1.
+    </me>
+
+    <p>Expand:</p>
+
+    <me>
+      f(2+h) = 4 + 4h + h^2 - 8 - 4h + 1 = h^2 - 3.
+    </me>
+
+    <p>So the difference quotient becomes</p>
+
+    <me>
+      \frac{(h^2 - 3) - (-3)}{h}
+      =
+      \frac{h^2}{h}
+      =
+      h.
+    </me>
+
+    <p>(c) The slope of the tangent line is the limit as <m>h \to 0</m>:</p>
+
+    <me>
+      \lim_{h\to 0} h = 0.
+    </me>
+
+    <p>
+      So the slope of the tangent line at <m>x=2</m> is <m>0</m>.
+    </p>
+
+    <p>(d) Using point-slope form:</p>
+
+    <me>
+      y - (-3) = 0(x-2).
+    </me>
+
+    <me>
+      y = -3.
+    </me>
+
+    <p>
+      The tangent line is horizontal at <m>y=-3</m>.
+    </p>
+
+  </solution>
+</example>
+
+
+
+    </subsection>
+
+    <subsection xml:id="subsec-deriv-defn">
+      <title><xref ref="sec-derivative-defn"/> Definition of the Derivative</title>
+
+<example xml:id="ex-derivative-limit-def-cubic">
+  <statement>
+    <p>
+      Consider the function <m>f(x)=x^3-2x</m> near <m>x=1</m>.
+    </p>
+
+    <p>
+      (a) 
+        Simplify the difference quotient as much as possible:
+        <me>
+          \frac{f(1+h)-f(1)}{h}.
+        </me>
+      </p>
+
+      <p> (b)
+        Use your result from part (a) and the limit definition of the derivative to calculate <m>f'(1)</m>:
+        <me>
+          f'(1)=\lim_{h\to 0}\frac{f(1+h)-f(1)}{h}.
+        </me>
+      </p>
+
+      <p> (c)
+        Consider the following table of values of <m>f(x)</m> near <m>x=1</m>.
+        Use difference quotients to approximate <m>f'(1)</m>.
+      </p> 
+<me>
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+x &amp; 1 &amp; 1.1 &amp; 1.01 &amp; 1.001 &amp; 0.99 \\
+\hline
+f(x) &amp; -1.000 &amp; -0.869 &amp; -0.989699 &amp; -0.998997 &amp; -1.009701 \\
+\hline
+\end{array}
+</me>
+        
+        <p>
+          Approximate <m>f'(1)</m> by computing the following difference quotients:
+        </p>
+
+        <ul>
+          <li>
+            For <m>h=0.1</m>, compute
+            <m>\dfrac{f(1+h)-f(1)}{h}</m>.
+          </li>
+          <li>
+            For <m>h=0.01</m>, compute
+            <m>\dfrac{f(1+h)-f(1)}{h}</m>.
+          </li>
+          <li>
+            For <m>h=0.001</m>, compute
+            <m>\dfrac{f(1+h)-f(1)}{h}</m>.
+          </li>
+          <li>
+            For <m>h=-0.01</m>, compute
+            <m>\dfrac{f(1+h)-f(1)}{h}</m>.
+          </li>
+        </ul>
+
+
+  </statement>
+
+  <solution>
+    <p><emph>(a)</emph> First compute:</p>
+
+    <me>
+      f(1+h)=(1+h)^3-2(1+h).
+    </me>
+
+    <p>
+      Expand:
+    </p>
+
+    <me>
+      (1+h)^3 = 1+3h+3h^2+h^3.
+    </me>
+
+    <me>
+      f(1+h)
+      =
+      1+3h+3h^2+h^3-2-2h
+      =
+      -1+h+3h^2+h^3.
+    </me>
+
+    <p>
+      Since <m>f(1)=1^3-2(1)=-1</m>, we have:
+    </p>
+
+    <me>
+      \frac{f(1+h)-f(1)}{h}
+      =
+      \frac{(-1+h+3h^2+h^3)-(-1)}{h}.
+    </me>
+
+    <me>
+      =
+      \frac{h+3h^2+h^3}{h}
+      =
+      1+3h+h^2.
+    </me>
+
+    <p><emph>(b)</emph> Now take the limit:</p>
+
+    <me>
+      f'(1)
+      =
+      \lim_{h\to 0}(1+3h+h^2)
+      =
+      1.
+    </me>
+
+    <p><emph>(c)</emph> Using the table:</p>
+
+    <p>
+      For <m>h=0.1</m>:
+    </p>
+
+    <me>
+      \frac{-0.869-(-1)}{0.1}
+      =
+      \frac{0.131}{0.1} = 0.131 \cdot 10
+      =
+      1.31.
+    </me>
+
+    <p>
+      For <m>h=0.01</m>:
+    </p>
+
+    <me>
+      \frac{-0.989699-(-1)}{0.01}
+      =
+      \frac{0.010301}{0.01} = 0.010301 \cdot 100
+      =
+      1.0301.
+    </me>
+
+    <p>
+      For <m>h=0.001</m>:
+    </p>
+
+    <me>
+      \frac{-0.998997-(-1)}{0.001}
+      =
+      \frac{0.001003}{0.001} = 0.001003 \cdot 1000
+      =
+      1.003.
+    </me>
+
+    <p>
+      For <m>h=-0.01</m>:
+    </p>
+
+    <me>
+      \frac{-1.009701-(-1)}{-0.01}
+      =
+      \frac{-0.009701}{-0.01} = -0.009701 \cdot -100
+      =
+      0.9701.
+    </me>
+
+    <p>
+      These values approach <m>1</m>, confirming that
+      <m>f'(1)=1</m>.
+    </p>
+  </solution>
+</example>
+      
+<example xml:id="ex-velocity-from-graph-bounce">
+  <statement>
+    <p>
+      Let <m>y=p(t)</m> be the height (in meters) of a rubber ball dropped from a ledge at time <m>t=0</m> seconds.
+      The ball hits the ground at <m>t=0.9</m> seconds and then immediately bounces upward with a smaller velocity.
+      A graph of <m>p(t)</m> is shown below.
+    </p>
+
+
+  <image source="images/ballBouncing.png" width="85%">
+    <shortdescription>
+      A graph of height versus time. The curve begins at time 0 with height 12 meters and decreases smoothly,
+      curving downward as time increases. The graph reaches height 0 at time 0.9 seconds.
+      At that point there is a sharp corner. After 0.9 seconds, the graph changes direction
+      and increases along a straight line segment, representing the ball rising upward
+      at a constant but smaller speed than it had while falling.
+    </shortdescription>
+  </image>
+
+    <p>
+      (a) What are the units of <m>p'(t)</m>? Explain what the sign of <m>p'(t)</m> tells you about the motion of the ball.
+    </p>
+
+    <p>
+      (b) Use the graph to approximate <m>p'(t)</m> for <m>0.8 &lt; t &lt; 0.9</m>. What is the velocity of the ball just before it hits the ground?
+    </p>
+
+    <p>
+      (c) Use the graph to approximate the velocity of the ball immediately after the bounce (for <m>0.9 &lt; t &lt; 1.0</m>)?
+    </p>
+
+    <p>
+      (d) Compare the left-hand and right-hand derivatives at <m>t=0.9</m>. Does <m>p'(0.9)</m> exist? Explain your reasoning using the graph.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      (a) Height is measured in meters and time in seconds, so <m>p'(t)</m> has units of meters per second (m/sec).
+      If <m>p'(t)</m> is negative, the ball is moving downward.
+      If <m>p'(t)</m> is positive, the ball is moving upward.
+    </p>
+
+    <p>
+      (b) For <m>0.8 &lt; t &lt; 0.9</m>,
+      we have <m>p(0.8) \approx 2.5</m> and <m>p(0.9) = 0</m>.
+      Just before impact, the average velocity is approximately
+    </p> 
+    <me>
+      \frac{p(0.9)-p(0.8)}{0.9-0.8}
+      =
+      \frac{0-2.5}{0.1}
+      =
+      -25.
+    </me>
+    <p> 
+      So the ball is moving downward at approximately <m>25</m> m/sec just before hitting the ground.
+    </p>
+
+    <p>
+      (c) For <m>0.9 &lt; t &lt; 1.0</m>,
+      we have <m>p(0.9) = 0</m> and <m>p(1.0) \approx 1</m>. Therefore the average velocity is approximately
+    </p> 
+    <me>
+      \frac{p(1.0)-p(0.9)}{1.0-0.9}
+      =
+      \frac{1-0}{0.1}
+      =
+      10.
+    </me>
+    <p> 
+      So immediately after the bounce, the ball is moving upward at approximately <m>10</m> m/sec.
+    </p>
+
+    <p>
+      (d) The left-hand derivative at <m>t=0.9</m> is approximately <m>-25</m>,
+      while the right-hand derivative is <m>10</m>.
+      Since these values are not equal, the derivative does not exist at <m>t=0.9</m>.
+      Graphically, the function has a sharp corner at the bounce point.
+    </p>
+
+  </solution>
+</example>
+
+
+
+
+<example xml:id="ex-difference-quotient-rational-position">
+  <statement>
+    <p>
+      Let <m>p(t)=\dfrac{2t-1}{5+t}</m> be the position of an object at time <m>t</m>.
+      Here <m>p</m> is measured in meters and <m>t</m> is measured in seconds.
+    </p>
+
+        <p>
+          (a) Simplify the following difference quotient as much as possible:
+        </p>
+        <me>
+          \frac{p(t+h)-p(t)}{h}.
+        </me>
+     
+
+        <p>
+          (b) Use your result from part (a) and the limit definition of the derivative to
+          calculate the instantaneous velocity of the object at time <m>t</m>.
+        </p>
+        <me>
+          v(t)=p'(t)=\lim_{h\to 0}\frac{p(t+h)-p(t)}{h}.
+        </me>
+
+
+        <p>
+          (c) What is the object's velocity at <m>t=1</m> second?
+        </p>
+  </statement>
+
+  <solution>
+        <p> (a) 
+          First compute
+        </p>
+        <me>
+          p(t+h)=\frac{2(t+h)-1}{5+t+h}
+          =
+          \frac{2t+2h-1}{5+t+h}.
+        </me>
+
+        <p>
+          So the difference quotient becomes
+        </p>
+        <me>
+          \frac{ \frac{2t+2h-1}{5+t+h} - \frac{2t-1}{5+t} }{h}.
+        </me>
+
+        <p>
+          Combine the fractions over a common denominator:
+        </p>
+        <me>
+          =
+          \frac{
+            (2t+2h-1)(5+t) - (2t-1)(5+t+h)
+          }{
+            h(5+t+h)(5+t)
+          }.
+        </me>
+
+        <p>
+          After expanding and simplifying, this reduces to
+        </p>
+        <me>
+          \frac{11}{(5+t+h)(5+t)}.
+        </me>
+
+        <p> (b)
+          Now take the limit as <m>h\to 0</m>:
+        </p>
+        <me>
+          v(t)=\lim_{h\to 0}
+          \frac{11}{(5+t+h)(5+t)}
+          =
+          \frac{11}{(5+t)^2}.
+        </me>
+
+        <p> (c) 
+          Evaluate at <m>t=1</m>:
+        </p>
+        <me>
+          v(1)=\frac{11}{(6)^2}=\frac{11}{36}.
+        </me>
+        <p>
+          So the velocity at <m>t=1</m> second is <m>\dfrac{11}{36}</m> m/s.
+        </p>
+  </solution>
+</example>
+
+
+
+
+
+    </subsection>
+
+
+    <subsection xml:id="subsec-deriv-rules">
+      <title><xref ref="sec-derivative-rules"/> Basic Differentiation Rules</title>
+
+      
+<example xml:id="ex-derivatives-multi">
+  <statement>
+    <p>
+      Let <m>f(x) = 2+3x^2 - 5x + \dfrac{8}{x^3}</m>. Evaluate the following:
+    </p>
+
+    <p>(a) <m>f'(x) =</m> </p>
+    <p>(b) <m>f'(2) =</m> </p>
+    <p>(c) <m>f''(x) =</m> </p>
+    <p>(d) <m>f''(2) =</m> </p>
+  </statement>
+
+  <solution>
+    <p> (a) To find <m>f'(x)</m>, we differentiate each term of the function. </p> 
+    <p>Recall that <m>\dfrac{8}{x^3} = 8x^{-3}</m>, so we can apply the power rule to this term as well.</p> 
+    <me>
+      \begin{array}{rcl}
+      f'(x) &amp; =&amp; 0 + 6x - 5 - 24x^{-4} \\
+      &amp; =&amp; 6x - 5 - \frac{24}{x^4}.
+      \end{array}
+    </me>
+    <p> (b) To find <m>f'(2)</m>, we substitute <m>x=2</m> into the expression for <m>f'(x)</m>: </p>
+    <me>
+      f'(2) = 6(2) - 5 - \frac{24}{(2)^4} = 12 - 5 - \frac{24}{16} = 7 - \frac{3}{2} = \frac{11}{2}.
+    </me>
+    <p> (c) To find <m>f''(x)</m>, we differentiate <m>f'(x)</m>: </p>
+    <me>
+      \begin{array}{rcl}
+      f''(x) &amp; =&amp; 6 + 0 + 96x^{-5} \\
+      &amp; =&amp; 6 + \frac{96}{x^5}.
+      \end{array}
+    </me>
+    <p> (d) To find <m>f''(2)</m>, we substitute <m>x=2</m> into the expression for <m>f''(x)</m>: </p>
+    <me>
+      f''(2) = 6 + \frac{96}{(2)^5} = 6 + \frac{96}{32} = 6 + 3 = 9.
+    </me>
+  </solution>
+</example>
+
+<example xml:id="ex-derivative-ww-2">
+<statement>
+    <p> Let <m> f(x) = \dfrac{3x^2 - 5x + 4}{x^3 + 1}</m>. </p>
+    <p> (a)  Find <m>f'(1)</m>. </p>
+    <p> (b)  Find the equation of the tangent line to the graph of <m>f</m> at the point where <m>x=1</m>. </p>
+    <p> (c) Find the equation of the perpendicular line to the graph of <m>f</m> at the point where <m>x=1</m>. </p>
+  </statement>
+  <solution>
+    <p>
+      (a) To find <m>f'(1)</m>, we first need to find the derivative <m>f'(x)</m> using the quotient rule. 
+      The quotient rule states that if <m>f(x) = \dfrac{g(x)}{h(x)}</m>, then
+      <me>
+        f'(x) = \frac{g'(x)h(x) - g(x)h'(x)}{(h(x))^2}.
+      </me>
+      In our case, let <m>g(x) = 3x^2 - 5x + 4</m> and <m>h(x) = x^3 + 1</m>. 
+      We compute:
+      <me>
+        g'(x) = 6x - 5, \quad h'(x) = 3x^2.
+      </me>
+      Now we can apply the quotient rule:
+      <me>
+        f'(x) = \frac{(6x - 5)(x^3 + 1) - (3x^2 - 5x + 4)(3x^2)}{(x^3 + 1)^2}.
+      </me>
+      <p>Now we substitute <m>x=1</m> into the expression for <m>f'(x)</m> to find <m>f'(1)</m>: </p>
+      <me>
+        f'(1) = \frac{(6 - 5)(2) - (3 - 5 + 4)(3)}{(2)^2}
+        = \frac{2 - 6}{4}
+        = \frac{-4}{4}
+        = -1.
+        </me>
+    </p>
+    <p>
+      (b) To find the equation of the tangent line to the graph of <m>f</m> at the point where <m>x=1</m>, we first need to find the coordinates of the point on the graph at <m>x=1</m>. 
+      We compute:
+      <me>
+        f(1) = \frac{3(1)^2 - 5(1) + 4}{(1)^3 + 1} = \frac{3 - 5 + 4}{2} = \frac{2}{2} = 1.
+      </me>
+      So the point of tangency is <m>(1, 1)</m>. 
+      The slope of the tangent line is given by <m>f'(1) = -1</m>. 
+      Using the point-slope form of a line, we can write the equation of the tangent line as:
+      <me>
+        y - 1 = -1(x - 1).
+      </me>
+      Simplifying this gives:
+      <me>
+        y = -x + 2.
+      </me>
+    </p>
+    <p>
+      (c) To find the equation of the perpendicular line to the graph of <m>f</m> at the point where <m>x=1</m>, we first need to find the slope of the perpendicular line. 
+      The slope of the tangent line is <m>-1</m>, so the <alert>slope of the perpendicular line is the negative reciprocal</alert> of <m>-1</m>, which is <m>1</m>. 
+      Using the point-slope form of a line again, we can write the equation of the perpendicular line as:
+      <me>
+        y - 1 = 1(x - 1).
+      </me>
+      Simplifying this gives:
+      <me>
+        y = x.
+      </me>
+    </p>
+  </solution>
+  </example>
+
+<example xml:id="ex-deriv-values-at-point">
+  <title>Using Given Function and Derivative Values</title>
+  <statement>
+    <p>
+      Suppose <m>f</m> and <m>g</m> are differentiable functions and that
+    </p>
+
+    <me>
+      f(1) = -2, 
+      \quad f'(1) = 4, 
+      \quad g(1) = 5, 
+      \quad g'(1) = -3.
+    </me>
+
+    <p>
+      Evaluate the following derivatives at <m>x=1</m>.
+    </p>
+
+    <p>(a) <m>\displaystyle \left.\frac{d}{dx}(3f - 2g)\right|_{x=1}</m></p>
+
+    <p>(b) <m>\displaystyle \left.\frac{d}{dx}(fg)\right|_{x=1}</m></p>
+
+    <p>(c) <m>\displaystyle \left.\frac{d}{dx}\!\left(\frac{f}{g}\right)\right|_{x=1}</m></p>
+
+    <p>(d) <m>\displaystyle \left.\frac{d}{dx}\!\left(\frac{g}{f}\right)\right|_{x=1}</m></p>
+  </statement>
+
+  <solution>
+    <p>
+      (a) We use the linearity of differentiation:
+    </p>
+
+    <me> \begin{array}{rcl}
+      \left.\frac{d}{dx}(3f - 2g)\right|_{x=1} &amp; = &amp; 3f'(1) - 2g'(1) \\
+      &amp; = &amp; 3(4) - 2(-3) = 12 + 6 = 18.
+      \end{array}
+    </me>
+
+    <p>
+      (b) We use the product rule:
+    </p>
+
+    <me>
+      \begin{array}{rcl}
+      \left.\frac{d}{dx}(fg)\right|_{x=1} &amp; = &amp; f'(1)g(1) + f(1)g'(1) \\
+      &amp; = &amp; (4)(5) + (-2)(-3) = 20 + 6 = 26.
+      \end{array}
+    </me>
+
+    <p>
+      (c) We use the quotient rule:
+    </p>
+
+    <me> \begin{array}{rcl}
+      \left.\frac{d}{dx}\!\left(\frac{f}{g}\right)\right|_{x=1} &amp; = &amp; \frac{f'(1)g(1) - f(1)g'(1)}{(g(1))^2} \\
+      &amp; = &amp; \frac{(4)(5) - (-2)(-3)}{5^2} \\
+      &amp; = &amp; \frac{20 - 6}{25} = \frac{14}{25}.
+      \end{array}
+    </me>
+
+    <p>
+      (d) Again, we use the quotient rule:
+    </p>
+
+    <me> \begin{array}{rcl}
+      \left.\frac{d}{dx}\!\left(\frac{g}{f}\right)\right|_{x=1} &amp; = &amp; \frac{g'(1)f(1) - g(1)f'(1)}{(f(1))^2} \\
+      &amp; = &amp; \frac{-3(-2) - 5(4)}{(-2)^2} \\
+      &amp; = &amp; \frac{6 - 20}{4} = \frac{-14}{4} = -\frac{7}{2}.
+      \end{array}
+    </me>
+  </solution>
+</example>
+
+<example xml:id="ex-horizontal-tangents-poly">
+  <statement>
+    <p>
+      Find all points of the graph of <m>f(x)=x^3-6x^2+1</m> that have horizontal tangents.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Horizontal tangents occur where the slope (derivative) is zero. So we are looking to solve the equation <m>f'(x)=0</m>.
+    </p>
+
+    <me>
+      \begin{array}{rcl}
+      f(x) &amp; = &amp; x^3-6x^2+1 \\
+      f'(x) &amp; = &amp; 3x^2-12x \\
+            &amp; = &amp; 3(x^2-4x) \\
+            &amp; = &amp; 3x(x-4).
+      \end{array}
+    </me>
+
+    <p>
+      Set <m>f'(x)=0 \implies</m>
+      <m>3x(x-4)=0</m>, so <m>x=0</m> or <m>x=4</m>.
+    </p>
+
+    <p>
+      Therefore, the horizontal tangents occur at <m>x=0</m> and <m>x=4</m>. To find the corresponding points on the graph, we compute:
+    </p>
+    <me>
+      \begin{array}{rcl}
+      f(0) &amp; = &amp; 1, \\
+      f(4) &amp; = &amp; 64 - 96 + 1 = -31.
+      \end{array}
+    </me>
+    <p>
+      Thus, the points of the graph that have horizontal tangents are <m>(0, 1)</m> and <m>(4, -31)</m>.
+    </p>
+  </solution>
+</example>
+
+<example xml:id="ex-derivative-triple-product">
+  <statement>
+    <p>
+      Find the derivative of the given function.
+    </p>
+
+    <me>
+      y = x(x^2+5)\sqrt{x+1}.
+    </me>
+  </statement>
+
+  <solution>
+    <p> 
+    There are multiple ways to approach this problem. One way is to first simplify the expression for <m>y</m> and then differentiate. 
+    Another way is to apply the product rule multiple times without simplifying first. Here, we will take the simpler route and simplify first.
+    </p> 
+    <p>
+      First, we can rewrite <m>y</m> as:
+    </p>
+    <me> \begin{array}{rcl}
+      y &amp; = &amp; x(x^2+5)(x+1)^{1/2} \\
+        &amp; = &amp; (x^3 + 5x)(x+1)^{1/2}.
+      \end{array}
+    </me>
+    <p>
+      Now we can apply the product rule to differentiate <m>y</m> with respect to <m>x</m>:
+    </p>
+    <me>
+      \begin{array}{rcl}
+      \dfrac{dy}{dx} &amp; = &amp; \left[(x^3 + 5x)(x+1)^{1/2}\right]' \\
+                     &amp; = &amp; (3x^2 + 5)(x+1)^{1/2} + (x^3 + 5x)\cdot\frac{1}{2}(x+1)^{-1/2} \\
+      \end{array}
+    </me>
+    <p> Although we can continue to simplify this expression, it is often acceptable to leave the derivative in this form, 
+      especially if the problem does not explicitly ask for further simplification.
+    </p> 
+  </solution>
+</example>
+
+
+<example xml:id="ex-tangent-line-parameters">
+  <statement>
+    <p> Is there a point on the curve <m>y=ax^2</m> where the tangent line has the equation <m>y=6x+1</m>. 
+      If so, find the values of <m>a</m> and the point of tangency.
+    </p>
+  </statement>
+  <solution> 
+    <p>
+      The slope of the line <m>y=6x+1</m> is <m>6</m>.
+    </p>
+    <p>
+      The derivative of the curve <m>y=ax^2</m> is <m>y'=2ax</m>.
+    </p>
+    <p>
+      For the line to be tangent to the curve, their slopes must be equal at some point. So we set:
+    </p>
+    <me>
+      2ax = 6 \quad \Rightarrow \quad a = \frac{3}{x}.
+    </me>
+    <p>
+      The point of tangency must also be on both curves. So we know that:
+    </p>
+    <me>
+     6x+1 =  y = ax^2 = \frac{3}{x} \cdot x^2 = 3x.
+    </me>
+    <p>
+      Solving for <m>x</m> gives: 
+    </p>
+    <me>
+      3x = 6x + 1 \quad \Rightarrow \quad -3x = 1 \quad \Rightarrow \quad x = -\frac{1}{3}.
+    </me>
+    <p>
+      Substituting back into (either) curve equation we get:
+    </p>
+    <me>
+      y = 6\left(-\frac{1}{3}\right) + 1 = -2 + 1 = -1.
+    </me>
+    <p>
+      And substituting this value back into our  <m>a = \frac{3}{x}</m> equation gives:
+    </p>
+      
+    <me>
+      a = \frac{3}{-\frac{1}{3}} = -9.
+    </me>
+    <p>
+      Thus, the value of <m>a</m> is <m>-9</m>, and the point of tangency is <m>\left(-\frac{1}{3}, -1\right)</m>. You can verify in Desmos
+      that the line <m>y=6x+1</m> is indeed tangent to the curve <m>y=-9x^2</m> at the point <m>\left(-\frac{1}{3}, -1\right)</m>.
+    </p>
+  </solution>
+</example>
+
+
+
+    </subsection>
+
+    <subsection xml:id="subsec-deriv-trig">
+      <title><xref ref="sec-derivative-trig"/> Trigonometric Derivatives</title>
+      <p> test more stuff here.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-deriv-expChain">
+      <title><xref ref="sec-derivative-expChain"/> Exponential Functions and the Chain Rule</title>
+      <p> test
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-deriv-implicit">
+      <title><xref ref="sec-derivative-implicit"/> Implicit Differentiation</title>
+      <p> test
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-deriv-inverse">
+      <title><xref ref="sec-derivative-inverse"/> Inverse Functions and Their Derivatives</title>
+      <p> test
+      </p>
+    </subsection>
+
+</section>

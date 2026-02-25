@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-precalc-exp" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exponentials</title>
+
+
+  <p>
+    Exponential functions play a central role in calculus and its applications.
+    They model growth and decay processes such as population change,
+    compound interest, radioactive decay, and cooling.
+    In this section, we review the algebraic structure of exponential functions
+    and the key properties that will be used repeatedly throughout the course.
+  </p>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-exp-def">
+    <title>Exponential Functions</title>
+
+    <definition xml:id="def-exponential-function">
+      <title>Exponential Function</title>
+      <statement>
+        <p>
+          An <term>exponential function</term> is a function of the form
+        </p>
+        <me>
+          f(x) = a^x,
+        </me>
+        <p>
+          where <m>a &gt; 0</m> and <m>a \neq 1</m> is a constant called the <term>base</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <remark>
+      <p>
+        In an exponential function, the variable appears in the exponent.
+        This distinguishes exponential functions from power functions such as
+        <m>x^3</m>, where the variable is the base.
+      </p>
+    </remark>
+
+    <example>
+      <statement>
+        <p>
+          Identify which of the following functions are exponential:
+          <m>2^x</m>, <m>x^2</m>, <m>5^{x-1}</m>, <m>x^x</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The exponential functions are <m>2^x</m> and <m>5^{x-1}</m>,
+          since the variable appears only in the exponent.
+          The expressions <m>x^2</m> and <m>x^x</m> are not exponential functions.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-exp-laws">
+    <title>Laws of Exponents</title>
+
+    <p>
+      The laws of exponents allow us to simplify exponential expressions
+      and are essential tools for solving equations involving exponentials.
+    </p>
+
+    <theorem xml:id="thm-exp-laws">
+      <title>Laws of Exponents</title>
+      <statement>
+        <p>
+          For <m>a &gt; 0</m> and real numbers <m>x</m> and <m>y</m>,
+        </p>
+        <me>
+          \begin{array}{rcl}
+            a^x a^y &amp; = &amp; a^{x+y} \\
+            \dfrac{a^x}{a^y} &amp; = &amp; a^{x-y} \\
+            (a^x)^y &amp; = &amp; a^{xy} \\
+            a^0 &amp; = &amp; 1
+          \end{array}
+        </me>
+      </statement>
+    </theorem>
+
+    <example>
+      <statement>
+        <p>
+          Simplify the expression <m>\dfrac{3^{x+2}}{3^{x-1}}</m>.
+        </p>
+      </statement>
+      <solution>
+        <me>
+          \begin{array}{rcl}
+            \dfrac{3^{x+2}}{3^{x-1}}
+            &amp; = &amp;
+            3^{(x+2)-(x-1)} \\
+            &amp; = &amp;
+            3^3 \\
+            &amp; = &amp;
+            27
+          \end{array}
+        </me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-exp-equations">
+    <title>Solving Exponential Equations</title>
+
+    <p>
+      Many exponential equations can be solved by rewriting both sides
+      with the same base and then equating the exponents.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Solve the equation <m>2^{x+1} = 16</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Rewrite <m>16</m> as a power of 2:
+        </p>
+        <me>
+          16 = 2^4.
+        </me>
+        <p>
+          Then equate exponents:
+        </p>
+        <me>
+          \begin{array}{rcl}
+          2^{x+1} &amp; = &amp; 2^4 \\  
+          x + 1 &amp; = &amp; 4 \\
+            x &amp; = &amp; 3
+          \end{array}
+        </me>
+      </solution>
+    </example>
+
+    <remark>
+      <p>
+        When exponential equations cannot be written with the same base,
+        logarithms will be required showcased in the next section.
+      </p>
+    </remark>
+  </subsection>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-base-e">
+    <title>The Natural Base <m>e</m></title>
+
+    <p>
+      Among all exponential functions, one base is especially important in calculus:
+      the number <m>e</m>, approximately equal to <m>2.718</m>.
+    </p>
+
+    <definition xml:id="def-natural-exp">
+      <title>Natural Exponential Function</title>
+      <statement>
+        <p>
+          The <term>natural exponential function</term> is defined by
+          <m>f(x) = e^x</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <remark>
+      <p>
+        The function <m>e^x</m> has the special property that its derivative
+        is equal to itself.
+        Because of this, it is often algebraically simpler to work with
+        base <m>e</m> when taking derivatives and integrals.
+      </p>
+    </remark>
+
+<example>
+  <statement>
+    <p>
+      Rewrite <m>5^x</m> using base <m>e</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We begin by recalling that from <xref ref="ex-precalc-expInv"/>
+      natural logarithm and the exponential function
+      are inverse functions. In particular, for any positive number <m>A</m>,
+    </p>
+    <me>
+      A = e^{\ln(A)}.
+    </me>
+
+    <p>
+      Applying this identity with <m>A = 5</m>, we can rewrite the base:
+    </p>
+    <me>
+      5 = e^{\ln(5)}.
+    </me>
+
+    <p>
+      Now substitute this expression for <m>5</m> into <m>5^x</m>:
+    </p>
+    <me>
+      5^x = \left(e^{\ln(5)}\right)^x.
+    </me>
+
+    <p>
+      Using the exponent rule <m>(a^x)^y = a^{xy}</m>, we simplify:
+    </p>
+    <me>
+      \left(e^{\ln(5)}\right)^x = e^{x \ln(5)}.
+    </me>
+
+    <p>
+      Therefore, the exponential function written in terms of base <m>e</m> is
+    </p>
+    <me>
+      5^x = e^{x \ln(5)}.
+    </me>
+
+    <p>
+      Writing exponentials in this form is especially useful in calculus,
+      since derivatives and integrals involving <m>e^x</m> are simpler to compute.
+    </p>
+  </solution>
+</example>
+
+  </subsection>
+
+<!-- ======================================================= -->
+<subsection xml:id="ssec-precalc-videos-exp">
+  <title>Supplemental Video Resources</title>
+
+  <p>
+    The following is a curated set of videos that many students find helpful.
+    They provide additional explanations and visual intuition
+    for exponential functions and their role in calculus.
+  </p>
+
+  <ul>
+    <li>
+      <url href="https://youtu.be/6WMZ7J0wwMI?si=6uoba0KMllKSeCuI">Introduction to exponential functions</url>
+    </li>
+    <li>
+      <url href="https://youtu.be/7xsn79tpCsk?si=J4SUlXpxzDkyZnhX">Exponential growth and decay explained visually</url>
+    </li>
+    <li>
+      <url href="https://youtu.be/0jp3FCsYQog?si=sQLYRj-_0FWNgGgw">Exponential and logarithmic functions as inverses</url>
+    </li>
+    <li>
+      <url href="https://youtu.be/Q9puUgDc2BY?si=4GsqVvlTzUGViqUH">Understanding e^x and ln(x)</url>
+    </li>
+    <li>
+      <url href="https://youtu.be/1Wrvh_KPvec?si=91oprUxMJxSHDKcK">Why base e the Natural Number</url>
+    </li>
+    <li>
+      <url href="https://youtu.be/9tutJ5xrRwg?si=zgjZDMkb_Kt0ZtJ3">Solving exponential equations</url>
+    </li>
+  </ul>
+
+</subsection>
+
+
+  
+</section>

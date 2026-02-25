@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-precalc-factor" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Factoring</title>
+
+  <p>
+    Factoring is one of the most important algebra skills for calculus.
+    Many problems in limits, derivatives, and integrals require expressions
+    to be simplified before any calculus ideas can be applied.
+    In this section, we review the most common factoring techniques,
+    starting from very basic patterns and gradually building toward
+    the types of expressions that appear in calculus problems.
+  </p>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-factor-gcf">
+    <title>Factoring Out a Greatest Common Factor</title>
+
+    <p>
+      The first and most important factoring technique is factoring out
+      the greatest common factor.
+      If every term in an expression shares a common factor,
+      that factor can be factored out.
+    </p>
+
+    <principle xml:id="pr-factor-gcf">
+      <statement>
+        <p>
+          If every term of an expression contains a factor <m>a</m>, then
+        </p>
+        <me>
+\begin{array}{rcl}
+ab + ac &amp; = &amp; a(b + c)
+\end{array}
+        </me>
+      </statement>
+    </principle>
+
+    <example>
+      <statement>
+        <p>
+          Factor <m>6x + 12</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Both terms share a factor of <m>6</m>.
+        </p>
+        <me>
+\begin{array}{rcl}
+6x + 12 &amp; = &amp; 6(x + 2)
+\end{array}
+        </me>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Factor <m>4x^2 + 8x</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Both terms share a factor of <m>4x</m>.
+        </p>
+        <me>
+\begin{array}{rcl}
+4x^2 + 8x &amp; = &amp; 4x(x + 2)
+\end{array}
+        </me>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Factor <m>-3x^3 + 6x^2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Both terms share a factor of <m>3x^2</m>.
+          Factoring out a negative sign is often helpful.
+        </p>
+        <me>
+\begin{array}{rcl}
+-3x^3 + 6x^2 &amp; = &amp; -3x^2(x - 2)
+\end{array}
+        </me>
+      </solution>
+    </example>
+
+    <remark>
+      <p>
+        Always check for a greatest common factor first.
+        Many factoring mistakes come from skipping this step.
+      </p>
+    </remark>
+  </subsection>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-factor-difference-squares">
+    <title>Difference of Squares</title>
+
+    <p>
+      One of the most common factoring patterns is the difference of squares.
+      This pattern appears frequently in limits and rational expressions.
+    </p>
+
+    <principle xml:id="pr-difference-squares">
+      <statement>
+        <me>
+\begin{array}{rcl}
+a^2 - b^2 &amp; = &amp; (a - b)(a + b)
+\end{array}
+        </me>
+      </statement>
+    </principle>
+
+    <example>
+      <statement>
+        <p>
+          Factor <m>x^2 - 16</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Recognize <m>16 = 4^2</m>.
+        </p>
+        <me>
+\begin{array}{rcl}
+x^2 - 16 &amp; = &amp; (x - 4)(x + 4)
+\end{array}
+        </me>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Factor <m>9x^2 - 25</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Rewrite each term as a square.
+        </p>
+        <me>
+\begin{array}{rcl}
+9x^2 - 25 &amp; = &amp; (3x)^2 - 5^2 \\
+          &amp; = &amp; (3x - 5)(3x + 5)
+\end{array}
+        </me>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Simplify <m>\dfrac{x^2 - 9}{x - 3}</m> for <m>x \neq 3</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Factor the numerator.
+        </p>
+        <me>
+\begin{array}{rcl}
+\dfrac{x^2 - 9}{x - 3}
+&amp; = &amp;
+\dfrac{(x - 3)(x + 3)}{x - 3} \\[0.6em]
+&amp; = &amp;
+x + 3
+\end{array}
+        </me>
+      </solution>
+    </example>
+
+
+    <remark>
+      <p>
+        The sum of squares <m>a^2 + b^2</m> does not factor over the real numbers.
+      </p>
+    </remark>
+  </subsection>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-factor-perfect-squares">
+    <title>Perfect Square Trinomials</title>
+
+    <p>
+      Some trinomials arise from squaring a binomial.
+      Recognizing these patterns allows quick factoring.
+    </p>
+
+    <principle xml:id="pr-perfect-square">
+      <statement>
+        <me>
+\begin{array}{rcl}
+a^2 + 2ab + b^2 &amp; = &amp; (a + b)^2 \\[0.6em]
+a^2 - 2ab + b^2 &amp; = &amp; (a - b)^2
+\end{array}
+        </me>
+      </statement>
+    </principle>
+
+    <example>
+      <statement>
+        <p>
+          Factor <m>x^2 + 6x + 9</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The middle term matches <m>2ab</m> with <m>a = x</m> and <m>b = 3</m>.
+        </p>
+        <me>
+\begin{array}{rcl}
+x^2 + 6x + 9 &amp; = &amp; (x + 3)^2
+\end{array}
+        </me>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Factor <m>x^2 - 10x + 25</m>.
+        </p>
+      </statement>
+      <solution>
+        <me>
+\begin{array}{rcl}
+x^2 - 10x + 25 &amp; = &amp; (x - 5)^2
+\end{array}
+        </me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ======================================================= -->
+<subsection xml:id="ssec-factor-general-trinomials">
+  <title>Factoring General Trinomials Using the AC Method</title>
+
+  <p>
+    Not all trinomials factor easily by inspection.
+    For expressions of the form <m>ax^2 + bx + c</m>,
+    the <em>AC method</em> provides a systematic way to factor.
+    This method is especially useful when the leading coefficient
+    is not equal to 1, and it works equally well when it is.
+  </p>
+
+  <algorithm xml:id="pr-ac-method">
+    <statement>
+      <p>
+        To factor <m>ax^2 + bx + c</m> using the AC method:
+      </p>
+      <ol>
+        <li>Compute the product <m>ac</m>.</li>
+        <li>Find two numbers whose product is <m>ac</m> and whose sum is <m>b</m>.</li>
+        <li>Rewrite the middle term using these two numbers.</li>
+        <li>Factor by grouping.</li>
+      </ol>
+    </statement>
+  </algorithm>
+
+  <example>
+    <statement>
+      <p>
+        Factor <m>x^2 + 5x + 6</m> using the AC method.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Step 1: Identify <m>a</m>, <m>b</m>, and <m>c</m>.
+      </p>
+
+      <me>
+\begin{array}{rcl}
+a = 1, &amp; b = 5, &amp; c = 6
+\end{array}
+      </me>
+
+      <p>
+        Step 2: Compute <m>ac</m>.
+      </p>
+
+      <me>
+        ac = 1 \cdot 6 = 6.
+      </me>
+
+      <p>
+        Step 3: Find two numbers that multiply to <m>6</m> and add to <m>5</m>.
+      </p>
+
+      <me>
+        2 \quad \text{and} \quad 3
+      </me>
+
+      <p>
+        Step 4: Rewrite the middle term and factor by grouping.
+      </p>
+
+      <me>
+\begin{array}{rcl}
+x^2 + 5x + 6
+&amp; = &amp;
+x^2 + 2x + 3x + 6 \\[0.6em]
+&amp; = &amp;
+x(x + 2) + 3(x + 2) \\[0.6em]
+&amp; = &amp;
+(x + 2)(x + 3)
+\end{array}
+      </me>
+    </solution>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Factor <m>x^2 - x - 12</m> using the AC method.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Step 1: Identify <m>a</m>, <m>b</m>, and <m>c</m>.
+      </p>
+
+      <me>
+\begin{array}{rcl}
+a = 1, &amp; b = -1, &amp; c = -12
+\end{array}
+      </me>
+
+      <p>
+        Step 2: Compute <m>ac</m>.
+      </p>
+
+      <me>
+        ac = 1 \cdot (-12) = -12.
+      </me>
+
+      <p>
+        Step 3: Find two numbers that multiply to <m>-12</m> and add to <m>-1</m>.
+      </p>
+
+      <me>
+        -4 \quad \text{and} \quad 3
+      </me>
+
+      <p>
+        Step 4: Rewrite the middle term and factor by grouping.
+      </p>
+
+      <me>
+\begin{array}{rcl}
+x^2 - x - 12
+&amp; = &amp;
+x^2 - 4x + 3x - 12 \\[0.6em]
+&amp; = &amp;
+x(x - 4) + 3(x - 4) \\[0.6em]
+&amp; = &amp;
+(x - 4)(x + 3)
+\end{array}
+      </me>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      The AC method always works when a trinomial factors over the real numbers.
+      With practice, you may recognize factors quickly, but this method provides
+      a dependable fallback when guessing is difficult.
+    </p>
+  </remark>
+</subsection>
+
+<!-- ======================================================= -->
+<subsection xml:id="ssec-precalc-videos-factor">
+  <title>Supplemental Video Resources</title>
+
+  <p>
+    The following is a curated set of videos that many students find helpful.
+    They provide additional explanations and worked examples
+    for common factoring techniques used throughout calculus.
+  </p>
+
+  <ul>
+    <li>
+      <url href="https://www.youtube.com/watch?v=U6FndtdgpcA">How To Factor Polynomials The Easy Way!</url>
+    </li>
+    <li>
+      <url href="https://youtu.be/HLNSouzygw0?si=HQ5TybZC-pZLIoy3">Difference of squares explained</url>
+    </li>
+    <li>
+      <url href="https://youtu.be/f6yhfmW41wI?si=5dM86jmyIujIX6K1">Perfect square trinomials</url>
+    </li>
+    <li>
+      <url href="https://youtu.be/t7-JCa7phCQ?si=2Xy0aaYiORZnyqPr">Factoring by grouping</url>
+    </li>
+    <li>
+      <url href="https://youtu.be/uVpsz-xpnPo?si=qD0Gmkpw0uIxcFKk">Factoring to simplify rational expressions</url>
+    </li>
+  </ul>
+
+</subsection>
+
+</section>

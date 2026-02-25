@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-precalc" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Precalculus Review</title>
+
+  
+  <introduction>
+  <p>
+    Calculus builds directly on algebra. If algebra skills are shaky, calculus problems can feel much harder than they need to be.
+    This chapter reviews some of the most important algebra/trig ideas you will need throughout the course with examples.
+  </p>
+
+  </introduction>
+
+  
+  <!-- include sections -->
+  <xi:include href="./ch-precalc-s/sec-precalc-basics.ptx" />
+  <xi:include href="./ch-precalc-s/sec-precalc-factor.ptx" />
+  <xi:include href="./ch-precalc-s/sec-precalc-funcs.ptx" />
+  <xi:include href="./ch-precalc-s/sec-precalc-ineq.ptx" />  
+  <xi:include href="./ch-precalc-s/sec-precalc-absval.ptx" />
+  <xi:include href="./ch-precalc-s/sec-precalc-exp.ptx" />
+  <xi:include href="./ch-precalc-s/sec-precalc-log.ptx" />
+  <xi:include href="./ch-precalc-s/sec-precalc-trig.ptx" />
+  <!--<xi:include href="./ch-precalc-s/sec-precalc-div.ptx" /> -->
+  
+
+</chapter>

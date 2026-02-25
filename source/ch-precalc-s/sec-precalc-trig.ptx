@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-precalc-trig" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Trigonometry</title>
+
+  <p>
+    Trigonometric functions are fundamental tools in calculus.
+    They arise in problems involving motion, waves, oscillations, and periodic behavior,
+    and they play a key role in limits, derivatives, and integrals.
+    In this section, we review the core definitions and properties of trigonometric functions
+    that will be used throughout the course.
+  </p>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-trig-triangle">
+    <title>Right Triangle Definitions</title>
+
+    <p>
+      We begin by defining sine and cosine using right triangles.
+      These definitions apply when the angle is acute.
+    </p>
+
+    <definition xml:id="def-trig-triangle">
+      <title>Sine and Cosine (Right Triangle)</title>
+      <statement>
+        <p>
+          Given a right triangle and an acute angle <m>\theta</m>,
+        </p>
+        <me>
+          \sin(\theta) = \dfrac{\text{opposite}}{\text{hypotenuse}},
+          \qquad
+          \cos(\theta) = \dfrac{\text{adjacent}}{\text{hypotenuse}}.
+        </me>
+      </statement>
+
+      <figure xml:id="fig-trig-right-triangle">
+        <caption>
+          A right triangle illustrating the definitions of sine and cosine for an acute angle <m>\theta</m>.
+        </caption>
+        <image source="images/trigRightTriangle.PNG" width="60%"/>
+      </figure>
+    </definition>
+
+    <example>
+      <statement>
+        <p>
+          In a right triangle, the side opposite <m>\theta</m> has length 3,
+          the adjacent side has length 4, and the hypotenuse has length 5.
+          Find <m>\sin(\theta)</m> and <m>\cos(\theta)</m>.
+        </p>
+      </statement>
+      <solution>
+        <me>
+          \sin(\theta) = \dfrac{3}{5},
+          \qquad
+          \cos(\theta) = \dfrac{4}{5}.
+        </me>
+      </solution>
+    </example>
+
+    <remark>
+      <p>
+        While these definitions are intuitive, they apply only to acute angles.
+        To extend trigonometric functions to all real numbers,
+        we use the unit circle.
+      </p>
+    </remark>
+  </subsection>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-trig-unit-circle">
+    <title>The Unit Circle Definition</title>
+
+    <p>
+      The unit circle allows us to define trigonometric functions
+      for any real number and is the framework used in calculus.
+    </p>
+
+    <definition xml:id="def-unit-circle">
+      <title>Sine and Cosine (Unit Circle)</title>
+      <statement>
+        <p>
+          Consider the unit circle centered at the origin.
+          For a real number <m>\theta</m>, let the point on the unit circle
+          corresponding to angle <m>\theta</m> (measured in radians)
+          have coordinates <m>(x,y)</m>.
+          Then
+        </p>
+        <me>
+          \cos(\theta) = x,
+          \qquad
+          \sin(\theta) = y.
+        </me>
+      </statement>
+
+      <figure xml:id="fig-unit-circle">
+        <caption>
+          The unit circle definition of sine and cosine.
+          For an angle <m>\theta</m>, the point <m>(x,y)</m> on the unit circle satisfies
+          <m>x = \cos(\theta)</m>, <m>y = \sin(\theta)</m>, and
+          <m>\cos^2(\theta) + \sin^2(\theta) = 1</m>.
+        </caption>
+        <image source="images/trigUnitCircle.PNG" width="60%"/>
+      </figure>
+    </definition>
+
+    <remark xml:id="rmk-radians-calculus">
+      <p>
+        In calculus, angles are always measured in radians.
+        This choice ensures that derivatives and limits involving
+        trigonometric functions behave correctly.
+      </p>
+    </remark>
+
+    <example>
+      <statement>
+        <p>
+          Evaluate <m>\sin(\pi/2)</m> and <m>\cos(\pi)</m>.
+        </p>
+      </statement>
+      <solution>
+        <me>
+          \sin(\pi/2) = 1,
+          \qquad
+          \cos(\pi) = -1.
+        </me>
+      </solution>
+    </example>
+
+    <remark>
+      <p>
+        For acute angles, the unit circle and right triangle definitions of sine
+        and cosine agree. The unit circle framework extends these ideas
+        to all real angles.
+      </p>
+    </remark>
+
+    <remark>
+      <p>
+        Because rotating by <m>2\pi</m> returns to the same point on the unit circle,
+        sine and cosine are periodic with period <m>2\pi</m>.
+      </p>
+    </remark>
+  </subsection>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-trig-other-functions">
+    <title>Other Trigonometric Functions</title>
+
+    <p>
+      In addition to sine and cosine, four other trigonometric functions
+      are commonly used in calculus: tangent, secant, cosecant, and cotangent.
+      These functions are defined in terms of sine and cosine.
+    </p>
+
+    <definition xml:id="def-trig-ratios">
+      <title>Definitions of Tangent, Secant, Cosecant, and Cotangent</title>
+      <statement>
+        <p>
+          For an angle <m>\theta</m> such that the expressions are defined,
+        </p>
+        <me>
+          \tan(\theta) = \dfrac{\sin(\theta)}{\cos(\theta)},
+          \qquad
+          \sec(\theta) = \dfrac{1}{\cos(\theta)},
+        </me>
+        <me>
+          \csc(\theta) = \dfrac{1}{\sin(\theta)},
+          \qquad
+          \cot(\theta) = \dfrac{\cos(\theta)}{\sin(\theta)}.
+        </me>
+      </statement>
+    </definition>
+
+    <remark>
+      <p>
+        Because these functions are defined as ratios,
+        they are undefined whenever their denominators are zero.
+        For example, since <m>\cos(\pi/2)=0</m>,
+        both <m>\tan(\pi/2)</m> and <m>\sec(\pi/2)</m> are undefined.
+      </p>
+    </remark>
+  </subsection>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-trig-unit-circle-values">
+    <title>Key Unit Circle Values</title>
+
+    <p>
+      Because calculus problems often require exact values rather than
+      decimal approximations, it is important to know certain unit circle
+      values without a calculator.
+    </p>
+
+    <p>
+      The most important angles on the unit circle are
+    </p>
+    <me>
+      0, \; \frac{\pi}{6}, \; \frac{\pi}{4}, \; \frac{\pi}{3}, \; \frac{\pi}{2}.
+    </me>
+
+    <p>
+      The corresponding sine and cosine values are:
+    </p>
+
+    <me>
+      \begin{array}{c|cc}
+        \theta &amp; \sin(\theta) &amp; \cos(\theta) \\ \hline
+        0 &amp; 0 &amp; 1 \\
+        \dfrac{\pi}{6} &amp; \dfrac{1}{2} &amp; \dfrac{\sqrt{3}}{2} \\
+        \dfrac{\pi}{4} &amp; \dfrac{\sqrt{2}}{2} &amp; \dfrac{\sqrt{2}}{2} \\
+        \dfrac{\pi}{3} &amp; \dfrac{\sqrt{3}}{2} &amp; \dfrac{1}{2} \\
+        \dfrac{\pi}{2} &amp; 1 &amp; 0
+      \end{array}
+    </me>
+
+  <example>
+    <statement>
+      <p>
+        Evaluate <m>\sin(\pi/3)</m> and <m>\cos(\pi/4)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        These values can be read directly from the table:
+      </p>
+      <me>
+        \sin(\pi/3) = \dfrac{\sqrt{3}}{2},
+        \qquad
+        \cos(\pi/4) = \dfrac{\sqrt{2}}{2}.
+      </me>
+    </solution>
+  </example>
+
+      <p>
+        Values in other quadrants can be determined using symmetry
+        and the signs of sine and cosine on the unit circle.
+        On quizzes and exams, these values are expected to be known
+        without a calculator.
+      </p>
+      
+
+  <example>
+    <statement>
+      <p>
+        Evaluate <m>\sin(5\pi/6)</m> and <m>\cos(5\pi/6)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The angle <m>5\pi/6</m> lies in Quadrant II and has reference angle
+        <m>\pi/6</m>.
+        In Quadrant II, sine is positive and cosine is negative.
+      </p>
+      <me>
+        \sin(5\pi/6) = \sin(\pi/6) = \dfrac{1}{2},
+        \qquad
+        \cos(5\pi/6) = -\cos(\pi/6) = -\dfrac{\sqrt{3}}{2}.
+      </me>
+    </solution>
+  </example>
+
+
+  </subsection>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-trig-range">
+    <title>Range and Boundedness</title>
+
+    <p>
+      One of the most important properties of sine and cosine
+      in calculus is that their values are bounded.
+    </p>
+
+    <theorem xml:id="thm-sin-cos-range">
+      <title>Range of Sine and Cosine</title>
+      <statement>
+        <p>
+          For all real numbers <m>\theta</m>,
+        </p>
+        <me>
+          -1 \le \sin(\theta) \le 1,
+          \qquad
+          -1 \le \cos(\theta) \le 1.
+        </me>
+      </statement>
+    </theorem>
+
+    <remark>
+      <p>
+        This boundedness property is used frequently in calculus,
+        especially when applying the Squeeze Theorem to evaluate limits.
+      </p>
+    </remark>
+  </subsection>
+
+  <!-- ======================================================= -->
+  <subsection xml:id="ssec-trig-pythagorean-identities">
+    <title>Pythagorean Identities</title>
+
+    <p>
+      One of the most important consequences of the unit circle definition
+      of sine and cosine is a collection of identities that come directly
+      from the Pythagorean Theorem.
+    </p>
+
+<theorem xml:id="thm-pythagorean-trig">
+  <title>Pythagorean Identities</title>
+  <statement>
+    <me>
+      \begin{array}{rcl}
+        \sin^2(\theta) + \cos^2(\theta) &amp; = &amp; 1 \\[4pt]
+        1 + \tan^2(\theta) &amp; = &amp; \sec^2(\theta) \\[4pt]
+        1 + \cot^2(\theta) &amp; = &amp; \csc^2(\theta)
+      \end{array}
+    </me>
+  </statement>
+</theorem>
+
+
+  <p>
+    Only the first identity,
+    <m>\sin^2(\theta) + \cos^2(\theta) = 1</m>,
+    needs to be memorized.
+    The other two identities follow directly from it by dividing
+    both sides by <m>\cos^2(\theta)</m> or <m>\sin^2(\theta)</m>,
+    respectively.
+  </p>
+
+
+
+    <remark>
+      <p>
+        These identities provide different ways to express the same
+        geometric relationship. In calculus, choosing the appropriate
+        form often simplifies a computation.
+      </p>
+    </remark>
+
+    <example>
+      <statement>
+        <p>
+          Simplify the expression <m>1 + \tan^2(\theta)</m>.
+        </p>
+      </statement>
+      <solution>
+        <me>
+          1 + \tan^2(\theta) = \sec^2(\theta).
+        </me>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ======================================================= -->
+<subsection xml:id="ssec-trig-identities-preview">
+  <title>Angle Sum and Double Angle Formulas</title>
+
+  <p>
+    Trigonometric functions do not satisfy distributive or additive
+    properties. Instead, they obey specific identities that describe
+    how sine and cosine behave when angles are added or multiplied.
+  </p>
+
+  <theorem xml:id="thm-angle-sum">
+    <title>Angle Sum Formulas</title>
+    <statement>
+      <me>
+        \begin{array}{rcl}
+          \sin(A+B) &amp; = &amp; \sin(A)\cos(B) + \cos(A)\sin(B) \\
+          \cos(A+B) &amp; = &amp; \cos(A)\cos(B) - \sin(A)\sin(B)
+        \end{array}
+      </me>
+    </statement>
+  </theorem>
+
+  <theorem xml:id="thm-double-angle">
+    <title>Double Angle Formulas</title>
+    <statement>
+      <p>
+        The double angle formulas are obtained by setting <m>B = A</m>
+        in the angle sum formulas.
+      </p>
+      <me>
+        \begin{array}{rcl}
+          \sin(2A) &amp; = &amp; 2\sin(A)\cos(A) \\
+          \cos(2A) &amp; = &amp; \cos^2(A) - \sin^2(A) \\
+          &amp; = &amp; 2\cos^2(A) - 1 \\
+          &amp; = &amp; 1 - 2\sin^2(A)
+        \end{array}
+      </me>
+    </statement>
+  </theorem>
+
+</subsection>
+
+
+<!-- ======================================================= -->
+<subsection xml:id="ssec-precalc-videos-trig">
+  <title>Supplemental Video Resources</title>
+
+  <p>
+    The following is a curated set of videos that many students find helpful.
+    They provide additional explanations and visual intuition
+    for logarithms and their relationship to exponential functions.
+  </p>
+<p> 
+  <ul>
+    <li>
+      <url href="https://youtu.be/e7QjCL7lQM4">All the trig you need for calculus actually explained</url>
+    </li>
+    <li>
+      <url href="https://youtu.be/gdJq1QunN-o?si=bJKWmmYZ_jcBLVNy">How To Remember The Unit Circle Fast!</url>
+    </li>
+
+    <li>
+      <url href="https://youtu.be/4tQX198STxM">The Trigonometric Functions and the Unit Circle</url>
+    </li>    
+    <li>
+      <url href="https://www.youtube.com/watch?v=m1OitPmkydY">Common trig identities explained</url>
+    </li>
+    <li>
+      <url href="https://www.youtube.com/watch?v=fo_q9mEAFp4">Trigonometric graph properties and transformations</url>
+    </li>
+    <li>
+      <url href="https://youtu.be/dUkCgTOOpQ0?si=gds064XGUPRVjE1U">Visual connection of all six trig functions</url>
+    </li>
+
+    
+  </ul>
+  </p>
+
+</subsection>
+  
+</section>

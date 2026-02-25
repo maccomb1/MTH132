@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-derivativeApplications" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Applications of the Derivative</title>
+
+  <!-- 
+  <introduction>
+    <p> Text before the first section. </p>
+  </introduction>
+-->
+  
+  <!-- include sections -->
+<xi:include href="./ch-derivativeApplication-s/sec-derivApp-motion.ptx" />
+<xi:include href="./ch-derivativeApplication-s/sec-derivApp-related.ptx" />
+<xi:include href="./ch-derivativeApplication-s/sec-derivApp-linear.ptx" />
+<xi:include href="./ch-derivativeApplication-s/sec-derivApp-extrema.ptx" />
+<xi:include href="./ch-derivativeApplication-s/sec-derivApp-mvt.ptx" />
+<xi:include href="./ch-derivativeApplication-s/sec-derivApp-curve1.ptx" />
+<xi:include href="./ch-derivativeApplication-s/sec-derivApp-curve2.ptx" />
+<xi:include href="./ch-derivativeApplication-s/sec-derivApp-opt.ptx" />
+<xi:include href="./ch-derivativeApplication-s/sec-derivApp-ww.ptx" />
+
+
+
+  
+</chapter>

@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-derivative-expChain" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exponential Derivatives and the Chain Rule</title>
+
+<objectives>
+  <ul>
+    <li>
+      Apply the basic derivative formulas for 
+      <m>e^x</m> and <m>a^x</m>.
+    </li>
+
+    <li>
+      Understand and use the Chain Rule to differentiate composite functions 
+      algebraically, graphically, and through values provided in tables.
+    </li>
+
+    <li>
+      Compute derivatives of functions that combine exponentials,
+      powers, and trigonometric expressions using the Product Rule, Quotient Rule, 
+      and Chain Rule.
+    </li>
+  </ul>
+</objectives>
+
+
+
+<warning xml:id="wrn-expChain-prereq">
+  <title>Prerequisite Review</title>
+
+<p>
+  If you feel a bit out of practice with exponential rules or composition rules from algebra, it may be helpful
+  to revisit those ideas before diving into the calculus.
+
+<ul>
+  <li>
+    <p><xref ref="ssec-composition">Review section on function composition</xref></p>
+  </li>
+  <li>
+    <p><xref ref="ssec-exp-def">Review section on exponential functions</xref></p>
+  </li>
+  <!-- 
+  <li>
+    <p><xref ref="ssec-log-def">Review section on logarithmic functions</xref></p>
+  </li>
+  -->
+</ul>
+</p>
+</warning>
+
+<p>
+  Exponential functions appear throughout calculus. Their derivatives play a central role in growth models,
+  rates of change, and the behavior of composite functions. This section develops the essential derivative formulas for these
+  functions and introduces the Chain Rule, which allows us to differentiate compositions of functions.
+</p>
+
+
+  <!-- Key Definitions and Theorems -->
+  <subsection xml:id="ssec-expChain-key-results">
+    <title>Key Derivative Formula</title>
+
+    <p>
+      We begin by stating the derivative formula for the natural exponential function.
+      </p>
+
+<theorem xml:id="thm-derivatives-exp">
+  <title>Derivative of the Natural Exponential Function</title>
+
+  <statement>
+    <me>
+      \dfrac{d}{dx}(e^x) = e^x.
+    </me>
+  </statement>
+
+  <proof>
+    <p>
+      We will use this derivative formula throughout the course, but we will not prove it at this moment.
+    </p>
+
+    <p>
+      The fact that <m>(e^x)' = e^x</m> is a classical result that can be established in several different ways:
+      by studying the compound interest definition of <m>e</m>, by using limits, or by analyzing the unique solution
+      to a differential equation. Curious students can find many proofs available online.
+    </p>
+
+    <p>
+      For now, we take this result as a known fact and use it to develop more general differentiation techniques.
+    </p>
+  </proof>
+</theorem>
+
+
+
+
+    <!-- 
+<theorem xml:id="thm-derivatives-exp-log">
+  <title>Derivatives of the Natural Exponential and Natural Logarithm</title>
+  <statement>
+    <p>
+      For all <m>x</m> in the domains of the functions below:
+    </p>
+    <me>
+      (e^x)' = e^x,
+      \qquad
+      (\ln x)' = \frac{1}{x}.
+    </me>
+  </statement>
+
+  <proof>
+    <p>
+      We will use these two derivative formulas throughout the course, but we will not
+      prove both of them at this moment.
+    </p>
+
+    <p>
+      The fact that <m>(e^x)' = e^x</m> is a classical result that can be established in several different ways:
+      by studying the compound interest definition of <m>e</m>, by using limits, or by analyzing the unique solution
+      to a differential equation. Curious students can find many proofs available online.
+    </p>
+
+    <p>
+      The proof of <m>(\ln x)' = 1/x</m> will appear later, once we have developed the tools needed to understand
+      derivatives of inverse functions. See <xref ref="sec-derivative-inverse"/> for a full derivation.
+    </p>
+
+    <p>
+      For now, we take both results as known facts and use them to develop more general differentiation techniques.
+    </p>
+  </proof>  
+</theorem>
+
+--> 
+
+    <p>
+      Now that we know the derivative of <m>e^x</m>, we can combine it with the
+      Product Rule, Quotient Rule, and earlier power–function rules to differentiate more complicated expressions.
+    </p>
+
+
+<example xml:id="ex-exp-log-basic-combined">
+
+  <introduction>
+    <p> 
+      Compute the derivatives of the following functions.
+    </p> 
+  </introduction>
+
+
+
+
+
+
+  <task>
+    <statement>
+      <p>
+         <m>f(x)=x^e + e^x</m>.
+      </p>
+    </statement>
+        <solution>
+        <p>
+          For <m>f(x)</m>, use the power rule and the fact that <m>(e^x)'=e^x</m>:
+        </p>
+        <me>
+          f'(x) = e x^{e-1} + e^x.
+        </me>
+    </solution>
+  </task>        
+  <!-- Task (a) -->
+  <task>
+    <statement>
+      <p>
+         <m>g(x)=\sqrt{x}\,e^x</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Rewrite <m>\sqrt{x}=x^{1/2}</m> and apply the Product Rule.
+      </p>
+
+      <me>
+        \begin{array}{rcl}
+          \dfrac{d}{dx}\!\left(x^{1/2}e^x\right)
+          &amp;=&amp; (x^{1/2})'e^x + x^{1/2}(e^x)' \\[1.0em]
+
+          &amp;=&amp; \left(\tfrac12 x^{-1/2}\right)e^x + x^{1/2}e^x \\[1.0em]
+
+          &amp;=&amp; e^x\!\left(\dfrac{1}{2\sqrt{x}} + \sqrt{x}\right).
+        \end{array}
+      </me>
+    </solution>
+  </task>
+
+  
+  <!-- Task (b) 
+  <task>
+    <statement>
+      <p>
+         <m>h(x)=\dfrac{\ln(x)}{\sin(x)}</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Apply the Quotient Rule with <m>u(x)=\ln(x)</m> and <m>v(x)=\sin(x)</m>.
+        Then <m>u'(x)=1/x</m> and <m>v'(x)=\cos(x)</m>.
+      </p>
+
+      <me>
+        \begin{array}{rcl}
+          h'(x)
+          &amp;=&amp;
+          \dfrac{u'(x)v(x) - u(x)v'(x)}{[v(x)]^2} \\[1.1em]
+
+          &amp;=&amp;
+          \dfrac{\frac{1}{x}\sin(x) - \ln(x)\cos(x)}{\sin^2(x)} \\[1.1em]
+
+        \end{array}
+      </me>
+    </solution>
+  </task>
+-->
+</example>
+
+  <example xml:id="ex-expChain-basic-02">
+      <statement>
+        <p>
+          Show that the curve <m>y = 2e^x + 3x + 5x^3</m> has no tangent line with slope 2.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Compute the derivative:
+        </p>
+
+        <me>
+          y' = 2e^x + 3 + 15x^2.
+        </me>
+
+        <p>
+          To find a point where the slope is 2, we solve
+        </p>
+
+        <me>
+          2e^x + 3 + 15x^2 = 2.
+        </me>
+
+        <p>
+          Rearranging gives
+        </p>
+
+        <me>
+          2e^x + 15x^2 + 1 = 0.
+        </me>
+
+        <p>
+          Every term on the left side is positive for all real <m>x</m>. The equation has no solution. Thus the slope never equals 2.
+        </p>
+      </solution>
+    </example> 
+
+</subsection> 
+
+ <subsection xml:id="ssec-expChain-interpretation">
+<title>The Statement and Applications of The Chain Rule</title>
+
+      <p>
+      Composite functions arise everywhere. For example, if <m>u=g(x)</m> measures a temperature that changes with time, 
+      and <m>f(u)</m> converts that temperature to pressure, then <m>f(g(x))</m> describes how pressure changes with time. 
+      The Chain Rule captures how variations in the inner function affect the slope of the composite function.
+    </p>
+
+
+    <theorem xml:id="thm-chain-rule">
+            <title>The Chain Rule</title>
+  <statement>
+    <p>
+      If <m>f</m> and <m>g</m> are differentiable functions, then their composition <m>f(g(x))</m> is differentiable and
+    </p>
+
+    <me>
+      (f(g(x)))' = f'(g(x)) \cdot g'(x).
+    </me>
+
+    <p>
+      In Leibniz notation, if we let <m>u=g(x)</m>, then
+    </p>
+
+    <me>
+      \frac{df}{dx}
+      =
+      \frac{df}{du}\cdot\frac{du}{dx}
+    </me>
+  </statement>
+
+  <proof>
+    <p>
+      A full proof of the Chain Rule requires careful algebra using the limit definition of the derivative
+      and the structure of composite functions. We present the result here without a complete derivation.
+      Students who would like to explore the proof in detail may find the following video especially helpful:
+    </p>
+
+    <p>
+      <url href="https://youtu.be/FKraGDm2fUY?si=j8FsZEWNqJ_28tSN">
+        A visual and intuitive explanation of the Chain Rule
+      </url>
+    </p>
+
+    <p>
+      The central idea behind the proof is that small changes in the input propagate through the inner function
+      <m>g(x)</m> and then through the outer function <m>f</m>. The Chain Rule formalizes this by multiplying the
+      rate of change of <m>f</m> with respect to <m>g</m> by the rate of change of <m>g</m> with respect to <m>x</m>.
+    </p>
+  </proof>
+
+    </theorem>
+
+<remark xml:id="rem-chainrule-informal">
+  <p>
+    Informally, the Chain Rule says that the rate of change of a composite function is the rate of change of the outer function,
+    evaluated at the inner function, multiplied by how fast the inner function itself is changing.
+  </p>
+</remark>
+
+    <p>
+      Now let's see the chain rule applied with a few examples.
+    </p>
+
+  <example xml:id="ex-expChain-basic-01">
+      <statement>
+        <p>
+          Compute the derivative of <m>f(x)=\sin\!\left(\dfrac{e^x}{1+e^x}\right)</m>
+        </p> 
+      </statement>
+
+      <solution>
+        <p>
+          Apply the Chain Rule and Quotient rule. Let <m>u=\dfrac{e^x}{1+e^x}</m>, then <m>f(u)=\sin(u)</m> and <m>f'(u)=\cos(u)</m> so: 
+
+
+        <me>
+          u' = \dfrac{e^x(1+e^x) - e^x(e^x)}{(1+e^x)^2} = \dfrac{e^x}{(1+e^x)^2}
+        </me>
+
+          Therefore <m>f'(x) = \cos\!\left(\dfrac{e^x}{1+e^x}\right)\cdot \dfrac{e^x}{(1+e^x)^2}</m>
+        </p>
+        
+      </solution>
+    </example>
+
+<example xml:id="ex-expChain-table">
+
+  <introduction>
+    <p>
+      Let <m>f</m> and <m>g</m> be differentiable functions with the values shown below.
+    </p>
+
+    <me>
+\begin{array}{|c|c|c|c|c|}
+\hline
+x &amp; f(x) &amp; f'(x) &amp; g(x) &amp; g'(x) \\
+\hline
+1 &amp; 5 &amp; 4 &amp; 2 &amp; -1 \\
+\hline
+2 &amp; 3 &amp; -2 &amp; 4 &amp; 3 \\
+\hline
+3 &amp; -1 &amp; 6 &amp; 1 &amp; 7 \\
+\hline
+\end{array}
+    </me>
+
+    <p>
+      Compute the following derivatives.
+    </p>
+  </introduction>
+
+  <task>
+    <statement>
+      <p>
+        Compute <m>\displaystyle \frac{d}{dx}[f(g(x))]</m> at <m>x=1</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Using the Chain Rule,
+      </p>
+
+      <me>
+       \dfrac{d}{dx}(f(g(x))) = f'(g(x))\, g'(x).
+      </me>
+
+      <p>
+        At <m>x=1</m>, we have <m>g(1)=2</m> and <m>g'(1)=-1</m>, and the table gives <m>f'(2)=-2</m>.
+      </p>
+
+      <me>
+        \dfrac{d}{dx}(f(g(x)))\big|_{x=1} = (-2)(-1) = 2.
+      </me>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        Compute <m>\displaystyle \frac{d}{dx}[g(f(x))]</m> at <m>x=2</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Again apply the Chain Rule:
+      </p>
+
+      <me>
+        \dfrac{d}{dx}(g(f(x))) = g'(f(x))\, f'(x).
+      </me>
+
+      <p>
+        At <m>x=2</m>, the table shows <m>f(2)=3</m>, so <m>g'(3)=7</m>, and <m>f'(2)=-2</m>.
+      </p>
+
+      <me>
+        \dfrac{d}{dx}(g(f(x)))\big|_{x=2} = 7\cdot(-2) = -14.
+      </me>
+    </solution>
+  </task>
+
+</example>
+
+
+<p>
+  Lastly, we can use the Chain Rule to extend our exponential derivative formulas.  
+  This allows us to differentiate <em>any</em> exponential function, not just those with base <m>e</m>.
+</p>
+
+<theorem xml:id="thm-derivative-a-to-x">
+  <title>Derivative of the General Exponential Functions</title>
+  <statement>
+    <p>
+      For any positive constant <m>a \ne 1</m>, the derivative of <m>a^x</m> is
+    </p>
+    <me>
+      (a^x)' = a^x \ln(a).
+    </me>
+  </statement>
+  <proof>
+  <p>
+    To compute the derivative of <m>a^x</m> for a positive constant <m>a\ne 1</m>, 
+    we rewrite <m>a^x</m> in terms of the natural exponential function.  
+    Recall that by using the power rule for logarithms and the inverse identity we can write:
+  </p>
+
+  <me>
+    a^x = e^{x \ln(a)}.
+  </me>
+
+  <p>
+    We now differentiate <m>e^{x\ln(a)}</m> using the Chain Rule.  
+    Let 
+  </p>
+
+  <me>
+    u(x) = x\ln(a).
+  </me>
+
+  <p>
+    Then <m>a^x = e^{u(x)}</m>, and by the Chain Rule,
+  </p>
+
+  <me>
+    \dfrac{d}{dx}\!\left(e^{u(x)}\right)
+    = e^{u(x)} \cdot u'(x).
+  </me>
+
+  <p>
+    Since <m>u(x)=x\ln(a)</m>, we have <m>u'(x)=\ln(a)</m>.  
+    Substituting back:
+  </p>
+
+  <me>
+    \dfrac{d}{dx}\!\left(a^x\right)
+    = e^{x\ln(a)} \cdot \ln(a).
+  </me>
+
+  <p>
+    Using <m>e^{x\ln(a)} = a^x</m> once more, we obtain the final formula:
+  </p>
+
+  <me>
+    (a^x)' = a^x \ln(a).
+  </me>
+
+  <p>
+    This completes the proof.
+  </p>
+</proof>
+
+</theorem>
+
+
+<example xml:id="ex-derivative-2-to-x">
+
+  <statement>
+    <p>
+      Compute the derivative of <m>f(x)=2^x</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Apply the exponential derivative formula  
+      <m>(a^x)' = a^x \ln(a)</m> with <m>a=2</m>.
+    </p>
+
+    <me>
+        \dfrac{d}{dx}\!\left(2^x\right) =  2^x \ln(2).
+    </me>
+
+  </solution>
+</example>
+
+
+
+
+
+  </subsection>
+
+
+
+<subsection xml:id="additional-worked-problems-derivExp">
+  <title>Additional Worked-Out Examples</title>
+
+  <p>
+    To keep this section at a reasonable length, we include only a few representative examples directly in the text.
+    If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional
+    fully worked-out examples are available via: 
+    <alert>
+      <xref ref="subsec-deriv-expChain">
+        Additional Examples for Exponential Functions and the Chain Rule
+      </xref>
+    </alert>
+  </p>
+
+</subsection>
+
+
+
+  <exercises xml:id="exercises-derivative-expChain-tf">
+  <title>Practice / Study Problems</title>
+
+
+    <exercisegroup>
+      <title>True/False Questions</title>
+
+      <introduction>
+        <p>
+          Determine whether each statement is true or false.
+          Justify your answer.
+        </p>
+
+
+      </introduction>
+
+
+
+<exercise xml:id="tf-expChain-ap-01">
+  <statement>
+    <p>
+      If <m>f(x)=e^{g(x)}</m>, then <m>f'(x)=e^{g(x)}g'(x)</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em>
+      This is the Chain Rule with outer function <m>e^u</m> and inner function <m>u=g(x)</m>.
+      Since <m>\dfrac{d}{du}(e^u)=e^u</m>, we get
+      <m>\dfrac{d}{dx}\left(e^{g(x)}\right)=e^{g(x)}g'(x)</m>.
+    </p>
+  </solution>
+</exercise>
+
+
+
+<exercise xml:id="tf-expChain-ap-03">
+  <statement>
+    <p>
+      If <m>f(x)=a^x</m> for a constant <m>a&gt;1</m>, then <m>f'(x)&gt;0</m> for all real <m>x</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em>
+      Using <m>(a^x)'=a^x\ln(a)</m>, we have <m>a^x&gt;0</m> for all real <m>x</m>
+      and <m>\ln(a)&gt;0</m> when <m>a&gt;1</m>.
+      Therefore <m>f'(x)=a^x\ln(a)&gt;0</m> for all <m>x</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-expChain-ap-04">
+  <statement>
+    <p>
+      If <m>g'(2)=0</m>, then <m>\dfrac{d}{dx}[f(g(x))]\big|_{x=2}=0</m>, regardless of <m>f</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True (assuming the Chain Rule applies at <m>x=2</m>).</em>
+      By the Chain Rule,
+      <m>\dfrac{d}{dx}\left[f(g(x))\right]\big|_{x=2}=f'(g(2))\,g'(2)</m>.
+      Since <m>g'(2)=0</m>, the product is <m>0</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-expChain-ap-05">
+  <statement>
+    <p>
+      The derivative of <m>\sin(e^x)</m> and the derivative of <m>e^{\sin(x)}</m> are the same.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>False.</em>
+      Using the Chain Rule:
+      <m>\dfrac{d}{dx}\left(\sin(e^x)\right)=\cos(e^x)\cdot e^x</m>,
+      while
+      <m>\dfrac{d}{dx}\left(e^{\sin(x)}\right)=e^{\sin(x)}\cdot\cos(x)</m>.
+      These expressions are not equal in general.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-expChain-ap-06">
+  <statement>
+    <p>
+      If <m>f(x)=\sqrt{x}e^x</m>, then <m>f'(x)</m> exists for all real <m>x</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>False.</em>
+      The function <m>f(x)=\sqrt{x}e^x</m> is only defined for <m>x\ge 0</m>,
+      so the derivative cannot exist for negative <m>x</m>.
+      (On <m>(0,\infty)</m> it is differentiable; at <m>x=0</m> one must check separately.)
+    </p>
+  </solution>
+</exercise>
+
+
+<exercise xml:id="tf-expChain-ap-08">
+  <statement>
+    <p>
+      If <m>f'(x)&gt;0</m> and <m>g'(x)&lt;0</m> on an interval, then <m>f(g(x))</m> is decreasing on that interval.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True (where the composition is defined).</em>
+      By the Chain Rule,
+      <m>(f(g(x)))'=f'(g(x))\,g'(x)</m>.
+      Since <m>f'(g(x))&gt;0</m> and <m>g'(x)&lt;0</m>, their product is negative, so <m>f(g(x))</m> is decreasing.
+    </p>
+  </solution>
+</exercise>
+
+
+<exercise xml:id="tf-expChain-ap-10">
+  <statement>
+    <p>
+      If <m>f(g(x))</m> has a horizontal tangent at <m>x=3</m>, then either <m>f'(g(3))=0</m> or <m>g'(3)=0</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True (assuming differentiability so the Chain Rule applies at <m>x=3</m>).</em>
+      A horizontal tangent means
+      <m>(f(g(x)))'\big|_{x=3}=0</m>.
+      By the Chain Rule,
+      <m>(f(g(x)))'\big|_{x=3}=f'(g(3))\,g'(3)</m>.
+      A product is zero only if at least one factor is zero, so
+      <m>f'(g(3))=0</m> or <m>g'(3)=0</m>.
+    </p>
+  </solution>
+</exercise>
+
+
+
+<exercise xml:id="tf-expChain-ap-12">
+  <statement>
+    <p>
+      Consider the graphs of <m>f</m> and <m>g</m> below. Since <m>f(x)</m> is not differentiable at <m>x=1</m> we know that <m>f(g(x))</m> is not 
+       is not differentiable at <m>x=1</m>.
+    </p>
+
+<sidebyside widths="60%">    
+<figure xml:id="fig-chain-rule-graphs">
+  <caption>
+    Graphs of two functions <m>f(x)</m> and <m>g(x)</m>.
+  </caption>
+
+  <image source="images/chainRuleGraphs01.png">
+    <shortdescription>
+      A coordinate plane showing two piecewise linear functions.
+      The graph of g(x) is a straight line increasing from the point (0, 1.5) to (3, 3).
+      The graph of f(x) consists of two line segments: one increasing from (0, 0) to (1, 1.5),
+      followed by a decreasing segment from (1, 1.5) to (3, 1).
+      The functions are labeled directly on the graph as f(x) and g(x).
+    </shortdescription>
+  </image>
+</figure>
+</sidebyside>
+
+  </statement>
+<solution>
+  <p>
+    <em>False.</em> The fact that <m>f</m> is not differentiable at <m>x=1</m> does not automatically mean that
+    the composite <m>f(g(x))</m> is not differentiable at <m>x=1</m>.
+  </p>
+
+  <p>
+    In fact, we can compute the derivative using the Chain Rule.
+    The slope of <m>g</m> is constant:
+  </p>
+
+  <me>
+    g'(x)=\frac{3-1.5}{3-0}=\frac{1.5}{3}=\frac12.
+  </me>
+
+  <p>
+    For <m>x&gt;1</m>, the graph of <m>f</m> is the line segment from <m>(1,1.5)</m> to <m>(3,1)</m>, so its slope is
+  </p>
+
+  <me>
+    f'(x)=\frac{1-1.5}{3-1}=\frac{-0.5}{2}=-\frac14
+  </me>
+
+  <p>
+    on that segment, including at <m>x=2</m>. Therefore,
+  </p>
+
+  <me>
+    (f(g(x)))'\big|_{x=1}=f'(g(1))\,g'(1)=f'(2)\cdot\frac12=\left(-\frac14\right)\left(\frac12\right)=-\frac18.
+  </me>
+
+  <p>
+    So <m>f(g(x))</m> <em>is</em> differentiable at <m>x=1</m>.
+  </p>
+</solution>
+
+</exercise>
+
+    </exercisegroup>
+  </exercises>
+
+
+</section>

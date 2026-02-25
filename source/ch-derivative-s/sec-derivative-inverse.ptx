@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-derivative-inverse" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Inverse Functions and Their Derivatives</title>
+
+<objectives>
+  <ul>
+    <li>Use implicit differentiation to derive the formula for the derivative of an inverse function.</li>
+
+    <li>Compute derivatives of functions involving logarithmic, trigonometric, and inverse trigonometric functions.</li>
+
+    <li>Interpret derivative values of inverse functions geometrically as slopes of tangent lines.</li>
+  </ul>
+</objectives>
+
+<warning xml:id="wrn-derivative-inverse-prereq">
+  <title>Prerequisite Review</title>
+<p>
+  This section builds on your knowledge of implicit differentiation to find derivatives of inverse functions
+  and particularly the logarithmic and inverse trigonometric functions.
+  If you feel a bit out of practice with inverse functions, it may be helpful
+  to revisit those ideas before diving into the calculus. 
+
+<ul>
+  <li>
+    <p><xref ref="ssec-inverses">Review section on function inverses</xref></p>
+  </li>
+    <li>
+    <p><xref ref="ssec-log-def">Review section on logarithmic functions</xref></p>
+  </li>
+  <li>
+    <p><xref ref="ssec-trig-triangle">Review section on trigonometric functions</xref></p>
+  </li>
+</ul>
+</p>
+</warning>
+
+
+<subsection xml:id="derivative-inverse-log">
+    <title>The Natural Logarithm and Finding Derivatives of Inverse Functions</title>
+
+    <p>
+      Here we will demonstrate how we can use implicit differentiation to find the derivative of the natural logarithm function, <m>y=\ln x</m>.
+      We will use this same idea to find the derivatives of other inverse functions as well.
+    </p>
+
+<theorem xml:id="thm-derivative-ln">
+      <statement>
+        <p>
+         <me>\displaystyle \frac{d}{dx}(\ln x) = \frac{1}{x}</me> 
+        </p>
+      </statement>
+
+      <proof>
+        <p>
+          Let <m>y=\ln x</m>. Then by the inverse relationship with the exponential function, 
+          
+          <me>
+            \begin{array}{rcl}
+            y \amp = \amp \ln x \\
+            e^y \amp = \amp  e^{\ln x} \\
+            e^y \amp = \amp  x.
+            \end{array}
+          </me>
+          Differentiate both sides with respect to <m>x</m> to get:
+          <me> e^y \cdot y' = 1. </me>
+          Therefore,
+          <me> y' = \frac{1}{e^y}. </me>
+          Now rewrite <m>e^y</m> in terms of <m>x</m>. Since we know from above that <m>e^y = x</m>, we have
+          <me> y' = \frac{1}{x}. </me>
+          Thus,
+          <me> \displaystyle \frac{d}{dx}(\ln x) = \frac{1}{x}. </me>
+        </p>
+      </proof>
+    </theorem>
+
+
+<p> Now let's take this idea and generalize it to find a formula for the derivative of the inverse of any differentiable function. </p>
+
+<algorithm xml:id="strat-derivative-inverse-general">
+  <title>Finding the Derivative of an Inverse Function</title>
+      <p>
+    <ul>
+      <li>
+        <p>
+          Start with a differentiable function <m>y=f(x)</m> and its inverse <m>f^{-1}</m>. Then by the definition of inverse functions, <m>f^{-1}(y)=x</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Differentiate both sides with respect to <m>x</m>, treating <m>y</m> as a function of <m>x</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve for <m>y'</m>, then rewrite the result in terms of <m>x</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
+    </algorithm>
+
+
+<p> Now let's use this idea to find the formulas for the derivatives of various inverse trigonometric functions. </p>
+
+</subsection> 
+
+        
+  <subsection xml:id="implicit-inverse-idea">
+    <title>Derivatives of Inverse Trig Functions</title>
+
+    <theorem xml:id="thm-derivative-arcsin">
+      <title>Derivative of <m>\arcsin(x)</m></title>
+      <statement>
+        <me>
+          \displaystyle \frac{d}{dx}\bigl(\arcsin(x)\bigr)=\frac{1}{\sqrt{1-x^2}}.
+        </me>
+      </statement>
+      <proof>
+        <p>
+          Let <m>y=\arcsin(x)</m>. Then <m>\sin(y)=x</m>.
+          Differentiate both sides with respect to <m>x</m>:
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \frac{d}{dx}\bigl(\sin(y)\bigr)
+\amp=\amp \displaystyle \frac{d}{dx}(x)
+\\[1.2em]
+\displaystyle \cos(y)\,y'
+\amp=\amp \displaystyle 1
+\\[1.2em]
+\displaystyle y'
+\amp=\amp \displaystyle \frac{1}{\cos(y)}.
+\end{array}
+        </me>
+
+        <p>
+          Now rewrite <m>\cos(y)</m> in terms of <m>x</m>. Since <m>\sin(y)=x</m> and <m>y=\arcsin(x)</m> has range
+          <m>\displaystyle -\frac{\pi}{2}\le y\le \frac{\pi}{2}</m>, we have <m>\cos(y)\ge 0</m>, so
+        </p>
+
+        <me>
+          \displaystyle \cos(y)=\sqrt{1-\sin^2(y)}=\sqrt{1-x^2}.
+        </me>
+
+        <p>
+          Therefore,
+        </p>
+
+        <me>
+          \displaystyle y'=\frac{1}{\sqrt{1-x^2}}.
+        </me>
+      </proof>
+    </theorem>
+
+    <theorem xml:id="thm-derivative-arccos">
+      <title>Derivative of <m>\arccos(x)</m></title>
+      <statement>
+        <me>
+          \displaystyle \frac{d}{dx}\bigl(\arccos(x)\bigr)=-\frac{1}{\sqrt{1-x^2}}.
+        </me>
+      </statement>
+      <proof>
+        <p>
+          Let <m>y=\arccos(x)</m>. Then <m>\cos(y)=x</m>. Differentiate:
+        </p>
+
+<me> \begin{array}{rcl} 
+  \displaystyle \frac{d}{dx}\bigl(\cos(y)\bigr) \amp=\amp \displaystyle \frac{d}{dx}(x) \\[1.2em] 
+  \displaystyle -\sin(y)\,y' \amp=\amp \displaystyle 1 \\[1.2em] 
+  \displaystyle y' \amp=\amp \displaystyle -\frac{1}{\sin(y)}. 
+  \end{array} </me>
+
+        <p>
+          Since <m>\cos(y)=x</m> and <m>0\le y\le \pi</m>, we have <m>\sin(y)\ge 0</m>, and
+        </p>
+
+        <me>
+          \displaystyle \sin(y)=\sqrt{1-\cos^2(y)}=\sqrt{1-x^2}.
+        </me>
+
+        <p>
+          Therefore,
+        </p>
+
+        <me>
+          \displaystyle y'=-\frac{1}{\sqrt{1-x^2}}.
+        </me>
+      </proof>
+
+    </theorem>
+
+    <theorem xml:id="thm-derivative-arctan">
+      <title>Derivative of <m>\arctan(x)</m></title>
+      <statement>
+        <me>
+          \displaystyle \frac{d}{dx}\bigl(\arctan(x)\bigr)=\frac{1}{1+x^2}.
+        </me>
+      </statement>
+      <proof>
+        <p>
+          Let <m>y=\arctan(x)</m>, so <m>\tan(y)=x</m>. Differentiate:
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \frac{d}{dx}\bigl(\tan(y)\bigr)
+\amp=\amp \displaystyle \frac{d}{dx}(x)
+\\[1.2em]
+\displaystyle \sec^2(y)\,y'
+\amp=\amp \displaystyle 1
+\\[1.2em]
+\displaystyle y'
+\amp=\amp \displaystyle \frac{1}{\sec^2(y)}.
+\end{array}
+        </me>
+
+        <p>
+          Use the pythagorean identity <m>\sec^2(y)=1+\tan^2(y)</m> and <m>\tan(y)=x</m>:
+        </p>
+
+        <me>
+          \displaystyle y'=\frac{1}{1+x^2}.
+        </me>
+      </proof>
+    </theorem>
+
+
+<remark xml:id="remark-derivative-inverse-trig-domains">
+  <title>Notations of Inverse Trigonometric Functions</title>
+      <p>
+    Note that some both <m>\sin^{-1}(x)</m>, <m>\cos^{-1}(x)</m>, and <m>\tan^{-1}(x)</m> along with 
+    <m>\arcsin(x)</m>, <m>\arccos(x)</m>, and <m>\arctan(x)</m> are valid notations for the inverse trigonometric functions.
+    We will use them interchangeably in our course. Students are expected to be comfortable with both notations.
+  </p>
+    </remark>
+
+
+  </subsection>
+
+  <subsection xml:id="sample-problems-inverse-trig">
+    <title>Select Examples</title>
+
+<p> Now that we have the formulas for the derivatives of various inverse functions, let's see some example of problems that would make reasonable 
+  homework, quiz, or exam questions. </p>
+
+
+    <example xml:id="ex-deriv-ln-sin-arcsin">
+      <statement>
+        <p>
+          Find <m>\displaystyle \frac{d}{dx}\bigl(\ln(\sin x)\bigr)</m> and <m>\displaystyle \frac{d}{dx}\bigl(\arcsin(5x)\bigr)</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          For <m>\ln(\sin x)</m>, use the Chain Rule with outer function <m>\ln(u)</m> and inner function <m>u=\sin x</m>:
+        </p>
+
+        <me>
+          \displaystyle \frac{d}{dx}\bigl(\ln(\sin x)\bigr)
+          =\frac{1}{\sin x}\cdot \cos x
+          =\frac{\cos x}{\sin x}.
+        </me>
+
+        <p>
+          For <m>\arcsin(5x)</m>, use the Chain Rule and the derivative of <m>\arcsin(x)</m>:
+        </p>
+
+        <me>
+          \displaystyle \frac{d}{dx}\bigl(\arcsin(5x)\bigr)
+          =\frac{1}{\sqrt{1-(5x)^2}}\cdot 5
+          =\frac{5}{\sqrt{1-25x^2}}.
+        </me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-domain-derivative-sqrt-ln">
+      <statement>
+        <p>
+          Find the derivative of <m>f(x)=\sqrt{2+\ln x}</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Differentiate using the Chain Rule:
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle f(x)
+\amp=\amp \displaystyle (2+\ln x)^{1/2}
+\\[0.8em]
+\displaystyle f'(x)
+\amp=\amp \displaystyle \frac{1}{2}(2+\ln x)^{-1/2}\cdot \frac{d}{dx}(2+\ln x)
+\\[1.2em]
+\amp=\amp \displaystyle \frac{1}{2}(2+\ln x)^{-1/2}\cdot \frac{1}{x}
+\\[1.2em]
+\amp=\amp \displaystyle \frac{1}{2x\sqrt{2+\ln x}}.
+\end{array}
+        </me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-arctan-slope-point">
+      <statement>
+        <p>
+          Find a point on the curve <m>y=\tan^{-1}(x)</m> where the slope is <m>\displaystyle \frac{1}{10}</m>.
+          Is there more than one answer?
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Since <m>\displaystyle \frac{d}{dx}\bigl(\tan^{-1}(x)\bigr)=\frac{1}{1+x^2}</m>, we want
+        </p>
+
+        <me>
+          \displaystyle \frac{1}{1+x^2}=\frac{1}{10}.
+        </me>
+
+        <p>
+          Solve for <m>x</m>:
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle 1+x^2
+\amp=\amp \displaystyle 10
+\\[0.8em]
+\displaystyle x^2
+\amp=\amp \displaystyle 9
+\\[0.8em]
+\displaystyle x
+\amp=\amp \displaystyle \pm 3.
+\end{array}
+        </me>
+
+        <p>
+          So there are two points. When <m>x=3</m>, <m>y=\tan^{-1}(3)</m>, and when <m>x=-3</m>, <m>y=\tan^{-1}(-3)=-\tan^{-1}(3)</m>.
+          Therefore the slope is <m>\displaystyle \frac{1}{10}</m> at
+        </p>
+
+        <me>
+          \displaystyle (3,\tan^{-1}(3)) \quad \text{and} \quad (-3,-\tan^{-1}(3)).
+        </me>
+
+        <p>
+          Yes, there is more than one answer because <m>\displaystyle \frac{1}{1+x^2}</m> depends on <m>x^2</m>,
+          so it has the same value at <m>x</m> and <m>-x</m>.
+        </p>
+      </solution>
+    </example>
+
+
+
+
+<example xml:id="ex-inverse-derivative-general">
+      <statement>
+        <p>
+          Suppose that <m>f</m> is differentiable, <m>f(2)=3</m>, and <m>f'(2)=5</m>. Find <m>(f^{-1})'(3)</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Let <m>y=f^{-1}(x)</m>. Then <m>f(y)=x</m>. Differentiate both sides with respect to <m>x</m>:
+        </p>
+
+        <me>
+          \displaystyle f'(y)\cdot y'=1.
+        </me>
+
+        <p>
+          Therefore,
+        </p>
+
+        <me>
+          \displaystyle y'=\frac{1}{f'(y)}.
+        </me>
+
+        <p>
+          Now evaluate at <m>x=3</m>. Since <m>y=f^{-1}(x)</m>, we have <m>y=f^{-1}(3)=2</m> because <m>f(2)=3</m>.
+          Thus,
+        </p>
+
+        <me>
+          \displaystyle (f^{-1})'(3)=\frac{1}{f'(2)}=\frac{1}{5}.
+        </me>
+      </solution>
+    </example>
+
+  </subsection>
+
+
+
+
+
+
+
+<subsection xml:id="additional-worked-problems-derivInv">
+  <title>Additional Worked-Out Examples</title>
+
+  <p>
+    To keep this section at a reasonable length, we include only a few representative examples directly in the text.
+    If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional
+    fully worked-out examples are available via: 
+    <alert>
+      <xref ref="subsec-deriv-inverse">
+        Additional Examples for Inverse Functions and Their Derivatives
+      </xref>
+    </alert>
+  </p>
+
+</subsection>
+
+
+  <exercises xml:id="exercises-derivative-inv-tf">
+  <title>Practice / Study Problems</title>
+
+
+    <exercisegroup>
+      <title>True/False Questions</title>
+
+      <introduction>
+        <p>
+          Determine whether each statement is true or false.
+          Justify your answer.
+        </p>
+
+
+      </introduction>
+
+<exercise xml:id="tf-expChain-ap-02">
+  <statement>
+    <p>
+      If <m>f(x)=\ln(g(x))</m>, then <m>f'(x)=\dfrac{1}{g(x)}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>False.</em>
+      By the Chain Rule,
+      <m>\dfrac{d}{dx}\left(\ln(g(x))\right)=\dfrac{1}{g(x)}\cdot g'(x)</m>.
+      The factor <m>g'(x)</m> is missing.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-expChain-ap-11">
+  <statement>
+    <p>
+      If <m>f(x)=\ln(x^2+1)</m>, then <m>f'(x)=\dfrac{2x}{x^2+1}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em>
+      Let <m>u=x^2+1</m>. Then <m>f(x)=\ln(u)</m>.
+      By the Chain Rule,
+      <m>f'(x)=\dfrac{1}{u}\cdot u'=\dfrac{1}{x^2+1}\cdot 2x=\dfrac{2x}{x^2+1}</m>.
+    </p>
+  </solution>
+</exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        <m>\displaystyle \frac{d}{dx}\bigl(\arcsin(5x)\bigr)=\frac{1}{\sqrt{1-25x^2}}</m>.
+      </p>
+    </statement>
+    <solution><p><em>False.</em> The Chain Rule introduces a factor of 5.</p></solution>
+  </exercise>
+
+<exercise>
+  <statement>
+    <p>
+      If <m>f(x)=\dfrac{\arccos(x)}{\ln(x)}</m>, then <m>f'(x)=\dfrac{-x}{\sqrt{1-x^2}}</m>.
+    </p>
+  </statement>
+  <solution><p><em>False.</em> The derivative requires the Quotient Rule.</p>
+  <me>f'(x)=\dfrac{-\dfrac{1}{\sqrt{1-x^2}}\ln(x)-\arccos(x)\cdot \dfrac{1}{x}}{(\ln(x))^2}</me>
+  </solution>
+</exercise>
+
+
+  <exercise>
+    <statement>
+      <p>
+        The derivative of <m>\arctan(x)</m> is always less than 1.
+      </p>
+    </statement>
+    <solution><p><em>True.</em>
+    Since <m>\displaystyle \frac{d}{dx}\bigl(\arctan(x)\bigr)=\frac{1}{1+x^2}</m> and <m>1+x^2 \geq 1</m> for all real <m>x</m>, 
+    the derivative is always less than or equal to 1, and equal to 1 only at <m>x=0</m>.</p></solution>
+  </exercise>
+
+
+
+  <exercise>
+    <statement>
+      <p>
+        If <m>f(x) = \arcsin(2x)</m>, then <m>\displaystyle f'(1) \geq 0</m>.
+      </p>
+    </statement>
+    <solution><p><em>False.</em>
+      The derivative of <m>f(x) = \arcsin(2x)</m> is <m>f'(x) = \dfrac{2}{\sqrt{1-4x^2}}</m>.
+      At <m>x=1</m>, the expression under the square root is negative, so <m>f'(1)</m> is undefined.
+      Therefore, <m>f'(1) \ne 0</m>.</p></solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        If <m>f(x)=\arctan(x)</m>, then at <m>x=1</m> the tangent line equation is given by <m>y = \tfrac12(x-1) + \dfrac{\pi}{4}</m>.
+      </p>
+    </statement>
+    <solution><p><em>True.</em> The derivative of <m>f(x)=\arctan(x)</m> is <m>f'(x)=\dfrac{1}{1+x^2}</m>.
+      At <m>x=1</m>, <m>f'(1)=\tfrac12</m> and <m>f(1)=\tfrac{\pi}{4}</m>, so the tangent line equation is
+      <m>y=\tfrac12(x-1)+\tfrac{\pi}{4}</m>.</p></solution>
+  </exercise>
+
+
+ <exercise>
+    <statement>
+      <p>
+        If <m>f</m> is one-to-one and differentiable and contains the point <m>(a,b)</m> and <m>f^{-1}</m> is its inverse, then
+        <m>(f^{-1})'(b) = \dfrac{1}{f'(a)}</m>.
+      </p>
+    </statement>
+    <solution><p><em>
+True. 
+    </em>
+  Consider <m>y=f^{-1}(x)</m>, then <m>f(y)=x </m> so <m>f'(y)\cdot y'=1</m>, which gives <m>y'=\dfrac{1}{f'(y)}</m>.
+    Since  <m>a=f^{-1}(b)</m>, therefore <me>(f^{-1})'(b)=\dfrac{1}{f'(a)}.</me>
+  
+  </p></solution>
+  </exercise>
+
+ 
+<exercise>
+  <statement>
+    <p>
+      If <m>f(x)=2^x+x</m> and note that <m>f(1)=3</m>, then <m>(f^{-1})'(3)=\dfrac{1}{2\ln(2)+1} </m>.
+    </p>
+  </statement>
+  <solution><p><em>True.</em>
+    Consider <m>y=f^{-1}(x)</m>, then <m>f(y)=x </m> so <m>f'(y)\cdot y'=1</m>, which gives <m>y'=\dfrac{1}{f'(y)}</m>.
+    Since <m>y=f^{-1}(3)</m>, we have <m>f(y)=3</m>, so <m>y=1</m>.
+    Therefore, <m>(f^{-1})'(3)=\dfrac{1}{f'(1)}=\dfrac{1}{2\ln(2)+1}.</m>
+  </p></solution>
+</exercise>
+
+  
+  <exercise>
+    <statement>
+      <p>
+        If <m>f</m> has a horizontal tangent at <m>x=a</m>, then <m>f^{-1}</m> has a vertical tangent at <m>x=f(a)</m>.
+      </p>
+    </statement>
+    <solution><p><em>True.</em>
+      If <m>f</m> has a horizontal tangent at <m>x=a</m>, then <m>f'(a)=0</m>.
+      Since <m>(f^{-1})'(f(a))=\dfrac{1}{f'(a)}</m>, it follows that <m>(f^{-1})'(f(a))=\dfrac{1}{0}</m>, which is undefined.
+      Therefore, <m>f^{-1}</m> has a vertical tangent at <m>x=f(a)</m>. We can also verify this by sketching the graphs of <m>f</m> and <m>f^{-1}</m> and
+      remembering that they are reflections across the line <m>y=x</m>.
+    
+    
+    </p></solution>
+  </exercise>
+
+
+
+  <exercise>
+    <statement>
+      <p>
+        If <m>f</m> is increasing, then <m>f^{-1}</m> is decreasing.
+      </p>
+    </statement>
+    <solution><p><em>False.</em> Both are increasing.</p>
+    <p>If <m>f</m> is increasing, then <m>f'(x) &gt; 0</m> for all <m>x</m> in the domain of <m>f</m>.
+      Since <m>(f^{-1})'(f(x)) = \dfrac{1}{f'(x)}</m>, and <m>f'(x) &gt; 0</m>, it follows that <m>(f^{-1})'(f(x)) &gt; 0</m>.
+      Therefore, <m>f^{-1}</m> is also increasing.</p>
+    </solution>
+  </exercise>
+
+
+<exercise>
+  <statement>
+    <p>
+  Consider a function <m>f</m> and its inverse <m>f^{-1}</m> as shown in the figure below. The function <m>f</m> contains the point <m>(4,2)</m> and <m>f^{-1}</m> contains the point 
+  <m>(2,4)</m>. Since the functions are inverses of each other, the two tangent lines at these corresponding points must be perpendicular to each other.
+    </p> <p> 
+  <sidebyside width="60%">>
+    
+        <figure xml:id="fig-inv-tangent01">
+<caption>
+  A function <m>f</m> and its inverse <m>f^{-1}</m>, shown as reflections across the line <m>y=x</m>.
+</caption>
+
+  <image source="images/invGraph01.PNG">
+<shortdescription>
+  A coordinate plane showing the graph of a function f(x) in red and its inverse f inverse of x in blue.
+  The two graphs are mirror images of each other across the dashed diagonal line y equals x.
+  A point on f(x) at approximately (4, 2) corresponds to a point on f inverse of x at approximately (2, 4),
+  illustrating the inverse relationship between the functions.
+</shortdescription>
+  </image>
+</figure>
+  </sidebyside>
+
+</p>
+  </statement>
+
+  <solution>
+    <p>
+      False. The slopes of the tangent lines at corresponding points of a function and its inverse are
+      multiplicative inverses of each other, not negative reciprocals.
+      Therefore, the tangent lines are not necessarily perpendicular.
+      You can also sketch the tangent lines to see that they are not perpendicular.
+    </p>
+  </solution>
+
+</exercise>
+
+
+
+ 
+
+
+
+
+
+
+  
+
+
+
+
+
+
+    </exercisegroup>  
+  </exercises>
+
+</section>

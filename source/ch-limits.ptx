@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch-limits" >
+  <title>Limits and Continuity</title>
+
+<introduction>
+<p>
+How can we describe the speed of a car at the exact moment you glance at the speedometer,
+or predict the height of a ball just before it hits the ground?
+Questions like these require understanding what happens as one quantity gets closer and closer
+to another. This idea is captured precisely by limits.
+</p>
+
+<p>
+Limits provide a precise way to describe how functions behave near a point,
+even when the function may not be defined at that point.
+They form the foundation of calculus.
+Derivatives rely on limits to describe instantaneous rates of change,
+and integrals use limits to measure accumulated change.
+</p>
+
+<p>
+In this chapter, we study limits using graphs, tables, and algebraic techniques.
+We develop rules for computing limits and explore how concepts such as continuity
+and the Intermediate Value Theorem fit into the bigger picture.
+Mastering limits is the first major step toward understanding the core ideas and tools of calculus.
+</p>
+</introduction>
+
+  
+  <xi:include  href="./ch-limits-s/sec-limit-graph.ptx" />
+  <xi:include  href="./ch-limits-s/sec-limit-alg.ptx" />
+  <xi:include  href="./ch-limits-s/sec-limit-inf.ptx" />
+  <xi:include  href="./ch-limits-s/sec-limit-continuity.ptx" />
+  <xi:include  href="./ch-limits-s/sec-limit-ivt.ptx" />
+  <xi:include  href="./ch-limits-s/sec-limit-ww.ptx" /> 
+
+
+
+</chapter>

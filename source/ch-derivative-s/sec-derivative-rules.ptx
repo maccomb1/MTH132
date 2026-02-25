@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-derivative-rules" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Basic Differentiation Rules</title>
+
+
+  <objectives>
+    <ul>
+      <li>
+        Interpret derivative notation in both Newton form <m>f'(x)</m> and Leibniz form <m>\displaystyle \frac{df}{dx}</m>.
+      </li>
+      <li>
+        Use basic derivative formulas to differentiate power functions and constants.
+      </li>
+      <li>
+        Apply the sum, constant multiple, product, and quotient rules to compute derivatives algebraically.
+      </li>
+      <li>
+        Interpret higher derivatives in an applied context (velocity and acceleration).
+      </li>
+    </ul>
+  </objectives>
+
+  <p>
+    So far, we have seen how real-world rate-of-change problems and geometric tangent-line problems lead to derivatives.
+    In this section, we focus on computing derivatives efficiently by using algebraic rules, so we do not need to return to the limit definition every time.
+  </p>
+
+  <subsection xml:id="derivative-notation">
+    <title>Notation for the Derivative</title>
+
+    <p>
+      The derivative of a function <m>f</m> can be written in several equivalent ways. In Newton notation we write <m>f'(x)</m>.
+      In Leibniz notation we write <m>\displaystyle \frac{df}{dx}</m>, which is meant to remind us of the definition of the derivative as a limit of difference quotients:
+    </p>
+
+    <me>
+      \displaystyle f'(x)=\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{\Delta f}{\Delta x}.
+    </me>
+
+    <p>
+      Here <m>\Delta x</m> is a change in the input, and <m>\Delta f</m> is the corresponding change in the output:
+      <m>\Delta x=h</m> and <m>\Delta f=f(x+h)-f(x)</m>.
+      The notation <m>\displaystyle \frac{df}{dx}</m> does <em>not</em> literally mean “a quotient of two tiny numbers.”
+      It is a single symbol that represents a limit.
+    </p>
+
+    <p>
+      For example, if <m>f(x)=x^2</m>, then the derivative formula <m>f'(x)=(x^2)'=2x</m> can be written as
+    </p>
+
+    <me>
+      \displaystyle \frac{d}{dx}(x^2)= 2x.
+    </me>
+
+<remark xml:id="rem-derivative-notation">
+  <p>
+    To emphasize the distinction between the <em>derivative function</em> and the
+    <em>derivative at a specific point</em>, we often write
+    <m>\displaystyle f'(a)=\left.\frac{df}{dx}\right|_{x=a}</m>.
+    This notation highlights that the derivative function is evaluated at
+    <m>x=a</m>.
+    You may also encounter the notation <m>Df</m> for the derivative of <m>f</m>,
+    so that <m>f'(x)=Df(x)</m>.
+  </p>
+</remark>
+
+  </subsection>
+
+  <subsection xml:id="basic-derivatives">
+    <title>Basic Derivatives</title>
+
+    <p>
+      The strategy is the same as earlier limit techniques: we establish derivatives of basic functions, then build more complicated derivatives from those.
+      The most important basic formulas are the following.
+    </p>
+
+<theorem xml:id="thm-constant-and-linear-derivatives">
+  <title>Derivatives of Constant and Linear Functions</title>
+  <statement>
+    <ul>
+      <li>
+        If <m>f(x) = c</m> is a constant function, then
+        <m>\displaystyle \frac{d}{dx}(c) = (c)'= 0</m>.
+      </li>
+      <li>
+        If <m>f(x) = x</m>, then
+        <m>\displaystyle \frac{d}{dx}(x) = (x)'= 1</m>.
+      </li>
+    </ul>
+  </statement>
+  <proof>
+  <p>
+    We use the limit definition of the derivative.
+  </p>
+
+  <p>
+    First, suppose <m>f(x) = c</m>, where <m>c</m> is a constant.
+    By definition,
+  </p>
+
+  <me>
+    \displaystyle
+    \frac{d}{dx}(c)
+    =
+    \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}.
+  </me>
+
+  <p>
+    Since <m>f(x+h) = c</m> and <m>f(x) = c</m>, the numerator is zero.
+  </p>
+
+  <me>
+    \displaystyle
+    \frac{d}{dx}(c)
+    =
+    \lim_{h \to 0} \frac{c - c}{h}
+    =
+    \lim_{h \to 0} \frac{0}{h}
+    =
+    0.
+  </me>
+
+  <p>
+    Therefore, the derivative of a constant function is zero.
+  </p>
+
+  <p>
+    Next, suppose <m>f(x) = x</m>.
+    Using the limit definition,
+  </p>
+
+  <me>
+    \displaystyle
+    \frac{d}{dx}(x)
+    =
+    \lim_{h \to 0} \frac{(x+h) - x}{h}.
+  </me>
+
+  <p>
+    Simplifying the numerator gives
+  </p>
+
+  <me>
+    \displaystyle
+    \frac{d}{dx}(x)
+    =
+    \lim_{h \to 0} \frac{h}{h}
+    =
+    \lim_{h \to 0} 1
+    =
+    1.
+  </me>
+
+  <p>
+    Therefore, the derivative of <m>f(x) = x</m> is equal to <m>1</m>.
+  </p>
+
+</proof>
+
+</theorem>
+
+<theorem xml:id="thm-power-rule">
+  <title>The Power Rule</title>
+  <statement>
+    <p>
+      Let <m>p</m> be any real number for which <m>x^p</m> is defined.
+      If <m>f(x) = x^p</m>, then
+    </p>
+    <me>
+      \displaystyle \frac{d}{dx}(x^p) = (x^p)'= p x^{p-1}.
+    </me>
+  </statement>
+<proof>
+  <p>
+    We begin with a geometric intuition.
+    For the function <m>f(x)=x^2</m>, increasing <m>x</m> by a small amount
+    <m>h = \Delta x</m> produces a change in area
+    <m>\Delta f</m> that is approximately <m>2x\,\Delta x</m>.
+  </p> 
+  <sidebyside width="60%">
+    <figure xml:id="xSquareProof">
+      <caption>
+        A geometric illustration of the change in area when a square of side length <m>x</m> is 
+        increased by a small amount <m>\Delta x</m>. The added strips show how the area grows 
+        approximately like <m>2x\Delta x</m>.
+      </caption>
+      <image source="images/xSquareDerivProof.png" width="100%">
+      <shortdescription>
+A square with side length x and area x squared is shown. Light shaded strips of width Delta x 
+are added along the top and right sides, representing the increase in area when x is increased by Delta x. 
+The diagram visually illustrates how the change in area is approximately proportional to 2x times Delta x.
+</shortdescription>
+</image>
+    </figure>
+  </sidebyside>
+
+<p>
+    This suggests that
+  </p>
+
+  <me>
+    f'(x) \approx \frac{\Delta f}{\Delta x} \approx 2x.
+  </me>
+
+  <p>
+    A similar idea applies to volume.
+    For <m>f(x)=x^3</m>, the change in volume due to a small increase
+    <m>\Delta x</m> is approximately <m>3x^2\,\Delta x</m>, </p>
+  <sidebyside width="60%">
+    <figure xml:id="xCubeProof">
+      <caption>
+        A geometric illustration of the change in volume when a cube of side length <m>x</m> is increased by a small amount <m>\Delta x</m>. 
+        The added slabs show how the volume grows approximately like <m>3x^2\Delta x</m>.
+      </caption>
+      <image source="images/xCubeDerivProof.png" width="100%">
+      <shortdescription>
+      A cube with side length x and volume x cubed is shown. Light shaded slabs of thickness 
+      Delta x are added to the top, right, and back faces of the cube, representing the 
+      increase in volume when x is increased by Delta x. The diagram illustrates that the 
+      dominant contribution to the change in volume is proportional to 3x squared times Delta x.
+</shortdescription>
+      </image>
+    </figure>
+  </sidebyside>
+    <p> 
+    suggesting that <m>f'(x) \approx 3x^2</m>.
+  </p>
+
+  <p>
+    More generally, for the growth of an <m>n</m>-dimensional cube with side length <m>x</m>,
+    this geometric reasoning suggests that
+    <m>f'(x)=n x^{n-1}</m>.
+    While this intuition cannot be visualized for higher dimensions,
+    it motivates the algebraic proof that follows.
+  </p>
+
+  <p>
+    We now prove the Power Rule rigorously using the limit definition of the derivative.
+    The constant and linear cases were proved earlier.
+    We focus on the case
+    <m>f(x)=x^p</m>.
+  </p>
+
+  <p>
+    The proof proceeds in stages, beginning with whole number powers.
+    Throughout, we repeatedly use the identity
+  </p>
+
+  <me>
+    a^n - b^n
+    =
+    (a-b)\big(a^{n-1}+a^{n-2}b+a^{n-3}b^2+\cdots+b^{n-1}\big),
+  </me>
+
+  <p>
+    which holds for all positive integers <m>n</m>.
+  </p>
+
+  <p>
+    <em>Step 1: Positive integer powers.</em>
+    Let <m>p=n</m> be a positive integer.
+    Using the limit definition of the derivative,
+  </p>
+
+  <me>
+    \displaystyle
+    \frac{d}{dx}(x^n)
+    =
+    \lim_{h\to 0}\frac{(x+h)^n-x^n}{h}.
+  </me>
+
+  <p>
+    Apply the factorization identity with <m>a=x+h</m> and <m>b=x</m>.
+  </p>
+
+  <me>
+    \displaystyle
+    \frac{(x+h)^n-x^n}{h}
+    =
+    \frac{(x+h-x)\big((x+h)^{n-1}+(x+h)^{n-2}x+\cdots+x^{n-1}\big)}{h}
+  </me>
+
+  <p>
+    Cancel the factor of <m>h</m> to obtain
+  </p>
+
+  <me>
+    \displaystyle
+    (x+h)^{n-1}+(x+h)^{n-2}x+\cdots+x^{n-1}.
+  </me>
+
+  <p>
+    Taking the limit as <m>h\to 0</m> gives
+  </p>
+
+  <me>
+    \displaystyle
+    x^{n-1}+x^{n-1}+\cdots+x^{n-1}
+    =
+    n x^{n-1}.
+  </me>
+
+  <p>
+    Therefore, for positive integers <m>n</m>,
+  </p>
+
+  <me>
+    \displaystyle
+    \frac{d}{dx}(x^n)=n x^{n-1}.
+  </me>
+
+  <p>
+    <em>Step 2: Negative integer powers.</em>
+    Let <m>p=-n</m>, where <m>n</m> is a positive integer.
+    Then <m>x^p=\frac{1}{x^n}</m>.
+    In the derivative limit, we combine fractions and apply the same
+    factorization identity with <m>a=x</m> and <m>b=x+h</m>.
+  </p>
+
+  <p>
+    After simplification, the resulting expression reduces to
+  </p>
+
+  <me>
+    \displaystyle
+    -\frac{n x^{n-1}}{x^{2n}}
+    =
+    (-n)x^{-n-1}.
+  </me>
+
+  <p>
+    Thus, the Power Rule holds for negative integers as well.
+  </p>
+
+  <p>
+    <em>Step 3: Rational powers.</em>
+    Let <m>p=\frac{n}{m}</m>, where <m>m</m> is a positive integer
+    and <m>n</m> is any integer.
+    Then
+  </p>
+
+  <me>
+    x^p = x^{n/m} = \sqrt[m]{x^n}.
+  </me>
+
+  <p>
+    In the derivative limit, the numerator has the form
+    <m>\sqrt[m]{(x+h)^n}-\sqrt[m]{x^n}</m>.
+    As in earlier work with cube roots,
+    we multiply the numerator and denominator by
+  </p>
+
+  <me>
+    a^{m-1}+a^{m-2}b+\cdots+b^{m-1},
+  </me>
+
+  <p>
+    where <m>a=\sqrt[m]{(x+h)^n}</m> and <m>b=\sqrt[m]{x^n}</m>.
+    This eliminates the radicals and produces the numerator
+  </p>
+
+  <me>
+    a^m-b^m=(x+h)^n-x^n,
+  </me>
+
+  <p>
+    which we have already handled.
+    Simplifying the resulting limit again yields
+    <m>p x^{p-1}</m>.
+  </p>
+
+  <p>
+    Therefore, the Power Rule holds for all rational exponents.
+  </p>
+
+  <p>
+    The formula
+    <m>\frac{d}{dx}(x^p)=p x^{p-1}</m>
+    is also valid for irrational exponents such as <m>p=\sqrt{2}</m>,
+    but proving this rigorously requires more advanced theory.
+  </p>
+</proof>
+</theorem>
+
+
+<example xml:id="ex-basic-derivatives-examples">
+  <introduction>
+    <p>
+      Compute each derivative:
+    </p>
+  </introduction>
+
+  <task>
+    <statement>
+      <p>
+        <m>\displaystyle \frac{d}{dx}(x^{10})</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Apply the power rule with <m>p=10</m>.
+      </p>
+      <me>
+\begin{array}{rcl}
+\displaystyle \frac{d}{dx}(x^{10})
+&amp; = &amp;
+10x^{9}
+\end{array}
+      </me>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        <m>\displaystyle \frac{d}{dx}\!\left(\sqrt[3]{x}\right)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First rewrite the cube root using exponent notation,
+        then apply the power rule.
+      </p>
+      <me>
+\begin{array}{rcl}
+\displaystyle \frac{d}{dx}\!\left(\sqrt[3]{x}\right)
+&amp; = &amp;
+\displaystyle \frac{d}{dx}\!\left(x^{1/3}\right)
+\\[0.8em]
+&amp; = &amp;
+\displaystyle \frac{1}{3}x^{-2/3}
+\\[0.8em]
+&amp; = &amp;
+\displaystyle \frac{1}{3\sqrt[3]{x^2}}
+\end{array}
+      </me>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        <m>\displaystyle \frac{d}{dx}\!\left(\frac{1}{x}\right)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Rewrite the reciprocal using a negative exponent,
+        then apply the power rule.
+      </p>
+      <me>
+\begin{array}{rcl}
+\displaystyle \frac{d}{dx}\!\left(\frac{1}{x}\right)
+&amp; = &amp;
+\displaystyle \frac{d}{dx}\!\left(x^{-1}\right)
+\\[0.8em]
+&amp; = &amp;
+- x^{-2}
+\\[0.8em]
+&amp; = &amp;
+-\dfrac{1}{x^2}
+\end{array}
+      </me>
+    </solution>
+  </task>
+
+</example>
+
+
+ 
+
+  </subsection>
+
+  <subsection xml:id="derivative-rules">
+    <title>Derivative Rules</title>
+
+    <p>
+      Once we know the derivatives of basic functions, we can differentiate combinations of functions using rules.
+      Suppose <m>f</m> and <m>g</m> are differentiable at <m>x</m>.
+    </p>
+
+    <theorem xml:id="thm-derivative-rules">
+      <statement>
+        <ul>
+          <li>
+            <em>Sum Rule:</em> <m>\displaystyle (f(x)+g(x))'=f'(x)+g'(x)</m>.
+          </li>
+          <li>
+            <em>Difference Rule:</em> <m>\displaystyle (f(x)-g(x))'=f'(x)-g'(x)</m>.
+          </li>
+          <li>
+            <em>Constant Multiple Rule:</em> <m>\displaystyle (c\,f(x))'=c\,f'(x)</m> for any constant <m>c</m>.
+          </li>
+          <li>
+            <em>Product Rule:</em> <m>\displaystyle (f(x)g(x))'=f'(x)g(x)+f(x)g'(x)</m>.
+          </li>
+          <li>
+            <em>Quotient Rule:</em>
+            <m>\displaystyle \left(\frac{f(x)}{g(x)}\right)'=\frac{f'(x)g(x)-f(x)g'(x)}{g(x)^2}</m>, where <m>g(x)\neq 0</m>.
+          </li>
+        </ul>
+      </statement>
+<proof>
+<p>
+  A proof of the Derivative Sum Rule is presented in the video below.
+</p>
+          <video youtube="vweA8peEjyQ" width="90%">
+              </video>   
+<p>
+  A proof of the Product Rule is presented in the following video.
+</p>
+          <video youtube="L5ErlC0COxI" width="90%">
+              </video>   
+<p>
+  Proofs of additional derivative rules can be found online.
+Your instructor would love to talk about this in office hours, and also you may want to consider a math major/minor. 
+These topics are covered in more detail in MTH 320.
+</p>
+  </proof>
+
+
+    </theorem>
+
+    <remark xml:id="rem-product-warning">
+      <p>
+        Warning: the derivative of a product is <em>not</em> the product of derivatives.
+        In general, <m>\displaystyle (f(x)g(x))'\neq f'(x)g'(x)</m>.
+      </p>
+    </remark>
+
+   
+<example xml:id="ex-derivative-basic-power-constant">
+
+  <introduction>
+    <p>
+      Compute the following derivatives.
+    </p>
+  </introduction>
+
+  <task>
+    <statement>
+      <p>
+        Compute <m>\displaystyle \frac{d}{dx}(3\sqrt{x})</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        First rewrite the square root using exponents and apply the constant multiple rule.
+      </p>
+
+      <md>
+        <mrow>
+          \frac{d}{dx}(3\sqrt{x})
+          \amp =
+          \frac{d}{dx}\!\left(3x^{1/2}\right)
+        </mrow>
+
+        <mrow>
+          \amp =
+          3\frac{d}{dx}\!\left(x^{1/2}\right)
+        </mrow>
+
+        <mrow>
+          \amp =
+          3\left(\frac{1}{2}x^{-1/2}\right)
+        </mrow>
+
+        <mrow>
+          \amp =
+          \frac{3}{2}x^{-1/2}
+        </mrow>
+
+        <mrow>
+          \amp =
+          \frac{3}{2\sqrt{x}}.
+        </mrow>
+      </md>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        Compute <m>\displaystyle \frac{d}{dx}(3\sqrt{10})</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The quantity <m>3\sqrt{10}</m> is a constant, so its derivative is <m>0</m>.
+      </p>
+    </solution>
+  </task>
+
+</example>
+
+
+    <example xml:id="ex-product-rule-algebra">
+      <statement>
+        <p>
+          Let <m>f(x)=(5x^2+1)(\sqrt{x}-3)</m>. Compute <m>f'(x)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Use the Product Rule with <m>u(x)=5x^2+1</m> and <m>v(x)=\sqrt{x}-3</m>.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle f'(x)
+\amp=\amp \displaystyle u'(x)v(x)+u(x)v'(x)
+\\[0.9em]
+\amp=\amp \displaystyle (10x)(\sqrt{x}-3)+(5x^2+1)\left(\frac{1}{2\sqrt{x}}\right).
+\end{array}
+        </me>
+
+        <p>
+          (Optional) You can also expand first and then differentiate term-by-term. Both approaches agree.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-quotient-rule-two-ways">
+      <statement>
+        <p>
+          Differentiate <m>g(t)=\dfrac{t^5+1}{t\sqrt{t}}</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          First rewrite the denominator: <m>t\sqrt{t}=t^{3/2}</m>. Then
+          <m>\displaystyle g(t)=(t^5+1)t^{-3/2}=t^{7/2}+t^{-3/2}</m>, so
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle g'(t)
+\amp=\amp \displaystyle \frac{d}{dt}\left(t^{7/2}+t^{-3/2}\right)
+\\[0.9em]
+\amp=\amp \displaystyle \frac{7}{2}t^{5/2}-\frac{3}{2}t^{-5/2}.
+\end{array}
+        </me>
+
+        <p>
+          You could also use the Quotient Rule directly; both methods produce equivalent results.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-ice-block-volume">
+      <statement>
+        <p>
+          A block of ice has length <m>\ell=10</m> cm, width <m>w=5</m> cm, and height <m>h=20</m> cm.
+          Its length and width are decreasing at <m>1</m> cm/hr, and its height is decreasing at <m>2</m> cm/hr.
+          How fast is the volume decreasing at that instant?
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          The volume is <m>V=\ell w h</m>, and all three dimensions depend on time <m>t</m>.
+          Differentiate using the Product Rule (applied twice):
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \frac{dV}{dt}
+\amp=\amp \displaystyle \frac{d}{dt}(\ell w h)
+\\[0.8em]
+\amp=\amp \displaystyle \ell'wh+\ell w'h+\ell w h'.
+\end{array}
+        </me>
+
+        <p>
+          At the instant described:
+          <m>\ell=10</m>, <m>w=5</m>, <m>h=20</m>,
+          <m>\ell'=-1</m>, <m>w'=-1</m>, <m>h'=-2</m> (cm/hr).
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \frac{dV}{dt}
+\amp=\amp \displaystyle (-1)(5)(20)+(10)(-1)(20)+(10)(5)(-2)
+\\[0.8em]
+\amp=\amp \displaystyle -100-200-100
+\\[0.8em]
+\amp=\amp \displaystyle -400.
+\end{array}
+        </me>
+
+        <p>
+          The volume is decreasing at <m>400 \text{ cm}^3/\text{hr}</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="higher-derivatives">
+    <title>Higher Derivatives</title>
+
+    <p>
+      Because the derivative of a function is itself a function, we can differentiate again.
+      The second derivative of <m>f</m> is denoted <m>f''(x)</m>, and in Leibniz notation it is written
+      <m>\displaystyle \frac{d^2f}{dx^2}</m>:
+    </p>
+
+    <me>
+      \displaystyle f''(x)=\frac{d}{dx}\!\left(f'(x)\right)=\frac{d}{dx}\!\left(\frac{df}{dx}\right)=\frac{d^2f}{dx^2}.
+    </me>
+
+    <p>
+      If <m>f</m> represents position as a function of time, then <m>f'(t)</m> is <term>velocity</term> and <m>f''(t)</m> is <term>acceleration</term>.
+    </p>
+
+    <example xml:id="ex-higher-derivatives-falling-stone">
+      <statement>
+        <p>
+          A stone falls <m>f(t)=16t^2</m> feet in <m>t</m> seconds. Compute <m>f'(t)</m>, <m>f''(t)</m>, and interpret them.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Differentiate repeatedly using the power rule:
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle f'(t)
+\amp=\amp \displaystyle (16t^2)'
+=32t,
+\\[0.8em]
+\displaystyle f''(t)
+\amp=\amp \displaystyle (32t)'
+=32,
+\\[0.8em]
+\displaystyle f'''(t)
+\amp=\amp \displaystyle (32)'
+=0.
+\end{array}
+        </me>
+
+        <p>
+          Here <m>f'(t)=32t</m> is velocity (ft/sec), increasing with time.
+          The constant <m>f''(t)=32</m> is acceleration (ft/sec<m>^2</m>).
+        </p>
+      </solution>
+    </example>
+
+<remark xml:id="rem-higher-derivatives">
+  <p>
+    Higher derivatives are defined by repeatedly differentiating.
+    The third derivative of <m>f</m> is denoted <m>f'''(x)</m>,
+    the fourth derivative is denoted <m>f^{(4)}(x)</m>,
+    and in general the <m>n</m>th derivative is written <m>f^{(n)}(x)</m>.
+  </p>
+
+  <p>
+    In Leibniz notation, these derivatives are written
+    <m>\displaystyle \frac{d^3f}{dx^3}</m>,
+    <m>\displaystyle \frac{d^4f}{dx^4}</m>, and
+    <m>\displaystyle \frac{d^nf}{dx^n}</m>.
+  </p>
+
+  <p>
+    As the order of the derivative increases, prime notation becomes cumbersome,
+    so the superscript notation <m>f^{(n)}(x)</m> is typically preferred for higher derivatives.
+  </p>
+</remark>
+
+
+  </subsection>
+
+<subsection xml:id="additional-worked-problems-derivRules">
+  <title>Additional Worked-Out Examples</title>
+
+  <p>
+    To keep this section at a reasonable length, we include only a few representative examples directly in the text.
+    If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional
+    fully worked-out examples are available via: 
+    <alert>
+      <xref ref="subsec-deriv-rules">
+        Additional Examples for Basic Differentiation Rules
+      </xref>
+    </alert>
+  </p>
+
+</subsection>
+
+
+  <exercises xml:id="exercises-derivative-rules-tf">
+  <title>Practice / Study Problems</title>
+
+
+    <exercisegroup>
+      <title>True/False Questions</title>
+
+      <introduction>
+        <p>
+          Determine whether each statement is true or false.
+          Justify your answer using derivative rules or interpretation.
+        </p>
+
+
+      </introduction>
+
+<exercise xml:id="tf-deriv-rules-01">
+  <statement>
+    <p>
+      The symbols <m>f'(x)</m> and <m>\displaystyle \frac{df}{dx}</m>
+      always represent the same quantity.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> Both notations represent the derivative of <m>f</m> with respect to <m>x</m>.
+      In other words, <m>f'(x)=\frac{df}{dx}</m>.
+      (They are two different notational conventions for the same derivative.)
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-rules-04">
+  <statement>
+    <p>
+      If <m>f(x)=7^\pi</m>, then <m>f'(x)=0</m> for all <m>x</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> The expression <m>7^\pi</m> is a constant (it does not depend on <m>x</m>),
+      so <m>f'(x)=0</m> for all <m>x</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-rules-05">
+  <statement>
+    <p>
+      If <m>f(x)=kx</m>, then <m>f'(x)=k</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> Using the constant multiple rule and <m>\frac{d}{dx}(x)=1</m>,
+      we get <m>f'(x)=\frac{d}{dx}(kx)=k\cdot 1=k</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-rules-06">
+  <statement>
+    <p>
+      If <m>f(x)=\dfrac{1}{\sqrt[3]{x^2}}</m>, then <m>f'(x)=-\tfrac23 x^{-5/3}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> Rewrite
+      <m>\displaystyle f(x)=\frac{1}{\sqrt[3]{x^2}}=(x^2)^{-1/3}=x^{-2/3}</m>
+      (where defined). Then apply the power rule:
+      <m>\displaystyle f'(x)=\left(x^{-2/3}\right)'=-\frac{2}{3}x^{-5/3}</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-rules-11">
+  <statement>
+    <p>
+      If <m>f'(2)=3</m> and <m>h(x)=x^2f(x)</m> then <m>h'(2)=12</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>False.</em> By the Product Rule,
+      <m>h'(x)=(x^2)'f(x)+x^2f'(x)=2x\,f(x)+x^2f'(x)</m>.
+      Evaluating at <m>x=2</m> gives
+      <m>h'(2)=4f(2)+4f'(2)=4f(2)+12</m>.
+      Since <m>f(2)</m> is not given, <m>h'(2)</m> cannot be determined from the information provided,
+      and it is not necessarily <m>12</m>.
+    </p>
+  </solution>
+</exercise>
+
+
+<exercise xml:id="tf-deriv-rules-18">
+  <statement>
+    <p>
+      If <m>V(t)</m> represents velocity (where <m>t</m> is a time variable),
+      then <m>V'(t)</m> represents acceleration.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> When velocity is given as a function of time <m>t</m>,
+      its derivative with respect to time,
+      <m>V'(t)=\dfrac{dV}{dt}</m>,
+      measures the rate of change of velocity.
+      By definition, this rate of change is acceleration.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-rules-20">
+  <statement>
+    <p>
+      The notation <m>f'''(x)</m> and <m>f^{(3)}(x)</m>
+      represent the same function.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> Both notations mean the third derivative of <m>f</m> with respect to <m>x</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-rules-19">
+  <statement>
+    <p> If <m>\dfrac{d}{dx}\left( \dfrac{f}{g}\right) \Big|_{x=1} = 3</m>, then <m>\dfrac{d}{dx}\left( \dfrac{g}{f}\right) \Big|_{x=1} = \dfrac{1}{3}</m>.</p>
+    </statement>
+    <solution>
+      <p>
+        <em>False.</em> Remember that the quotient rule is complicated and there is no reason to think that such a clean relationship like this should exist. Here is the
+        quotient rule for both quotients:
+        <me> \begin{array}{rcl}
+          \displaystyle
+          \frac{d}{dx}\left( \dfrac{f}{g}\right)
+          &amp; = &amp;
+          \dfrac{f'g-fg'}{g^2} \\
+          \dfrac{d}{dx}\left( \dfrac{g}{f}\right)
+          &amp; = &amp;
+          \dfrac{g'f-g g'}{f^2}.
+          \end{array}
+        </me>
+        For a concrete example we can take <m>f(x)=3x</m> and <m>g(x) = 1</m>. 
+          Then (notice that this example is so simple that the quotient rule is not even needed to compute the derivatives):
+          <me> 
+          \begin{array}{rcl}
+          \displaystyle
+          \frac{d}{dx}\left( \frac{f}{g}\right)
+          &amp; = &amp;
+          \dfrac{d}{dx}\left( \dfrac{3x}{1}\right)
+          = \dfrac{(3)(1) - (0)(3x)}{1^2} = 3 
+          \end{array}
+          </me>
+          And as for the other quotient:
+          <me>
+          \begin{array}{rcl}
+          \displaystyle
+          \frac{d}{dx}\left( \frac{g}{f}\right)
+          &amp; = &amp; 
+          \dfrac{d}{dx}\left( \dfrac{1}{3x}\right)
+          = \dfrac{(0)(3x) - (1)(3)}{(3x)^2} = -\dfrac{1}{3x}.
+          \end{array}
+          </me>
+          Evaluating at <m>x=1</m> gives <m>\dfrac{d}{dx}\left( \dfrac{g}{f}\right) \Big|_{x=1} = -\dfrac{1}{3}</m>, not <m>\dfrac{1}{3}</m>.
+          So the derivative of <m>\dfrac{g}{f}</m> is in general not the reciprocal of the derivative of <m>\dfrac{f}{g}</m>.
+          </p>
+    </solution>
+  </exercise>
+
+    </exercisegroup>
+
+
+
+
+
+  <exercisegroup>
+      <title>More True/False Questions</title>
+
+      <introduction>
+<p>
+  For this set of problems let <m>A(x)</m> be a differentiable function.
+  Values of <m>A</m> are given in the table below, and <m>B</m> is piecewise linear function shown in the accompanying graph.
+</p>
+<p>
+    <me>
+\begin{array}{|c|c|c|}
+\hline
+x &amp; A(x) &amp; A'(x) \\
+\hline
+1 &amp; 7 &amp; -3 \\
+\hline
+4 &amp; -2 &amp; 5 \\
+\hline
+\end{array}
+</me>
+</p>
+
+
+<sidebyside widths="60%">
+
+  <figure xml:id="fig-B-graph">
+    <caption>
+      Graph of <m>B(x)</m>,  a piecewise linear function composed of two line segments.
+</caption>
+    <image source="images/B-pieceLinear.png" width="100%">
+<shortdescription>
+  Graph of a piecewise linear function B(x).
+  The graph consists of a line segment increasing from the point (0, 2) to (2, 4),
+  followed by a line segment decreasing from (2, 4) to (5, 1).
+  The two segments meet at a sharp corner at x = 2.
+</shortdescription>
+    </image>
+  </figure>
+
+</sidebyside>
+</introduction>
+
+<exercise xml:id="tf-deriv-rules-21">
+  <statement>
+    <p>
+      If <m>f(x)=A(x)+B(x)</m>, then <m>f'(1)=-2</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> By the Sum Rule,
+      <m>f'(1)=A'(1)+B'(1)</m>.
+      From the table, <m>A'(1)=-3</m>.
+      From the graph, <m>B</m> is increasing with slope <m>1</m> at <m>x=1</m>,
+      so <m>B'(1)=1</m>.
+    </p>
+    <p>
+      Therefore,
+      <m>f'(1)=-3+1=-2</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-rules-24">
+  <statement>
+    <p>
+      If <m>f(x)=3B(x)</m>, then <m>f'(4)=6</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>False.</em> By the Constant Multiple Rule,
+      <m>f'(x)=3B'(x)</m>.
+      From the graph, <m>B</m> is decreasing with slope <m>-1</m> at <m>x=4</m>,
+      so <m>B'(4)=-1</m>.
+    </p>
+    <p>
+      Hence,
+      <m>f'(4)=3(-1)=-3</m>, not <m>6</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-rules-22">
+  <statement>
+    <p>
+      If <m>f(x)=x^2A(x)</m>, then <m>f'(1)=6</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>False.</em> Use the Product Rule:
+      <m>f'(x)=2xA(x)+x^2A'(x)</m>.
+      From the table, <m>A(1)=7</m> and <m>A'(1)=-3</m>.
+    </p>
+    <p>
+      Evaluating at <m>x=1</m>,
+      <m>f'(1)=2(1)(7)+1^2(-3)=14-3=11</m>,
+      not <m>6</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-rules-23">
+  <statement>
+    <p>
+      If <m>f(x)=\dfrac{A(x)}{B(x)}</m>, then <m>f'(4)=2</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> Apply the Quotient Rule:
+      <m>
+        f'(x)=\dfrac{A'(x)B(x)-A(x)B'(x)}{B(x)^2}.
+      </m>
+      From the table, <m>A(4)=-2</m> and <m>A'(4)=5</m>.
+      From the graph, <m>B(4)=2</m> and <m>B'(4)=-1</m>.
+    </p>
+    <p>
+      Substituting,
+      <m>
+        f'(4)=\dfrac{(5)(2)-(-2)(-1)}{2^2}
+        =\dfrac{10-2}{4}
+        =\dfrac{8}{4}
+        =2
+      </m>
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-rules-25">
+  <statement>
+    <p>
+      If <m>f(x)=A(x)B(x)</m>, then <m>f</m> is increasing when <m>x=4</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> Apply the Product Rule:
+      <m>
+        f'(x)=A'(x)B(x)+A(x)B'(x).
+      </m>
+      From the table, <m>A(4)=-2</m> and <m>A'(4)=5</m>.
+      From the graph, <m>B(4)=2</m> and <m>B'(4)=-1</m>.
+    </p>
+    <p>
+      Substituting,
+      <m>
+        f'(4)=(5)(2)+(-2)(-1)
+        =10+2
+        =12
+      </m>
+    </p>
+    <p> Since <m>f</m> has a positive derivative (a.k.a. slope) we know that it is increasing at <m>x=4</m>.</p>
+  </solution>
+</exercise>
+
+
+</exercisegroup>
+
+  </exercises>
+
+
+
+</section>

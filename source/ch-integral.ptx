@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-integral" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Integrals and the Fundamental Theorem of Calculus</title>
+
+  <!-- 
+  <introduction>
+    <p> Text before the first section. </p>
+  </introduction>
+-->
+  
+  <!-- include sections -->
+  <xi:include href="./ch-integral-s/sec-integral-antiderivatives.ptx" />
+  <xi:include href="./ch-integral-s/sec-integral-riemannSums.ptx" />
+  <xi:include href="./ch-integral-s/sec-integral-defInt.ptx" />
+  <xi:include href="./ch-integral-s/sec-integral-FTC.ptx" />
+  <xi:include href="./ch-integral-s/sec-integral-net.ptx" />
+  <xi:include href="./ch-integral-s/sec-integral-usub.ptx" />
+  <xi:include href="./ch-integral-s/sec-integral-ww.ptx" />
+  
+
+</chapter>

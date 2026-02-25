@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-derivative-intro" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction and Motivation for Derivatives</title>
+
+<objectives>
+  <ul>
+    <li>
+      Compute the average rate of change of a function on an interval and interpret it as the slope of a secant line.
+    </li>
+    <li>
+      Describe instantaneous velocity as the limit of average velocities over shrinking time intervals.
+    </li>
+    <li>
+      Interpret instantaneous rate of change geometrically as the slope of a tangent line.
+    </li>
+    <li>
+      Use tables, graphs, and nearby average rates of change to estimate an instantaneous rate of change.
+    </li>
+  </ul>
+</objectives>
+
+  <p>
+    Derivatives begin with a simple question: how fast is something changing <em>right now</em>?
+    You already know how to compute an <em>average</em> rate of change over a time interval.
+    The derivative is what happens when we shrink that interval smaller and smaller and study the
+    limiting behavior of these average rates.
+  </p>
+
+  <p>
+    Throughout this section, the same expression will appear in multiple contexts:
+    average velocity, slopes of secant lines, and instantaneous rate of change.
+    This expression is called the <em>difference quotient</em>.
+  </p>
+
+<subsection xml:id="instantaneous-velocity">
+  <title>Average and Instantaneous Velocity</title>
+
+  <p>
+    Suppose a particle moves along a line so that at time <m>t</m> it is at position <m>f(t)</m>.
+    We begin by defining the average velocity over a time interval.
+  </p>
+
+  <definition xml:id="def-average-velocity">
+    <statement>
+      <p>
+        Let <m>f(t)</m> denote the position of an object at time <m>t</m>.
+        The <term>average velocity</term> of the object on the time interval
+        <m>[a,b]</m> is
+      </p>
+      <me>
+        \displaystyle v_{\mathrm{avg}}=\frac{f(b)-f(a)}{b-a}.
+      </me>
+    </statement>
+  </definition>
+
+  <remark xml:id="rem-avg-velocity-interpretation">
+    <p>
+      The average velocity represents the total change in position divided by the total
+      change in time. Geometrically, it is the slope of the secant line connecting
+      <m>(a,f(a))</m> and <m>(b,f(b))</m> on the graph of <m>y=f(t)</m>.
+    </p>
+  </remark>
+
+  <p>
+    Instantaneous velocity cannot be measured over a single moment in time.
+    Instead, it is defined as a limit of average velocities over shrinking time intervals.
+  </p>
+
+  <definition xml:id="def-instantaneous-velocity">
+    <statement>
+      <p>
+        Let <m>f(t)</m> denote the position of an object at time <m>t</m>.
+        The <term>instantaneous velocity</term> at time <m>t=a</m> is
+      </p>
+      <me>
+        \displaystyle v=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h},
+      </me>
+      <p>
+        provided this limit exists. More generally, if <m>f(t)</m> represents a quantity other than position,
+      this same limit represents the <term>instantaneous rate of change</term>
+      of that quantity with respect to time at <m>t = a</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <remark xml:id="rem-velocity-speed">
+    <p>
+      Velocity may be positive or negative depending on direction of motion.
+      The <em>speed</em> of an object is the absolute value of its velocity.
+    </p>
+  </remark>
+
+
+<example xml:id="ex-falling-stone">
+  <introduction>
+    <p>
+      A stone dropped from a bridge has position (in feet below the bridge)
+      approximately <m>f(t)=16t^2</m> after <m>t</m> seconds.
+    </p>
+  </introduction>
+
+  <task>
+    <statement>
+      <p>
+        Compute the average velocity on <m>[3,4]</m> using <xref ref="def-average-velocity"/>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Using <xref ref="def-average-velocity"/> with <m>a=3</m> and <m>b=4</m>,
+      </p>
+      <me>
+\displaystyle
+\begin{array}{rcl}
+v_{\mathrm{avg}}
+&amp;=&amp; \displaystyle \frac{f(4)-f(3)}{4-3}
+\\[0.8em]
+&amp;=&amp; \displaystyle \frac{16(4^2)-16(3^2)}{1}
+\\[0.8em]
+&amp;=&amp; \displaystyle 16(16-9)
+\\[0.8em]
+&amp;=&amp; \displaystyle 112.
+\end{array}
+      </me>
+      <p>
+        So the average velocity on <m>[3,4]</m> is <m>112</m> ft/sec.
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        Use the table of velocities below to estimate the instantaneous velocity at <m>t=3</m>.
+      </p>
+
+      <me>
+\displaystyle
+\begin{array}{c|ccccc}
+h
+&amp; 1
+&amp; 0.1
+&amp; 0.01
+&amp; 0.001
+&amp; 0.0001
+\\ \hline
+v_{\mathrm{avg}}
+&amp; 112
+&amp; 97.6
+&amp; 96.16
+&amp; 96.016
+&amp; 96.0016
+\end{array}
+      </me>
+    </statement>
+    <solution>
+      <p>
+        As <m>h</m> gets smaller, the average velocities get closer to <m>96</m>.
+        So a reasonable estimate for the instantaneous velocity at <m>t=3</m> is
+        <m>96</m> ft/sec.
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        Compute the instantaneous velocity at <m>t=3</m> using <xref ref="def-instantaneous-velocity"/>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        By <xref ref="def-instantaneous-velocity"/>, the instantaneous velocity at <m>t=3</m> is
+      </p>
+
+      <me>
+v = \displaystyle\lim_{h\to 0}\frac{f(3+h)-f(3)}{h}.
+      </me>
+
+      <p>
+        Since <m>f(t)=16t^2</m>, we compute
+      </p>
+
+      <me>
+\displaystyle
+\begin{array}{rcl}
+v
+&amp;=&amp; \displaystyle \lim_{h\to 0}\frac{16(3+h)^2-16(3^2)}{h}
+\\[0.9em]
+&amp;=&amp; \displaystyle \lim_{h\to 0}16\cdot\frac{(3+h)^2-9}{h}
+\\[0.9em]
+&amp;=&amp; \displaystyle \lim_{h\to 0}16\cdot\frac{(9+6h+h^2)-9}{h}
+\\[0.9em]
+&amp;=&amp; \displaystyle \lim_{h\to 0}16\cdot\frac{6h+h^2}{h}
+\\[0.9em]
+&amp;=&amp; \displaystyle \lim_{h\to 0}16(6+h)
+\\[0.9em]
+&amp;=&amp; \displaystyle \lim_{h\to 0}96+16h
+\end{array}
+      </me>
+
+      <p>
+        As we take <m>h</m> smaller and smaller, the error term <m>16h</m> approaches zero, and
+the average velocity approaches the limiting value <m>96</m>, which by definition is
+the instantaneous velocity.
+        Therefore, the instantaneous velocity at <m>t=3</m> is <m>96</m> ft/sec.
+      </p>
+    </solution>
+  </task>
+</example>
+
+  </subsection>
+
+<subsection xml:id="secant-and-tangent">
+  <title>Slopes of Secant Lines and Slopes of Tangent Lines</title>
+
+  <p>
+    We have described velocity on several conceptual levels.
+    It can be understood as a <em>physical</em> quantity describing motion,
+    a <em>numerical</em> approximation obtained from average rates of change,
+    and an <em>algebraic</em> computation using limits.
+    Velocity also has a <em>geometric</em> interpretation in terms of the graph
+    <m>y=f(t)</m>, where it corresponds to the slope of the graph at a given time.
+  </p>
+
+  <p>
+    A <term>secant line</term> is a line that passes through two distinct points on the graph.
+    It cuts across the curve and represents how the function changes between two different
+    input values.
+    When these two points are far apart, the secant line gives a coarse description of the
+    function’s behavior over an interval.
+  </p>
+
+  <sidebyside width="80%">
+    <figure xml:id="secant-line">
+      <caption>
+        A secant line connecting the points <m>(1,f(1))</m> and <m>(7,f(7))</m>,
+        representing the average rate of change of <m>f</m> on the interval <m>[1,7]</m>.
+      </caption>
+      <image source="images/secant01.png" width="100%"/>
+    </figure>
+  </sidebyside>
+
+  <definition xml:id="def-secant-slope">
+    <statement>
+      <p>
+        Let <m>f</m> be a function and let <m>a \neq b</m>.
+        The <term>slope of the secant line</term> to <m>f</m> between <m>x=a</m> and <m>x=b</m> is
+      </p>
+      <me>
+        \displaystyle m_{\mathrm{sec}}=\frac{f(b)-f(a)}{b-a}.
+      </me>
+    </statement>
+  </definition>
+
+  <remark xml:id="rem-secant-interpretation">
+    <p>
+      The slope of the secant line is the slope of the line through the points
+      <m>(a,f(a))</m> and <m>(b,f(b))</m>.
+      Algebraically, it is the same formula used for the average rate of change.
+    </p>
+  </remark>
+
+  <p>
+    A <term>tangent line</term>, on the other hand, touches the graph at a single point and
+    matches the direction of the curve at that point.
+    The tangent line represents the best linear approximation to the function near a specific point.
+  </p>
+
+  <sidebyside width="80%">
+    <figure xml:id="tangent-line">
+      <caption>
+        A tangent line through the point <m>(1,f(1))</m>,
+        representing the instantaneous rate of change of <m>f</m> at <m>x=1</m>.
+      </caption>
+      <image source="images/tangent01.png" width="100%"/>
+    </figure>
+  </sidebyside>
+
+  <p>
+    As the second point used to define a secant line moves closer and closer to the first,
+    the secant line approaches the tangent line.
+    This idea leads directly to the following definitions.
+  </p>
+
+  <url href="https://www.desmos.com/calculator/sw9jjcgdeh">
+        <sidebyside width="80%">
+                <figure>
+                          <caption>
+                                      As two points on the curve move closer together, the secant line
+                                                determined by those points approaches the tangent line at a single point.
+                          </caption>
+                                  <image width="100%" source="images/tangentSecant.gif">
+                                              <shortdescription>
+                                                            Animated graph of a smooth curve with two points marked on it. A secant line passes
+                                                                        through the two points. As the points move closer together along the curve,
+                                                                                    the secant line rotates and converges to the tangent line at that point, illustrating how the tangent
+                                                                                                line arises as a limit of secant lines.
+                                              </shortdescription>
+                                            </image>
+                                          </figure>
+                                        </sidebyside>
+                                      </url>
+
+  <definition xml:id="def-tangent-slope">
+    <statement>
+      <p>
+        Let <m>f</m> be a function and let <m>a</m> be a point in its domain.
+        The <term>slope of the tangent line</term> to <m>f</m> at <m>x = a</m> is
+      </p>
+      <me>
+        \displaystyle m = \lim_{x \to a} \frac{f(x) - f(a)}{x - a},
+      </me>
+      <p>
+        provided this limit exists.
+        Equivalently, the slope of the tangent line can be written as
+      </p>
+      <me>
+        \displaystyle m = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h},
+      </me>
+      <p>
+        provided this limit exists.
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <p>
+      The limit as <m>h \to 0</m> is the more common definition in practice,
+      because it is often algebraically convenient to evaluate limits at
+      <m>h = 0</m> after simplifying the expression.
+    </p>
+  </remark>
+
+  <remark xml:id="rem-tangent-connection">
+    <p>
+      The slope of the tangent line gives the slope of the line that best approximates the graph of
+      <m>y=f(x)</m> near <m>x=a</m>.
+      This is the same limit used to define instantaneous velocity, which explains why
+      this limit describes both slopes of curves and rates of change.
+    </p>
+  </remark>
+
+  <p>At this stage, tables and graphs allow us to estimate instantaneous rates of change. Exact values will come from limits.
+  </p>
+
+
+  <example xml:id="ex-temperature-average-rates">
+    <title>A Trigonometric Model and Estimating Rates</title>
+    <statement>
+      <p>
+        We model average daily temperature through
+        the year by the sinusoidal function:
+      </p>
+      <me>
+        \displaystyle
+        T(x)=55-40\cos\!\left(\frac{2\pi}{365}x\right),
+        \quad\text{degrees F on day } x.
+      </me>
+      <p>
+        Using this model we found that
+      </p>
+      <me>
+\begin{array}{c|c|c}
+\text{Day} &amp; x &amp; T(x) \\ \hline
+\text{Mar 31} &amp; 90  &amp; 54.1 \\
+\text{Apr 10} &amp; 100 &amp; 61.0 \\
+\text{Apr 20} &amp; 110 &amp; 67.7
+\end{array}
+      </me>
+      <p>
+        Using this table, estimate how quickly the weather is warming at <m>x=100</m>
+        (Apr 10), in degrees per day.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        To estimate how quickly the temperature is changing at <m>x = 100</m>,
+        we approximate the instantaneous rate of change using average rates of change
+        from nearby data values in the table.
+      </p>
+
+      <p>
+        First, compute the average rate of change from <m>x = 90</m> to <m>x = 100</m>.
+      </p>
+
+      <me>
+\begin{array}{rcl}
+\dfrac{T(100) - T(90)}{100 - 90}
+&amp; = &amp;
+\dfrac{61.0 - 54.1}{10} \\[0.6em]
+&amp; = &amp;
+\dfrac{6.9}{10} \\[0.6em]
+&amp; = &amp;
+0.69
+\end{array}
+      </me>
+
+      <p>
+        Next, compute the average rate of change from <m>x = 100</m> to <m>x = 110</m>.
+      </p>
+
+      <me>
+\begin{array}{rcl}
+\dfrac{T(110) - T(100)}{110 - 100}
+&amp; = &amp;
+\dfrac{67.7 - 61.0}{10} \\[0.6em]
+&amp; = &amp;
+\dfrac{6.7}{10} \\[0.6em]
+&amp; = &amp;
+0.67
+\end{array}
+      </me>
+
+      <p>
+        These two values represent average rates of change on either side of
+        <m>x = 100</m>.
+        Since they are close in value, we use their average to estimate
+        the instantaneous rate of change at <m>x = 100</m>.
+      </p>
+
+      <me>
+\begin{array}{rcl}
+\text{Estimated rate at } x = 100
+&amp; \approx &amp;
+\dfrac{0.69 + 0.67}{2} \\[0.6em]
+&amp; = &amp;
+0.68
+\end{array}
+      </me>
+
+      <p>
+        Therefore, the temperature is increasing at approximately
+        <m>0.68</m> degrees Fahrenheit per day on April 10.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    In the next sections, we will turn these ideas into a precise definition
+    and develop tools for computing instantaneous rates of change efficiently.
+  </p>
+</subsection>
+
+<subsection xml:id="additional-worked-problems-derivIntro">
+  <title>Additional Worked-Out Examples</title>
+
+  <p>
+    To keep this section at a reasonable length, we include only a few representative examples directly in the text.
+    If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional
+    fully worked-out examples are available via: 
+    <alert>
+      <xref ref="subsec-deriv-intro">
+        Additional Examples for Introduction and Motivation for Derivatives 
+      </xref>
+    </alert>
+  </p>
+
+</subsection>
+
+
+
+
+
+
+<exercises xml:id="exercises-derivative-intro-tf">
+  <title>Practice / Study Problems</title>
+
+  <exercisegroup>
+    <title>Some True/False Problems</title>
+    <introduction>
+      <p>
+        Determine whether each statement is true or false and explain your reasoning
+      </p>
+    </introduction>
+
+    <!-- Average rate of change computations -->
+
+ <exercise xml:id="tf-deriv-intro-01">
+  <statement>
+    <p>
+      If <m>f(x)=x^2</m>, then the average rate of change of <m>f</m> on <m>[2,5]</m> is <m>7</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> The average rate of change on <m>[2,5]</m> is
+    </p>
+    <me>
+      \displaystyle \frac{f(5)-f(2)}{5-2}
+      =
+      \frac{25-4}{3}
+      =
+      7.
+    </me>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-intro-02">
+  <statement>
+    <p>
+      The average rate of change of <m>f(x)=3x-1</m> on any interval is <m>3</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> On <m>[a,b]</m>,
+    </p>
+    <me>
+      \displaystyle \frac{f(b)-f(a)}{b-a}
+      =
+      \frac{(3b-1)-(3a-1)}{b-a}
+      =
+      \frac{3(b-a)}{b-a}
+      =
+      3.
+    </me>
+  </solution>
+</exercise>
+
+
+<exercise xml:id="tf-deriv-intro-04">
+  <statement>
+    <p>
+      If <m>f(x)=x^2</m>, then the average rate of change on <m>[a,a+h]</m> is <m>2a+h</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True</em> (for <m>h\neq 0</m>). Compute
+    </p>
+    <me>
+      \displaystyle \frac{f(a+h)-f(a)}{(a+h)-a}
+      =
+      \frac{(a+h)^2-a^2}{h}.
+    </me>
+    <p>
+      Expand and simplify:
+    </p>
+    <me>
+      \displaystyle \frac{(a^2+2ah+h^2)-a^2}{h}
+      =
+      \frac{2ah+h^2}{h}
+      =
+      2a+h.
+    </me>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-intro-05">
+  <statement>
+    <p>
+      For <m>f(x)=x^2</m>, the slope of the tangent line to the graph of <m>y=f(x)</m>
+      at <m>x=3</m> is <m>6</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> By the definition of the slope of the tangent line,
+    </p>
+    <me>
+      \displaystyle m=\lim_{h\to 0}\frac{f(3+h)-f(3)}{h}
+      =
+      \lim_{h\to 0}\frac{(3+h)^2-9}{h}.
+    </me>
+    <p>
+      Expand and simplify:
+    </p>
+    <me>
+      \displaystyle \lim_{h\to 0}\frac{9+6h+h^2-9}{h}
+      =
+      \lim_{h\to 0}\frac{6h+h^2}{h}
+      =
+      \lim_{h\to 0}(6+h)
+      =
+      6.
+    </me>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-intro-07">
+  <statement>
+    <p>
+      If <m>f(x)=5</m>, then the slope of the tangent line to the graph of <m>y=f(x)</m>
+      is <m>0</m> at every point <m>x=a</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> Using the definition,
+    </p>
+    <me>
+      \displaystyle m=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}
+      =
+      \lim_{h\to 0}\frac{5-5}{h}
+      =
+      \lim_{h\to 0} 0
+      =
+      0.
+    </me>
+    <p>
+      This matches the geometric fact that the graph <m>y=5</m> is a horizontal line.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-intro-08">
+  <statement>
+    <p>
+      If the position of an object at time <m>t</m> is given by <m>f(t)=t^3</m>,
+      then the instantaneous velocity of the object at <m>t=2</m> is <m>12</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> Instantaneous velocity at <m>t=2</m> is defined by
+    </p>
+    <me>
+      \displaystyle v=\lim_{h\to 0}\frac{f(2+h)-f(2)}{h}
+      =
+      \lim_{h\to 0}\frac{(2+h)^3-2^3}{h}.
+    </me>
+    <p>
+      Expand <m>(2+h)^3=8+12h+6h^2+h^3</m>. Then
+    </p>
+    <me>
+      \displaystyle v
+      =
+      \lim_{h\to 0}\frac{(8+12h+6h^2+h^3)-8}{h}
+      =
+      \lim_{h\to 0}\frac{12h+6h^2+h^3}{h}.
+    </me>
+    <p>
+      Simplify and evaluate:
+    </p>
+    <me>
+      \displaystyle v
+      =
+      \lim_{h\to 0}(12+6h+h^2)
+      =
+      12.
+    </me>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-intro-09">
+  <statement>
+    <p>
+      If <m>f(x)=\sqrt{x}</m>, then
+      <m>\displaystyle\lim_{h\to 0}\frac{f(4+h)-f(4)}{h}=\frac{1}{2}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>False.</em> Compute
+    </p>
+    <me>
+      \displaystyle \lim_{h\to 0}\frac{\sqrt{4+h}-2}{h}.
+    </me>
+    <p>
+      Multiply numerator and denominator by the conjugate <m>\sqrt{4+h}+2</m>:
+    </p>
+    <me>
+      \displaystyle \lim_{h\to 0}\frac{\sqrt{4+h}-2}{h}\cdot\frac{\sqrt{4+h}+2}{\sqrt{4+h}+2}
+      =
+      \lim_{h\to 0}\frac{(4+h)-4}{h(\sqrt{4+h}+2)}.
+    </me>
+    <p>
+      Simplify and evaluate:
+    </p>
+    <me>
+      \displaystyle \lim_{h\to 0}\frac{h}{h(\sqrt{4+h}+2)}
+      =
+      \lim_{h\to 0}\frac{1}{\sqrt{4+h}+2}
+      =
+      \frac{1}{4} \neq \frac12.
+    </me>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-intro-10">
+  <statement>
+    <p>
+      If average rates of change computed using <m>h=0.1</m> and <m>h=0.01</m>
+      are very close in value, then that common value is a reasonable estimate
+      of the instantaneous rate of change.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> The instantaneous rate of change is defined as a limit of average rates of change as
+      <m>h\to 0</m>.
+      If two average rates from small values of <m>h</m> are close, that suggests the values are stabilizing,
+      and the shared value is a reasonable estimate of the limiting value.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-intro-11">
+  <statement>
+    <p>
+      Estimates of instantaneous velocity obtained from tables are exact values.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>False.</em> A table provides approximate values of average velocity for small but nonzero time steps.
+      Unless we compute the actual limit, the value from the table is only an estimate of the instantaneous velocity.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-intro-14">
+  <statement>
+    <p>
+      A negative instantaneous velocity means the object’s position is decreasing
+      at that moment.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> Instantaneous velocity is the instantaneous rate of change of position.
+      If <m>v&lt;0</m> at a moment, then position is decreasing at that moment, meaning the object is moving in the negative direction.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-intro-15">
+  <statement>
+    <p>
+      The slope of the tangent line at <m>x=a</m> is the limit of slopes of secant lines
+      through <m>(a,f(a))</m> and <m>(a+h,f(a+h))</m> as <m>h\to 0</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> The slope of the secant line through <m>(a,f(a))</m> and <m>(a+h,f(a+h))</m> is
+      <m>\dfrac{f(a+h)-f(a)}{h}</m>.
+      The slope of the tangent line is defined as the limit of these secant slopes as <m>h\to 0</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-intro-16">
+  <statement>
+    <p>
+      If all nearby secant line slopes are increasing as <m>h\to 0</m>,
+      then the slope of the tangent line must be infinite.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>False.</em> Secant slopes can increase as the second point approaches <m>a</m> and still approach a finite limit.
+      For example, for <m>f(x)=x^2</m> at <m>a=0</m>, the secant slopes
+      <m>\dfrac{f(h)-f(0)}{h}=\dfrac{h^2}{h}=h</m> increase as <m>h</m> increases, but as <m>h\to 0</m> the slopes approach <m>0</m>, which is finite.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-intro-18">
+  <statement>
+    <p>
+      If <m>\displaystyle\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}=0</m>,
+      then <m>f</m> has a horizontal tangent line at <m>x=a</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> The expression
+      <m>\displaystyle\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}</m>
+      is the slope of the tangent line at <m>x=a</m>, provided it exists.
+      If that slope equals <m>0</m>, then the tangent line has slope <m>0</m>, which means it is horizontal.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-intro-19">
+  <statement>
+    <p>
+      Two different functions can have the same average rate of change on an interval
+      but different instantaneous rates of change at a point in that interval.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> The average rate of change depends only on endpoint values, but instantaneous rate of change depends on local behavior.
+      For example, on <m>[0,2]</m> let
+      <m>f(x)=x</m> and <m>g(x)=x+\sin(\pi x)</m>.
+      Then <m>f(0)=g(0)=0</m> and <m>f(2)=g(2)=2</m>, so both have the same average rate of change:
+      <m>\dfrac{2-0}{2-0}=1</m>.
+      But at <m>x=1</m>, their instantaneous rates differ:
+      <m>f</m> has slope <m>1</m>, while <m>g</m> has a different slope because of the sinusoidal term.
+    </p>
+  </solution>
+</exercise>
+
+
+
+</exercisegroup>
+</exercises> 
+
+
+</section>

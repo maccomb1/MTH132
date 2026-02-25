@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-derivative-implicit" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Implicit Differentiation</title>
+
+<objectives>
+  <ul>
+    <li>
+      Recognize when a relationship between <m>x</m> and <m>y</m> requires implicit differentiation 
+      rather than treating <m>y</m> as an explicit function <m>y=f(x)</m>.
+    </li>
+    <li>
+      Differentiate equations that involve both <m>x</m> and <m>y</m> by treating <m>y=y(x)</m>, 
+      applying the Product Rule, Quotient Rule, and Chain Rule, and then solving for <m>\dfrac{dy}{dx}</m>.
+    </li>
+    <li>
+      Compute slopes of tangent lines and write equations of tangent lines for curves defined implicitly, 
+      including identifying where tangents are horizontal or vertical.
+    </li>
+  </ul>
+</objectives>
+
+
+  <p>
+    In earlier sections, we found tangent lines and rates of change by differentiating functions written in the form
+    <m>y=f(x)</m>. However, many important curves are not given as explicit functions of <m>x</m>.
+    Instead, they are described by equations that relate <m>x</m> and <m>y</m> implicitly.
+    In this section, we develop a technique called <emph>implicit differentiation</emph> that allows us to
+    compute derivatives directly from such equations.
+  </p>
+
+<subsection xml:id="ssec-implicit-motiv">
+    <title>A Motivating Example</title>
+
+    <p>
+      Consider the circle defined by the equation <m>x^2+y^2=25</m>.
+      If we wish to find the slope of the tangent line at the point <m>(3,4)</m>,
+      we immediately face a difficulty: there is no function specified in the form <m>y=f(x)</m>.
+    </p>
+
+      <sidebyside width="60%">
+        <figure xml:id="fig-implicit-circle-tangent">
+  <caption>
+    Tangent line to the circle <m>x^2 + y^2 = 25</m> at the point <m>(3,4)</m>.
+  </caption>
+
+  <image source="images/impDiff01.PNG" width="60%">
+    <shortdescription>
+      A coordinate plane showing the circle defined by x squared plus y squared equals 25.
+      The circle is centered at the origin with radius 5.
+      A dashed line represents the tangent line at the point (3,4),
+      touching the circle at exactly one point.
+      The point of tangency is marked, and the tangent line slopes downward to the right.
+    </shortdescription>
+  </image>
+</figure>
+      </sidebyside>
+    
+
+    <p>
+      One possible approach is to make the equation explicit by solving for <m>y</m>. Let's consider this method first
+    </p>
+
+<example xml:id="ex-explicit-circle-tangent">
+
+  <statement>
+    <p>
+      Find the slope of the tangent line to the circle
+      <m>x^2+y^2=25</m> at the point <m>(3,4)</m> by first solving for
+      <m>y=f(x)</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      We begin by solving the equation of the circle for <m>y</m>:
+    </p>
+
+    <me>
+      y = \pm\sqrt{25-x^2}.
+    </me>
+
+      <sidebyside width="60%">
+
+<figure xml:id="fig-explicit-circle-branches">
+  <caption>
+    Explicit representations of the circle <m>x^2 + y^2 = 25</m> and the tangent line at <m>(3,4)</m>.
+  </caption>
+
+  <image source="images/impDiff02.PNG">
+    <shortdescription>
+      A coordinate plane showing the circle x squared plus y squared equals 25,
+      written explicitly as two functions.
+      The upper semicircle is shown as y equals the square root of 25 minus x squared,
+      drawn as a solid red curve.
+      The lower semicircle is shown as y equals negative the square root of 25 minus x squared,
+      drawn as a dotted green curve.
+      A dashed blue line represents the tangent line at the point (3,4),
+      touching the upper semicircle at that point.
+      The upper and lower branches are labeled to emphasize that the circle is not a single function of x.
+    </shortdescription>
+  </image>
+</figure>
+
+
+        </sidebyside>
+
+
+    <p>
+      This shows that the circle is the union of two function graphs. </p>
+
+
+
+
+      <p> 
+      Since the point <m>(3,4)</m> lies on the upper semicircle, we use
+      <m>y=\sqrt{25-x^2}</m>.
+    </p>
+
+    <p>
+      Differentiate using the Chain Rule:
+    </p>
+
+    <me>
+      \frac{dy}{dx}
+      =
+      \frac{d}{dx}(25-x^2)^{1/2}
+      =
+      \frac12(25-x^2)^{-1/2}(-2x)
+      =
+      -\frac{x}{\sqrt{25-x^2}}.
+    </me>
+
+    <p>
+      Evaluating at <m>x=3</m> gives
+      <m>\frac{dy}{dx}=-\frac34</m>.
+    </p>
+  </solution>
+</example>
+
+
+<remark xml:id="rem-implicit-motivation">
+  <p>
+    While solving an equation for <m>y</m> can sometimes allow us to apply standard
+    differentiation rules, this approach is often inconvenient and may even be
+    impossible. In many equations, even relatively simple ones, such as <m>e^{y}=x+y</m>, the variable <m>y</m>
+    appears in multiple locations and cannot be isolated as an explicit function
+    of <m>x</m>.
+  </p>
+
+  <p>
+    Implicit differentiation avoids this difficulty by treating <m>y</m> as a
+    function of <m>x</m> and differentiating both sides of the equation directly,
+    using the Chain Rule wherever <m>y</m> appears.
+  </p>
+</remark>
+
+
+
+    <p>
+      Instead of solving for <m>y</m>, we assume that <m>y=y(x)</m> is an unknown function of <m>x</m>
+      that satisfies the equation. Then we can differentiate both sides with respect to <m>x</m>.
+    </p>
+
+
+
+
+
+<example xml:id="ex-implicit-circle-basic">
+  <statement>
+    <p>
+      Use implicit differentiation to find <m>\dfrac{dy}{dx}</m> for the circle
+      <m>x^2 + y^2 = 25</m>, and determine the slope of the tangent line at the point
+      <m>(3,4)</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      We treat <m>y</m> as a function of <m>x</m> and differentiate both sides of the equation
+      with respect to <m>x</m>.
+    </p>
+
+    <me>
+      \begin{array}{rcl}
+        \dfrac{d}{dx}(x^2 + y^2) &amp;=&amp; \dfrac{d}{dx}(25) \\[0.6em]
+        (x^2)' + (y^2)' &amp;=&amp; 0 \\[0.6em]
+        2x + 2y\dfrac{dy}{dx} &amp;=&amp; 0.
+      \end{array}
+    </me>
+
+<remark xml:id="rem-implicit-chain-rule">
+  <p>
+    The derivative <m>(x^2)' = 2x</m> follows from a basic derivative rule.
+    In contrast, differentiating <m>y^2</m> requires the Chain Rule, since
+    <m>y</m> is itself a function of <m>x</m>.
+    Here the outside function is <m>(\ \ )^2</m> and the inside function is <m>y = y(x)</m>.
+    As a result, the derivative introduces the unknown quantity <m>\dfrac{dy}{dx}</m>,
+    which we can then solve for algebraically.
+  </p>
+</remark>
+
+
+
+    <p>
+      We now solve for <m>\dfrac{dy}{dx}</m>.
+    </p>
+
+    <me>
+      \dfrac{dy}{dx} = -\dfrac{x}{y}.
+    </me>
+
+    <p>
+      This derivative formula applies to <em>every</em> point on the circle.
+      Evaluating at <m>(3,4)</m> gives
+    </p>
+
+    <me>
+      \left.\dfrac{dy}{dx}\right|_{(3,4)} = -\dfrac{3}{4}.
+    </me>
+  </solution>
+</example>
+
+<p>
+  Let us now formalize this process into a general technique.
+</p>
+  </subsection>
+
+  <subsection xml:id="implicit-diff-definition">
+    <title>Key Idea: Implicit Differentiation</title>
+
+    <definition xml:id="def-implicit-differentiation">
+      <title>Implicit Differentiation</title>
+      <statement>
+        <p>
+          <term>Implicit differentiation</term> consists of differentiating both sides of an equation with respect to <m>x</m>
+          and then solving the resulting equation for <m>y'</m>.
+        </p>
+        <p>
+          In the examples and exercises of this section, it is assumed that the given equation determines <m>y</m> implicitly
+          as a differentiable function of <m>x</m>, so that implicit differentiation applies.
+        </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="rem-implicit-why">
+      <p>
+        The key feature is that <m>y</m> depends on <m>x</m>, even if the equation does not explicitly solve for <m>y</m>.
+        So whenever you differentiate an expression containing <m>y</m>, you must use the Chain Rule and include a factor of <m>y'</m>.
+      </p>
+    </remark>
+
+    <example xml:id="ex-implicit-ln">
+      
+      <statement>
+        <p>
+          Given the equation <m>x\ln(y)+y^2=4x</m>, find <m>\displaystyle \frac{dy}{dx}</m> using implicit differentiation.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Differentiate both sides with respect to <m>x</m>. The left side requires the Product Rule on <m>x\ln(y)</m>
+          and the Chain Rule on <m>\ln(y)</m> and <m>y^2</m>.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \frac{d}{dx}\bigl(x\ln(y)\bigr)+\frac{d}{dx}\bigl(y^2\bigr)
+\amp=\amp \displaystyle \frac{d}{dx}(4x)
+\\[1.2em]
+\displaystyle \Bigl(1\cdot \ln(y)+x\cdot \frac{1}{y}\,y'\Bigr)+2y\,y'
+\amp=\amp \displaystyle 4.
+\end{array}
+        </me>
+
+        <p>
+          Now solve for <m>y'</m> by collecting terms with <m>y'</m>.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \frac{x}{y}\,y'+2y\,y'
+\amp=\amp \displaystyle 4-\ln(y)
+\\[1.2em]
+\displaystyle y'\left(\frac{x}{y}+2y\right)
+\amp=\amp \displaystyle 4-\ln(y)
+\\[1.2em]
+\displaystyle y'
+\amp=\amp \displaystyle \frac{4-\ln(y)}{\frac{x}{y}+2y}.
+\end{array}
+        </me>
+
+        <p>
+          A common simplification is to multiply top and bottom by <m>y</m>:
+        </p>
+
+        <me>
+          \displaystyle y'=\frac{y(4-\ln(y))}{x+2y^2}.
+        </me>
+      </solution>
+    </example>
+
+  
+
+    <example xml:id="ex-implicit-tangent-line">
+      <statement>
+        <p>
+          Find an equation of the tangent line to the curve <m>y e^{\sin x}=x\cos y</m> at the point <m>(0,0)</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Differentiate both sides with respect to <m>x</m>. Use the Product Rule on both sides.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \frac{d}{dx}\bigl(ye^{\sin x}\bigr)
+\amp=\amp \displaystyle \frac{d}{dx}\bigl(x\cos y\bigr)
+\\[1.4em]
+\displaystyle y'e^{\sin x}+y\cdot e^{\sin x}\cdot(\cos x)
+\amp=\amp \displaystyle 1\cdot \cos y + x\cdot \frac{d}{dx}(\cos y)
+\\[1.4em]
+\displaystyle y'e^{\sin x}+y e^{\sin x}\cos x
+\amp=\amp \displaystyle \cos y + x\cdot\bigl(-\sin y\bigr)\,y'.
+\end{array}
+        </me>
+
+        <p>
+          Now substitute <m>(x,y)=(0,0)</m>. Note <m>\sin(0)=0</m>, <m>e^0=1</m>, <m>\cos(0)=1</m>, and <m>\sin(0)=0</m>.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle y'(1)+0
+\amp=\amp \displaystyle 1+0
+\\[0.8em]
+\displaystyle y'
+\amp=\amp \displaystyle 1.
+\end{array}
+        </me>
+
+        <p>
+          The slope at <m>(0,0)</m> is 1, so the tangent line is
+        </p>
+
+        <me>
+          \displaystyle y=x.
+        </me>
+      </solution>
+    </example>
+
+  <example xml:id="ex-implicit-astroid-like">
+      <statement>
+        <p>
+          Find <m>y'</m> if <m>y^3+x^3=6xy</m>. At what point in the first quadrant is the tangent line to this curve horizontal?
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Differentiate both sides with respect to <m>x</m>. On the right side, use the Product Rule on <m>6xy</m>.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \frac{d}{dx}(y^3)+\frac{d}{dx}(x^3)
+\amp=\amp \displaystyle \frac{d}{dx}(6xy)
+\\[1.2em]
+\displaystyle 3y^2y'+3x^2
+\amp=\amp \displaystyle 6\bigl(xy'+y\bigr)
+\\[1.2em]
+\displaystyle 3y^2y'+3x^2
+\amp=\amp \displaystyle 6xy'+6y.
+\end{array}
+        </me>
+
+        <p>
+          Solve for <m>y'</m>.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle 3y^2y'-6xy'
+\amp=\amp \displaystyle 6y-3x^2
+\\[1.2em]
+\displaystyle y'(3y^2-6x)
+\amp=\amp \displaystyle 3(2y-x^2)
+\\[1.2em]
+\displaystyle y'
+\amp=\amp \displaystyle \frac{3(2y-x^2)}{3y^2-6x}
+\ =\ \frac{2y-x^2}{y^2-2x}.
+\end{array}
+        </me>
+
+        <p>
+          A horizontal tangent occurs when <m>\displaystyle y'=0</m>, which requires the numerator to be zero (and the denominator nonzero):
+        </p>
+
+        <me>
+          \displaystyle 2y-x^2=0 \quad\Longrightarrow\quad y=\frac{x^2}{2}.
+        </me>
+
+        <p>
+          Substitute <m>\displaystyle y=\frac{x^2}{2}</m> into the original equation <m>y^3+x^3=6xy</m>.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \left(\frac{x^2}{2}\right)^3+x^3
+\amp=\amp \displaystyle 6x\left(\frac{x^2}{2}\right)
+\\[1.2em]
+\displaystyle \frac{x^6}{8}+x^3
+\amp=\amp \displaystyle 3x^3
+\\[1.2em]
+\displaystyle \frac{x^6}{8}
+\amp=\amp \displaystyle 2x^3.
+\end{array}
+        </me>
+
+        <p>
+          In the first quadrant, <m>x&gt;0</m>, so divide by <m>x^3</m>:
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \frac{x^3}{8}
+\amp=\amp \displaystyle 2
+\\[0.8em]
+\displaystyle x^3
+\amp=\amp \displaystyle 16
+\\[0.8em]
+\displaystyle x
+\amp=\amp \displaystyle \sqrt[3]{16}.
+\end{array}
+        </me>
+
+        <p>
+          Then
+          <m>\displaystyle y=\frac{x^2}{2}=\frac{(\sqrt[3]{16})^2}{2}=\frac{\sqrt[3]{256}}{2}</m>.
+          So the point in the first quadrant where the tangent is horizontal is
+        </p>
+
+        <me>
+          \displaystyle \left(\sqrt[3]{16},\,\frac{(\sqrt[3]{16})^2}{2}\right).
+        </me>
+
+        <p>
+          (This point is valid as long as <m>y^2-2x\neq 0</m>, which you can check holds here.)
+        </p>
+      </solution>
+    </example>
+
+  </subsection>
+ 
+
+<subsection xml:id="additional-worked-problems-derivImplic">
+  <title>Additional Worked-Out Examples</title>
+
+  <p>
+    To keep this section at a reasonable length, we include only a few representative examples directly in the text.
+    If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional
+    fully worked-out examples are available via: 
+    <alert>
+      <xref ref="subsec-deriv-implicit">
+        Additional Examples for Implicit Differentiation
+      </xref>
+    </alert>
+  </p>
+
+</subsection>
+
+
+
+  <exercises xml:id="exercises-derivative-implicit">
+  <title>Practice / Study Problems</title>
+  
+  
+    <exercisegroup xml:id="eg-implicit-explain">
+  <title>Explain it to a Friend</title>
+
+  <exercise xml:id="ex-implicit-when-needed">
+    <statement>
+      <p>
+        Explain how to decide when implicit differentiation is needed to find <m>y'</m>, 
+        as opposed to using the standard differentiation rules for explicit functions.
+      </p>
+
+      <p>
+        In your explanation, include:
+      </p>
+
+      <ul>
+        <li>
+          One example where implicit differentiation is required.
+        </li>
+        <li>
+          One example where implicit differentiation is <em>not</em> required, and standard rules apply directly.
+        </li>
+      </ul>
+    </statement>
+
+    <solution>
+      <p>
+        If you have a <m>y=f(x)</m> equation then you can just use the <em>normal</em> way but if <m>y</m> is not given explicitly as a function of <m>x</m>,
+        and it is not easy to solve for a <m>y=f(x)</m> then implicit differentiation should be used 
+        <ul>
+          <li>
+            <p>
+              Example of when implicit differentiation is <em>not</em> needed: <me>y=x^2+e^x</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              Example of when implicit differentiation is needed: <me>y=x^2+e^y</me>
+            </p>
+          </li>
+        </ul>
+      </p> 
+      </solution>
+  </exercise>
+
+  <exercise xml:id="ex-geom-meaning-slope">
+    <statement>
+      <p>
+        A student applies implicit differentiation to a curve and finds that <m>y'=5</m> 
+        at the point <m>(x,y)=(1,2)</m>.
+      </p>
+
+      <p>
+        Explain the geometric meaning of this result in terms of the graph of the curve.
+        Your explanation should describe what this value tells you about the tangent line
+        and the behavior of the curve near the point.
+      </p>
+    </statement>
+        <solution>
+      <p>
+        The value <m>y'=5</m> at <m>(1,2)</m> means that the tangent line to the curve at that point has slope <m>5</m>.
+        Geometrically, the curve is increasing at <m>(1,2)</m>, and very close to that point the graph rises about
+        <m>5</m> units vertically for every <m>1</m> unit horizontally.
+      </p>
+    </solution>
+
+  </exercise>
+
+</exercisegroup>
+<exercisegroup xml:id="eg-implicit-tf-computation">
+      <title>True/False Questions</title>
+
+
+
+  <exercise xml:id="tf-imp-ap-05">
+    <statement>
+      <p>
+        If <m>y=\ln(x+y)</m>, then implicit differentiation is required to find <m>\displaystyle \frac{dy}{dx}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True.</em> Since <m>y</m> appears on both sides of the equation, it is not possible to isolate <m>y</m>
+        as an explicit function of <m>x</m> without also having <m>y</m> on the right side. Therefore, implicit differentiation
+        is required to find <m>\displaystyle \frac{dy}{dx}</m>.
+      </p>
+    </solution>
+  </exercise>
+
+
+
+    <exercise xml:id="tf-imp-ap-01">
+    <statement>
+      <p>
+        If <m>x^2+xy+y^2=7</m>, then <m>\displaystyle \frac{dy}{dx}=-\frac{2x+y}{x+2y}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True.</em> Differentiating both sides with respect to <m>x</m> gives
+        <me>
+          2x + \left(x\frac{dy}{dx} + y\right) + 2y\frac{dy}{dx} = 0.
+        </me>
+        Rearranging and solving for <m>\displaystyle \frac{dy}{dx}</m> yields
+        <me>
+          \displaystyle \frac{dy}{dx} = -\frac{2x + y}{x + 2y}.
+        </me>
+      </p>
+    </solution>
+  </exercise>
+
+
+
+
+  <exercise xml:id="tf-imp-ap-04">
+    <statement>
+      <p>
+        If <m>x\sin(y)=1</m>, then <m>\displaystyle \frac{dy}{dx}=-\frac{\cos(y)}{x}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False.</em> Differentiating both sides with respect to <m>x</m> gives
+        <me>
+          \sin(y) + x\cos(y)\frac{dy}{dx} = 0.
+        </me>
+        Rearranging and solving for <m>\displaystyle \frac{dy}{dx}</m> yields
+        <me>
+          \displaystyle \frac{dy}{dx} = -\frac{\sin(y)}{x\cos(y)}.
+        </me>
+      </p>
+    </solution>
+  </exercise>
+
+
+
+
+  <exercise xml:id="tf-imp-ap-07">
+    <statement>
+      <p>
+        If <m>e^{x+y}=x</m>, then <m>\displaystyle \frac{dy}{dx}=\frac{1}{x}-1</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False.</em> Differentiating both sides with respect to <m>x</m> gives
+        <me>
+          e^{x+y}\left(1+\frac{dy}{dx}\right) = 1.
+        </me>
+        Rearranging and solving for <m>\displaystyle \frac{dy}{dx}</m> yields
+        <me>
+          \displaystyle \frac{dy}{dx} = \frac{1}{e^{x+y}} - 1.
+        </me>
+      </p>
+    </solution>
+  </exercise>
+
+ 
+
+  <exercise xml:id="tf-imp-ap-09">
+    <statement>
+      <p>
+        If <m>x^2y+y^3=2</m>, then at <m>(1,1)</m> the slope of the tangent line is <m>-1</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False.</em> Differentiating both sides with respect to <m>x</m> gives
+        <me>
+          2xy + x^2\frac{dy}{dx} + 3y^2\frac{dy}{dx} = 0.
+        </me>
+        Plugging in <m>(x,y)=(1,1)</m> gives
+        <me>
+          2(1)(1) + (1)^2\frac{dy}{dx} + 3(1)^2\frac{dy}{dx} = 0,
+        </me>
+        which simplifies to
+        <me>
+          2 + 4\frac{dy}{dx} = 0.
+        </me>
+        Solving for <m>\displaystyle \frac{dy}{dx}</m> yields
+        <me>
+          \displaystyle \frac{dy}{dx} = -\frac{1}{2}.
+        </me>
+      </p>
+    </solution>
+  </exercise>
+
+
+  <exercise xml:id="tf-imp-ap-11">
+    <statement>
+      <p>
+        If <m>\displaystyle \frac{dy}{dx}=0</m> at a point on a curve defined implicitly, then the tangent line at that point is horizontal.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True.</em> A slope of zero indicates that the tangent line is horizontal at that point on the curve.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="tf-imp-ap-12">
+    <statement>
+      <p>
+        If <m>\displaystyle \frac{dy}{dx}</m> is undefined at a point on a curve defined implicitly, then the tangent line at that point is vertical.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False.</em> While an undefined derivative often indicates a vertical tangent line, it can also occur at points where the curve has a cusp or corner.
+        Therefore, an undefined derivative does not always imply a vertical tangent line.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="tf-imp-ap-13">
+    <statement>
+      <p>
+        If <m>x^2-y^2=1</m>, then the curve has a vertical tangent at points where <m>y=0</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True.</em> Differentiating both sides with respect to <m>x</m> gives
+        <me>
+          2x - 2y\frac{dy}{dx} = 0.
+        </me>
+        Rearranging and solving for <m>\displaystyle \frac{dy}{dx}</m> yields
+        <me>
+          \displaystyle \frac{dy}{dx} = \frac{x}{y}.
+        </me>
+        At points where <m>y=0</m>, the derivative is undefined, indicating a possible vertical tangent line. We must check if 
+        such points lie on the curve. Setting <m>y=0</m> in the original equation gives <m>x^2=1</m>, 
+        so the points <m>(1,0)</m> and <m>(-1,0)</m> are on the curve and we can verify with a graph that they have vertical tangents.
+      </p>
+    </solution>
+  </exercise>
+
+<exercise xml:id="tf-imp-ap-14">
+    <statement>
+      <p>
+        If <m>x^2+y^2=25</m>, then at <m>(3,4)</m> the second derivative <m>y''</m> is <m>\frac{1}{2}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False.</em> Differentiating both sides with respect to <m>x</m> gives
+        <me>
+          2x + 2y\frac{dy}{dx} = 0.
+        </me>
+        Solving for <m>\displaystyle \frac{dy}{dx}</m> yields
+        <me>
+          \displaystyle \frac{dy}{dx} = -\frac{x}{y}.
+        </me>
+        Differentiating again with respect to <m>x</m> gives
+        <me>
+          \displaystyle \frac{d^2y}{dx^2} = -\frac{y - x\frac{dy}{dx}}{y^2}.
+        </me>
+        Substituting the value of <m>\displaystyle \frac{dy}{dx}</m> and evaluating at <m>(3,4)</m> gives
+        <me>
+          \displaystyle y'' = -\frac{4 - 3\left(-\frac{3}{4}\right)}{16} = -\frac{4 + \frac{9}{4}}{16} = -\frac{\frac{25}{4}}{16} = -\frac{25}{64}.
+        </me>
+      </p>
+    </solution>
+  
+</exercise>
+
+
+</exercisegroup>
+
+
+  </exercises>
+
+
+
+
+
+
+
+</section>

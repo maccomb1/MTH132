@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-derivative-trig" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Trigonometric Derivatives</title>
+
+  <objectives>
+    <ul>
+      <li>Use geometric and graphical reasoning to understand why <m>\sin'(x)=\cos(x)</m> and <m>\cos'(x)=-\sin(x)</m>.</li>
+      <li>Use these results with the product and quotient rules to differentiate the remaining trigonometric functions.</li>
+      <li>Evaluate basic trigonometric limits by rewriting them in terms of <m>\displaystyle \frac{\sin(u)}{u}</m>.</li>
+      <li>Remember that standard trigonometric derivative formulas assume angles are measured in radians.</li>
+    </ul>
+  </objectives>
+
+  <subsection xml:id="derivative-of-sine-and-cosine">
+    <title>Derivative of Sine and Cosine</title>
+
+    <p>
+      Sine and cosine are fundamental for describing periodic motion. One way to predict their derivatives is to look at graphs.
+      If we estimate the slope of the graph <m>y=\sin(x)</m> at many points, we can sketch its derivative function.
+      The slopes appear to match the graph of <m>\cos(x)</m>.
+    </p>
+
+
+  <url href="https://www.desmos.com/calculator/czwxvlzlg0">
+      <figure>
+<caption>
+The derivative of <m>\sin(x)</m> visualized: the slope of the tangent line to <m>y=\sin(x)</m> at each point matches the value of <m>\cos(x)</m>.
+</caption>
+        <image width="100%" source="images/DerivSineVsCosine.gif">
+      <shortdescription>
+    An animated graph showing a sine curve and a cosine curve. As a point moves along the sine curve, a tangent line is drawn. 
+    The steepness of the tangent line changes and matches the height of the cosine curve at the same horizontal position.
+      </shortdescription>
+        </image>
+      </figure>
+  </url>
+
+
+    <theorem xml:id="thm-derivative-sin-cos">
+      <statement>
+        <p>
+          For all real <m>x</m> (measured in radians),
+          <me>(\sin(x))'=\cos(x) \quad \text{ and } \quad (\cos(x))'=-\sin(x)</me>
+        </p>
+      </statement>
+
+  <proof>
+    <p>
+      A full proof of these derivative formulas begins with the limit definition of the derivative applied to the sine and cosine functions.
+      Using trigonometric identities, this reduces the problem to understanding the behavior of certain key limits involving sine and cosine near zero.
+    </p>
+
+    <p>
+      The first half of this argument is presented clearly in the video
+      <url href="https://youtu.be/j1n6AMuMQso?si=rOoM1UxhMYV6VoXW">Derivatives of Sine and Cosine from First Principles</url>.
+      As you will see, completing the proof requires evaluating limits such as the limit of sine of x over x as x approaches zero, 
+      which we will develop later in this section.
+    </p>
+  </proof>
+    </theorem>
+
+<p>
+  For the time being, we will take this result as given and focus on how to use 
+  it to find the derivative formulas for the other standard trigonometric functions.
+</p>
+
+</subsection>
+
+  <subsection xml:id="general-trig-derivatives">
+    <title>General Trigonometric Derivatives</title>
+
+<p>
+  Now that we know the derivatives of sine and cosine, we can quickly find the derivatives of the 
+  remaining trigonometric functions by applying our basic differentiation rules, such as the Quotient Rule.
+</p>
+
+<theorem xml:id="thm-derivative-tan">
+  <statement>
+    <p>
+      For all real <m>x</m> such that <m>\tan(x)</m> is defined,
+      <me>
+        (\tan(x))' = \sec^2(x).
+      </me>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Recall that <m>\tan(x)=\dfrac{\sin(x)}{\cos(x)}</m>. Since <m>\cos(x)\neq 0</m> wherever <m>\tan(x)</m> is defined, we may apply the Quotient Rule.
+    </p>
+
+    <me>
+      \begin{array}{rcl}
+        (\tan(x))'
+        &amp;=&amp;
+        \left(\dfrac{\sin(x)}{\cos(x)}\right)' \\[1em]
+
+        &amp;=&amp;
+        \dfrac{\cos(x)\sin'(x)-\sin(x)\cos'(x)}{\cos^2(x)} \\[1em]
+
+        &amp;=&amp;
+        \dfrac{\cos(x)\cos(x)-\sin(x)(-\sin(x))}{\cos^2(x)} \\[1em]
+
+        &amp;=&amp;
+        \dfrac{\cos^2(x)+\sin^2(x)}{\cos^2(x)} \\[1em]
+
+        &amp;=&amp;
+        \dfrac{1}{\cos^2(x)} \\[1em]
+
+        &amp;=&amp;
+        \sec^2(x).
+      \end{array}
+    </me>
+
+    <p>
+      Therefore, <m>(\tan(x))'=\sec^2(x)</m> wherever <m>\tan(x)</m> is defined.
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  And similarly
+</p>
+
+<theorem xml:id="thm-derivative-sec-cot-csc">
+  <statement>
+    <p>
+      For all real <m>x</m> such that the following functions are defined,
+    </p>
+
+    <me>
+      \begin{array}{rcl}
+        (\sec(x))' &amp;=&amp; \sec(x)\tan(x), \\[0.5em]
+        (\cot(x))' &amp;=&amp; -\csc^2(x), \\[0.5em]
+        (\csc(x))' &amp;=&amp; -\csc(x)\cot(x).
+      \end{array}
+    </me>
+  </statement>
+</theorem>
+
+    <remark xml:id="rem-radians-warning">
+      <p>
+        Again remember, the derivative formulas in this section are valid when <m>x</m> is measured in <em>radians</em>, not degrees.
+      </p>
+    </remark>
+
+
+  <p>
+  Now let’s take a moment to incorporate this new knowledge into ideas from earlier sections before moving on to our discussion of limits.
+</p>
+
+<example xml:id="ex-derivative-sqrt-tan">
+
+  <statement>
+    <p>
+      Find <m>f'(x)</m> if <m>f(x)=\sqrt{x}\tan(x)</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Since <m>f(x)</m> is written as a product of two functions, we apply the Product Rule.
+    </p>
+    
+    <me>
+      \begin{array}{rcl}
+        f'(x)
+        &amp;=&amp;
+        \dfrac{1}{2\sqrt{x}}\tan(x)+\sqrt{x}\sec^2(x).
+      \end{array}
+    </me>
+
+    <p>
+      This expression is an acceptable final answer, though it could be simplified further if desired.
+    </p>
+  </solution>
+</example>
+
+<example xml:id="ex-derivative-cos-over-3x2">
+
+  <statement>
+    <p>
+      Evaluate <m>\dfrac{d}{dx}\!\left(\dfrac{\cos(x)}{3x^2}\right)</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Since the function is written as a quotient, we apply the Quotient Rule.
+    </p>
+
+    <me>
+      \begin{array}{rcl}
+        \dfrac{d}{dx}\!\left(\dfrac{\cos(x)}{3x^2}\right)
+        &amp;=&amp;
+        \dfrac{(3x^2)(-\sin(x))-\cos(x)(6x)}{(3x^2)^2}\\[0.75em]
+
+        &amp;=&amp;
+        \dfrac{-3x^2\sin(x)-6x\cos(x)}{9x^4}\\[0.75em]
+
+        &amp;=&amp;
+        \dfrac{-x\sin(x)-2\cos(x)}{3x^3}.
+      \end{array}
+    </me>
+  </solution>
+</example>
+
+
+
+  </subsection>
+
+
+<subsection xml:id="foundational-trig-limits">
+  <title>Two Fundamental Trigonometric Limits</title>
+
+  <p>
+    Previously in this section, we outlined the proof that the derivative of the sine function is the cosine function.
+    That argument reduces to evaluating certain key limits involving sine and cosine as the input approaches zero.
+    In this subsection, we formally establish those limits using a generic variable <m>u</m>.
+    This prepares us for the substitutions and rewrites that commonly appear in trigonometric limit problems.
+  </p>
+
+  <theorem xml:id="thm-limit-sin-u-over-u">
+    <statement>
+      <p>
+        <m>\displaystyle \lim_{u\to 0}\frac{\sin(u)}{u}=1</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Consider the unit circle and an angle <m>u</m> measured in radians, with <m>u \geq 0</m>.
+        Geometric arguments<fn>
+          This typically involves comparing the areas of triangles and circular sectors in the unit circle.
+          In previous semesters, the full argument has been worked through in recitation.
+          For students who are curious, Khan Academy also has a great video on this topic.
+        </fn> show that
+      </p>
+
+      <me>
+        \sin(u) \le u \le \tan(u).
+      </me>
+
+      <p>
+        Dividing all three expressions by <m>\sin(u)</m> gives
+      </p>
+
+      <me>
+        1 \le \frac{u}{\sin(u)} \le \frac{1}{\cos(u)}.
+      </me>
+
+      <p>
+        Taking reciprocals reverses the inequalities:
+      </p>
+
+      <me>
+        \cos(u) \le \frac{\sin(u)}{u} \le 1.
+      </me>
+
+      <p>
+        As <m>u\to 0</m>, we know <m>\cos(u)\to 1</m>. Since
+        <m>\frac{\sin(u)}{u}</m> is trapped between two expressions that both
+        approach <m>1</m>, the Squeeze Theorem implies
+      </p>
+
+      <me>
+        \lim_{u\to 0}\frac{\sin(u)}{u}=1.
+      </me>
+    </proof>
+  </theorem>
+
+  <theorem xml:id="thm-limit-cos-u-minus-one-over-u">
+    <statement>
+      <p>
+        <m>\displaystyle \lim_{u\to 0}\frac{\cos(u)-1}{u}=0</m>.
+      </p>
+    </statement>
+
+    <proof>
+      <p>
+        Rewrite the expression by multiplying the numerator and denominator
+        by <m>\cos(u)+1</m>:
+      </p>
+
+      <me>
+        \frac{\cos(u)-1}{u}
+        =
+        \frac{(\cos(u)-1)(\cos(u)+1)}{u(\cos(u)+1)}
+        =
+        \frac{-\sin^2(u)}{u(\cos(u)+1)}.
+      </me>
+
+      <p>
+        Rewrite this expression to isolate the sine-over-input factor:
+      </p>
+
+      <me>
+        \frac{-\sin^2(u)}{u(\cos(u)+1)}
+        =
+        -\left(\frac{\sin(u)}{u}\right)\left(\frac{\sin(u)}{\cos(u)+1}\right).
+      </me>
+
+      <p>
+        As <m>u\to 0</m>, we have <m>\frac{\sin(u)}{u}\to 1</m>,
+        <m>\sin(u)\to 0</m>, and <m>\cos(u)+1\to 2</m>.
+        Therefore the entire product approaches <m>0</m>, and
+      </p>
+
+      <me>
+        \lim_{u\to 0}\frac{\cos(u)-1}{u}=0.
+      </me>
+    </proof>
+  </theorem>
+
+  <p>
+    These two limits supply the missing analytic step in the proof of the
+    sine and cosine derivative formulas and will be used repeatedly to
+    evaluate more complicated trigonometric limits.
+  </p>
+</subsection>
+
+
+
+
+  <subsection xml:id="trig-limits-from-sin-over-x">
+    <title>Limits of Trigonometric Quotients</title>
+
+    <p>
+      Many trigonometric limits can be evaluated by rewriting the expression until a factor of the form
+      <m>\displaystyle \frac{\sin(u)}{u}</m> appears, where <m>u\to 0</m>.
+      Then we use <m>\displaystyle \lim_{u\to 0}\frac{\sin(u)}{u}=1</m>.
+    </p>
+
+    <example xml:id="ex-limit-sin3x-over-x">
+      <statement>
+        <p>
+          Compute <m>\displaystyle \lim_{x\to 0}\frac{\sin(3x)}{x}</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Multiply and divide by <m>3</m> to create <m>\displaystyle \frac{\sin(3x)}{3x}</m>.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \lim_{x\to 0}\frac{\sin(3x)}{x}
+\amp=\amp \displaystyle \lim_{x\to 0}\left(\frac{\sin(3x)}{3x}\cdot \frac{3x}{x}\right)
+\\[1.1em]
+\amp=\amp \displaystyle \left(\lim_{x\to 0}\frac{\sin(3x)}{3x}\right)\left(\lim_{x\to 0}3\right)
+\\[1.1em]
+\amp=\amp \displaystyle \left(\lim_{u\to 0}\frac{\sin(u)}{u}\right)\cdot 3
+\\[0.8em]
+\amp=\amp \displaystyle 1\cdot 3
+\\[0.6em]
+\amp=\amp \displaystyle 3.
+\end{array}
+        </me>
+
+        <p>
+          In the third line we used the substitution <m>u=3x</m>, so <m>x\to 0</m> forces <m>u\to 0</m>.
+        </p>
+      </solution>
+    </example>
+
+    <example xml:id="ex-limit-tan-over-sin-sqrtx">
+      <statement>
+        <p>
+          Compute <m>\displaystyle \lim_{x\to 0^+}\frac{\tan(x)}{\sin(\sqrt{x})}</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Rewrite <m>\tan(x)=\dfrac{\sin(x)}{\cos(x)}</m> and then introduce the standard sine-over-input factors.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \lim_{x\to 0^+}\frac{\tan(x)}{\sin(\sqrt{x})}
+\amp=\amp \displaystyle \lim_{x\to 0^+}\left(\frac{\sin(x)}{\cos(x)}\cdot \frac{1}{\sin(\sqrt{x})}\right)
+\\[1.1em]
+\amp=\amp \displaystyle \lim_{x\to 0^+}\left(\frac{1}{\cos(x)}\cdot \frac{\sin(x)}{x}\cdot x \cdot \frac{\sqrt{x}}{\sin(\sqrt{x})}\cdot \frac{1}{\sqrt{x}}\right)
+\\[1.3em]
+\amp=\amp \displaystyle \lim_{x\to 0^+}\left(\frac{\sqrt{x}}{\cos(x)}\cdot \frac{\sin(x)}{x}\cdot \frac{1}{\frac{\sin(\sqrt{x})}{\sqrt{x}}}\right)
+\\[1.3em]
+\amp=\amp \displaystyle \frac{\sqrt{0}}{\cos(0)}\cdot 1\cdot \frac{1}{1}
+\\[0.8em]
+\amp=\amp \displaystyle 0.
+\end{array}
+        </me>
+
+        <p>
+          We used <m>\displaystyle \lim_{x\to 0}\frac{\sin(x)}{x}=1</m> and also
+          <m>\displaystyle \lim_{x\to 0^+}\frac{\sin(\sqrt{x})}{\sqrt{x}}=1</m> by the substitution <m>u=\sqrt{x}</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+
+<subsection xml:id="additional-worked-problems-derivTrig">
+  <title>Additional Worked-Out Examples</title>
+
+  <p>
+    To keep this section at a reasonable length, we include only a few representative examples directly in the text.
+    If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional
+    fully worked-out examples are available via: 
+    <alert>
+      <xref ref="subsec-deriv-trig">
+        Additional Examples for Trigonometric Derivatives
+      </xref>
+    </alert>
+  </p>
+
+</subsection>
+
+  <exercises xml:id="exercises-derivative-trig-tf">
+  <title>Practice / Study Problems</title>
+
+
+    <exercisegroup>
+      <title>True/False Questions</title>
+
+      <introduction>
+        <p>
+          Determine whether each statement is true or false.
+          Justify your answer.
+        </p>
+
+
+      </introduction>
+
+
+    <exercise xml:id="tf-deriv-trig-07">
+      <statement>
+        <p>
+          <m>\displaystyle \frac{d}{dx}(\cos(x))=\sin(x)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+
+    <exercise xml:id="tf-deriv-trig-02">
+      <statement>
+        <p>
+          If angles are measured in degrees, then <m>(\sin(x))'=\cos(x)</m>
+          still holds without modification.
+        </p>
+      </statement>
+    </exercise>
+
+
+    
+
+    
+
+
+
+  <exercise xml:id="tf-deriv-trig-comp-01">
+      <statement>
+        <p>
+          If <m>f(x)=\cos(x)\tan(x)</m>, then <m>f'(x)=\cos(x)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <em>True.</em> We can use either algebra or the Product Rule.
+          Since <m>\tan(x)=\dfrac{\sin(x)}{\cos(x)}</m> wherever it is defined,
+        </p>
+        <me>
+          f(x)=\cos(x)\tan(x)=\cos(x)\cdot\frac{\sin(x)}{\cos(x)}=\sin(x)
+        </me>
+        <p>
+          on the domain where <m>\tan(x)</m> is defined. Then
+          <m>f'(x)=(\sin(x))'=\cos(x)</m>.
+        </p>
+        <p>
+          Alternatively, using the Product Rule directly,
+        </p>
+        <me>
+          \begin{array}{rcl}
+            f'(x)
+            &amp;=&amp;
+            (\cos(x))'\tan(x)+\cos(x)(\tan(x))' \\[0.5em]
+            &amp;=&amp;
+            -\sin(x)\tan(x)+\cos(x)\sec^2(x) \\[0.5em]
+            &amp;=&amp;
+            -\sin(x)\dfrac{\sin(x)}{\cos(x)}+\cos(x)\dfrac{1}{\cos^2(x)} \\[0.5em]
+            &amp;=&amp;
+            =\dfrac{1-\sin^2(x)}{\cos(x)}
+            =\dfrac{\cos^2(x)}{\cos(x)}=\cos(x).
+          \end{array}
+        </me>
+      </solution>
+    </exercise>
+
+    <!-- 2. instantaneous rate of change at pi/2 -->
+
+    <exercise xml:id="tf-deriv-trig-comp-02">
+      <statement>
+        <p>
+          The instantaneous rate of change of <m>f(x)=x^2\sin(x)</m>
+          at <m>x=\dfrac{\pi}{2}</m> is <m>\pi</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <em>True.</em> The instantaneous rate of change at a point is the derivative at that point.
+          Use the Product Rule:
+        </p>
+        <me>
+          \begin{array}{rcl}
+            f'(x)
+            &amp;=&amp;
+            (x^2)'\sin(x)+x^2(\sin(x))' \\[0.5em]
+            &amp;=&amp;
+            2x\sin(x)+x^2\cos(x).
+          \end{array}
+        </me>
+        <p>
+          Evaluate at <m>x=\dfrac{\pi}{2}</m>:
+        </p>
+        <me>
+          \begin{array}{rcl}
+            f'\!\left(\dfrac{\pi}{2}\right)
+            &amp;=&amp;
+            2\cdot\dfrac{\pi}{2}\cdot\sin\!\left(\dfrac{\pi}{2}\right)
+            +\left(\dfrac{\pi}{2}\right)^2\cos\!\left(\dfrac{\pi}{2}\right) \\[0.5em]
+            &amp;=&amp;
+            \pi\cdot 1 + \dfrac{\pi^2}{4}\cdot 0 \\[0.5em]
+            &amp;=&amp;
+            \pi.
+          \end{array}
+        </me>
+        <p>
+          So the instantaneous rate of change at <m>x=\dfrac{\pi}{2}</m> is <m>\pi</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <!-- 3. sec(x)/tan(x) at 0 -->
+
+ <exercise xml:id="tf-deriv-trig-comp-03">
+  <statement>
+    <p>
+      The slope of the tangent line to <m>f(x)=\dfrac{\csc(x)}{\cot(x)}</m>
+      at <m>x=0</m> is <m>1</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      <em>False.</em> First rewrite <m>f(x)</m> in simpler form.
+      Since <m>\csc(x)=\dfrac{1}{\sin(x)}</m> and <m>\cot(x)=\dfrac{\cos(x)}{\sin(x)}</m>, we have
+    </p>
+
+    <me>
+      f(x)
+      =
+      \frac{\csc(x)}{\cot(x)}
+      =
+      \frac{\dfrac{1}{\sin(x)}}{\dfrac{\cos(x)}{\sin(x)}}
+      =
+      \frac{1}{\cos(x)}
+      =
+      \sec(x),
+    </me>
+
+    <p>
+      on any interval where the expressions are defined. Thus <m>f(x)=\sec(x)</m>.
+    </p>
+
+    <p>
+      Now differentiate:
+    </p>
+
+    <me>
+      f'(x) = (\sec(x))' = \sec(x)\tan(x).
+    </me>
+
+    <p>
+      Evaluate at <m>x=0</m>:
+    </p>
+
+    <me>
+      f'(0) = \sec(0)\tan(0) = 1 \cdot 0 = 0.
+    </me>
+
+    <p>
+      The slope is <m>0</m>, not <m>1</m>, so the statement is false.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-deriv-trig-31">
+  <statement>
+    <p>
+      Since <m>\displaystyle\frac{\sin(x)}{x}=1</m>, it follows that 
+      <m>\displaystyle \left(\frac{\sin(x)}{x}\right)'=0</m>.
+    </p>
+  </statement>
+<solution>
+  <p>
+    <em>False.</em> The equation <m>\sin(x)/x = 1</m> is <em>not</em> true for all <m>x</m>.
+    The expression equals <m>1</m> only in the limiting sense 
+    <m>\displaystyle \lim_{x\to 0}\frac{\sin(x)}{x}=1</m>, not as an identity.
+    Since <m>\sin(x)/x</m> is not a constant function, its derivative is not zero.
+    In fact, applying the Quotient Rule shows that 
+    <m>\left(\dfrac{\sin(x)}{x}\right)'</m> is nonzero for all <m>x\neq 0</m>.
+  </p>
+</solution>
+
+</exercise>
+
+
+
+
+<exercise xml:id="tf-trig-limits-01">
+  <statement>
+    <p>
+      <m>\displaystyle \lim_{x\to 0}\frac{\sin(x^2)}{x}=1</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>False.</em> Rewrite as 
+      <m>\frac{\sin(x^2)}{x^2}\cdot x</m>.
+      Since <m>\sin(u)/u → 1</m> as <m>u→0</m>, the product becomes <m>1·0 = 0</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-trig-limits-02">
+  <statement>
+    <p>
+      <m>\displaystyle \lim_{x\to 0}\frac{\cos(x)}{x}=1</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>False.</em> <m>\cos(x)/x</m> grows without bound as <m>x→0</m>.
+      The limit does not exist as a finite number.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-trig-limits-03">
+  <statement>
+    <p>
+      <m>\displaystyle \lim_{x\to 0}\frac{x}{\tan(3x)}=\dfrac13</m>.
+    </p>
+  </statement>
+<solution>
+  <p>
+    <em>True.</em> Rewrite the expression to introduce the standard limit 
+    <m>\displaystyle \lim_{u\to 0}\frac{\tan(u)}{u}=1</m>.
+  </p>
+
+  <md>
+    <mrow>
+      \lim_{x\to 0}\frac{x}{\tan(3x)}
+      \amp=
+      \lim_{x\to 0}\left(\frac{3x}{\tan(3x)}\cdot \frac{1}{3}\right)
+    </mrow>
+
+    <mrow>
+      \amp=
+      \left(\lim_{u\to 0}\frac{u}{\tan(u)}\right)\cdot \frac{1}{3}
+      \quad \text{(using the substitution } u=3x\text{)}
+    </mrow>
+
+    <mrow>
+      \amp=
+      1\cdot \frac{1}{3}
+    </mrow>
+
+    <mrow>
+      \amp=
+      \frac{1}{3}.
+    </mrow>
+  </md>
+
+  <p>
+    Therefore the statement is true.
+  </p>
+</solution>
+
+</exercise>
+
+
+
+<exercise xml:id="tf-trig-limits-06">
+  <statement>
+    <p>
+      <m>\displaystyle \lim_{x\to 0}\frac{\sin(5x)}{\sin(2x)}=\frac52</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> Replace each term with <m>\sin(kx)/(kx)</m>:
+      <m>\frac{\sin(5x)}{5x}\cdot\frac{2x}{\sin(2x)}\cdot \frac52 → 1·1·\frac52</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-trig-limits-07">
+  <statement>
+    <p>
+      <m>\displaystyle \lim_{x\to 0}\frac{\cos(x)-1}{\sin(x)}=0</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>True.</em> Use the identity 
+      <m>\cos(x)-1 = -2\sin^2(x/2)</m>.
+      Then the expression becomes 
+      <m>-2\sin(x/2)\cdot\frac{\sin(x/2)}{\sin(x)}</m>, which tends to <m>0</m>.
+    </p>
+  </solution>
+</exercise>
+
+
+
+      </exercisegroup>
+    </exercises>
+ 
+
+
+</section>

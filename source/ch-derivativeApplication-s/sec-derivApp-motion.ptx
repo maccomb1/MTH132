@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-derivApp-motion" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Motion in Physics</title>
+
+<objectives>
+  <ul>
+    <li>
+      Calculate velocity, acceleration, and jerk using derivatives. Include units and interpret results in real-world context.
+    </li>
+
+    <li>
+      Move fluently between multiple representations of motion (formula, table, and graph), including estimating derivatives 
+      from graphs or tables and interpreting slopes as rates of change.
+    </li>
+
+    <li>
+      Determine when an object is moving in the positive or negative direction by analyzing the sign of the velocity, and identify times when the object is at rest (<m>v(t)=0</m>).
+    </li>
+
+    <li>
+      Use acceleration to describe how velocity is changing, and compute acceleration values either by differentiating <m>v(t)</m> or by finding slopes on a velocity graph.
+    </li>
+
+    <li>
+      Decide when an object is speeding up or slowing down by comparing the signs of velocity and acceleration, and express the answer in interval notation.
+    </li>
+
+    <li>
+      Interpret and solve motion problems that require setting up and solving equations or inequalities (for example, finding when height is above a given value, when velocity is positive, or when speed exceeds a threshold).
+    </li>
+  </ul>
+</objectives>
+
+
+
+  <warning xml:id="rem-derivApp-motion-inequalities">
+    <title>Prerequisite Review</title>
+    <p>
+      In this section there are several types of problems that require us to be able to solve inequalities. Problems such as
+      determining when an object is moving in the positive direction, or speeding up, or when it has a negative acceleration. 
+    </p>
+    <p>
+  If you feel a bit out of practice with inequalities, it may be helpful
+  to revisit those ideas via the <xref ref="sec-precalc-ineq">Precalculus Review: Inequalities</xref> section before proceeding.
+</p>
+</warning>
+
+    <p>
+      Mathematics solves problems partly with technical tools, but also by translating between different levels of meaning.
+      Many problems begin in a physical or geometric setting. We often translate them into a numerical or algebraic setting
+      where our tools apply, then translate the result back to the original context.
+    </p>
+
+    <p>
+      Our key concept so far has been the <term>derivative</term>. For a function <m>y=f(x)</m>, the derivative has several
+      complementary meanings.
+    </p>
+
+    <ul>
+      <li>
+        <em>Physical:</em> <m>\displaystyle \frac{dy}{dx}=f'(x)</m> is the rate of change of <m>y</m> with respect to <m>x</m>.
+        For a specific input <m>a</m>, <m>f'(a)</m> describes how fast <m>f(x)</m> changes near <m>x=a</m>.
+      </li>
+      <li>
+        <em>Geometric:</em> <m>f'(a)</m> is the slope of the tangent line to the graph <m>y=f(x)</m> at <m>(a,f(a))</m>.
+      </li>
+      <li>
+        <em>Numerical:</em> we approximate the derivative using a difference quotient
+        <me>
+          f'(a)\cong \frac{\Delta f}{\Delta x}=\frac{f(a+h)-f(a)}{h},
+        </me>
+        where <m>h</m> is small. As <m>\Delta x=h\to 0</m>, the average rate of change approaches the instantaneous rate of change.
+      </li>
+      <li>
+        <em>Algebraic:</em> we compute derivatives from formulas using derivative rules and known basic derivatives.
+        Occasionally we return to the definition
+        <me>
+          f'(a)=\displaystyle \lim_{h\to 0}\frac{f(a+h)-f(a)}{h}.
+        </me>
+      </li>
+    </ul>
+    
+
+
+  <subsection xml:id="functions-of-motion">
+    <title>The Basics of Motion</title>
+
+    <p>
+      Many applications of derivatives involve motion. In this section, all quantities are functions of time <m>t</m>. Here is a basic set of definitions:
+    </p>
+
+<definition xml:id="def-motion-quantities">
+  <title>Position, Velocity, Acceleration, and Jerk</title>
+
+  <statement>
+    <p>
+      Let <m>s(t)</m> denote the position of an object at time <m>t</m>, measured relative to a fixed reference point.
+      The following quantities describe different aspects of the object’s motion:
+    </p>
+
+    <ul>
+      <li>
+        <term>Position</term> <m>s(t)</m>:
+        the distance past a reference point (for example, in feet) at time <m>t</m> seconds.
+      </li>
+
+      <li>
+        <term>Velocity</term>
+        <m>v(t)=\displaystyle \frac{ds}{dt}=s'(t)</m>:
+        the rate of change of position, measured in feet per second.
+        Velocity may be negative if the object is moving in the negative direction.
+        The <term>speed</term> of the object is the absolute value of velocity,
+        <m>|v(t)|</m>.
+      </li>
+
+      <li>
+        <term>Acceleration</term>
+        <m>a(t)=\displaystyle \frac{dv}{dt}=\frac{d^2 s}{dt^2}=s''(t)</m>:
+        the rate of change of velocity, measured in feet per second squared.
+        A useful benchmark is <term>one gee</term>, approximately
+        <m>32</m> ft/sec<m>^2</m>, which is the acceleration due to gravity near Earth’s surface.
+      </li>
+
+      <li>
+        <term>Jerk</term>
+        <m>j(t)=\displaystyle \frac{da}{dt}=\frac{d^3 s}{dt^3}=s'''(t)</m>:
+        the rate of change of acceleration, measured in feet per second cubed.
+      </li>
+    </ul>
+  </statement>
+</definition>
+
+<example xml:id="ex-ball-motion-derivatives">
+  <introduction>
+    <p>
+      A ball is thrown straight up from a height of 6 feet with an initial velocity of 64 ft/sec.
+      Its vertical position (height) at time <m>t</m> seconds is modeled by
+      <me>s(t)=-16t^2+64t+6</me>.
+    </p> 
+    </introduction>
+
+      <task><statement>
+        <p>
+      Find formulas for the ball’s velocity <m>v(t)</m> and acceleration <m>a(t)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+      Differentiating gives
+      <me>
+\displaystyle v(t) = s'(t) = -32t + 64 \text{ ft/sec,}
+      </me>
+      and
+      <me>
+\displaystyle a(t) = v'(t) = s''(t) = -32 \text{ ft/sec}^2.
+      </me>
+        </p>
+      </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            When is does the ball have a velocity of zero? What is special about that moment in terms of the ball's height?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The ball has zero velocity when
+            <me>
+\displaystyle 0 = v(t) = -32t + 64.
+            </me>
+            Solving gives <m>t=2</m> seconds. At that time, the ball reaches its maximum height before falling back down.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            When does the ball hit the ground? What are its velocity and acceleration right before it strikes the ground?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The ball hits the ground when <m>s(t)=0</m>:
+            <me>
+\displaystyle 0 = -16t^2 + 64t + 6.
+            </me>
+            Or equivalently,
+            <me>
+\displaystyle 8t^2 - 32t - 3 = 0.
+            </me>
+            Solving this quadratic equation (using the quadratic formula) gives
+            <me> 
+              t = \frac{32 \pm \sqrt{(-32)^2 - 4 \cdot 8 \cdot (-3)}}{2 \cdot 8} = 2 \pm \frac{\sqrt{70}}{4}.
+            </me>
+            Since time must be positive, we take the larger solution: 
+            <m>t = 2 + \frac{\sqrt{70}}{4}</m> seconds (approximately 4.1 seconds).
+          </p>
+          <p>
+            The velocity just before impact is
+            <me>
+              \begin{array}{rcl}
+\displaystyle v\left(2 + \frac{\sqrt{70}}{4}\right) \amp =\amp -32\left(2 + \frac{\sqrt{70}}{4}\right) + 64\\
+\amp =\amp -8\sqrt{70} \text{ ft/sec}
+              \end{array}
+            </me>
+            (approximately -67 ft/sec, indicating downward motion).
+          </p>
+          <p>
+            The acceleration is constant:
+            <me>
+\displaystyle a(t) = -32 \text{ ft/sec}^2
+            </me>
+            at all times, including right before the ball strikes the ground.
+          </p>
+        </solution>
+
+
+      </task>
+
+</example>
+
+ <remark xml:id="rem-trajectory-vs-height">
+      <p>
+        The graph of <m>s(t)</m> in <xref ref="ex-ball-motion-derivatives"/> is a downward-opening parabola in <m>t</m>, representing height over time.
+        It is not the full two-dimensional flight path of the ball, since horizontal motion is ignored in this model.
+      </p>
+    </remark>
+      
+
+<example xml:id="ex-velocity-particle-graph">
+  <introduction>
+    <p> 
+    Consider the velocity graph of a particle moving along a line given below.
+    </p>
+
+    <figure xml:id="fig-velocity-particle-graph">
+      <caption>
+        Velocity graph <m>v(t)</m> for a particle moving along a line.
+      </caption>
+      <image source="images/velocity01.PNG" width="80%">
+          <shortdescription>
+      A graph of velocity versus time for a particle moving along a line.
+      At time 0, the velocity is 4.
+      From time 0 to time 2, the velocity decreases linearly from 4 to 1.
+      From time 2 to time 4, the velocity remains constant at 1.
+      From time 4 to time 6, the velocity decreases linearly from 1 to negative 1, crossing zero at time 5.
+    </shortdescription>
+      </image>
+
+    </figure>
+    <p>
+    Use this to answer the following questions:
+    </p>
+  </introduction>
+
+  <task>
+    <statement>
+      <p>
+        When is the particle moving at a constant speed? Explain how you know.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The particle is moving at a constant speed from time <m>t=2</m> to <m>t=4</m>.
+        In interval notation this is <m>[2,4]</m>.
+        This is because the velocity graph is flat (horizontal) during this interval,
+        indicating that the velocity is not changing.
+      </p>
+    </solution>
+  </task>
+  <task>
+    <statement>
+      <p>
+        When is the particle changing direction? Explain how you know.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The particle is changing direction at time <m>t=5</m>.
+        This is because the velocity graph crosses the <m>t</m>-axis at this time,
+        indicating that the velocity changes from positive to negative.
+        A change in the sign of velocity indicates a change in direction of motion.
+      </p>
+    </solution>
+  </task>
+  <task>
+    <statement>
+      <p>
+        What is the acceleration of the particle at time <m>t=1</m>? 
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The acceleration at time <m>t=1</m> is the slope of the velocity graph at that time.
+        From the graph, we see that from <m>t=0</m> to <m>t=2</m>, the velocity decreases linearly from 4 to 1.
+        The slope of this line segment is
+        <me>
+\displaystyle \frac{1-4}{2-0} = \frac{-3}{2} = -1.5.
+        </me> 
+        Therefore, the acceleration at time <m>t=1</m> is <m>-1.5</m> units per second squared.
+      </p>
+    </solution>
+  </task>
+
+</example>
+
+
+
+
+
+<p>Now that we have reviewed some of the basic concepts of motion, let's move on to a more advanced topic.</p>
+
+</subsection>
+
+ <subsection xml:id="subsec-SpeedingUp-SlowingDown">
+    <title>Speeding Up and Slowing Down</title>
+  <p>
+    Before we proceed, it is important to emphasize the difference between velocity and speed. 
+    An object is said to be <em>speeding up</em> when its speed is increasing, and <em>slowing down</em> when its speed is decreasing.
+    Let's consider the following example to illustrate this concept before we get our main rule for this section.
+  </p>
+
+  <example xml:id="ex-speeding-up-slowing-down-01">
+    <introduction>
+      <p>
+        Consider the following situations. In each case, determine whether the particle is speeding up or slowing down.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          The velocity of a particle is initially <m>5</m> m/sec and it increases to <m>9</m> m/sec.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since speed is the absolute value of velocity, the speed changes from <m>|5|=5</m> m/sec to <m>|9|=9</m> m/sec.
+          Because the speed is increasing, the particle is speeding up.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          The velocity of a particle is initially <m>9</m> m/sec and it decreases to <m>5</m> m/sec.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since speed is the absolute value of velocity, the speed changes from <m>|9|=9</m> m/sec to <m>|5|=5</m> m/sec.
+          Because the speed is decreasing, the particle is slowing down.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          The velocity of a particle is initially <m>-5</m> m/sec and it decreases to <m>-9</m> m/sec.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since speed is the absolute value of velocity, the speed changes from <m>|-5|=5</m> m/sec to <m>|-9|=9</m> m/sec.
+          Because the speed is increasing, the particle is speeding up.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          The velocity of a particle is initially <m>-9</m> m/sec and it increases to <m>-5</m> m/sec.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since speed is the absolute value of velocity, the speed changes from <m>|-9|=9</m> m/sec to <m>|-5|=5</m> m/sec.
+          Because the speed is decreasing, the particle is slowing down.
+        </p>
+      </solution>
+    </task>
+
+
+  </example>
+
+<remark xml:id="rem-speeding-up-slowing-down">
+  <p> 
+ In summary it is not enough to know whether the velocity is increasing or decreasing to determine if the object is speeding up or slowing down.
+ One must also consider the sign of the velocity.
+  </p>
+  </remark>
+
+<p> Now let's summarize this information as a theorem:</p>
+
+<theorem xml:id="thm-speeding-up-slowing-down">
+  <title>Speeding Up and Slowing Down</title>
+  <statement>
+    <p>
+      <ul> 
+      <li> An object is <term>speeding up</term> when its velocity and acceleration have the same sign (either both positive or both negative). </li>
+      <li>
+      An object is <term>slowing down</term> when its velocity and acceleration have opposite signs (one is positive and the other is negative). </li>
+      </ul>
+    </p>  
+  </statement>
+  <proof>
+    <title>Justification</title>
+    <p>
+      If the velocity is positive then it is the same as speed.
+      Thus if the acceleration is also positive then the velocity is increasing which means the speed is increasing. 
+    </p>
+    <p> 
+      If the velocity is negative then the speed is the opposite of velocity.
+      Thus if the acceleration is also negative then the velocity is decreasing which means the speed is increasing.
+    </p>
+    <p>
+      The other two cases are similar.
+    </p>
+  </proof>
+</theorem>
+
+
+
+<example xml:id="ex-speeding-up-slowing-down2">
+  <statement>
+    <p>
+      Suppose an object has velocity <m>v(t)=t^2-4t</m>. Determine when the object is speeding up and when it is slowing down. Express your answers in interval notation.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      First let's find the sign of the velocity.
+      We have
+      <me>
+\displaystyle v(t) = t^2 - 4t = t(t-4).
+      </me>
+      Using the <xref ref="ssec-ineq-overview">Test Point Method for Inequalities</xref>, we 
+      find that the velocity is zero at <m>t=0</m> and <m>t=4</m>.
+      These points divide the number line into three intervals: <m>(-\infty,0)</m>, <m>(0,4)</m>, and <m>(4,\infty)</m>. Choosing test points from each interval, we find:
+      <ul>
+        <li> For <m>t=-1</m> in <m>(-\infty,0)</m>, <m>v(-1)=5</m>, so velocity is positive on this interval. </li>
+        <li> For <m>t=2</m> in <m>(0,4)</m>, <m>v(2)=-4</m>, so velocity is negative on this interval. </li>
+        <li> For <m>t=5</m> in <m>(4,\infty)</m>, <m>v(5)=5</m>, so velocity is positive on this interval. </li>
+      </ul>
+    </p>
+      <p> 
+      <sidebyside width="80%">
+<figure xml:id="fig-tikz-speeding-up-slowing-down01">
+  <caption>A figure showing the sign of the velocity function <m>v(t)=t^2 - 4t</m> on the number line.</caption>
+  <image width="80%" >
+
+<latex-image>
+  <![CDATA[
+\begin{tikzpicture}
+  \draw[->] (-2,0) -- (0,0) node{|} node[below, font=\small, yshift=-4pt] {$0$} -- (4,0) node{|} node[below, font=\small, yshift=-4pt] {$4$} -- (6,0) node[right] {$t$};
+  \draw (-1,0.5) node {(+)};
+  \draw (2,0.5) node {(-)};
+  \draw (5,0.5) node {(+)};
+  \draw (-2.5,0.5) node[left] {$v(t)$};
+\end{tikzpicture}
+  ]]>
+</latex-image>
+  </image>
+
+</figure>
+</sidebyside>
+
+    </p>
+    <p>
+      Next, we find the acceleration by differentiating the velocity:
+      <me>
+\displaystyle a(t) = v'(t) = 2t - 4.
+      </me>
+      Setting the acceleration equal to zero gives <m>2t - 4 = 0</m>, or <m>t=2</m>.
+      This divides the number line into two intervals: <m>(-\infty,2)</m> and <m>(2,\infty)</m>.
+      Choosing test points from each interval, we find:
+      <ul>
+        <li> For <m>t=0</m> in <m>(-\infty,2)</m>, <m>a(0)=-4</m>, so acceleration is negative on this interval. </li>
+        <li> For <m>t=3</m> in <m>(2,\infty)</m>, <m>a(3)=2</m>, so acceleration is positive on this interval. </li>
+      </ul>
+</p>
+    <p>
+            <sidebyside width="80%">
+<figure xml:id="fig-tikz-speeding-up-slowing-down02">
+  <caption>A figure showing the sign of the acceleration function <m>a(t)=2t - 4</m> on the number line.</caption>
+  <image width="80%" >
+
+<latex-image>
+  <![CDATA[
+\begin{tikzpicture}
+  \draw[->] (-2,0) -- (2,0) node{|} node[below, font=\small, yshift=-4pt] {$2$} -- (6,0) node[right] {$t$};
+  \draw (0,-0.5) node {(-)};
+  \draw (4,-0.5) node {(+)};
+  \draw (-2.5,-0.5) node[left] {$a(t)$};
+\end{tikzpicture}
+  ]]>
+</latex-image>
+  </image>
+
+</figure>
+</sidebyside>
+
+
+    </p>
+    <p>
+      Now we can determine when the object is speeding up and when it is slowing down by comparing the signs of velocity and acceleration:
+</p>
+    <p>
+      <sidebyside width="80%">
+        
+<figure xml:id="fig-tikz-speeding-up-slowing-down03">
+  <caption>A figure showing the sign of the velocity function and the acceleration function together on one number line.</caption>
+  <image >
+
+<latex-image>
+  <![CDATA[
+\begin{tikzpicture}
+  \draw[->] (-2,0) -- (0,0) node{|} node[below, font=\small, yshift=-4pt] {$0$} -- (2,0) node{|} node[below, font=\small, yshift=-4pt] {$2$} -- (4,0) node{|} node[below, font=\small, yshift=-4pt] {$4$} -- (6,0) node[right] {$t$};
+  \draw (-1,0.5) node {(+)};
+  \draw (1,0.5) node {(-)};
+  \draw (3,0.5) node {(-)};
+  \draw (5,0.5) node {(+)};
+  \draw (-2.5,0.5) node[left] {$v(t)$};
+  \draw (-1,-0.5) node {(-)};
+  \draw (1,-0.5) node {(-)};
+  \draw (3,-0.5) node {(+)};
+  \draw (5,-0.5) node {(+)};
+  \draw (-2.5,-0.5) node[left] {$a(t)$};
+\end{tikzpicture}
+  ]]>
+</latex-image>
+  </image>
+
+</figure>
+      </sidebyside>
+
+    </p>
+    <p> 
+
+      <ul>
+        <li> On <m>(-\infty,0)</m>, velocity is positive and acceleration is negative, so the object is slowing down. </li>
+        <li> On <m>(0,2)</m>, velocity is negative and acceleration is negative, so the object is speeding up. </li>
+        <li> On <m>(2,4)</m>, velocity is negative and acceleration is positive, so the object is slowing down. </li>
+        <li> On <m>(4,\infty)</m>, velocity is positive and acceleration is positive, so the object is speeding up. </li>
+      </ul>
+    </p>
+    <p>
+      Therefore, the object is speeding up on <m>(0,2)\cup(4,\infty)</m> and slowing down on <m>(-\infty,0)\cup(2,4)</m>.
+    </p>
+  </solution> 
+</example>
+
+<!-- 
+<p>This completes our discussion of speeding up and slowing down.
+We will now move on to discuss total distance traveled and how it differs from displacement, the final new concept in this section. </p>
+-->
+
+  </subsection>
+
+
+<!--
+
+  <subsection xml:id="subsec-TDT">
+    <title>Displacement vs Distance Traveled</title>
+<p>
+  Many students are probably already familiar with the concept of displacement from your favorite physics class:
+</p>
+
+<definition xml:id="def-displacement">
+  <title>Displacement</title>
+  <statement>
+    <p>
+      The <term>displacement</term> of an object over the time interval <m>[a,b]</m> is how much the object's position changes during that time.
+    </p> 
+      <p> 
+      Displacement is given by
+      <me>
+        \text{Displacement} = s(b) - s(a),
+      </me>
+      where <m>s(t)</m> is the position function of the object.
+      </p>
+    </statement>
+</definition> 
+
+
+<example xml:id="ex-displacement-vs-distance-01">
+  <statement>
+    <p> 
+      Building off of <xref ref="ex-ball-motion-derivatives"/>: Recall the vertical position of the ball is given by
+      <me>s(t)=-16t^2+64t+6</me>.
+      Find the displacement of the ball from <m>t=1</m> seconds to <m>t=3</m> seconds using the equation above. 
+    </p>
+    <p>Then verify your answer on the graph below. 
+    </p> 
+    <p>
+      <sidebyside width="80%">
+        <figure xml:id="fig-tikz-displacement-vs-distance-01">
+          <caption>Graph of the height function <m>s(t)=-16t^2+64t+6</m> for the ball thrown straight up.</caption>
+          <image source="images/motion01.PNG">  
+            <shortdescription>
+              A graph of height versus time for a ball moving vertically.
+              The horizontal axis represents time in seconds and the vertical axis represents height in feet.
+              The curve is a downward-opening parabola.
+              The point at time 1 has height 54, the maximum occurs at time 2 with height 70,
+              and the point at time 3 has height 54.
+            </shortdescription>
+              </image>
+        </figure>
+      </sidebyside>
+    </p>
+
+
+
+  </statement> 
+  <solution>
+    <p>
+      To find the displacement, we evaluate the position function at the endpoints of the interval:
+      <me>
+\begin{array}{rcl}
+\displaystyle s(1) \amp =\amp -16(1)^2 + 64(1) + 6 = 54 \text{ ft,}\\[0.6em]
+\displaystyle s(3) \amp =\amp -16(3)^2 + 64(3) + 6 = 54 \text{ ft.}
+\end{array}
+      </me>
+      Therefore, the displacement is
+      <me>
+\displaystyle \text{Displacement} = s(3) - s(1) = 54 - 54 = 0 \text{ ft.}
+      </me>
+      This means that the ball ends up at the same height it started from during this time interval.
+    </p>
+    <p>
+      Looking at the graph, we can see that at <m>t=1</m> seconds, the ball is at a height of 54 feet.
+      It then rises to a maximum height of 70 feet at <m>t=2</m> seconds before falling back down to 54 feet at <m>t=3</m> seconds.
+      Thus, the ball returns to its original height, confirming our calculation of zero displacement.
+    </p>
+  </solution>
+</example>
+
+<p> No compare this with the total distance traveled by the ball during the same time interval. 
+  Notice that it would be incorrect to say the ball traveled a distance of zero feet, since it did move up and then back down. But perhaps
+  we are getting ahead of ourselves. Let's first define total distance traveled then we can come up with a reliable method to calculate it. </p>
+
+<definition xml:id="def-total-distance-traveled">
+  <title>Total Distance Traveled</title>
+  <statement>
+    <p>
+      The <term>total distance traveled</term> by an object over the time interval <m>[a,b]</m> is the total length of the path the object takes during that time.
+    </p>
+    </statement>
+</definition>
+
+<p>Before we try to come up with a formula for total distance traveled, let's look back to our ball example to get some intuition. </p>
+
+<example xml:id="ex-displacement-vs-distance-02">
+  <introduction>
+    <p> 
+      Again, building off of <xref ref="ex-ball-motion-derivatives"/>: Recall the vertical position of the ball is given by
+      <me>s(t)=-16t^2+64t+6</me>.
+    </p>
+    </introduction>
+  <task>
+    <statement>
+      <p>
+        Find the total distance traveled by the ball from <m>t=1</m> seconds to <m>t=3</m> seconds by using the graph below.
+      </p>
+      <p> 
+              <sidebyside width="80%">
+        <figure xml:id="fig-tikz-displacement-vs-distance-02">
+          <caption>Graph of the height function <m>s(t)=-16t^2+64t+6</m> for the ball thrown straight up.</caption>
+          <image source="images/motion01.PNG">  
+            <shortdescription>
+              A graph of height versus time for a ball moving vertically.
+              The horizontal axis represents time in seconds and the vertical axis represents height in feet.
+              The curve is a downward-opening parabola.
+              The point at time 1 has height 54, the maximum occurs at time 2 with height 70,
+              and the point at time 3 has height 54.
+            </shortdescription>
+              </image>
+        </figure>
+      </sidebyside>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        From the graph, we see that at <m>t=1</m> seconds, the ball is at a height of 54 feet.
+        It then rises to a maximum height of 70 feet at <m>t=2</m> seconds. The distance traveled during this ascent is <m>|70-54|=|16| = 16</m> feet.
+        Notice that we use absolute values here since distance traveled is always non-negative and we don't care about direction.
+      </p>
+      <p>
+        Next, the ball falls from a maximum height of 70 feet at <m>t=2</m> seconds back down to 54 feet at <m>t=3</m> seconds.
+        The distance traveled during this descent is <m>|54-70|=|-16| = 16</m> feet.
+      </p>
+      <p> 
+        Therefore, the total distance traveled by the ball from <m>t=1</m> seconds to <m>t=3</m> seconds is the sum of the distances during the ascent and descent:
+        <me>
+\text{Total Distance Traveled} = 16 \text{ ft} + 16 \text{ ft} = 32 \text{ ft.}
+        </me>
+      </p>
+    </solution>
+    </task>
+    <task>
+      <statement>
+      <p>
+        Find the total distance traveled by the ball from <m>t=1</m> seconds to <m>t=3</m> seconds by only using the height equation <m>s(t)=-16t^2+64t+6</m>.
+      </p>
+      </statement>
+      <solution>
+        <p>
+          To find the total distance traveled using only the height equation, we first need to determine when the ball changes direction.
+          This occurs when the velocity is zero. We already found the velocity function in <xref ref="ex-ball-motion-derivatives"/>:
+          <me>
+v(t) = s'(t) = -32t + 64
+          </me>
+          Setting <m>v(t)=0</m>, we solve:
+          <me>
+0 = -32t + 64 \Rightarrow t = 2
+          </me>
+          So the ball changes direction at <m>t=2</m> seconds.
+        </p>
+        <p>
+          The total distance traveled is the sum of the distances traveled during each segment of motion:
+        </p>
+        <me>
+\text{Total Distance Traveled} = |s(2)-s(1)| + |s(3)-s(2)|
+        </me>
+        <p>
+          We compute each value:
+        </p>
+        <me> \begin{array}{rcl}
+s(1) \amp =\amp  -16(1)^2 + 64(1) + 6 = -16 + 64 + 6 = 54 \\
+s(2) \amp = \amp -16(2)^2 + 64(2) + 6 = -64 + 128 + 6 = 70 \\
+s(3) \amp = \amp -16(3)^2 + 64(3) + 6 = -144 + 192 + 6 = 54
+\end{array}
+            </me>
+        <p>
+          Therefore:
+        </p>
+        <me>\begin{array}{rcl}
+\text{Total Distance Traveled} \amp=\amp |70-54| + |54-70|\\
+\amp =\amp 16 + 16 = 32 \text{ feet}
+\end{array}
+        </me>
+      </solution>
+    </task>
+</example>
+
+<remark xml:id="rem-distanceKey">
+  <p>
+    The key take away from this example is that in order to compute total distance traveled, 
+    we must know where all the turning points are (when <m>v(t)=0</m>) and then sum the 
+    distances traveled over each piece.
+  </p>
+</remark>
+
+<p> Now we are ready to summarize our method for finding total distance traveled. </p>
+
+<algorithm xml:id="ins-total-distance-traveled-method">
+  <title>Method for Finding Total Distance Traveled</title>
+  <statement>
+    <p>
+      To find the total distance traveled by an object over the time interval <m>[a,b]</m>:
+    </p>
+    <ol>
+      <li> Find all times turning points, that is all values of <m>t</m> in <m>(a,b)</m> where the velocity is zero: <m>v(t)=0</m>.
+        These times divide the interval <m>[a,b]</m> into pieces.
+      </li>
+      <li> For each piece of the interval, compute the distance traveled by taking the absolute value of the displacement .
+      </li>
+      <li> Sum the distances from each piece to get the total distance traveled over <m>[a,b]</m>.
+      </li>
+    </ol>
+  </statement>
+</algorithm>
+
+
+<example xml:id="ex-total-distance-traveled-derivApp-01">
+  <statement>
+    <p>
+      An object moves along a line with position given by <m>s(t)=3\sin(\pi t)</m>.
+      Find the total distance traveled over the time interval <m>[0,2]</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      First, we find the velocity by differentiating the position function:
+      <me>
+v(t) = s'(t) = 3\pi \cos(\pi t).
+      </me>
+      Setting <m>v(t)=0</m>, we solve:
+      <me>
+0 = 3\pi \cos(\pi t) \Rightarrow \cos(\pi t) = 0.
+      </me>
+      Using the unit circle, the solutions to <m>\cos(\pi t) = 0</m> in the interval <m>[0,2]</m> are <m>t=\tfrac{1}{2}</m> and <m>t=\tfrac{3}{2}</m>. 
+      These points divide the interval <m>[0,2]</m> into three pieces: <m>[0,\tfrac{1}{2}]</m>, <m>[\tfrac{1}{2},\tfrac{3}{2}]</m>, and <m>[\tfrac{3}{2},2]</m>.
+    </p>
+    <p>
+      Next, we compute the distance traveled on each piece:
+    </p>
+    <me>\begin{array}{rcl}
+ |s(\tfrac{1}{2}) - s(0)| \amp=\amp |3\sin(\tfrac{\pi}{2}) - 3\sin(0)| = |3 - 0| = 3 \\
+ |s(\tfrac{3}{2}) - s(\tfrac{1}{2})| \amp=\amp |3\sin(\tfrac{3\pi}{2}) - 3\sin(\tfrac{\pi}{2})| = |-3 - 3| = 6 \\
+ |s(2) - s(\tfrac{3}{2})| \amp=\amp |3\sin(2\pi) - 3\sin(\tfrac{3\pi}{2})| = |0 - (-3)| = 3
+\end{array}
+    </me>
+    <p>
+      Finally, we sum the distances from each piece to find the total distance traveled over <m>[0,2]</m>:
+    </p>
+    <me>
+\text{Total Distance Traveled} = 3 + 6 + 3 = 12.
+    </me>
+  </solution>
+</example>
+      
+
+
+  </subsection>
+
+
+-->
+  
+
+
+  
+
+
+
+<subsection xml:id="additional-worked-problems-derivApp-Motion">
+  <title>Additional Worked-Out Examples</title>
+
+  <p>
+    To keep this section at a reasonable length, we include only a few representative examples directly in the text.
+    If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional
+    fully worked-out examples are available via: 
+    <alert>
+      <xref ref="subsec-derivApp-motion">
+        Additional Worked-Out Problems for Motion in Physics
+      </xref>
+    </alert>
+  </p>
+
+</subsection>
+
+
+  <exercises xml:id="exercises-derivApp-Motion-tf">
+  <title>Practice / Study Problems</title>
+
+
+
+<exercisegroup xml:id="eg-derivApp-motion-tf">
+  <title>True/False Questions</title>
+
+  <introduction>
+    <p>
+      Determine whether each statement is true or false.
+      Justify your answers.
+    </p>
+  </introduction>
+
+
+  <exercise xml:id="ex-derivApp-motion-tf-12">
+    <statement>
+      <p>
+        If <m>v(t)=s'(t)</m> is positive on <m>(a,b)</m>, then <m>s(t)</m> is increasing on <m>(a,b)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True.</em>
+        If the velocity is positive, the position function is increasing.
+      </p>
+    </solution>
+  </exercise>
+
+
+
+  <exercise xml:id="ex-derivApp-motion-tf-14">
+    <statement>
+      <p>
+        For <m>s(t)=-5t^2+15t+6</m>, the ball reaches its maximum height at <m>t=2</m> seconds because <m>v(2)=0</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False.</em>
+        The velocity function is <m>v(t)=s'(t)=-10t+15</m>.
+        Setting <m>v(t)=0</m>, we solve:
+        <me>
+0 = -10t + 15 \Rightarrow t = 1.5.
+        </me>
+        Therefore, the ball reaches its maximum height at <m>t=1.5</m> seconds, not <m>t=2</m> seconds.
+      </p>
+    </solution>
+  </exercise>
+
+
+  <exercise xml:id="ex-derivApp-motion-tf-03">
+    <statement>
+      <p>
+        If <m>v(t)=0</m> at a time <m>t=5</m>, then the object must change direction at <m>t=5</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False.</em>
+        When the velocity is zero, the object is momentarily at rest.
+        However, this does not necessarily mean that the object changes direction at that time.
+        For example, if the velocity changes from positive to zero and then back to positive, the object does not change direction.
+      </p>
+    </solution>
+  </exercise>
+
+  
+  <exercise xml:id="ex-derivApp-motion-tf-08">
+    <statement>
+      <p>
+        If <m>v(t)</m> is decreasing on an interval, then the object is slowing down on that interval.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False.</em>
+        If the velocity is decreasing, it means that the acceleration is negative.
+        However, whether the object is slowing down or speeding up depends on the sign of the velocity as well.
+        If the velocity is positive and decreasing, the object is slowing down.
+        But if the velocity is negative and decreasing, the object is actually speeding up.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-derivApp-motion-tf-06">
+    <statement>
+      <p>
+        If <m>a(t)=0</m> at a time <m>t=3</m>, then the object must be at rest (even momentarily) at <m>t=3</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False.</em>
+        When the acceleration is zero, it means that the velocity is not changing at that time.
+        However, this does not necessarily mean that the object is at rest.
+        The object could be moving with a constant velocity.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-derivApp-motion-tf-04">
+    <statement>
+      <p>
+        If <m>v(6)&gt;0</m> and <m>a(6)&gt;0</m>, then the object is speeding up at <m>t=6</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True.</em>
+        Since the velocity is positive, the object is moving in the positive direction.
+        Since the acceleration is also positive, the velocity is increasing.
+        Therefore, the speed of the object is increasing, which means the object is speeding up.
+      </p>
+    </solution>
+  </exercise>
+
+
+
+
+
+
+<!-- 
+
+  <exercise xml:id="ex-derivApp-motion-tf-10">
+    <statement>
+      <p>
+        The total distance traveled on <m>[a,b]</m> is always greater than or equal to <m>|s(b)-s(a)|</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True.</em>
+        The total distance traveled accounts for all movement, regardless of direction, while <m>|s(b)-s(a)|</m> only measures the net change in position.
+        Therefore, the total distance traveled is always greater than or equal to the absolute value of the displacement.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-derivApp-motion-tf-11">
+    <statement>
+      <p>
+        If an object never changes direction on <m>[a,b]</m>, then its total distance traveled equals <m>|s(b)-s(a)|</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True.</em>
+        If the object never changes direction, it means that it is either always moving in the positive direction or always moving in the negative direction.
+        In either case, the total distance traveled is equal to the absolute value of the displacement, which is <m>|s(b)-s(a)|</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  -->
+  
+<exercise xml:id="ex-derivApp-motion-tf-102">
+    <statement>
+      <p>
+        An object moving along a line has position function <m>s(t)=t^3-6t^2+9t</m>.
+        The object is speeding up on the interval <m>(0,3)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False.</em>
+        First, we find the velocity and acceleration functions:
+        <me>
+v(t) = s'(t) = 3t^2 - 12t + 9,
+        </me>
+        <me>
+a(t) = v'(t) = 6t - 12.
+        </me>
+        Next, we determine the signs of velocity and acceleration on the interval <m>(0,3)</m>.
+        Setting <m>v(t)=0</m>, we solve:
+        <me>
+0 = 3t^2 - 12t + 9 \Rightarrow t^2 - 4t + 3 = 0 \Rightarrow (t-1)(t-3) = 0 \Rightarrow t = 1, 3.
+        </me>
+        Thus, on the interval <m>(0,3)</m>, the velocity is positive on <m>(0,1)</m> and negative on <m>(1,3)</m>.
+        Setting <m>a(t)=0</m>, we solve:
+        <me>
+0 = 6t - 12 \Rightarrow t = 2.
+        </me>
+        Thus, on the interval <m>(0,3)</m>, the acceleration is negative on <m>(0,2)</m> and positive on <m>(2,3)</m>.
+        Therefore, the object is slowing down on <m>(0,1)</m> and <m>(1,2)</m>, and speeding up on <m>(2,3)</m>.
+        Since the object is not speeding up on the entire interval <m>(0,3)</m>, the statement is false.
+      </p>
+    </solution>
+  </exercise>
+
+
+      </exercisegroup>
+      </exercises>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- 
+
+  <example xml:id="ex-throw-ball-4-seconds">
+      <statement>
+        <p>
+          Under standard gravity <m>g=32</m> ft/sec<sup>2</sup>, suppose a ball is thrown straight up from height
+          <m>s_0=5</m> ft. How large must <m>v_0</m> be so that the ball hits the ground after <m>4</m> seconds?
+          How high does it go?
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          The model is
+          <m>s(t)=5+v_0 t-16t^2</m>.
+          Landing at <m>t=4</m> means <m>s(4)=0</m>.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle 0
+\amp=\amp \displaystyle s(4)
+\\[0.6em]
+\amp=\amp \displaystyle 5+4v_0-16(4^2)
+\\[0.8em]
+\amp=\amp \displaystyle 5+4v_0-256,
+\end{array}
+        </me>
+
+        <p>
+          so <m>4v_0=251</m> and therefore <m>v_0=62.75</m> ft/sec.
+        </p>
+
+        <p>
+          The velocity is <m>v(t)=s'(t)=62.75-32t</m>. The ball reaches its highest point when <m>v(t)=0</m>.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle 0
+\amp=\amp \displaystyle 62.75-32t
+\\[0.8em]
+\amp\Rightarrow\amp \displaystyle t=\frac{62.75}{32}\approx 1.96\ \text{sec}.
+\end{array}
+        </me>
+
+        <p>
+          The height at that time is
+          <m>s(1.96)\approx 5+62.75(1.96)-16(1.96)^2\approx 66.5</m> ft.
+        </p>
+
+        <p>
+          For <m>t&lt;1.96</m> the velocity is positive (the ball rises). For <m>t&gt;1.96</m> the velocity is negative (the ball falls).
+        </p>
+      </solution>
+    </example>
+
+
+-->
