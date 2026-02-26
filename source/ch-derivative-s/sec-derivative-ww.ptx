@@ -224,7 +224,7 @@ f(x) &amp; -1.000 &amp; -0.869 &amp; -0.989699 &amp; -0.998997 &amp; -1.009701 \
   </statement>
 
   <solution>
-    <p><emph>(a)</emph> First compute:</p>
+    <p><em>(a)</em> First compute:</p>
 
     <me>
       f(1+h)=(1+h)^3-2(1+h).
@@ -263,7 +263,7 @@ f(x) &amp; -1.000 &amp; -0.869 &amp; -0.989699 &amp; -0.998997 &amp; -1.009701 \
       1+3h+h^2.
     </me>
 
-    <p><emph>(b)</emph> Now take the limit:</p>
+    <p><em>(b)</em> Now take the limit:</p>
 
     <me>
       f'(1)
@@ -273,7 +273,7 @@ f(x) &amp; -1.000 &amp; -0.869 &amp; -0.989699 &amp; -0.998997 &amp; -1.009701 \
       1.
     </me>
 
-    <p><emph>(c)</emph> Using the table:</p>
+    <p><em>(c)</em> Using the table:</p>
 
     <p>
       For <m>h=0.1</m>:
@@ -828,14 +828,281 @@ f(x) &amp; -1.000 &amp; -0.869 &amp; -0.989699 &amp; -0.998997 &amp; -1.009701 \
 
     <subsection xml:id="subsec-deriv-trig">
       <title><xref ref="sec-derivative-trig"/> Trigonometric Derivatives</title>
-      <p> test more stuff here.
-      </p>
+
+      <example xml:id="ex-tangent-line-trig">
+        <statement>
+          <p>
+            Find the equation of the tangent line to the graph of <m>f(x) = 4\sin(x)+1</m> at the point where <m>x=\pi/6</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            To find the equation of the tangent line, we first need to find the slope of the tangent line at <m>x=\pi/6</m>. 
+            We compute the derivative of <m>f(x)</m>:
+          </p> 
+            <me>
+              f'(x) = 4\cos(x).
+            </me>
+            <p>Now we substitute <m>x=\pi/6</m> into the expression for <m>f'(x)</m> to find the slope of the tangent line:</p>
+            <me>
+              f'\left(\frac{\pi}{6}\right) = 4\cos\left(\frac{\pi}{6}\right) = 4 \cdot \frac{\sqrt{3}}{2} = 2\sqrt{3}.
+            </me>
+            <p>Next, we need to find the coordinates of the point on the graph at <m>x=\pi/6</m>. We compute:</p>
+            <me>
+              f\left(\frac{\pi}{6}\right) = 4\sin\left(\frac{\pi}{6}\right) + 1 = 4 \cdot \frac{1}{2} + 1 = 2 + 1 = 3.
+            </me>
+            <p>Thus, the point of tangency is <m>\left(\frac{\pi}{6}, 3\right)</m>. Using the point-slope form of a line, we can write the equation of the tangent line as:</p>
+            <me>
+              y - 3 = 2\sqrt{3}\left(x - \frac{\pi}{6}\right).
+            </me>
+              <p>
+                Simplifying this gives:
+          </p>
+          <me>
+            y = 2\sqrt{3}x - \frac{\pi\sqrt{3}}{3} + 3.
+          </me>
+        </solution>
+      </example>
+
+      <example xml:id="ex-derivative-trig-cycle">
+        <statement>
+          <p>
+            If <m>f(x) = \sin(x)-\cos(x)</m>, find <m>f^{(21)}(x)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We first compute the first few derivatives of <m>f(x) = \sin(x)-\cos(x)</m>:
+          </p>
+          <me>
+            \begin{array}{rcl}
+            f(x) &amp; = &amp; \sin(x)-\cos(x) \\
+            f'(x) &amp; = &amp; \cos(x)+\sin(x) \\
+            f''(x) &amp; = &amp; -\sin(x)+\cos(x) \\
+            f'''(x) &amp; = &amp; -\cos(x)-\sin(x) \\
+            f^{(4)}(x) &amp; = &amp; \sin(x)-\cos(x).
+            \end{array}
+          </me>
+          <p>
+            We see that <m>f^{(4)}(x) = f(x)</m>. This means that the derivatives of <m>f</m> repeat in a cycle of length 4. 
+            To find <m>f^{(21)}(x)</m>, we can determine where 21 falls in this cycle by computing the remainder when 21 is divided by 4:
+          </p>
+          <me>
+            21 \div 4 = 5 \text{ remainder } 1.
+          </me>
+          <p>
+            Since the remainder is 1, we have:
+          </p>
+          <me>
+            f^{(21)}(x) = f^{(1)}(x) = \cos(x)+\sin(x).
+          </me> 
+        </solution>
+      </example>
+
+      <example xml:id="ex-derivative-trig-product">
+        <statement>
+          <p>
+            Find <m>\dfrac{dy}{dx}</m> if <m>y = \sqrt{x}\sin(x)\tan(x)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We can apply the product rule multiple times to differentiate this function. 
+            Let <m>u = \sqrt{x}</m>, <m>v = \sin(x)</m>, and <m>w = \tan(x)</m>. 
+            Then we can write <m>y</m> as:
+          </p>
+          <me>
+            y = uvw.
+          </me>
+          <p>
+            To find <m>\dfrac{dy}{dx}</m>, we can use the product rule in the following way:
+          </p>
+          <me>
+            \begin{array}{rcl}
+            \dfrac{dy}{dx} &amp; = &amp; u'vw + uv'w + uvw' \\
+            &amp; = &amp; \frac{1}{2\sqrt{x}}\sin(x)\tan(x) + \sqrt{x}\cos(x)\tan(x) + \sqrt{x}\sin(x)\sec^2(x).
+            \end{array}
+          </me>
+        </solution>
+      </example>
+
+
+      <example xml:id="ex-derivative-trig-limit">
+        <statement>
+          <p>
+            Evaluate the following limit: <m>\displaystyle \lim_{x\to 2} \frac{\sin(x^2 - 4)}{x-2}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using direct substitution, we find that the limit is of the form <m>\frac{0}{0}</m>. We will 
+            try to implement our <xref ref="thm-limit-sin-u-over-u"/> to evaluate this limit.
+          </p>
+          <p>
+            Let <m>u = x^2 - 4</m>. Then as <m>x \to 2</m>, we have <m>u \to 0</m>. We can rewrite the limit by 
+            multiplying and dividing by <m>x+2</m> to get the denominator to match what is inside of the sine function:
+          </p>
+          <me>
+            \begin{array}{rcl}
+            \displaystyle \lim_{x\to 2} \frac{\sin(x^2 - 4)}{x-2} &amp; = &amp; \displaystyle \lim_{x\to 2} \frac{\sin(x^2-4)}{x-2} \cdot \frac{x+2}{x+2} \\
+            &amp; = &amp; \displaystyle \lim_{x\to 2} \frac{\sin(x^2-4)}{x^2-4} \cdot (x+2) \\
+            &amp; = &amp; \displaystyle \lim_{u\to 0} \frac{\sin(u)}{u} \cdot \lim_{x\to 2}(x+2) \\
+            &amp; = &amp; 1 \cdot (2+2) = 4.
+            \end{array}
+          </me>
+        </solution>
+      </example>
+
+
     </subsection>
 
     <subsection xml:id="subsec-deriv-expChain">
       <title><xref ref="sec-derivative-expChain"/> Exponential Functions and the Chain Rule</title>
-      <p> test
-      </p>
+
+      
+      <example xml:id="ex-derivative-chain-exp"> 
+        <statement>
+          <p>
+            Consider the function <m>f(x) = \left(x^2 + \sqrt{x}\right)^3</m>.
+          </p>
+          <p> (a) Find <m>f'(x)</m>.</p> 
+          <p> (b) Find the equation of the tangent line to the graph of <m>f</m> at the point where <m>x=1</m>.</p>
+        </statement>
+        <solution>
+          <p> (a) To find <m>f'(x)</m>, we can apply the chain rule. Let <m>u = x^2 + \sqrt{x}</m>, so that <m>f(x) = u^3</m>. 
+          Then we have:
+          </p>
+          <me>
+            \begin{array}{rcl}
+            f'(x) &amp; = &amp; 3u^2 \cdot u' \\
+            &amp; = &amp; 3(x^2 + \sqrt{x})^2 \cdot (2x + \frac{1}{2\sqrt{x}}).
+            \end{array}
+          </me>
+          <p> (b) To find the equation of the tangent line to the graph of <m>f</m> at the point where <m>x=1</m>,
+          we first need to find the coordinates of the point on the graph at <m>x=1</m>. We compute:
+          </p>
+          <me>
+            f(1) = (1^2 + \sqrt{1})^3 = (1 + 1)^3 = 2^3 = 8.
+          </me>
+          <p>Thus, the point of tangency is <m>(1, 8)</m>. Next, we need to find the slope of the tangent line at <m>x=1</m>.
+          We compute:
+          </p>
+          <me>
+            f'(1) = 3(1^2 + \sqrt{1})^2 \cdot (2(1) + \frac{1}{2\sqrt{1}}) = 3(4) \cdot \frac{5}{2} = 30.
+          </me>
+          <p>Using the point-slope form of a line, we can write the equation of the tangent line as:</p>
+          <me>
+            y - 8 = 30(x - 1).
+          </me>
+          <p>Simplifying this gives:</p>
+          <me>
+            y = 30x - 22.
+          </me>
+          </solution>
+
+
+
+        </example>
+
+
+        <example xml:id="ex-derivative-trig-chain">
+          <statement>
+            <p>
+              Find the derivative of the function <m>A(x) = \sin\left(\dfrac{1}{x}\right) \sec(x^2)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The outermost operation is multiplication. Therfore we should begin by applying the product rule to differentiate this function. 
+              Let <m>u = \sin\left(\dfrac{1}{x}\right)</m> and <m>v = \sec(x^2)</m>. 
+              Then we have:
+            </p>
+            <me>
+              \begin{array}{rcl}
+                u' &amp; = &amp; \cos\left(\dfrac{1}{x}\right) \cdot \left(-\frac{1}{x^2}\right),\\
+                v' &amp; = &amp; \sec(x^2)\tan(x^2) \cdot 2x \\
+              \end{array}
+            </me>
+              <p>
+                Now we can apply the product rule:
+              </p>
+            <me>
+              \begin{array}{rcl}
+               A'(x) &amp; = &amp; u'v + uv' \\
+               &amp; = &amp; \cos\left(\dfrac{1}{x}\right) \cdot \left(-\frac{1}{x^2}\right) \cdot \sec(x^2) + \sin\left(\dfrac{1}{x}\right) \cdot \sec(x^2)\tan(x^2) \cdot 2x.
+              \end{array}
+            </me>
+          </solution>
+        </example>
+
+        <example>
+          <statement>
+            <p>
+              Consider the functions shown in the graph below.
+            </p>
+
+        <image width = "60%">
+  <shortdescription>
+    A coordinate grid from x = 0 to x = 5 and y = 0 to y = 5 showing two functions labeled f(x) and g(x).
+The graph of g(x) is a downward opening parabola that passes through approximately (0, 0), reaches a maximum at (2, 4), 
+and then decreases to (4, 0).
+The graph of f(x) is piecewise linear. It decreases along a straight line from about (0, 2) to (3, 1), 
+then increases along a straight line from (3, 1) to (5, 3).
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}
+	\draw[->, thick] (-.3,0) -- (5.3,0);
+	\draw[->, thick] (0,-.3) -- (0,5.3);
+	\draw[thin] (0,0) grid (5,5);
+	\begin{scope}
+		\clip (-.3,0) rectangle (5.3,5.3); 
+		\draw[very thick] plot[domain=0:5, smooth] (\x, {4-(2-\x)^2});
+		\draw[very thick] (0,2)-- (3,1) -- (5,3);
+			
+		
+	\end{scope}
+	\draw (4.5,3.3) node {$f(x)$};
+	\draw (4.5,.3) node {$g(x)$};
+	\foreach \x in {1,2,3,4,5} {
+		\draw (\x, 2pt) -- (\x, -2pt) node[font=\small, below] {\x};
+		\draw (2pt, \x) -- ( -2pt, \x) node[font=\small, left] {\x};
+		
+	} 
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+      <p> If <m>A(x) = g(f(x))</m>, find <m>A'(4)</m>.</p>
+
+          </statement>
+          <solution>
+            <p>
+              To find <m>A'(4)</m>, we can apply the chain rule. The chain rule states that if <m>A(x) = g(f(x))</m>, then
+              <me>
+                A'(x) = g'(f(x)) \cdot f'(x).
+              </me>
+              Therefore, we need to find <m>g'(f(4))</m> and <m>f'(4)</m>.
+            </p>
+            <p>
+              From the graph, we can see that <m>f(4) = 2</m>.
+            </p>
+            <p>
+              To find <m>f'(4)</m>, we need to find the slope of the graph of <m>f</m> at <m>x=4</m>. 
+              The graph of <m>f</m> is piecewise linear, and at <m>x=4</m>, it is on the increasing linear segment from (3,1) to (5,3). 
+              The slope is <m>\frac{3-1}{5-3} = 1</m>.
+            </p>
+            <p>
+              To find <m>g'(f(4)) = g'(2)</m>, we need to find the slope of the graph of <m>g</m> at <m>x=2</m>. 
+              From the graph, we can see that the graph of <m>g</m> is horizontal at <m>x=2</m> so therefore the slope is <m>0</m>.
+            </p>
+            <me>
+              A'(4) = g'(f(4)) \cdot f'(4) = 0 \cdot 1 = 0.
+            </me>
+          </solution>
+        </example>
+
+
     </subsection>
 
     <subsection xml:id="subsec-deriv-implicit">

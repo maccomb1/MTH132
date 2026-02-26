@@ -893,7 +893,7 @@ The right side and top side of the square are labeled 10 cm.
     <exercise>
       <statement>
         <p>
-          The closest distance from the point <m>(2,0)</m> to the curve <m>y=\sqrt{x}</m> is <m>\sqrt{7}/2</m>.
+          The smallest distance from the point <m>(2,0)</m> to the curve <m>y=\sqrt{x}</m> is <m>\sqrt{7}/2</m>.
         </p>
       </statement>
       <solution>
