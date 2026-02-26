@@ -4114,9 +4114,9 @@ var ptx_lunr_docs = [
   "body": "  Find if     To find , we differentiate both sides of the equation with respect to , treating as a function of . We apply the chain rule as needed:    "
 },
 {
-  "id": "subsec-deriv-implicit-3",
+  "id": "ex-derivative-implicit-curve-horizontal-vertical",
   "level": "2",
-  "url": "sec-derivative-ww.html#subsec-deriv-implicit-3",
+  "url": "sec-derivative-ww.html#ex-derivative-implicit-curve-horizontal-vertical",
   "type": "Example",
   "number": "2.8.21",
   "title": "",
