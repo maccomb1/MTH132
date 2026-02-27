@@ -207,19 +207,14 @@
       for the open interval <m>(0,10)</m>.
     </p>
 
-    <figure xml:id="fig-velocity-graph-0-10">
-      <caption>
-        A velocity graph <m>v=f(t)</m> on <m>(0,10)</m>. Use the sign of <m>v(t)</m> and the slopes of the graph
-        to determine when the particle moves forward, slows down, has positive acceleration, and stands still.
-      </caption>
-      <image source="images/PUT-YOUR-SCREENSHOT-FILENAME-HERE.png" width="90%">
+
+      <image source="images/Velocity02.png" width="90%">
         <shortdescription>
           A piecewise linear graph of velocity v versus time t on the interval (0,10). The graph is below the t-axis for early times,
           crosses v=0 at t=2, stays above the axis until t=7, lies on v=0 from t=7 to t=9, and then rises above the axis again from t=9 to t=10.
           Several corners indicate times where the slope changes abruptly.
         </shortdescription>
       </image>
-    </figure>
 
     <p>
       (a) When does the particle move forward?
