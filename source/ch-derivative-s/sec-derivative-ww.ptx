@@ -1103,18 +1103,339 @@ then increases along a straight line from (3, 1) to (5, 3).
         </example>
 
 
+        <example xml:id="ex-derivative-chain-interpret">
+            <statement>
+    <p>
+      A metal rod has a constant circular cross-sectional area 
+      <m>A = 20</m> square centimeters.
+      Its volume (in cubic centimeters) is a function of its length <m>L</m> (in centimeters):
+    </p>
+
+    <me>
+      V(L) = AL.
+    </me>
+
+    <p>
+      Due to heating, the rod’s length depends on temperature <m>T</m> 
+      (in degrees Celsius) by
+    </p>
+
+    <me>
+      L(T) = 50\bigl(1 + 0.001T\bigr).
+    </me>
+
+    <p>
+      (a) Compute <m>\dfrac{dV}{dL}</m>. What are the units of 
+      <m>\dfrac{dV}{dL}</m>?
+    </p>
+
+    <p>
+      (b) Compute <m>\dfrac{dL}{dT}</m> and evaluate it at 
+      <m>T = 100</m>. What are the units of 
+      <m>\dfrac{dL}{dT}</m>?
+    </p>
+
+    <p>
+      (c) Use the Chain Rule to compute <m>\dfrac{dV}{dT}</m> at 
+      <m>T = 100^\circ\text{C}</m>. Interpret the meaning of this value in the context of the problem, including its units.
+    </p>
+
+  </statement>
+  <solution>
+    <p>
+      (a) To compute <m>\dfrac{dV}{dL}</m>, we differentiate <m>V(L) = AL</m> with respect to <m>L</m>:
+    </p>
+    <me>
+      \frac{dV}{dL} = A = 20.
+    </me>
+    <p>
+      The units of <m>\dfrac{dV}{dL}</m> are cubic centimeters per centimeter (cm<m>^3</m>/cm).
+    </p>
+    <p>
+      (b) To compute <m>\dfrac{dL}{dT}</m>, we differentiate <m>L(T) = 50\bigl(1 + 0.001T\bigr)</m> with respect to <m>T</m>:
+    </p>
+    <me>
+      \frac{dL}{dT} = 50 \cdot 0.001 = 0.05.
+    </me>
+    <p>
+      Evaluating at <m>T = 100</m> gives:
+    </p>
+    <me>
+      \left.\frac{dL}{dT}\right|_{T=100} = 0.05.
+    </me>
+    <p>
+      The units of <m>\dfrac{dL}{dT}</m> are centimeters per degree Celsius (<m>\text{cm}/^\circ\text{C}</m>).
+    </p>
+    <p>
+      (c) To compute <m>\dfrac{dV}{dT}</m> at <m>T = 100</m>, we can use the Chain Rule:
+    </p>
+    <me>
+      \left.\frac{dV}{dT}\right|_{T=100} = \left.\frac{dV}{dL}\right|_{L=L(100)} \cdot \left.\frac{dL}{dT}\right|_{T=100}.
+    </me>
+    <p>
+      We already know that <m>\dfrac{dV}{dL} = 20</m> and <m>\dfrac{dL}{dT}\big|_{T=100} = 0.05</m>. 
+    Therefore, we can compute <m>\dfrac{dV}{dT}\big|_{T=100}</m> as follows:
+    </p>
+    <me>
+      \left.\frac{dV}{dT}\right|_{T=100} = 20 \cdot 0.05 = 1.
+    </me>
+    <p>
+      The units of <m>\dfrac{dV}{dT}</m> are cubic centimeters per degree Celsius (<m>\text{cm}^3/^\circ\text{C}</m>). 
+      This value means that at a temperature of 100 degrees Celsius, 
+      the volume of the rod is increasing at a rate of 1 cubic centimeter per degree Celsius.
+    </p> 
+  </solution>
+        </example>
+
+
     </subsection>
 
     <subsection xml:id="subsec-deriv-implicit">
       <title><xref ref="sec-derivative-implicit"/> Implicit Differentiation</title>
-      <p> test
-      </p>
+
+
+      <example xml:id="ex-derivative-implicit-exp"> 
+   <statement>
+    <p>
+      Find <m>\dfrac{dy}{dx}</m> if
+    </p>
+    <me>
+      e^{2x - y} = \cos(3y).
+    </me>
+  </statement>
+  <solution>
+    <p>
+      To find <m>\dfrac{dy}{dx}</m>, we differentiate both sides of the equation with respect to <m>x</m>, treating <m>y</m> as a function of <m>x</m>. 
+      We apply the chain rule as needed:
+    </p>
+    <me>
+      \begin{array}{rcl}
+      \frac{d}{dx}\!\left(e^{2x - y}\right) &amp; = &amp; \frac{d}{dx}\!\left(\cos(3y)\right) \\
+      e^{2x - y} \cdot (2 - y') &amp; = &amp; -\sin(3y) \cdot 3y' \\
+      2e^{2x - y} - e^{2x - y}y' &amp; = &amp; -3\sin(3y)y' \\
+      3\sin(3y)y' - e^{2x - y}y' &amp; = &amp; -2e^{2x - y} \\
+      y'(3\sin(3y) - e^{2x - y}) &amp; = &amp; -2e^{2x - y} \\
+      y' &amp; = &amp; \dfrac{-2e^{2x - y}}{3\sin(3y) - e^{2x - y}}.
+      \end{array}
+    </me>
+  </solution>
+
+      </example>
+
+
+      <example xml:id="ex-derivative-implicit-curve-horizontal-vertical">
+  <statement>
+    <p>
+      Consider the curve defined implicitly by
+      <m>x^2y + y^3 = 4x</m>.
+    </p>
+
+    <p>
+      (a) Find <m>\dfrac{dy}{dx}</m> (as a function of <m>x</m> and <m>y</m>).
+    </p>
+
+    <p>
+      (b) Find the points on the curve where the tangent line is horizontal.
+    </p>
+
+    <p>
+      (c) Find the points on the curve where the tangent line is vertical.
+    </p>
+
+  </statement>
+  <solution>
+    <p>
+      (a) To find <m>\dfrac{dy}{dx}</m>, we differentiate both sides of the equation <m>x^2y + y^3 = 4x</m> with respect to <m>x</m>, 
+      treating <m>y</m> as a function of <m>x</m>. 
+      We apply the product rule and chain rule as needed:
+    </p>
+    <me>
+      \begin{array}{rcl}
+      (2x)y + x^2y' + 3y^2y' &amp; =  &amp; 4\\
+      x^2y' + 3y^2y' &amp; = &amp; 4 - 2xy \\
+      y'(x^2 + 3y^2) &amp; = &amp; 4 - 2xy \\
+      y' &amp; = &amp; \dfrac{4 - 2xy}{x^2 + 3y^2}.
+      \end{array}
+    </me>
+    <p>
+      (b) The tangent line is horizontal where <m>\dfrac{dy}{dx} = 0</m>. 
+      This occurs when the numerator of the expression for <m>y'</m> is zero: 
+    </p>
+    <me>
+      4 - 2xy = 0 \quad \Rightarrow \quad 2xy = 4 \quad \Rightarrow \quad xy = 2.
+    </me>
+    <p>
+      We can substitute <m>y = \frac{2}{x}</m> into the original equation to find the corresponding <m>x</m> values:
+    </p>
+    <me>
+      \begin{array}{rcl}
+      x^2\left(\frac{2}{x}\right) + \left(\frac{2}{x}\right)^3 &amp; = &amp; 4x \\
+      2x + \frac{8}{x^3} &amp; = &amp; 4x \\
+      \frac{8}{x^3} &amp; = &amp; 2x \\
+      8 &amp; = &amp; 2x^4 \\
+      x^4 &amp; = &amp; 4 \\
+      x &amp; = &amp; \sqrt[4]{4} = \sqrt{2} \text{ or } x = -\sqrt{2}.
+      \end{array}
+    </me>
+    <p>
+      Substituting these values back into <m>y = \frac{2}{x}</m> gives the corresponding <m>y</m> values:
+    </p>
+    <me>
+      \begin{array}{rcl}
+      y &amp; = &amp; \frac{2}{\sqrt{2}} = \sqrt{2} \quad \text{when } x = \sqrt{2}, \\
+      y &amp; = &amp; \frac{2}{-\sqrt{2}} = -\sqrt{2} \quad \text{when } x = -\sqrt{2}.
+      \end{array}
+    </me>
+    <p>
+      Thus, the points on the curve where the tangent line is horizontal are <m>\left(\sqrt{2}, \sqrt{2}\right)</m> and <m>\left(-\sqrt{2}, -\sqrt{2}\right)</m>.
+    </p>
+    <p>
+      (c) When <m>\dfrac{dy}{dx}</m> is undefined the tangent line can be vertical. 
+      This occurs when the denominator of the expression for <m>y'</m> is zero:
+      <m>x^2 + 3y^2 = 0</m>.
+      Since <m>x^2 \geq 0</m> and <m>3y^2 \geq 0</m>, the only solution is <m>x = 0</m> and <m>y = 0</m>. 
+      We can verify that <m>(0,0)</m> is on the curve since substituting into the original equation gives <m>0 + 0 = 0</m>.
+      Note that at this point the numerator of the expression for <m>y'</m> is not zero, so the limit of <m>y'</m> as we approach <m>(0,0)</m> 
+      does not exist and the tangent line is vertical at this point. 
+      So therefore, the point on the curve where the tangent line is vertical is <m>(0,0)</m>.
+    </p>
+
+    </solution>
+
+      </example>
+
+
+
+
     </subsection>
 
     <subsection xml:id="subsec-deriv-inverse">
       <title><xref ref="sec-derivative-inverse"/> Inverse Functions and Their Derivatives</title>
-      <p> test
-      </p>
+
+      
+      <example xml:id="ex-derivative-inverse-trig">
+        <statement>
+          <p>
+            Let <m>f(x) = 2^{\sin^{-1}(x)}</m>. Find <m>f'(0)</m>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            To find <m>f'(0)</m>, we can apply the chain rule. Let <m>u = \sin^{-1}(x)</m>, so that <m>f(x) = 2^u</m>. 
+            Then we have:
+          </p>
+          <me>
+            \begin{array}{rcl}
+            f'(x) &amp; = &amp; 2^u \cdot \ln(2) \cdot u' \\
+            &amp; = &amp; 2^{\sin^{-1}(x)} \cdot \ln(2) \cdot \frac{1}{\sqrt{1-x^2}}.
+            \end{array}
+          </me>
+          <p>
+            Now we can substitute <m>x=0</m> into the expression for <m>f'(x)</m> to find <m>f'(0)</m>:
+          </p>
+          <me>
+            \begin{array}{rcl}
+            f'(0) &amp; = &amp; 2^{\sin^{-1}(0)} \cdot \ln(2) \cdot \frac{1}{\sqrt{1-0^2}} \\
+            &amp; = &amp; 2^0 \cdot \ln(2) \cdot 1 = \ln(2).
+            \end{array}
+          </me>
+        </solution>
+      </example>
+
+
+      <example xml:id="ex-derivative-inverse-exp-constant">
+         <statement>
+    <p>
+      Suppose 
+      <m>f(x) = c e^{2x} + \ln(x^2 + 1)</m>
+      for some constant <m>c</m>.
+    </p>
+
+    <p>
+      What value of <m>c</m> makes 
+      <m>f'(0) = 3</m>?
+    </p>
+  </statement>
+  <solution>
+    <p>
+      To find the value of <m>c</m> that makes <m>f'(0) = 3</m>, we first need to compute <m>f'(x)</m>. 
+      We differentiate <m>f(x) = c e^{2x} + \ln(x^2 + 1)</m> with respect to <m>x</m>:
+    </p>
+    <me>
+      \begin{array}{rcl}
+      f'(x) &amp; = &amp; 2c e^{2x} + \frac{2x}{x^2 + 1}.
+      \end{array}
+    </me>
+    <p>
+      Now we can substitute <m>x=0</m> into the expression for <m>f'(x)</m> to find <m>f'(0)</m>:
+    </p>
+    <me>
+      \begin{array}{rcl}
+      f'(0) &amp; = &amp; 2c e^{0} + \frac{0}{0^2 + 1} \\
+      &amp; = &amp; 2c.
+      \end{array}
+    </me>
+    <p>
+      We want <m>f'(0) = 3</m>, so we set
+    </p>
+    <me>
+      2c = 3 \quad \implies \quad c = \frac{3}{2}.
+    </me>
+  </solution>
+
+      </example>
+
+
+
+      <example xml:id="ex-derivative-inverse-findExplicit">
+          <statement>
+    <p>
+      Consider the curve given by the equation
+      <m>x^{1/3} + y^{1/3} = 4</m>.
+    </p>
+
+    <p>
+      (a) Find the derivative <m>y'</m>.
+    </p>
+       <p>
+      (b) Use your answer from (a) and the equation of the curve to find <m>y'(x)</m>.
+      That is, write <m>y'</m> as a function of <m>x</m> only.
+    </p>
+    <p>
+      (c) Evaluate <m>y'(1)</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      (a) To find the derivative <m>y'</m>, we differentiate both sides of the equation <m>x^{1/3} + y^{1/3} = 4</m> with respect to <m>x</m>, 
+      treating <m>y</m> as a function of <m>x</m>:
+    </p>
+    <me>
+      \begin{array}{rcl}
+      \frac{d}{dx}\left(x^{1/3} + y^{1/3}\right) &amp; = &amp; \frac{d}{dx}(4) \\
+      \frac{1}{3}x^{-2/3} + \frac{1}{3}y^{-2/3} \cdot y' &amp; = &amp; 0 \\
+      y' &amp; = &amp; -\dfrac{x^{-2/3}}{y^{-2/3}} = -\dfrac{y^{2/3}}{x^{2/3}}.
+      \end{array}
+    </me>
+    <p>
+      (b) Using the equation of the curve, we can express <m>y</m> in terms of <m>x</m>. 
+      From <m>x^{1/3} + y^{1/3} = 4</m>, we have <m>y^{1/3} = 4 - x^{1/3}</m>, so <m>y^{2/3} = (4 - x^{1/3})^2</m>.
+      Substituting this into the expression for <m>y'</m> from part (a):
+    </p>
+    <me>
+      y'(x) = -\dfrac{(4 - x^{1/3})^2}{x^{2/3}} 
+    </me>
+    <p>
+      (c) To evaluate <m>y'(1)</m>, we substitute <m>x=1</m> into the expression for <m>y'(x)</m>:
+    </p>
+    <me>
+      y'(1) = -\dfrac{(4 - 1^{1/3})^2}{1^{2/3}} = -(4 - 1)^2 = -9.
+    </me>
+  </solution>
+    
+      </example>
+
+
     </subsection>
 
 </section>

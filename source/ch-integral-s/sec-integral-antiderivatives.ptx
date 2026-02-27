@@ -20,7 +20,7 @@
       In many applications we care about some unknown function <m>F(x)</m>, but what we can measure or model is its rate of change,
       the derivative <m>F'(x)=f(x)</m>. Finding <m>F</m> from <m>f</m> is the process of <term>antidifferentiation</term>.
       We call <m>F</m> an <term>antiderivative</term> (or <term>primitive</term>) of <m>f</m>.
-      A helpful memory trick is “big <m>F</m>, little <m>f</m>.”
+      This is quite often spoken as “big <m>F</m> and little <m>f</m>.”
     </p>
 
     <example xml:id="ex-antiderivative-simple">
@@ -31,8 +31,10 @@
       </statement>
       <solution>
         <p>
-          Since <m>(\tfrac13 t^3)'=t^2</m> and <m>(-t)'=-1</m>, one antiderivative is
-          <m>\tfrac13 t^3-t</m>. Any constant disappears when differentiating, so the general antiderivative is
+          Since <m>(\tfrac13 t^3)'=t^2</m> and <m>(-t)'=-1</m>, so one antiderivative is
+          <m>F(t)=\tfrac13 t^3-t</m>. However, this is not the only one. For example, 
+          <m>G(t)=\tfrac13 t^3-t+5</m> also satisfies <m>G'(t)=t^2-1</m>.
+          Any constant disappears when differentiating, so the <term>general antiderivative</term> is
         </p>
         <me>
           F(t)=\tfrac13 t^3-t+C.

@@ -75,6 +75,9 @@
     </theorem>
 
 
+
+
+
 <p> Now let's take this idea and generalize it to find a formula for the derivative of the inverse of any differentiable function. </p>
 
 <algorithm xml:id="strat-derivative-inverse-general">
@@ -304,6 +307,57 @@
       </solution>
     </example>
 
+<example xml:id="ex-implicit-ln">
+      
+      <statement>
+        <p>
+          Given the equation <m>x\ln(y)+y^2=4x</m>, find <m>\displaystyle \frac{dy}{dx}</m> using implicit differentiation.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Differentiate both sides with respect to <m>x</m>. The left side requires the Product Rule on <m>x\ln(y)</m>
+          and the Chain Rule on <m>\ln(y)</m> and <m>y^2</m>.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \frac{d}{dx}\bigl(x\ln(y)\bigr)+\frac{d}{dx}\bigl(y^2\bigr)
+\amp=\amp \displaystyle \frac{d}{dx}(4x)
+\\[1.2em]
+\displaystyle \Bigl(1\cdot \ln(y)+x\cdot \frac{1}{y}\,y'\Bigr)+2y\,y'
+\amp=\amp \displaystyle 4.
+\end{array}
+        </me>
+
+        <p>
+          Now solve for <m>y'</m> by collecting terms with <m>y'</m>.
+        </p>
+
+        <me>
+\begin{array}{rcl}
+\displaystyle \frac{x}{y}\,y'+2y\,y'
+\amp=\amp \displaystyle 4-\ln(y)
+\\[1.2em]
+\displaystyle y'\left(\frac{x}{y}+2y\right)
+\amp=\amp \displaystyle 4-\ln(y)
+\\[1.2em]
+\displaystyle y'
+\amp=\amp \displaystyle \frac{4-\ln(y)}{\frac{x}{y}+2y}.
+\end{array}
+        </me>
+
+        <p>
+          A common simplification is to multiply top and bottom by <m>y</m>:
+        </p>
+
+        <me>
+          \displaystyle y'=\frac{y(4-\ln(y))}{x+2y^2}.
+        </me>
+      </solution>
+    </example>
+
     <example xml:id="ex-arctan-slope-point">
       <statement>
         <p>
@@ -465,6 +519,22 @@
   </solution>
 </exercise>
 
+
+  <exercise xml:id="tf-imp-ap-05">
+    <statement>
+      <p>
+        If <m>y=\ln(x+y)</m>, then implicit differentiation is required to find <m>\displaystyle \frac{dy}{dx}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True.</em> Since <m>y</m> appears on both sides of the equation, it is not possible to isolate <m>y</m>
+        as an explicit function of <m>x</m> without also having <m>y</m> on the right side. Therefore, implicit differentiation
+        is required to find <m>\displaystyle \frac{dy}{dx}</m>.
+      </p>
+    </solution>
+  </exercise>
+  
   <exercise>
     <statement>
       <p>
