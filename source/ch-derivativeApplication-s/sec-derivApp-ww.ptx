@@ -122,6 +122,153 @@
   </solution>
 </example>
 
+<example xml:id="prob-motion-derivApp-which-is-which">
+    <statement>
+    <p>
+      One of the curves below represents the graph of a position function, and the other
+      curve represents the graph of the corresponding velocity function.
+      Which curve is which?
+    </p>
+
+
+      <image source="images/PositionVelocity.png" width="90%">
+        <shortdescription>
+          A graph with two curves (one solid red and one dashed blue) 
+          plotted against time. The dashed curve has a local minimum and a local maximum, 
+          while the solid curve crosses the t-axis at the same t-values where the dashed 
+          curve has horizontal tangents.
+        </shortdescription>
+      </image>
+
+  </statement>
+ <solution>
+    <p>
+      First consider the possibility that the solid red curve is the graph of <m>y=s(t)</m>.
+      If that is the case, then the graph of the derivative (the velocity function) <m>y=s'(t)</m> must satisfy:
+    </p>
+
+    <ul>
+      <li>
+        <p>
+          The graph of <m>y=s'(t)</m> must pass through <m>(0,0)</m>, since the solid red curve has a horizontal tangent at <m>t=0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The graph of <m>y=s'(t)</m> must be above the <m>t</m>-axis for <m>t&lt;0</m>, since the solid red curve is increasing there.
+        </p>
+      </li>
+      <li>
+        <p>
+          The graph of <m>y=s'(t)</m> must be below the <m>t</m>-axis for <m>t&gt;0</m>, since the solid red curve is decreasing there.
+        </p>
+      </li>
+    </ul>
+
+    <p>
+      Although the dashed blue curve may pass through <m>(0,0)</m>, the rest of these sign conditions do not match it.
+      Therefore, the solid red curve cannot be <m>s(t)</m>.
+    </p>
+
+    <p>
+      Next, assume the dashed blue curve is the position function <m>y=s(t)</m>.
+      Let <m>a</m> and <m>b</m> be the <m>t</m>-values where the dashed blue curve has its local minimum and local maximum, respectively.
+      Then the derivative (the velocity function) <m>y=s'(t)</m> must satisfy:
+    </p>
+
+    <ul>
+      <li>
+        <p>
+          The graph of <m>y=s'(t)</m> must cross the <m>t</m>-axis at <m>t=a</m> and <m>t=b</m>, since the dashed blue curve has horizontal tangents at those points.
+        </p>
+      </li>
+      <li>
+        <p>
+          The graph of <m>y=s'(t)</m> must be above the <m>t</m>-axis on <m>(a,b)</m>, since the dashed blue curve is increasing there.
+        </p>
+      </li>
+      <li>
+        <p>
+          The graph of <m>y=s'(t)</m> must be below the <m>t</m>-axis for <m>t&lt;a</m> and for <m>t&gt;b</m>, since the dashed blue curve is decreasing on those intervals.
+        </p>
+      </li>
+    </ul>
+
+    <p>
+      This description matches the solid red curve. Therefore, the dashed blue curve is <m>y=s(t)</m> and the solid red curve is <m>y=s'(t)</m>.
+    </p>
+  </solution>
+</example>
+
+<example xml:id="ex-velocity-graph-questions">
+  <statement>
+    <p>
+      The graph below shows the velocity <m>v=f(t)</m> of a particle moving along a horizontal line
+      for the open interval <m>(0,10)</m>.
+    </p>
+
+    <figure xml:id="fig-velocity-graph-0-10">
+      <caption>
+        A velocity graph <m>v=f(t)</m> on <m>(0,10)</m>. Use the sign of <m>v(t)</m> and the slopes of the graph
+        to determine when the particle moves forward, slows down, has positive acceleration, and stands still.
+      </caption>
+      <image source="images/PUT-YOUR-SCREENSHOT-FILENAME-HERE.png" width="90%">
+        <shortdescription>
+          A piecewise linear graph of velocity v versus time t on the interval (0,10). The graph is below the t-axis for early times,
+          crosses v=0 at t=2, stays above the axis until t=7, lies on v=0 from t=7 to t=9, and then rises above the axis again from t=9 to t=10.
+          Several corners indicate times where the slope changes abruptly.
+        </shortdescription>
+      </image>
+    </figure>
+
+    <p>
+      (a) When does the particle move forward?
+    </p>
+    <p>
+      (b) When does the particle slow down?
+    </p>
+    <p>
+      (c) When is the particle’s acceleration positive?
+    </p>
+    <p>
+      (d) When does the particle stand still for more than an instant?
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      (a) The particle moves forward when <m>v(t) &gt; 0</m>, meaning the velocity graph is above the <m>t</m>-axis.
+      From the graph, this occurs on <m>(2,7)\cup(9,10)</m>.
+    </p>
+
+    <p>
+      (b) The particle slows down when its speed <m>|v(t)|</m> is decreasing.
+      If <m>v(t) &gt; 0</m> (moving forward), slowing down means <m>v(t)</m> is decreasing, so <m>v'(t) &lt; 0</m>.
+      If <m>v(t) &lt; 0</m> (moving backward), slowing down means <m>v(t)</m> is increasing toward zero, so <m>v'(t) &gt; 0</m>.
+    </p>
+
+    <p>
+      From the graph, <m>v(t) &lt; 0</m> on <m>(0,2)</m> and the velocity is increasing there, so the particle slows down on <m>(0,2)</m>.
+      Also, <m>v(t) &gt; 0</m> on <m>(2,7)</m> and the velocity is decreasing on <m>(6,7)</m>, so the particle slows down on <m>(6,7)</m>.
+      Therefore, the particle slows down on <m>(0,2)\cup(6,7)</m>.
+    </p>
+
+    <p>
+      At times where the velocity graph has corners, the derivative <m>v'(t)</m> (acceleration) is not defined, so those times should not be included.
+    </p>
+
+    <p>
+      (c) The acceleration is positive when <m>v'(t) &gt; 0</m>, meaning the velocity graph has positive slope.
+      From the graph, this occurs on <m>(0,4)\cup(9,10)</m> (excluding any corner points).
+    </p>
+
+    <p>
+      (d) The particle stands still when <m>v(t)=0</m>. From the graph, this happens at <m>t=2</m> and for <m>t\in[7,9]</m>.
+      Standing still for more than an instant means an interval of time, so the answer is <m>[7,9]</m>.
+    </p>
+  </solution>
+</example>
+
     </subsection>
 
    <subsection xml:id="subsec-derivApp-relatedRates">
