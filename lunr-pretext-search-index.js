@@ -5794,14 +5794,50 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.9",
   "title": "Additional Worked-Out Problems",
-  "body": " Additional Worked-Out Problems   Motion in Physics  test    Related Rates  test    Linear Approximation and L'Hopital's Rule  test    Extrema  test    Mean Value Theorem  test    Curve Sketching Part 1    Let . Find the critical points, intervals of increase\/decrease, concavity, and inflection points. Then sketch a graph.      Let . Find where is increasing or decreasing and where it is concave up or concave down. Then sketch a graph.      A differentiable function has critical points at and . The sign of is positive on , negative on , and positive on . Describe the behavior of the graph and classify the critical points.      Curve Sketching Part 2  test more    Optimization Problems  test   "
+  "body": " Additional Worked-Out Problems   Motion in Physics    The position of a particle moving along a line is given by   where is measured in meters and in seconds.  (a) Find all times when the velocity equals .  (b) Determine whether the particle is moving to the right or to the left at .  (c) Find all times when the particle has acceleration .    (a) The velocity is the derivative of the position function:   Setting the velocity equal to zero gives   Thus, the velocity equals zero at and .  (b) To determine the direction of motion at , we can evaluate the velocity at :   Since , the particle is moving to the right at .  (c) The acceleration is the derivative of the velocity function:   Setting the acceleration equal to gives   So the particle has acceleration at .      A particle moves vertically according to , where is measured in meters, in seconds, and is a positive constant.  If the particle reaches maximum height at seconds, find:  (a) the value of .  (b) the maximum height reached.    (a) The velocity is the derivative of the position function:   Since the particle reaches maximum height at , the velocity must equal zero at :   (b) To find the maximum height, we can evaluate the position function at using the value of we just found:   So the maximum height reached is meters.      One of the curves below represents the graph of a position function, and the other curve represents the graph of the corresponding velocity function. Which curve is which?   A graph with two curves (one solid red and one dashed blue) plotted against time. The dashed curve has a local minimum and a local maximum, while the solid curve crosses the t-axis at the same t-values where the dashed curve has horizontal tangents.     First consider the possibility that the solid red curve is the graph of . If that is the case, then the graph of the derivative (the velocity function) must satisfy:    The graph of must pass through , since the solid red curve has a horizontal tangent at .    The graph of must be above the -axis for , since the solid red curve is increasing there.    The graph of must be below the -axis for , since the solid red curve is decreasing there.    Although the dashed blue curve may pass through , the rest of these sign conditions do not match it. Therefore, the solid red curve cannot be .  Next, assume the dashed blue curve is the position function . Let and be the -values where the dashed blue curve has its local minimum and local maximum, respectively. Then the derivative (the velocity function) must satisfy:    The graph of must cross the -axis at and , since the dashed blue curve has horizontal tangents at those points.    The graph of must be above the -axis on , since the dashed blue curve is increasing there.    The graph of must be below the -axis for and for , since the dashed blue curve is decreasing on those intervals.    This description matches the solid red curve. Therefore, the dashed blue curve is and the solid red curve is .      The graph below shows the velocity of a particle moving along a horizontal line for the open interval .   A piecewise linear graph of velocity v versus time t on the interval (0,10). The graph is below the t-axis for early times, crosses v=0 at t=2, stays above the axis until t=7, lies on v=0 from t=7 to t=9, and then rises above the axis again from t=9 to t=10. Several corners indicate times where the slope changes abruptly.   (a) When does the particle move forward?  (b) When does the particle slow down?  (c) When is the particle’s acceleration positive?  (d) When does the particle stand still for more than an instant?    (a) The particle moves forward when , meaning the velocity graph is above the -axis. From the graph, this occurs on .  (b) The particle slows down when its speed is decreasing. If (moving forward), slowing down means is decreasing, so . If (moving backward), slowing down means is increasing toward zero, so .  From the graph, on and the velocity is increasing there, so the particle slows down on . Also, on and the velocity is decreasing on , so the particle slows down on . Therefore, the particle slows down on .  At times where the velocity graph has corners, the derivative (acceleration) is not defined, so those times should not be included.  (c) The acceleration is positive when , meaning the velocity graph has positive slope. From the graph, this occurs on (excluding any corner points).  (d) The particle stands still when . From the graph, this happens at and for . Standing still for more than an instant means an interval of time, so the answer is .      Related Rates  test    Linear Approximation and L'Hopital's Rule  test    Extrema  test    Mean Value Theorem  test    Curve Sketching Part 1    Let . Find the critical points, intervals of increase\/decrease, concavity, and inflection points. Then sketch a graph.      Let . Find where is increasing or decreasing and where it is concave up or concave down. Then sketch a graph.      A differentiable function has critical points at and . The sign of is positive on , negative on , and positive on . Describe the behavior of the graph and classify the critical points.      Curve Sketching Part 2  test more    Optimization Problems  test   "
+},
+{
+  "id": "prob-motion-derivApp",
+  "level": "2",
+  "url": "sec-derivApp-ww.html#prob-motion-derivApp",
+  "type": "Example",
+  "number": "3.9.1",
+  "title": "",
+  "body": "  The position of a particle moving along a line is given by   where is measured in meters and in seconds.  (a) Find all times when the velocity equals .  (b) Determine whether the particle is moving to the right or to the left at .  (c) Find all times when the particle has acceleration .    (a) The velocity is the derivative of the position function:   Setting the velocity equal to zero gives   Thus, the velocity equals zero at and .  (b) To determine the direction of motion at , we can evaluate the velocity at :   Since , the particle is moving to the right at .  (c) The acceleration is the derivative of the velocity function:   Setting the acceleration equal to gives   So the particle has acceleration at .   "
+},
+{
+  "id": "prob-motion-derivApp-maxHeight",
+  "level": "2",
+  "url": "sec-derivApp-ww.html#prob-motion-derivApp-maxHeight",
+  "type": "Example",
+  "number": "3.9.2",
+  "title": "",
+  "body": "  A particle moves vertically according to , where is measured in meters, in seconds, and is a positive constant.  If the particle reaches maximum height at seconds, find:  (a) the value of .  (b) the maximum height reached.    (a) The velocity is the derivative of the position function:   Since the particle reaches maximum height at , the velocity must equal zero at :   (b) To find the maximum height, we can evaluate the position function at using the value of we just found:   So the maximum height reached is meters.   "
+},
+{
+  "id": "prob-motion-derivApp-which-is-which",
+  "level": "2",
+  "url": "sec-derivApp-ww.html#prob-motion-derivApp-which-is-which",
+  "type": "Example",
+  "number": "3.9.3",
+  "title": "",
+  "body": "  One of the curves below represents the graph of a position function, and the other curve represents the graph of the corresponding velocity function. Which curve is which?   A graph with two curves (one solid red and one dashed blue) plotted against time. The dashed curve has a local minimum and a local maximum, while the solid curve crosses the t-axis at the same t-values where the dashed curve has horizontal tangents.     First consider the possibility that the solid red curve is the graph of . If that is the case, then the graph of the derivative (the velocity function) must satisfy:    The graph of must pass through , since the solid red curve has a horizontal tangent at .    The graph of must be above the -axis for , since the solid red curve is increasing there.    The graph of must be below the -axis for , since the solid red curve is decreasing there.    Although the dashed blue curve may pass through , the rest of these sign conditions do not match it. Therefore, the solid red curve cannot be .  Next, assume the dashed blue curve is the position function . Let and be the -values where the dashed blue curve has its local minimum and local maximum, respectively. Then the derivative (the velocity function) must satisfy:    The graph of must cross the -axis at and , since the dashed blue curve has horizontal tangents at those points.    The graph of must be above the -axis on , since the dashed blue curve is increasing there.    The graph of must be below the -axis for and for , since the dashed blue curve is decreasing on those intervals.    This description matches the solid red curve. Therefore, the dashed blue curve is and the solid red curve is .   "
+},
+{
+  "id": "ex-velocity-graph-questions",
+  "level": "2",
+  "url": "sec-derivApp-ww.html#ex-velocity-graph-questions",
+  "type": "Example",
+  "number": "3.9.4",
+  "title": "",
+  "body": "  The graph below shows the velocity of a particle moving along a horizontal line for the open interval .   A piecewise linear graph of velocity v versus time t on the interval (0,10). The graph is below the t-axis for early times, crosses v=0 at t=2, stays above the axis until t=7, lies on v=0 from t=7 to t=9, and then rises above the axis again from t=9 to t=10. Several corners indicate times where the slope changes abruptly.   (a) When does the particle move forward?  (b) When does the particle slow down?  (c) When is the particle’s acceleration positive?  (d) When does the particle stand still for more than an instant?    (a) The particle moves forward when , meaning the velocity graph is above the -axis. From the graph, this occurs on .  (b) The particle slows down when its speed is decreasing. If (moving forward), slowing down means is decreasing, so . If (moving backward), slowing down means is increasing toward zero, so .  From the graph, on and the velocity is increasing there, so the particle slows down on . Also, on and the velocity is decreasing on , so the particle slows down on . Therefore, the particle slows down on .  At times where the velocity graph has corners, the derivative (acceleration) is not defined, so those times should not be included.  (c) The acceleration is positive when , meaning the velocity graph has positive slope. From the graph, this occurs on (excluding any corner points).  (d) The particle stands still when . From the graph, this happens at and for . Standing still for more than an instant means an interval of time, so the answer is .   "
 },
 {
   "id": "prob-cs1-poly",
   "level": "2",
   "url": "sec-derivApp-ww.html#prob-cs1-poly",
   "type": "Example",
-  "number": "3.9.1",
+  "number": "3.9.5",
   "title": "",
   "body": "  Let . Find the critical points, intervals of increase\/decrease, concavity, and inflection points. Then sketch a graph.   "
 },
@@ -5810,7 +5846,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-derivApp-ww.html#prob-cs1-rational",
   "type": "Example",
-  "number": "3.9.2",
+  "number": "3.9.6",
   "title": "",
   "body": "  Let . Find where is increasing or decreasing and where it is concave up or concave down. Then sketch a graph.   "
 },
@@ -5819,7 +5855,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-derivApp-ww.html#prob-cs1-sign-chart",
   "type": "Example",
-  "number": "3.9.3",
+  "number": "3.9.7",
   "title": "",
   "body": "  A differentiable function has critical points at and . The sign of is positive on , negative on , and positive on . Describe the behavior of the graph and classify the critical points.   "
 },
