@@ -6,8 +6,122 @@
 
    <subsection xml:id="subsec-derivApp-motion">
       <title><xref ref="sec-derivApp-motion"/> Motion in Physics</title>
-      <p> test
-      </p>
+ 
+      
+<example xml:id="prob-motion-derivApp">
+  <statement>
+    <p>
+      The position of a particle moving along a line is given by
+    </p>
+
+    <me>
+      s(t) = 2t^3 - 9t^2 + 12t, \quad t \ge 0,
+    </me>
+
+    <p>
+      where <m>s</m> is measured in meters and <m>t</m> in seconds.
+    </p>
+
+    <p>
+      (a) Find all times when the velocity equals <m>0</m>.
+    </p>
+
+    <p>
+      (b) Determine whether the particle is moving to the right or to the left at <m>t = 3</m>.
+    </p>
+
+    <p>
+      (c) Find all times when the particle has acceleration <m>6 \text{ m/sec}^2</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      (a) The velocity is the derivative of the position function:
+    </p>
+    <me>
+      v(t) = s'(t) = 6t^2 - 18t + 12.
+    </me>
+    <p>
+      Setting the velocity equal to zero gives
+    </p>
+    <me>
+      6t^2 - 18t + 12 = 0 \implies t^2 - 3t + 2 = 0 \implies (t-1)(t-2) = 0.
+    </me>
+    <p>
+      Thus, the velocity equals zero at <m>t = 1</m> and <m>t = 2</m>.
+    </p>
+    <p> (b) To determine the direction of motion at <m>t = 3</m>, we can evaluate the velocity at <m>t = 3</m>:
+    </p>
+    <me>
+      v(3) = 6(3)^2 - 18(3) + 12 = 54 - 54 + 12 = 12.
+    </me>
+    <p>
+      Since <m>v(3) \geq 0</m>, the particle is moving to the right at <m>t = 3</m>.
+    </p>
+    <p>
+      (c) The acceleration is the derivative of the velocity function:
+    </p>
+    <me>
+      a(t) = v'(t) = 12t - 18.
+    </me>
+    <p>
+      Setting the acceleration equal to <m>6</m> gives
+    </p>
+    <me>
+      12t - 18 = 6 \implies 12t = 24 \implies t = 2.
+    </me>
+    <p>
+      So the particle has acceleration <m>6 \text{ m/sec}^2</m> at <m>t = 2</m>.
+    </p>
+  </solution>
+</example>
+
+
+<example xml:id="prob-motion-derivApp-maxHeight">
+  <statement>
+    <p>
+      A particle moves vertically according to
+      <m>s(t)=15t-at^2</m>,
+      where <m>s</m> is measured in meters, <m>t</m> in seconds, and <m>a</m> is a positive constant.
+    </p>
+
+    <p>
+      If the particle reaches maximum height at <m>t=3</m> seconds, find:
+    </p>
+
+    <p>
+      (a) the value of <m>a</m>.
+    </p>
+
+    <p>
+      (b) the maximum height reached.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      (a) The velocity is the derivative of the position function:
+    </p>
+    <me>
+      v(t) = s'(t) = 15 - 2at.
+    </me>
+    <p>
+      Since the particle reaches maximum height at <m>t=3</m>, the velocity must equal zero at <m>t=3</m>:
+    </p>
+    <me>
+      v(3) = 15 - 2a(3) = 15 - 6a = 0 \implies 6a = 15 \implies a = \frac{5}{2}.
+    </me>
+    <p>
+      (b) To find the maximum height, we can evaluate the position function at <m>t=3</m> using the value of <m>a</m> we just found:
+    </p>
+    <me>
+      s(3) = 15(3) - \frac{5}{2}(3)^2 = 45 - \frac{5}{2}(9) = 45 - \frac{45}{2} = \frac{45}{2}  
+    </me>
+    <p>
+      So the maximum height reached is <m>\frac{45}{2}</m> meters.
+    </p>
+  </solution>
+</example>
+
     </subsection>
 
    <subsection xml:id="subsec-derivApp-relatedRates">

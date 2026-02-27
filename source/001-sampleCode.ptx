@@ -50,10 +50,24 @@
   </image>
 
 
-
-
-
-
-
-
 --> 
+
+<!-- Regular ole figure with caption and short description -->
+
+<!-- 
+
+<figure xml:id="fig-horizontal-asymptote">
+  <caption>
+    A function approaching the horizontal asymptote <m>y=L</m> as
+    <m>x\to\infty</m>.
+  </caption>
+
+      <image source="images/asymp01.png" width="90%">
+        <shortdescription>
+          Graph of a function that gets closer and closer to a horizontal line as x increases.
+        </shortdescription>
+      </image>
+</figure>
+
+
+-->

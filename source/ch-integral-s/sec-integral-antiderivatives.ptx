@@ -5,11 +5,20 @@
 
   <objectives>
     <ul>
-      <li>Interpret an antiderivative as “reversing differentiation” and connect it to rates of change (velocity, acceleration).</li>
-      <li>Find general antiderivatives using basic antidifferentiation rules and linearity.</li>
-      <li>Solve simple initial value problems by using a given function value to determine the constant of integration.</li>
-      <li>Use simple substitution patterns (reverse Chain Rule) when a constant multiple is missing.</li>
-      <li>Recognize when an integrand must be rewritten (for example, by algebra or a trig identity) before antidifferentiating.</li>
+      <li>Interpret an antiderivative as “reversing differentiation” and connect it to rates of change.</li>
+      <li>Find general antiderivatives using basic antidifferentiation rules and combine these over addition, subtraction, 
+        or multiplying by a constant.</li>
+      <li>Solve simple initial value problems by using a given function value to determine the unknown constant.</li>
+      <li>
+      Recognize when algebraic manipulation is needed before antidifferentiating (e.g., rewriting quotients or using identities).
+    </li>
+      <li>Reverse the Chain Rule in simple cases when a constant multiple is missing.</li>
+      <li>
+      Verify an antiderivative by differentiating and checking that it produces the original function.
+    </li>
+    <li>
+      Interpret antiderivatives in applied contexts, including recovering velocity and position from acceleration.
+    </li>
     </ul>
   </objectives>
 
@@ -39,12 +48,34 @@
         <me>
           F(t)=\tfrac13 t^3-t+C.
         </me>
+        <p> Notice that this constant shifts the graph up or down but does not change slopes. 
+          Visually, the family of antiderivatives looks like a vertical stack of curves, all with the same shape and slopes, 
+          but different heights.
+        </p>
+
+<figure xml:id="fig-antiderivative-family">
+<caption>
+The red curve represents <m>y = f(t)</m>, 
+while the black curves represent a family of antiderivatives <m>y = F(t)</m>. 
+Each curve differs by a constant <m>c</m>, producing vertical shifts of the same basic shape.
+</caption>
+
+      <image source="images/generalAntiderivative01.png" width="90%">
+        <shortdescription>
+A red curve y = f(t) and a family of black curves y = F(t) labeled c = -2, -1, 0, 1, 2, 
+illustrating vertical shifts corresponding to different constants of integration.
+</shortdescription>
+      </image>
+</figure>
+
+
       </solution>
     </example>
 
     <p>
-      Different choices of <m>C</m> shift the graph up or down but do not change slopes.
-      If we also know a single value like <m>F(0)=5</m>, then we can determine <m>C</m> and get a unique function.
+      So as we saw in our previous example, there are infinitely many antiderivatives of a given function, which appear to 
+      be differing by a constant.
+      However, if we also know a single value like <m>F(0)=5</m>, then we can determine <m>C</m> and get a unique function.
       Problems like this are called <term>initial value problems</term>.
     </p>
 
@@ -53,23 +84,25 @@
         <p>
           Find the unique function <m>F</m> satisfying <m>F'(t)=t^2+2</m> and <m>F(0)=5</m>.
         </p>
+
+        <p><alert><em>Alternative Phrasing</em></alert>: Solve the initial value problem <m>F'(t)=t^2+2</m>, <m>F(0)=5</m>.
+        </p>
       </statement>
       <solution>
         <p>
-          An antiderivative of <m>t^2+2</m> is <m>\tfrac13 t^3+2t</m>, so
-          <m>F(t)=\tfrac13 t^3+2t+C</m>.
-          Plug in <m>t=0</m>:
-          <m>F(0)=C=5</m>.
-        </p>
-        <me>
-          F(t)=\tfrac13 t^3+2t+5.
-        </me>
-      </solution>
+          The general antiderivative of <m>t^2+2</m> is <m>\tfrac13 t^3+2t+C</m>.
+           To find the particular solution, we use the initial condition <m>F(0)=5</m>:
+          </p>
+          <me>
+            F(0)=\tfrac13 (0)^3+2(0)+C=5 \Rightarrow C=5.
+          </me>
+          <p>
+            So the unique function is <m>F(t)=\tfrac13 t^3+2t+5</m>.
+          </p>
+        </solution>
     </example>
-  </subsection>
 
-  <subsection xml:id="ssec-antiderivatives-definition-theorem">
-    <title>Definition and the Constant of Integration</title>
+    
 
     <definition xml:id="def-antiderivative">
       <title>Antiderivative</title>
@@ -85,36 +118,29 @@
       <title>Antiderivatives Differ by a Constant</title>
       <statement>
         <p>
-          Suppose <m>F_0(x)</m> is one antiderivative of <m>f(x)</m> on an interval.
-          Then every antiderivative of <m>f</m> has the form
-          <m>F(x)=F_0(x)+C</m> for some constant <m>C</m>.
+          Suppose <m>F_0(x)</m> is one antiderivative of <m>f(x)</m> on an interval. Then: 
+        </p> 
+        <p> (a) The <term>general antiderivative</term> of <m>f(x)</m> is <m>F(x)= F_0(x)+C</m>, for any constant <m>C</m>. 
+        There are no other antiderivatives of <m>f</m> besides those of this form.</p>
+        <p> (b) For any point <m>c</m> in the interval and any real number <m>A</m>, there is exactly one antiderivative 
+          <m>F(x)</m> satisfying <m>F'(x)=f(x)</m> and <m>F(c)=A</m>.
         </p>
       </statement>
       <proof>
-        <p>
+        <p> (a)
           If <m>F</m> is any antiderivative of <m>f</m>, then <m>F'(x)=f(x)=F_0'(x)</m>.
           By the Uniqueness Theorem from the Mean Value Theorem section, two functions with the same derivative differ by a constant.
           Therefore <m>F(x)=F_0(x)+C</m>.
         </p>
-      </proof>
-    </theorem>
-
-    <theorem xml:id="thm-ivp-unique-antiderivative">
-      <title>Uniqueness with One Function Value</title>
-      <statement>
-        <p>
-          If <m>F_0</m> is an antiderivative of <m>f</m> on an interval, then for any point <m>c</m> in the interval
-          and any real number <m>A</m>, there is exactly one antiderivative <m>F</m> satisfying
-          <m>F'(x)=f(x)</m> and <m>F(c)=A</m>.
-        </p>
-      </statement>
-      <proof>
-        <p>
-          By the previous theorem, any antiderivative has the form <m>F(x)=F_0(x)+C</m>.
+        <p> (b)
+          By part (a), any antiderivative has the form <m>F(x)=F_0(x)+C</m>.
           Requiring <m>F(c)=A</m> gives <m>F_0(c)+C=A</m>, so <m>C=A-F_0(c)</m>, which is a single value.
         </p>
       </proof>
     </theorem>
+
+   
+    
   </subsection>
 
   <subsection xml:id="ssec-antiderivatives-rules">
@@ -122,60 +148,161 @@
 
     <p>
       Antidifferentiation starts by reversing the derivative rules you already know.
-      The key is to build a library of basic patterns, then use linearity to break complicated expressions into simpler pieces.
+      The key is to build a library of basic patterns, then we can extend these to more complicated functions using our rules of derivatives.
     </p>
 
+
+    <theorem xml:id="thm-antiderivative-rules">
+      <title>Basic Antiderivative Rules</title>
+      <statement>
+        <p>
+          For each of the following let <m>F(x)</m> be an antiderivative of <m>f(x)</m>.
+          Then:
+        <ul>
+          <li>
+            <p>
+              If <m>f(x)=x^n</m> for some integer <m>n\neq -1</m>, then <m>F(x)=\frac{1}{n+1}x^{n+1}+C</m>.
+              (This is the <term>power rule</term> for antidifferentiation.)
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>f(x)=\frac{1}{x}</m>, then <m>F(x)=\ln|x|+C</m>.
+              (This is a special case of the power rule, but it is important enough to be called out separately.)
+            </p>
+          </li>
+          <li>
+            <p> <alert>Trigonometric functions</alert>: 
+              <ul>
+                <li>
+                  <p>
+                    If <m>f(x)=\cos(x)</m>, then <m>F(x)=\sin(x)+C</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If <m>f(x)=\sin(x)</m>, then <m>F(x)=-\cos(x)+C</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If <m>f(x)=\sec^2(x)</m>, then <m>F(x)=\tan(x)+C</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If <m>f(x)=\sec(x)\tan(x)</m>, then <m>F(x)=\sec(x)+C</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              <alert>Exponential functions</alert>: 
+              <ul> 
+                <li>
+                  <p>
+                    If <m>f(x)=e^x</m>, then <m>F(x)=e^x+C</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If <m>f(x)=a^x</m> for some constant <m>a\gt 0</m> (and <m>a\neq 1</m>), then <m>F(x)=\frac{1}{\ln(a)}a^x+C</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              <alert> Inverse trig functions</alert>:
+              <ul>
+                <li>
+                  <p>
+                    If <m>f(x)=\dfrac{1}{\sqrt{1-x^2}}</m>, then <m>F(x)=\arcsin(x)+C</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If <m>f(x)=\dfrac{1}{1+x^2}</m>, then <m>F(x)=\arctan(x)+C</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+            
+        </ul>
+        </p>
+        
+      </statement>
+      <proof>
+        <p>
+          Each of these can be verified by differentiating 
+          the proposed antiderivative and confirming you get back the original function.
+        </p>
+      </proof>
+    </theorem>
+
+
+    <remark>
+      <p> 
+     Notice the derivative of <m>\ln|x|</m> is <m>\frac{1}{x}</m> which takes into account both positive and negative values of <m>x</m>, 
+     so the antiderivative of <m>\frac{1}{x}</m> must include an absolute value.  
+      </p>
+      <p>  
+        If the interval you are working with has only positive values of <m>x</m>, then you can drop the absolute value and 
+        write the antiderivative as <m>\ln(x)+C</m>.
+      </p> 
+    </remark>
+    
+
+    <p> Now that we have the building blocks for antiderivatives, 
+      we can also reverse the rules of derivatives to find antiderivatives of more complicated functions with sums / differences / 
+    constants. </p>
+
+
     <theorem xml:id="thm-antiderivative-linearity">
-      <title>Linearity of Antiderivatives</title>
+      <title>Sums and Constant Multiples</title>
       <statement>
         <p>
           If <m>F'(x)=f(x)</m> and <m>G'(x)=g(x)</m>, then for constants <m>a,b</m>,
           an antiderivative of <m>af(x)+bg(x)</m> is <m>aF(x)+bG(x)</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          This follows from the linearity of derivatives:
+          <m>(aF(x)+bG(x))' = aF'(x)+bG'(x)=af(x)+bg(x)</m>.
+        </p>
+      </proof>
     </theorem>
 
-    <p>
-      Here are several basic patterns (each includes the constant of integration).
-    </p>
 
-    <me>
-      \begin{aligned}
-      \text{Power rule:}\quad &amp;\text{if } n\neq -1,\ \ \int x^n\,dx \text{ corresponds to } \frac{1}{n+1}x^{n+1}+C.\\
-      \text{Special case:}\quad &amp;\text{an antiderivative of } \frac{1}{x} \text{ is } \ln|x|+C.\\
-      \text{Trig:}\quad &amp;\int \cos(x)\,dx \text{ corresponds to } \sin(x)+C,\qquad
-      \int \sin(x)\,dx \text{ corresponds to } -\cos(x)+C.\\
-      &amp;\int \sec^2(x)\,dx \text{ corresponds to } \tan(x)+C,\qquad
-      \int \sec(x)\tan(x)\,dx \text{ corresponds to } \sec(x)+C.
-      \end{aligned}
-    </me>
+    <p> Now let's see some examples!</p> 
 
-    <p>
-      We are not formally defining integrals yet, so you can read the display above as a list of “reverse derivative” facts.
-      The important idea is that the derivative table can be read backward, with a <m>+C</m> added.
-    </p>
+</subsection>
+<subsection xml:id="subsec-SelectExamples">
+  <title>Select Examples</title>
+  
 
     <example xml:id="ex-antiderivative-linearity">
       <statement>
         <p>
           Find a general antiderivative of
-          <m>f(x)=7x^3-x\sqrt{x}+\dfrac{3}{x^2}-\dfrac{4}{\cos^2(x)}</m>.
+          <m>f(x)=7x^3-x\sqrt{x}+\dfrac{3}{x^2}-\dfrac{4}{\cos^2(x)} + e^x</m>.
         </p>
       </statement>
       <solution>
-        <p>
-          Rewrite using exponents and secant:
-          <m>x\sqrt{x}=x^{3/2}</m>,
-          <m>\dfrac{3}{x^2}=3x^{-2}</m>,
-          and <m>\dfrac{1}{\cos^2(x)}=\sec^2(x)</m>.
-          Then antidifferentiate term-by-term:
+        <p> First let's rewrite our function as a sum of basic patterns:
+          <m>f(x)=7x^3-x^{3/2}+3x^{-2}-4\sec^2(x)+e^x</m>.
+          Then we can antidifferentiate term-by-term using the rules we know:
         </p>
-
         <me>
-          \begin{aligned}
+        \begin{aligned}
           F(x)
-          &amp;= 7\cdot \frac{1}{4}x^4 \;-\; \frac{1}{\frac52}x^{5/2} \;+\; 3\cdot\frac{1}{-1}x^{-1} \;-\;4\tan(x) + C\\[0.3em]
-          &amp;= \frac{7}{4}x^4 \;-\; \frac{2}{5}x^{5/2} \;-\;\frac{3}{x}\;-\;4\tan(x)+C.
+          &amp;= 7\cdot \frac{1}{4}x^4 \;-\; \frac{1}{\frac52}x^{5/2} \;+\; 3\cdot\frac{1}{-1}x^{-1} \;-\;4\tan(x) + e^x + C\\[0.3em]
+          &amp;= \frac{7}{4}x^4 \;-\; \frac{2}{5}x^{5/2} \;-\;\frac{3}{x}\;-\;4\tan(x)+e^x+C.
           \end{aligned}
         </me>
 
@@ -184,63 +311,77 @@
         </p>
       </solution>
     </example>
-  </subsection>
-
-  <subsection xml:id="ssec-antiderivatives-reverse-chain">
-    <title>A Simple “Reverse Chain Rule” Pattern</title>
 
     <p>
-      Sometimes a function looks like the derivative of a composition, except for a missing constant multiple.
-      In these cases, you can often fix the issue by introducing the correct constant.
+      We can also reverse the Chain Rule when we see a composition, but the constant multiple is missing.
     </p>
 
     <example xml:id="ex-antiderivative-cos3x">
       <statement>
         <p>
-          Find a general antiderivative of <m>f(x)=\cos(3x)</m>.
+          Find the antiderivative of <m>f(x)=\cos(3x)</m> such that <m>F(0)=2</m>.
         </p>
       </statement>
       <solution>
         <p>
-          Since <m>(\sin(3x))'=3\cos(3x)</m>, we divide by 3:
+          Since <m>(\sin(3x))'=3\cos(3x)</m>, we divide by 3 to get the general antiderivative of <m>\cos(3x)</m>:
         </p>
         <me>
           F(x)=\tfrac13\sin(3x)+C.
         </me>
+        <p>
+          Now use the initial condition <m>F(0)=2</m>:
+          <m>\tfrac13\sin(0)+C=2</m>, so <m>C=2</m>. Therefore
+        </p>
+        <me>
+          F(x)=\tfrac13\sin(3x)+2.
+        </me>
+                <p> Again, we can check by differentiating <m>F(x)</m> and confirming we get back <m>f(x)</m>.
+        </p>
       </solution>
     </example>
+
+    <p>
+      When the function is a product or quotient, we cannot simply antidifferentiate each factor 
+      and hope to get an antiderivative of the whole function.
+      In general, there is no simple formula for the antiderivative of a product or quotient.
+      However, if we can rewrite the expression as a sum of basic patterns, then we can antidifferentiate term-by-term.
+    </p> 
 
     <example xml:id="ex-antiderivative-algebra-first">
       <statement>
         <p>
-          Find a general antiderivative of <m>\displaystyle f(x)=\frac{x+4}{\sqrt{x}}</m>.
+          Find a general antiderivative of <m>\displaystyle f(x)=\frac{\sqrt{x}+4}{x}</m>.
         </p>
       </statement>
       <solution>
         <p>
           Rewrite as a sum of powers:
-          <m>\displaystyle \frac{x+4}{\sqrt{x}}=\frac{x}{\sqrt{x}}+\frac{4}{\sqrt{x}}=x^{1/2}+4x^{-1/2}</m>.
+          <m>\displaystyle \frac{\sqrt{x}+4}{x}=\frac{x^{1/2}}{x}+\frac{4}{x}=x^{-1/2}+4x^{-1}</m>.
           Then antidifferentiate term-by-term:
         </p>
 
         <me>
           \begin{aligned}
           F(x)
-          &amp;= \frac{1}{\frac32}x^{3/2}+4\cdot\frac{1}{\frac12}x^{1/2}+C\\
-          &amp;= \tfrac23 x\sqrt{x}+8\sqrt{x}+C.
+          &amp;= \frac{1}{\frac12}x^{1/2}+4\cdot\ln|x|+C\\
+          &amp;= 2x^{1/2}+4\ln|x|+C\\
+          &amp;= 2\sqrt{x}+4\ln|x|+C.
           \end{aligned}
         </me>
       </solution>
     </example>
 
+    <remark xml:id="rmk-antiderivative-products-quotients">
+      <title>Products and Quotients</title>
     <p>
-      Be careful with products and quotients. In general, the antiderivative of a product is not the product of antiderivatives.
-      When you can rewrite the expression as a sum of basic patterns, the problem becomes manageable.
+      Be careful with products and quotients! In general, the antiderivative of a product is not the product of antiderivatives (same for quotients).
+    We will learn how to handle these later, but for now,
+we can sometimes antidifferentiate products or quotients if we can expand them
+into sums of Basic Antiderivatives.
     </p>
-  </subsection>
-
-  <subsection xml:id="ssec-antiderivatives-trig-identity">
-    <title>When You Must Rewrite First</title>
+    </remark>
+      
 
     <example xml:id="ex-antiderivative-sin-squared">
       <statement>
@@ -248,39 +389,47 @@
           Find a general antiderivative of <m>f(x)=\sin^2(x)</m>.
         </p>
       </statement>
+      <hint>
+        <p>
+          Use the identity <m>\cos(2x)=1-2\sin^2(x)</m> to rewrite <m>\sin^2(x)</m> as a sum of basic patterns.
+        </p>
+      </hint>
       <solution>
         <p>
-          The function <m>\sin^2(x)</m> is not on our basic list.
-          Use the identity <m>\cos(2x)=1-2\sin^2(x)</m>, which gives
-          <m>\sin^2(x)=\tfrac12(1-\cos(2x))</m>.
-          Now antidifferentiate:
+          The function <m>\sin^2(x)</m> is not on our basic list (it is the product of two sines) so we must be careful.
+          Using the double angle formula from trig we know <m>\cos(2x)=1-2\sin^2(x)</m>, which gives
+          <me>\sin^2(x)=\tfrac12(1-\cos(2x)) = \tfrac12 - \tfrac12\cos(2x)</me>
+          Now we can find the antidifferentiate:
         </p>
 
         <me>
           \begin{aligned}
-          \int \sin^2(x)\,dx
-          &amp;leftrightarrow \int \left(\tfrac12-\tfrac12\cos(2x)\right)\,dx\\
-          &amp;\leftrightarrow \tfrac12 x-\tfrac12\cdot \tfrac12\sin(2x)+C\\
-          &amp;= \tfrac12 x-\tfrac14\sin(2x)+C.
+          F(x)
+          &amp;= \tfrac12 x - \tfrac12\cdot \tfrac{1}{2}\sin(2x) + C\\
+          &amp;= \tfrac12 x - \tfrac14\sin(2x) + C.
           \end{aligned}
         </me>
+        
+        <p>
+          We can check by differentiating <m>F(x)</m> and confirming we get back <m>f(x)</m>.
+        </p>
       </solution>
     </example>
   </subsection>
 
   <subsection xml:id="ssec-antiderivatives-accel-vel-pos">
-    <title>Acceleration, Velocity, and Position</title>
+    <title>Application: Acceleration, Velocity, and Position</title>
 
-    <p>
-      In motion problems, derivatives connect position, velocity, and acceleration:
-      <m>v(t)=s'(t)</m> and <m>a(t)=v'(t)=s''(t)</m>.
-      If we know acceleration and some initial conditions, we can recover velocity and position by antidifferentiating twice.
-    </p>
+    <p> 
+      Previously we have seen how derivatives connect position, velocity, and acceleration in motion problems. 
+      Now we can use antidifferentiation to go in the opposite direction. 
+       If we know acceleration and some initial conditions, we can recover velocity and position by antidifferentiating twice.
+    </p> 
 
     <example xml:id="ex-antiderivative-rocket">
       <statement>
         <p>
-          A rocket has acceleration <m>a(t)=t+1</m> (in m/sec<sup>2</sup>).
+          A rocket has acceleration <m>a(t)=t+1</m> (in <m> \text{m}/\text{sec}^2</m>).
           At time <m>t=1</m>, its height is <m>s(1)=10</m> meters and its velocity is <m>v(1)=3</m> m/sec.
           Find the velocity function <m>v(t)</m> and the height function <m>s(t)</m>.
         </p>
@@ -311,7 +460,6 @@
         <me>
           \begin{aligned}
           s(t)
-          &amp;= \int \left(\tfrac12 t^2+t+\tfrac32\right)\,dt \ \text{(as antiderivative facts)}\\
           &amp;= \tfrac12\cdot\tfrac13 t^3+\tfrac12 t^2+\tfrac32 t + B\\
           &amp;= \tfrac16 t^3+\tfrac12 t^2+\tfrac32 t + B.
           \end{aligned}
@@ -354,73 +502,225 @@
   <exercises xml:id="exercises-antiderivatives">
     <title>Practice / Study Problems</title>
 
-    <exercisegroup>
-      <title>Basic Antiderivatives</title>
+  
 
-      <exercise xml:id="prob-anti-01">
-        <statement>
-          <p>
-            Find a general antiderivative of each function.
-          </p>
-          <ol>
-            <li><p><m>f(x)=6x^5-4x^2+9</m></p></li>
-            <li><p><m>g(x)=\dfrac{5}{x^2}-\sqrt{x}</m></p></li>
-            <li><p><m>h(x)=3\cos(x)-2\sec^2(x)</m></p></li>
-          </ol>
-        </statement>
-      </exercise>
 
-      <exercise xml:id="prob-anti-02">
-        <statement>
-          <p>
-            Find a general antiderivative of <m>f(x)=\cos(5x)</m>.
-          </p>
-        </statement>
-      </exercise>
-    </exercisegroup>
+  <exercisegroup>
+    <title>Some True/False Problems</title>
 
-    <exercisegroup>
-      <title>Rewrite First</title>
+    <introduction>
+      <p>
+        Determine whether each statement is true or false and briefly justify your reasoning.
+      </p>
+    </introduction>
 
-      <exercise xml:id="prob-anti-03">
-        <statement>
-          <p>
-            Find a general antiderivative of <m>\displaystyle f(x)=\frac{2x-1}{\sqrt{x}}</m>.
-            (Rewrite as a sum of powers first.)
-          </p>
-        </statement>
-      </exercise>
 
-      <exercise xml:id="prob-anti-04">
-        <statement>
-          <p>
-            Find a general antiderivative of <m>\cos^2(x)</m>.
-            (Hint: use <m>\cos(2x)=2\cos^2(x)-1</m>.)
-          </p>
-        </statement>
-      </exercise>
-    </exercisegroup>
 
-    <exercisegroup>
-      <title>Initial Value Problems</title>
+    
+  <exercise xml:id="ex-tf01">
+    <statement>
+      <p>
+        If <m>F'(x)=f(x)</m> and <m>G'(x)=f(x)</m> on an interval, then <m>F(x)-G(x)</m> is constant on that interval.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True</em>. Since <m>F'(x)=G'(x)</m>, the function <m>F(x)-G(x)</m> has derivative zero, so it is constant.
+      </p>
+    </solution>
+  </exercise>
 
-      <exercise xml:id="prob-anti-05">
-        <statement>
-          <p>
-            Find the unique function <m>F</m> such that <m>F'(x)=4x^3-6x</m> and <m>F(2)=1</m>.
-          </p>
-        </statement>
-      </exercise>
+  <exercise xml:id="ex-tf02">
+    <statement>
+      <p>
+        <m>\dfrac{d}{dx}\bigl(x^5+3\bigr)=5x^4</m>, so one antiderivative of <m>5x^4</m> is <m>x^5+3</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True</em>. The derivative of <m>x^5+3</m> is indeed <m>5x^4</m>, so it is an antiderivative.
+        In fact, the general antiderivative is <m>x^5+C</m>.
+      </p>
+    </solution>
+  </exercise>
 
-      <exercise xml:id="prob-anti-06">
-        <statement>
-          <p>
-            A particle moves on a line with acceleration <m>a(t)=6t</m>.
-            At <m>t=0</m>, the velocity is <m>v(0)=2</m> and the position is <m>s(0)=-1</m>.
-            Find <m>v(t)</m> and <m>s(t)</m>.
-          </p>
-        </statement>
-      </exercise>
+
+  
+
+  
+  <exercise xml:id="ex-tf03">
+    <statement>
+      <p>
+        If <m>f(x)=\cos(x)</m>, then a general antiderivative is <m>\sin(x)+C</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True</em>. The derivative of <m>\sin(x)+C</m> is <m>\cos(x)</m>, so it is the general antiderivative of <m>\cos(x)</m>.
+      </p>
+      </solution>
+  </exercise>
+
+  <exercise xml:id="ex-tf04">
+    <statement>
+      <p>
+        An antiderivative of <m>\sin(x)</m> is <m>\cos(x)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False</em>. The derivative of <m>\cos(x)</m> is <m>-\sin(x)</m>, so it is not an antiderivative of <m>\sin(x)</m>.
+        In fact, the general antiderivative of <m>\sin(x)</m> is <m>-\cos(x)+C</m>.
+      </p>
+      </solution>
+  </exercise>
+
+    <exercise xml:id="ex-tf05">
+    <statement>
+      <p>
+        If <m>f(x)=e^{2x}</m>, then a general antiderivative is <m>\tfrac12 e^{2x}+C</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True</em>. The derivative of <m>\tfrac12 e^{2x}+C</m> is <m>e^{2x}</m>, so it is the general antiderivative of <m>e^{2x}</m>.
+      </p>
+      </solution>
+  </exercise>
+
+
+  <exercise xml:id="ex-tf06">
+    <statement>
+      <p>
+        If <m>F'(x)=e^x</m> and <m>F(0)=7</m>, then <m>F(x)=e^x+7</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False</em>. The antiderivative of <m>e^x</m> is <m>e^x+C</m>. Applying the initial condition <m>F(0)=7</m>, we get:
+        <me>
+          F(0)=e^0+C=1+C=7 \Rightarrow C=6.
+        </me>
+        So the correct function is <m>F(x)=e^x+6</m>.
+      </p>
+    </solution>
+  </exercise>
+
+
+  <exercise xml:id="ex-tf07">
+    <statement>
+      <p>
+        If <m>f(x)=\cos(3x)</m>, then an antiderivative is <m>\sin(3x)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False</em>. The derivative of <m>\sin(3x)</m> is <m>3\cos(3x)</m>, so it is not an antiderivative of <m>\cos(3x)</m>.
+        In fact, the general antiderivative of <m>\cos(3x)</m> is <m>\tfrac13\sin(3x)+C</m>.
+      </p>
+    </solution>
+  </exercise>
+
+
+  <exercise xml:id="ex-tf08">
+    <statement>
+      <p>
+        The antiderivative of a sum equals the sum of antiderivatives.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True</em>. If <m>F'(x)=f(x)</m> and <m>G'(x)=g(x)</m>, then <m>(F(x)+G(x))' = F'(x)+G'(x)=f(x)+g(x)</m>.
+         So an antiderivative of <m>f(x)+g(x)</m> is <m>F(x)+G(x)</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-tf09">
+    <statement>
+      <p>
+        The antiderivative of a product equals the product of antiderivatives.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False</em>. In general, the antiderivative of a product is not the product of antiderivatives.
+        For example, if <m>f(x)=x</m> and <m>g(x)=x^2</m>, then an antiderivative of <m>f(x)g(x)=x^3</m> is <m>\frac{1}{4}x^4+C</m>,
+        but the product of antiderivatives is <m>\bigl(\frac{1}{2}x^2+C_1\bigr)\bigl(\frac{1}{3}x^3+C_2\bigr)</m>, which is not an antiderivative of <m>x^3</m>.
+      </p>
+    </solution>
+  </exercise>
+
+
+  
+  <exercise xml:id="ex-tf10">
+    <statement>
+      <p>
+        If <m>f(x)=\dfrac{3}{1+x^2}</m>, then a general antiderivative is <m>3\arctan(x)+C</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True</em>. The derivative of <m>3\arctan(x)+C</m> is <m>\dfrac{3}{1+x^2}</m>, 
+        so it is the general antiderivative of <m>\dfrac{3}{1+x^2}</m>.
+      </p>
+    </solution>
+  </exercise>
+
+
+
+  <exercise xml:id="ex-tf11">
+    <statement>
+      <p>
+        Both <m>F(x)= \ln|x|</m> and <m>G(x)=\ln|2x|</m> are antiderivatives of <m>\dfrac{1}{x}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>True</em>. Both functions have the same derivative, so they are both antiderivatives of <m>\dfrac{1}{x}</m>.
+        In fact, they differ by a constant: <m>G(x)=\ln|2x|=\ln|2|+\ln|x|=\ln(2)+F(x)</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-tf12">
+    <statement>
+      <p>
+        Both <m>F(x)= \ln|x^2|</m> and <m>G(x)=\dfrac{-1}{x}</m> are antiderivatives of <m>\dfrac{1}{x^2}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False</em>. The derivative of <m>F(x)</m> is <m>\dfrac{2}{x}</m>, so it is not an antiderivative of <m>\dfrac{1}{x^2}</m>.
+      </p>
+    </solution>
+  </exercise>
+
+
+  
+
+
+  <exercise xml:id="ex-tf13">
+    <statement>
+      <p>
+        If <m>f(x)=\dfrac{\cos(x)}{x}</m>, then a general antiderivative is <m>\dfrac{\sin(x)}{\tfrac12 x^2} +C</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <em>False</em>. According to the quotient rule for derivatives, 
+        the derivative of <m>\dfrac{\sin(x)}{\tfrac12 x^2} +C</m> is 
+        <me>\dfrac{\cos(x)\cdot\tfrac12 x^2 - \sin(x)\cdot x}{\tfrac14 x^4} = \dfrac{\cos(x) - 2\sin(x)/x}{x^2}</me> 
+        which is not equal to <m>\dfrac{\cos(x)}{x}</m>.
+        In fact, the antiderivative of <m>\dfrac{\cos(x)}{x}</m> cannot be expressed in terms of elementary functions.
+        Again, there is no simple formula for the antiderivative of a quotient in general.
+      </p>
+    </solution>
+  </exercise>
+
+  
+  
+
     </exercisegroup>
   </exercises>
 
