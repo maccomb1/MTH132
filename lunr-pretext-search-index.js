@@ -5830,7 +5830,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.1",
   "title": "Antiderivatives",
-  "body": " Antiderivatives    Interpret an antiderivative as “reversing differentiation” and connect it to rates of change (velocity, acceleration).  Find general antiderivatives using basic antidifferentiation rules and linearity.  Solve simple initial value problems by using a given function value to determine the constant of integration.  Use simple substitution patterns (reverse Chain Rule) when a constant multiple is missing.  Recognize when an integrand must be rewritten (for example, by algebra or a trig identity) before antidifferentiating.     Reversing Differentiation  In many applications we care about some unknown function , but what we can measure or model is its rate of change, the derivative . Finding from is the process of antidifferentiation . We call an antiderivative (or primitive ) of . A helpful memory trick is “big , little .”    Suppose . Find a general formula for .    Since and , one antiderivative is . Any constant disappears when differentiating, so the general antiderivative is     Different choices of shift the graph up or down but do not change slopes. If we also know a single value like , then we can determine and get a unique function. Problems like this are called initial value problems .    Find the unique function satisfying and .    An antiderivative of is , so . Plug in : .       Definition and the Constant of Integration   Antiderivative   A function is an antiderivative of on an interval if for all in that interval.     Antiderivatives Differ by a Constant   Suppose is one antiderivative of on an interval. Then every antiderivative of has the form for some constant .    If is any antiderivative of , then . By the Uniqueness Theorem from the Mean Value Theorem section, two functions with the same derivative differ by a constant. Therefore .     Uniqueness with One Function Value   If is an antiderivative of on an interval, then for any point in the interval and any real number , there is exactly one antiderivative satisfying and .    By the previous theorem, any antiderivative has the form . Requiring gives , so , which is a single value.      Basic Antidifferentiation Rules  Antidifferentiation starts by reversing the derivative rules you already know. The key is to build a library of basic patterns, then use linearity to break complicated expressions into simpler pieces.   Linearity of Antiderivatives   If and , then for constants , an antiderivative of is .    Here are several basic patterns (each includes the constant of integration).   We are not formally defining integrals yet, so you can read the display above as a list of “reverse derivative” facts. The important idea is that the derivative table can be read backward, with a added.    Find a general antiderivative of .    Rewrite using exponents and secant: , , and . Then antidifferentiate term-by-term:   A quick check is to differentiate and confirm you get back .      A Simple “Reverse Chain Rule” Pattern  Sometimes a function looks like the derivative of a composition, except for a missing constant multiple. In these cases, you can often fix the issue by introducing the correct constant.    Find a general antiderivative of .    Since , we divide by 3:       Find a general antiderivative of .    Rewrite as a sum of powers: . Then antidifferentiate term-by-term:     Be careful with products and quotients. In general, the antiderivative of a product is not the product of antiderivatives. When you can rewrite the expression as a sum of basic patterns, the problem becomes manageable.    When You Must Rewrite First    Find a general antiderivative of .    The function is not on our basic list. Use the identity , which gives . Now antidifferentiate:       Acceleration, Velocity, and Position  In motion problems, derivatives connect position, velocity, and acceleration: and . If we know acceleration and some initial conditions, we can recover velocity and position by antidifferentiating twice.    A rocket has acceleration (in m\/sec 2 ). At time , its height is meters and its velocity is m\/sec. Find the velocity function and the height function .    Since , antidifferentiate:   Use : , so . Thus   Now antidifferentiate again because :   Use : , so . Therefore   With both conditions applied, the constants are determined and the solution is unique.      Additional Worked-Out Examples  To keep this section at a reasonable length, we include only a few representative examples directly in the text. If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional fully worked-out examples are available via:  Additional Worked-Out Problems for Antiderivatives      Practice \/ Study Problems   Basic Antiderivatives    Find a general antiderivative of each function.           Find a general antiderivative of .      Rewrite First    Find a general antiderivative of . (Rewrite as a sum of powers first.)      Find a general antiderivative of . (Hint: use .)      Initial Value Problems    Find the unique function such that and .      A particle moves on a line with acceleration . At , the velocity is and the position is . Find and .      "
+  "body": " Antiderivatives    Interpret an antiderivative as “reversing differentiation” and connect it to rates of change.  Find general antiderivatives using basic antidifferentiation rules and combine these over addition, subtraction, or multiplying by a constant.  Solve simple initial value problems by using a given function value to determine the unknown constant.  Recognize when algebraic manipulation is needed before antidifferentiating (e.g., rewriting quotients or using identities).  Reverse the Chain Rule in simple cases when a constant multiple is missing.  Verify an antiderivative by differentiating and checking that it produces the original function.  Interpret antiderivatives in applied contexts, including recovering velocity and position from acceleration.     Reversing Differentiation  In many applications we care about some unknown function , but what we can measure or model is its rate of change, the derivative . Finding from is the process of antidifferentiation . We call an antiderivative (or primitive ) of . This is quite often spoken as “big and little .”    Suppose . Find a general formula for .    Since and , so one antiderivative is . However, this is not the only one. For example, also satisfies . Any constant disappears when differentiating, so the general antiderivative is   Notice that this constant shifts the graph up or down but does not change slopes. Visually, the family of antiderivatives looks like a vertical stack of curves, all with the same shape and slopes, but different heights.   The red curve represents , while the black curves represent a family of antiderivatives . Each curve differs by a constant , producing vertical shifts of the same basic shape.   A red curve y = f(t) and a family of black curves y = F(t) labeled c = -2, -1, 0, 1, 2, illustrating vertical shifts corresponding to different constants of integration.      So as we saw in our previous example, there are infinitely many antiderivatives of a given function, which appear to be differing by a constant. However, if we also know a single value like , then we can determine and get a unique function. Problems like this are called initial value problems .    Find the unique function satisfying and .  Alternative Phrasing : Solve the initial value problem , .    The general antiderivative of is . To find the particular solution, we use the initial condition :   So the unique function is .     Antiderivative   A function is an antiderivative of on an interval if for all in that interval.     Antiderivatives Differ by a Constant   Suppose is one antiderivative of on an interval. Then:  (a) The general antiderivative of is , for any constant . There are no other antiderivatives of besides those of this form.  (b) For any point in the interval and any real number , there is exactly one antiderivative satisfying and .    (a) If is any antiderivative of , then . By the Uniqueness Theorem from the Mean Value Theorem section, two functions with the same derivative differ by a constant. Therefore .  (b) By part (a), any antiderivative has the form . Requiring gives , so , which is a single value.      Basic Antidifferentiation Rules  Antidifferentiation starts by reversing the derivative rules you already know. The key is to build a library of basic patterns, then we can extend these to more complicated functions using our rules of derivatives.   Basic Antiderivative Rules   For each of the following let be an antiderivative of . Then:   If for some integer , then . (This is the power rule for antidifferentiation.)    If , then . (This is a special case of the power rule, but it is important enough to be called out separately.)     Trigonometric functions :   If , then .    If , then .    If , then .    If , then .        Exponential functions :   If , then .    If for some constant (and ), then .        Inverse trig functions :   If , then .    If , then .          Each of these can be verified by differentiating the proposed antiderivative and confirming you get back the original function.     Notice the derivative of is which takes into account both positive and negative values of , so the antiderivative of must include an absolute value.  If the interval you are working with has only positive values of , then you can drop the absolute value and write the antiderivative as .   Now that we have the building blocks for antiderivatives, we can also reverse the rules of derivatives to find antiderivatives of more complicated functions with sums \/ differences \/ constants.   Sums and Constant Multiples   If and , then for constants , an antiderivative of is .    This follows from the linearity of derivatives: .    Now let's see some examples!    Select Examples    Find a general antiderivative of .    First let's rewrite our function as a sum of basic patterns: . Then we can antidifferentiate term-by-term using the rules we know:   A quick check is to differentiate and confirm you get back .    We can also reverse the Chain Rule when we see a composition, but the constant multiple is missing.    Find the antiderivative of such that .    Since , we divide by 3 to get the general antiderivative of :   Now use the initial condition : , so . Therefore   Again, we can check by differentiating and confirming we get back .    When the function is a product or quotient, we cannot simply antidifferentiate each factor and hope to get an antiderivative of the whole function. In general, there is no simple formula for the antiderivative of a product or quotient. However, if we can rewrite the expression as a sum of basic patterns, then we can antidifferentiate term-by-term.    Find a general antiderivative of .    Rewrite as a sum of powers: . Then antidifferentiate term-by-term:      Products and Quotients  Be careful with products and quotients! In general, the antiderivative of a product is not the product of antiderivatives (same for quotients). We will learn how to handle these later, but for now, we can sometimes antidifferentiate products or quotients if we can expand them into sums of Basic Antiderivatives.     Find a general antiderivative of .    Use the identity to rewrite as a sum of basic patterns.    The function is not on our basic list (it is the product of two sines) so we must be careful. Using the double angle formula from trig we know , which gives Now we can find the antidifferentiate:   We can check by differentiating and confirming we get back .      Application: Acceleration, Velocity, and Position  Previously we have seen how derivatives connect position, velocity, and acceleration in motion problems. Now we can use antidifferentiation to go in the opposite direction. If we know acceleration and some initial conditions, we can recover velocity and position by antidifferentiating twice.    A rocket has acceleration (in ). At time , its height is meters and its velocity is m\/sec. Find the velocity function and the height function .    Since , antidifferentiate:   Use : , so . Thus   Now antidifferentiate again because :   Use : , so . Therefore   With both conditions applied, the constants are determined and the solution is unique.      Additional Worked-Out Examples  To keep this section at a reasonable length, we include only a few representative examples directly in the text. If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional fully worked-out examples are available via:  Additional Worked-Out Problems for Antiderivatives      Practice \/ Study Problems   Some True\/False Problems   Determine whether each statement is true or false and briefly justify your reasoning.     If and on an interval, then is constant on that interval.     True . Since , the function has derivative zero, so it is constant.       , so one antiderivative of is .     True . The derivative of is indeed , so it is an antiderivative. In fact, the general antiderivative is .      If , then a general antiderivative is .     True . The derivative of is , so it is the general antiderivative of .      An antiderivative of is .     False . The derivative of is , so it is not an antiderivative of . In fact, the general antiderivative of is .      If , then a general antiderivative is .     True . The derivative of is , so it is the general antiderivative of .      If and , then .     False . The antiderivative of is . Applying the initial condition , we get: So the correct function is .      If , then an antiderivative is .     False . The derivative of is , so it is not an antiderivative of . In fact, the general antiderivative of is .      The antiderivative of a sum equals the sum of antiderivatives.     True . If and , then . So an antiderivative of is .      The antiderivative of a product equals the product of antiderivatives.     False . In general, the antiderivative of a product is not the product of antiderivatives. For example, if and , then an antiderivative of is , but the product of antiderivatives is , which is not an antiderivative of .      If , then a general antiderivative is .     True . The derivative of is , so it is the general antiderivative of .      Both and are antiderivatives of .     True . Both functions have the same derivative, so they are both antiderivatives of . In fact, they differ by a constant: .      Both and are antiderivatives of .     False . The derivative of is , so it is not an antiderivative of .      If , then a general antiderivative is .     False . According to the quotient rule for derivatives, the derivative of is which is not equal to . In fact, the antiderivative of cannot be expressed in terms of elementary functions. Again, there is no simple formula for the antiderivative of a quotient in general.      "
 },
 {
   "id": "sec-integral-antiderivatives-2",
@@ -5839,7 +5839,7 @@ var ptx_lunr_docs = [
   "type": "Objectives",
   "number": "4.1",
   "title": "",
-  "body": "  Interpret an antiderivative as “reversing differentiation” and connect it to rates of change (velocity, acceleration).  Find general antiderivatives using basic antidifferentiation rules and linearity.  Solve simple initial value problems by using a given function value to determine the constant of integration.  Use simple substitution patterns (reverse Chain Rule) when a constant multiple is missing.  Recognize when an integrand must be rewritten (for example, by algebra or a trig identity) before antidifferentiating.   "
+  "body": "  Interpret an antiderivative as “reversing differentiation” and connect it to rates of change.  Find general antiderivatives using basic antidifferentiation rules and combine these over addition, subtraction, or multiplying by a constant.  Solve simple initial value problems by using a given function value to determine the unknown constant.  Recognize when algebraic manipulation is needed before antidifferentiating (e.g., rewriting quotients or using identities).  Reverse the Chain Rule in simple cases when a constant multiple is missing.  Verify an antiderivative by differentiating and checking that it produces the original function.  Interpret antiderivatives in applied contexts, including recovering velocity and position from acceleration.   "
 },
 {
   "id": "ssec-antiderivatives-motivation-2",
@@ -5857,7 +5857,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.1.1",
   "title": "",
-  "body": "  Suppose . Find a general formula for .    Since and , one antiderivative is . Any constant disappears when differentiating, so the general antiderivative is    "
+  "body": "  Suppose . Find a general formula for .    Since and , so one antiderivative is . However, this is not the only one. For example, also satisfies . Any constant disappears when differentiating, so the general antiderivative is   Notice that this constant shifts the graph up or down but does not change slopes. Visually, the family of antiderivatives looks like a vertical stack of curves, all with the same shape and slopes, but different heights.   The red curve represents , while the black curves represent a family of antiderivatives . Each curve differs by a constant , producing vertical shifts of the same basic shape.   A red curve y = f(t) and a family of black curves y = F(t) labeled c = -2, -1, 0, 1, 2, illustrating vertical shifts corresponding to different constants of integration.     "
 },
 {
   "id": "ssec-antiderivatives-motivation-4",
@@ -5873,16 +5873,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-integral-antiderivatives.html#ex-antiderivative-ivp",
   "type": "Example",
-  "number": "4.1.2",
+  "number": "4.1.3",
   "title": "",
-  "body": "  Find the unique function satisfying and .    An antiderivative of is , so . Plug in : .    "
+  "body": "  Find the unique function satisfying and .  Alternative Phrasing : Solve the initial value problem , .    The general antiderivative of is . To find the particular solution, we use the initial condition :   So the unique function is .   "
 },
 {
   "id": "def-antiderivative",
   "level": "2",
   "url": "sec-integral-antiderivatives.html#def-antiderivative",
   "type": "Definition",
-  "number": "4.1.3",
+  "number": "4.1.4",
   "title": "Antiderivative.",
   "body": " Antiderivative   A function is an antiderivative of on an interval if for all in that interval.   "
 },
@@ -5891,126 +5891,207 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-integral-antiderivatives.html#thm-antiderivative-family",
   "type": "Theorem",
-  "number": "4.1.4",
+  "number": "4.1.5",
   "title": "Antiderivatives Differ by a Constant.",
-  "body": " Antiderivatives Differ by a Constant   Suppose is one antiderivative of on an interval. Then every antiderivative of has the form for some constant .    If is any antiderivative of , then . By the Uniqueness Theorem from the Mean Value Theorem section, two functions with the same derivative differ by a constant. Therefore .   "
+  "body": " Antiderivatives Differ by a Constant   Suppose is one antiderivative of on an interval. Then:  (a) The general antiderivative of is , for any constant . There are no other antiderivatives of besides those of this form.  (b) For any point in the interval and any real number , there is exactly one antiderivative satisfying and .    (a) If is any antiderivative of , then . By the Uniqueness Theorem from the Mean Value Theorem section, two functions with the same derivative differ by a constant. Therefore .  (b) By part (a), any antiderivative has the form . Requiring gives , so , which is a single value.   "
 },
 {
-  "id": "thm-ivp-unique-antiderivative",
+  "id": "thm-antiderivative-rules",
   "level": "2",
-  "url": "sec-integral-antiderivatives.html#thm-ivp-unique-antiderivative",
+  "url": "sec-integral-antiderivatives.html#thm-antiderivative-rules",
   "type": "Theorem",
-  "number": "4.1.5",
-  "title": "Uniqueness with One Function Value.",
-  "body": " Uniqueness with One Function Value   If is an antiderivative of on an interval, then for any point in the interval and any real number , there is exactly one antiderivative satisfying and .    By the previous theorem, any antiderivative has the form . Requiring gives , so , which is a single value.   "
+  "number": "4.1.6",
+  "title": "Basic Antiderivative Rules.",
+  "body": " Basic Antiderivative Rules   For each of the following let be an antiderivative of . Then:   If for some integer , then . (This is the power rule for antidifferentiation.)    If , then . (This is a special case of the power rule, but it is important enough to be called out separately.)     Trigonometric functions :   If , then .    If , then .    If , then .    If , then .        Exponential functions :   If , then .    If for some constant (and ), then .        Inverse trig functions :   If , then .    If , then .          Each of these can be verified by differentiating the proposed antiderivative and confirming you get back the original function.   "
+},
+{
+  "id": "ssec-antiderivatives-rules-4",
+  "level": "2",
+  "url": "sec-integral-antiderivatives.html#ssec-antiderivatives-rules-4",
+  "type": "Remark",
+  "number": "4.1.7",
+  "title": "",
+  "body": " Notice the derivative of is which takes into account both positive and negative values of , so the antiderivative of must include an absolute value.  If the interval you are working with has only positive values of , then you can drop the absolute value and write the antiderivative as .  "
 },
 {
   "id": "thm-antiderivative-linearity",
   "level": "2",
   "url": "sec-integral-antiderivatives.html#thm-antiderivative-linearity",
   "type": "Theorem",
-  "number": "4.1.6",
-  "title": "Linearity of Antiderivatives.",
-  "body": " Linearity of Antiderivatives   If and , then for constants , an antiderivative of is .   "
+  "number": "4.1.8",
+  "title": "Sums and Constant Multiples.",
+  "body": " Sums and Constant Multiples   If and , then for constants , an antiderivative of is .    This follows from the linearity of derivatives: .   "
 },
 {
   "id": "ex-antiderivative-linearity",
   "level": "2",
   "url": "sec-integral-antiderivatives.html#ex-antiderivative-linearity",
   "type": "Example",
-  "number": "4.1.7",
+  "number": "4.1.9",
   "title": "",
-  "body": "  Find a general antiderivative of .    Rewrite using exponents and secant: , , and . Then antidifferentiate term-by-term:   A quick check is to differentiate and confirm you get back .   "
+  "body": "  Find a general antiderivative of .    First let's rewrite our function as a sum of basic patterns: . Then we can antidifferentiate term-by-term using the rules we know:   A quick check is to differentiate and confirm you get back .   "
 },
 {
   "id": "ex-antiderivative-cos3x",
   "level": "2",
   "url": "sec-integral-antiderivatives.html#ex-antiderivative-cos3x",
   "type": "Example",
-  "number": "4.1.8",
+  "number": "4.1.10",
   "title": "",
-  "body": "  Find a general antiderivative of .    Since , we divide by 3:    "
+  "body": "  Find the antiderivative of such that .    Since , we divide by 3 to get the general antiderivative of :   Now use the initial condition : , so . Therefore   Again, we can check by differentiating and confirming we get back .   "
 },
 {
   "id": "ex-antiderivative-algebra-first",
   "level": "2",
   "url": "sec-integral-antiderivatives.html#ex-antiderivative-algebra-first",
   "type": "Example",
-  "number": "4.1.9",
+  "number": "4.1.11",
   "title": "",
   "body": "  Find a general antiderivative of .    Rewrite as a sum of powers: . Then antidifferentiate term-by-term:    "
+},
+{
+  "id": "rmk-antiderivative-products-quotients",
+  "level": "2",
+  "url": "sec-integral-antiderivatives.html#rmk-antiderivative-products-quotients",
+  "type": "Remark",
+  "number": "4.1.12",
+  "title": "Products and Quotients.",
+  "body": " Products and Quotients  Be careful with products and quotients! In general, the antiderivative of a product is not the product of antiderivatives (same for quotients). We will learn how to handle these later, but for now, we can sometimes antidifferentiate products or quotients if we can expand them into sums of Basic Antiderivatives.  "
 },
 {
   "id": "ex-antiderivative-sin-squared",
   "level": "2",
   "url": "sec-integral-antiderivatives.html#ex-antiderivative-sin-squared",
   "type": "Example",
-  "number": "4.1.10",
+  "number": "4.1.13",
   "title": "",
-  "body": "  Find a general antiderivative of .    The function is not on our basic list. Use the identity , which gives . Now antidifferentiate:    "
+  "body": "  Find a general antiderivative of .    Use the identity to rewrite as a sum of basic patterns.    The function is not on our basic list (it is the product of two sines) so we must be careful. Using the double angle formula from trig we know , which gives Now we can find the antidifferentiate:   We can check by differentiating and confirming we get back .   "
 },
 {
   "id": "ex-antiderivative-rocket",
   "level": "2",
   "url": "sec-integral-antiderivatives.html#ex-antiderivative-rocket",
   "type": "Example",
-  "number": "4.1.11",
+  "number": "4.1.14",
   "title": "",
-  "body": "  A rocket has acceleration (in m\/sec 2 ). At time , its height is meters and its velocity is m\/sec. Find the velocity function and the height function .    Since , antidifferentiate:   Use : , so . Thus   Now antidifferentiate again because :   Use : , so . Therefore   With both conditions applied, the constants are determined and the solution is unique.   "
+  "body": "  A rocket has acceleration (in ). At time , its height is meters and its velocity is m\/sec. Find the velocity function and the height function .    Since , antidifferentiate:   Use : , so . Thus   Now antidifferentiate again because :   Use : , so . Therefore   With both conditions applied, the constants are determined and the solution is unique.   "
 },
 {
-  "id": "prob-anti-01",
+  "id": "ex-tf01",
   "level": "2",
-  "url": "sec-integral-antiderivatives.html#prob-anti-01",
+  "url": "sec-integral-antiderivatives.html#ex-tf01",
   "type": "Exercise",
   "number": "1",
   "title": "",
-  "body": "  Find a general antiderivative of each function.        "
+  "body": "  If and on an interval, then is constant on that interval.     True . Since , the function has derivative zero, so it is constant.   "
 },
 {
-  "id": "prob-anti-02",
+  "id": "ex-tf02",
   "level": "2",
-  "url": "sec-integral-antiderivatives.html#prob-anti-02",
+  "url": "sec-integral-antiderivatives.html#ex-tf02",
   "type": "Exercise",
   "number": "2",
   "title": "",
-  "body": "  Find a general antiderivative of .   "
+  "body": "   , so one antiderivative of is .     True . The derivative of is indeed , so it is an antiderivative. In fact, the general antiderivative is .   "
 },
 {
-  "id": "prob-anti-03",
+  "id": "ex-tf03",
   "level": "2",
-  "url": "sec-integral-antiderivatives.html#prob-anti-03",
+  "url": "sec-integral-antiderivatives.html#ex-tf03",
   "type": "Exercise",
   "number": "3",
   "title": "",
-  "body": "  Find a general antiderivative of . (Rewrite as a sum of powers first.)   "
+  "body": "  If , then a general antiderivative is .     True . The derivative of is , so it is the general antiderivative of .   "
 },
 {
-  "id": "prob-anti-04",
+  "id": "ex-tf04",
   "level": "2",
-  "url": "sec-integral-antiderivatives.html#prob-anti-04",
+  "url": "sec-integral-antiderivatives.html#ex-tf04",
   "type": "Exercise",
   "number": "4",
   "title": "",
-  "body": "  Find a general antiderivative of . (Hint: use .)   "
+  "body": "  An antiderivative of is .     False . The derivative of is , so it is not an antiderivative of . In fact, the general antiderivative of is .   "
 },
 {
-  "id": "prob-anti-05",
+  "id": "ex-tf05",
   "level": "2",
-  "url": "sec-integral-antiderivatives.html#prob-anti-05",
+  "url": "sec-integral-antiderivatives.html#ex-tf05",
   "type": "Exercise",
   "number": "5",
   "title": "",
-  "body": "  Find the unique function such that and .   "
+  "body": "  If , then a general antiderivative is .     True . The derivative of is , so it is the general antiderivative of .   "
 },
 {
-  "id": "prob-anti-06",
+  "id": "ex-tf06",
   "level": "2",
-  "url": "sec-integral-antiderivatives.html#prob-anti-06",
+  "url": "sec-integral-antiderivatives.html#ex-tf06",
   "type": "Exercise",
   "number": "6",
   "title": "",
-  "body": "  A particle moves on a line with acceleration . At , the velocity is and the position is . Find and .   "
+  "body": "  If and , then .     False . The antiderivative of is . Applying the initial condition , we get: So the correct function is .   "
+},
+{
+  "id": "ex-tf07",
+  "level": "2",
+  "url": "sec-integral-antiderivatives.html#ex-tf07",
+  "type": "Exercise",
+  "number": "7",
+  "title": "",
+  "body": "  If , then an antiderivative is .     False . The derivative of is , so it is not an antiderivative of . In fact, the general antiderivative of is .   "
+},
+{
+  "id": "ex-tf08",
+  "level": "2",
+  "url": "sec-integral-antiderivatives.html#ex-tf08",
+  "type": "Exercise",
+  "number": "8",
+  "title": "",
+  "body": "  The antiderivative of a sum equals the sum of antiderivatives.     True . If and , then . So an antiderivative of is .   "
+},
+{
+  "id": "ex-tf09",
+  "level": "2",
+  "url": "sec-integral-antiderivatives.html#ex-tf09",
+  "type": "Exercise",
+  "number": "9",
+  "title": "",
+  "body": "  The antiderivative of a product equals the product of antiderivatives.     False . In general, the antiderivative of a product is not the product of antiderivatives. For example, if and , then an antiderivative of is , but the product of antiderivatives is , which is not an antiderivative of .   "
+},
+{
+  "id": "ex-tf10",
+  "level": "2",
+  "url": "sec-integral-antiderivatives.html#ex-tf10",
+  "type": "Exercise",
+  "number": "10",
+  "title": "",
+  "body": "  If , then a general antiderivative is .     True . The derivative of is , so it is the general antiderivative of .   "
+},
+{
+  "id": "ex-tf11",
+  "level": "2",
+  "url": "sec-integral-antiderivatives.html#ex-tf11",
+  "type": "Exercise",
+  "number": "11",
+  "title": "",
+  "body": "  Both and are antiderivatives of .     True . Both functions have the same derivative, so they are both antiderivatives of . In fact, they differ by a constant: .   "
+},
+{
+  "id": "ex-tf12",
+  "level": "2",
+  "url": "sec-integral-antiderivatives.html#ex-tf12",
+  "type": "Exercise",
+  "number": "12",
+  "title": "",
+  "body": "  Both and are antiderivatives of .     False . The derivative of is , so it is not an antiderivative of .   "
+},
+{
+  "id": "ex-tf13",
+  "level": "2",
+  "url": "sec-integral-antiderivatives.html#ex-tf13",
+  "type": "Exercise",
+  "number": "13",
+  "title": "",
+  "body": "  If , then a general antiderivative is .     False . According to the quotient rule for derivatives, the derivative of is which is not equal to . In fact, the antiderivative of cannot be expressed in terms of elementary functions. Again, there is no simple formula for the antiderivative of a quotient in general.   "
 },
 {
   "id": "sec-integral-riemannSums",

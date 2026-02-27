@@ -497,11 +497,9 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="sec-integral-antiderivatives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Antiderivatives</span></a></div>
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-motivation" class="internal"><span class="title">Reversing Differentiation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-definition-theorem" class="internal"><span class="title">Definition and the Constant of Integration</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-rules" class="internal"><span class="title">Basic Antidifferentiation Rules</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-reverse-chain" class="internal"><span class="title">A Simple “Reverse Chain Rule” Pattern</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-trig-identity" class="internal"><span class="title">When You Must Rewrite First</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-accel-vel-pos" class="internal"><span class="title">Acceleration, Velocity, and Position</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#subsec-SelectExamples" class="internal"><span class="title">Select Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#ssec-antiderivatives-accel-vel-pos" class="internal"><span class="title">Application: Acceleration, Velocity, and Position</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#additional-worked-problems-integral-antiderivatives" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-antiderivatives.html#exercises-antiderivatives" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
 </ul>
@@ -594,30 +592,38 @@ eBookConfig.enable_chatcodes =  false;
 <article class="objectives goal-like" id="sec-integral-antiderivatives-2"><h3 class="heading"><span class="type">Objectives</span></h3>
 <ul class="disc" id="sec-integral-antiderivatives-2-1">
 <li id="sec-integral-antiderivatives-2-1-1">
-<div class="para" id="p-derived-sec-integral-antiderivatives-2-1-1">Interpret an antiderivative as “reversing differentiation” and connect it to rates of change (velocity, acceleration).</div>
+<div class="para" id="p-derived-sec-integral-antiderivatives-2-1-1">Interpret an antiderivative as “reversing differentiation” and connect it to rates of change.</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-antiderivatives-2-1-1" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 <li id="sec-integral-antiderivatives-2-1-2">
-<div class="para" id="p-derived-sec-integral-antiderivatives-2-1-2">Find general antiderivatives using basic antidifferentiation rules and linearity.</div>
+<div class="para" id="p-derived-sec-integral-antiderivatives-2-1-2">Find general antiderivatives using basic antidifferentiation rules and combine these over addition, subtraction, or multiplying by a constant.</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-antiderivatives-2-1-2" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 <li id="sec-integral-antiderivatives-2-1-3">
-<div class="para" id="p-derived-sec-integral-antiderivatives-2-1-3">Solve simple initial value problems by using a given function value to determine the constant of integration.</div>
+<div class="para" id="p-derived-sec-integral-antiderivatives-2-1-3">Solve simple initial value problems by using a given function value to determine the unknown constant.</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-antiderivatives-2-1-3" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 <li id="sec-integral-antiderivatives-2-1-4">
-<div class="para" id="p-derived-sec-integral-antiderivatives-2-1-4">Use simple substitution patterns (reverse Chain Rule) when a constant multiple is missing.</div>
+<div class="para" id="p-derived-sec-integral-antiderivatives-2-1-4">Recognize when algebraic manipulation is needed before antidifferentiating (e.g., rewriting quotients or using identities).</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-antiderivatives-2-1-4" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 <li id="sec-integral-antiderivatives-2-1-5">
-<div class="para" id="p-derived-sec-integral-antiderivatives-2-1-5">Recognize when an integrand must be rewritten (for example, by algebra or a trig identity) before antidifferentiating.</div>
+<div class="para" id="p-derived-sec-integral-antiderivatives-2-1-5">Reverse the Chain Rule in simple cases when a constant multiple is missing.</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-antiderivatives-2-1-5" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-integral-antiderivatives-2-1-6">
+<div class="para" id="p-derived-sec-integral-antiderivatives-2-1-6">Verify an antiderivative by differentiating and checking that it produces the original function.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-integral-antiderivatives-2-1-6" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-integral-antiderivatives-2-1-7">
+<div class="para" id="p-derived-sec-integral-antiderivatives-2-1-7">Interpret antiderivatives in applied contexts, including recovering velocity and position from acceleration.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-integral-antiderivatives-2-1-7" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 </ul>
 <div class="autopermalink" data-description="Objectives 4.1"><a href="#sec-integral-antiderivatives-2" title="Copy heading and permalink for Objectives 4.1" aria-label="Copy heading and permalink for Objectives 4.1">🔗</a></div></article><section class="subsection" id="ssec-antiderivatives-motivation"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reversing Differentiation</span>
 </h3>
-<div class="para" id="ssec-antiderivatives-motivation-2">In many applications we care about some unknown function <span class="process-math">\(F(x)\text{,}\)</span> but what we can measure or model is its rate of change, the derivative <span class="process-math">\(F'(x)=f(x)\text{.}\)</span> Finding <span class="process-math">\(F\)</span> from <span class="process-math">\(f\)</span> is the process of <dfn class="terminology">antidifferentiation</dfn>. We call <span class="process-math">\(F\)</span> an <dfn class="terminology">antiderivative</dfn> (or <dfn class="terminology">primitive</dfn>) of <span class="process-math">\(f\text{.}\)</span> A helpful memory trick is “big <span class="process-math">\(F\text{,}\)</span> little <span class="process-math">\(f\text{.}\)</span>”<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-motivation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ssec-antiderivatives-motivation-2">In many applications we care about some unknown function <span class="process-math">\(F(x)\text{,}\)</span> but what we can measure or model is its rate of change, the derivative <span class="process-math">\(F'(x)=f(x)\text{.}\)</span> Finding <span class="process-math">\(F\)</span> from <span class="process-math">\(f\)</span> is the process of <dfn class="terminology">antidifferentiation</dfn>. We call <span class="process-math">\(F\)</span> an <dfn class="terminology">antiderivative</dfn> (or <dfn class="terminology">primitive</dfn>) of <span class="process-math">\(f\text{.}\)</span> This is quite often spoken as “big <span class="process-math">\(F\)</span> and little <span class="process-math">\(f\text{.}\)</span>”<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-motivation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="ex-antiderivative-simple"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -625,174 +631,290 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="ex-antiderivative-simple-1-1">Suppose <span class="process-math">\(F'(t)=t^2-1\text{.}\)</span> Find a general formula for <span class="process-math">\(F(t)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-simple-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="ex-antiderivative-simple-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-antiderivative-simple-2-1">Since <span class="process-math">\((\tfrac13 t^3)'=t^2\)</span> and <span class="process-math">\((-t)'=-1\text{,}\)</span> one antiderivative is <span class="process-math">\(\tfrac13 t^3-t\text{.}\)</span> Any constant disappears when differentiating, so the general antiderivative is<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-simple-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-antiderivative-simple-2-1">Since <span class="process-math">\((\tfrac13 t^3)'=t^2\)</span> and <span class="process-math">\((-t)'=-1\text{,}\)</span> so one antiderivative is <span class="process-math">\(F(t)=\tfrac13 t^3-t\text{.}\)</span> However, this is not the only one. For example, <span class="process-math">\(G(t)=\tfrac13 t^3-t+5\)</span> also satisfies <span class="process-math">\(G'(t)=t^2-1\text{.}\)</span> Any constant disappears when differentiating, so the <dfn class="terminology">general antiderivative</dfn> is<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-simple-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" id="ex-antiderivative-simple-2-2">
 \begin{equation*}
 F(t)=\tfrac13 t^3-t+C.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Solution 4.1.1.1"><a href="#ex-antiderivative-simple-2" title="Copy heading and permalink for Solution 4.1.1.1" aria-label="Copy heading and permalink for Solution 4.1.1.1">🔗</a></div>
+<div class="para" id="ex-antiderivative-simple-2-3">Notice that this constant shifts the graph up or down but does not change slopes. Visually, the family of antiderivatives looks like a vertical stack of curves, all with the same shape and slopes, but different heights.<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-simple-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-antiderivative-family"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/images/generalAntiderivative01.png" class="contained" alt="A red curve y = f(t) and a family of black curves y = F(t) labeled c = -2, -1, 0, 1, 2, illustrating vertical shifts corresponding to different constants of integration."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The red curve represents <span class="process-math">\(y = f(t)\text{,}\)</span> while the black curves represent a family of antiderivatives <span class="process-math">\(y = F(t)\text{.}\)</span> Each curve differs by a constant <span class="process-math">\(c\text{,}\)</span> producing vertical shifts of the same basic shape.<div class="autopermalink" data-description="Figure 4.1.2"><a href="#fig-antiderivative-family" title="Copy heading and permalink for Figure 4.1.2" aria-label="Copy heading and permalink for Figure 4.1.2">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 4.1.1.1"><a href="#ex-antiderivative-simple-2" title="Copy heading and permalink for Solution 4.1.1.1" aria-label="Copy heading and permalink for Solution 4.1.1.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.1.1"><a href="#ex-antiderivative-simple" title="Copy heading and permalink for Example 4.1.1" aria-label="Copy heading and permalink for Example 4.1.1">🔗</a></div></article><div class="para" id="ssec-antiderivatives-motivation-4">Different choices of <span class="process-math">\(C\)</span> shift the graph up or down but do not change slopes. If we also know a single value like <span class="process-math">\(F(0)=5\text{,}\)</span> then we can determine <span class="process-math">\(C\)</span> and get a unique function. Problems like this are called <dfn class="terminology">initial value problems</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-motivation-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.1.1"><a href="#ex-antiderivative-simple" title="Copy heading and permalink for Example 4.1.1" aria-label="Copy heading and permalink for Example 4.1.1">🔗</a></div></article><div class="para" id="ssec-antiderivatives-motivation-4">So as we saw in our previous example, there are infinitely many antiderivatives of a given function, which appear to be differing by a constant. However, if we also know a single value like <span class="process-math">\(F(0)=5\text{,}\)</span> then we can determine <span class="process-math">\(C\)</span> and get a unique function. Problems like this are called <dfn class="terminology">initial value problems</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-motivation-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="ex-antiderivative-ivp"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-antiderivative-ivp-1-1">Find the unique function <span class="process-math">\(F\)</span> satisfying <span class="process-math">\(F'(t)=t^2+2\)</span> and <span class="process-math">\(F(0)=5\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-ivp-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-antiderivative-ivp-1-2">
+<em class="alert"><em class="emphasis">Alternative Phrasing</em></em>: Solve the initial value problem <span class="process-math">\(F'(t)=t^2+2\text{,}\)</span> <span class="process-math">\(F(0)=5\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-ivp-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="ex-antiderivative-ivp-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-antiderivative-ivp-2-1">An antiderivative of <span class="process-math">\(t^2+2\)</span> is <span class="process-math">\(\tfrac13 t^3+2t\text{,}\)</span> so <span class="process-math">\(F(t)=\tfrac13 t^3+2t+C\text{.}\)</span> Plug in <span class="process-math">\(t=0\text{:}\)</span> <span class="process-math">\(F(0)=C=5\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-ivp-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-antiderivative-ivp-2-1">The general antiderivative of <span class="process-math">\(t^2+2\)</span> is <span class="process-math">\(\tfrac13 t^3+2t+C\text{.}\)</span> To find the particular solution, we use the initial condition <span class="process-math">\(F(0)=5\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-ivp-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" id="ex-antiderivative-ivp-2-2">
 \begin{equation*}
-F(t)=\tfrac13 t^3+2t+5.
+F(0)=\tfrac13 (0)^3+2(0)+C=5 \Rightarrow C=5.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Solution 4.1.2.1"><a href="#ex-antiderivative-ivp-2" title="Copy heading and permalink for Solution 4.1.2.1" aria-label="Copy heading and permalink for Solution 4.1.2.1">🔗</a></div>
+<div class="para" id="ex-antiderivative-ivp-2-3">So the unique function is <span class="process-math">\(F(t)=\tfrac13 t^3+2t+5\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-ivp-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1.3.1"><a href="#ex-antiderivative-ivp-2" title="Copy heading and permalink for Solution 4.1.3.1" aria-label="Copy heading and permalink for Solution 4.1.3.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.1.2"><a href="#ex-antiderivative-ivp" title="Copy heading and permalink for Example 4.1.2" aria-label="Copy heading and permalink for Example 4.1.2">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Reversing Differentiation"><a href="#ssec-antiderivatives-motivation" title="Copy heading and permalink for Subsection: Reversing Differentiation" aria-label="Copy heading and permalink for Subsection: Reversing Differentiation">🔗</a></div></section><section class="subsection" id="ssec-antiderivatives-definition-theorem"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definition and the Constant of Integration</span>
-</h3>
-<article class="definition definition-like" id="def-antiderivative"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Antiderivative.</span>
+<div class="autopermalink" data-description="Example 4.1.3"><a href="#ex-antiderivative-ivp" title="Copy heading and permalink for Example 4.1.3" aria-label="Copy heading and permalink for Example 4.1.3">🔗</a></div></article><article class="definition definition-like" id="def-antiderivative"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Antiderivative.</span>
 </h4>
 <div class="para" id="def-antiderivative-2-1">A function <span class="process-math">\(F(x)\)</span> is an <dfn class="terminology">antiderivative</dfn> of <span class="process-math">\(f(x)\)</span> on an interval if <span class="process-math">\(F'(x)=f(x)\)</span> for all <span class="process-math">\(x\)</span> in that interval.<div class="autopermalink" data-description="Paragraph"><a href="#def-antiderivative-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 4.1.3: Antiderivative"><a href="#def-antiderivative" title="Copy heading and permalink for Definition 4.1.3: Antiderivative" aria-label="Copy heading and permalink for Definition 4.1.3: Antiderivative">🔗</a></div></article><article class="theorem theorem-like" id="thm-antiderivative-family"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Antiderivatives Differ by a Constant.</span>
+<div class="autopermalink" data-description="Definition 4.1.4: Antiderivative"><a href="#def-antiderivative" title="Copy heading and permalink for Definition 4.1.4: Antiderivative" aria-label="Copy heading and permalink for Definition 4.1.4: Antiderivative">🔗</a></div></article><article class="theorem theorem-like" id="thm-antiderivative-family"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Antiderivatives Differ by a Constant.</span>
 </h4>
-<div class="para" id="thm-antiderivative-family-2-1">Suppose <span class="process-math">\(F_0(x)\)</span> is one antiderivative of <span class="process-math">\(f(x)\)</span> on an interval. Then every antiderivative of <span class="process-math">\(f\)</span> has the form <span class="process-math">\(F(x)=F_0(x)+C\)</span> for some constant <span class="process-math">\(C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-family-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="thm-antiderivative-family-2-1">Suppose <span class="process-math">\(F_0(x)\)</span> is one antiderivative of <span class="process-math">\(f(x)\)</span> on an interval. Then:<div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-family-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="thm-antiderivative-family-2-2">(a) The <dfn class="terminology">general antiderivative</dfn> of <span class="process-math">\(f(x)\)</span> is <span class="process-math">\(F(x)= F_0(x)+C\text{,}\)</span> for any constant <span class="process-math">\(C\text{.}\)</span> There are no other antiderivatives of <span class="process-math">\(f\)</span> besides those of this form.<div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-family-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="thm-antiderivative-family-2-3">(b) For any point <span class="process-math">\(c\)</span> in the interval and any real number <span class="process-math">\(A\text{,}\)</span> there is exactly one antiderivative <span class="process-math">\(F(x)\)</span> satisfying <span class="process-math">\(F'(x)=f(x)\)</span> and <span class="process-math">\(F(c)=A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-family-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 4.1.4: Antiderivatives Differ by a Constant"><a href="#thm-antiderivative-family" title="Copy heading and permalink for Theorem 4.1.4: Antiderivatives Differ by a Constant" aria-label="Copy heading and permalink for Theorem 4.1.4: Antiderivatives Differ by a Constant">🔗</a></div></article><details id="thm-antiderivative-family-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-antiderivative-family-3-1">If <span class="process-math">\(F\)</span> is any antiderivative of <span class="process-math">\(f\text{,}\)</span> then <span class="process-math">\(F'(x)=f(x)=F_0'(x)\text{.}\)</span> By the Uniqueness Theorem from the Mean Value Theorem section, two functions with the same derivative differ by a constant. Therefore <span class="process-math">\(F(x)=F_0(x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-family-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 4.1.5: Antiderivatives Differ by a Constant"><a href="#thm-antiderivative-family" title="Copy heading and permalink for Theorem 4.1.5: Antiderivatives Differ by a Constant" aria-label="Copy heading and permalink for Theorem 4.1.5: Antiderivatives Differ by a Constant">🔗</a></div></article><details id="thm-antiderivative-family-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-antiderivative-family-3-1">(a) If <span class="process-math">\(F\)</span> is any antiderivative of <span class="process-math">\(f\text{,}\)</span> then <span class="process-math">\(F'(x)=f(x)=F_0'(x)\text{.}\)</span> By the Uniqueness Theorem from the Mean Value Theorem section, two functions with the same derivative differ by a constant. Therefore <span class="process-math">\(F(x)=F_0(x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-family-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.1.4.1"><a href="#thm-antiderivative-family-3" title="Copy heading and permalink for Proof 4.1.4.1" aria-label="Copy heading and permalink for Proof 4.1.4.1">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-ivp-unique-antiderivative"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Uniqueness with One Function Value.</span>
-</h4>
-<div class="para" id="thm-ivp-unique-antiderivative-2-1">If <span class="process-math">\(F_0\)</span> is an antiderivative of <span class="process-math">\(f\)</span> on an interval, then for any point <span class="process-math">\(c\)</span> in the interval and any real number <span class="process-math">\(A\text{,}\)</span> there is exactly one antiderivative <span class="process-math">\(F\)</span> satisfying <span class="process-math">\(F'(x)=f(x)\)</span> and <span class="process-math">\(F(c)=A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ivp-unique-antiderivative-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="thm-antiderivative-family-3-2">(b) By part (a), any antiderivative has the form <span class="process-math">\(F(x)=F_0(x)+C\text{.}\)</span> Requiring <span class="process-math">\(F(c)=A\)</span> gives <span class="process-math">\(F_0(c)+C=A\text{,}\)</span> so <span class="process-math">\(C=A-F_0(c)\text{,}\)</span> which is a single value.<div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-family-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 4.1.5: Uniqueness with One Function Value"><a href="#thm-ivp-unique-antiderivative" title="Copy heading and permalink for Theorem 4.1.5: Uniqueness with One Function Value" aria-label="Copy heading and permalink for Theorem 4.1.5: Uniqueness with One Function Value">🔗</a></div></article><details id="thm-ivp-unique-antiderivative-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-ivp-unique-antiderivative-3-1">By the previous theorem, any antiderivative has the form <span class="process-math">\(F(x)=F_0(x)+C\text{.}\)</span> Requiring <span class="process-math">\(F(c)=A\)</span> gives <span class="process-math">\(F_0(c)+C=A\text{,}\)</span> so <span class="process-math">\(C=A-F_0(c)\text{,}\)</span> which is a single value.<div class="autopermalink" data-description="Paragraph"><a href="#thm-ivp-unique-antiderivative-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proof 4.1.5.1"><a href="#thm-ivp-unique-antiderivative-3" title="Copy heading and permalink for Proof 4.1.5.1" aria-label="Copy heading and permalink for Proof 4.1.5.1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Definition and the Constant of Integration"><a href="#ssec-antiderivatives-definition-theorem" title="Copy heading and permalink for Subsection: Definition and the Constant of Integration" aria-label="Copy heading and permalink for Subsection: Definition and the Constant of Integration">🔗</a></div></section><section class="subsection" id="ssec-antiderivatives-rules"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Proof 4.1.5.1"><a href="#thm-antiderivative-family-3" title="Copy heading and permalink for Proof 4.1.5.1" aria-label="Copy heading and permalink for Proof 4.1.5.1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Reversing Differentiation"><a href="#ssec-antiderivatives-motivation" title="Copy heading and permalink for Subsection: Reversing Differentiation" aria-label="Copy heading and permalink for Subsection: Reversing Differentiation">🔗</a></div></section><section class="subsection" id="ssec-antiderivatives-rules"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic Antidifferentiation Rules</span>
 </h3>
-<div class="para" id="ssec-antiderivatives-rules-2">Antidifferentiation starts by reversing the derivative rules you already know. The key is to build a library of basic patterns, then use linearity to break complicated expressions into simpler pieces.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-rules-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ssec-antiderivatives-rules-2">Antidifferentiation starts by reversing the derivative rules you already know. The key is to build a library of basic patterns, then we can extend these to more complicated functions using our rules of derivatives.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-rules-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-antiderivative-rules"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic Antiderivative Rules.</span>
+</h4>
+<div class="para logical" id="thm-antiderivative-rules-2-1">
+<div class="para">For each of the following let <span class="process-math">\(F(x)\)</span> be an antiderivative of <span class="process-math">\(f(x)\text{.}\)</span> Then:</div>
+<ul class="disc" id="thm-antiderivative-rules-2-1-3">
+<li id="thm-antiderivative-rules-2-1-3-1">
+<div class="para" id="thm-antiderivative-rules-2-1-3-1-1">If <span class="process-math">\(f(x)=x^n\)</span> for some integer <span class="process-math">\(n\neq -1\text{,}\)</span> then <span class="process-math">\(F(x)=\frac{1}{n+1}x^{n+1}+C\text{.}\)</span> (This is the <dfn class="terminology">power rule</dfn> for antidifferentiation.)<div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-antiderivative-rules-2-1-3-2">
+<div class="para" id="thm-antiderivative-rules-2-1-3-2-1">If <span class="process-math">\(f(x)=\frac{1}{x}\text{,}\)</span> then <span class="process-math">\(F(x)=\ln|x|+C\text{.}\)</span> (This is a special case of the power rule, but it is important enough to be called out separately.)<div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-antiderivative-rules-2-1-3-3">
+<div class="para logical" id="thm-antiderivative-rules-2-1-3-3-1">
+<div class="para">
+<em class="alert">Trigonometric functions</em>:</div>
+<ul class="circle" id="thm-antiderivative-rules-2-1-3-3-1-2">
+<li id="thm-antiderivative-rules-2-1-3-3-1-2-1">
+<div class="para" id="thm-antiderivative-rules-2-1-3-3-1-2-1-1">If <span class="process-math">\(f(x)=\cos(x)\text{,}\)</span> then <span class="process-math">\(F(x)=\sin(x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-3-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-3-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-antiderivative-rules-2-1-3-3-1-2-2">
+<div class="para" id="thm-antiderivative-rules-2-1-3-3-1-2-2-1">If <span class="process-math">\(f(x)=\sin(x)\text{,}\)</span> then <span class="process-math">\(F(x)=-\cos(x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-3-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-3-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-antiderivative-rules-2-1-3-3-1-2-3">
+<div class="para" id="thm-antiderivative-rules-2-1-3-3-1-2-3-1">If <span class="process-math">\(f(x)=\sec^2(x)\text{,}\)</span> then <span class="process-math">\(F(x)=\tan(x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-3-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-3-1-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-antiderivative-rules-2-1-3-3-1-2-4">
+<div class="para" id="thm-antiderivative-rules-2-1-3-3-1-2-4-1">If <span class="process-math">\(f(x)=\sec(x)\tan(x)\text{,}\)</span> then <span class="process-math">\(F(x)=\sec(x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-3-1-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-3-1-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-antiderivative-rules-2-1-3-4">
+<div class="para logical" id="thm-antiderivative-rules-2-1-3-4-1">
+<div class="para">
+<em class="alert">Exponential functions</em>:</div>
+<ul class="circle" id="thm-antiderivative-rules-2-1-3-4-1-2">
+<li id="thm-antiderivative-rules-2-1-3-4-1-2-1">
+<div class="para" id="thm-antiderivative-rules-2-1-3-4-1-2-1-1">If <span class="process-math">\(f(x)=e^x\text{,}\)</span> then <span class="process-math">\(F(x)=e^x+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-4-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-4-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-antiderivative-rules-2-1-3-4-1-2-2">
+<div class="para" id="thm-antiderivative-rules-2-1-3-4-1-2-2-1">If <span class="process-math">\(f(x)=a^x\)</span> for some constant <span class="process-math">\(a\gt 0\)</span> (and <span class="process-math">\(a\neq 1\)</span>), then <span class="process-math">\(F(x)=\frac{1}{\ln(a)}a^x+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-4-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-4-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-antiderivative-rules-2-1-3-5">
+<div class="para logical" id="thm-antiderivative-rules-2-1-3-5-1">
+<div class="para">
+<em class="alert">Inverse trig functions</em>:</div>
+<ul class="circle" id="thm-antiderivative-rules-2-1-3-5-1-2">
+<li id="thm-antiderivative-rules-2-1-3-5-1-2-1">
+<div class="para" id="thm-antiderivative-rules-2-1-3-5-1-2-1-1">If <span class="process-math">\(f(x)=\dfrac{1}{\sqrt{1-x^2}}\text{,}\)</span> then <span class="process-math">\(F(x)=\arcsin(x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-5-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-5-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-antiderivative-rules-2-1-3-5-1-2-2">
+<div class="para" id="thm-antiderivative-rules-2-1-3-5-1-2-2-1">If <span class="process-math">\(f(x)=\dfrac{1}{1+x^2}\text{,}\)</span> then <span class="process-math">\(F(x)=\arctan(x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-5-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-5-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1-3-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-antiderivative-rules-2-1-3-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.1.6: Basic Antiderivative Rules"><a href="#thm-antiderivative-rules" title="Copy heading and permalink for Theorem 4.1.6: Basic Antiderivative Rules" aria-label="Copy heading and permalink for Theorem 4.1.6: Basic Antiderivative Rules">🔗</a></div></article><details id="thm-antiderivative-rules-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-antiderivative-rules-3-1">Each of these can be verified by differentiating the proposed antiderivative and confirming you get back the original function.<div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-rules-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.1.6.1"><a href="#thm-antiderivative-rules-3" title="Copy heading and permalink for Proof 4.1.6.1" aria-label="Copy heading and permalink for Proof 4.1.6.1">🔗</a></div></article></details><article class="remark remark-like" id="ssec-antiderivatives-rules-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ssec-antiderivatives-rules-4-1">Notice the derivative of <span class="process-math">\(\ln|x|\)</span> is <span class="process-math">\(\frac{1}{x}\)</span> which takes into account both positive and negative values of <span class="process-math">\(x\text{,}\)</span> so the antiderivative of <span class="process-math">\(\frac{1}{x}\)</span> must include an absolute value.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-rules-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-antiderivatives-rules-4-2">If the interval you are working with has only positive values of <span class="process-math">\(x\text{,}\)</span> then you can drop the absolute value and write the antiderivative as <span class="process-math">\(\ln(x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-rules-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.1.7"><a href="#ssec-antiderivatives-rules-4" title="Copy heading and permalink for Remark 4.1.7" aria-label="Copy heading and permalink for Remark 4.1.7">🔗</a></div></article><div class="para" id="ssec-antiderivatives-rules-5">Now that we have the building blocks for antiderivatives, we can also reverse the rules of derivatives to find antiderivatives of more complicated functions with sums / differences / constants.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-rules-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-antiderivative-linearity"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linearity of Antiderivatives.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sums and Constant Multiples.</span>
 </h4>
 <div class="para" id="thm-antiderivative-linearity-2-1">If <span class="process-math">\(F'(x)=f(x)\)</span> and <span class="process-math">\(G'(x)=g(x)\text{,}\)</span> then for constants <span class="process-math">\(a,b\text{,}\)</span> an antiderivative of <span class="process-math">\(af(x)+bg(x)\)</span> is <span class="process-math">\(aF(x)+bG(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-linearity-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 4.1.6: Linearity of Antiderivatives"><a href="#thm-antiderivative-linearity" title="Copy heading and permalink for Theorem 4.1.6: Linearity of Antiderivatives" aria-label="Copy heading and permalink for Theorem 4.1.6: Linearity of Antiderivatives">🔗</a></div></article><div class="para" id="ssec-antiderivatives-rules-4">Here are several basic patterns (each includes the constant of integration).<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-rules-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 4.1.8: Sums and Constant Multiples"><a href="#thm-antiderivative-linearity" title="Copy heading and permalink for Theorem 4.1.8: Sums and Constant Multiples" aria-label="Copy heading and permalink for Theorem 4.1.8: Sums and Constant Multiples">🔗</a></div></article><details id="thm-antiderivative-linearity-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-antiderivative-linearity-3-1">This follows from the linearity of derivatives: <span class="process-math">\((aF(x)+bG(x))' = aF'(x)+bG'(x)=af(x)+bg(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-antiderivative-linearity-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="ssec-antiderivatives-rules-5">
-\begin{equation*}
-\begin{aligned}
-\text{Power rule:}\quad &amp;\text{if } n\neq -1,\ \ \int x^n\,dx \text{ corresponds to } \frac{1}{n+1}x^{n+1}+C.\\
-\text{Special case:}\quad &amp;\text{an antiderivative of } \frac{1}{x} \text{ is } \ln|x|+C.\\
-\text{Trig:}\quad &amp;\int \cos(x)\,dx \text{ corresponds to } \sin(x)+C,\qquad
-\int \sin(x)\,dx \text{ corresponds to } -\cos(x)+C.\\
-&amp;\int \sec^2(x)\,dx \text{ corresponds to } \tan(x)+C,\qquad
-\int \sec(x)\tan(x)\,dx \text{ corresponds to } \sec(x)+C.
-\end{aligned}
-\end{equation*}
+<div class="autopermalink" data-description="Proof 4.1.8.1"><a href="#thm-antiderivative-linearity-3" title="Copy heading and permalink for Proof 4.1.8.1" aria-label="Copy heading and permalink for Proof 4.1.8.1">🔗</a></div></article></details><div class="para" id="ssec-antiderivatives-rules-7">Now let’s see some examples!<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-rules-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ssec-antiderivatives-rules-6">We are not formally defining integrals yet, so you can read the display above as a list of “reverse derivative” facts. The important idea is that the derivative table can be read backward, with a <span class="process-math">\(+C\)</span> added.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-rules-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
+<div class="autopermalink" data-description="Subsection: Basic Antidifferentiation Rules"><a href="#ssec-antiderivatives-rules" title="Copy heading and permalink for Subsection: Basic Antidifferentiation Rules" aria-label="Copy heading and permalink for Subsection: Basic Antidifferentiation Rules">🔗</a></div></section><section class="subsection" id="subsec-SelectExamples"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Select Examples</span>
+</h3>
 <article class="example example-like" id="ex-antiderivative-linearity"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="ex-antiderivative-linearity-1-1">Find a general antiderivative of <span class="process-math">\(f(x)=7x^3-x\sqrt{x}+\dfrac{3}{x^2}-\dfrac{4}{\cos^2(x)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-linearity-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-antiderivative-linearity-1-1">Find a general antiderivative of <span class="process-math">\(f(x)=7x^3-x\sqrt{x}+\dfrac{3}{x^2}-\dfrac{4}{\cos^2(x)} + e^x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-linearity-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="ex-antiderivative-linearity-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-antiderivative-linearity-2-1">Rewrite using exponents and secant: <span class="process-math">\(x\sqrt{x}=x^{3/2}\text{,}\)</span> <span class="process-math">\(\dfrac{3}{x^2}=3x^{-2}\text{,}\)</span> and <span class="process-math">\(\dfrac{1}{\cos^2(x)}=\sec^2(x)\text{.}\)</span> Then antidifferentiate term-by-term:<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-linearity-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-antiderivative-linearity-2-1">First let’s rewrite our function as a sum of basic patterns: <span class="process-math">\(f(x)=7x^3-x^{3/2}+3x^{-2}-4\sec^2(x)+e^x\text{.}\)</span> Then we can antidifferentiate term-by-term using the rules we know:<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-linearity-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" id="ex-antiderivative-linearity-2-2">
 \begin{equation*}
 \begin{aligned}
 F(x)
-&amp;= 7\cdot \frac{1}{4}x^4 \;-\; \frac{1}{\frac52}x^{5/2} \;+\; 3\cdot\frac{1}{-1}x^{-1} \;-\;4\tan(x) + C\\[0.3em]
-&amp;= \frac{7}{4}x^4 \;-\; \frac{2}{5}x^{5/2} \;-\;\frac{3}{x}\;-\;4\tan(x)+C.
+&amp;= 7\cdot \frac{1}{4}x^4 \;-\; \frac{1}{\frac52}x^{5/2} \;+\; 3\cdot\frac{1}{-1}x^{-1} \;-\;4\tan(x) + e^x + C\\[0.3em]
+&amp;= \frac{7}{4}x^4 \;-\; \frac{2}{5}x^{5/2} \;-\;\frac{3}{x}\;-\;4\tan(x)+e^x+C.
 \end{aligned}
 \end{equation*}
 </div>
 <div class="para" id="ex-antiderivative-linearity-2-3">A quick check is to differentiate <span class="process-math">\(F(x)\)</span> and confirm you get back <span class="process-math">\(f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-linearity-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.1.7.1"><a href="#ex-antiderivative-linearity-2" title="Copy heading and permalink for Solution 4.1.7.1" aria-label="Copy heading and permalink for Solution 4.1.7.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.1.9.1"><a href="#ex-antiderivative-linearity-2" title="Copy heading and permalink for Solution 4.1.9.1" aria-label="Copy heading and permalink for Solution 4.1.9.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.1.7"><a href="#ex-antiderivative-linearity" title="Copy heading and permalink for Example 4.1.7" aria-label="Copy heading and permalink for Example 4.1.7">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Basic Antidifferentiation Rules"><a href="#ssec-antiderivatives-rules" title="Copy heading and permalink for Subsection: Basic Antidifferentiation Rules" aria-label="Copy heading and permalink for Subsection: Basic Antidifferentiation Rules">🔗</a></div></section><section class="subsection" id="ssec-antiderivatives-reverse-chain"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Simple “Reverse Chain Rule” Pattern</span>
-</h3>
-<div class="para" id="ssec-antiderivatives-reverse-chain-2">Sometimes a function looks like the derivative of a composition, except for a missing constant multiple. In these cases, you can often fix the issue by introducing the correct constant.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-reverse-chain-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.1.9"><a href="#ex-antiderivative-linearity" title="Copy heading and permalink for Example 4.1.9" aria-label="Copy heading and permalink for Example 4.1.9">🔗</a></div></article><div class="para" id="subsec-SelectExamples-3">We can also reverse the Chain Rule when we see a composition, but the constant multiple is missing.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-SelectExamples-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="ex-antiderivative-cos3x"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="ex-antiderivative-cos3x-1-1">Find a general antiderivative of <span class="process-math">\(f(x)=\cos(3x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-cos3x-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-antiderivative-cos3x-1-1">Find the antiderivative of <span class="process-math">\(f(x)=\cos(3x)\)</span> such that <span class="process-math">\(F(0)=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-cos3x-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="ex-antiderivative-cos3x-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-antiderivative-cos3x-2-1">Since <span class="process-math">\((\sin(3x))'=3\cos(3x)\text{,}\)</span> we divide by 3:<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-cos3x-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-antiderivative-cos3x-2-1">Since <span class="process-math">\((\sin(3x))'=3\cos(3x)\text{,}\)</span> we divide by 3 to get the general antiderivative of <span class="process-math">\(\cos(3x)\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-cos3x-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" id="ex-antiderivative-cos3x-2-2">
 \begin{equation*}
 F(x)=\tfrac13\sin(3x)+C.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Solution 4.1.8.1"><a href="#ex-antiderivative-cos3x-2" title="Copy heading and permalink for Solution 4.1.8.1" aria-label="Copy heading and permalink for Solution 4.1.8.1">🔗</a></div>
+<div class="para" id="ex-antiderivative-cos3x-2-3">Now use the initial condition <span class="process-math">\(F(0)=2\text{:}\)</span> <span class="process-math">\(\tfrac13\sin(0)+C=2\text{,}\)</span> so <span class="process-math">\(C=2\text{.}\)</span> Therefore<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-cos3x-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-antiderivative-cos3x-2-4">
+\begin{equation*}
+F(x)=\tfrac13\sin(3x)+2.
+\end{equation*}
+</div>
+<div class="para" id="ex-antiderivative-cos3x-2-5">Again, we can check by differentiating <span class="process-math">\(F(x)\)</span> and confirming we get back <span class="process-math">\(f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-cos3x-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1.10.1"><a href="#ex-antiderivative-cos3x-2" title="Copy heading and permalink for Solution 4.1.10.1" aria-label="Copy heading and permalink for Solution 4.1.10.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.1.8"><a href="#ex-antiderivative-cos3x" title="Copy heading and permalink for Example 4.1.8" aria-label="Copy heading and permalink for Example 4.1.8">🔗</a></div></article><article class="example example-like" id="ex-antiderivative-algebra-first"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 4.1.10"><a href="#ex-antiderivative-cos3x" title="Copy heading and permalink for Example 4.1.10" aria-label="Copy heading and permalink for Example 4.1.10">🔗</a></div></article><div class="para" id="subsec-SelectExamples-5">When the function is a product or quotient, we cannot simply antidifferentiate each factor and hope to get an antiderivative of the whole function. In general, there is no simple formula for the antiderivative of a product or quotient. However, if we can rewrite the expression as a sum of basic patterns, then we can antidifferentiate term-by-term.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-SelectExamples-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-antiderivative-algebra-first"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="ex-antiderivative-algebra-first-1-1">Find a general antiderivative of <span class="process-math">\(\displaystyle f(x)=\frac{x+4}{\sqrt{x}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-algebra-first-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-antiderivative-algebra-first-1-1">Find a general antiderivative of <span class="process-math">\(\displaystyle f(x)=\frac{\sqrt{x}+4}{x}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-algebra-first-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="ex-antiderivative-algebra-first-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-antiderivative-algebra-first-2-1">Rewrite as a sum of powers: <span class="process-math">\(\displaystyle \frac{x+4}{\sqrt{x}}=\frac{x}{\sqrt{x}}+\frac{4}{\sqrt{x}}=x^{1/2}+4x^{-1/2}\text{.}\)</span> Then antidifferentiate term-by-term:<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-algebra-first-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-antiderivative-algebra-first-2-1">Rewrite as a sum of powers: <span class="process-math">\(\displaystyle \frac{\sqrt{x}+4}{x}=\frac{x^{1/2}}{x}+\frac{4}{x}=x^{-1/2}+4x^{-1}\text{.}\)</span> Then antidifferentiate term-by-term:<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-algebra-first-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" id="ex-antiderivative-algebra-first-2-2">
 \begin{equation*}
 \begin{aligned}
 F(x)
-&amp;= \frac{1}{\frac32}x^{3/2}+4\cdot\frac{1}{\frac12}x^{1/2}+C\\
-&amp;= \tfrac23 x\sqrt{x}+8\sqrt{x}+C.
+&amp;= \frac{1}{\frac12}x^{1/2}+4\cdot\ln|x|+C\\
+&amp;= 2x^{1/2}+4\ln|x|+C\\
+&amp;= 2\sqrt{x}+4\ln|x|+C.
 \end{aligned}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Solution 4.1.9.1"><a href="#ex-antiderivative-algebra-first-2" title="Copy heading and permalink for Solution 4.1.9.1" aria-label="Copy heading and permalink for Solution 4.1.9.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.1.11.1"><a href="#ex-antiderivative-algebra-first-2" title="Copy heading and permalink for Solution 4.1.11.1" aria-label="Copy heading and permalink for Solution 4.1.11.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.1.9"><a href="#ex-antiderivative-algebra-first" title="Copy heading and permalink for Example 4.1.9" aria-label="Copy heading and permalink for Example 4.1.9">🔗</a></div></article><div class="para" id="ssec-antiderivatives-reverse-chain-5">Be careful with products and quotients. In general, the antiderivative of a product is not the product of antiderivatives. When you can rewrite the expression as a sum of basic patterns, the problem becomes manageable.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-reverse-chain-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.1.11"><a href="#ex-antiderivative-algebra-first" title="Copy heading and permalink for Example 4.1.11" aria-label="Copy heading and permalink for Example 4.1.11">🔗</a></div></article><article class="remark remark-like" id="rmk-antiderivative-products-quotients"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Products and Quotients.</span>
+</h4>
+<div class="para" id="rmk-antiderivative-products-quotients-2">Be careful with products and quotients! In general, the antiderivative of a product is not the product of antiderivatives (same for quotients). We will learn how to handle these later, but for now, we can sometimes antidifferentiate products or quotients if we can expand them into sums of Basic Antiderivatives.<div class="autopermalink" data-description="Paragraph"><a href="#rmk-antiderivative-products-quotients-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection: A Simple “Reverse Chain Rule” Pattern"><a href="#ssec-antiderivatives-reverse-chain" title="Copy heading and permalink for Subsection: A Simple “Reverse Chain Rule” Pattern" aria-label="Copy heading and permalink for Subsection: A Simple “Reverse Chain Rule” Pattern">🔗</a></div></section><section class="subsection" id="ssec-antiderivatives-trig-identity"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">When You Must Rewrite First</span>
-</h3>
-<article class="example example-like" id="ex-antiderivative-sin-squared"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Remark 4.1.12: Products and Quotients"><a href="#rmk-antiderivative-products-quotients" title="Copy heading and permalink for Remark 4.1.12: Products and Quotients" aria-label="Copy heading and permalink for Remark 4.1.12: Products and Quotients">🔗</a></div></article><article class="example example-like" id="ex-antiderivative-sin-squared"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-antiderivative-sin-squared-1-1">Find a general antiderivative of <span class="process-math">\(f(x)=\sin^2(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-sin-squared-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-antiderivative-sin-squared-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-antiderivative-sin-squared-2-1">The function <span class="process-math">\(\sin^2(x)\)</span> is not on our basic list. Use the identity <span class="process-math">\(\cos(2x)=1-2\sin^2(x)\text{,}\)</span> which gives <span class="process-math">\(\sin^2(x)=\tfrac12(1-\cos(2x))\text{.}\)</span> Now antidifferentiate:<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-sin-squared-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions">
+<details id="ex-antiderivative-sin-squared-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="ex-antiderivative-sin-squared-2-1">Use the identity <span class="process-math">\(\cos(2x)=1-2\sin^2(x)\)</span> to rewrite <span class="process-math">\(\sin^2(x)\)</span> as a sum of basic patterns.<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-sin-squared-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="ex-antiderivative-sin-squared-2-2">
+<div class="autopermalink" data-description="Hint 4.1.13.1"><a href="#ex-antiderivative-sin-squared-2" title="Copy heading and permalink for Hint 4.1.13.1" aria-label="Copy heading and permalink for Hint 4.1.13.1">🔗</a></div>
+</div></details><details id="ex-antiderivative-sin-squared-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-antiderivative-sin-squared-3-1">
+<div class="para">The function <span class="process-math">\(\sin^2(x)\)</span> is not on our basic list (it is the product of two sines) so we must be careful. Using the double angle formula from trig we know <span class="process-math">\(\cos(2x)=1-2\sin^2(x)\text{,}\)</span> which gives</div>
+<div class="displaymath process-math" id="ex-antiderivative-sin-squared-3-1-3">
+\begin{equation*}
+\sin^2(x)=\tfrac12(1-\cos(2x)) = \tfrac12 - \tfrac12\cos(2x)
+\end{equation*}
+</div>
+<div class="para">Now we can find the antidifferentiate:</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-sin-squared-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-antiderivative-sin-squared-3-2">
 \begin{equation*}
 \begin{aligned}
-\int \sin^2(x)\,dx
-&amp;leftrightarrow \int \left(\tfrac12-\tfrac12\cos(2x)\right)\,dx\\
-&amp;\leftrightarrow \tfrac12 x-\tfrac12\cdot \tfrac12\sin(2x)+C\\
-&amp;= \tfrac12 x-\tfrac14\sin(2x)+C.
+F(x)
+&amp;= \tfrac12 x - \tfrac12\cdot \tfrac{1}{2}\sin(2x) + C\\
+&amp;= \tfrac12 x - \tfrac14\sin(2x) + C.
 \end{aligned}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Solution 4.1.10.1"><a href="#ex-antiderivative-sin-squared-2" title="Copy heading and permalink for Solution 4.1.10.1" aria-label="Copy heading and permalink for Solution 4.1.10.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.1.10"><a href="#ex-antiderivative-sin-squared" title="Copy heading and permalink for Example 4.1.10" aria-label="Copy heading and permalink for Example 4.1.10">🔗</a></div></article><div class="autopermalink" data-description="Subsection: When You Must Rewrite First"><a href="#ssec-antiderivatives-trig-identity" title="Copy heading and permalink for Subsection: When You Must Rewrite First" aria-label="Copy heading and permalink for Subsection: When You Must Rewrite First">🔗</a></div></section><section class="subsection" id="ssec-antiderivatives-accel-vel-pos"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Acceleration, Velocity, and Position</span>
+<div class="para" id="ex-antiderivative-sin-squared-3-3">We can check by differentiating <span class="process-math">\(F(x)\)</span> and confirming we get back <span class="process-math">\(f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-sin-squared-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.1.13.1"><a href="#ex-antiderivative-sin-squared-3" title="Copy heading and permalink for Solution 4.1.13.1" aria-label="Copy heading and permalink for Solution 4.1.13.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.1.13"><a href="#ex-antiderivative-sin-squared" title="Copy heading and permalink for Example 4.1.13" aria-label="Copy heading and permalink for Example 4.1.13">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Select Examples"><a href="#subsec-SelectExamples" title="Copy heading and permalink for Subsection: Select Examples" aria-label="Copy heading and permalink for Subsection: Select Examples">🔗</a></div></section><section class="subsection" id="ssec-antiderivatives-accel-vel-pos"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Application: Acceleration, Velocity, and Position</span>
 </h3>
-<div class="para" id="ssec-antiderivatives-accel-vel-pos-2">In motion problems, derivatives connect position, velocity, and acceleration: <span class="process-math">\(v(t)=s'(t)\)</span> and <span class="process-math">\(a(t)=v'(t)=s''(t)\text{.}\)</span> If we know acceleration and some initial conditions, we can recover velocity and position by antidifferentiating twice.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-accel-vel-pos-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ssec-antiderivatives-accel-vel-pos-2">Previously we have seen how derivatives connect position, velocity, and acceleration in motion problems. Now we can use antidifferentiation to go in the opposite direction. If we know acceleration and some initial conditions, we can recover velocity and position by antidifferentiating twice.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-antiderivatives-accel-vel-pos-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="ex-antiderivative-rocket"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="ex-antiderivative-rocket-1-1">A rocket has acceleration <span class="process-math">\(a(t)=t+1\)</span> (in m/sec2). At time <span class="process-math">\(t=1\text{,}\)</span> its height is <span class="process-math">\(s(1)=10\)</span> meters and its velocity is <span class="process-math">\(v(1)=3\)</span> m/sec. Find the velocity function <span class="process-math">\(v(t)\)</span> and the height function <span class="process-math">\(s(t)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-rocket-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-antiderivative-rocket-1-1">A rocket has acceleration <span class="process-math">\(a(t)=t+1\)</span> (in <span class="process-math">\(\text{m}/\text{sec}^2\)</span>). At time <span class="process-math">\(t=1\text{,}\)</span> its height is <span class="process-math">\(s(1)=10\)</span> meters and its velocity is <span class="process-math">\(v(1)=3\)</span> m/sec. Find the velocity function <span class="process-math">\(v(t)\)</span> and the height function <span class="process-math">\(s(t)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-rocket-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="ex-antiderivative-rocket-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="ex-antiderivative-rocket-2-1">Since <span class="process-math">\(v'(t)=a(t)=t+1\text{,}\)</span> antidifferentiate:<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-rocket-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -815,7 +937,6 @@ v(t)=\tfrac12 t^2+t+\tfrac32.
 \begin{equation*}
 \begin{aligned}
 s(t)
-&amp;= \int \left(\tfrac12 t^2+t+\tfrac32\right)\,dt \ \text{(as antiderivative facts)}\\
 &amp;= \tfrac12\cdot\tfrac13 t^3+\tfrac12 t^2+\tfrac32 t + B\\
 &amp;= \tfrac16 t^3+\tfrac12 t^2+\tfrac32 t + B.
 \end{aligned}
@@ -830,9 +951,9 @@ s(t)=\tfrac16 t^3+\tfrac12 t^2+\tfrac32 t+\tfrac{47}{6}.
 </div>
 <div class="para" id="ex-antiderivative-rocket-2-9">With both conditions applied, the constants are determined and the solution is unique.<div class="autopermalink" data-description="Paragraph"><a href="#ex-antiderivative-rocket-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.1.11.1"><a href="#ex-antiderivative-rocket-2" title="Copy heading and permalink for Solution 4.1.11.1" aria-label="Copy heading and permalink for Solution 4.1.11.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.1.14.1"><a href="#ex-antiderivative-rocket-2" title="Copy heading and permalink for Solution 4.1.14.1" aria-label="Copy heading and permalink for Solution 4.1.14.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.1.11"><a href="#ex-antiderivative-rocket" title="Copy heading and permalink for Example 4.1.11" aria-label="Copy heading and permalink for Example 4.1.11">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Acceleration, Velocity, and Position"><a href="#ssec-antiderivatives-accel-vel-pos" title="Copy heading and permalink for Subsection: Acceleration, Velocity, and Position" aria-label="Copy heading and permalink for Subsection: Acceleration, Velocity, and Position">🔗</a></div></section><section class="subsection" id="additional-worked-problems-integral-antiderivatives"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 4.1.14"><a href="#ex-antiderivative-rocket" title="Copy heading and permalink for Example 4.1.14" aria-label="Copy heading and permalink for Example 4.1.14">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Application: Acceleration, Velocity, and Position"><a href="#ssec-antiderivatives-accel-vel-pos" title="Copy heading and permalink for Subsection: Application: Acceleration, Velocity, and Position" aria-label="Copy heading and permalink for Subsection: Application: Acceleration, Velocity, and Position">🔗</a></div></section><section class="subsection" id="additional-worked-problems-integral-antiderivatives"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additional Worked-Out Examples</span>
 </h3>
 <div class="para" id="additional-worked-problems-integral-antiderivatives-2">To keep this section at a reasonable length, we include only a few representative examples directly in the text. If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional fully worked-out examples are available via: <em class="alert"><a href="sec-integral-ww.html#subsec-integral-antiderivatives" class="internal" title="Subsection: Section 4.1 Antiderivatives">Additional Worked-Out Problems for Antiderivatives </a></em><div class="autopermalink" data-description="Paragraph"><a href="#additional-worked-problems-integral-antiderivatives-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -841,62 +962,148 @@ s(t)=\tfrac16 t^3+\tfrac12 t^2+\tfrac32 t+\tfrac{47}{6}.
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Practice / Study Problems</span>
 </h3>
 <div class="exercisegroup" id="exercises-antiderivatives-2">
-<h4 class="heading"><span class="title">Basic Antiderivatives.</span></h4>
+<h4 class="heading"><span class="title">Some True/False Problems.</span></h4>
+<div class="introduction" id="exercises-antiderivatives-2-2"><div class="para" id="exercises-antiderivatives-2-2-1">Determine whether each statement is true or false and briefly justify your reasoning.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-antiderivatives-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
 <div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="prob-anti-01"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-anti-01-1-1">Find a general antiderivative of each function.<div class="autopermalink" data-description="Paragraph"><a href="#prob-anti-01-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <ol class="lower-alpha lower-alpha-level-1" id="prob-anti-01-1-2">
-<li id="prob-anti-01-1-2-1">
-<div class="para" id="prob-anti-01-1-2-1-1">
-<span class="process-math">\(\displaystyle f(x)=6x^5-4x^2+9\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-anti-01-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="exercise exercise-like" id="ex-tf01"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf01-1-1">If <span class="process-math">\(F'(x)=f(x)\)</span> and <span class="process-math">\(G'(x)=f(x)\)</span> on an interval, then <span class="process-math">\(F(x)-G(x)\)</span> is constant on that interval.<div class="autopermalink" data-description="Paragraph"><a href="#ex-tf01-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.a"><a href="#prob-anti-01-1-2-1" title="Copy heading and permalink for Item 1.a" aria-label="Copy heading and permalink for Item 1.a">🔗</a></div>
-</li>
-<li id="prob-anti-01-1-2-2">
-<div class="para" id="prob-anti-01-1-2-2-1">
-<span class="process-math">\(\displaystyle g(x)=\dfrac{5}{x^2}-\sqrt{x}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-anti-01-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="ex-tf01-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-tf01-2-1">
+<em class="emphasis">True</em>. Since <span class="process-math">\(F'(x)=G'(x)\text{,}\)</span> the function <span class="process-math">\(F(x)-G(x)\)</span> has derivative zero, so it is constant.<div class="autopermalink" data-description="Paragraph"><a href="#ex-tf01-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.b"><a href="#prob-anti-01-1-2-2" title="Copy heading and permalink for Item 1.b" aria-label="Copy heading and permalink for Item 1.b">🔗</a></div>
-</li>
-<li id="prob-anti-01-1-2-3">
-<div class="para" id="prob-anti-01-1-2-3-1">
-<span class="process-math">\(\displaystyle h(x)=3\cos(x)-2\sec^2(x)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-anti-01-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 1.1"><a href="#ex-tf01-2" title="Copy heading and permalink for Solution 1.1" aria-label="Copy heading and permalink for Solution 1.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1"><a href="#ex-tf01" title="Copy heading and permalink for Exercise 1" aria-label="Copy heading and permalink for Exercise 1">🔗</a></div></article><article class="exercise exercise-like" id="ex-tf02"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf02-1-1">
+<span class="process-math">\(\dfrac{d}{dx}\bigl(x^5+3\bigr)=5x^4\text{,}\)</span> so one antiderivative of <span class="process-math">\(5x^4\)</span> is <span class="process-math">\(x^5+3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf02-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.c"><a href="#prob-anti-01-1-2-3" title="Copy heading and permalink for Item 1.c" aria-label="Copy heading and permalink for Item 1.c">🔗</a></div>
-</li>
-</ol>
-<div class="autopermalink" data-description="Exercise 1"><a href="#prob-anti-01" title="Copy heading and permalink for Exercise 1" aria-label="Copy heading and permalink for Exercise 1">🔗</a></div></article><article class="exercise exercise-like" id="prob-anti-02"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-anti-02-1-1">Find a general antiderivative of <span class="process-math">\(f(x)=\cos(5x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-anti-02-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="ex-tf02-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-tf02-2-1">
+<em class="emphasis">True</em>. The derivative of <span class="process-math">\(x^5+3\)</span> is indeed <span class="process-math">\(5x^4\text{,}\)</span> so it is an antiderivative. In fact, the general antiderivative is <span class="process-math">\(x^5+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf02-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2"><a href="#prob-anti-02" title="Copy heading and permalink for Exercise 2" aria-label="Copy heading and permalink for Exercise 2">🔗</a></div></article>
+<div class="autopermalink" data-description="Solution 2.1"><a href="#ex-tf02-2" title="Copy heading and permalink for Solution 2.1" aria-label="Copy heading and permalink for Solution 2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 2"><a href="#ex-tf02" title="Copy heading and permalink for Exercise 2" aria-label="Copy heading and permalink for Exercise 2">🔗</a></div></article><article class="exercise exercise-like" id="ex-tf03"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf03-1-1">If <span class="process-math">\(f(x)=\cos(x)\text{,}\)</span> then a general antiderivative is <span class="process-math">\(\sin(x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf03-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise Group 1–2: Basic Antiderivatives"><a href="#exercises-antiderivatives-2" title="Copy heading and permalink for Exercise Group 1–2: Basic Antiderivatives" aria-label="Copy heading and permalink for Exercise Group 1–2: Basic Antiderivatives">🔗</a></div>
+<div class="solutions"><details id="ex-tf03-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-tf03-2-1">
+<em class="emphasis">True</em>. The derivative of <span class="process-math">\(\sin(x)+C\)</span> is <span class="process-math">\(\cos(x)\text{,}\)</span> so it is the general antiderivative of <span class="process-math">\(\cos(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf03-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="exercisegroup" id="exercises-antiderivatives-3">
-<h4 class="heading"><span class="title">Rewrite First.</span></h4>
-<div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="prob-anti-03"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-anti-03-1-1">Find a general antiderivative of <span class="process-math">\(\displaystyle f(x)=\frac{2x-1}{\sqrt{x}}\text{.}\)</span> (Rewrite as a sum of powers first.)<div class="autopermalink" data-description="Paragraph"><a href="#prob-anti-03-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 3.1"><a href="#ex-tf03-2" title="Copy heading and permalink for Solution 3.1" aria-label="Copy heading and permalink for Solution 3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 3"><a href="#ex-tf03" title="Copy heading and permalink for Exercise 3" aria-label="Copy heading and permalink for Exercise 3">🔗</a></div></article><article class="exercise exercise-like" id="ex-tf04"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf04-1-1">An antiderivative of <span class="process-math">\(\sin(x)\)</span> is <span class="process-math">\(\cos(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf04-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3"><a href="#prob-anti-03" title="Copy heading and permalink for Exercise 3" aria-label="Copy heading and permalink for Exercise 3">🔗</a></div></article><article class="exercise exercise-like" id="prob-anti-04"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-anti-04-1-1">Find a general antiderivative of <span class="process-math">\(\cos^2(x)\text{.}\)</span> (Hint: use <span class="process-math">\(\cos(2x)=2\cos^2(x)-1\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#prob-anti-04-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="ex-tf04-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-tf04-2-1">
+<em class="emphasis">False</em>. The derivative of <span class="process-math">\(\cos(x)\)</span> is <span class="process-math">\(-\sin(x)\text{,}\)</span> so it is not an antiderivative of <span class="process-math">\(\sin(x)\text{.}\)</span> In fact, the general antiderivative of <span class="process-math">\(\sin(x)\)</span> is <span class="process-math">\(-\cos(x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf04-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4"><a href="#prob-anti-04" title="Copy heading and permalink for Exercise 4" aria-label="Copy heading and permalink for Exercise 4">🔗</a></div></article>
+<div class="autopermalink" data-description="Solution 4.1"><a href="#ex-tf04-2" title="Copy heading and permalink for Solution 4.1" aria-label="Copy heading and permalink for Solution 4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 4"><a href="#ex-tf04" title="Copy heading and permalink for Exercise 4" aria-label="Copy heading and permalink for Exercise 4">🔗</a></div></article><article class="exercise exercise-like" id="ex-tf05"><h5 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf05-1-1">If <span class="process-math">\(f(x)=e^{2x}\text{,}\)</span> then a general antiderivative is <span class="process-math">\(\tfrac12 e^{2x}+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf05-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise Group 3–4: Rewrite First"><a href="#exercises-antiderivatives-3" title="Copy heading and permalink for Exercise Group 3–4: Rewrite First" aria-label="Copy heading and permalink for Exercise Group 3–4: Rewrite First">🔗</a></div>
+<div class="solutions"><details id="ex-tf05-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-tf05-2-1">
+<em class="emphasis">True</em>. The derivative of <span class="process-math">\(\tfrac12 e^{2x}+C\)</span> is <span class="process-math">\(e^{2x}\text{,}\)</span> so it is the general antiderivative of <span class="process-math">\(e^{2x}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf05-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="exercisegroup" id="exercises-antiderivatives-4">
-<h4 class="heading"><span class="title">Initial Value Problems.</span></h4>
-<div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="prob-anti-05"><h5 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-anti-05-1-1">Find the unique function <span class="process-math">\(F\)</span> such that <span class="process-math">\(F'(x)=4x^3-6x\)</span> and <span class="process-math">\(F(2)=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-anti-05-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 5.1"><a href="#ex-tf05-2" title="Copy heading and permalink for Solution 5.1" aria-label="Copy heading and permalink for Solution 5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 5"><a href="#ex-tf05" title="Copy heading and permalink for Exercise 5" aria-label="Copy heading and permalink for Exercise 5">🔗</a></div></article><article class="exercise exercise-like" id="ex-tf06"><h5 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf06-1-1">If <span class="process-math">\(F'(x)=e^x\)</span> and <span class="process-math">\(F(0)=7\text{,}\)</span> then <span class="process-math">\(F(x)=e^x+7\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf06-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5"><a href="#prob-anti-05" title="Copy heading and permalink for Exercise 5" aria-label="Copy heading and permalink for Exercise 5">🔗</a></div></article><article class="exercise exercise-like" id="prob-anti-06"><h5 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-anti-06-1-1">A particle moves on a line with acceleration <span class="process-math">\(a(t)=6t\text{.}\)</span> At <span class="process-math">\(t=0\text{,}\)</span> the velocity is <span class="process-math">\(v(0)=2\)</span> and the position is <span class="process-math">\(s(0)=-1\text{.}\)</span> Find <span class="process-math">\(v(t)\)</span> and <span class="process-math">\(s(t)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-anti-06-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="ex-tf06-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-tf06-2-1">
+<div class="para">
+<em class="emphasis">False</em>. The antiderivative of <span class="process-math">\(e^x\)</span> is <span class="process-math">\(e^x+C\text{.}\)</span> Applying the initial condition <span class="process-math">\(F(0)=7\text{,}\)</span> we get:</div>
+<div class="displaymath process-math" id="ex-tf06-2-1-5">
+\begin{equation*}
+F(0)=e^0+C=1+C=7 \Rightarrow C=6.
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Exercise 6"><a href="#prob-anti-06" title="Copy heading and permalink for Exercise 6" aria-label="Copy heading and permalink for Exercise 6">🔗</a></div></article>
+<div class="para">So the correct function is <span class="process-math">\(F(x)=e^x+6\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Exercise Group 5–6: Initial Value Problems"><a href="#exercises-antiderivatives-4" title="Copy heading and permalink for Exercise Group 5–6: Initial Value Problems" aria-label="Copy heading and permalink for Exercise Group 5–6: Initial Value Problems">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-tf06-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.1"><a href="#ex-tf06-2" title="Copy heading and permalink for Solution 6.1" aria-label="Copy heading and permalink for Solution 6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 6"><a href="#ex-tf06" title="Copy heading and permalink for Exercise 6" aria-label="Copy heading and permalink for Exercise 6">🔗</a></div></article><article class="exercise exercise-like" id="ex-tf07"><h5 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf07-1-1">If <span class="process-math">\(f(x)=\cos(3x)\text{,}\)</span> then an antiderivative is <span class="process-math">\(\sin(3x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf07-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-tf07-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-tf07-2-1">
+<em class="emphasis">False</em>. The derivative of <span class="process-math">\(\sin(3x)\)</span> is <span class="process-math">\(3\cos(3x)\text{,}\)</span> so it is not an antiderivative of <span class="process-math">\(\cos(3x)\text{.}\)</span> In fact, the general antiderivative of <span class="process-math">\(\cos(3x)\)</span> is <span class="process-math">\(\tfrac13\sin(3x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf07-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 7.1"><a href="#ex-tf07-2" title="Copy heading and permalink for Solution 7.1" aria-label="Copy heading and permalink for Solution 7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 7"><a href="#ex-tf07" title="Copy heading and permalink for Exercise 7" aria-label="Copy heading and permalink for Exercise 7">🔗</a></div></article><article class="exercise exercise-like" id="ex-tf08"><h5 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf08-1-1">The antiderivative of a sum equals the sum of antiderivatives.<div class="autopermalink" data-description="Paragraph"><a href="#ex-tf08-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-tf08-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-tf08-2-1">
+<em class="emphasis">True</em>. If <span class="process-math">\(F'(x)=f(x)\)</span> and <span class="process-math">\(G'(x)=g(x)\text{,}\)</span> then <span class="process-math">\((F(x)+G(x))' = F'(x)+G'(x)=f(x)+g(x)\text{.}\)</span> So an antiderivative of <span class="process-math">\(f(x)+g(x)\)</span> is <span class="process-math">\(F(x)+G(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf08-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 8.1"><a href="#ex-tf08-2" title="Copy heading and permalink for Solution 8.1" aria-label="Copy heading and permalink for Solution 8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 8"><a href="#ex-tf08" title="Copy heading and permalink for Exercise 8" aria-label="Copy heading and permalink for Exercise 8">🔗</a></div></article><article class="exercise exercise-like" id="ex-tf09"><h5 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf09-1-1">The antiderivative of a product equals the product of antiderivatives.<div class="autopermalink" data-description="Paragraph"><a href="#ex-tf09-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-tf09-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-tf09-2-1">
+<em class="emphasis">False</em>. In general, the antiderivative of a product is not the product of antiderivatives. For example, if <span class="process-math">\(f(x)=x\)</span> and <span class="process-math">\(g(x)=x^2\text{,}\)</span> then an antiderivative of <span class="process-math">\(f(x)g(x)=x^3\)</span> is <span class="process-math">\(\frac{1}{4}x^4+C\text{,}\)</span> but the product of antiderivatives is <span class="process-math">\(\bigl(\frac{1}{2}x^2+C_1\bigr)\bigl(\frac{1}{3}x^3+C_2\bigr)\text{,}\)</span> which is not an antiderivative of <span class="process-math">\(x^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf09-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 9.1"><a href="#ex-tf09-2" title="Copy heading and permalink for Solution 9.1" aria-label="Copy heading and permalink for Solution 9.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 9"><a href="#ex-tf09" title="Copy heading and permalink for Exercise 9" aria-label="Copy heading and permalink for Exercise 9">🔗</a></div></article><article class="exercise exercise-like" id="ex-tf10"><h5 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf10-1-1">If <span class="process-math">\(f(x)=\dfrac{3}{1+x^2}\text{,}\)</span> then a general antiderivative is <span class="process-math">\(3\arctan(x)+C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-tf10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-tf10-2-1">
+<em class="emphasis">True</em>. The derivative of <span class="process-math">\(3\arctan(x)+C\)</span> is <span class="process-math">\(\dfrac{3}{1+x^2}\text{,}\)</span> so it is the general antiderivative of <span class="process-math">\(\dfrac{3}{1+x^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 10.1"><a href="#ex-tf10-2" title="Copy heading and permalink for Solution 10.1" aria-label="Copy heading and permalink for Solution 10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 10"><a href="#ex-tf10" title="Copy heading and permalink for Exercise 10" aria-label="Copy heading and permalink for Exercise 10">🔗</a></div></article><article class="exercise exercise-like" id="ex-tf11"><h5 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf11-1-1">Both <span class="process-math">\(F(x)= \ln|x|\)</span> and <span class="process-math">\(G(x)=\ln|2x|\)</span> are antiderivatives of <span class="process-math">\(\dfrac{1}{x}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-tf11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-tf11-2-1">
+<em class="emphasis">True</em>. Both functions have the same derivative, so they are both antiderivatives of <span class="process-math">\(\dfrac{1}{x}\text{.}\)</span> In fact, they differ by a constant: <span class="process-math">\(G(x)=\ln|2x|=\ln|2|+\ln|x|=\ln(2)+F(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 11.1"><a href="#ex-tf11-2" title="Copy heading and permalink for Solution 11.1" aria-label="Copy heading and permalink for Solution 11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 11"><a href="#ex-tf11" title="Copy heading and permalink for Exercise 11" aria-label="Copy heading and permalink for Exercise 11">🔗</a></div></article><article class="exercise exercise-like" id="ex-tf12"><h5 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf12-1-1">Both <span class="process-math">\(F(x)= \ln|x^2|\)</span> and <span class="process-math">\(G(x)=\dfrac{-1}{x}\)</span> are antiderivatives of <span class="process-math">\(\dfrac{1}{x^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-tf12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-tf12-2-1">
+<em class="emphasis">False</em>. The derivative of <span class="process-math">\(F(x)\)</span> is <span class="process-math">\(\dfrac{2}{x}\text{,}\)</span> so it is not an antiderivative of <span class="process-math">\(\dfrac{1}{x^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 12.1"><a href="#ex-tf12-2" title="Copy heading and permalink for Solution 12.1" aria-label="Copy heading and permalink for Solution 12.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 12"><a href="#ex-tf12" title="Copy heading and permalink for Exercise 12" aria-label="Copy heading and permalink for Exercise 12">🔗</a></div></article><article class="exercise exercise-like" id="ex-tf13"><h5 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ex-tf13-1-1">If <span class="process-math">\(f(x)=\dfrac{\cos(x)}{x}\text{,}\)</span> then a general antiderivative is <span class="process-math">\(\dfrac{\sin(x)}{\tfrac12 x^2} +C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tf13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-tf13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-tf13-2-1">
+<div class="para">
+<em class="emphasis">False</em>. According to the quotient rule for derivatives, the derivative of <span class="process-math">\(\dfrac{\sin(x)}{\tfrac12 x^2} +C\)</span> is</div>
+<div class="displaymath process-math" id="ex-tf13-2-1-3">
+\begin{equation*}
+\dfrac{\cos(x)\cdot\tfrac12 x^2 - \sin(x)\cdot x}{\tfrac14 x^4} = \dfrac{\cos(x) - 2\sin(x)/x}{x^2}
+\end{equation*}
+</div>
+<div class="para">which is not equal to <span class="process-math">\(\dfrac{\cos(x)}{x}\text{.}\)</span> In fact, the antiderivative of <span class="process-math">\(\dfrac{\cos(x)}{x}\)</span> cannot be expressed in terms of elementary functions. Again, there is no simple formula for the antiderivative of a quotient in general.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-tf13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 13.1"><a href="#ex-tf13-2" title="Copy heading and permalink for Solution 13.1" aria-label="Copy heading and permalink for Solution 13.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 13"><a href="#ex-tf13" title="Copy heading and permalink for Exercise 13" aria-label="Copy heading and permalink for Exercise 13">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 1–13: Some True/False Problems"><a href="#exercises-antiderivatives-2" title="Copy heading and permalink for Exercise Group 1–13: Some True/False Problems" aria-label="Copy heading and permalink for Exercise Group 1–13: Some True/False Problems">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Exercises: Practice / Study Problems"><a href="#exercises-antiderivatives" title="Copy heading and permalink for Exercises: Practice / Study Problems" aria-label="Copy heading and permalink for Exercises: Practice / Study Problems">🔗</a></div></section><div class="autopermalink" data-description="Section 4.1: Antiderivatives"><a href="#sec-integral-antiderivatives" title="Copy heading and permalink for Section 4.1: Antiderivatives" aria-label="Copy heading and permalink for Section 4.1: Antiderivatives">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
