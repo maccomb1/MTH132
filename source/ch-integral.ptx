@@ -3,11 +3,49 @@
 <chapter xml:id="ch-integral" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Integrals and the Fundamental Theorem of Calculus</title>
 
-  <!-- 
+
   <introduction>
-    <p> Text before the first section. </p>
+     <p>
+      A function <m>y=f(x)</m> has a derivative <m>f'(c)</m> with several complementary meanings.
+      We will lean on these meanings as we introduce the integral.
+    </p>
+
+    <ul>
+      <li>
+        <p>
+          <em>Physical:</em> If <m>y</m> depends on <m>x</m>, then <m>f'(c)</m> is the rate of change of <m>y</m> per tiny change in <m>x</m>,
+          starting at <m>x=c</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <em>Geometric:</em> <m>f'(c)</m> is the slope of the graph <m>y=f(x)</m> at the point <m>(c,f(c))</m>, meaning the tangent line
+          near <m>x=c</m> is <m>y=f(c)+f'(c)(x-c)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <em>Numerical:</em> For <m>x</m> near <m>c</m>, the derivative is approximated by a difference quotient:
+          <m>f'(c)\approx \dfrac{f(x)-f(c)}{x-c}</m>. This matches the linear approximation
+          <m>f(x)\approx f(c)+f'(c)(x-c)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <em>Algebraic:</em> We define
+          <m>f'(c)=\displaystyle \lim_{x\to c}\dfrac{f(x)-f(c)}{x-c}</m>
+          and use derivative rules to compute <m>f'(x)</m> from a formula.
+        </p>
+      </li>
+    </ul>
+
+    <p>
+      The physical idea is the driving one: derivatives describe change, so they are essential in any system that evolves.
+      Once a situation is translated into a derivative statement, we can use numerical approximations or algebraic rules to answer questions.
+      For example, to find maximum values of <m>f(x)</m>, we look for places where the tangent slope is zero, so we solve <m>f'(x)=0</m>.
+    </p>
   </introduction>
--->
+
   
   <!-- include sections -->
   <xi:include href="./ch-integral-s/sec-integral-antiderivatives.ptx" />

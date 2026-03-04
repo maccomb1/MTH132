@@ -13,229 +13,479 @@
     </ul>
   </objectives>
 
-  <subsection xml:id="ssec-integral-review-derivatives">
-    <title>Review: Derivatives as Rates of Change</title>
+
+  <subsection xml:id="ssec-accumulated-change-idea">
+    <title>The Idea of Accumulated Change</title>
 
     <p>
-      A function <m>y=f(x)</m> has a derivative <m>f'(c)</m> with several complementary meanings.
-      We will lean on these meanings as we introduce the integral.
-    </p>
-
-    <ul>
-      <li>
-        <p>
-          <em>Physical:</em> If <m>y</m> depends on <m>x</m>, then <m>f'(c)</m> is the rate of change of <m>y</m> per tiny change in <m>x</m>,
-          starting at <m>x=c</m>.
-        </p>
-      </li>
-      <li>
-        <p>
-          <em>Geometric:</em> <m>f'(c)</m> is the slope of the graph <m>y=f(x)</m> at the point <m>(c,f(c))</m>, meaning the tangent line
-          near <m>x=c</m> is <m>y=f(c)+f'(c)(x-c)</m>.
-        </p>
-      </li>
-      <li>
-        <p>
-          <em>Numerical:</em> For <m>x</m> near <m>c</m>, the derivative is approximated by a difference quotient:
-          <m>f'(c)\approx \dfrac{f(x)-f(c)}{x-c}</m>. This matches the linear approximation
-          <m>f(x)\approx f(c)+f'(c)(x-c)</m>.
-        </p>
-      </li>
-      <li>
-        <p>
-          <em>Algebraic:</em> We define
-          <m>f'(c)=\displaystyle \lim_{x\to c}\dfrac{f(x)-f(c)}{x-c}</m>
-          and use derivative rules to compute <m>f'(x)</m> from a formula.
-        </p>
-      </li>
-    </ul>
-
-    <p>
-      The physical idea is the driving one: derivatives describe change, so they are essential in any system that evolves.
-      Once a situation is translated into a derivative statement, we can use numerical approximations or algebraic rules to answer questions.
-      For example, to find maximum values of <m>f(x)</m>, we look for places where the tangent slope is zero, so we solve <m>f'(x)=0</m>.
-    </p>
-  </subsection>
-
-  <subsection xml:id="ssec-integral-accumulation">
-    <title>Accumulation of Influence</title>
-
-    <p>
-      In the previous section we reversed differentiation algebraically: given a function <m>f(x)</m>, we looked for an antiderivative <m>F(x)</m>
-      with <m>F'(x)=f(x)</m>.
-      Now we will build a numerical definition of antiderivative that works even when no simple formula exists.
+      In the previous chapter we introduced antiderivatives as the reverse of differentiation and we showed how to find them algebraically.
+      Now we shift perspective. Instead of starting with a formula and reversing it,
+      we begin with a <em>rate of change</em> (again, think derivative) and ask:
+      <alert>How much total change occurs over an interval?</alert>
     </p>
 
     <p>
-      Think of <m>f(x)</m> as the influence on a quantity <m>F(x)</m>.
-      Near <m>x=c</m>, the derivative relationship <m>F'(c)=f(c)</m> says
-      <m>f(c)\approx \dfrac{\Delta F}{\Delta x}</m>, so
+      Suppose a quantity <m>F(x)</m> changes at a rate <m>f(x)</m>.
+      That is,
     </p>
 
     <me>
-      \Delta F \approx f(c)\,\Delta x.
+      F'(x) = f(x).
     </me>
 
     <p>
-      A small input change <m>\Delta x</m> produces a small output change <m>\Delta F</m> controlled by <m>f(c)</m>.
-      Adding many small changes gives the total change in <m>F</m>.
-      This “add up tiny effects” viewpoint is what the definite integral will formalize.
+      If we know the rate of change at each point, how can we compute
+      the total change in <m>F</m> from <m>x=a</m> to <m>x=b</m>?
     </p>
 
     <p>
-      Here are several examples of “accumulation” in everyday language:
-    </p>
-
-    <ul>
-      <li><p>Position is the cumulative effect of velocity.</p></li>
-      <li><p>Velocity is the cumulative effect of acceleration.</p></li>
-      <li><p>Temperature is the cumulative effect of warming and cooling rates.</p></li>
-      <li><p>Energy used is the cumulative effect of power (wattage) over time.</p></li>
-      <li><p>Total mass is the cumulative effect of density over volume.</p></li>
-      <li><p>Total force is the cumulative effect of pressure over an area.</p></li>
-      <li><p>Population is the cumulative effect of net growth rate over time.</p></li>
-      <li><p>Total cost is the cumulative effect of marginal cost as production increases.</p></li>
-    </ul>
-  </subsection>
-
-  <subsection xml:id="ssec-integral-distance-riemann">
-    <title>Riemann Sums for Distance</title>
-
-    <p>
-      To make accumulation computable, we introduce a new operation: the definite integral
-      <m>\displaystyle \int_a^b f(x)\,dx</m>.
-      We will define it numerically as a limit of approximations.
-    </p>
-
-    <p>
-      Imagine a toy car whose velocity is <m>v(t)=t^2</m> (in meters per second) over <m>t\in[0,2]</m>.
-      If <m>s(t)</m> is position and <m>s(0)=0</m>, then the total distance traveled by time <m>t=2</m> is
-      <m>s(2)</m>.
-      Over a short time interval, distance is approximately velocity times time:
-      <m>\Delta s \approx v(t)\,\Delta t</m>.
-    </p>
-
-    <p>
-      A very rough estimate would treat the velocity as constant at the final value <m>v(2)=4</m>, giving
-      <m>s(2)\approx 4(2-0)=8</m>, which is far too large because the car starts at rest.
-      To improve the estimate, split <m>[0,2]</m> into many short intervals.
-    </p>
-
-    <p>
-      For example, take <m>n=20</m> subintervals, each of width <m>\Delta t=\dfrac{2}{20}=0.1</m>.
-      Using right endpoints <m>t_i=0.1,0.2,\ldots,2.0</m>, we get a right Riemann sum:
+      From a previous physical science class I am sure that many will remember:
     </p>
 
     <me>
-      \begin{array}{rcl}
-      s(2)
-      &amp;\approx&amp;
-      v(0.1)\Delta t+v(0.2)\Delta t+\cdots+v(2.0)\Delta t
-      \\[0.6em]
-      &amp;=&amp;
-      (0.1)^2(0.1)+(0.2)^2(0.1)+\cdots+(2.0)^2(0.1)
-      \\[0.6em]
-      &amp;\approx&amp; 2.87.
-      \end{array}
+      \text{distance} = (\text{rate}) \times (\text{time}).
     </me>
 
     <p>
-      Since <m>v(t)=t^2</m> is increasing, sampling at the right endpoints gives an overestimate.
-      Sampling at the left endpoints <m>t_i=0.0,0.1,\ldots,1.9</m> gives an underestimate:
+      Or if the rate is not a rate of change of distance, but a rate of change of some other quantity, we can still say:
     </p>
 
     <me>
-      \begin{array}{rcl}
-      s(2)
-      &amp;\approx&amp;
-      v(0.0)\Delta t+v(0.1)\Delta t+\cdots+v(1.9)\Delta t
-      \\[0.6em]
-      &amp;=&amp;
-      (0.0)^2(0.1)+(0.1)^2(0.1)+\cdots+(1.9)^2(0.1)
-      \\[0.6em]
-      &amp;\approx&amp; 2.47.
-      \end{array}
+      \text{total change} = (\text{rate of change}) \times (\text{amount of time}).
     </me>
 
     <p>
-      So <m>s(2)</m> lies between 2.47 and 2.87. If we increase <m>n</m>, the rectangles get thinner and the estimates improve.
-      This motivates the definition of the integral as a limit.
+      This works when the rate is constant, but what if the rate changes? When this occurs, we can approximate the total change
+      by breaking the interval into many pieces. Let's see an example of this in action. 
     </p>
 
-    <definition xml:id="def-definite-integral-riemann">
-      <title>Definite Integral (Riemann Sum Definition)</title>
+
+<example xml:id="ex-riemann-sums-distance">
+  <introduction>
+    <p>
+      Suppose we have a car and the following information about its instantaneous velocity, in meters per second, 
+      on the time interval <m>t\in[0,8]</m> seconds. 
+      Use the ending velocity values to give your best estimate of the distance traveled during the time interval <m>[0,8]</m>.
+    </p>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+        <m> \quad 
+          \begin{array}{c|cc}
+            t  &amp; 0 &amp; 8 \\
+            \hline
+            v(t)  &amp; 2 &amp; 20 
+          \end{array}
+        </m>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We can use the formula <m>\text{distance} = (\text{rate}) \times (\text{time})</m> 
+        to get a rough estimate of the distance traveled. 
+        If we treat the velocity as constant at the final value, we get <m>20 \cdot 8 = 160</m> meters, 
+        which probably is an overestimate because the car starts at a lower speed. The problem 
+        specified only the starting and ending velocities, so we have no information about how the velocity changes in between and 
+        we were told to use the ending velocity values, so this is the best estimate we can give with the information provided.
+      </p>     
+    </solution>
+  </task>
+  <task> 
+        <statement>
+      <p>
+        <m> \quad 
+          \begin{array}{c|ccc}
+            t  &amp; 0 &amp; 4 &amp; 8 \\
+            \hline
+            v(t)  &amp; 2 &amp; 14 &amp; 20 
+          \end{array}
+        </m>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        If we break the time interval into two pieces, we can get a better estimate. 
+        On the first half of the time interval (<m>t\in[0,4]</m>), we can treat the velocity as constant at 14 m/s (we were told to use the ending velocity values), giving an estimate of <m>14 \cdot 4 = 56</m> meters. 
+      </p><p> On the second half of the time interval (<m>t\in[4,8]</m>), we can treat the velocity as constant at 20 m/s (again we were told to use the ending velocity values), giving an estimate of <m>20 \cdot 4 = 80</m> meters. 
+      </p><p> Adding these estimates gives a total distance traveled of about <m>56 + 80 = 136</m> meters.
+      </p>
+    </solution>
+    </task>
+    <task>
       <statement>
         <p>
-          Let <m>f</m> be a function on <m>[a,b]</m>.
-          Partition <m>[a,b]</m> into <m>n</m> subintervals of equal width
-          <m>\Delta x=\dfrac{b-a}{n}</m>, and choose a sample point <m>x_i</m> in each subinterval.
-          If the limit exists as <m>n\to\infty</m>, we define
+        <m> \quad 
+          \begin{array}{c|ccc}
+            t  &amp; 0 &amp; 2 &amp; 4 &amp; 6 &amp; 8 \\
+            \hline
+            v(t)  &amp; 2 &amp; 10 &amp; 14 &amp; 22 &amp; 20 
+          \end{array}
+        </m>  
         </p>
-        <me>
-          \int_a^b f(x)\,dx \stackrel{\text{def}}= \lim_{n\to\infty}\left(f(x_1)\Delta x+f(x_2)\Delta x+\cdots+f(x_n)\Delta x\right).
-        </me>
+      </statement>
+
+    <solution>
+      <p>
+        Now we can break the time interval into four pieces, and get an even better estimate.</p>
+      <p>
+        On the first piece (<m>t\in[0,2]</m>), we can treat the velocity as constant at 10 m/s, 
+        giving an estimate of <m>10 \cdot 2 = 20</m> meters. 
+      </p>
+      <p>
+        On the second piece (<m>t\in[2,4]</m>), we can treat the velocity as constant at 14 m/s, 
+        giving an estimate of <m>14 \cdot 2 = 28</m> meters. 
+      </p>
+      <p>
+        On the third piece (<m>t\in[4,6]</m>), we can treat the velocity as constant at 22 m/s, 
+        giving an estimate of <m>22 \cdot 2 = 44</m> meters. 
+      </p>
+      <p>
+        On the fourth piece (<m>t\in[6,8]</m>), we can treat the velocity as constant at 20 m/s, 
+        giving an estimate of <m>20 \cdot 2 = 40</m> meters. 
+      </p>
+      <p>
+        Adding these estimates gives a total distance traveled of about <m>20 + 28 + 44 + 40 = 132</m> meters.
+      </p>
+    </solution>
+        </task>
+        <task>
+          <statement>
+            <p>
+        <m> \quad 
+          \begin{array}{c|ccc}
+            t  &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 \\
+            \hline
+            v(t)  &amp; 2 &amp; 7 &amp; 10 &amp; 11 &amp; 14 &amp; 19 &amp; 22 &amp; 20 &amp; 20 
+          \end{array}
+        </m>                
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Now we can break the time interval into eight pieces, and get an even better estimate.</p>
+            <p>
+              On the first piece (<m>t\in[0,1]</m>), we can treat the velocity as constant at 7 m/s, 
+              giving an estimate of <m>7 \cdot 1 = 7</m> meters.
+            </p>
+            <p>
+              On the second piece (<m>t\in[1,2]</m>), we can treat the velocity as constant at 10 m/s, 
+              giving an estimate of <m>10 \cdot 1 = 10</m> meters.
+            </p>
+            <p>
+              On the third piece (<m>t\in[2,3]</m>), we can treat the velocity as constant at 11 m/s, 
+              giving an estimate of <m>11 \cdot 1 = 11</m> meters.
+            </p>
+            <p>
+              On the fourth piece (<m>t\in[3,4]</m>), we can treat the velocity as constant at 14 m/s, 
+              giving an estimate of <m>14 \cdot 1 = 14</m> meters.
+            </p>
+            <p>
+              On the fifth piece (<m>t\in[4,5]</m>), we can treat the velocity as constant at 19 m/s, 
+              giving an estimate of <m>19 \cdot 1 = 19</m> meters.
+            </p>
+            <p>
+              On the sixth piece (<m>t\in[5,6]</m>), we can treat the velocity as constant at 22 m/s, 
+              giving an estimate of <m>22 \cdot 1 = 22</m> meters.
+            </p>
+            <p>
+              On the seventh piece (<m>t\in[6,7]</m>), we can treat the velocity as constant at 20 m/s, 
+              giving an estimate of <m>20 \cdot 1 = 20</m> meters.
+            </p>
+            <p>
+              On the eighth piece (<m>t\in[7,8]</m>), we can treat the velocity as constant at 20 m/s, 
+              giving an estimate of <m>20 \cdot 1 = 20</m> meters.
+            </p>
+            <p>
+              Adding these estimates gives a total distance traveled of about <m>7 + 10 + 11 + 14 + 19 + 22 + 20 + 20 = 123</m> meters.
+            </p>
+          </solution>
+        </task>
+</example>
+
+<remark xml:id="rmk-riemann-sums-general">
+  <title>
+   Rates of Change and Total Change
+  </title>
+  <p> While the last example was about distance traveled, given a rate of change (velocity), 
+    the same idea applies to any quantity that changes at a certain rate. For example, if we know the rate at 
+    which a population is growing, we can use that to estimate the total population growth over a time interval.
+  </p> 
+  
+</remark>
+
+<remark xml:id="rmk-riemann-sums-accuracy">
+  <title>
+     Approximations and Accuracy
+    </title>
+  <p> In general the more pieces we break the interval into (the more information we have), the better our estimate will be. 
+  </p> 
+  <p> One could imagine that if we had infinitely velocity readings on microscopic intervals, our approximation 
+    could become so accurate that 
+    it would be indistinguishable from the exact value. This is a nice idea, but it would be extremely 
+    difficult to calculate by hand, so for this section we will stick with approximations and in the next section 
+    we will tackle how to calculate exact values.</p>
+</remark>
+
+<p> In our last example we were told to use the ending velocity values, 
+    but if we were instead told to use the starting velocity values, we would get a different estimate. 
+    In general, there are many ways to approximate the total change from a rate of change, and they can give different estimates. 
+    With this in mind, we will introduce some terminology for the different types of approximations.
+</p> 
+
+    
+
+
+
+  </subsection>
+
+  <subsection xml:id="subsec-riemann-sum-terminology">
+    <title>Riemann Sum Terminology</title>
+    
+    <definition xml:id="def-riemann-sums">
+      <title>Riemann Sums</title>
+      <statement>
+        <p>
+          Suppose we have a rate of function <m>f(t)</m> defined on an interval <m>[a,b]</m>.
+          We can break the interval into <m>n</m> pieces (subintervals) with equal width <m>\Delta t</m>.
+        </p>
+        <p>
+          Then the total change can be approximated by a sum of the form:
+        </p>
+          <me>\text{Total Change} \approx f(t_1)\Delta t + f(t_2)\Delta t + \cdots + f(t_n)\Delta t</me>
+        <p>
+          where <m>t_i</m> is a sample point in the <m>i</m>th subinterval.
+        </p>
+        <ul>
+          <li>
+            <p>
+              If we choose the sample points to be the left endpoints of the subintervals, we call this a <term>left Riemann sum</term>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If we choose the sample points to be the right endpoints of the subintervals, we call this a <term>right Riemann sum</term>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If we choose the sample points to be the maximum value of <m>f</m> on each subinterval, we call this an <term>upper Riemann sum</term>.
+              The upper Riemann sum is used to give an overestimate of the total change.
+            </p>
+          </li>
+          <li>
+            <p>
+              If we choose the sample points to be the minimum value of <m>f</m> on each subinterval, we call this a <term>lower Riemann sum</term>.
+              The lower Riemann sum is used to give an underestimate of the total change.
+            </p>
+          </li>
+          <li>
+            <p>
+              In general, if we choose the sample points in any way, we can call the resulting sum a <term>Riemann sum</term>.
+            </p>
+          </li>
+        </ul>
       </statement>
     </definition>
 
-    <p>
-      The symbol <m>\int</m> is an elongated <m>S</m> for “sum.”
-      The <m>dx</m> reminds us that <m>\Delta x</m> is becoming very small.
-    </p>
+    <example xml:id="ex-riemann-sums-left-endpoints">
+      <statement>
+        <p>
+          Consider the function <m>r(t)=t^2</m> on <m>[0,2]</m>
+        </p>
+        <p> (a) Calculate the left Riemann sum with <m>n=4</m> subintervals.</p>
+        <p> (b) Is you answer from (a) an underestimate or overestimate of the total change, and why?</p>
+      </statement>
+      <solution>
+        <p> (a)
+          The width of each subinterval is 
+        </p> 
+        <me>\Delta t = \dfrac{\text{total width of interval}}{\text{number of subintervals}} = \dfrac{2-0}{4} = \dfrac12</me>
+        <p>
+          If we split up the interval into four subintervals, we get <m>[0,\tfrac12]</m>, <m>[\tfrac12,1]</m>, <m>[1,\tfrac32]</m>, 
+          and <m>[\tfrac32,2]</m>. The left endpoints are <m>0, \tfrac12, 1, \tfrac32</m>.
+          So the left Riemann sum is
+        </p>
+        <me>
+          \begin{array}{rcl}
+          \amp \amp r(0)\Delta t + r(\tfrac12)\Delta t + r(1)\Delta t + r(\tfrac32)\Delta t \\ 
+          \amp = \amp (0^2)(\tfrac12) + (\tfrac12)^2(\tfrac12) + (1^2)(\tfrac12) + (\tfrac32)^2(\tfrac12) = \dfrac{7}{4}.
+        \end{array}
+        </me>
+        <p> (b) Since <m>r(t)=t^2</m> is increasing on <m>[0,2]</m>, the left hand endpoints will give us 
+          smallest values of <m>r(t)</m> on each piece (subinterval). 
+          So the left Riemann sum will be an underestimate of the total change. You can verify that this will 
+          be equivalent to the lower Riemann sum in this case, since the function is increasing.
+        </p>
+        </solution>
+      </example>
 
+
+<remark xml:id="rmk-riemann-sums-generating-table">
     <p>
-      For this particular example we can also check against an algebraic antiderivative.
-      Since <m>s'(t)=t^2</m> and <m>s(0)=0</m>, we have <m>s(t)=\tfrac13 t^3</m>, so
-      <m>s(2)=\tfrac13(2^3)=\tfrac83\approx 2.667</m>, which lies between the two estimates above.
+      You can see in this last example that if the table is not given to you, it can be generated
+      by sampling the function at the appropriate points. For example, if we wanted to compute the 
+      right Riemann sum with <m>n=4</m> subintervals, we would sample the function at the right endpoints of the subintervals, 
+      which are <m>\tfrac12, 1, \tfrac32, 2</m>, and then use those values to compute the sum.
     </p>
+</remark>
+
+
+
+
   </subsection>
 
-  <subsection xml:id="ssec-integral-total-change">
-    <title>The Integral as Total Change</title>
 
-    <p>
-      The distance story is one example of a more general idea.
-      If <m>f(x)</m> is a rate of change of some quantity <m>F(x)</m>, meaning <m>F'(x)=f(x)</m>,
-      then adding up tiny changes <m>\Delta F\approx f(x)\Delta x</m> produces the total change <m>F(b)-F(a)</m>.
-    </p>
 
-    <me>
-      F(b)-F(a)=\int_a^b f(x)\,dx.
-    </me>
 
-    <p>
-      You can read this as: “the total change equals the accumulated rate of change.”
-      Later, we will prove this relationship (and learn fast techniques for computing integrals) in the Fundamental Theorem of Calculus.
-    </p>
-  </subsection>
+
 
   <subsection xml:id="ssec-integral-area">
     <title>Area Under a Curve</title>
 
     <p>
-      Now comes one of the most useful interpretations of the integral.
-      Suppose <m>f(x)\ge 0</m> on <m>[a,b]</m>.
-      Then <m>\displaystyle \int_a^b f(x)\,dx</m> is the area under the graph <m>y=f(x)</m> above the <m>x</m>-axis from <m>x=a</m> to <m>x=b</m>.
+      Now comes one of the most useful interpretations of the Riemann sum calculations.
+      Suppose <m>f(x)\ge 0</m> on <m>[a,b]</m> is a rate of change function.
+      Then total change is the area under the graph <m>y=f(x)</m> above the <m>x</m>-axis from <m>x=a</m> to <m>x=b</m> 
+      which we can approximate using Riemann sums.
     </p>
 
     <p>
-      To see why, approximate the area with rectangles.
-      Over each small subinterval, the area of a rectangle is (height)<m>\times</m>(width) <m>\approx f(x_i)\Delta x</m>.
-      Adding these areas produces the same type of Riemann sum we used for distance.
-      Taking a limit gives the exact area.
+      To see why, let's redo <xref ref="ex-riemann-sums-left-endpoints"/> with a graphical viewpoint.
     </p>
 
     <example xml:id="ex-area-x-squared">
       <statement>
         <p>
-          Interpret <m>\displaystyle \int_0^2 x^2\,dx</m> as an area, and connect it to the distance example.
+          Approximate the area under the graph <m>y=x^2</m> on the interval <m>[0,2]</m> using <m>n=4</m> rectangles of equal width.
+          Use left endpoints to determine the height of each rectangle.
         </p>
+
+        <image>
+  <shortdescription>
+    Graph of y equals x squared on the interval [0,2].
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[xscale=2]
+	\fill[blue!20] plot[domain=0:2, smooth] (\x, {(\x)^2}) -- (2,0)--(0,0);
+	\draw[->, thick] (-1.3,0) -- (3.3,0);
+	\draw[->, thick] (0,-.3) -- (0,5.3);
+	%\draw[thin] (0,0) grid (5,5);
+	\begin{scope}
+		\clip (-3.3,0) rectangle (5.3,5.3); 
+		
+		\draw[very thick] plot[domain=-1:3, smooth] (\x, {(\x)^2});
+		
+		
+	\end{scope}
+	\draw (2.7,4.8) node {$f(x)=x^2$};
+	\foreach \x in {-1,1,2,3} 
+		\draw (\x, 2pt) -- (\x, -2pt) node[font=\small, below] {\x};
+	\foreach \x in {1,2,3,4,5}	
+		\draw (2pt, \x) -- ( -2pt, \x) node[font=\small, left] {\x};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
       </statement>
       <solution>
         <p>
-          Since <m>x^2\ge 0</m> on <m>[0,2]</m>, the integral equals the area under <m>y=x^2</m> above <m>[0,2]</m>.
-          Approximating with right-endpoint rectangles produces the same sum we computed for distance with velocity <m>v(t)=t^2</m>.
-          The area and the distance are numerically equal because both are defined by the same limiting process:
-          in each case we add up terms of the form “height” <m>\times</m> “width.”
+          The width of each rectangle is <m>\Delta x = \dfrac{2-0}{4} = \dfrac12</m>.
+          The heights of the rectangles are determined by the left endpoints, which are <m>0, \tfrac12, 1, \tfrac32</m>.
+          So the heights are 
+          <ul>
+            <li>
+              <p>
+                <m>f(0)=0^2=0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(\tfrac12)=(\tfrac12)^2=\tfrac14</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(1)=1^2=1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(\tfrac32)=(\tfrac32)^2=\tfrac94</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p> Let's sketch these on the original picture to see what they look like. </p>
+           <image>
+  <shortdescription>
+    Graph of y equals x squared on the interval [0,2]. Four rectangles are drawn under the curve, 
+    each with width 0.5 and heights determined by the left endpoints of the subintervals.
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[xscale=2]
+	\fill[blue!20] plot[domain=0:2, smooth] (\x, {(\x)^2}) -- (2,0)--(0,0);
+	\draw[->, thick] (-1.3,0) -- (3.3,0);
+	\draw[->, thick] (0,-.3) -- (0,5.3);
+	%\draw[thin] (0,0) grid (5,5);
+	\begin{scope}
+		\clip (-3.3,0) rectangle (5.3,5.3); 
+		
+		\draw[very thick] plot[domain=-1:3, smooth] (\x, {(\x)^2});
+		
+		
+	\end{scope}
+	\draw (2.7,4.8) node {$f(x)=x^2$};
+	\foreach \x in {-1,0.5,1,1.5, 2,3} 
+	\draw (\x, 2pt) -- (\x, -2pt) node[font=\small, below] {\x};
+	\foreach \x in {1,2,3,4,5}	
+	\draw (2pt, \x) -- ( -2pt, \x) node[font=\small, left] {\x};
+	
+	\foreach \x in {0,0.5,1,1.5} {
+		\draw[fill = green!20] (\x,0) rectangle ({\x + .5}, {(\x)^2});
+		}
+	
+\end{tikzpicture}
+
+ ]]>
+    </latex-image>
+  </image>
+        <p>
+          <ul>
+            <li>
+              <p>
+                The area of the first rectangle is <m>0 \cdot \tfrac12 = 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The area of the second rectangle is <m>\tfrac14 \cdot \tfrac12 = \tfrac18</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The area of the third rectangle is <m>1 \cdot \tfrac12 = \tfrac12</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The area of the fourth rectangle is <m>\tfrac94 \cdot \tfrac12 = \tfrac{9}{8}</m>.
+              </p>
+            </li>
+          </ul>
+        
+          So the total area of the rectangles is
+         </p>
+
+        <me>
+          (0)(\tfrac12) + (\tfrac14)(\tfrac12) + (1)(\tfrac12) + (\tfrac94)(\tfrac12) = \dfrac{7}{4}.
+        </me>
+        <p>
+          This matches our previous calculation of the left Riemann sum, but now we have a geometric interpretation: 
+          the area under the curve is approximated by the total area of the rectangles. Notice that clearly this 
+          is an underestimate of the area under the curve, which matches our previous conclusion that the left Riemann 
+          sum is an underestimate.
         </p>
       </solution>
     </example>
