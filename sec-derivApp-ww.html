@@ -1116,17 +1116,617 @@ V'(0)
 </div>
 <div class="autopermalink" data-description="Solution 3.9.8.1"><a href="#ex-related-rates-cylinder-2" title="Copy heading and permalink for Solution 3.9.8.1" aria-label="Copy heading and permalink for Solution 3.9.8.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 3.9.8"><a href="#ex-related-rates-cylinder" title="Copy heading and permalink for Example 3.9.8" aria-label="Copy heading and permalink for Example 3.9.8">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 3.2 Related Rates"><a href="#subsec-derivApp-relatedRates" title="Copy heading and permalink for Subsection: Section 3.2 Related Rates" aria-label="Copy heading and permalink for Subsection: Section 3.2 Related Rates">🔗</a></div></section><section class="subsection" id="subsec-derivApp-linear"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 3.9.8"><a href="#ex-related-rates-cylinder" title="Copy heading and permalink for Example 3.9.8" aria-label="Copy heading and permalink for Example 3.9.8">🔗</a></div></article><article class="example example-like" id="ex-production-solar-panels"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-production-solar-panels-1-1">A factory produces solar panels according to the production function<div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-production-solar-panels-1-2">
+\begin{equation*}
+S = 600L^{0.3}K^{0.6},
+\end{equation*}
+</div>
+<div class="para" id="ex-production-solar-panels-1-3">where <span class="process-math">\(L\)</span> represents thousands of dollars spent on labor and <span class="process-math">\(K\)</span> represents thousands of dollars spent on equipment.<div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-production-solar-panels-1-4">(a) How many panels are produced when <span class="process-math">\(L=100\)</span> and <span class="process-math">\(K=81\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-production-solar-panels-1-5">(b) The company keeps equipment spending fixed at <span class="process-math">\(K=81\text{.}\)</span> At what rate is production changing with respect to labor spending when <span class="process-math">\(L=100\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-production-solar-panels-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-production-solar-panels-2-1">
+<em class="alert">Part (a)</em><div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-production-solar-panels-2-2">Substitute the given values into the production function.<div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-production-solar-panels-2-3">
+\begin{equation*}
+S = 600(100)^{0.3}(81)^{0.6}.
+\end{equation*}
+</div>
+<div class="para" id="ex-production-solar-panels-2-4">Without a calculator we would leave the answer in this form, but since this is an example exercise we can compute the powers to get a numerical approximation.<div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-production-solar-panels-2-5">
+\begin{equation*}
+S \approx 33361.
+\end{equation*}
+</div>
+<div class="para" id="ex-production-solar-panels-2-6">Thus the factory produces approximately <span class="process-math">\(33361\)</span> solar panels.<div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-production-solar-panels-2-7">
+<em class="alert">Part (b)</em><div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-production-solar-panels-2-8">Since equipment spending is fixed at <span class="process-math">\(K=81\text{,}\)</span> we can plug that in, leaving our only variable <span class="process-math">\(L\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-production-solar-panels-2-9">
+\begin{equation*}
+\begin{array}{rcl}
+S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
+\frac{ dS}{dL}
+&amp; = &amp; 
+600(0.3)L^{-0.7}(81)^{0.6}.
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-production-solar-panels-2-10">Now evaluate at <span class="process-math">\(L=100\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-production-solar-panels-2-11">
+\begin{equation*}
+\frac{ dS}{dL}
+=
+180(100)^{-0.7}(81)^{0.6}.
+\end{equation*}
+</div>
+<div class="para" id="ex-production-solar-panels-2-12">Again, if we did not have access to a calculator this is how we would leave our final answer (WeBWorK would accept this as well). However since this is an example exercise, we can compute the powers to get a numerical approximation.<div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-production-solar-panels-2-13">
+\begin{equation*}
+\frac{ dS}{dL}
+\approx 100.
+\end{equation*}
+</div>
+<div class="para" id="ex-production-solar-panels-2-14">Therefore production is increasing at approximately <span class="process-math">\(100\)</span> panels per additional thousand dollars spent on labor.<div class="autopermalink" data-description="Paragraph"><a href="#ex-production-solar-panels-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.9.9.1"><a href="#ex-production-solar-panels-2" title="Copy heading and permalink for Solution 3.9.9.1" aria-label="Copy heading and permalink for Solution 3.9.9.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 3.9.9"><a href="#ex-production-solar-panels" title="Copy heading and permalink for Example 3.9.9" aria-label="Copy heading and permalink for Example 3.9.9">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 3.2 Related Rates"><a href="#subsec-derivApp-relatedRates" title="Copy heading and permalink for Subsection: Section 3.2 Related Rates" aria-label="Copy heading and permalink for Subsection: Section 3.2 Related Rates">🔗</a></div></section><section class="subsection" id="subsec-derivApp-linear"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 3.3 Linear Approximation and L’Hopital’s Rule</span>
 </h3>
-<div class="para" id="subsec-derivApp-linear-2">test<div class="autopermalink" data-description="Paragraph"><a href="#subsec-derivApp-linear-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="example example-like" id="ex-linearization-root-exp-sin"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-linearization-root-exp-sin-1-1">The equation<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-root-exp-sin-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection: Section 3.3 Linear Approximation and L’Hopital’s Rule"><a href="#subsec-derivApp-linear" title="Copy heading and permalink for Subsection: Section 3.3 Linear Approximation and L’Hopital’s Rule" aria-label="Copy heading and permalink for Subsection: Section 3.3 Linear Approximation and L’Hopital’s Rule">🔗</a></div></section><section class="subsection" id="subsec-derivApp-extrema"><h3 class="heading hide-type">
+<div class="displaymath process-math" id="ex-linearization-root-exp-sin-1-2">
+\begin{equation*}
+e^x + \sin x = 1.1
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-root-exp-sin-1-3">has a solution near <span class="process-math">\(x=0\text{.}\)</span> Approximate this solution by replacing the left-hand side with its linearization at <span class="process-math">\(x=0\)</span> and then solving the resulting equation.<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-root-exp-sin-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-linearization-root-exp-sin-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-linearization-root-exp-sin-2-1">Let<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-root-exp-sin-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-linearization-root-exp-sin-2-2">
+\begin{equation*}
+f(x)=e^x+\sin x.
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-root-exp-sin-2-3">We approximate <span class="process-math">\(f(x)\)</span> near <span class="process-math">\(x=0\)</span> using its linearization<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-root-exp-sin-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-linearization-root-exp-sin-2-4">
+\begin{equation*}
+L(x)=f(0)+f'(0)x.
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-root-exp-sin-2-5">First compute the value of the function at <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-root-exp-sin-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-linearization-root-exp-sin-2-6">
+\begin{equation*}
+f(0)=e^0+\sin(0)=1.
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-root-exp-sin-2-7">Next compute the derivative.<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-root-exp-sin-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-linearization-root-exp-sin-2-8">
+\begin{equation*}
+f'(x)=e^x+\cos x.
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-root-exp-sin-2-9">Evaluate the derivative at <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-root-exp-sin-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-linearization-root-exp-sin-2-10">
+\begin{equation*}
+f'(0)=e^0+\cos(0)=1+1=2.
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-root-exp-sin-2-11">Therefore the linearization of <span class="process-math">\(f(x)\)</span> at <span class="process-math">\(x=0\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-root-exp-sin-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-linearization-root-exp-sin-2-12">
+\begin{equation*}
+L(x)=1+2x.
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-root-exp-sin-2-13">We now approximate the equation <span class="process-math">\(e^x+\sin x=1.1\)</span> by solving<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-root-exp-sin-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-linearization-root-exp-sin-2-14">
+\begin{equation*}
+1+2x=1.1.
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-linearization-root-exp-sin-2-15">
+\begin{equation*}
+2x=0.1.
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-linearization-root-exp-sin-2-16">
+\begin{equation*}
+x=0.05.
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-root-exp-sin-2-17">Thus an approximate solution to the equation is<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-root-exp-sin-2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-linearization-root-exp-sin-2-18">
+\begin{equation*}
+x\approx 0.05.
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-root-exp-sin-2-19">If we have access to technology, we can check how good this approximation is by evaluating the original expression <span class="process-math">\(e^x+\sin x\)</span> at <span class="process-math">\(x=0.05\text{.}\)</span> Doing so gives a value very close to <span class="process-math">\(1.1\text{,}\)</span> confirming that the linear approximation produced a reasonable estimate.<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-root-exp-sin-2-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-linearization-root-exp-sin-2-20">While this type of numerical check can be helpful for building intuition and verifying results, it is important to note that calculators may not be available on quizzes or exams.  In those situations the goal is simply to use linearization to produce a reasonable approximation based on calculus rather than numerical computation.<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-root-exp-sin-2-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.9.10.1"><a href="#ex-linearization-root-exp-sin-2" title="Copy heading and permalink for Solution 3.9.10.1" aria-label="Copy heading and permalink for Solution 3.9.10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 3.9.10"><a href="#ex-linearization-root-exp-sin" title="Copy heading and permalink for Example 3.9.10" aria-label="Copy heading and permalink for Example 3.9.10">🔗</a></div></article><article class="example example-like" id="ex-linearization-battery-range"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-linearization-battery-range-1-1">A phone’s battery range <span class="process-math">\(R(T)\)</span> (in hours) depends on temperature <span class="process-math">\(T\)</span> (in degrees Fahrenheit). A test reports <span class="process-math">\(R(70)=11.5\)</span> and <span class="process-math">\(R(80)=10.8\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-battery-range-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-linearization-battery-range-1-2">(a) Estimate <span class="process-math">\(R'(70)\)</span> using the average rate of change from <span class="process-math">\(T=70\)</span> to <span class="process-math">\(T=80\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-battery-range-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-linearization-battery-range-1-3">(b) Write the linear approximation to <span class="process-math">\(R(T)\)</span> near <span class="process-math">\(T=70\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-battery-range-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-linearization-battery-range-1-4">(c) Use your linear approximation to estimate <span class="process-math">\(R(74)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-battery-range-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-linearization-battery-range-1-5">(d) Interpret the meaning of <span class="process-math">\(R'(70)\)</span> in a sentence, including units.<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-battery-range-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-linearization-battery-range-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-linearization-battery-range-2-1">
+<em class="alert">Part (a)</em>: Use the slope of the secant line from <span class="process-math">\(T=70\)</span> to <span class="process-math">\(T=80\)</span> as an estimate for <span class="process-math">\(R'(70)\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-battery-range-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-linearization-battery-range-2-2">
+\begin{equation*}
+\displaystyle R'(70)\approx \frac{R(80)-R(70)}{80-70}
+=\frac{10.8-11.5}{10}
+=\frac{-0.7}{10}
+=-0.07.
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-battery-range-2-3">So <span class="process-math">\(R'(70)\approx -0.07\)</span> hours per degree Fahrenheit.<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-battery-range-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-linearization-battery-range-2-4">
+<em class="alert">Part (b)</em>: The linearization (tangent line approximation) at <span class="process-math">\(T=70\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-battery-range-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-linearization-battery-range-2-5">
+\begin{equation*}
+\displaystyle L(T)=R(70)+R'(70)(T-70).
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-battery-range-2-6">Using <span class="process-math">\(R(70)=11.5\)</span> and our estimate <span class="process-math">\(R'(70)\approx -0.07\text{,}\)</span> we get<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-battery-range-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-linearization-battery-range-2-7">
+\begin{equation*}
+\displaystyle L(T)=11.5-0.07(T-70).
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-battery-range-2-8">
+<em class="alert">Part (c)</em>: Estimate <span class="process-math">\(R(74)\)</span> by evaluating <span class="process-math">\(L(74)\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-battery-range-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-linearization-battery-range-2-9">
+\begin{equation*}
+\begin{array}{rcl}
+\displaystyle R(74) \amp \approx \amp L(74)\\
+\amp \approx \amp 11.5-0.07(74-70)\\
+\amp \approx \amp 11.5-0.07(4)\\
+\amp \approx \amp 11.5-0.28\\
+\amp \approx \amp 11.22.
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-linearization-battery-range-2-10">So the battery range at <span class="process-math">\(74^\circ\)</span>F is approximately <span class="process-math">\(11.22\)</span> hours.<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-battery-range-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-linearization-battery-range-2-11">
+<em class="alert">Part (d)</em>: The value <span class="process-math">\(R'(70)\approx -0.07\)</span> hours per <span class="process-math">\(^\circ\)</span>F means that near <span class="process-math">\(70^\circ\)</span>F, increasing the temperature by <span class="process-math">\(1^\circ\)</span>F decreases the battery range by about <span class="process-math">\(0.07\)</span> hours (about <span class="process-math">\(4.2\)</span> minutes).<div class="autopermalink" data-description="Paragraph"><a href="#ex-linearization-battery-range-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.9.11.1"><a href="#ex-linearization-battery-range-2" title="Copy heading and permalink for Solution 3.9.11.1" aria-label="Copy heading and permalink for Solution 3.9.11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 3.9.11"><a href="#ex-linearization-battery-range" title="Copy heading and permalink for Example 3.9.11" aria-label="Copy heading and permalink for Example 3.9.11">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 3.3 Linear Approximation and L’Hopital’s Rule"><a href="#subsec-derivApp-linear" title="Copy heading and permalink for Subsection: Section 3.3 Linear Approximation and L’Hopital’s Rule" aria-label="Copy heading and permalink for Subsection: Section 3.3 Linear Approximation and L’Hopital’s Rule">🔗</a></div></section><section class="subsection" id="subsec-derivApp-extrema"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 3.4 Extrema</span>
 </h3>
-<div class="para" id="subsec-derivApp-extrema-2">test<div class="autopermalink" data-description="Paragraph"><a href="#subsec-derivApp-extrema-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="example example-like" id="ex-critical-numbers-radical"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-critical-numbers-radical-1-1">Find all critical numbers of the function<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-radical-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection: Section 3.4 Extrema"><a href="#subsec-derivApp-extrema" title="Copy heading and permalink for Subsection: Section 3.4 Extrema" aria-label="Copy heading and permalink for Subsection: Section 3.4 Extrema">🔗</a></div></section><section class="subsection" id="subsec-derivApp-mvt"><h3 class="heading hide-type">
+<div class="displaymath process-math" id="ex-critical-numbers-radical-1-2">
+\begin{equation*}
+f(x)=\sqrt{x}+\frac{1}{\sqrt{x}}.
+\end{equation*}
+</div>
+<div class="solutions"><details id="ex-critical-numbers-radical-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-critical-numbers-radical-2-1">Recall that the <dfn class="terminology">critical numbers</dfn> of a function are the values of <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(f\)</span> for which either <span class="process-math">\(f'(x)=0\)</span> or <span class="process-math">\(f'(x)\)</span> is undefined.<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-radical-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-critical-numbers-radical-2-2">Rewrite the function using exponents:<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-radical-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-radical-2-3">
+\begin{equation*}
+f(x)=x^{1/2}+x^{-1/2}.
+\end{equation*}
+</div>
+<div class="para" id="ex-critical-numbers-radical-2-4">Differentiate:<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-radical-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-radical-2-5">
+\begin{equation*}
+\begin{aligned}
+f'(x)
+\amp= \frac{1}{2}x^{-1/2}-\frac{1}{2}x^{-3/2} \\
+\amp= \frac{1}{2x^{1/2}}-\frac{1}{2x^{3/2}}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-critical-numbers-radical-2-6">Finding a common denominator gives<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-radical-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-radical-2-7">
+\begin{equation*}
+f'(x)=\frac{x-1}{2x^{3/2}}.
+\end{equation*}
+</div>
+<div class="para" id="ex-critical-numbers-radical-2-8">To determine where <span class="process-math">\(f'(x)=0\text{,}\)</span> set the numerator equal to zero:<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-radical-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-radical-2-9">
+\begin{equation*}
+x-1=0.
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-radical-2-10">
+\begin{equation*}
+x=1.
+\end{equation*}
+</div>
+<div class="para" id="ex-critical-numbers-radical-2-11">Next determine where the derivative is undefined by examining the denominator.  The denominator is zero when<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-radical-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-radical-2-12">
+\begin{equation*}
+2x^{3/2}=0.
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-radical-2-13">
+\begin{equation*}
+x=0.
+\end{equation*}
+</div>
+<div class="para" id="ex-critical-numbers-radical-2-14">However, the original function <span class="process-math">\(f(x)=\sqrt{x}+1/\sqrt{x}\)</span> is not defined at <span class="process-math">\(x=0\text{,}\)</span> so this value is not in the domain of <span class="process-math">\(f\)</span> and therefore cannot be a critical number.<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-radical-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-critical-numbers-radical-2-15">Thus the only critical number of the function is<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-radical-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-radical-2-16">
+\begin{equation*}
+x=1.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 3.9.12.1"><a href="#ex-critical-numbers-radical-2" title="Copy heading and permalink for Solution 3.9.12.1" aria-label="Copy heading and permalink for Solution 3.9.12.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 3.9.12"><a href="#ex-critical-numbers-radical" title="Copy heading and permalink for Example 3.9.12" aria-label="Copy heading and permalink for Example 3.9.12">🔗</a></div></article><article class="example example-like" id="ex-critical-numbers-rational"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-critical-numbers-rational-1-1">Find all critical numbers of the function<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-rational-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-rational-1-2">
+\begin{equation*}
+f(x)=\frac{2x}{(x^2+2)^2}.
+\end{equation*}
+</div>
+<div class="solutions"><details id="ex-critical-numbers-rational-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-critical-numbers-rational-2-1">Recall that the <dfn class="terminology">critical numbers</dfn> of a function are the values of <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(f\)</span> for which either <span class="process-math">\(f'(x)=0\)</span> or <span class="process-math">\(f'(x)\)</span> is undefined.<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-rational-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-critical-numbers-rational-2-2">We begin by computing the derivative using the quotient rule.<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-rational-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-rational-2-3">
+\begin{equation*}
+\begin{aligned}
+f'(x)
+\amp = \frac{(x^2+2)^2(2)-2x\left[2(x^2+2)(2x)\right]}{(x^2+2)^4} \\
+\amp = \frac{2(x^2+2)^2-8x^2(x^2+2)}{(x^2+2)^4}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-critical-numbers-rational-2-4">Factor the numerator.<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-rational-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-rational-2-5">
+\begin{equation*}
+\begin{aligned}
+f'(x)
+\amp = \frac{(x^2+2)\bigl[2(x^2+2)-8x^2\bigr]}{(x^2+2)^4} \\
+\amp = \frac{2(2-3x^2)}{(x^2+2)^3}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-critical-numbers-rational-2-6">To find where <span class="process-math">\(f'(x)=0\text{,}\)</span> we set the numerator equal to zero:<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-rational-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-rational-2-7">
+\begin{equation*}
+2(2-3x^2)=0.
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-rational-2-8">
+\begin{equation*}
+2-3x^2=0.
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-rational-2-9">
+\begin{equation*}
+x^2=\frac{2}{3}.
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-rational-2-10">
+\begin{equation*}
+x=\pm\sqrt{\frac{2}{3}}.
+\end{equation*}
+</div>
+<div class="para" id="ex-critical-numbers-rational-2-11">Next we determine where the derivative is undefined by examining the denominator. The denominator is zero when<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-rational-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-rational-2-12">
+\begin{equation*}
+(x^2+2)^3=0.
+\end{equation*}
+</div>
+<div class="para" id="ex-critical-numbers-rational-2-13">However, <span class="process-math">\(x^2+2&gt;0\)</span> for all real numbers <span class="process-math">\(x\text{,}\)</span> so the denominator can never be zero. Therefore <span class="process-math">\(f'(x)\)</span> is defined for all real <span class="process-math">\(x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-rational-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-critical-numbers-rational-2-14">Thus the critical numbers of <span class="process-math">\(f(x)\)</span> are<div class="autopermalink" data-description="Paragraph"><a href="#ex-critical-numbers-rational-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-critical-numbers-rational-2-15">
+\begin{equation*}
+x=\pm\sqrt{\frac{2}{3}}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 3.9.13.1"><a href="#ex-critical-numbers-rational-2" title="Copy heading and permalink for Solution 3.9.13.1" aria-label="Copy heading and permalink for Solution 3.9.13.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 3.9.13"><a href="#ex-critical-numbers-rational" title="Copy heading and permalink for Example 3.9.13" aria-label="Copy heading and permalink for Example 3.9.13">🔗</a></div></article><article class="example example-like" id="ex-absolute-extrema-graph"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-absolute-extrema-graph-1-1">Consider the graph of <span class="process-math">\(f(x)\)</span> below on the interval <span class="process-math">\([0,5]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-graph-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/latex-image/ex-absolute-extrema-graph-1-2.svg" role="img" class="contained" alt="A graph of f(x) on a square grid from 0 to 5. Starting at (0,3), the function curves upward to a maximum at (1,4), then curves downward passing through (2,3) and reaching a minimum at (3,1). After x = 3, the graph is a straight line segment increasing to (5,5)."></div> <div class="para" id="ex-absolute-extrema-graph-1-3">(a) Identify the critical numbers of <span class="process-math">\(f\)</span> and explain how you know they are critical numbers.<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-graph-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-absolute-extrema-graph-1-4">(b) Identify the absolute maximum and minimum values of <span class="process-math">\(f\)</span> and the <span class="process-math">\(x\)</span>-values where they occur.<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-graph-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-absolute-extrema-graph-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-absolute-extrema-graph-2-1">
+<em class="alert">Part (a)</em>: The critical numbers of <span class="process-math">\(f\)</span> are the values of <span class="process-math">\(x\)</span> where the derivative is zero or undefined. From the graph, we can see that the function has a horizontal tangent at <span class="process-math">\(x=1\)</span> and a corner at <span class="process-math">\(x=3\text{.}\)</span> Therefore, the critical numbers of <span class="process-math">\(f\)</span> are<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-graph-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-graph-2-2">
+\begin{equation*}
+x=1 \text{ and } x=3.
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-graph-2-3">
+<em class="alert">Part (b)</em>: The absolute maximum value of <span class="process-math">\(f\)</span> on the interval <span class="process-math">\([0,5]\)</span> is <span class="process-math">\(5\text{,}\)</span> which occurs at <span class="process-math">\(x=5\text{.}\)</span>  The absolute minimum value of <span class="process-math">\(f\)</span> on the interval is <span class="process-math">\(1\text{,}\)</span> which occurs at <span class="process-math">\(x=3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-graph-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.9.14.1"><a href="#ex-absolute-extrema-graph-2" title="Copy heading and permalink for Solution 3.9.14.1" aria-label="Copy heading and permalink for Solution 3.9.14.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 3.9.14"><a href="#ex-absolute-extrema-graph" title="Copy heading and permalink for Example 3.9.14" aria-label="Copy heading and permalink for Example 3.9.14">🔗</a></div></article><article class="example example-like" id="ex-absolute-extrema-polynomial"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-absolute-extrema-polynomial-1-1">Consider the function<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-polynomial-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-polynomial-1-2">
+\begin{equation*}
+f(x)=\frac{2}{3}x^3-2x^2-6x+1, \qquad -2 \le x \le 1.
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-polynomial-1-3">Determine the absolute maximum and minimum values of <span class="process-math">\(f\)</span> and the <span class="process-math">\(x\)</span>-values where these extrema occur.<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-polynomial-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-absolute-extrema-polynomial-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-absolute-extrema-polynomial-2-1">First determine the critical numbers of <span class="process-math">\(f\text{.}\)</span>  Compute the derivative.<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-polynomial-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-polynomial-2-2">
+\begin{equation*}
+\begin{aligned}
+f'(x)
+\amp= \frac{2}{3}\cdot 3x^2 -4x -6 \\
+\amp= 2x^2-4x-6 \\
+\amp= 2(x^2-2x-3) \\
+\amp= 2(x-3)(x+1).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-polynomial-2-3">Setting <span class="process-math">\(f'(x)=0\)</span> gives<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-polynomial-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-polynomial-2-4">
+\begin{equation*}
+2(x-3)(x+1)=0.
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-polynomial-2-5">Thus the critical numbers are<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-polynomial-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-polynomial-2-6">
+\begin{equation*}
+x=-1, \quad x=3.
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-polynomial-2-7">To determine the absolute extrema on the interval <span class="process-math">\([-2,1]\text{,}\)</span> we evaluate <span class="process-math">\(f\)</span> at the endpoints and at any critical numbers inside the interval.  Since <span class="process-math">\(x=3\)</span> lies outside the interval, we only check <span class="process-math">\(x=-2\text{,}\)</span> <span class="process-math">\(x=1\text{,}\)</span> and <span class="process-math">\(x=-1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-polynomial-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-polynomial-2-8">
+\begin{equation*}
+\begin{aligned}
+f(-2) \amp= \frac{2}{3}(-2)^3-2(-2)^2-6(-2)+1
+= -\frac{1}{3} \\[6pt]
+f(1) \amp= \frac{2}{3}(1)^3-2(1)^2-6(1)+1
+= -\frac{19}{3} \\[6pt]
+f(-1) \amp= \frac{2}{3}(-1)^3-2(-1)^2-6(-1)+1
+= \frac{13}{3}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-polynomial-2-9">Comparing these values, the absolute maximum value of <span class="process-math">\(f\)</span> is <span class="process-math">\(\frac{13}{3},\)</span> which occurs at <span class="process-math">\(x=-1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-polynomial-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-absolute-extrema-polynomial-2-10">The absolute minimum value of <span class="process-math">\(f\)</span> is <span class="process-math">\(-\frac{19}{3},\)</span> which occurs at <span class="process-math">\(x=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-polynomial-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.9.15.1"><a href="#ex-absolute-extrema-polynomial-2" title="Copy heading and permalink for Solution 3.9.15.1" aria-label="Copy heading and permalink for Solution 3.9.15.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 3.9.15"><a href="#ex-absolute-extrema-polynomial" title="Copy heading and permalink for Example 3.9.15" aria-label="Copy heading and permalink for Example 3.9.15">🔗</a></div></article><article class="example example-like" id="ex-absolute-extrema-abs"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-absolute-extrema-abs-1-1">Consider the function<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-abs-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-abs-1-2">
+\begin{equation*}
+f(x)=|x-2|, \qquad 0 \le x \le 5.
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-abs-1-3">Determine the absolute maximum and minimum values of <span class="process-math">\(f\)</span> and the <span class="process-math">\(x\)</span>-values where these extrema occur.<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-abs-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-absolute-extrema-abs-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-absolute-extrema-abs-2-1">When a function involves absolute values, it is often helpful to rewrite it using the definition of absolute value:<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-abs-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-abs-2-2">
+\begin{equation*}
+|A|=
+\begin{cases}
+-A, &amp; A\lt 0 \\
+A, &amp; A\ge 0
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-abs-2-3">For this function,<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-abs-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-abs-2-4">
+\begin{equation*}
+f(x)=|x-2|=
+\begin{cases}
+-(x-2), &amp; x\lt 2 \\
+x-2, &amp; x\ge 2
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-abs-2-5">Taking derivatives of each piece gives<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-abs-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-abs-2-6">
+\begin{equation*}
+f'(x)=
+\begin{cases}
+-1, &amp; x\lt 2 \\
+1, &amp; x\gt 2
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-abs-2-7">The derivative at <span class="process-math">\(x=2\)</span> is undefined.  Indeed,<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-abs-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-abs-2-8">
+\begin{equation*}
+f'(2)=
+\lim_{h\to 0}\frac{|(2+h)-2|-|2-2|}{h}
+=
+\lim_{h\to 0}\frac{|h|}{h},
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-abs-2-9">and this limit does not exist.  Thus the only critical number is<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-abs-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-abs-2-10">
+\begin{equation*}
+x=2.
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-abs-2-11">To determine the absolute extrema on the interval <span class="process-math">\([0,5]\text{,}\)</span> evaluate <span class="process-math">\(f\)</span> at the critical number and the endpoints.<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-abs-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-abs-2-12">
+\begin{equation*}
+\begin{aligned}
+f(0) \amp= |0-2| = 2 \\
+f(2) \amp= |2-2| = 0 \\
+f(5) \amp= |5-2| = 3
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-abs-2-13">Therefore, the absolute maximum value of <span class="process-math">\(f\)</span> is <span class="process-math">\(3\text{,}\)</span> which occurs at <span class="process-math">\(x=5\text{.}\)</span> The absolute minimum value of <span class="process-math">\(f\)</span> is <span class="process-math">\(0\text{,}\)</span> which occurs at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-abs-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.9.16.1"><a href="#ex-absolute-extrema-abs-2" title="Copy heading and permalink for Solution 3.9.16.1" aria-label="Copy heading and permalink for Solution 3.9.16.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 3.9.16"><a href="#ex-absolute-extrema-abs" title="Copy heading and permalink for Example 3.9.16" aria-label="Copy heading and permalink for Example 3.9.16">🔗</a></div></article><article class="example example-like" id="ex-absolute-extrema-fractional-power"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-absolute-extrema-fractional-power-1-1">Consider the function<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-fractional-power-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-fractional-power-1-2">
+\begin{equation*}
+f(x)=x+3x^{2/3}, \qquad -1 \le x \le 1.
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-fractional-power-1-3">Determine the absolute maximum and minimum values of <span class="process-math">\(f\)</span> and the <span class="process-math">\(x\)</span>-values where these extrema occur.<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-fractional-power-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-absolute-extrema-fractional-power-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-absolute-extrema-fractional-power-2-1">First determine the critical numbers of <span class="process-math">\(f\text{.}\)</span>  Compute the derivative.<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-fractional-power-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-fractional-power-2-2">
+\begin{equation*}
+\begin{aligned}
+f'(x)
+\amp= 1 + 3\left(\frac{2}{3}\right)x^{-1/3} \\
+\amp= 1 + 2x^{-1/3} \\
+\amp= 1 + \frac{2}{x^{1/3}}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-fractional-power-2-3">To determine where <span class="process-math">\(f'(x)=0\text{,}\)</span> solve<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-fractional-power-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-fractional-power-2-4">
+\begin{equation*}
+1+\frac{2}{x^{1/3}}=0.
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-fractional-power-2-5">Multiply both sides by <span class="process-math">\(x^{1/3}\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-fractional-power-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-fractional-power-2-6">
+\begin{equation*}
+x^{1/3}+2=0.
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-fractional-power-2-7">
+\begin{equation*}
+x^{1/3}=-2.
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-fractional-power-2-8">
+\begin{equation*}
+x=(-2)^3=-8.
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-fractional-power-2-9">Next determine where the derivative is undefined.  The derivative <span class="process-math">\(f'(x)=1+\frac{2}{x^{1/3}}\)</span> is undefined when<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-fractional-power-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-fractional-power-2-10">
+\begin{equation*}
+x^{1/3}=0.
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-fractional-power-2-11">
+\begin{equation*}
+x=0.
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-fractional-power-2-12">Thus the critical numbers are <span class="process-math">\(x=-8\)</span> and <span class="process-math">\(x=0\text{.}\)</span> However, only <span class="process-math">\(x=0\)</span> lies in the interval <span class="process-math">\([-1,1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-fractional-power-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-absolute-extrema-fractional-power-2-13">To determine the absolute extrema on <span class="process-math">\([-1,1]\text{,}\)</span> evaluate <span class="process-math">\(f\)</span> at the endpoints and the critical number in the interval.<div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-fractional-power-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-absolute-extrema-fractional-power-2-14">
+\begin{equation*}
+\begin{aligned}
+f(-1) \amp= -1 + 3(-1)^{2/3}
+= -1 + 3(1)
+= 2 \\[6pt]
+f(1) \amp= 1 + 3(1)^{2/3}
+= 1 + 3
+= 4 \\[6pt]
+f(0) \amp= 0 + 3(0)^{2/3}
+= 0.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-absolute-extrema-fractional-power-2-15">Comparing these values, the absolute maximum value of <span class="process-math">\(f\)</span> is <span class="process-math">\(4\text{,}\)</span> which occurs at <span class="process-math">\(x=1\text{.}\)</span> The absolute minimum value of <span class="process-math">\(f\)</span> is <span class="process-math">\(0\text{,}\)</span> which occurs at <span class="process-math">\(x=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-absolute-extrema-fractional-power-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.9.17.1"><a href="#ex-absolute-extrema-fractional-power-2" title="Copy heading and permalink for Solution 3.9.17.1" aria-label="Copy heading and permalink for Solution 3.9.17.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 3.9.17"><a href="#ex-absolute-extrema-fractional-power" title="Copy heading and permalink for Example 3.9.17" aria-label="Copy heading and permalink for Example 3.9.17">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 3.4 Extrema"><a href="#subsec-derivApp-extrema" title="Copy heading and permalink for Subsection: Section 3.4 Extrema" aria-label="Copy heading and permalink for Subsection: Section 3.4 Extrema">🔗</a></div></section><section class="subsection" id="subsec-derivApp-mvt"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 3.5 Mean Value Theorem</span>
 </h3>
 <div class="para" id="subsec-derivApp-mvt-2">test<div class="autopermalink" data-description="Paragraph"><a href="#subsec-derivApp-mvt-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1135,21 +1735,21 @@ V'(0)
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 3.6 Curve Sketching Part 1</span>
 </h3>
 <article class="example example-like" id="prob-cs1-poly"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="prob-cs1-poly-1-1">Let <span class="process-math">\(f(x)=x^4-4x^2\text{.}\)</span> Find the critical points, intervals of increase/decrease, concavity, and inflection points. Then sketch a graph.<div class="autopermalink" data-description="Paragraph"><a href="#prob-cs1-poly-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.9.9"><a href="#prob-cs1-poly" title="Copy heading and permalink for Example 3.9.9" aria-label="Copy heading and permalink for Example 3.9.9">🔗</a></div></article><article class="example example-like" id="prob-cs1-rational"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 3.9.18"><a href="#prob-cs1-poly" title="Copy heading and permalink for Example 3.9.18" aria-label="Copy heading and permalink for Example 3.9.18">🔗</a></div></article><article class="example example-like" id="prob-cs1-rational"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="prob-cs1-rational-1-1">Let <span class="process-math">\(f(x)=\dfrac{x}{x^2+1}\text{.}\)</span> Find where <span class="process-math">\(f\)</span> is increasing or decreasing and where it is concave up or concave down. Then sketch a graph.<div class="autopermalink" data-description="Paragraph"><a href="#prob-cs1-rational-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.9.10"><a href="#prob-cs1-rational" title="Copy heading and permalink for Example 3.9.10" aria-label="Copy heading and permalink for Example 3.9.10">🔗</a></div></article><article class="example example-like" id="prob-cs1-sign-chart"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 3.9.19"><a href="#prob-cs1-rational" title="Copy heading and permalink for Example 3.9.19" aria-label="Copy heading and permalink for Example 3.9.19">🔗</a></div></article><article class="example example-like" id="prob-cs1-sign-chart"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="prob-cs1-sign-chart-1-1">A differentiable function has critical points at <span class="process-math">\(x=-2\)</span> and <span class="process-math">\(x=1\text{.}\)</span> The sign of <span class="process-math">\(f'(x)\)</span> is positive on <span class="process-math">\((-\infty,-2)\text{,}\)</span> negative on <span class="process-math">\((-2,1)\text{,}\)</span> and positive on <span class="process-math">\((1,\infty)\text{.}\)</span> Describe the behavior of the graph and classify the critical points.<div class="autopermalink" data-description="Paragraph"><a href="#prob-cs1-sign-chart-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.9.11"><a href="#prob-cs1-sign-chart" title="Copy heading and permalink for Example 3.9.11" aria-label="Copy heading and permalink for Example 3.9.11">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 3.6 Curve Sketching Part 1"><a href="#subsec-derivApp-curve1" title="Copy heading and permalink for Subsection: Section 3.6 Curve Sketching Part 1" aria-label="Copy heading and permalink for Subsection: Section 3.6 Curve Sketching Part 1">🔗</a></div></section><section class="subsection" id="subsec-derivApp-curve2"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 3.9.20"><a href="#prob-cs1-sign-chart" title="Copy heading and permalink for Example 3.9.20" aria-label="Copy heading and permalink for Example 3.9.20">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 3.6 Curve Sketching Part 1"><a href="#subsec-derivApp-curve1" title="Copy heading and permalink for Subsection: Section 3.6 Curve Sketching Part 1" aria-label="Copy heading and permalink for Subsection: Section 3.6 Curve Sketching Part 1">🔗</a></div></section><section class="subsection" id="subsec-derivApp-curve2"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 3.7 Curve Sketching Part 2</span>
 </h3>
 <div class="para" id="subsec-derivApp-curve2-2">test more<div class="autopermalink" data-description="Paragraph"><a href="#subsec-derivApp-curve2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
