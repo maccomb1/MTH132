@@ -268,22 +268,1346 @@
 
    <subsection xml:id="subsec-derivApp-relatedRates">
       <title><xref ref="sec-derivApp-related"/> Related Rates</title>
-      <p> test
-      </p>
+
+      
+<example xml:id="ex-related-rates-circle-circumference">
+  <statement>
+    <p>
+      A computer animator creates a circle for which the area of the circle
+      increases at the rate of <m>2 \text{ mm}^2/\text{sec}</m>. Find the rate of
+      change of the circumference of the circle at the time that the radius
+      is <m>3</m> mm.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Let <m>A(t)</m>, <m>r(t)</m>, and <m>C(t)</m> denote the changing area,
+      radius, and circumference of the circle at time <m>t</m>.
+    </p>
+
+    <p>
+      We are given the rate of change of the area:
+    </p>
+
+    <me>
+      \displaystyle A'(t)=2 \ \text{mm}^2/\text{sec}.
+    </me>
+
+    <p>
+      We are also told that at a particular time, say <m>t=0</m>,
+    </p>
+
+    <me>
+      r(0)=3 \ \text{mm}.
+    </me>
+
+    <p>
+      Our goal is to determine
+
+    <m>
+      \displaystyle C'(0).
+    </m>
+  </p>
+    <p>
+      The circumference of a circle is related to the radius by
+    </p>
+
+    <me>
+      C(t)=2\pi r(t).
+    </me>
+
+    <p>
+      Differentiating both sides with respect to <m>t</m> gives
+    </p>
+
+    <me>
+      C'(t)=2\pi r'(t).
+    </me>
+
+    <p>
+      Therefore, at time <m>t^\*</m>,
+    </p>
+
+    <me>
+      C'(0)=2\pi r'(0).
+    </me>
+
+    <p>
+      To determine <m>r'(0)</m>, we relate the radius to the area.
+      The area of a circle is
+    </p>
+
+    <me>
+      A(t)=\pi r^2(t).
+    </me>
+
+    <p>
+      Differentiating with respect to <m>t</m>,
+    </p>
+
+    <me>
+      A'(t)=2\pi r(t) r'(t).
+    </me>
+
+    <p>
+      Solve for <m>r'(t)</m>:
+    </p>
+
+    <me>
+      r'(t)=\frac{A'(t)}{2\pi r(t)}.
+    </me>
+
+    <p>
+      Substitute the known values at <m>t=0</m>:
+    </p>
+
+    <me>
+      r'(0)=
+      \frac{2}{2\pi \cdot 3}
+      =
+      \frac{1}{3\pi}
+      \ \text{mm/sec}.
+    </me>
+
+    <p>
+      Now substitute this into the expression for <m>C'(0)</m>:
+    </p>
+
+    <me>
+      C'(0)
+      =
+      2\pi\left(\frac{1}{3\pi}\right)
+      =
+      \frac{2}{3}
+      \ \text{mm/sec}.
+    </me>
+
+    <p>
+      Therefore, when the radius is <m>3</m> mm, the circumference is
+      increasing at a rate of <m>\frac{2}{3}</m> mm/sec.
+    </p>
+  </solution>
+</example>
+
+<example xml:id="ex-related-rates-balloon">
+  <statement>
+    <p>
+      A hot air balloon is released from its launching area and watched by a crowd in a viewing area
+      <m>100</m> feet away from the launch site.
+      What is the vertical speed of the balloon when its distance from the viewing area is
+      <m>300</m> feet and that distance is increasing at a rate of
+      <m>600</m> ft/hr?
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Let <m>b(t)</m> denote the changing height of the balloon and
+      let <m>c(t)</m> denote the changing distance from the balloon to the viewing area.
+    </p>
+
+    <p>
+      At a particular instant, say <m>t=0</m>, we are given
+    </p>
+
+    <me>
+      c(0) = 300 \text{ ft},
+      \qquad
+      c'(0) = 600 \text{ ft/hr}.
+    </me>
+
+    <p>
+      We want to determine the vertical speed of the balloon at that time:
+    </p>
+
+    <me>
+      \displaystyle b'(0).
+    </me>
+
+    <p>
+      The viewing area, launch site, and balloon form a right triangle.
+      The base of the triangle is <m>100</m> ft, the height is <m>b(t)</m>,
+      and the hypotenuse is <m>c(t)</m>. By the Pythagorean Theorem,
+    </p>
+
+    <me>
+      100^2 + b^2(t) = c^2(t).
+    </me>
+
+    <p>
+      Differentiate both sides with respect to <m>t</m>:
+    </p>
+
+    <me>
+      2b(t)b'(t) = 2c(t)c'(t).
+    </me>
+
+    <p>
+      Solving for <m>b'(t)</m>,
+    </p>
+
+    <me>
+      b'(t) = \frac{c(t)c'(t)}{b(t)}.
+    </me>
+
+    <p>
+      To evaluate this at <m>t=0</m>, we still need the value of <m>b(0)</m>.
+      Using the original relationship,
+    </p>
+
+    <me>
+      100^2 + b^2(0) = c^2(0) = 300^2.
+    </me>
+
+    <p>
+      Solve for the height:
+    </p>
+
+    <me>
+      b(0) =
+      \sqrt{300^2 - 100^2}
+      =
+      \sqrt{80000}.
+    </me>
+
+    <p>
+      Now substitute the known quantities into the formula for <m>b'(0)</m>:
+    </p>
+
+    <me>
+      b'(0) =
+      \frac{300 \cdot 600}{\sqrt{80000}}.
+    </me>
+
+    <p>
+      Simplifying,
+    </p>
+
+    <me>
+      b'(0) =
+      \frac{180000}{200\sqrt{2}}
+      =
+      450\sqrt{2}
+      \text{ ft/hr}.
+    </me>
+
+    <p>
+      Therefore, when the balloon is <m>300</m> feet from the viewing area,
+      its vertical speed is <m>450\sqrt{2}</m> ft/hr.
+    </p>
+  </solution>
+</example>
+
+
+<example xml:id="ex-related-rates-shadow-wall">
+  <statement>
+    <p>
+      A spotlight is on the ground <m>20</m> ft away from a wall and a
+      <m>6</m> ft tall person is walking toward the wall at a rate of
+      <m>\frac{5}{2}</m> ft/sec.
+    </p>
+
+    <p>
+      How fast is the height of the shadow changing when the person is
+      <m>8</m> ft from the wall?
+    </p>
+
+        <image>
+      <shortdescription>
+        A spotlight on the ground shines toward a wall 20 feet away. A person
+        stands between the spotlight and the wall, casting a shadow on the wall.
+        The person is 6 feet tall. The distance from the spotlight to the person
+        is labeled x, the distance from the person to the wall is 20 minus x,
+        and the height of the shadow on the wall is labeled y.
+      </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.35]
+	
+	% Ground and wall
+	\draw[thick] (0,0) -- (22,0);
+	\draw[thick] (0,0) -- (0,12) node[above] {Wall};
+	
+	% Key points
+	\fill (20,0) circle (6.2pt) node[above right] {Spotlight};
+	\fill (8,0) circle (6.2pt);
+	\draw[thick] (8,0) -- (8,6) node[midway,right] {$6$};
+	
+	% Light ray and shadow
+	\draw[thick] (20,0) -- (0,10);
+	\draw[thick] (0,0) -- (0,10);
+	
+	% Distance labels
+	\draw[<->] (0,-1.8) -- (20,-1.8) node[midway,fill=white,inner sep=2pt] {$20$};
+	\draw[<->] (8,-0.9) -- (20,-0.9) node[midway,fill=white,inner sep=2pt] {$x$};
+	\draw[<->] (0,-0.9) -- (8,-0.9) node[midway,fill=white,inner sep=2pt] {$20-x$};
+	
+	% Shadow height label
+	\draw[<->] (-1.2,0) -- (-1.2,10) node[midway,fill=white,inner sep=2pt] {$y$};
+	\draw[fill=black!70] (0,0) rectangle (3pt,10) node[rotate=90, pos=.5, below] {Shadow};
+
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+
+
+
+
+
+
+  </statement>
+
+
+
+
+
+
+
+  <solution>
+    <p>
+      Let
+    </p>
+
+    <ul>
+      <li><m>x(t)</m> be the distance of the person from the spotlight,</li>
+      <li><m>z(t)</m> be the distance of the person from the wall, and</li>
+      <li><m>y(t)</m> be the height of the shadow on the wall.</li>
+    </ul>
+
+    <p>
+      Because the wall is <m>20</m> ft from the spotlight,
+    </p>
+
+    <me>
+      z(t)=20-x(t).
+    </me>
+
+    <p>
+      The person is walking toward the wall at a rate of
+      <m>\frac{5}{2}</m> ft/sec, so
+    </p>
+
+    <me>
+      z'(t)=-\frac{5}{2}.
+    </me>
+
+    <p>
+      At the instant of interest,
+    </p>
+
+    <me>
+      z(0)=8,
+      \qquad
+      x(0)=20-8=12.
+    </me>
+
+    <p>
+      We want to determine the rate of change of the height of the shadow:
+    </p>
+
+    <me>
+      y'(0).
+    </me>
+
+    <p>
+      From the geometry of the situation there are two similar triangles:
+      the large triangle formed by the spotlight and the shadow on the wall,
+      and the smaller triangle formed by the spotlight and the person.
+      Using similar triangles,
+    </p>
+
+    <me>
+      \frac{y(t)}{6}=\frac{20}{x(t)}.
+    </me>
+
+    <p>
+      Solving for <m>y(t)</m>,
+    </p>
+
+    <me>
+      y(t)=\frac{120}{x(t)}.
+    </me>
+
+    <p>
+      Differentiate with respect to <m>t</m>:
+    </p>
+
+    <me>
+      y'(t)=-\frac{120}{x^2(t)}\,x'(t).
+    </me>
+
+    <p>
+      To determine <m>x'(t)</m>, differentiate the relationship
+      <m>x(t)=20-z(t)</m>:
+    </p>
+
+    <me>
+      x'(t)=-z'(t).
+    </me>
+
+    <p>
+      Since <m>z'(t)=-\frac{5}{2}</m>,
+    </p>
+
+    <me>
+      x'(t)=\frac{5}{2}.
+    </me>
+
+    <p>
+      Now evaluate the derivative when <m>x(0)=12</m>:
+    </p>
+
+    <me>
+      y'(0)
+      =
+      -\frac{120}{12^2}\left(\frac{5}{2}\right)
+      =
+      -\frac{25}{12}.
+    </me>
+
+    <p>
+      Therefore the height of the shadow is changing at a rate of
+      <m>-\frac{25}{12}</m> ft/sec. The negative sign indicates that
+      the height of the shadow is decreasing at that moment.
+    </p>
+
+  </solution>
+</example>
+
+<example xml:id="ex-related-rates-cylinder">
+  <statement>
+    <p>
+      A flexible cylinder has been built which can change its volume by changing
+      its height or its radius. However, design constraints require that its
+      height is always twice its radius.
+    </p>
+
+    <p>
+      Find the rate of change of the volume of the cylinder when its radius is
+      <m>3</m> feet and the radius is increasing at a rate of
+      <m>2</m> ft/min.
+    </p>
+  </statement>
+
+  <solution>
+
+    <p>
+      Let <m>r(t)</m> denote the changing radius of the cylinder,
+      <m>h(t)</m> denote the changing height, and
+      <m>V(t)</m> denote the volume.
+    </p>
+
+    <p>
+      We are given the design constraint
+    </p>
+
+    <me>
+      h(t)=2r(t).
+    </me>
+
+    <p>
+      At a particular time, say <m>t=0</m>,
+    </p>
+
+    <me>
+      r(0)=3,
+      \qquad
+      r'(0)=2.
+    </me>
+
+    <p>
+      We want to determine the rate of change of the volume at that same time:
+    </p>
+
+    <me>
+      \displaystyle V'(0).
+    </me>
+
+    <p>
+      The volume of a cylinder is
+    </p>
+
+    <me>
+      V(t)=\pi r^2(t)h(t).
+    </me>
+
+    <p>
+      Using the relationship <m>h(t)=2r(t)</m>, we can rewrite the volume in
+      terms of the radius alone:
+    </p>
+
+    <me>
+      V(t)=\pi r^2(t)\bigl(2r(t)\bigr)=2\pi r^3(t).
+    </me>
+
+    <p>
+      Differentiate with respect to <m>t</m>:
+    </p>
+
+    <me>
+      V'(t)=6\pi r^2(t)r'(t).
+    </me>
+
+    <p>
+      Now evaluate this derivative at <m>t=0</m>:
+    </p>
+
+    <me>
+      V'(0)
+      =
+      6\pi (3)^2(2)
+      =
+      108\pi.
+    </me>
+
+    <p>
+      Therefore, when the radius is <m>3</m> ft, the volume is increasing at a
+      rate of
+    </p>
+
+    <me>
+      108\pi \text{ ft}^3/\text{min}.
+    </me>
+
+  </solution>
+</example>
+
+
+<example xml:id="ex-production-solar-panels">
+  <statement>
+    <p>
+      A factory produces solar panels according to the production function
+    </p>
+
+    <me>
+      S = 600L^{0.3}K^{0.6},
+    </me>
+
+    <p>
+      where <m>L</m> represents thousands of dollars spent on labor and
+      <m>K</m> represents thousands of dollars spent on equipment.
+    </p>
+
+    <p>
+      (a) How many panels are produced when <m>L=100</m> and <m>K=81</m>?
+    </p>
+
+    <p>
+      (b) The company keeps equipment spending fixed at <m>K=81</m>.
+      At what rate is production changing with respect to labor spending
+      when <m>L=100</m>?
+    </p>
+  </statement>
+
+  <solution>
+
+    <p><alert>Part (a)</alert></p>
+
+    <p>
+      Substitute the given values into the production function.
+    </p>
+
+    <me>
+      S = 600(100)^{0.3}(81)^{0.6}.
+    </me>
+
+    <p>
+      Without a calculator we would leave the answer in this form, but since this is an example exercise we can compute the powers to get a numerical approximation.
+    </p>
+
+
+    <me>
+      S \approx 33361.
+    </me>
+
+    <p>
+      Thus the factory produces approximately <m>33361</m> solar panels.
+    </p>
+
+
+    <p><alert>Part (b)</alert></p>
+
+    <p>
+      Since equipment spending is fixed at <m>K=81</m>, we can plug that in, leaving our only variable <m>L</m>. 
+    </p>
+
+    <me>
+\begin{array}{rcl}
+S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
+      \frac{ dS}{dL}
+      &amp; = &amp; 
+      600(0.3)L^{-0.7}(81)^{0.6}.
+\end{array}
+    </me>
+
+    <p>
+      Now evaluate at <m>L=100</m>.
+    </p>
+
+    <me>
+      \frac{ dS}{dL}
+      =
+      180(100)^{-0.7}(81)^{0.6}.
+    </me>
+
+    <p>
+     Again, if we did not have access to a calculator this is how we would leave our final answer (WeBWorK would accept this as well).  
+     However since this is an example exercise, we can compute the powers to get a numerical approximation.
+    </p>
+
+    <me>
+      \frac{ dS}{dL}
+      \approx 100.
+    </me>
+
+    <p>
+      Therefore production is increasing at approximately
+      <m>100</m> panels per additional thousand dollars spent on labor.
+    </p>
+
+  </solution>
+</example>
+
+
     </subsection>
 
 
    <subsection xml:id="subsec-derivApp-linear">
       <title><xref ref="sec-derivApp-linear"/> Linear Approximation and L'Hopital's Rule</title>
-      <p> test
-      </p>
+
+<example xml:id="ex-linearization-root-exp-sin">
+  <statement>
+    <p>
+      The equation
+    </p>
+
+    <me>
+      e^x + \sin x = 1.1
+    </me>
+
+    <p>
+      has a solution near <m>x=0</m>.  
+      Approximate this solution by replacing the left-hand side with its
+      linearization at <m>x=0</m> and then solving the resulting equation.
+    </p>
+  </statement>
+
+  <solution>
+
+    <p>
+      Let
+    </p>
+
+    <me>
+      f(x)=e^x+\sin x.
+    </me>
+
+    <p>
+      We approximate <m>f(x)</m> near <m>x=0</m> using its linearization
+    </p>
+
+    <me>
+      L(x)=f(0)+f'(0)x.
+    </me>
+
+    <p>
+      First compute the value of the function at <m>x=0</m>.
+    </p>
+
+    <me>
+      f(0)=e^0+\sin(0)=1.
+    </me>
+
+    <p>
+      Next compute the derivative.
+    </p>
+
+    <me>
+      f'(x)=e^x+\cos x.
+    </me>
+
+    <p>
+      Evaluate the derivative at <m>x=0</m>.
+    </p>
+
+    <me>
+      f'(0)=e^0+\cos(0)=1+1=2.
+    </me>
+
+    <p>
+      Therefore the linearization of <m>f(x)</m> at <m>x=0</m> is
+    </p>
+
+    <me>
+      L(x)=1+2x.
+    </me>
+
+    <p>
+      We now approximate the equation
+      <m>e^x+\sin x=1.1</m> by solving
+    </p>
+
+    <me>
+      1+2x=1.1.
+    </me>
+
+    <me>
+      2x=0.1.
+    </me>
+
+    <me>
+      x=0.05.
+    </me>
+
+    <p>
+      Thus an approximate solution to the equation is
+    </p>
+
+    <me>
+      x\approx 0.05.
+    </me>
+
+    <p>
+      If we have access to technology, we can check how good this
+      approximation is by evaluating the original expression
+      <m>e^x+\sin x</m> at <m>x=0.05</m>.
+      Doing so gives a value very close to <m>1.1</m>, confirming that
+      the linear approximation produced a reasonable estimate.
+    </p>
+
+    <p>
+      While this type of numerical check can be helpful for building
+      intuition and verifying results, it is important to note that
+      calculators may not be available on quizzes or exams.  In those
+      situations the goal is simply to use linearization to produce a
+      reasonable approximation based on calculus rather than numerical
+      computation.
+    </p>
+
+  </solution>
+</example>
+
+
+<example xml:id="ex-linearization-battery-range">
+  <statement>
+    <p>
+      A phone’s battery range <m>R(T)</m> (in hours) depends on temperature <m>T</m> (in degrees Fahrenheit).
+      A test reports
+      <m>R(70)=11.5</m>
+      and
+      <m>R(80)=10.8</m>.
+    </p>
+
+    <p>
+      (a) Estimate <m>R'(70)</m> using the average rate of change from <m>T=70</m> to <m>T=80</m>.
+    </p>
+
+    <p>
+      (b) Write the linear approximation to <m>R(T)</m> near <m>T=70</m>.
+    </p>
+
+    <p>
+      (c) Use your linear approximation to estimate <m>R(74)</m>.
+    </p>
+
+    <p>
+      (d) Interpret the meaning of <m>R'(70)</m> in a sentence, including units.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      <alert>Part (a)</alert>:
+      Use the slope of the secant line from <m>T=70</m> to <m>T=80</m> as an estimate for <m>R'(70)</m>:
+    </p>
+
+    <me>
+      \displaystyle R'(70)\approx \frac{R(80)-R(70)}{80-70}
+      =\frac{10.8-11.5}{10}
+      =\frac{-0.7}{10}
+      =-0.07.
+    </me>
+
+    <p>
+      So <m>R'(70)\approx -0.07</m> hours per degree Fahrenheit.
+    </p>
+
+    <p>
+      <alert>Part (b)</alert>:
+      The linearization (tangent line approximation) at <m>T=70</m> is
+    </p>
+
+    <me>
+      \displaystyle L(T)=R(70)+R'(70)(T-70).
+    </me>
+
+    <p>
+      Using <m>R(70)=11.5</m> and our estimate <m>R'(70)\approx -0.07</m>, we get
+    </p>
+
+    <me>
+      \displaystyle L(T)=11.5-0.07(T-70).
+    </me>
+
+    <p>
+      <alert>Part (c)</alert>: 
+      Estimate <m>R(74)</m> by evaluating <m>L(74)</m>:
+    </p>
+
+    <me> \begin{array}{rcl}
+      \displaystyle R(74) \amp \approx \amp L(74)\\
+      \amp \approx \amp 11.5-0.07(74-70)\\
+      \amp \approx \amp 11.5-0.07(4)\\
+      \amp \approx \amp 11.5-0.28\\
+      \amp \approx \amp 11.22.
+    \end{array}
+    </me>
+
+    <p>
+      So the battery range at <m>74^\circ</m>F is approximately <m>11.22</m> hours.
+    </p>
+
+    <p>
+      <alert>Part (d)</alert>: 
+      The value <m>R'(70)\approx -0.07</m> hours per <m>^\circ</m>F means that near
+      <m>70^\circ</m>F, increasing the temperature by <m>1^\circ</m>F decreases the battery range by about
+      <m>0.07</m> hours (about <m>4.2</m> minutes).
+    </p>
+
+
+
+  </solution>
+</example>
+
+
+
+
     </subsection> 
    
 
        <subsection xml:id="subsec-derivApp-extrema">
       <title><xref ref="sec-derivApp-extrema"/> Extrema</title>
-      <p> test
-      </p>
+
+
+<example xml:id="ex-critical-numbers-radical">
+  <statement>
+    <p>
+      Find all critical numbers of the function
+    </p>
+
+    <me>
+      f(x)=\sqrt{x}+\frac{1}{\sqrt{x}}.
+    </me>
+  </statement>
+
+  <solution>
+
+    <p>
+      Recall that the <term>critical numbers</term> of a function are the
+      values of <m>x</m> in the domain of <m>f</m> for which either
+      <m>f'(x)=0</m> or <m>f'(x)</m> is undefined.
+    </p>
+
+    <p>
+      Rewrite the function using exponents:
+    </p>
+
+    <me>
+      f(x)=x^{1/2}+x^{-1/2}.
+    </me>
+
+    <p>
+      Differentiate:
+    </p>
+
+    <me>
+    \begin{aligned}
+    f'(x)
+    \amp= \frac{1}{2}x^{-1/2}-\frac{1}{2}x^{-3/2} \\
+    \amp= \frac{1}{2x^{1/2}}-\frac{1}{2x^{3/2}}.
+    \end{aligned}
+    </me>
+
+    <p>
+      Finding a common denominator gives
+    </p>
+
+    <me>
+      f'(x)=\frac{x-1}{2x^{3/2}}.
+    </me>
+
+    <p>
+      To determine where <m>f'(x)=0</m>, set the numerator equal to zero:
+    </p>
+
+    <me>
+      x-1=0.
+    </me>
+
+    <me>
+      x=1.
+    </me>
+
+    <p>
+      Next determine where the derivative is undefined by examining the
+      denominator.  The denominator is zero when
+    </p>
+
+    <me>
+      2x^{3/2}=0.
+    </me>
+
+    <me>
+      x=0.
+    </me>
+
+    <p>
+      However, the original function <m>f(x)=\sqrt{x}+1/\sqrt{x}</m> is not
+      defined at <m>x=0</m>, so this value is not in the domain of
+      <m>f</m> and therefore cannot be a critical number.
+    </p>
+
+    <p>
+      Thus the only critical number of the function is
+    </p>
+
+    <me>
+      x=1.
+    </me>
+
+  </solution>
+</example>
+
+
+<example xml:id="ex-critical-numbers-rational">
+  <statement>
+    <p>
+      Find all critical numbers of the function
+    </p>
+
+    <me>
+      f(x)=\frac{2x}{(x^2+2)^2}.
+    </me>
+  </statement>
+
+  <solution>
+    <p>
+      Recall that the <term>critical numbers</term> of a function are the values of
+      <m>x</m> in the domain of <m>f</m> for which either <m>f'(x)=0</m> or
+      <m>f'(x)</m> is undefined.
+    </p>
+
+    <p>
+      We begin by computing the derivative using the quotient rule.
+    </p>
+
+    <me>
+    \begin{aligned}
+    f'(x)
+    \amp = \frac{(x^2+2)^2(2)-2x\left[2(x^2+2)(2x)\right]}{(x^2+2)^4} \\
+    \amp = \frac{2(x^2+2)^2-8x^2(x^2+2)}{(x^2+2)^4}.
+    \end{aligned}
+    </me>
+
+    <p>
+      Factor the numerator.
+    </p>
+
+    <me>
+    \begin{aligned}
+    f'(x)
+    \amp = \frac{(x^2+2)\bigl[2(x^2+2)-8x^2\bigr]}{(x^2+2)^4} \\
+    \amp = \frac{2(2-3x^2)}{(x^2+2)^3}.
+    \end{aligned}
+    </me>
+
+    <p>
+      To find where <m>f'(x)=0</m>, we set the numerator equal to zero:
+    </p>
+
+    <me>
+      2(2-3x^2)=0.
+    </me>
+
+    <me>
+      2-3x^2=0.
+    </me>
+
+    <me>
+      x^2=\frac{2}{3}.
+    </me>
+
+    <me>
+      x=\pm\sqrt{\frac{2}{3}}.
+    </me>
+
+    <p>
+      Next we determine where the derivative is undefined by examining the denominator.
+      The denominator is zero when
+    </p>
+
+    <me>
+      (x^2+2)^3=0.
+    </me>
+
+    <p>
+      However, <m>x^2+2&gt;0</m> for all real numbers <m>x</m>, so the denominator
+      can never be zero. Therefore <m>f'(x)</m> is defined for all real <m>x</m>.
+    </p>
+
+    <p>
+      Thus the critical numbers of <m>f(x)</m> are
+    </p>
+
+    <me>
+      x=\pm\sqrt{\frac{2}{3}}.
+    </me>
+
+  </solution>
+</example>      
+
+
+<example xml:id="ex-absolute-extrema-graph">
+  <statement>
+    <p>
+      Consider the graph of <m>f(x)</m> below on the interval <m>[0,5]</m>.
+        </p>
+
+
+ <image width="60%">
+  <shortdescription>
+    A graph of f(x) on a square grid from 0 to 5. Starting at (0,3), the function curves upward to a maximum at (1,4), then curves downward passing through (2,3) and reaching a minimum at (3,1). After x = 3, the graph is a straight line segment increasing to (5,5).
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}
+	\draw[->, thick] (-.3,0) -- (5.3,0);
+	\draw[->, thick] (0,-.3) -- (0,5.3);
+	\draw[thin] (0,0) grid (5,5);
+	\begin{scope}
+		\clip (-.3,0) rectangle (5.3,5.3); 
+		\draw[very thick] plot[domain=0:2, smooth] (\x, {4-(1-\x)^2});
+		\draw[very thick] (2,3)-- (3,1) -- (5,5);
+	
+	\end{scope}
+	\draw (4.5,2.5) node {$f(x)$};
+	\foreach \x in {1,2,3,4,5} {
+		\draw (\x, 2pt) -- (\x, -2pt) node[font=\small, below] {\x};
+		\draw (2pt, \x) -- ( -2pt, \x) node[font=\small, left] {\x};
+		
+	} 
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+  <p> (a) Identify the critical numbers of <m>f</m> and explain how you know they are critical numbers.</p>
+  <p> (b) Identify the absolute maximum and minimum values of <m>f</m> and the <m>x</m>-values where they occur.</p>
+  </statement>
+
+  <solution>
+    <p>
+      <alert>Part (a)</alert>: The critical numbers of <m>f</m> are the values of <m>x</m> where the derivative is zero or undefined.  
+      From the graph, we can see that the function has a horizontal tangent at <m>x=1</m> and a corner at <m>x=3</m>.  
+      Therefore, the critical numbers of <m>f</m> are
+    </p>
+
+    <me>
+      x=1 \text{ and } x=3.
+    </me>
+
+    <p>
+      <alert>Part (b)</alert>: The absolute maximum value of <m>f</m> on the interval <m>[0,5]</m> is <m>5</m>, 
+      which occurs at <m>x=5</m>.  The absolute minimum value of <m>f</m> on the interval is <m>1</m>, which occurs at <m>x=3</m>.
+    </p>
+
+  </solution>
+</example>
+
+
+<example xml:id="ex-absolute-extrema-polynomial">
+  <statement>
+    <p>
+      Consider the function
+    </p>
+
+    <me>
+      f(x)=\frac{2}{3}x^3-2x^2-6x+1, \qquad -2 \le x \le 1.
+    </me>
+
+    <p>
+      Determine the absolute maximum and minimum values of <m>f</m> and the
+      <m>x</m>-values where these extrema occur.
+    </p>
+  </statement>
+
+  <solution>
+
+    <p>
+      First determine the critical numbers of <m>f</m>.  Compute the derivative.
+    </p>
+
+    <me>
+    \begin{aligned}
+    f'(x)
+    \amp= \frac{2}{3}\cdot 3x^2 -4x -6 \\
+    \amp= 2x^2-4x-6 \\
+    \amp= 2(x^2-2x-3) \\
+    \amp= 2(x-3)(x+1).
+    \end{aligned}
+    </me>
+
+    <p>
+      Setting <m>f'(x)=0</m> gives
+    </p>
+
+    <me>
+      2(x-3)(x+1)=0.
+    </me>
+
+    <p>
+      Thus the critical numbers are
+    </p>
+
+    <me>
+      x=-1, \quad x=3.
+    </me>
+
+    <p>
+      To determine the absolute extrema on the interval <m>[-2,1]</m>, we
+      evaluate <m>f</m> at the endpoints and at any critical numbers inside
+      the interval.  Since <m>x=3</m> lies outside the interval, we only
+      check <m>x=-2</m>, <m>x=1</m>, and <m>x=-1</m>.
+    </p>
+
+    <me>
+    \begin{aligned}
+    f(-2) \amp= \frac{2}{3}(-2)^3-2(-2)^2-6(-2)+1
+           = -\frac{1}{3} \\[6pt]
+    f(1) \amp= \frac{2}{3}(1)^3-2(1)^2-6(1)+1
+          = -\frac{19}{3} \\[6pt]
+    f(-1) \amp= \frac{2}{3}(-1)^3-2(-1)^2-6(-1)+1
+           = \frac{13}{3}.
+    \end{aligned}
+    </me>
+
+    <p>
+      Comparing these values, the absolute maximum value of <m>f</m> is 
+      <m> \frac{13}{3},
+    </m>
+      which occurs at <m>x=-1</m>.  </p> 
+      <p> 
+        The absolute minimum value of <m>f</m> is
+    <m>
+      -\frac{19}{3},
+    </m>
+      which occurs at <m>x=1</m>.
+    </p>
+
+  </solution>
+</example>
+
+<example xml:id="ex-absolute-extrema-abs">
+  <statement>
+    <p>
+      Consider the function
+    </p>
+
+    <me>
+      f(x)=|x-2|, \qquad 0 \le x \le 5.
+    </me>
+
+    <p>
+      Determine the absolute maximum and minimum values of <m>f</m> and the
+      <m>x</m>-values where these extrema occur.
+    </p>
+  </statement>
+
+  <solution>
+
+    <p>
+      When a function involves absolute values, it is often helpful to rewrite it
+      using the definition of absolute value:
+    </p>
+
+    <me>
+    |A|=
+    \begin{cases}
+    -A, &amp; A\lt 0 \\
+    A, &amp; A\ge 0
+    \end{cases}
+    </me>
+
+    <p>
+      For this function,
+    </p>
+
+    <me>
+    f(x)=|x-2|=
+    \begin{cases}
+    -(x-2), &amp; x\lt 2 \\
+    x-2, &amp; x\ge 2
+    \end{cases}
+    </me>
+
+    <p>
+      Taking derivatives of each piece gives
+    </p>
+
+    <me>
+    f'(x)=
+    \begin{cases}
+    -1, &amp; x\lt 2 \\
+    1, &amp; x\gt 2
+    \end{cases}
+    </me>
+
+    <p>
+      The derivative at <m>x=2</m> is undefined.  Indeed,
+    </p>
+
+    <me>
+    f'(2)=
+    \lim_{h\to 0}\frac{|(2+h)-2|-|2-2|}{h}
+    =
+    \lim_{h\to 0}\frac{|h|}{h},
+    </me>
+
+    <p>
+      and this limit does not exist.  Thus the only critical number is
+    </p>
+
+    <me>
+    x=2.
+    </me>
+
+    <p>
+      To determine the absolute extrema on the interval
+      <m>[0,5]</m>, evaluate <m>f</m> at the critical number and the endpoints.
+    </p>
+
+    <me>
+    \begin{aligned}
+    f(0) \amp= |0-2| = 2 \\
+    f(2) \amp= |2-2| = 0 \\
+    f(5) \amp= |5-2| = 3
+    \end{aligned}
+    </me>
+
+    <p>
+      Therefore, the absolute maximum value of <m>f</m> is
+      <m>3</m>, which occurs at <m>x=5</m>.
+      The absolute minimum value of <m>f</m> is
+      <m>0</m>, which occurs at <m>x=2</m>.
+    </p>
+
+  </solution>
+</example>
+
+<example xml:id="ex-absolute-extrema-fractional-power">
+  <statement>
+    <p>
+      Consider the function
+    </p>
+
+    <me>
+      f(x)=x+3x^{2/3}, \qquad -1 \le x \le 1.
+    </me>
+
+    <p>
+      Determine the absolute maximum and minimum values of <m>f</m> and the
+      <m>x</m>-values where these extrema occur.
+    </p>
+  </statement>
+
+  <solution>
+
+    <p>
+      First determine the critical numbers of <m>f</m>.  Compute the derivative.
+    </p>
+
+    <me>
+    \begin{aligned}
+    f'(x)
+    \amp= 1 + 3\left(\frac{2}{3}\right)x^{-1/3} \\
+    \amp= 1 + 2x^{-1/3} \\
+    \amp= 1 + \frac{2}{x^{1/3}}.
+    \end{aligned}
+    </me>
+
+    <p>
+      To determine where <m>f'(x)=0</m>, solve
+    </p>
+
+    <me>
+      1+\frac{2}{x^{1/3}}=0.
+    </me>
+
+    <p>
+      Multiply both sides by <m>x^{1/3}</m>:
+    </p>
+
+    <me>
+      x^{1/3}+2=0.
+    </me>
+
+    <me>
+      x^{1/3}=-2.
+    </me>
+
+    <me>
+      x=(-2)^3=-8.
+    </me>
+
+    <p>
+      Next determine where the derivative is undefined.  The derivative
+      <m>f'(x)=1+\frac{2}{x^{1/3}}</m> is undefined when
+    </p>
+
+    <me>
+      x^{1/3}=0.
+    </me>
+
+    <me>
+      x=0.
+    </me>
+
+    <p>
+      Thus the critical numbers are <m>x=-8</m> and <m>x=0</m>.
+      However, only <m>x=0</m> lies in the interval <m>[-1,1]</m>.
+    </p>
+
+    <p>
+      To determine the absolute extrema on <m>[-1,1]</m>, evaluate
+      <m>f</m> at the endpoints and the critical number in the interval.
+    </p>
+
+    <me>
+    \begin{aligned}
+    f(-1) \amp= -1 + 3(-1)^{2/3}
+            = -1 + 3(1)
+            = 2 \\[6pt]
+    f(1) \amp= 1 + 3(1)^{2/3}
+           = 1 + 3
+           = 4 \\[6pt]
+    f(0) \amp= 0 + 3(0)^{2/3}
+           = 0.
+    \end{aligned}
+    </me>
+
+    <p>
+      Comparing these values, the absolute maximum value of <m>f</m> is
+      <m>4</m>, which occurs at <m>x=1</m>.
+      The absolute minimum value of <m>f</m> is <m>0</m>, which occurs at
+      <m>x=0</m>.
+    </p>
+
+  </solution>
+</example>
+
+
+
     </subsection>
 
 

@@ -3,15 +3,31 @@
 <section xml:id="sec-integral-riemannSums" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Riemann Sums and Areas</title>
 
-  <objectives>
-    <ul>
-      <li>Connect the definite integral to accumulation: total change from a rate of change.</li>
-      <li>Approximate a definite integral using Riemann sums (left, right, and “upper/lower” estimates).</li>
-      <li>Interpret a definite integral geometrically as (signed) area under a curve.</li>
-      <li>Set up <m>\displaystyle \int_a^b f(x)\,dx</m> from a real-world description involving small increments <m>\Delta x</m>.</li>
-      <li>Use upper and lower sums to bound an integral and estimate a value to a specified accuracy.</li>
-    </ul>
-  </objectives>
+<objectives>
+  <ul>
+    <li>
+      Understand the idea of accumulated change: using a rate of change function to estimate the total change of a quantity over an interval.
+    </li>
+    <li>
+      Approximate total change when the rate is not constant by breaking an interval into subintervals and summing products of rate and interval width.
+    </li>
+    <li>
+      Define a Riemann sum and identify its components, including subintervals, widths, and sample points.
+    </li>
+    <li>
+      Distinguish between left, right, upper, and lower Riemann sums and explain how the choice of sample point affects an estimate.
+    </li>
+    <li>
+      Compute Riemann sums for functions given by formulas or tables of values.
+    </li>
+    <li>
+      Interpret Riemann sums geometrically as approximations of the area under a curve using rectangles.
+    </li>
+    <li>
+      Explain how increasing the number of subintervals improves the accuracy of a Riemann sum approximation.
+    </li>
+  </ul>
+</objectives>
 
 
   <subsection xml:id="ssec-accumulated-change-idea">
@@ -288,6 +304,45 @@
       </statement>
     </definition>
 
+<historical xml:id="aside-riemann-history">
+  <title>Bernhard Riemann</title>
+
+  <p>
+    The sums we use to approximate accumulated change are named after the
+    German mathematician <term>Bernhard Riemann</term> (1826-1866). Riemann
+    was known for being extremely shy and quiet. In fact, when he had to
+    give a lecture as a young professor, he was reportedly so nervous that
+    he practiced it repeatedly beforehand and still spoke very slowly and
+    cautiously.
+  </p>
+
+  <p>
+    Despite his quiet personality, Riemann introduced ideas that completely
+    changed mathematics. His method of approximating area by adding many
+    thin rectangles gave a precise definition of the definite integral,
+    which is why these approximations are now called
+    <term>Riemann sums</term>.
+  </p>
+
+  <p>
+    Riemann’s influence did not stop with calculus. His work on curved
+    geometric spaces later became essential to Einstein’s theory of general
+    relativity. He also proposed a famous unsolved problem about the
+    distribution of prime numbers, now known as the
+    <term>Riemann Hypothesis</term>, which remains one of the most important
+    open problems in mathematics.
+  </p>
+
+  <p>
+    You can read more about Riemann and his surprisingly short but
+    incredibly influential career here:
+    <url href="https://en.wikipedia.org/wiki/Bernhard_Riemann">
+      Bernhard Riemann (Wikipedia)
+    </url>.
+  </p>
+</historical>
+
+
     <example xml:id="ex-riemann-sums-left-endpoints">
       <statement>
         <p>
@@ -490,54 +545,89 @@
       </solution>
     </example>
 
-    <p>
-      In this section we are focusing on functions that stay nonnegative, so “area under the curve” matches the integral directly.
-      Later, when a function dips below the axis, the integral still makes sense but it represents signed area (area above minus area below).
-    </p>
+    <remark xml:id="rmk-riemann-sums-accuracy-area">
+      <p>
+        <xref ref="rmk-riemann-sums-accuracy" >Previously in Remark</xref> we said that with more intervals / pieces / rectangles, we can get a better estimate of the total change. 
+        This gives us a way to see why that is true. 
+        If we use more rectangles, we can get a better approximation of the area under the curve, 
+        and thus a better estimate of the total change / area.
+      </p>
+
+   <url href="https://www.desmos.com/calculator/2a6g5hthx4">
+      <figure>
+<caption>
+  A GIF the area under the curve <m>y=x^2</m> on the interval <m>[0,2]</m> with more and more rectangles. Click on 
+  the image to be taken to the Desmos graph where you can adjust the number of rectangles yourself.
+</caption>
+        <image width="100%" source="images/RiemannSumXsquared.gif">
+<shortdescription>
+  Animated graph showing the area under the curve y equals x squared on the interval [0,2] being approximated by rectangles. 
+  As the number of rectangles increases, the approximation becomes more accurate.
+</shortdescription>
+        </image>
+      </figure>
+  </url>
+
+
+
+      </remark>
+
+      <p> Let's do one more example to see how to compute upper and lower Riemann sums. </p>
+
+      <example xml:id="ex-riemann-sums-cosine">
+        <statement>
+          <p>
+            Find an overestimate and an underestimate of the area under the graph <m>y=\cos(\pi x) + 3 </m> on the interval <m>[1,3]</m>
+             using 6 rectangles of equal width.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The width of each rectangle is 
+            <me>\Delta x = \dfrac{\text{interval width}}{\text{number of rectangles}} = \dfrac{3-1}{6} = \dfrac13</me>.
+            So the intervals are 
+            <me>[1,\tfrac43], \quad [\tfrac43, \tfrac53], \quad [\tfrac53, 2], \quad  [2, \tfrac73], \quad [\tfrac73, \tfrac83], \quad [\tfrac83, 3]</me>
+            We can now make a table of the function values at these points:
+          </p> 
+            <me>
+              \begin{array}{c|c|c|c|c|c|c|c}
+                x &amp; 1 &amp; \tfrac43 &amp; \tfrac53 &amp; 2 &amp; \tfrac73 &amp; \tfrac83 &amp; 3 \\
+                \hline
+                f(x) &amp; 2 &amp; 2.5 &amp; 3.5 &amp; 4 &amp; 3.5 &amp; 2.5 &amp; 2
+              \end{array}
+            </me>
+          <p>We can use either some calculus or trig knowledge to verify that all of the extrema of the function 
+            occur at the points in the table, so we can use these values to compute the upper and lower Riemann sums.</p>
+
+            <me> 
+              \begin{array}{rcl}
+                \amp  \amp \text{Upper Riemann Sum} \\
+                \amp = \amp (2.5)\tfrac13 + (3.5)\tfrac13 + (4)\tfrac13 + (4)\tfrac13 + (3.5)\tfrac13 + (2.5)\tfrac13 \\
+                \amp = \amp \tfrac13 (2.5 + 3.5 + 4 + 4 +3.5 + 2.5) \\ 
+                \amp = \amp \tfrac13 (20) = \dfrac{20}{3} \approx 6.67
+              \end{array}
+            </me>
+            <me>
+              \begin{array}{rcl}
+                \amp \amp  \text{Lower Riemann Sum} \\
+                \amp = \amp (2)\tfrac13 + (2.5)\tfrac13 + (3.5)\tfrac13 + (3.5)\tfrac13 + (2.5)\tfrac13 + (2)\tfrac13 \\
+                \amp = \amp \tfrac13 (2 + 2.5 + 3.5 + 3.5 + 2.5 + 2) \\ 
+                \amp = \amp \tfrac13 (16) = \dfrac{16}{3} \approx 5.33
+              \end{array}
+            </me>
+            <p>
+              So the area under the curve is between <m>\dfrac{16}{3}</m> and <m>\dfrac{20}{3}</m>.
+            </p>  
+        </solution>
+      </example>
+
+      <p> For many kind problems, like the one above, the extrema will occur at the endpoints of the subintervals, however 
+        for more difficult (and time consuming) problems, the extrema may occur in the interior of the subintervals. 
+         Luckily we have been trained how to find extrema using calculus!
+      </p>
+
   </subsection>
 
-  <subsection xml:id="ssec-integral-approx-sin-squared">
-    <title>Approximating an Integral with Upper and Lower Sums</title>
-
-    <p>
-      Sometimes we want a numerical value of an integral even when we do not yet have a quick algebraic method.
-      Upper and lower Riemann sums give guaranteed bounds.
-    </p>
-
-    <example xml:id="ex-riemann-sin-squared">
-      <statement>
-        <p>
-          Approximate <m>\displaystyle \int_0^\pi \sin^2(x)\,dx</m> to one decimal place.
-          (That is, find a value within <m>\pm 0.05</m>.)
-        </p>
-      </statement>
-      <solution>
-        <p>
-          The function <m>\sin^2(x)</m> increases on <m>[0,\tfrac{\pi}{2}]</m> and decreases on <m>[\tfrac{\pi}{2},\pi]</m>.
-          So an upper estimate uses right endpoints on the first half and left endpoints on the second half.
-          A lower estimate does the opposite.
-        </p>
-
-        <p>
-          Take <m>n=100</m> equal subintervals, so <m>\Delta x=\dfrac{\pi}{100}=0.01\pi</m>.
-          A computed upper sum gives about 1.60 and a computed lower sum gives about 1.54, so
-        </p>
-
-        <me>
-          1.54 &lt; \int_0^\pi \sin^2(x)\,dx &lt; 1.60.
-        </me>
-
-        <p>
-          Averaging the bounds gives a good estimate:
-          <m>\displaystyle \int_0^\pi \sin^2(x)\,dx \approx 1.57</m>, which is certainly accurate to one decimal place.
-        </p>
-
-        <p>
-          (Later, once we have more integral tools, we can compute this exactly and confirm the approximation.)
-        </p>
-      </solution>
-    </example>
-  </subsection>
 
 <subsection xml:id="additional-worked-problems-integral-riemannSums">
   <title>Additional Worked-Out Examples</title>
@@ -559,97 +649,196 @@
   <exercises xml:id="exercises-riemann-area">
     <title>Practice / Study Problems</title>
 
-    <exercisegroup>
-      <title>Setting Up Riemann Sums</title>
+  
 
-      <exercise xml:id="prob-riemann-01">
-        <statement>
-          <p>
-            Let <m>f(x)=x^2</m> on <m>[0,2]</m>.
-            Use <m>n</m> equal subintervals and right endpoints.
-            Write the Riemann sum <m>\sum_{i=1}^n f(x_i)\Delta x</m> explicitly in terms of <m>n</m>.
-            (Do not evaluate the limit.)
-          </p>
-        </statement>
-      </exercise>
 
-      <exercise xml:id="prob-riemann-02">
-        <statement>
-          <p>
-            Let <m>f(x)=1+x</m> on <m>[2,6]</m>.
-            Use <m>n</m> equal subintervals and left endpoints.
-            Write the corresponding Riemann sum in terms of <m>n</m>.
-          </p>
-        </statement>
-      </exercise>
-    </exercisegroup>
+  <exercisegroup>
+    <title>Some True/False Problems</title>
 
-    <exercisegroup>
-      <title>Left and Right Sums</title>
+    <introduction>
+      <p>
+        Determine whether each statement is true or false and briefly justify your reasoning.
+      </p>
+    </introduction>
 
-      <exercise xml:id="prob-riemann-03">
-        <statement>
-          <p>
-            A particle has velocity <m>v(t)=t^2</m> on <m>[0,2]</m>.
-            Compute the left and right Riemann sums with <m>n=4</m> subintervals.
-            Which one is larger, and why?
-          </p>
-        </statement>
-      </exercise>
 
-      <exercise xml:id="prob-riemann-04">
-        <statement>
-          <p>
-            Let <m>f(x)=\sqrt{x}</m> on <m>[0,4]</m>.
-            Without computing exact values, explain whether the left Riemann sum is an underestimate or overestimate,
-            and do the same for the right Riemann sum.
-          </p>
-        </statement>
-      </exercise>
-    </exercisegroup>
+  <exercise xml:id="tf-acc-01">
+    <statement>
+      <p>
+         Suppose <m>r(t)=\sqrt{t+1}</m> is the rate of change of temperature in degrees Celsius per hour. 
+         Using the ending temperature values at the end of each hour we can approximate the total change in 
+         temperature from <m>t=0</m> to <m>t=4</m> to be an increase of <m>10</m> degrees Celsius.
+      </p>
+    </statement>
+    <solution>
+      <p><em>False.</em> 
+       Given that we are using the ending temperature values, we would need to evaluate <m>r(t)</m> at <m>t=1,2,3,4</m>, 
+       and then multiply each by the width of the subintervals (which is 1 hour) and add them up.
+        <me> \begin{array}{rcl}
+\text{Total Change} \amp =\amp  r(1)(1) + r(2)(1) + r(3)(1) + r(4)(1) \\
+\amp = \amp \sqrt{2} + \sqrt{3} + 2 + \sqrt{5} 
+        </me>
+      </p>
+      <p>
+        Without a calculator, we can see that this is around <m>1.5 + 1.8 + 2 + 2.3 = 7.6</m>, 
+        so the approximation is not as large as 10 degrees Celsius.
+      </p>
+    </solution>
+  </exercise>
 
-    <exercisegroup>
-      <title>Area Interpretation</title>
 
-      <exercise xml:id="prob-riemann-05">
-        <statement>
-          <p>
-            Sketch a graph of a nonnegative function on <m>[a,b]</m> and explain (in a sentence or two)
-            why the sum <m>\sum f(x_i)\Delta x</m> represents the total area of rectangles.
-          </p>
-        </statement>
-      </exercise>
+  <exercise xml:id="tf-acc-02">
+    <statement>
+      <p>
+         Suppose <m>d(x)=9-x^2</m> is a denisity function, in grams per centimeter, of a rod of length 3 centimeters 
+         (from <m>x=0</m> to <m>x=3</m>). 
+         Breaking the rod into 6 pieces of equal length, and using the left endpoint values, 
+         we can approximate the total mass of the rod to be <m>179/8</m> grams.      
+      </p>
+    </statement>
+    <solution>
+      <p><em>False.</em> 
+        Given that we are using the left endpoint values, we would need to evaluate <m>d(x)</m> at <m>x=0,0.5,1,1.5,2,2.5</m>, 
+        and then multiply each by the width of the subintervals (which is 0.5 cm) and add them up.
+          <me> \begin{array}{rcl}
+  \amp \amp \text{Total Mass} \\
+  \amp =\amp  d(0)\tfrac{1}{2} + d(0.5)\tfrac{1}{2} + d(1)\tfrac{1}{2} + d(1.5)\tfrac{1}{2} + d(2)\tfrac{1}{2} + d(2.5)\tfrac{1}{2} \\
+  \amp = \amp \tfrac{1}{2}(d(0) + d(0.5) + d(1) + d(1.5) + d(2) + d(2.5)) \\
+  \amp = \amp \tfrac{1}{2}(9 + 9-\tfrac{1}{4} + 8 + 9-\tfrac{9}{4} + 5 + 9-\tfrac{25}{4}) \\
+  \amp = \amp \tfrac{1}{2}(\tfrac{161}{4}) = \dfrac{161}{8} \text{ grams}
+  \end{array}
+          </me>
+        </p>
+        <p>
+           So the approximation is around <m>161/8</m> grams, which is less than the proposed <m>179/8</m> grams.  
+        </p>
+    </solution>
+  </exercise>
 
-      <exercise xml:id="prob-riemann-06">
-        <statement>
-          <p>
-            Suppose <m>f(x)\ge 0</m> on <m>[a,b]</m>.
-            Describe in words what <m>\displaystyle \int_a^b f(x)\,dx</m> represents geometrically.
-          </p>
-        </statement>
-      </exercise>
-    </exercisegroup>
 
-    <exercisegroup>
-      <title>Upper and Lower Bounds</title>
 
-      <exercise xml:id="prob-riemann-07">
-        <statement>
-          <p>
-            The function <m>f(x)=\sin(x)</m> is increasing on <m>[0,\tfrac{\pi}{2}]</m>.
-            Explain why the right Riemann sum is an overestimate and the left Riemann sum is an underestimate on this interval.
-          </p>
-        </statement>
-      </exercise>
+  <exercise xml:id="tf-acc-04">
+    <statement>
+      <p>
+         A Riemann sum always gives the exact total change of a quantity on an interval.
+      </p>
+    </statement>
+    <solution>
+      <p><em>False.</em> A Riemann sum is usually an approximation unless special information makes it exact.</p>
+    </solution>
+  </exercise>
 
-      <exercise xml:id="prob-riemann-08">
-        <statement>
-          <p>
-            Estimate <m>\displaystyle \int_0^1 x^2\,dx</m> using <m>n=10</m> left rectangles and <m>n=10</m> right rectangles.
-            Then average the two values.
-          </p>
-        </statement>
-      </exercise>
+  <exercise xml:id="tf-acc-05">
+    <statement>
+      <p>
+        If we partition <m>[a,b]</m> into <m>n</m> equal subintervals, then each one has width <m>\Delta t = \dfrac{b-a}{n}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p><em>True.</em> Equal-width subintervals divide the interval length <m>b-a</m> evenly.</p>
+    </solution>
+  </exercise>
+
+
+  <exercise xml:id="tf-acc-07">
+    <statement>
+      <p>
+        If <m>f</m> is increasing on <m>[a,b]</m>, then the left Riemann sum and the lower Riemann sum will yield the same answer.
+      </p>
+    </statement>
+    <solution>
+      <p><em>True.</em> On each subinterval the left endpoint gives the smallest function value, so rectangles lie below the curve.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="tf-acc-08">
+    <statement>
+      <p>
+        If <m>f</m> is decreasing on <m>[a,b]</m>, then the left Riemann sum overestimates the area under <m>y=f(x)</m> on <m>[a,b]</m>.
+      </p>
+    </statement>
+    <solution>
+      <p><em>True.</em> For a decreasing function, left endpoints give larger values, so rectangles lie above the curve.</p>
+    </solution>
+  </exercise>
+
+
+  <exercise xml:id="tf-acc-10">
+    <statement>
+      <p>
+        An upper Riemann sum overestimates the accumulated change on <m>[a,b]</m> of <m>f(x)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p><em>True.</em> Upper sums use the maximum value of <m>f</m> on each subinterval, so rectangles lie above the curve.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="tf-acc-11">
+    <statement>
+      <p>
+        If <m>f(x)\ge 0</m> on <m>[a,b]</m>, then any Riemann sum approximation of the total change on <m>[a,b]</m> must be nonnegative.
+      </p>
+    </statement>
+    <solution>
+      <p><em>True.</em> Each term <m>f(x_i)\Delta x</m> is nonnegative, so the sum is nonnegative.</p>
+    </solution>
+  </exercise>
+
+
+  <exercise xml:id="tf-acc-13">
+    <statement>
+      <p>
+        For equal subintervals, doubling the number of rectangles cuts <m>\Delta x</m> in half.
+      </p>
+    </statement>
+    <solution>
+      <p><em>True.</em> Since <m>\Delta x=\dfrac{b-a}{n}</m>, replacing <m>n</m> with <m>2n</m> halves the width.</p>
+    </solution>
+  </exercise>
+
+
+  <exercise xml:id="tf-acc-15">
+    <statement>
+      <p>
+        If <m>f(x)=c</m> is constant on <m>[a,b]</m>, then every left or right Riemann sum with equal widths gives the exact total change <m>c(b-a)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p><em>True.</em> All rectangles have height <m>c</m>, so the sum is exactly <m>c</m> times the interval length.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="tf-acc-16">
+    <statement>
+      <p>
+        If the rate function is measured in liters per second and time is measured in seconds, then the Riemann sum has units of liters.
+      </p>
+    </statement>
+    <solution>
+      <p><em>True.</em> 
+       The rate function gives liters/second, and multiplying by seconds gives liters, which is the total change in volume.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="tf-acc-17">
+    <statement>
+      <p>
+        If <m>f</m> is continuous and <m>f(x)\ge 0</m> on <m>[a,b]</m>, then increasing the number of subintervals always makes a left Riemann sum larger.
+      </p>
+    </statement>
+    <solution>
+      <p><em>False.</em> Left sums do not necessarily increase with more subintervals unless additional conditions 
+        (like an increasing function) are guaranteed.</p>
+    </solution>
+  </exercise>
+
+
+    
+
+
+
+
     </exercisegroup>
   </exercises>
 
