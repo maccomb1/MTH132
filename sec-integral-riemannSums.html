@@ -102,15 +102,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.15';
+eBookConfig.runestone_version = '7.11.17';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/prefix-runtime.86a1bdf80f338ffc.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.74f6fa0c85f09c79.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -507,12 +507,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-integral-riemannSums.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Riemann Sums and Areas</span></a></div>
 <ul class="structural toc-item-list active">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-review-derivatives" class="internal"><span class="title">Review: Derivatives as Rates of Change</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-accumulation" class="internal"><span class="title">Accumulation of Influence</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-distance-riemann" class="internal"><span class="title">Riemann Sums for Distance</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-total-change" class="internal"><span class="title">The Integral as Total Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-accumulated-change-idea" class="internal"><span class="title">The Idea of Accumulated Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#subsec-riemann-sum-terminology" class="internal"><span class="title">Riemann Sum Terminology</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-area" class="internal"><span class="title">Area Under a Curve</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-approx-sin-squared" class="internal"><span class="title">Approximating an Integral with Upper and Lower Sums</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#additional-worked-problems-integral-riemannSums" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#exercises-riemann-area" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
 </ul>
@@ -592,233 +589,406 @@ eBookConfig.enable_chatcodes =  false;
 <article class="objectives goal-like" id="sec-integral-riemannSums-2"><h3 class="heading"><span class="type">Objectives</span></h3>
 <ul class="disc" id="sec-integral-riemannSums-2-1">
 <li id="sec-integral-riemannSums-2-1-1">
-<div class="para" id="p-derived-sec-integral-riemannSums-2-1-1">Connect the definite integral to accumulation: total change from a rate of change.</div>
+<div class="para" id="p-derived-sec-integral-riemannSums-2-1-1">Understand the idea of accumulated change: using a rate of change function to estimate the total change of a quantity over an interval.</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-riemannSums-2-1-1" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 <li id="sec-integral-riemannSums-2-1-2">
-<div class="para" id="p-derived-sec-integral-riemannSums-2-1-2">Approximate a definite integral using Riemann sums (left, right, and “upper/lower” estimates).</div>
+<div class="para" id="p-derived-sec-integral-riemannSums-2-1-2">Approximate total change when the rate is not constant by breaking an interval into subintervals and summing products of rate and interval width.</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-riemannSums-2-1-2" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 <li id="sec-integral-riemannSums-2-1-3">
-<div class="para" id="p-derived-sec-integral-riemannSums-2-1-3">Interpret a definite integral geometrically as (signed) area under a curve.</div>
+<div class="para" id="p-derived-sec-integral-riemannSums-2-1-3">Define a Riemann sum and identify its components, including subintervals, widths, and sample points.</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-riemannSums-2-1-3" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 <li id="sec-integral-riemannSums-2-1-4">
-<div class="para" id="p-derived-sec-integral-riemannSums-2-1-4">Set up <span class="process-math">\(\displaystyle \int_a^b f(x)\,dx\)</span> from a real-world description involving small increments <span class="process-math">\(\Delta x\text{.}\)</span>
-</div>
+<div class="para" id="p-derived-sec-integral-riemannSums-2-1-4">Distinguish between left, right, upper, and lower Riemann sums and explain how the choice of sample point affects an estimate.</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-riemannSums-2-1-4" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 <li id="sec-integral-riemannSums-2-1-5">
-<div class="para" id="p-derived-sec-integral-riemannSums-2-1-5">Use upper and lower sums to bound an integral and estimate a value to a specified accuracy.</div>
+<div class="para" id="p-derived-sec-integral-riemannSums-2-1-5">Compute Riemann sums for functions given by formulas or tables of values.</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-riemannSums-2-1-5" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
-</ul>
-<div class="autopermalink" data-description="Objectives 4.2"><a href="#sec-integral-riemannSums-2" title="Copy heading and permalink for Objectives 4.2" aria-label="Copy heading and permalink for Objectives 4.2">🔗</a></div></article><section class="subsection" id="ssec-integral-review-derivatives"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Review: Derivatives as Rates of Change</span>
-</h3>
-<div class="para" id="ssec-integral-review-derivatives-2">A function <span class="process-math">\(y=f(x)\)</span> has a derivative <span class="process-math">\(f'(c)\)</span> with several complementary meanings. We will lean on these meanings as we introduce the integral.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-review-derivatives-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<ul class="disc" id="ssec-integral-review-derivatives-3">
-<li id="ssec-integral-review-derivatives-3-1">
-<div class="para" id="ssec-integral-review-derivatives-3-1-1">
-<em class="emphasis">Physical:</em> If <span class="process-math">\(y\)</span> depends on <span class="process-math">\(x\text{,}\)</span> then <span class="process-math">\(f'(c)\)</span> is the rate of change of <span class="process-math">\(y\)</span> per tiny change in <span class="process-math">\(x\text{,}\)</span> starting at <span class="process-math">\(x=c\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-review-derivatives-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ssec-integral-review-derivatives-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<li id="sec-integral-riemannSums-2-1-6">
+<div class="para" id="p-derived-sec-integral-riemannSums-2-1-6">Interpret Riemann sums geometrically as approximations of the area under a curve using rectangles.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-integral-riemannSums-2-1-6" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
-<li id="ssec-integral-review-derivatives-3-2">
-<div class="para" id="ssec-integral-review-derivatives-3-2-1">
-<em class="emphasis">Geometric:</em> <span class="process-math">\(f'(c)\)</span> is the slope of the graph <span class="process-math">\(y=f(x)\)</span> at the point <span class="process-math">\((c,f(c))\text{,}\)</span> meaning the tangent line near <span class="process-math">\(x=c\)</span> is <span class="process-math">\(y=f(c)+f'(c)(x-c)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-review-derivatives-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ssec-integral-review-derivatives-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="ssec-integral-review-derivatives-3-3">
-<div class="para" id="ssec-integral-review-derivatives-3-3-1">
-<em class="emphasis">Numerical:</em> For <span class="process-math">\(x\)</span> near <span class="process-math">\(c\text{,}\)</span> the derivative is approximated by a difference quotient: <span class="process-math">\(f'(c)\approx \dfrac{f(x)-f(c)}{x-c}\text{.}\)</span> This matches the linear approximation <span class="process-math">\(f(x)\approx f(c)+f'(c)(x-c)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-review-derivatives-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ssec-integral-review-derivatives-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="ssec-integral-review-derivatives-3-4">
-<div class="para" id="ssec-integral-review-derivatives-3-4-1">
-<em class="emphasis">Algebraic:</em> We define <span class="process-math">\(f'(c)=\displaystyle \lim_{x\to c}\dfrac{f(x)-f(c)}{x-c}\)</span> and use derivative rules to compute <span class="process-math">\(f'(x)\)</span> from a formula.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-review-derivatives-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ssec-integral-review-derivatives-3-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<li id="sec-integral-riemannSums-2-1-7">
+<div class="para" id="p-derived-sec-integral-riemannSums-2-1-7">Explain how increasing the number of subintervals improves the accuracy of a Riemann sum approximation.</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-integral-riemannSums-2-1-7" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 </ul>
-<div class="para" id="ssec-integral-review-derivatives-4">The physical idea is the driving one: derivatives describe change, so they are essential in any system that evolves. Once a situation is translated into a derivative statement, we can use numerical approximations or algebraic rules to answer questions. For example, to find maximum values of <span class="process-math">\(f(x)\text{,}\)</span> we look for places where the tangent slope is zero, so we solve <span class="process-math">\(f'(x)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-review-derivatives-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection: Review: Derivatives as Rates of Change"><a href="#ssec-integral-review-derivatives" title="Copy heading and permalink for Subsection: Review: Derivatives as Rates of Change" aria-label="Copy heading and permalink for Subsection: Review: Derivatives as Rates of Change">🔗</a></div></section><section class="subsection" id="ssec-integral-accumulation"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Accumulation of Influence</span>
+<div class="autopermalink" data-description="Objectives 4.2"><a href="#sec-integral-riemannSums-2" title="Copy heading and permalink for Objectives 4.2" aria-label="Copy heading and permalink for Objectives 4.2">🔗</a></div></article><section class="subsection" id="ssec-accumulated-change-idea"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Idea of Accumulated Change</span>
 </h3>
-<div class="para" id="ssec-integral-accumulation-2">In the previous section we reversed differentiation algebraically: given a function <span class="process-math">\(f(x)\text{,}\)</span> we looked for an antiderivative <span class="process-math">\(F(x)\)</span> with <span class="process-math">\(F'(x)=f(x)\text{.}\)</span> Now we will build a numerical definition of antiderivative that works even when no simple formula exists.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-accumulation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ssec-accumulated-change-idea-2">In the previous chapter we introduced antiderivatives as the reverse of differentiation and we showed how to find them algebraically. Now we shift perspective. Instead of starting with a formula and reversing it, we begin with a <em class="emphasis">rate of change</em> (again, think derivative) and ask: <em class="alert">How much total change occurs over an interval?</em><div class="autopermalink" data-description="Paragraph"><a href="#ssec-accumulated-change-idea-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ssec-integral-accumulation-3">Think of <span class="process-math">\(f(x)\)</span> as the influence on a quantity <span class="process-math">\(F(x)\text{.}\)</span> Near <span class="process-math">\(x=c\text{,}\)</span> the derivative relationship <span class="process-math">\(F'(c)=f(c)\)</span> says <span class="process-math">\(f(c)\approx \dfrac{\Delta F}{\Delta x}\text{,}\)</span> so<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-accumulation-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ssec-accumulated-change-idea-3">Suppose a quantity <span class="process-math">\(F(x)\)</span> changes at a rate <span class="process-math">\(f(x)\text{.}\)</span> That is,<div class="autopermalink" data-description="Paragraph"><a href="#ssec-accumulated-change-idea-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="ssec-integral-accumulation-4">
+<div class="displaymath process-math" id="ssec-accumulated-change-idea-4">
 \begin{equation*}
-\Delta F \approx f(c)\,\Delta x.
+F'(x) = f(x).
 \end{equation*}
 </div>
-<div class="para" id="ssec-integral-accumulation-5">A small input change <span class="process-math">\(\Delta x\)</span> produces a small output change <span class="process-math">\(\Delta F\)</span> controlled by <span class="process-math">\(f(c)\text{.}\)</span> Adding many small changes gives the total change in <span class="process-math">\(F\text{.}\)</span> This “add up tiny effects” viewpoint is what the definite integral will formalize.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-accumulation-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ssec-accumulated-change-idea-5">If we know the rate of change at each point, how can we compute the total change in <span class="process-math">\(F\)</span> from <span class="process-math">\(x=a\)</span> to <span class="process-math">\(x=b\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-accumulated-change-idea-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ssec-integral-accumulation-6">Here are several examples of “accumulation” in everyday language:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-accumulation-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ssec-accumulated-change-idea-6">From a previous physical science class I am sure that many will remember:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-accumulated-change-idea-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<ul class="disc" id="ssec-integral-accumulation-7">
-<li id="ssec-integral-accumulation-7-1">
-<div class="para" id="ssec-integral-accumulation-7-1-1">Position is the cumulative effect of velocity.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-accumulation-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ssec-integral-accumulation-7-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="ssec-integral-accumulation-7-2">
-<div class="para" id="ssec-integral-accumulation-7-2-1">Velocity is the cumulative effect of acceleration.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-accumulation-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ssec-integral-accumulation-7-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="ssec-integral-accumulation-7-3">
-<div class="para" id="ssec-integral-accumulation-7-3-1">Temperature is the cumulative effect of warming and cooling rates.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-accumulation-7-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ssec-integral-accumulation-7-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="ssec-integral-accumulation-7-4">
-<div class="para" id="ssec-integral-accumulation-7-4-1">Energy used is the cumulative effect of power (wattage) over time.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-accumulation-7-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ssec-integral-accumulation-7-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="ssec-integral-accumulation-7-5">
-<div class="para" id="ssec-integral-accumulation-7-5-1">Total mass is the cumulative effect of density over volume.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-accumulation-7-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ssec-integral-accumulation-7-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="ssec-integral-accumulation-7-6">
-<div class="para" id="ssec-integral-accumulation-7-6-1">Total force is the cumulative effect of pressure over an area.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-accumulation-7-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ssec-integral-accumulation-7-6" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="ssec-integral-accumulation-7-7">
-<div class="para" id="ssec-integral-accumulation-7-7-1">Population is the cumulative effect of net growth rate over time.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-accumulation-7-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ssec-integral-accumulation-7-7" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="ssec-integral-accumulation-7-8">
-<div class="para" id="ssec-integral-accumulation-7-8-1">Total cost is the cumulative effect of marginal cost as production increases.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-accumulation-7-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#ssec-integral-accumulation-7-8" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-</ul>
-<div class="autopermalink" data-description="Subsection: Accumulation of Influence"><a href="#ssec-integral-accumulation" title="Copy heading and permalink for Subsection: Accumulation of Influence" aria-label="Copy heading and permalink for Subsection: Accumulation of Influence">🔗</a></div></section><section class="subsection" id="ssec-integral-distance-riemann"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Riemann Sums for Distance</span>
-</h3>
-<div class="para" id="ssec-integral-distance-riemann-2">To make accumulation computable, we introduce a new operation: the definite integral <span class="process-math">\(\displaystyle \int_a^b f(x)\,dx\text{.}\)</span> We will define it numerically as a limit of approximations.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-distance-riemann-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ssec-integral-distance-riemann-3">Imagine a toy car whose velocity is <span class="process-math">\(v(t)=t^2\)</span> (in meters per second) over <span class="process-math">\(t\in[0,2]\text{.}\)</span> If <span class="process-math">\(s(t)\)</span> is position and <span class="process-math">\(s(0)=0\text{,}\)</span> then the total distance traveled by time <span class="process-math">\(t=2\)</span> is <span class="process-math">\(s(2)\text{.}\)</span> Over a short time interval, distance is approximately velocity times time: <span class="process-math">\(\Delta s \approx v(t)\,\Delta t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-distance-riemann-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ssec-integral-distance-riemann-4">A very rough estimate would treat the velocity as constant at the final value <span class="process-math">\(v(2)=4\text{,}\)</span> giving <span class="process-math">\(s(2)\approx 4(2-0)=8\text{,}\)</span> which is far too large because the car starts at rest. To improve the estimate, split <span class="process-math">\([0,2]\)</span> into many short intervals.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-distance-riemann-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ssec-integral-distance-riemann-5">For example, take <span class="process-math">\(n=20\)</span> subintervals, each of width <span class="process-math">\(\Delta t=\dfrac{2}{20}=0.1\text{.}\)</span> Using right endpoints <span class="process-math">\(t_i=0.1,0.2,\ldots,2.0\text{,}\)</span> we get a right Riemann sum:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-distance-riemann-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="ssec-integral-distance-riemann-6">
+<div class="displaymath process-math" id="ssec-accumulated-change-idea-7">
 \begin{equation*}
-\begin{array}{rcl}
-s(2)
-&amp;\approx&amp;
-v(0.1)\Delta t+v(0.2)\Delta t+\cdots+v(2.0)\Delta t
-\\[0.6em]
-&amp;=&amp;
-(0.1)^2(0.1)+(0.2)^2(0.1)+\cdots+(2.0)^2(0.1)
-\\[0.6em]
-&amp;\approx&amp; 2.87.
-\end{array}
+\text{distance} = (\text{rate}) \times (\text{time}).
 \end{equation*}
 </div>
-<div class="para" id="ssec-integral-distance-riemann-7">Since <span class="process-math">\(v(t)=t^2\)</span> is increasing, sampling at the right endpoints gives an overestimate. Sampling at the left endpoints <span class="process-math">\(t_i=0.0,0.1,\ldots,1.9\)</span> gives an underestimate:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-distance-riemann-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ssec-accumulated-change-idea-8">Or if the rate is not a rate of change of distance, but a rate of change of some other quantity, we can still say:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-accumulated-change-idea-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="ssec-integral-distance-riemann-8">
+<div class="displaymath process-math" id="ssec-accumulated-change-idea-9">
 \begin{equation*}
-\begin{array}{rcl}
-s(2)
-&amp;\approx&amp;
-v(0.0)\Delta t+v(0.1)\Delta t+\cdots+v(1.9)\Delta t
-\\[0.6em]
-&amp;=&amp;
-(0.0)^2(0.1)+(0.1)^2(0.1)+\cdots+(1.9)^2(0.1)
-\\[0.6em]
-&amp;\approx&amp; 2.47.
-\end{array}
+\text{total change} = (\text{rate of change}) \times (\text{amount of time}).
 \end{equation*}
 </div>
-<div class="para" id="ssec-integral-distance-riemann-9">So <span class="process-math">\(s(2)\)</span> lies between 2.47 and 2.87. If we increase <span class="process-math">\(n\text{,}\)</span> the rectangles get thinner and the estimates improve. This motivates the definition of the integral as a limit.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-distance-riemann-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ssec-accumulated-change-idea-10">This works when the rate is constant, but what if the rate changes? When this occurs, we can approximate the total change by breaking the interval into many pieces. Let’s see an example of this in action.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-accumulated-change-idea-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="definition definition-like" id="def-definite-integral-riemann"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definite Integral (Riemann Sum Definition).</span>
+<article class="example example-like" id="ex-riemann-sums-distance"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="def-definite-integral-riemann-2-1">Let <span class="process-math">\(f\)</span> be a function on <span class="process-math">\([a,b]\text{.}\)</span> Partition <span class="process-math">\([a,b]\)</span> into <span class="process-math">\(n\)</span> subintervals of equal width <span class="process-math">\(\Delta x=\dfrac{b-a}{n}\text{,}\)</span> and choose a sample point <span class="process-math">\(x_i\)</span> in each subinterval. If the limit exists as <span class="process-math">\(n\to\infty\text{,}\)</span> we define<div class="autopermalink" data-description="Paragraph"><a href="#def-definite-integral-riemann-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="introduction" id="ex-riemann-sums-distance-1"><div class="para" id="ex-riemann-sums-distance-1-1">Suppose we have a car and the following information about its instantaneous velocity, in meters per second, on the time interval <span class="process-math">\(t\in[0,8]\)</span> seconds. Use the ending velocity values to give your best estimate of the distance traveled during the time interval <span class="process-math">\([0,8]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<article class="task exercise-like" id="ex-riemann-sums-distance-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="ex-riemann-sums-distance-2-1-1">
+<span class="process-math">\(\quad 
+\begin{array}{c|cc}
+t  &amp; 0 &amp; 8 \\
+\hline
+v(t)  &amp; 2 &amp; 20 
+\end{array}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="def-definite-integral-riemann-2-2">
-\begin{equation*}
-\int_a^b f(x)\,dx \stackrel{\text{def}}= \lim_{n\to\infty}\left(f(x_1)\Delta x+f(x_2)\Delta x+\cdots+f(x_n)\Delta x\right).
-\end{equation*}
+<div class="solutions"><details id="ex-riemann-sums-distance-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-riemann-sums-distance-2-2-1">We can use the formula <span class="process-math">\(\text{distance} = (\text{rate}) \times (\text{time})\)</span> to get a rough estimate of the distance traveled. If we treat the velocity as constant at the final value, we get <span class="process-math">\(20 \cdot 8 = 160\)</span> meters, which probably is an overestimate because the car starts at a lower speed. The problem specified only the starting and ending velocities, so we have no information about how the velocity changes in between and we were told to use the ending velocity values, so this is the best estimate we can give with the information provided.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 4.2.1: Definite Integral (Riemann Sum Definition)"><a href="#def-definite-integral-riemann" title="Copy heading and permalink for Definition 4.2.1: Definite Integral (Riemann Sum Definition)" aria-label="Copy heading and permalink for Definition 4.2.1: Definite Integral (Riemann Sum Definition)">🔗</a></div></article><div class="para" id="ssec-integral-distance-riemann-11">The symbol <span class="process-math">\(\int\)</span> is an elongated <span class="process-math">\(S\)</span> for “sum.” The <span class="process-math">\(dx\)</span> reminds us that <span class="process-math">\(\Delta x\)</span> is becoming very small.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-distance-riemann-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.2.1.a.1"><a href="#ex-riemann-sums-distance-2-2" title="Copy heading and permalink for Solution 4.2.1.a.1" aria-label="Copy heading and permalink for Solution 4.2.1.a.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Task 4.2.1.a"><a href="#ex-riemann-sums-distance-2" title="Copy heading and permalink for Task 4.2.1.a" aria-label="Copy heading and permalink for Task 4.2.1.a">🔗</a></div></article><article class="task exercise-like" id="ex-riemann-sums-distance-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="ex-riemann-sums-distance-3-1-1">
+<span class="process-math">\(\quad 
+\begin{array}{c|ccc}
+t  &amp; 0 &amp; 4 &amp; 8 \\
+\hline
+v(t)  &amp; 2 &amp; 14 &amp; 20 
+\end{array}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ssec-integral-distance-riemann-12">For this particular example we can also check against an algebraic antiderivative. Since <span class="process-math">\(s'(t)=t^2\)</span> and <span class="process-math">\(s(0)=0\text{,}\)</span> we have <span class="process-math">\(s(t)=\tfrac13 t^3\text{,}\)</span> so <span class="process-math">\(s(2)=\tfrac13(2^3)=\tfrac83\approx 2.667\text{,}\)</span> which lies between the two estimates above.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-distance-riemann-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="ex-riemann-sums-distance-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-riemann-sums-distance-3-2-1">If we break the time interval into two pieces, we can get a better estimate. On the first half of the time interval (<span class="process-math">\(t\in[0,4]\)</span>), we can treat the velocity as constant at 14 m/s (we were told to use the ending velocity values), giving an estimate of <span class="process-math">\(14 \cdot 4 = 56\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection: Riemann Sums for Distance"><a href="#ssec-integral-distance-riemann" title="Copy heading and permalink for Subsection: Riemann Sums for Distance" aria-label="Copy heading and permalink for Subsection: Riemann Sums for Distance">🔗</a></div></section><section class="subsection" id="ssec-integral-total-change"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Integral as Total Change</span>
+<div class="para" id="ex-riemann-sums-distance-3-2-2">On the second half of the time interval (<span class="process-math">\(t\in[4,8]\)</span>), we can treat the velocity as constant at 20 m/s (again we were told to use the ending velocity values), giving an estimate of <span class="process-math">\(20 \cdot 4 = 80\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-3-2-3">Adding these estimates gives a total distance traveled of about <span class="process-math">\(56 + 80 = 136\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.2.1.b.1"><a href="#ex-riemann-sums-distance-3-2" title="Copy heading and permalink for Solution 4.2.1.b.1" aria-label="Copy heading and permalink for Solution 4.2.1.b.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Task 4.2.1.b"><a href="#ex-riemann-sums-distance-3" title="Copy heading and permalink for Task 4.2.1.b" aria-label="Copy heading and permalink for Task 4.2.1.b">🔗</a></div></article><article class="task exercise-like" id="ex-riemann-sums-distance-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="ex-riemann-sums-distance-4-1-1">
+<span class="process-math">\(\quad 
+\begin{array}{c|ccc}
+t  &amp; 0 &amp; 2 &amp; 4 &amp; 6 &amp; 8 \\
+\hline
+v(t)  &amp; 2 &amp; 10 &amp; 14 &amp; 22 &amp; 20 
+\end{array}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-riemann-sums-distance-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-riemann-sums-distance-4-2-1">Now we can break the time interval into four pieces, and get an even better estimate.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-4-2-2">On the first piece (<span class="process-math">\(t\in[0,2]\)</span>), we can treat the velocity as constant at 10 m/s, giving an estimate of <span class="process-math">\(10 \cdot 2 = 20\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-4-2-3">On the second piece (<span class="process-math">\(t\in[2,4]\)</span>), we can treat the velocity as constant at 14 m/s, giving an estimate of <span class="process-math">\(14 \cdot 2 = 28\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-4-2-4">On the third piece (<span class="process-math">\(t\in[4,6]\)</span>), we can treat the velocity as constant at 22 m/s, giving an estimate of <span class="process-math">\(22 \cdot 2 = 44\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-4-2-5">On the fourth piece (<span class="process-math">\(t\in[6,8]\)</span>), we can treat the velocity as constant at 20 m/s, giving an estimate of <span class="process-math">\(20 \cdot 2 = 40\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-4-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-4-2-6">Adding these estimates gives a total distance traveled of about <span class="process-math">\(20 + 28 + 44 + 40 = 132\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-4-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.2.1.c.1"><a href="#ex-riemann-sums-distance-4-2" title="Copy heading and permalink for Solution 4.2.1.c.1" aria-label="Copy heading and permalink for Solution 4.2.1.c.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Task 4.2.1.c"><a href="#ex-riemann-sums-distance-4" title="Copy heading and permalink for Task 4.2.1.c" aria-label="Copy heading and permalink for Task 4.2.1.c">🔗</a></div></article><article class="task exercise-like" id="ex-riemann-sums-distance-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="ex-riemann-sums-distance-5-1-1">
+<span class="process-math">\(\quad 
+\begin{array}{c|ccc}
+t  &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 \\
+\hline
+v(t)  &amp; 2 &amp; 7 &amp; 10 &amp; 11 &amp; 14 &amp; 19 &amp; 22 &amp; 20 &amp; 20 
+\end{array}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-riemann-sums-distance-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-riemann-sums-distance-5-2-1">Now we can break the time interval into eight pieces, and get an even better estimate.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-5-2-2">On the first piece (<span class="process-math">\(t\in[0,1]\)</span>), we can treat the velocity as constant at 7 m/s, giving an estimate of <span class="process-math">\(7 \cdot 1 = 7\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-5-2-3">On the second piece (<span class="process-math">\(t\in[1,2]\)</span>), we can treat the velocity as constant at 10 m/s, giving an estimate of <span class="process-math">\(10 \cdot 1 = 10\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-5-2-4">On the third piece (<span class="process-math">\(t\in[2,3]\)</span>), we can treat the velocity as constant at 11 m/s, giving an estimate of <span class="process-math">\(11 \cdot 1 = 11\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-5-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-5-2-5">On the fourth piece (<span class="process-math">\(t\in[3,4]\)</span>), we can treat the velocity as constant at 14 m/s, giving an estimate of <span class="process-math">\(14 \cdot 1 = 14\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-5-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-5-2-6">On the fifth piece (<span class="process-math">\(t\in[4,5]\)</span>), we can treat the velocity as constant at 19 m/s, giving an estimate of <span class="process-math">\(19 \cdot 1 = 19\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-5-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-5-2-7">On the sixth piece (<span class="process-math">\(t\in[5,6]\)</span>), we can treat the velocity as constant at 22 m/s, giving an estimate of <span class="process-math">\(22 \cdot 1 = 22\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-5-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-5-2-8">On the seventh piece (<span class="process-math">\(t\in[6,7]\)</span>), we can treat the velocity as constant at 20 m/s, giving an estimate of <span class="process-math">\(20 \cdot 1 = 20\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-5-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-5-2-9">On the eighth piece (<span class="process-math">\(t\in[7,8]\)</span>), we can treat the velocity as constant at 20 m/s, giving an estimate of <span class="process-math">\(20 \cdot 1 = 20\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-5-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-sums-distance-5-2-10">Adding these estimates gives a total distance traveled of about <span class="process-math">\(7 + 10 + 11 + 14 + 19 + 22 + 20 + 20 = 123\)</span> meters.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-distance-5-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.2.1.d.1"><a href="#ex-riemann-sums-distance-5-2" title="Copy heading and permalink for Solution 4.2.1.d.1" aria-label="Copy heading and permalink for Solution 4.2.1.d.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Task 4.2.1.d"><a href="#ex-riemann-sums-distance-5" title="Copy heading and permalink for Task 4.2.1.d" aria-label="Copy heading and permalink for Task 4.2.1.d">🔗</a></div></article><div class="autopermalink" data-description="Example 4.2.1"><a href="#ex-riemann-sums-distance" title="Copy heading and permalink for Example 4.2.1" aria-label="Copy heading and permalink for Example 4.2.1">🔗</a></div></article><article class="remark remark-like" id="rmk-riemann-sums-general"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Rates of Change and Total Change.</span>
+</h4>
+<div class="para" id="rmk-riemann-sums-general-2">While the last example was about distance traveled, given a rate of change (velocity), the same idea applies to any quantity that changes at a certain rate. For example, if we know the rate at which a population is growing, we can use that to estimate the total population growth over a time interval.<div class="autopermalink" data-description="Paragraph"><a href="#rmk-riemann-sums-general-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.2.2: Rates of Change and Total Change"><a href="#rmk-riemann-sums-general" title="Copy heading and permalink for Remark 4.2.2: Rates of Change and Total Change" aria-label="Copy heading and permalink for Remark 4.2.2: Rates of Change and Total Change">🔗</a></div></article><article class="remark remark-like" id="rmk-riemann-sums-accuracy"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Approximations and Accuracy.</span>
+</h4>
+<div class="para" id="rmk-riemann-sums-accuracy-2">In general the more pieces we break the interval into (the more information we have), the better our estimate will be.<div class="autopermalink" data-description="Paragraph"><a href="#rmk-riemann-sums-accuracy-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="rmk-riemann-sums-accuracy-3">One could imagine that if we had infinitely velocity readings on microscopic intervals, our approximation could become so accurate that it would be indistinguishable from the exact value. This is a nice idea, but it would be extremely difficult to calculate by hand, so for this section we will stick with approximations and in the next section we will tackle how to calculate exact values.<div class="autopermalink" data-description="Paragraph"><a href="#rmk-riemann-sums-accuracy-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.2.3: Approximations and Accuracy"><a href="#rmk-riemann-sums-accuracy" title="Copy heading and permalink for Remark 4.2.3: Approximations and Accuracy" aria-label="Copy heading and permalink for Remark 4.2.3: Approximations and Accuracy">🔗</a></div></article><div class="para" id="ssec-accumulated-change-idea-14">In our last example we were told to use the ending velocity values, but if we were instead told to use the starting velocity values, we would get a different estimate. In general, there are many ways to approximate the total change from a rate of change, and they can give different estimates. With this in mind, we will introduce some terminology for the different types of approximations.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-accumulated-change-idea-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: The Idea of Accumulated Change"><a href="#ssec-accumulated-change-idea" title="Copy heading and permalink for Subsection: The Idea of Accumulated Change" aria-label="Copy heading and permalink for Subsection: The Idea of Accumulated Change">🔗</a></div></section><section class="subsection" id="subsec-riemann-sum-terminology"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Riemann Sum Terminology</span>
 </h3>
-<div class="para" id="ssec-integral-total-change-2">The distance story is one example of a more general idea. If <span class="process-math">\(f(x)\)</span> is a rate of change of some quantity <span class="process-math">\(F(x)\text{,}\)</span> meaning <span class="process-math">\(F'(x)=f(x)\text{,}\)</span> then adding up tiny changes <span class="process-math">\(\Delta F\approx f(x)\Delta x\)</span> produces the total change <span class="process-math">\(F(b)-F(a)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-total-change-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="definition definition-like" id="def-riemann-sums"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Riemann Sums.</span>
+</h4>
+<div class="para" id="def-riemann-sums-2-1">Suppose we have a rate of function <span class="process-math">\(f(t)\)</span> defined on an interval <span class="process-math">\([a,b]\text{.}\)</span> We can break the interval into <span class="process-math">\(n\)</span> pieces (subintervals) with equal width <span class="process-math">\(\Delta t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-riemann-sums-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="def-riemann-sums-2-2">Then the total change can be approximated by a sum of the form:<div class="autopermalink" data-description="Paragraph"><a href="#def-riemann-sums-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="ssec-integral-total-change-3">
+<div class="displaymath process-math" id="def-riemann-sums-2-3">
 \begin{equation*}
-F(b)-F(a)=\int_a^b f(x)\,dx.
+\text{Total Change} \approx f(t_1)\Delta t + f(t_2)\Delta t + \cdots + f(t_n)\Delta t
 \end{equation*}
 </div>
-<div class="para" id="ssec-integral-total-change-4">You can read this as: “the total change equals the accumulated rate of change.” Later, we will prove this relationship (and learn fast techniques for computing integrals) in the Fundamental Theorem of Calculus.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-total-change-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="def-riemann-sums-2-4">where <span class="process-math">\(t_i\)</span> is a sample point in the <span class="process-math">\(i\)</span>th subinterval.<div class="autopermalink" data-description="Paragraph"><a href="#def-riemann-sums-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ul class="disc" id="def-riemann-sums-2-5">
+<li id="def-riemann-sums-2-5-1">
+<div class="para" id="def-riemann-sums-2-5-1-1">If we choose the sample points to be the left endpoints of the subintervals, we call this a <dfn class="terminology">left Riemann sum</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-riemann-sums-2-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection: The Integral as Total Change"><a href="#ssec-integral-total-change" title="Copy heading and permalink for Subsection: The Integral as Total Change" aria-label="Copy heading and permalink for Subsection: The Integral as Total Change">🔗</a></div></section><section class="subsection" id="ssec-integral-area"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Item"><a href="#def-riemann-sums-2-5-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="def-riemann-sums-2-5-2">
+<div class="para" id="def-riemann-sums-2-5-2-1">If we choose the sample points to be the right endpoints of the subintervals, we call this a <dfn class="terminology">right Riemann sum</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-riemann-sums-2-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#def-riemann-sums-2-5-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="def-riemann-sums-2-5-3">
+<div class="para" id="def-riemann-sums-2-5-3-1">If we choose the sample points to be the maximum value of <span class="process-math">\(f\)</span> on each subinterval, we call this an <dfn class="terminology">upper Riemann sum</dfn>. The upper Riemann sum is used to give an overestimate of the total change.<div class="autopermalink" data-description="Paragraph"><a href="#def-riemann-sums-2-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#def-riemann-sums-2-5-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="def-riemann-sums-2-5-4">
+<div class="para" id="def-riemann-sums-2-5-4-1">If we choose the sample points to be the minimum value of <span class="process-math">\(f\)</span> on each subinterval, we call this a <dfn class="terminology">lower Riemann sum</dfn>. The lower Riemann sum is used to give an underestimate of the total change.<div class="autopermalink" data-description="Paragraph"><a href="#def-riemann-sums-2-5-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#def-riemann-sums-2-5-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="def-riemann-sums-2-5-5">
+<div class="para" id="def-riemann-sums-2-5-5-1">In general, if we choose the sample points in any way, we can call the resulting sum a <dfn class="terminology">Riemann sum</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-riemann-sums-2-5-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#def-riemann-sums-2-5-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Definition 4.2.4: Riemann Sums"><a href="#def-riemann-sums" title="Copy heading and permalink for Definition 4.2.4: Riemann Sums" aria-label="Copy heading and permalink for Definition 4.2.4: Riemann Sums">🔗</a></div></article><details id="aside-riemann-history" class="historical aside-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Historical Aside<span class="colon heading-divison-mark heading-divison-mark__colon">:</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bernhard Riemann.</span>
+</h4></summary><aside class="historical aside-like knowl__content"><div class="para" id="aside-riemann-history-2">The sums we use to approximate accumulated change are named after the German mathematician <dfn class="terminology">Bernhard Riemann</dfn> (1826-1866). Riemann was known for being extremely shy and quiet. In fact, when he had to give a lecture as a young professor, he was reportedly so nervous that he practiced it repeatedly beforehand and still spoke very slowly and cautiously.<div class="autopermalink" data-description="Paragraph"><a href="#aside-riemann-history-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="aside-riemann-history-3">Despite his quiet personality, Riemann introduced ideas that completely changed mathematics. His method of approximating area by adding many thin rectangles gave a precise definition of the definite integral, which is why these approximations are now called <dfn class="terminology">Riemann sums</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#aside-riemann-history-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="aside-riemann-history-4">Riemann’s influence did not stop with calculus. His work on curved geometric spaces later became essential to Einstein’s theory of general relativity. He also proposed a famous unsolved problem about the distribution of prime numbers, now known as the <dfn class="terminology">Riemann Hypothesis</dfn>, which remains one of the most important open problems in mathematics.<div class="autopermalink" data-description="Paragraph"><a href="#aside-riemann-history-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="aside-riemann-history-5">You can read more about Riemann and his surprisingly short but incredibly influential career here: <a class="external" href="https://en.wikipedia.org/wiki/Bernhard_Riemann" target="_blank">Bernhard Riemann (Wikipedia)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#aside-riemann-history-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></aside></details><article class="example example-like" id="ex-riemann-sums-left-endpoints"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-riemann-sums-left-endpoints-1-1">Consider the function <span class="process-math">\(r(t)=t^2\)</span> on <span class="process-math">\([0,2]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-left-endpoints-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-riemann-sums-left-endpoints-1-2">(a) Calculate the left Riemann sum with <span class="process-math">\(n=4\)</span> subintervals.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-left-endpoints-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-riemann-sums-left-endpoints-1-3">(b) Is you answer from (a) an underestimate or overestimate of the total change, and why?<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-left-endpoints-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-riemann-sums-left-endpoints-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-riemann-sums-left-endpoints-2-1">(a) The width of each subinterval is<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-left-endpoints-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-sums-left-endpoints-2-2">
+\begin{equation*}
+\Delta t = \dfrac{\text{total width of interval}}{\text{number of subintervals}} = \dfrac{2-0}{4} = \dfrac12
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-sums-left-endpoints-2-3">If we split up the interval into four subintervals, we get <span class="process-math">\([0,\tfrac12]\text{,}\)</span> <span class="process-math">\([\tfrac12,1]\text{,}\)</span> <span class="process-math">\([1,\tfrac32]\text{,}\)</span> and <span class="process-math">\([\tfrac32,2]\text{.}\)</span> The left endpoints are <span class="process-math">\(0, \tfrac12, 1, \tfrac32\text{.}\)</span> So the left Riemann sum is<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-left-endpoints-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-sums-left-endpoints-2-4">
+\begin{equation*}
+\begin{array}{rcl}
+\amp \amp r(0)\Delta t + r(\tfrac12)\Delta t + r(1)\Delta t + r(\tfrac32)\Delta t \\ 
+\amp = \amp (0^2)(\tfrac12) + (\tfrac12)^2(\tfrac12) + (1^2)(\tfrac12) + (\tfrac32)^2(\tfrac12) = \dfrac{7}{4}.
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-sums-left-endpoints-2-5">(b) Since <span class="process-math">\(r(t)=t^2\)</span> is increasing on <span class="process-math">\([0,2]\text{,}\)</span> the left hand endpoints will give us smallest values of <span class="process-math">\(r(t)\)</span> on each piece (subinterval). So the left Riemann sum will be an underestimate of the total change. You can verify that this will be equivalent to the lower Riemann sum in this case, since the function is increasing.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-left-endpoints-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.2.5.1"><a href="#ex-riemann-sums-left-endpoints-2" title="Copy heading and permalink for Solution 4.2.5.1" aria-label="Copy heading and permalink for Solution 4.2.5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.2.5"><a href="#ex-riemann-sums-left-endpoints" title="Copy heading and permalink for Example 4.2.5" aria-label="Copy heading and permalink for Example 4.2.5">🔗</a></div></article><article class="remark remark-like" id="rmk-riemann-sums-generating-table"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="rmk-riemann-sums-generating-table-1">You can see in this last example that if the table is not given to you, it can be generated by sampling the function at the appropriate points. For example, if we wanted to compute the right Riemann sum with <span class="process-math">\(n=4\)</span> subintervals, we would sample the function at the right endpoints of the subintervals, which are <span class="process-math">\(\tfrac12, 1, \tfrac32, 2\text{,}\)</span> and then use those values to compute the sum.<div class="autopermalink" data-description="Paragraph"><a href="#rmk-riemann-sums-generating-table-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.2.6"><a href="#rmk-riemann-sums-generating-table" title="Copy heading and permalink for Remark 4.2.6" aria-label="Copy heading and permalink for Remark 4.2.6">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Riemann Sum Terminology"><a href="#subsec-riemann-sum-terminology" title="Copy heading and permalink for Subsection: Riemann Sum Terminology" aria-label="Copy heading and permalink for Subsection: Riemann Sum Terminology">🔗</a></div></section><section class="subsection" id="ssec-integral-area"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Area Under a Curve</span>
 </h3>
-<div class="para" id="ssec-integral-area-2">Now comes one of the most useful interpretations of the integral. Suppose <span class="process-math">\(f(x)\ge 0\)</span> on <span class="process-math">\([a,b]\text{.}\)</span> Then <span class="process-math">\(\displaystyle \int_a^b f(x)\,dx\)</span> is the area under the graph <span class="process-math">\(y=f(x)\)</span> above the <span class="process-math">\(x\)</span>-axis from <span class="process-math">\(x=a\)</span> to <span class="process-math">\(x=b\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-area-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ssec-integral-area-2">Now comes one of the most useful interpretations of the Riemann sum calculations. Suppose <span class="process-math">\(f(x)\ge 0\)</span> on <span class="process-math">\([a,b]\)</span> is a rate of change function. Then total change is the area under the graph <span class="process-math">\(y=f(x)\)</span> above the <span class="process-math">\(x\)</span>-axis from <span class="process-math">\(x=a\)</span> to <span class="process-math">\(x=b\)</span> which we can approximate using Riemann sums.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-area-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ssec-integral-area-3">To see why, approximate the area with rectangles. Over each small subinterval, the area of a rectangle is (height)<span class="process-math">\(\times\)</span>(width) <span class="process-math">\(\approx f(x_i)\Delta x\text{.}\)</span> Adding these areas produces the same type of Riemann sum we used for distance. Taking a limit gives the exact area.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-area-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ssec-integral-area-3">To see why, let’s redo <a href="sec-integral-riemannSums.html#ex-riemann-sums-left-endpoints" class="xref" data-knowl="./knowl/xref/ex-riemann-sums-left-endpoints.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.2.5">Example 4.2.5</a> with a graphical viewpoint.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-area-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="ex-area-x-squared"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="ex-area-x-squared-1-1">Interpret <span class="process-math">\(\displaystyle \int_0^2 x^2\,dx\)</span> as an area, and connect it to the distance example.<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
+<div class="para" id="ex-area-x-squared-1-1">Approximate the area under the graph <span class="process-math">\(y=x^2\)</span> on the interval <span class="process-math">\([0,2]\)</span> using <span class="process-math">\(n=4\)</span> rectangles of equal width. Use left endpoints to determine the height of each rectangle.<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/ex-area-x-squared-1-2.svg" role="img" class="contained" alt="Graph of y equals x squared on the interval [0,2]."></div>
 <div class="solutions"><details id="ex-area-x-squared-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-area-x-squared-2-1">Since <span class="process-math">\(x^2\ge 0\)</span> on <span class="process-math">\([0,2]\text{,}\)</span> the integral equals the area under <span class="process-math">\(y=x^2\)</span> above <span class="process-math">\([0,2]\text{.}\)</span> Approximating with right-endpoint rectangles produces the same sum we computed for distance with velocity <span class="process-math">\(v(t)=t^2\text{.}\)</span> The area and the distance are numerically equal because both are defined by the same limiting process: in each case we add up terms of the form “height” <span class="process-math">\(\times\)</span> “width.”<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="ex-area-x-squared-2-1">
+<div class="para">The width of each rectangle is <span class="process-math">\(\Delta x = \dfrac{2-0}{4} = \dfrac12\text{.}\)</span> The heights of the rectangles are determined by the left endpoints, which are <span class="process-math">\(0, \tfrac12, 1, \tfrac32\text{.}\)</span> So the heights are</div>
+<ul class="disc" id="ex-area-x-squared-2-1-3">
+<li id="ex-area-x-squared-2-1-3-1">
+<div class="para" id="ex-area-x-squared-2-1-3-1-1">
+<span class="process-math">\(f(0)=0^2=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.2.2.1"><a href="#ex-area-x-squared-2" title="Copy heading and permalink for Solution 4.2.2.1" aria-label="Copy heading and permalink for Solution 4.2.2.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.2.2"><a href="#ex-area-x-squared" title="Copy heading and permalink for Example 4.2.2" aria-label="Copy heading and permalink for Example 4.2.2">🔗</a></div></article><div class="para" id="ssec-integral-area-5">In this section we are focusing on functions that stay nonnegative, so “area under the curve” matches the integral directly. Later, when a function dips below the axis, the integral still makes sense but it represents signed area (area above minus area below).<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-area-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#ex-area-x-squared-2-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-area-x-squared-2-1-3-2">
+<div class="para" id="ex-area-x-squared-2-1-3-2-1">
+<span class="process-math">\(f(\tfrac12)=(\tfrac12)^2=\tfrac14\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection: Area Under a Curve"><a href="#ssec-integral-area" title="Copy heading and permalink for Subsection: Area Under a Curve" aria-label="Copy heading and permalink for Subsection: Area Under a Curve">🔗</a></div></section><section class="subsection" id="ssec-integral-approx-sin-squared"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Approximating an Integral with Upper and Lower Sums</span>
-</h3>
-<div class="para" id="ssec-integral-approx-sin-squared-2">Sometimes we want a numerical value of an integral even when we do not yet have a quick algebraic method. Upper and lower Riemann sums give guaranteed bounds.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-approx-sin-squared-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#ex-area-x-squared-2-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-area-x-squared-2-1-3-3">
+<div class="para" id="ex-area-x-squared-2-1-3-3-1">
+<span class="process-math">\(f(1)=1^2=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-1-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="example example-like" id="ex-riemann-sin-squared"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="ex-riemann-sin-squared-1-1">Approximate <span class="process-math">\(\displaystyle \int_0^\pi \sin^2(x)\,dx\)</span> to one decimal place. (That is, find a value within <span class="process-math">\(\pm 0.05\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sin-squared-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#ex-area-x-squared-2-1-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-area-x-squared-2-1-3-4">
+<div class="para" id="ex-area-x-squared-2-1-3-4-1">
+<span class="process-math">\(f(\tfrac32)=(\tfrac32)^2=\tfrac94\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-1-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-riemann-sin-squared-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-riemann-sin-squared-2-1">The function <span class="process-math">\(\sin^2(x)\)</span> increases on <span class="process-math">\([0,\tfrac{\pi}{2}]\)</span> and decreases on <span class="process-math">\([\tfrac{\pi}{2},\pi]\text{.}\)</span> So an upper estimate uses right endpoints on the first half and left endpoints on the second half. A lower estimate does the opposite.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sin-squared-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#ex-area-x-squared-2-1-3-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-riemann-sin-squared-2-2">Take <span class="process-math">\(n=100\)</span> equal subintervals, so <span class="process-math">\(\Delta x=\dfrac{\pi}{100}=0.01\pi\text{.}\)</span> A computed upper sum gives about 1.60 and a computed lower sum gives about 1.54, so<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sin-squared-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-area-x-squared-2-2">Let’s sketch these on the original picture to see what they look like.<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="ex-riemann-sin-squared-2-3">
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/ex-area-x-squared-2-3.svg" role="img" class="contained" alt="Graph of y equals x squared on the interval [0,2]. Four rectangles are drawn under the curve, each with width 0.5 and heights determined by the left endpoints of the subintervals."></div>
+<div class="para logical" id="ex-area-x-squared-2-4">
+<ul class="disc" id="ex-area-x-squared-2-4-1">
+<li id="ex-area-x-squared-2-4-1-1">
+<div class="para" id="ex-area-x-squared-2-4-1-1-1">The area of the first rectangle is <span class="process-math">\(0 \cdot \tfrac12 = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-4-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-area-x-squared-2-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-area-x-squared-2-4-1-2">
+<div class="para" id="ex-area-x-squared-2-4-1-2-1">The area of the second rectangle is <span class="process-math">\(\tfrac14 \cdot \tfrac12 = \tfrac18\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-area-x-squared-2-4-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-area-x-squared-2-4-1-3">
+<div class="para" id="ex-area-x-squared-2-4-1-3-1">The area of the third rectangle is <span class="process-math">\(1 \cdot \tfrac12 = \tfrac12\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-4-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-area-x-squared-2-4-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-area-x-squared-2-4-1-4">
+<div class="para" id="ex-area-x-squared-2-4-1-4-1">The area of the fourth rectangle is <span class="process-math">\(\tfrac94 \cdot \tfrac12 = \tfrac{9}{8}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-4-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-area-x-squared-2-4-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">So the total area of the rectangles is</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-area-x-squared-2-5">
 \begin{equation*}
-1.54 &lt; \int_0^\pi \sin^2(x)\,dx &lt; 1.60.
+(0)(\tfrac12) + (\tfrac14)(\tfrac12) + (1)(\tfrac12) + (\tfrac94)(\tfrac12) = \dfrac{7}{4}.
 \end{equation*}
 </div>
-<div class="para" id="ex-riemann-sin-squared-2-4">Averaging the bounds gives a good estimate: <span class="process-math">\(\displaystyle \int_0^\pi \sin^2(x)\,dx \approx 1.57\text{,}\)</span> which is certainly accurate to one decimal place.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sin-squared-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-area-x-squared-2-6">This matches our previous calculation of the left Riemann sum, but now we have a geometric interpretation: the area under the curve is approximated by the total area of the rectangles. Notice that clearly this is an underestimate of the area under the curve, which matches our previous conclusion that the left Riemann sum is an underestimate.<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-x-squared-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-riemann-sin-squared-2-5">(Later, once we have more integral tools, we can compute this exactly and confirm the approximation.)<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sin-squared-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Solution 4.2.3.1"><a href="#ex-riemann-sin-squared-2" title="Copy heading and permalink for Solution 4.2.3.1" aria-label="Copy heading and permalink for Solution 4.2.3.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.2.7.1"><a href="#ex-area-x-squared-2" title="Copy heading and permalink for Solution 4.2.7.1" aria-label="Copy heading and permalink for Solution 4.2.7.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.2.3"><a href="#ex-riemann-sin-squared" title="Copy heading and permalink for Example 4.2.3" aria-label="Copy heading and permalink for Example 4.2.3">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Approximating an Integral with Upper and Lower Sums"><a href="#ssec-integral-approx-sin-squared" title="Copy heading and permalink for Subsection: Approximating an Integral with Upper and Lower Sums" aria-label="Copy heading and permalink for Subsection: Approximating an Integral with Upper and Lower Sums">🔗</a></div></section><section class="subsection" id="additional-worked-problems-integral-riemannSums"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 4.2.7"><a href="#ex-area-x-squared" title="Copy heading and permalink for Example 4.2.7" aria-label="Copy heading and permalink for Example 4.2.7">🔗</a></div></article><article class="remark remark-like" id="rmk-riemann-sums-accuracy-area"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="rmk-riemann-sums-accuracy-area-1">
+<a href="sec-integral-riemannSums.html#rmk-riemann-sums-accuracy" class="xref" data-knowl="./knowl/xref/rmk-riemann-sums-accuracy.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 4.2.3: Approximations and Accuracy">Previously in Remark 4.2.3</a> we said that with more intervals / pieces / rectangles, we can get a better estimate of the total change. This gives us a way to see why that is true. If we use more rectangles, we can get a better approximation of the area under the curve, and thus a better estimate of the total change / area.<div class="autopermalink" data-description="Paragraph"><a href="#rmk-riemann-sums-accuracy-area-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<a class="external" href="https://www.desmos.com/calculator/2a6g5hthx4" target="_blank"><figure class="figure figure-like" id="rmk-riemann-sums-accuracy-area-2-1"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/RiemannSumXsquared.gif" class="contained" alt="Animated graph showing the area under the curve y equals x squared on the interval [0,2] being approximated by rectangles. As the number of rectangles increases, the approximation becomes more accurate."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A GIF the area under the curve <span class="process-math">\(y=x^2\)</span> on the interval <span class="process-math">\([0,2]\)</span> with more and more rectangles. Click on the image to be taken to the Desmos graph where you can adjust the number of rectangles yourself.<div class="autopermalink" data-description="Figure 4.2.9"><a href="#rmk-riemann-sums-accuracy-area-2-1" title="Copy heading and permalink for Figure 4.2.9" aria-label="Copy heading and permalink for Figure 4.2.9">🔗</a></div></figcaption></figure></a><div class="autopermalink" data-description="Remark 4.2.8"><a href="#rmk-riemann-sums-accuracy-area" title="Copy heading and permalink for Remark 4.2.8" aria-label="Copy heading and permalink for Remark 4.2.8">🔗</a></div></article><div class="para" id="ssec-integral-area-6">Let’s do one more example to see how to compute upper and lower Riemann sums.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-area-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-riemann-sums-cosine"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-riemann-sums-cosine-1-1">Find an overestimate and an underestimate of the area under the graph <span class="process-math">\(y=\cos(\pi x) + 3 \)</span> on the interval <span class="process-math">\([1,3]\)</span> using 6 rectangles of equal width.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-cosine-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-riemann-sums-cosine-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-riemann-sums-cosine-2-1">
+<div class="para">The width of each rectangle is</div>
+<div class="displaymath process-math" id="ex-riemann-sums-cosine-2-1-1">
+\begin{equation*}
+\Delta x = \dfrac{\text{interval width}}{\text{number of rectangles}} = \dfrac{3-1}{6} = \dfrac13\text{.}
+\end{equation*}
+</div>
+<div class="para">So the intervals are</div>
+<div class="displaymath process-math" id="ex-riemann-sums-cosine-2-1-2">
+\begin{equation*}
+[1,\tfrac43], \quad [\tfrac43, \tfrac53], \quad [\tfrac53, 2], \quad  [2, \tfrac73], \quad [\tfrac73, \tfrac83], \quad [\tfrac83, 3]
+\end{equation*}
+</div>
+<div class="para">We can now make a table of the function values at these points:</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-cosine-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-sums-cosine-2-2">
+\begin{equation*}
+\begin{array}{c|c|c|c|c|c|c|c}
+x &amp; 1 &amp; \tfrac43 &amp; \tfrac53 &amp; 2 &amp; \tfrac73 &amp; \tfrac83 &amp; 3 \\
+\hline
+f(x) &amp; 2 &amp; 2.5 &amp; 3.5 &amp; 4 &amp; 3.5 &amp; 2.5 &amp; 2
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-sums-cosine-2-3">We can use either some calculus or trig knowledge to verify that all of the extrema of the function occur at the points in the table, so we can use these values to compute the upper and lower Riemann sums.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-cosine-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-sums-cosine-2-4">
+\begin{equation*}
+\begin{array}{rcl}
+\amp  \amp \text{Upper Riemann Sum} \\
+\amp = \amp (2.5)\tfrac13 + (3.5)\tfrac13 + (4)\tfrac13 + (4)\tfrac13 + (3.5)\tfrac13 + (2.5)\tfrac13 \\
+\amp = \amp \tfrac13 (2.5 + 3.5 + 4 + 4 +3.5 + 2.5) \\ 
+\amp = \amp \tfrac13 (20) = \dfrac{20}{3} \approx 6.67
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-riemann-sums-cosine-2-5">
+\begin{equation*}
+\begin{array}{rcl}
+\amp \amp  \text{Lower Riemann Sum} \\
+\amp = \amp (2)\tfrac13 + (2.5)\tfrac13 + (3.5)\tfrac13 + (3.5)\tfrac13 + (2.5)\tfrac13 + (2)\tfrac13 \\
+\amp = \amp \tfrac13 (2 + 2.5 + 3.5 + 3.5 + 2.5 + 2) \\ 
+\amp = \amp \tfrac13 (16) = \dfrac{16}{3} \approx 5.33
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-sums-cosine-2-6">So the area under the curve is between <span class="process-math">\(\dfrac{16}{3}\)</span> and <span class="process-math">\(\dfrac{20}{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-sums-cosine-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.2.10.1"><a href="#ex-riemann-sums-cosine-2" title="Copy heading and permalink for Solution 4.2.10.1" aria-label="Copy heading and permalink for Solution 4.2.10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.2.10"><a href="#ex-riemann-sums-cosine" title="Copy heading and permalink for Example 4.2.10" aria-label="Copy heading and permalink for Example 4.2.10">🔗</a></div></article><div class="para" id="ssec-integral-area-8">For many kind problems, like the one above, the extrema will occur at the endpoints of the subintervals, however for more difficult (and time consuming) problems, the extrema may occur in the interior of the subintervals. Luckily we have been trained how to find extrema using calculus!<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integral-area-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Area Under a Curve"><a href="#ssec-integral-area" title="Copy heading and permalink for Subsection: Area Under a Curve" aria-label="Copy heading and permalink for Subsection: Area Under a Curve">🔗</a></div></section><section class="subsection" id="additional-worked-problems-integral-riemannSums"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additional Worked-Out Examples</span>
 </h3>
 <div class="para" id="additional-worked-problems-integral-riemannSums-2">To keep this section at a reasonable length, we include only a few representative examples directly in the text. If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional fully worked-out examples are available via: <em class="alert"><a href="sec-integral-ww.html#subsec-integral-riemannSums" class="internal" title="Subsection: Section 4.2 Riemann Sums and Areas">Additional Worked-Out Problems for Riemann Sums and Areas </a></em><div class="autopermalink" data-description="Paragraph"><a href="#additional-worked-problems-integral-riemannSums-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -827,56 +997,147 @@ F(b)-F(a)=\int_a^b f(x)\,dx.
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Practice / Study Problems</span>
 </h3>
 <div class="exercisegroup" id="exercises-riemann-area-2">
-<h4 class="heading"><span class="title">Setting Up Riemann Sums.</span></h4>
+<h4 class="heading"><span class="title">Some True/False Problems.</span></h4>
+<div class="introduction" id="exercises-riemann-area-2-2"><div class="para" id="exercises-riemann-area-2-2-1">Determine whether each statement is true or false and briefly justify your reasoning.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-riemann-area-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
 <div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="prob-riemann-01"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-riemann-01-1-1">Let <span class="process-math">\(f(x)=x^2\)</span> on <span class="process-math">\([0,2]\text{.}\)</span> Use <span class="process-math">\(n\)</span> equal subintervals and right endpoints. Write the Riemann sum <span class="process-math">\(\sum_{i=1}^n f(x_i)\Delta x\)</span> explicitly in terms of <span class="process-math">\(n\text{.}\)</span> (Do not evaluate the limit.)<div class="autopermalink" data-description="Paragraph"><a href="#prob-riemann-01-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="exercise exercise-like" id="tf-acc-01"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-acc-01-1-1">Suppose <span class="process-math">\(r(t)=\sqrt{t+1}\)</span> is the rate of change of temperature in degrees Celsius per hour. Using the ending temperature values at the end of each hour we can approximate the total change in temperature from <span class="process-math">\(t=0\)</span> to <span class="process-math">\(t=4\)</span> to be an increase of <span class="process-math">\(10\)</span> degrees Celsius.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-01-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1"><a href="#prob-riemann-01" title="Copy heading and permalink for Exercise 1" aria-label="Copy heading and permalink for Exercise 1">🔗</a></div></article><article class="exercise exercise-like" id="prob-riemann-02"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-riemann-02-1-1">Let <span class="process-math">\(f(x)=1+x\)</span> on <span class="process-math">\([2,6]\text{.}\)</span> Use <span class="process-math">\(n\)</span> equal subintervals and left endpoints. Write the corresponding Riemann sum in terms of <span class="process-math">\(n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-riemann-02-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="tf-acc-01-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="tf-acc-01-2-1">
+<div class="para">
+<em class="emphasis">False.</em> Given that we are using the ending temperature values, we would need to evaluate <span class="process-math">\(r(t)\)</span> at <span class="process-math">\(t=1,2,3,4\text{,}\)</span> and then multiply each by the width of the subintervals (which is 1 hour) and add them up.</div>
+<div class="displaymath process-math" id="tf-acc-01-2-1-4">
+\begin{equation*}
+\begin{array}{rcl}
+\text{Total Change} \amp =\amp  r(1)(1) + r(2)(1) + r(3)(1) + r(4)(1) \\
+\amp = \amp \sqrt{2} + \sqrt{3} + 2 + \sqrt{5} 
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Exercise 2"><a href="#prob-riemann-02" title="Copy heading and permalink for Exercise 2" aria-label="Copy heading and permalink for Exercise 2">🔗</a></div></article>
+<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-01-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise Group 1–2: Setting Up Riemann Sums"><a href="#exercises-riemann-area-2" title="Copy heading and permalink for Exercise Group 1–2: Setting Up Riemann Sums" aria-label="Copy heading and permalink for Exercise Group 1–2: Setting Up Riemann Sums">🔗</a></div>
+<div class="para" id="tf-acc-01-2-2">Without a calculator, we can see that this is around <span class="process-math">\(1.5 + 1.8 + 2 + 2.3 = 7.6\text{,}\)</span> so the approximation is not as large as 10 degrees Celsius.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-01-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="exercisegroup" id="exercises-riemann-area-3">
-<h4 class="heading"><span class="title">Left and Right Sums.</span></h4>
-<div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="prob-riemann-03"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-riemann-03-1-1">A particle has velocity <span class="process-math">\(v(t)=t^2\)</span> on <span class="process-math">\([0,2]\text{.}\)</span> Compute the left and right Riemann sums with <span class="process-math">\(n=4\)</span> subintervals. Which one is larger, and why?<div class="autopermalink" data-description="Paragraph"><a href="#prob-riemann-03-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 1.1"><a href="#tf-acc-01-2" title="Copy heading and permalink for Solution 1.1" aria-label="Copy heading and permalink for Solution 1.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1"><a href="#tf-acc-01" title="Copy heading and permalink for Exercise 1" aria-label="Copy heading and permalink for Exercise 1">🔗</a></div></article><article class="exercise exercise-like" id="tf-acc-02"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-acc-02-1-1">Suppose <span class="process-math">\(d(x)=9-x^2\)</span> is a denisity function, in grams per centimeter, of a rod of length 3 centimeters (from <span class="process-math">\(x=0\)</span> to <span class="process-math">\(x=3\)</span>). Breaking the rod into 6 pieces of equal length, and using the left endpoint values, we can approximate the total mass of the rod to be <span class="process-math">\(179/8\)</span> grams.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-02-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3"><a href="#prob-riemann-03" title="Copy heading and permalink for Exercise 3" aria-label="Copy heading and permalink for Exercise 3">🔗</a></div></article><article class="exercise exercise-like" id="prob-riemann-04"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-riemann-04-1-1">Let <span class="process-math">\(f(x)=\sqrt{x}\)</span> on <span class="process-math">\([0,4]\text{.}\)</span> Without computing exact values, explain whether the left Riemann sum is an underestimate or overestimate, and do the same for the right Riemann sum.<div class="autopermalink" data-description="Paragraph"><a href="#prob-riemann-04-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="tf-acc-02-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="tf-acc-02-2-1">
+<div class="para">
+<em class="emphasis">False.</em> Given that we are using the left endpoint values, we would need to evaluate <span class="process-math">\(d(x)\)</span> at <span class="process-math">\(x=0,0.5,1,1.5,2,2.5\text{,}\)</span> and then multiply each by the width of the subintervals (which is 0.5 cm) and add them up.</div>
+<div class="displaymath process-math" id="tf-acc-02-2-1-4">
+\begin{equation*}
+\begin{array}{rcl}
+\amp \amp \text{Total Mass} \\
+\amp =\amp  d(0)\tfrac{1}{2} + d(0.5)\tfrac{1}{2} + d(1)\tfrac{1}{2} + d(1.5)\tfrac{1}{2} + d(2)\tfrac{1}{2} + d(2.5)\tfrac{1}{2} \\
+\amp = \amp \tfrac{1}{2}(d(0) + d(0.5) + d(1) + d(1.5) + d(2) + d(2.5)) \\
+\amp = \amp \tfrac{1}{2}(9 + 9-\tfrac{1}{4} + 8 + 9-\tfrac{9}{4} + 5 + 9-\tfrac{25}{4}) \\
+\amp = \amp \tfrac{1}{2}(\tfrac{161}{4}) = \dfrac{161}{8} \text{ grams}
+\end{array}
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Exercise 4"><a href="#prob-riemann-04" title="Copy heading and permalink for Exercise 4" aria-label="Copy heading and permalink for Exercise 4">🔗</a></div></article>
+<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-02-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise Group 3–4: Left and Right Sums"><a href="#exercises-riemann-area-3" title="Copy heading and permalink for Exercise Group 3–4: Left and Right Sums" aria-label="Copy heading and permalink for Exercise Group 3–4: Left and Right Sums">🔗</a></div>
+<div class="para" id="tf-acc-02-2-2">So the approximation is around <span class="process-math">\(161/8\)</span> grams, which is less than the proposed <span class="process-math">\(179/8\)</span> grams.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-02-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="exercisegroup" id="exercises-riemann-area-4">
-<h4 class="heading"><span class="title">Area Interpretation.</span></h4>
-<div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="prob-riemann-05"><h5 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-riemann-05-1-1">Sketch a graph of a nonnegative function on <span class="process-math">\([a,b]\)</span> and explain (in a sentence or two) why the sum <span class="process-math">\(\sum f(x_i)\Delta x\)</span> represents the total area of rectangles.<div class="autopermalink" data-description="Paragraph"><a href="#prob-riemann-05-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 2.1"><a href="#tf-acc-02-2" title="Copy heading and permalink for Solution 2.1" aria-label="Copy heading and permalink for Solution 2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 2"><a href="#tf-acc-02" title="Copy heading and permalink for Exercise 2" aria-label="Copy heading and permalink for Exercise 2">🔗</a></div></article><article class="exercise exercise-like" id="tf-acc-04"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-acc-04-1-1">A Riemann sum always gives the exact total change of a quantity on an interval.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-04-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5"><a href="#prob-riemann-05" title="Copy heading and permalink for Exercise 5" aria-label="Copy heading and permalink for Exercise 5">🔗</a></div></article><article class="exercise exercise-like" id="prob-riemann-06"><h5 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-riemann-06-1-1">Suppose <span class="process-math">\(f(x)\ge 0\)</span> on <span class="process-math">\([a,b]\text{.}\)</span> Describe in words what <span class="process-math">\(\displaystyle \int_a^b f(x)\,dx\)</span> represents geometrically.<div class="autopermalink" data-description="Paragraph"><a href="#prob-riemann-06-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="tf-acc-04-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-acc-04-2-1">
+<em class="emphasis">False.</em> A Riemann sum is usually an approximation unless special information makes it exact.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-04-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6"><a href="#prob-riemann-06" title="Copy heading and permalink for Exercise 6" aria-label="Copy heading and permalink for Exercise 6">🔗</a></div></article>
+<div class="autopermalink" data-description="Solution 3.1"><a href="#tf-acc-04-2" title="Copy heading and permalink for Solution 3.1" aria-label="Copy heading and permalink for Solution 3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 3"><a href="#tf-acc-04" title="Copy heading and permalink for Exercise 3" aria-label="Copy heading and permalink for Exercise 3">🔗</a></div></article><article class="exercise exercise-like" id="tf-acc-05"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-acc-05-1-1">If we partition <span class="process-math">\([a,b]\)</span> into <span class="process-math">\(n\)</span> equal subintervals, then each one has width <span class="process-math">\(\Delta t = \dfrac{b-a}{n}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-05-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise Group 5–6: Area Interpretation"><a href="#exercises-riemann-area-4" title="Copy heading and permalink for Exercise Group 5–6: Area Interpretation" aria-label="Copy heading and permalink for Exercise Group 5–6: Area Interpretation">🔗</a></div>
+<div class="solutions"><details id="tf-acc-05-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-acc-05-2-1">
+<em class="emphasis">True.</em> Equal-width subintervals divide the interval length <span class="process-math">\(b-a\)</span> evenly.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-05-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="exercisegroup" id="exercises-riemann-area-5">
-<h4 class="heading"><span class="title">Upper and Lower Bounds.</span></h4>
-<div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="prob-riemann-07"><h5 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-riemann-07-1-1">The function <span class="process-math">\(f(x)=\sin(x)\)</span> is increasing on <span class="process-math">\([0,\tfrac{\pi}{2}]\text{.}\)</span> Explain why the right Riemann sum is an overestimate and the left Riemann sum is an underestimate on this interval.<div class="autopermalink" data-description="Paragraph"><a href="#prob-riemann-07-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.1"><a href="#tf-acc-05-2" title="Copy heading and permalink for Solution 4.1" aria-label="Copy heading and permalink for Solution 4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 4"><a href="#tf-acc-05" title="Copy heading and permalink for Exercise 4" aria-label="Copy heading and permalink for Exercise 4">🔗</a></div></article><article class="exercise exercise-like" id="tf-acc-07"><h5 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-acc-07-1-1">If <span class="process-math">\(f\)</span> is increasing on <span class="process-math">\([a,b]\text{,}\)</span> then the left Riemann sum and the lower Riemann sum will yield the same answer.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-07-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 7"><a href="#prob-riemann-07" title="Copy heading and permalink for Exercise 7" aria-label="Copy heading and permalink for Exercise 7">🔗</a></div></article><article class="exercise exercise-like" id="prob-riemann-08"><h5 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-riemann-08-1-1">Estimate <span class="process-math">\(\displaystyle \int_0^1 x^2\,dx\)</span> using <span class="process-math">\(n=10\)</span> left rectangles and <span class="process-math">\(n=10\)</span> right rectangles. Then average the two values.<div class="autopermalink" data-description="Paragraph"><a href="#prob-riemann-08-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="tf-acc-07-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-acc-07-2-1">
+<em class="emphasis">True.</em> On each subinterval the left endpoint gives the smallest function value, so rectangles lie below the curve.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-07-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 8"><a href="#prob-riemann-08" title="Copy heading and permalink for Exercise 8" aria-label="Copy heading and permalink for Exercise 8">🔗</a></div></article>
+<div class="autopermalink" data-description="Solution 5.1"><a href="#tf-acc-07-2" title="Copy heading and permalink for Solution 5.1" aria-label="Copy heading and permalink for Solution 5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 5"><a href="#tf-acc-07" title="Copy heading and permalink for Exercise 5" aria-label="Copy heading and permalink for Exercise 5">🔗</a></div></article><article class="exercise exercise-like" id="tf-acc-08"><h5 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-acc-08-1-1">If <span class="process-math">\(f\)</span> is decreasing on <span class="process-math">\([a,b]\text{,}\)</span> then the left Riemann sum overestimates the area under <span class="process-math">\(y=f(x)\)</span> on <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-08-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise Group 7–8: Upper and Lower Bounds"><a href="#exercises-riemann-area-5" title="Copy heading and permalink for Exercise Group 7–8: Upper and Lower Bounds" aria-label="Copy heading and permalink for Exercise Group 7–8: Upper and Lower Bounds">🔗</a></div>
+<div class="solutions"><details id="tf-acc-08-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-acc-08-2-1">
+<em class="emphasis">True.</em> For a decreasing function, left endpoints give larger values, so rectangles lie above the curve.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-08-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.1"><a href="#tf-acc-08-2" title="Copy heading and permalink for Solution 6.1" aria-label="Copy heading and permalink for Solution 6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 6"><a href="#tf-acc-08" title="Copy heading and permalink for Exercise 6" aria-label="Copy heading and permalink for Exercise 6">🔗</a></div></article><article class="exercise exercise-like" id="tf-acc-10"><h5 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-acc-10-1-1">An upper Riemann sum overestimates the accumulated change on <span class="process-math">\([a,b]\)</span> of <span class="process-math">\(f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-acc-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-acc-10-2-1">
+<em class="emphasis">True.</em> Upper sums use the maximum value of <span class="process-math">\(f\)</span> on each subinterval, so rectangles lie above the curve.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 7.1"><a href="#tf-acc-10-2" title="Copy heading and permalink for Solution 7.1" aria-label="Copy heading and permalink for Solution 7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 7"><a href="#tf-acc-10" title="Copy heading and permalink for Exercise 7" aria-label="Copy heading and permalink for Exercise 7">🔗</a></div></article><article class="exercise exercise-like" id="tf-acc-11"><h5 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-acc-11-1-1">If <span class="process-math">\(f(x)\ge 0\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> then any Riemann sum approximation of the total change on <span class="process-math">\([a,b]\)</span> must be nonnegative.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-acc-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-acc-11-2-1">
+<em class="emphasis">True.</em> Each term <span class="process-math">\(f(x_i)\Delta x\)</span> is nonnegative, so the sum is nonnegative.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 8.1"><a href="#tf-acc-11-2" title="Copy heading and permalink for Solution 8.1" aria-label="Copy heading and permalink for Solution 8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 8"><a href="#tf-acc-11" title="Copy heading and permalink for Exercise 8" aria-label="Copy heading and permalink for Exercise 8">🔗</a></div></article><article class="exercise exercise-like" id="tf-acc-13"><h5 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-acc-13-1-1">For equal subintervals, doubling the number of rectangles cuts <span class="process-math">\(\Delta x\)</span> in half.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-acc-13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-acc-13-2-1">
+<em class="emphasis">True.</em> Since <span class="process-math">\(\Delta x=\dfrac{b-a}{n}\text{,}\)</span> replacing <span class="process-math">\(n\)</span> with <span class="process-math">\(2n\)</span> halves the width.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 9.1"><a href="#tf-acc-13-2" title="Copy heading and permalink for Solution 9.1" aria-label="Copy heading and permalink for Solution 9.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 9"><a href="#tf-acc-13" title="Copy heading and permalink for Exercise 9" aria-label="Copy heading and permalink for Exercise 9">🔗</a></div></article><article class="exercise exercise-like" id="tf-acc-15"><h5 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-acc-15-1-1">If <span class="process-math">\(f(x)=c\)</span> is constant on <span class="process-math">\([a,b]\text{,}\)</span> then every left or right Riemann sum with equal widths gives the exact total change <span class="process-math">\(c(b-a)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-acc-15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-acc-15-2-1">
+<em class="emphasis">True.</em> All rectangles have height <span class="process-math">\(c\text{,}\)</span> so the sum is exactly <span class="process-math">\(c\)</span> times the interval length.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 10.1"><a href="#tf-acc-15-2" title="Copy heading and permalink for Solution 10.1" aria-label="Copy heading and permalink for Solution 10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 10"><a href="#tf-acc-15" title="Copy heading and permalink for Exercise 10" aria-label="Copy heading and permalink for Exercise 10">🔗</a></div></article><article class="exercise exercise-like" id="tf-acc-16"><h5 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-acc-16-1-1">If the rate function is measured in liters per second and time is measured in seconds, then the Riemann sum has units of liters.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-acc-16-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-acc-16-2-1">
+<em class="emphasis">True.</em> The rate function gives liters/second, and multiplying by seconds gives liters, which is the total change in volume.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 11.1"><a href="#tf-acc-16-2" title="Copy heading and permalink for Solution 11.1" aria-label="Copy heading and permalink for Solution 11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 11"><a href="#tf-acc-16" title="Copy heading and permalink for Exercise 11" aria-label="Copy heading and permalink for Exercise 11">🔗</a></div></article><article class="exercise exercise-like" id="tf-acc-17"><h5 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="tf-acc-17-1-1">If <span class="process-math">\(f\)</span> is continuous and <span class="process-math">\(f(x)\ge 0\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> then increasing the number of subintervals always makes a left Riemann sum larger.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="tf-acc-17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="tf-acc-17-2-1">
+<em class="emphasis">False.</em> Left sums do not necessarily increase with more subintervals unless additional conditions (like an increasing function) are guaranteed.<div class="autopermalink" data-description="Paragraph"><a href="#tf-acc-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 12.1"><a href="#tf-acc-17-2" title="Copy heading and permalink for Solution 12.1" aria-label="Copy heading and permalink for Solution 12.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 12"><a href="#tf-acc-17" title="Copy heading and permalink for Exercise 12" aria-label="Copy heading and permalink for Exercise 12">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 1–12: Some True/False Problems"><a href="#exercises-riemann-area-2" title="Copy heading and permalink for Exercise Group 1–12: Some True/False Problems" aria-label="Copy heading and permalink for Exercise Group 1–12: Some True/False Problems">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Exercises: Practice / Study Problems"><a href="#exercises-riemann-area" title="Copy heading and permalink for Exercises: Practice / Study Problems" aria-label="Copy heading and permalink for Exercises: Practice / Study Problems">🔗</a></div></section><div class="autopermalink" data-description="Section 4.2: Riemann Sums and Areas"><a href="#sec-integral-riemannSums" title="Copy heading and permalink for Section 4.2: Riemann Sums and Areas" aria-label="Copy heading and permalink for Section 4.2: Riemann Sums and Areas">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">

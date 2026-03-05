@@ -102,15 +102,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.15';
+eBookConfig.runestone_version = '7.11.17';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/prefix-runtime.86a1bdf80f338ffc.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.74f6fa0c85f09c79.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -507,12 +507,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-integral-riemannSums.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Riemann Sums and Areas</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-review-derivatives" class="internal"><span class="title">Review: Derivatives as Rates of Change</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-accumulation" class="internal"><span class="title">Accumulation of Influence</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-distance-riemann" class="internal"><span class="title">Riemann Sums for Distance</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-total-change" class="internal"><span class="title">The Integral as Total Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-accumulated-change-idea" class="internal"><span class="title">The Idea of Accumulated Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#subsec-riemann-sum-terminology" class="internal"><span class="title">Riemann Sum Terminology</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-area" class="internal"><span class="title">Area Under a Curve</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#ssec-integral-approx-sin-squared" class="internal"><span class="title">Approximating an Integral with Upper and Lower Sums</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#additional-worked-problems-integral-riemannSums" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-riemannSums.html#exercises-riemann-area" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
 </ul>
@@ -589,7 +586,36 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-integral"><h2 class="heading">
 <span class="type">Chapter</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integrals and the Fundamental Theorem of Calculus</span>
 </h2>
-<nav class="summary-links"><ul>
+<section class="introduction" id="ch-integral-2"><div class="para" id="ch-integral-2-1">A function <span class="process-math">\(y=f(x)\)</span> has a derivative <span class="process-math">\(f'(c)\)</span> with several complementary meanings. We will lean on these meanings as we introduce the integral.<div class="autopermalink" data-description="Paragraph"><a href="#ch-integral-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="ch-integral-2-2">
+<li id="ch-integral-2-2-1">
+<div class="para" id="ch-integral-2-2-1-1">
+<em class="emphasis">Physical:</em> If <span class="process-math">\(y\)</span> depends on <span class="process-math">\(x\text{,}\)</span> then <span class="process-math">\(f'(c)\)</span> is the rate of change of <span class="process-math">\(y\)</span> per tiny change in <span class="process-math">\(x\text{,}\)</span> starting at <span class="process-math">\(x=c\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-integral-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ch-integral-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-integral-2-2-2">
+<div class="para" id="ch-integral-2-2-2-1">
+<em class="emphasis">Geometric:</em> <span class="process-math">\(f'(c)\)</span> is the slope of the graph <span class="process-math">\(y=f(x)\)</span> at the point <span class="process-math">\((c,f(c))\text{,}\)</span> meaning the tangent line near <span class="process-math">\(x=c\)</span> is <span class="process-math">\(y=f(c)+f'(c)(x-c)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-integral-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ch-integral-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-integral-2-2-3">
+<div class="para" id="ch-integral-2-2-3-1">
+<em class="emphasis">Numerical:</em> For <span class="process-math">\(x\)</span> near <span class="process-math">\(c\text{,}\)</span> the derivative is approximated by a difference quotient: <span class="process-math">\(f'(c)\approx \dfrac{f(x)-f(c)}{x-c}\text{.}\)</span> This matches the linear approximation <span class="process-math">\(f(x)\approx f(c)+f'(c)(x-c)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-integral-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ch-integral-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-integral-2-2-4">
+<div class="para" id="ch-integral-2-2-4-1">
+<em class="emphasis">Algebraic:</em> We define <span class="process-math">\(f'(c)=\displaystyle \lim_{x\to c}\dfrac{f(x)-f(c)}{x-c}\)</span> and use derivative rules to compute <span class="process-math">\(f'(x)\)</span> from a formula.<div class="autopermalink" data-description="Paragraph"><a href="#ch-integral-2-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ch-integral-2-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="ch-integral-2-3">The physical idea is the driving one: derivatives describe change, so they are essential in any system that evolves. Once a situation is translated into a derivative statement, we can use numerical approximations or algebraic rules to answer questions. For example, to find maximum values of <span class="process-math">\(f(x)\text{,}\)</span> we look for places where the tangent slope is zero, so we solve <span class="process-math">\(f'(x)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ch-integral-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><nav class="summary-links"><ul>
 <li><a href="sec-integral-antiderivatives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Antiderivatives</span></a></li>
 <li><a href="sec-integral-riemannSums.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Riemann Sums and Areas</span></a></li>
 <li><a href="sec-integral-defInt.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The Definite Integral</span></a></li>

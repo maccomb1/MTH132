@@ -5794,7 +5794,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.9",
   "title": "Additional Worked-Out Problems",
-  "body": " Additional Worked-Out Problems   Motion in Physics    The position of a particle moving along a line is given by   where is measured in meters and in seconds.  (a) Find all times when the velocity equals .  (b) Determine whether the particle is moving to the right or to the left at .  (c) Find all times when the particle has acceleration .    (a) The velocity is the derivative of the position function:   Setting the velocity equal to zero gives   Thus, the velocity equals zero at and .  (b) To determine the direction of motion at , we can evaluate the velocity at :   Since , the particle is moving to the right at .  (c) The acceleration is the derivative of the velocity function:   Setting the acceleration equal to gives   So the particle has acceleration at .      A particle moves vertically according to , where is measured in meters, in seconds, and is a positive constant.  If the particle reaches maximum height at seconds, find:  (a) the value of .  (b) the maximum height reached.    (a) The velocity is the derivative of the position function:   Since the particle reaches maximum height at , the velocity must equal zero at :   (b) To find the maximum height, we can evaluate the position function at using the value of we just found:   So the maximum height reached is meters.      One of the curves below represents the graph of a position function, and the other curve represents the graph of the corresponding velocity function. Which curve is which?   A graph with two curves (one solid red and one dashed blue) plotted against time. The dashed curve has a local minimum and a local maximum, while the solid curve crosses the t-axis at the same t-values where the dashed curve has horizontal tangents.     First consider the possibility that the solid red curve is the graph of . If that is the case, then the graph of the derivative (the velocity function) must satisfy:    The graph of must pass through , since the solid red curve has a horizontal tangent at .    The graph of must be above the -axis for , since the solid red curve is increasing there.    The graph of must be below the -axis for , since the solid red curve is decreasing there.    Although the dashed blue curve may pass through , the rest of these sign conditions do not match it. Therefore, the solid red curve cannot be .  Next, assume the dashed blue curve is the position function . Let and be the -values where the dashed blue curve has its local minimum and local maximum, respectively. Then the derivative (the velocity function) must satisfy:    The graph of must cross the -axis at and , since the dashed blue curve has horizontal tangents at those points.    The graph of must be above the -axis on , since the dashed blue curve is increasing there.    The graph of must be below the -axis for and for , since the dashed blue curve is decreasing on those intervals.    This description matches the solid red curve. Therefore, the dashed blue curve is and the solid red curve is .      The graph below shows the velocity of a particle moving along a horizontal line for the open interval .   A piecewise linear graph of velocity v versus time t on the interval (0,10). The graph is below the t-axis for early times, crosses v=0 at t=2, stays above the axis until t=7, lies on v=0 from t=7 to t=9, and then rises above the axis again from t=9 to t=10. Several corners indicate times where the slope changes abruptly.   (a) When does the particle move forward?  (b) When does the particle slow down?  (c) When is the particle’s acceleration positive?  (d) When does the particle stand still for more than an instant?    (a) The particle moves forward when , meaning the velocity graph is above the -axis. From the graph, this occurs on .  (b) The particle slows down when its speed is decreasing. If (moving forward), slowing down means is decreasing, so . If (moving backward), slowing down means is increasing toward zero, so .  From the graph, on and the velocity is increasing there, so the particle slows down on . Also, on and the velocity is decreasing on , so the particle slows down on . Therefore, the particle slows down on .  At times where the velocity graph has corners, the derivative (acceleration) is not defined, so those times should not be included.  (c) The acceleration is positive when , meaning the velocity graph has positive slope. From the graph, this occurs on (excluding any corner points).  (d) The particle stands still when . From the graph, this happens at and for . Standing still for more than an instant means an interval of time, so the answer is .      Related Rates  test    Linear Approximation and L'Hopital's Rule  test    Extrema  test    Mean Value Theorem  test    Curve Sketching Part 1    Let . Find the critical points, intervals of increase\/decrease, concavity, and inflection points. Then sketch a graph.      Let . Find where is increasing or decreasing and where it is concave up or concave down. Then sketch a graph.      A differentiable function has critical points at and . The sign of is positive on , negative on , and positive on . Describe the behavior of the graph and classify the critical points.      Curve Sketching Part 2  test more    Optimization Problems  test   "
+  "body": " Additional Worked-Out Problems   Motion in Physics    The position of a particle moving along a line is given by   where is measured in meters and in seconds.  (a) Find all times when the velocity equals .  (b) Determine whether the particle is moving to the right or to the left at .  (c) Find all times when the particle has acceleration .    (a) The velocity is the derivative of the position function:   Setting the velocity equal to zero gives   Thus, the velocity equals zero at and .  (b) To determine the direction of motion at , we can evaluate the velocity at :   Since , the particle is moving to the right at .  (c) The acceleration is the derivative of the velocity function:   Setting the acceleration equal to gives   So the particle has acceleration at .      A particle moves vertically according to , where is measured in meters, in seconds, and is a positive constant.  If the particle reaches maximum height at seconds, find:  (a) the value of .  (b) the maximum height reached.    (a) The velocity is the derivative of the position function:   Since the particle reaches maximum height at , the velocity must equal zero at :   (b) To find the maximum height, we can evaluate the position function at using the value of we just found:   So the maximum height reached is meters.      One of the curves below represents the graph of a position function, and the other curve represents the graph of the corresponding velocity function. Which curve is which?   A graph with two curves (one solid red and one dashed blue) plotted against time. The dashed curve has a local minimum and a local maximum, while the solid curve crosses the t-axis at the same t-values where the dashed curve has horizontal tangents.     First consider the possibility that the solid red curve is the graph of . If that is the case, then the graph of the derivative (the velocity function) must satisfy:    The graph of must pass through , since the solid red curve has a horizontal tangent at .    The graph of must be above the -axis for , since the solid red curve is increasing there.    The graph of must be below the -axis for , since the solid red curve is decreasing there.    Although the dashed blue curve may pass through , the rest of these sign conditions do not match it. Therefore, the solid red curve cannot be .  Next, assume the dashed blue curve is the position function . Let and be the -values where the dashed blue curve has its local minimum and local maximum, respectively. Then the derivative (the velocity function) must satisfy:    The graph of must cross the -axis at and , since the dashed blue curve has horizontal tangents at those points.    The graph of must be above the -axis on , since the dashed blue curve is increasing there.    The graph of must be below the -axis for and for , since the dashed blue curve is decreasing on those intervals.    This description matches the solid red curve. Therefore, the dashed blue curve is and the solid red curve is .      The graph below shows the velocity of a particle moving along a horizontal line for the open interval .   A piecewise linear graph of velocity v versus time t on the interval (0,10). The graph is below the t-axis for early times, crosses v=0 at t=2, stays above the axis until t=7, lies on v=0 from t=7 to t=9, and then rises above the axis again from t=9 to t=10. Several corners indicate times where the slope changes abruptly.   (a) When does the particle move forward?  (b) When does the particle slow down?  (c) When is the particle’s acceleration positive?  (d) When does the particle stand still for more than an instant?    (a) The particle moves forward when , meaning the velocity graph is above the -axis. From the graph, this occurs on .  (b) The particle slows down when its speed is decreasing. If (moving forward), slowing down means is decreasing, so . If (moving backward), slowing down means is increasing toward zero, so .  From the graph, on and the velocity is increasing there, so the particle slows down on . Also, on and the velocity is decreasing on , so the particle slows down on . Therefore, the particle slows down on .  At times where the velocity graph has corners, the derivative (acceleration) is not defined, so those times should not be included.  (c) The acceleration is positive when , meaning the velocity graph has positive slope. From the graph, this occurs on (excluding any corner points).  (d) The particle stands still when . From the graph, this happens at and for . Standing still for more than an instant means an interval of time, so the answer is .      Related Rates    A computer animator creates a circle for which the area of the circle increases at the rate of . Find the rate of change of the circumference of the circle at the time that the radius is mm.    Let , , and denote the changing area, radius, and circumference of the circle at time .  We are given the rate of change of the area:   We are also told that at a particular time, say ,   Our goal is to determine   The circumference of a circle is related to the radius by   Differentiating both sides with respect to gives   Therefore, at time ,   To determine , we relate the radius to the area. The area of a circle is   Differentiating with respect to ,   Solve for :   Substitute the known values at :   Now substitute this into the expression for :   Therefore, when the radius is mm, the circumference is increasing at a rate of mm\/sec.      A hot air balloon is released from its launching area and watched by a crowd in a viewing area feet away from the launch site. What is the vertical speed of the balloon when its distance from the viewing area is feet and that distance is increasing at a rate of ft\/hr?    Let denote the changing height of the balloon and let denote the changing distance from the balloon to the viewing area.  At a particular instant, say , we are given   We want to determine the vertical speed of the balloon at that time:   The viewing area, launch site, and balloon form a right triangle. The base of the triangle is ft, the height is , and the hypotenuse is . By the Pythagorean Theorem,   Differentiate both sides with respect to :   Solving for ,   To evaluate this at , we still need the value of . Using the original relationship,   Solve for the height:   Now substitute the known quantities into the formula for :   Simplifying,   Therefore, when the balloon is feet from the viewing area, its vertical speed is ft\/hr.      A spotlight is on the ground ft away from a wall and a ft tall person is walking toward the wall at a rate of ft\/sec.  How fast is the height of the shadow changing when the person is ft from the wall?   A spotlight on the ground shines toward a wall 20 feet away. A person stands between the spotlight and the wall, casting a shadow on the wall. The person is 6 feet tall. The distance from the spotlight to the person is labeled x, the distance from the person to the wall is 20 minus x, and the height of the shadow on the wall is labeled y.      Let   be the distance of the person from the spotlight,  be the distance of the person from the wall, and  be the height of the shadow on the wall.   Because the wall is ft from the spotlight,   The person is walking toward the wall at a rate of ft\/sec, so   At the instant of interest,   We want to determine the rate of change of the height of the shadow:   From the geometry of the situation there are two similar triangles: the large triangle formed by the spotlight and the shadow on the wall, and the smaller triangle formed by the spotlight and the person. Using similar triangles,   Solving for ,   Differentiate with respect to :   To determine , differentiate the relationship :   Since ,   Now evaluate the derivative when :   Therefore the height of the shadow is changing at a rate of ft\/sec. The negative sign indicates that the height of the shadow is decreasing at that moment.      A flexible cylinder has been built which can change its volume by changing its height or its radius. However, design constraints require that its height is always twice its radius.  Find the rate of change of the volume of the cylinder when its radius is feet and the radius is increasing at a rate of ft\/min.    Let denote the changing radius of the cylinder, denote the changing height, and denote the volume.  We are given the design constraint   At a particular time, say ,   We want to determine the rate of change of the volume at that same time:   The volume of a cylinder is   Using the relationship , we can rewrite the volume in terms of the radius alone:   Differentiate with respect to :   Now evaluate this derivative at :   Therefore, when the radius is ft, the volume is increasing at a rate of       Linear Approximation and L'Hopital's Rule  test    Extrema  test    Mean Value Theorem  test    Curve Sketching Part 1    Let . Find the critical points, intervals of increase\/decrease, concavity, and inflection points. Then sketch a graph.      Let . Find where is increasing or decreasing and where it is concave up or concave down. Then sketch a graph.      A differentiable function has critical points at and . The sign of is positive on , negative on , and positive on . Describe the behavior of the graph and classify the critical points.      Curve Sketching Part 2  test more    Optimization Problems  test   "
 },
 {
   "id": "prob-motion-derivApp",
@@ -5833,11 +5833,47 @@ var ptx_lunr_docs = [
   "body": "  The graph below shows the velocity of a particle moving along a horizontal line for the open interval .   A piecewise linear graph of velocity v versus time t on the interval (0,10). The graph is below the t-axis for early times, crosses v=0 at t=2, stays above the axis until t=7, lies on v=0 from t=7 to t=9, and then rises above the axis again from t=9 to t=10. Several corners indicate times where the slope changes abruptly.   (a) When does the particle move forward?  (b) When does the particle slow down?  (c) When is the particle’s acceleration positive?  (d) When does the particle stand still for more than an instant?    (a) The particle moves forward when , meaning the velocity graph is above the -axis. From the graph, this occurs on .  (b) The particle slows down when its speed is decreasing. If (moving forward), slowing down means is decreasing, so . If (moving backward), slowing down means is increasing toward zero, so .  From the graph, on and the velocity is increasing there, so the particle slows down on . Also, on and the velocity is decreasing on , so the particle slows down on . Therefore, the particle slows down on .  At times where the velocity graph has corners, the derivative (acceleration) is not defined, so those times should not be included.  (c) The acceleration is positive when , meaning the velocity graph has positive slope. From the graph, this occurs on (excluding any corner points).  (d) The particle stands still when . From the graph, this happens at and for . Standing still for more than an instant means an interval of time, so the answer is .   "
 },
 {
+  "id": "ex-related-rates-circle-circumference",
+  "level": "2",
+  "url": "sec-derivApp-ww.html#ex-related-rates-circle-circumference",
+  "type": "Example",
+  "number": "3.9.5",
+  "title": "",
+  "body": "  A computer animator creates a circle for which the area of the circle increases at the rate of . Find the rate of change of the circumference of the circle at the time that the radius is mm.    Let , , and denote the changing area, radius, and circumference of the circle at time .  We are given the rate of change of the area:   We are also told that at a particular time, say ,   Our goal is to determine   The circumference of a circle is related to the radius by   Differentiating both sides with respect to gives   Therefore, at time ,   To determine , we relate the radius to the area. The area of a circle is   Differentiating with respect to ,   Solve for :   Substitute the known values at :   Now substitute this into the expression for :   Therefore, when the radius is mm, the circumference is increasing at a rate of mm\/sec.   "
+},
+{
+  "id": "ex-related-rates-balloon",
+  "level": "2",
+  "url": "sec-derivApp-ww.html#ex-related-rates-balloon",
+  "type": "Example",
+  "number": "3.9.6",
+  "title": "",
+  "body": "  A hot air balloon is released from its launching area and watched by a crowd in a viewing area feet away from the launch site. What is the vertical speed of the balloon when its distance from the viewing area is feet and that distance is increasing at a rate of ft\/hr?    Let denote the changing height of the balloon and let denote the changing distance from the balloon to the viewing area.  At a particular instant, say , we are given   We want to determine the vertical speed of the balloon at that time:   The viewing area, launch site, and balloon form a right triangle. The base of the triangle is ft, the height is , and the hypotenuse is . By the Pythagorean Theorem,   Differentiate both sides with respect to :   Solving for ,   To evaluate this at , we still need the value of . Using the original relationship,   Solve for the height:   Now substitute the known quantities into the formula for :   Simplifying,   Therefore, when the balloon is feet from the viewing area, its vertical speed is ft\/hr.   "
+},
+{
+  "id": "ex-related-rates-shadow-wall",
+  "level": "2",
+  "url": "sec-derivApp-ww.html#ex-related-rates-shadow-wall",
+  "type": "Example",
+  "number": "3.9.7",
+  "title": "",
+  "body": "  A spotlight is on the ground ft away from a wall and a ft tall person is walking toward the wall at a rate of ft\/sec.  How fast is the height of the shadow changing when the person is ft from the wall?   A spotlight on the ground shines toward a wall 20 feet away. A person stands between the spotlight and the wall, casting a shadow on the wall. The person is 6 feet tall. The distance from the spotlight to the person is labeled x, the distance from the person to the wall is 20 minus x, and the height of the shadow on the wall is labeled y.      Let   be the distance of the person from the spotlight,  be the distance of the person from the wall, and  be the height of the shadow on the wall.   Because the wall is ft from the spotlight,   The person is walking toward the wall at a rate of ft\/sec, so   At the instant of interest,   We want to determine the rate of change of the height of the shadow:   From the geometry of the situation there are two similar triangles: the large triangle formed by the spotlight and the shadow on the wall, and the smaller triangle formed by the spotlight and the person. Using similar triangles,   Solving for ,   Differentiate with respect to :   To determine , differentiate the relationship :   Since ,   Now evaluate the derivative when :   Therefore the height of the shadow is changing at a rate of ft\/sec. The negative sign indicates that the height of the shadow is decreasing at that moment.   "
+},
+{
+  "id": "ex-related-rates-cylinder",
+  "level": "2",
+  "url": "sec-derivApp-ww.html#ex-related-rates-cylinder",
+  "type": "Example",
+  "number": "3.9.8",
+  "title": "",
+  "body": "  A flexible cylinder has been built which can change its volume by changing its height or its radius. However, design constraints require that its height is always twice its radius.  Find the rate of change of the volume of the cylinder when its radius is feet and the radius is increasing at a rate of ft\/min.    Let denote the changing radius of the cylinder, denote the changing height, and denote the volume.  We are given the design constraint   At a particular time, say ,   We want to determine the rate of change of the volume at that same time:   The volume of a cylinder is   Using the relationship , we can rewrite the volume in terms of the radius alone:   Differentiate with respect to :   Now evaluate this derivative at :   Therefore, when the radius is ft, the volume is increasing at a rate of    "
+},
+{
   "id": "prob-cs1-poly",
   "level": "2",
   "url": "sec-derivApp-ww.html#prob-cs1-poly",
   "type": "Example",
-  "number": "3.9.5",
+  "number": "3.9.9",
   "title": "",
   "body": "  Let . Find the critical points, intervals of increase\/decrease, concavity, and inflection points. Then sketch a graph.   "
 },
@@ -5846,7 +5882,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-derivApp-ww.html#prob-cs1-rational",
   "type": "Example",
-  "number": "3.9.6",
+  "number": "3.9.10",
   "title": "",
   "body": "  Let . Find where is increasing or decreasing and where it is concave up or concave down. Then sketch a graph.   "
 },
@@ -5855,7 +5891,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-derivApp-ww.html#prob-cs1-sign-chart",
   "type": "Example",
-  "number": "3.9.7",
+  "number": "3.9.11",
   "title": "",
   "body": "  A differentiable function has critical points at and . The sign of is positive on , negative on , and positive on . Describe the behavior of the graph and classify the critical points.   "
 },
@@ -6136,7 +6172,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.2",
   "title": "Riemann Sums and Areas",
-  "body": " Riemann Sums and Areas    Connect the definite integral to accumulation: total change from a rate of change.  Approximate a definite integral using Riemann sums (left, right, and “upper\/lower” estimates).  Interpret a definite integral geometrically as (signed) area under a curve.  Set up from a real-world description involving small increments .  Use upper and lower sums to bound an integral and estimate a value to a specified accuracy.     Review: Derivatives as Rates of Change  A function has a derivative with several complementary meanings. We will lean on these meanings as we introduce the integral.     Physical: If depends on , then is the rate of change of per tiny change in , starting at .     Geometric:  is the slope of the graph at the point , meaning the tangent line near is .     Numerical: For near , the derivative is approximated by a difference quotient: . This matches the linear approximation .     Algebraic: We define and use derivative rules to compute from a formula.    The physical idea is the driving one: derivatives describe change, so they are essential in any system that evolves. Once a situation is translated into a derivative statement, we can use numerical approximations or algebraic rules to answer questions. For example, to find maximum values of , we look for places where the tangent slope is zero, so we solve .    Accumulation of Influence  In the previous section we reversed differentiation algebraically: given a function , we looked for an antiderivative with . Now we will build a numerical definition of antiderivative that works even when no simple formula exists.  Think of as the influence on a quantity . Near , the derivative relationship says , so   A small input change produces a small output change controlled by . Adding many small changes gives the total change in . This “add up tiny effects” viewpoint is what the definite integral will formalize.  Here are several examples of “accumulation” in everyday language:   Position is the cumulative effect of velocity.  Velocity is the cumulative effect of acceleration.  Temperature is the cumulative effect of warming and cooling rates.  Energy used is the cumulative effect of power (wattage) over time.  Total mass is the cumulative effect of density over volume.  Total force is the cumulative effect of pressure over an area.  Population is the cumulative effect of net growth rate over time.  Total cost is the cumulative effect of marginal cost as production increases.     Riemann Sums for Distance  To make accumulation computable, we introduce a new operation: the definite integral . We will define it numerically as a limit of approximations.  Imagine a toy car whose velocity is (in meters per second) over . If is position and , then the total distance traveled by time is . Over a short time interval, distance is approximately velocity times time: .  A very rough estimate would treat the velocity as constant at the final value , giving , which is far too large because the car starts at rest. To improve the estimate, split into many short intervals.  For example, take subintervals, each of width . Using right endpoints , we get a right Riemann sum:   Since is increasing, sampling at the right endpoints gives an overestimate. Sampling at the left endpoints gives an underestimate:   So lies between 2.47 and 2.87. If we increase , the rectangles get thinner and the estimates improve. This motivates the definition of the integral as a limit.   Definite Integral (Riemann Sum Definition)   Let be a function on . Partition into subintervals of equal width , and choose a sample point in each subinterval. If the limit exists as , we define     The symbol is an elongated for “sum.” The reminds us that is becoming very small.  For this particular example we can also check against an algebraic antiderivative. Since and , we have , so , which lies between the two estimates above.    The Integral as Total Change  The distance story is one example of a more general idea. If is a rate of change of some quantity , meaning , then adding up tiny changes produces the total change .   You can read this as: “the total change equals the accumulated rate of change.” Later, we will prove this relationship (and learn fast techniques for computing integrals) in the Fundamental Theorem of Calculus.    Area Under a Curve  Now comes one of the most useful interpretations of the integral. Suppose on . Then is the area under the graph above the -axis from to .  To see why, approximate the area with rectangles. Over each small subinterval, the area of a rectangle is (height) (width) . Adding these areas produces the same type of Riemann sum we used for distance. Taking a limit gives the exact area.    Interpret as an area, and connect it to the distance example.    Since on , the integral equals the area under above . Approximating with right-endpoint rectangles produces the same sum we computed for distance with velocity . The area and the distance are numerically equal because both are defined by the same limiting process: in each case we add up terms of the form “height” “width.”    In this section we are focusing on functions that stay nonnegative, so “area under the curve” matches the integral directly. Later, when a function dips below the axis, the integral still makes sense but it represents signed area (area above minus area below).    Approximating an Integral with Upper and Lower Sums  Sometimes we want a numerical value of an integral even when we do not yet have a quick algebraic method. Upper and lower Riemann sums give guaranteed bounds.    Approximate to one decimal place. (That is, find a value within .)    The function increases on and decreases on . So an upper estimate uses right endpoints on the first half and left endpoints on the second half. A lower estimate does the opposite.  Take equal subintervals, so . A computed upper sum gives about 1.60 and a computed lower sum gives about 1.54, so   Averaging the bounds gives a good estimate: , which is certainly accurate to one decimal place.  (Later, once we have more integral tools, we can compute this exactly and confirm the approximation.)      Additional Worked-Out Examples  To keep this section at a reasonable length, we include only a few representative examples directly in the text. If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional fully worked-out examples are available via:  Additional Worked-Out Problems for Riemann Sums and Areas      Practice \/ Study Problems   Setting Up Riemann Sums    Let on . Use equal subintervals and right endpoints. Write the Riemann sum explicitly in terms of . (Do not evaluate the limit.)      Let on . Use equal subintervals and left endpoints. Write the corresponding Riemann sum in terms of .      Left and Right Sums    A particle has velocity on . Compute the left and right Riemann sums with subintervals. Which one is larger, and why?      Let on . Without computing exact values, explain whether the left Riemann sum is an underestimate or overestimate, and do the same for the right Riemann sum.      Area Interpretation    Sketch a graph of a nonnegative function on and explain (in a sentence or two) why the sum represents the total area of rectangles.      Suppose on . Describe in words what represents geometrically.      Upper and Lower Bounds    The function is increasing on . Explain why the right Riemann sum is an overestimate and the left Riemann sum is an underestimate on this interval.      Estimate using left rectangles and right rectangles. Then average the two values.      "
+  "body": " Riemann Sums and Areas    Understand the idea of accumulated change: using a rate of change function to estimate the total change of a quantity over an interval.  Approximate total change when the rate is not constant by breaking an interval into subintervals and summing products of rate and interval width.  Define a Riemann sum and identify its components, including subintervals, widths, and sample points.  Distinguish between left, right, upper, and lower Riemann sums and explain how the choice of sample point affects an estimate.  Compute Riemann sums for functions given by formulas or tables of values.  Interpret Riemann sums geometrically as approximations of the area under a curve using rectangles.  Explain how increasing the number of subintervals improves the accuracy of a Riemann sum approximation.     The Idea of Accumulated Change  In the previous chapter we introduced antiderivatives as the reverse of differentiation and we showed how to find them algebraically. Now we shift perspective. Instead of starting with a formula and reversing it, we begin with a rate of change (again, think derivative) and ask: How much total change occurs over an interval?   Suppose a quantity changes at a rate . That is,   If we know the rate of change at each point, how can we compute the total change in from to ?  From a previous physical science class I am sure that many will remember:   Or if the rate is not a rate of change of distance, but a rate of change of some other quantity, we can still say:   This works when the rate is constant, but what if the rate changes? When this occurs, we can approximate the total change by breaking the interval into many pieces. Let's see an example of this in action.    Suppose we have a car and the following information about its instantaneous velocity, in meters per second, on the time interval seconds. Use the ending velocity values to give your best estimate of the distance traveled during the time interval .          We can use the formula to get a rough estimate of the distance traveled. If we treat the velocity as constant at the final value, we get meters, which probably is an overestimate because the car starts at a lower speed. The problem specified only the starting and ending velocities, so we have no information about how the velocity changes in between and we were told to use the ending velocity values, so this is the best estimate we can give with the information provided.           If we break the time interval into two pieces, we can get a better estimate. On the first half of the time interval ( ), we can treat the velocity as constant at 14 m\/s (we were told to use the ending velocity values), giving an estimate of meters. On the second half of the time interval ( ), we can treat the velocity as constant at 20 m\/s (again we were told to use the ending velocity values), giving an estimate of meters. Adding these estimates gives a total distance traveled of about meters.           Now we can break the time interval into four pieces, and get an even better estimate.  On the first piece ( ), we can treat the velocity as constant at 10 m\/s, giving an estimate of meters.  On the second piece ( ), we can treat the velocity as constant at 14 m\/s, giving an estimate of meters.  On the third piece ( ), we can treat the velocity as constant at 22 m\/s, giving an estimate of meters.  On the fourth piece ( ), we can treat the velocity as constant at 20 m\/s, giving an estimate of meters.  Adding these estimates gives a total distance traveled of about meters.           Now we can break the time interval into eight pieces, and get an even better estimate.  On the first piece ( ), we can treat the velocity as constant at 7 m\/s, giving an estimate of meters.  On the second piece ( ), we can treat the velocity as constant at 10 m\/s, giving an estimate of meters.  On the third piece ( ), we can treat the velocity as constant at 11 m\/s, giving an estimate of meters.  On the fourth piece ( ), we can treat the velocity as constant at 14 m\/s, giving an estimate of meters.  On the fifth piece ( ), we can treat the velocity as constant at 19 m\/s, giving an estimate of meters.  On the sixth piece ( ), we can treat the velocity as constant at 22 m\/s, giving an estimate of meters.  On the seventh piece ( ), we can treat the velocity as constant at 20 m\/s, giving an estimate of meters.  On the eighth piece ( ), we can treat the velocity as constant at 20 m\/s, giving an estimate of meters.  Adding these estimates gives a total distance traveled of about meters.      Rates of Change and Total Change  While the last example was about distance traveled, given a rate of change (velocity), the same idea applies to any quantity that changes at a certain rate. For example, if we know the rate at which a population is growing, we can use that to estimate the total population growth over a time interval.    Approximations and Accuracy  In general the more pieces we break the interval into (the more information we have), the better our estimate will be.  One could imagine that if we had infinitely velocity readings on microscopic intervals, our approximation could become so accurate that it would be indistinguishable from the exact value. This is a nice idea, but it would be extremely difficult to calculate by hand, so for this section we will stick with approximations and in the next section we will tackle how to calculate exact values.   In our last example we were told to use the ending velocity values, but if we were instead told to use the starting velocity values, we would get a different estimate. In general, there are many ways to approximate the total change from a rate of change, and they can give different estimates. With this in mind, we will introduce some terminology for the different types of approximations.    Riemann Sum Terminology   Riemann Sums   Suppose we have a rate of function defined on an interval . We can break the interval into pieces (subintervals) with equal width .  Then the total change can be approximated by a sum of the form:   where is a sample point in the th subinterval.    If we choose the sample points to be the left endpoints of the subintervals, we call this a left Riemann sum .    If we choose the sample points to be the right endpoints of the subintervals, we call this a right Riemann sum .    If we choose the sample points to be the maximum value of on each subinterval, we call this an upper Riemann sum . The upper Riemann sum is used to give an overestimate of the total change.    If we choose the sample points to be the minimum value of on each subinterval, we call this a lower Riemann sum . The lower Riemann sum is used to give an underestimate of the total change.    In general, if we choose the sample points in any way, we can call the resulting sum a Riemann sum .       Bernhard Riemann  The sums we use to approximate accumulated change are named after the German mathematician Bernhard Riemann (1826-1866). Riemann was known for being extremely shy and quiet. In fact, when he had to give a lecture as a young professor, he was reportedly so nervous that he practiced it repeatedly beforehand and still spoke very slowly and cautiously.  Despite his quiet personality, Riemann introduced ideas that completely changed mathematics. His method of approximating area by adding many thin rectangles gave a precise definition of the definite integral, which is why these approximations are now called Riemann sums .  Riemann’s influence did not stop with calculus. His work on curved geometric spaces later became essential to Einstein’s theory of general relativity. He also proposed a famous unsolved problem about the distribution of prime numbers, now known as the Riemann Hypothesis , which remains one of the most important open problems in mathematics.  You can read more about Riemann and his surprisingly short but incredibly influential career here: Bernhard Riemann (Wikipedia) .     Consider the function on   (a) Calculate the left Riemann sum with subintervals.  (b) Is you answer from (a) an underestimate or overestimate of the total change, and why?    (a) The width of each subinterval is   If we split up the interval into four subintervals, we get , , , and . The left endpoints are . So the left Riemann sum is   (b) Since is increasing on , the left hand endpoints will give us smallest values of on each piece (subinterval). So the left Riemann sum will be an underestimate of the total change. You can verify that this will be equivalent to the lower Riemann sum in this case, since the function is increasing.     You can see in this last example that if the table is not given to you, it can be generated by sampling the function at the appropriate points. For example, if we wanted to compute the right Riemann sum with subintervals, we would sample the function at the right endpoints of the subintervals, which are , and then use those values to compute the sum.     Area Under a Curve  Now comes one of the most useful interpretations of the Riemann sum calculations. Suppose on is a rate of change function. Then total change is the area under the graph above the -axis from to which we can approximate using Riemann sums.  To see why, let's redo with a graphical viewpoint.    Approximate the area under the graph on the interval using rectangles of equal width. Use left endpoints to determine the height of each rectangle.   Graph of y equals x squared on the interval [0,2].      The width of each rectangle is . The heights of the rectangles are determined by the left endpoints, which are . So the heights are    .     .     .     .     Let's sketch these on the original picture to see what they look like.   Graph of y equals x squared on the interval [0,2]. Four rectangles are drawn under the curve, each with width 0.5 and heights determined by the left endpoints of the subintervals.       The area of the first rectangle is .    The area of the second rectangle is .    The area of the third rectangle is .    The area of the fourth rectangle is .   So the total area of the rectangles is   This matches our previous calculation of the left Riemann sum, but now we have a geometric interpretation: the area under the curve is approximated by the total area of the rectangles. Notice that clearly this is an underestimate of the area under the curve, which matches our previous conclusion that the left Riemann sum is an underestimate.      Previously in Remark we said that with more intervals \/ pieces \/ rectangles, we can get a better estimate of the total change. This gives us a way to see why that is true. If we use more rectangles, we can get a better approximation of the area under the curve, and thus a better estimate of the total change \/ area.    A GIF the area under the curve on the interval with more and more rectangles. Click on the image to be taken to the Desmos graph where you can adjust the number of rectangles yourself.   Animated graph showing the area under the curve y equals x squared on the interval [0,2] being approximated by rectangles. As the number of rectangles increases, the approximation becomes more accurate.      Let's do one more example to see how to compute upper and lower Riemann sums.    Find an overestimate and an underestimate of the area under the graph on the interval using 6 rectangles of equal width.    The width of each rectangle is . So the intervals are We can now make a table of the function values at these points:   We can use either some calculus or trig knowledge to verify that all of the extrema of the function occur at the points in the table, so we can use these values to compute the upper and lower Riemann sums.    So the area under the curve is between and .    For many kind problems, like the one above, the extrema will occur at the endpoints of the subintervals, however for more difficult (and time consuming) problems, the extrema may occur in the interior of the subintervals. Luckily we have been trained how to find extrema using calculus!    Additional Worked-Out Examples  To keep this section at a reasonable length, we include only a few representative examples directly in the text. If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional fully worked-out examples are available via:  Additional Worked-Out Problems for Riemann Sums and Areas      Practice \/ Study Problems   Some True\/False Problems   Determine whether each statement is true or false and briefly justify your reasoning.     Suppose is the rate of change of temperature in degrees Celsius per hour. Using the ending temperature values at the end of each hour we can approximate the total change in temperature from to to be an increase of degrees Celsius.    False. Given that we are using the ending temperature values, we would need to evaluate at , and then multiply each by the width of the subintervals (which is 1 hour) and add them up.   Without a calculator, we can see that this is around , so the approximation is not as large as 10 degrees Celsius.      Suppose is a denisity function, in grams per centimeter, of a rod of length 3 centimeters (from to ). Breaking the rod into 6 pieces of equal length, and using the left endpoint values, we can approximate the total mass of the rod to be grams.    False. Given that we are using the left endpoint values, we would need to evaluate at , and then multiply each by the width of the subintervals (which is 0.5 cm) and add them up.   So the approximation is around grams, which is less than the proposed grams.      A Riemann sum always gives the exact total change of a quantity on an interval.    False. A Riemann sum is usually an approximation unless special information makes it exact.      If we partition into equal subintervals, then each one has width .    True. Equal-width subintervals divide the interval length evenly.      If is increasing on , then the left Riemann sum and the lower Riemann sum will yield the same answer.    True. On each subinterval the left endpoint gives the smallest function value, so rectangles lie below the curve.      If is decreasing on , then the left Riemann sum overestimates the area under on .    True. For a decreasing function, left endpoints give larger values, so rectangles lie above the curve.      An upper Riemann sum overestimates the accumulated change on of .    True. Upper sums use the maximum value of on each subinterval, so rectangles lie above the curve.      If on , then any Riemann sum approximation of the total change on must be nonnegative.    True. Each term is nonnegative, so the sum is nonnegative.      For equal subintervals, doubling the number of rectangles cuts in half.    True. Since , replacing with halves the width.      If is constant on , then every left or right Riemann sum with equal widths gives the exact total change .    True. All rectangles have height , so the sum is exactly times the interval length.      If the rate function is measured in liters per second and time is measured in seconds, then the Riemann sum has units of liters.    True. The rate function gives liters\/second, and multiplying by seconds gives liters, which is the total change in volume.      If is continuous and on , then increasing the number of subintervals always makes a left Riemann sum larger.    False. Left sums do not necessarily increase with more subintervals unless additional conditions (like an increasing function) are guaranteed.      "
 },
 {
   "id": "sec-integral-riemannSums-2",
@@ -6145,106 +6181,223 @@ var ptx_lunr_docs = [
   "type": "Objectives",
   "number": "4.2",
   "title": "",
-  "body": "  Connect the definite integral to accumulation: total change from a rate of change.  Approximate a definite integral using Riemann sums (left, right, and “upper\/lower” estimates).  Interpret a definite integral geometrically as (signed) area under a curve.  Set up from a real-world description involving small increments .  Use upper and lower sums to bound an integral and estimate a value to a specified accuracy.   "
+  "body": "  Understand the idea of accumulated change: using a rate of change function to estimate the total change of a quantity over an interval.  Approximate total change when the rate is not constant by breaking an interval into subintervals and summing products of rate and interval width.  Define a Riemann sum and identify its components, including subintervals, widths, and sample points.  Distinguish between left, right, upper, and lower Riemann sums and explain how the choice of sample point affects an estimate.  Compute Riemann sums for functions given by formulas or tables of values.  Interpret Riemann sums geometrically as approximations of the area under a curve using rectangles.  Explain how increasing the number of subintervals improves the accuracy of a Riemann sum approximation.   "
 },
 {
-  "id": "def-definite-integral-riemann",
+  "id": "ex-riemann-sums-distance",
   "level": "2",
-  "url": "sec-integral-riemannSums.html#def-definite-integral-riemann",
-  "type": "Definition",
+  "url": "sec-integral-riemannSums.html#ex-riemann-sums-distance",
+  "type": "Example",
   "number": "4.2.1",
-  "title": "Definite Integral (Riemann Sum Definition).",
-  "body": " Definite Integral (Riemann Sum Definition)   Let be a function on . Partition into subintervals of equal width , and choose a sample point in each subinterval. If the limit exists as , we define    "
+  "title": "",
+  "body": "  Suppose we have a car and the following information about its instantaneous velocity, in meters per second, on the time interval seconds. Use the ending velocity values to give your best estimate of the distance traveled during the time interval .          We can use the formula to get a rough estimate of the distance traveled. If we treat the velocity as constant at the final value, we get meters, which probably is an overestimate because the car starts at a lower speed. The problem specified only the starting and ending velocities, so we have no information about how the velocity changes in between and we were told to use the ending velocity values, so this is the best estimate we can give with the information provided.           If we break the time interval into two pieces, we can get a better estimate. On the first half of the time interval ( ), we can treat the velocity as constant at 14 m\/s (we were told to use the ending velocity values), giving an estimate of meters. On the second half of the time interval ( ), we can treat the velocity as constant at 20 m\/s (again we were told to use the ending velocity values), giving an estimate of meters. Adding these estimates gives a total distance traveled of about meters.           Now we can break the time interval into four pieces, and get an even better estimate.  On the first piece ( ), we can treat the velocity as constant at 10 m\/s, giving an estimate of meters.  On the second piece ( ), we can treat the velocity as constant at 14 m\/s, giving an estimate of meters.  On the third piece ( ), we can treat the velocity as constant at 22 m\/s, giving an estimate of meters.  On the fourth piece ( ), we can treat the velocity as constant at 20 m\/s, giving an estimate of meters.  Adding these estimates gives a total distance traveled of about meters.           Now we can break the time interval into eight pieces, and get an even better estimate.  On the first piece ( ), we can treat the velocity as constant at 7 m\/s, giving an estimate of meters.  On the second piece ( ), we can treat the velocity as constant at 10 m\/s, giving an estimate of meters.  On the third piece ( ), we can treat the velocity as constant at 11 m\/s, giving an estimate of meters.  On the fourth piece ( ), we can treat the velocity as constant at 14 m\/s, giving an estimate of meters.  On the fifth piece ( ), we can treat the velocity as constant at 19 m\/s, giving an estimate of meters.  On the sixth piece ( ), we can treat the velocity as constant at 22 m\/s, giving an estimate of meters.  On the seventh piece ( ), we can treat the velocity as constant at 20 m\/s, giving an estimate of meters.  On the eighth piece ( ), we can treat the velocity as constant at 20 m\/s, giving an estimate of meters.  Adding these estimates gives a total distance traveled of about meters.    "
+},
+{
+  "id": "rmk-riemann-sums-general",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#rmk-riemann-sums-general",
+  "type": "Remark",
+  "number": "4.2.2",
+  "title": "Rates of Change and Total Change.",
+  "body": " Rates of Change and Total Change  While the last example was about distance traveled, given a rate of change (velocity), the same idea applies to any quantity that changes at a certain rate. For example, if we know the rate at which a population is growing, we can use that to estimate the total population growth over a time interval.  "
+},
+{
+  "id": "rmk-riemann-sums-accuracy",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#rmk-riemann-sums-accuracy",
+  "type": "Remark",
+  "number": "4.2.3",
+  "title": "Approximations and Accuracy.",
+  "body": " Approximations and Accuracy  In general the more pieces we break the interval into (the more information we have), the better our estimate will be.  One could imagine that if we had infinitely velocity readings on microscopic intervals, our approximation could become so accurate that it would be indistinguishable from the exact value. This is a nice idea, but it would be extremely difficult to calculate by hand, so for this section we will stick with approximations and in the next section we will tackle how to calculate exact values.  "
+},
+{
+  "id": "def-riemann-sums",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#def-riemann-sums",
+  "type": "Definition",
+  "number": "4.2.4",
+  "title": "Riemann Sums.",
+  "body": " Riemann Sums   Suppose we have a rate of function defined on an interval . We can break the interval into pieces (subintervals) with equal width .  Then the total change can be approximated by a sum of the form:   where is a sample point in the th subinterval.    If we choose the sample points to be the left endpoints of the subintervals, we call this a left Riemann sum .    If we choose the sample points to be the right endpoints of the subintervals, we call this a right Riemann sum .    If we choose the sample points to be the maximum value of on each subinterval, we call this an upper Riemann sum . The upper Riemann sum is used to give an overestimate of the total change.    If we choose the sample points to be the minimum value of on each subinterval, we call this a lower Riemann sum . The lower Riemann sum is used to give an underestimate of the total change.    In general, if we choose the sample points in any way, we can call the resulting sum a Riemann sum .     "
+},
+{
+  "id": "aside-riemann-history-2",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#aside-riemann-history-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Bernhard Riemann "
+},
+{
+  "id": "aside-riemann-history-3",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#aside-riemann-history-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Riemann sums "
+},
+{
+  "id": "aside-riemann-history-4",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#aside-riemann-history-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Riemann Hypothesis "
+},
+{
+  "id": "ex-riemann-sums-left-endpoints",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#ex-riemann-sums-left-endpoints",
+  "type": "Example",
+  "number": "4.2.5",
+  "title": "",
+  "body": "  Consider the function on   (a) Calculate the left Riemann sum with subintervals.  (b) Is you answer from (a) an underestimate or overestimate of the total change, and why?    (a) The width of each subinterval is   If we split up the interval into four subintervals, we get , , , and . The left endpoints are . So the left Riemann sum is   (b) Since is increasing on , the left hand endpoints will give us smallest values of on each piece (subinterval). So the left Riemann sum will be an underestimate of the total change. You can verify that this will be equivalent to the lower Riemann sum in this case, since the function is increasing.   "
+},
+{
+  "id": "rmk-riemann-sums-generating-table",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#rmk-riemann-sums-generating-table",
+  "type": "Remark",
+  "number": "4.2.6",
+  "title": "",
+  "body": " You can see in this last example that if the table is not given to you, it can be generated by sampling the function at the appropriate points. For example, if we wanted to compute the right Riemann sum with subintervals, we would sample the function at the right endpoints of the subintervals, which are , and then use those values to compute the sum.  "
 },
 {
   "id": "ex-area-x-squared",
   "level": "2",
   "url": "sec-integral-riemannSums.html#ex-area-x-squared",
   "type": "Example",
-  "number": "4.2.2",
+  "number": "4.2.7",
   "title": "",
-  "body": "  Interpret as an area, and connect it to the distance example.    Since on , the integral equals the area under above . Approximating with right-endpoint rectangles produces the same sum we computed for distance with velocity . The area and the distance are numerically equal because both are defined by the same limiting process: in each case we add up terms of the form “height” “width.”   "
+  "body": "  Approximate the area under the graph on the interval using rectangles of equal width. Use left endpoints to determine the height of each rectangle.   Graph of y equals x squared on the interval [0,2].      The width of each rectangle is . The heights of the rectangles are determined by the left endpoints, which are . So the heights are    .     .     .     .     Let's sketch these on the original picture to see what they look like.   Graph of y equals x squared on the interval [0,2]. Four rectangles are drawn under the curve, each with width 0.5 and heights determined by the left endpoints of the subintervals.       The area of the first rectangle is .    The area of the second rectangle is .    The area of the third rectangle is .    The area of the fourth rectangle is .   So the total area of the rectangles is   This matches our previous calculation of the left Riemann sum, but now we have a geometric interpretation: the area under the curve is approximated by the total area of the rectangles. Notice that clearly this is an underestimate of the area under the curve, which matches our previous conclusion that the left Riemann sum is an underestimate.   "
 },
 {
-  "id": "ex-riemann-sin-squared",
+  "id": "rmk-riemann-sums-accuracy-area",
   "level": "2",
-  "url": "sec-integral-riemannSums.html#ex-riemann-sin-squared",
+  "url": "sec-integral-riemannSums.html#rmk-riemann-sums-accuracy-area",
+  "type": "Remark",
+  "number": "4.2.8",
+  "title": "",
+  "body": "  Previously in Remark we said that with more intervals \/ pieces \/ rectangles, we can get a better estimate of the total change. This gives us a way to see why that is true. If we use more rectangles, we can get a better approximation of the area under the curve, and thus a better estimate of the total change \/ area.    A GIF the area under the curve on the interval with more and more rectangles. Click on the image to be taken to the Desmos graph where you can adjust the number of rectangles yourself.   Animated graph showing the area under the curve y equals x squared on the interval [0,2] being approximated by rectangles. As the number of rectangles increases, the approximation becomes more accurate.     "
+},
+{
+  "id": "ex-riemann-sums-cosine",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#ex-riemann-sums-cosine",
   "type": "Example",
-  "number": "4.2.3",
+  "number": "4.2.10",
   "title": "",
-  "body": "  Approximate to one decimal place. (That is, find a value within .)    The function increases on and decreases on . So an upper estimate uses right endpoints on the first half and left endpoints on the second half. A lower estimate does the opposite.  Take equal subintervals, so . A computed upper sum gives about 1.60 and a computed lower sum gives about 1.54, so   Averaging the bounds gives a good estimate: , which is certainly accurate to one decimal place.  (Later, once we have more integral tools, we can compute this exactly and confirm the approximation.)   "
+  "body": "  Find an overestimate and an underestimate of the area under the graph on the interval using 6 rectangles of equal width.    The width of each rectangle is . So the intervals are We can now make a table of the function values at these points:   We can use either some calculus or trig knowledge to verify that all of the extrema of the function occur at the points in the table, so we can use these values to compute the upper and lower Riemann sums.    So the area under the curve is between and .   "
 },
 {
-  "id": "prob-riemann-01",
+  "id": "tf-acc-01",
   "level": "2",
-  "url": "sec-integral-riemannSums.html#prob-riemann-01",
+  "url": "sec-integral-riemannSums.html#tf-acc-01",
   "type": "Exercise",
   "number": "1",
   "title": "",
-  "body": "  Let on . Use equal subintervals and right endpoints. Write the Riemann sum explicitly in terms of . (Do not evaluate the limit.)   "
+  "body": "  Suppose is the rate of change of temperature in degrees Celsius per hour. Using the ending temperature values at the end of each hour we can approximate the total change in temperature from to to be an increase of degrees Celsius.    False. Given that we are using the ending temperature values, we would need to evaluate at , and then multiply each by the width of the subintervals (which is 1 hour) and add them up.   Without a calculator, we can see that this is around , so the approximation is not as large as 10 degrees Celsius.   "
 },
 {
-  "id": "prob-riemann-02",
+  "id": "tf-acc-02",
   "level": "2",
-  "url": "sec-integral-riemannSums.html#prob-riemann-02",
+  "url": "sec-integral-riemannSums.html#tf-acc-02",
   "type": "Exercise",
   "number": "2",
   "title": "",
-  "body": "  Let on . Use equal subintervals and left endpoints. Write the corresponding Riemann sum in terms of .   "
+  "body": "  Suppose is a denisity function, in grams per centimeter, of a rod of length 3 centimeters (from to ). Breaking the rod into 6 pieces of equal length, and using the left endpoint values, we can approximate the total mass of the rod to be grams.    False. Given that we are using the left endpoint values, we would need to evaluate at , and then multiply each by the width of the subintervals (which is 0.5 cm) and add them up.   So the approximation is around grams, which is less than the proposed grams.   "
 },
 {
-  "id": "prob-riemann-03",
+  "id": "tf-acc-04",
   "level": "2",
-  "url": "sec-integral-riemannSums.html#prob-riemann-03",
+  "url": "sec-integral-riemannSums.html#tf-acc-04",
   "type": "Exercise",
   "number": "3",
   "title": "",
-  "body": "  A particle has velocity on . Compute the left and right Riemann sums with subintervals. Which one is larger, and why?   "
+  "body": "  A Riemann sum always gives the exact total change of a quantity on an interval.    False. A Riemann sum is usually an approximation unless special information makes it exact.   "
 },
 {
-  "id": "prob-riemann-04",
+  "id": "tf-acc-05",
   "level": "2",
-  "url": "sec-integral-riemannSums.html#prob-riemann-04",
+  "url": "sec-integral-riemannSums.html#tf-acc-05",
   "type": "Exercise",
   "number": "4",
   "title": "",
-  "body": "  Let on . Without computing exact values, explain whether the left Riemann sum is an underestimate or overestimate, and do the same for the right Riemann sum.   "
+  "body": "  If we partition into equal subintervals, then each one has width .    True. Equal-width subintervals divide the interval length evenly.   "
 },
 {
-  "id": "prob-riemann-05",
+  "id": "tf-acc-07",
   "level": "2",
-  "url": "sec-integral-riemannSums.html#prob-riemann-05",
+  "url": "sec-integral-riemannSums.html#tf-acc-07",
   "type": "Exercise",
   "number": "5",
   "title": "",
-  "body": "  Sketch a graph of a nonnegative function on and explain (in a sentence or two) why the sum represents the total area of rectangles.   "
+  "body": "  If is increasing on , then the left Riemann sum and the lower Riemann sum will yield the same answer.    True. On each subinterval the left endpoint gives the smallest function value, so rectangles lie below the curve.   "
 },
 {
-  "id": "prob-riemann-06",
+  "id": "tf-acc-08",
   "level": "2",
-  "url": "sec-integral-riemannSums.html#prob-riemann-06",
+  "url": "sec-integral-riemannSums.html#tf-acc-08",
   "type": "Exercise",
   "number": "6",
   "title": "",
-  "body": "  Suppose on . Describe in words what represents geometrically.   "
+  "body": "  If is decreasing on , then the left Riemann sum overestimates the area under on .    True. For a decreasing function, left endpoints give larger values, so rectangles lie above the curve.   "
 },
 {
-  "id": "prob-riemann-07",
+  "id": "tf-acc-10",
   "level": "2",
-  "url": "sec-integral-riemannSums.html#prob-riemann-07",
+  "url": "sec-integral-riemannSums.html#tf-acc-10",
   "type": "Exercise",
   "number": "7",
   "title": "",
-  "body": "  The function is increasing on . Explain why the right Riemann sum is an overestimate and the left Riemann sum is an underestimate on this interval.   "
+  "body": "  An upper Riemann sum overestimates the accumulated change on of .    True. Upper sums use the maximum value of on each subinterval, so rectangles lie above the curve.   "
 },
 {
-  "id": "prob-riemann-08",
+  "id": "tf-acc-11",
   "level": "2",
-  "url": "sec-integral-riemannSums.html#prob-riemann-08",
+  "url": "sec-integral-riemannSums.html#tf-acc-11",
   "type": "Exercise",
   "number": "8",
   "title": "",
-  "body": "  Estimate using left rectangles and right rectangles. Then average the two values.   "
+  "body": "  If on , then any Riemann sum approximation of the total change on must be nonnegative.    True. Each term is nonnegative, so the sum is nonnegative.   "
+},
+{
+  "id": "tf-acc-13",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#tf-acc-13",
+  "type": "Exercise",
+  "number": "9",
+  "title": "",
+  "body": "  For equal subintervals, doubling the number of rectangles cuts in half.    True. Since , replacing with halves the width.   "
+},
+{
+  "id": "tf-acc-15",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#tf-acc-15",
+  "type": "Exercise",
+  "number": "10",
+  "title": "",
+  "body": "  If is constant on , then every left or right Riemann sum with equal widths gives the exact total change .    True. All rectangles have height , so the sum is exactly times the interval length.   "
+},
+{
+  "id": "tf-acc-16",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#tf-acc-16",
+  "type": "Exercise",
+  "number": "11",
+  "title": "",
+  "body": "  If the rate function is measured in liters per second and time is measured in seconds, then the Riemann sum has units of liters.    True. The rate function gives liters\/second, and multiplying by seconds gives liters, which is the total change in volume.   "
+},
+{
+  "id": "tf-acc-17",
+  "level": "2",
+  "url": "sec-integral-riemannSums.html#tf-acc-17",
+  "type": "Exercise",
+  "number": "12",
+  "title": "",
+  "body": "  If is continuous and on , then increasing the number of subintervals always makes a left Riemann sum larger.    False. Left sums do not necessarily increase with more subintervals unless additional conditions (like an increasing function) are guaranteed.   "
 },
 {
   "id": "sec-integral-defInt",
