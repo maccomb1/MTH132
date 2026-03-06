@@ -1613,8 +1613,295 @@ S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
 
        <subsection xml:id="subsec-derivApp-mvt">
       <title><xref ref="sec-derivApp-mvt"/> Mean Value Theorem</title>
-      <p> test
-      </p>
+
+      
+<example xml:id="ex-rolles-theorem-cubic">
+  <statement>
+    <p>
+      Show that the function
+    </p>
+
+    <me>
+      f(x)=x^3-x+2
+    </me>
+
+    <p>
+      on the interval <m>[0,1]</m> satisfies the conditions of Rolle’s
+      Theorem. Then find a value <m>c\in(0,1)</m> for which <m>f'(c)=0</m>.
+    </p>
+  </statement>
+
+  <solution>
+
+    <p>
+      The function <m>f(x)=x^3-x+2</m> is a polynomial, so it is continuous
+      for all real numbers and differentiable for all real numbers.
+      Therefore it is continuous on the closed interval <m>[0,1]</m> and
+      differentiable on the open interval <m>(0,1)</m>.
+    </p>
+
+    <p>
+      Next evaluate the function at the endpoints.
+    </p>
+
+    <me>
+    \begin{aligned}
+    f(0) \amp= 0^3-0+2 = 2 \\
+    f(1) \amp= 1^3-1+2 = 2.
+    \end{aligned}
+    </me>
+
+    <p>
+      Since <m>f(0)=f(1)</m>, all of the conditions of Rolle’s Theorem are
+      satisfied. Therefore there must exist at least one
+      <m>c\in(0,1)</m> such that
+    </p>
+
+    <me>
+      f'(c)=0.
+    </me>
+
+    <p>
+      To find such a value, compute the derivative.
+    </p>
+
+    <me>
+      f'(x)=3x^2-1.
+    </me>
+
+    <p>
+      Now solve <m>f'(c)=0</m>.
+    </p>
+
+    <me>
+      3c^2-1=0.
+    </me>
+
+    <me>
+      3c^2=1.
+    </me>
+
+    <me>
+      c=\pm\frac{\sqrt{3}}{3}.
+    </me>
+
+    <p>
+      Of these solutions, only
+    </p>
+
+    <me>
+      c=\frac{\sqrt{3}}{3}
+    </me>
+
+    <p>
+      lies in the interval <m>(0,1)</m>.  Therefore this value satisfies
+      the conclusion of Rolle's Theorem.
+    </p>
+
+  </solution>
+</example>
+
+
+<example xml:id="ex-mvt-cubic">
+  <statement>
+    <p>
+      Consider the function
+    </p>
+
+    <me>
+      f(x)=x^3-x, \qquad x\in[1,5].
+    </me>
+
+    <p>
+      Verify that the Mean Value Theorem applies, and find a value
+      <m>c\in(1,5)</m> for which
+    </p>
+
+    <me>
+      f'(c)=\frac{f(5)-f(1)}{5-1}.
+    </me>
+
+  </statement>
+
+  <solution>
+
+    <p>
+      The function <m>f(x)=x^3-x</m> is a polynomial, so it is continuous
+      for all real numbers and differentiable for all real numbers.
+      Therefore it is continuous on the closed interval <m>[1,5]</m>
+      and differentiable on the open interval <m>(1,5)</m>.  
+      Thus the conditions of the Mean Value Theorem are satisfied.
+    </p>
+
+    <p>
+      First compute the average rate of change of <m>f</m> on
+      <m>[1,5]</m>.
+    </p>
+
+    <me>
+    \begin{aligned}
+    \frac{f(5)-f(1)}{5-1}
+    \amp= \frac{(5^3-5)-(1^3-1)}{4} \\
+    \amp= \frac{120-0}{4} \\
+    \amp= 30.
+    \end{aligned}
+    </me>
+
+    <p>
+      Next compute the derivative of <m>f</m>.
+    </p>
+
+    <me>
+      f'(x)=3x^2-1.
+    </me>
+
+    <p>
+      To find <m>c</m>, solve
+    </p>
+
+    <me>
+      f'(c)=30.
+    </me>
+
+    <me>
+      3c^2-1=30.
+    </me>
+
+    <me>
+      3c^2=31.
+    </me>
+
+    <me>
+      c=\pm\sqrt{\frac{31}{3}}.
+    </me>
+
+    <p>
+      Since <m>c</m> must lie in the interval <m>(1,5)</m>, we discard the
+      negative solution.  Therefore
+    </p>
+
+    <me>
+      c=\sqrt{\frac{31}{3}}\approx 3.21.
+    </me>
+
+    <p>
+      This value lies in the interval <m>(1,5)</m>, so it satisfies the
+      conclusion of the Mean Value Theorem.
+    </p>
+
+  </solution>
+</example>
+
+<example xml:id="ex-mvt-rational">
+  <statement>
+    <p>
+      Consider the function
+    </p>
+
+    <me>
+      f(x)=\frac{2x-5}{3x}, \qquad x\in[1,7].
+    </me>
+
+    <p>
+      Verify that the Mean Value Theorem applies, and find a value
+      <m>c\in(1,7)</m> for which
+    </p>
+
+    <me>
+      f'(c)=\frac{f(7)-f(1)}{7-1}.
+    </me>
+
+  </statement>
+
+  <solution>
+
+    <p>
+      The function <m>f(x)=\frac{2x-5}{3x}</m> is a rational function, so it
+      is differentiable wherever the denominator is nonzero.
+      Since <m>3x\neq 0</m> for all <m>x\in[1,7]</m>, the function is
+      continuous on the closed interval <m>[1,7]</m> and differentiable on
+      the open interval <m>(1,7)</m>.
+      Therefore the conditions of the Mean Value Theorem are satisfied.
+    </p>
+
+    <p>
+      First compute the average rate of change of <m>f</m> on the interval.
+    </p>
+
+    <me>
+    \begin{aligned}
+    \frac{f(7)-f(1)}{7-1}
+    \amp=
+    \frac{\frac{14-5}{21}-\frac{2-5}{3}}{6} \\[6pt]
+    \amp=
+    \frac{\frac{9}{21}-(-1)}{6} \\[6pt]
+    \amp=
+    \frac{\frac{9}{21}+1}{6} \\[6pt]
+    \amp=
+    \frac{30}{126} \\[6pt]
+    \amp=
+    \frac{5}{21}.
+    \end{aligned}
+    </me>
+
+    <p>
+      Next compute the derivative of <m>f</m>.
+    </p>
+
+    <me>
+    \begin{aligned}
+    f'(x)
+    \amp=
+    \frac{(3x)(2)-(2x-5)(3)}{(3x)^2} \\[6pt]
+    \amp=
+    \frac{6x-6x+15}{9x^2} \\[6pt]
+    \amp=
+    \frac{5}{3x^2}.
+    \end{aligned}
+    </me>
+
+    <p>
+      To find <m>c</m>, solve
+    </p>
+
+    <me>
+      f'(c)=\frac{5}{21}.
+    </me>
+
+    <me>
+      \frac{5}{3c^2}=\frac{5}{21}.
+    </me>
+
+    <me>
+      21=3c^2.
+    </me>
+
+    <me>
+      c^2=7.
+    </me>
+
+    <me>
+      c=\pm\sqrt{7}.
+    </me>
+
+    <p>
+      Since <m>c</m> must lie in the interval <m>(1,7)</m>, we discard the
+      negative solution.  Therefore
+    </p>
+
+    <me>
+      c=\sqrt{7}.
+    </me>
+
+    <p>
+      Since <m>1&lt;\sqrt{7}&lt;7</m>, this value satisfies the conclusion
+      of the Mean Value Theorem.
+    </p>
+
+  </solution>
+</example>
+
+
     </subsection>
 
 

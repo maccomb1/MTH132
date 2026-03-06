@@ -13,64 +13,210 @@
     </ul>
   </objectives>
 
-  <subsection xml:id="ssec-defint-precise-definition">
-    <title>Precise Definition</title>
 
-    <p>
-      We have described the integral <m>\displaystyle \int_a^b f(x)\,dx</m> as a number that can be approximated by Riemann sums.
-      The integral is useful because it measures accumulation:
-      given a velocity function it computes distance traveled, and given a nonnegative graph it computes the area between the graph and the <m>x</m>-axis.
-      More generally, if <m>f</m> is a varying rate of change, then the integral computes total change; if <m>f</m> represents a varying influence, then the integral computes cumulative effect.
-    </p>
+<p>
+In our last section we used Riemann sums to try to approximate the area under a curve (or 
+more generally, the total change of a quantity).
+As we took more and more terms, the approximation got better and better.
+In this section we will give a precise definition of the limit of Riemann sums, to create a 
+mathematical tool used to measure this value exactly. This tool is called the
+<term>definite integral</term>.
+</p>
 
-    <p>
-      The parts of the notation <m>\displaystyle \int_a^b f(x)\,dx</m> have standard names:
-      <m>\int</m> is the integral sign,
-      <m>a</m> is the <em>lower limit of integration</em>,
-      <m>b</m> is the <em>upper limit of integration</em>,
-      <m>f(x)</m> is the <em>integrand</em>,
-      and <m>x</m> is the <em>variable of integration</em>.
-      The variable of integration is just a name, so changing it does not change the value:
-      <m>\int_a^b f(x)\,dx=\int_a^b f(t)\,dt=\int_a^b f(r)\,dr</m>.
-    </p>
+<subsection xml:id="ssec-definite-integral-definition">
+<title>The Definition of the Definite Integral</title>
 
-    <definition xml:id="def-riemann-integral">
-      <title>Definite Integral (Riemann Sum Definition)</title>
-      <statement>
-        <p>
+
+<definition xml:id="def-definite-integral">
+<statement>
+<p>
           Let <m>f</m> be a function and let <m>a\le b</m>.
-          For each positive integer <m>n</m>, divide the interval <m>[a,b]</m> into <m>n</m> subintervals of equal width
-          <m>\Delta x=\dfrac{b-a}{n}</m>, with division points
+          For any positive integer <m>n</m>, divide the interval <m>[a,b]</m> into <m>n</m> subintervals of equal width
+          <m>\Delta x</m>. 
+          In each subinterval, choose a sample point <m>x_i</m>.
         </p>
-
-        <me>
-          a &lt; a+\Delta x &lt; a+2\Delta x &lt; \cdots &lt; a+n\Delta x=b.
-        </me>
-
         <p>
-          Choose sample points <m>x_1,\ldots,x_n</m> with <m>x_i</m> anywhere in the <m>i</m><sup>th</sup> subinterval:
-          <m>a+(i-1)\Delta x \le x_i \le a+i\Delta x</m>.
-          If the limit exists, we define
+          Then we define the <term>definite integral</term> of <m>f</m> from <m>a</m> to <m>b</m> as:
         </p>
+          <me>\int_a^b f(x)\,dx = \lim_{n\to\infty} \left(f(x_1)\Delta x + f(x_2)\Delta x + \cdots + f(x_n)\Delta x\right)</me>
+        
 
-        <me>
-          \int_a^b f(x)\,dx
-          \stackrel{\text{def}}=
-          \lim_{n\to\infty}\sum_{i=1}^n f(x_i)\,\Delta x
-          =
-          \lim_{n\to\infty}\left(f(x_1)\Delta x+\cdots+f(x_n)\Delta x\right).
-        </me>
+<p>If this limit exists then we say that 
+<m>f</m> is <term>integrable</term> on <m>[a,b]</m>.
+</p>
 
-        <p>
-          We say <m>f</m> is <em>integrable</em> on <m>[a,b]</m> if this limit exists and has the same value for every possible choice of sample points <m>x_i</m>.
-        </p>
-      </statement>
-    </definition>
+</statement>
+</definition>
 
+<note>
+  <statement>
     <p>
-      (More formally, writing <m>\int_a^b f(x)\,dx=L</m> means: for any error tolerance <m>\epsilon&gt;0</m>, there is a number <m>N</m> such that any Riemann sum with <m>n&gt;N</m> terms is within <m>\epsilon</m> of <m>L</m>.)
+      <ul>
+        <li>
+          <p>
+            The notation <m>\int_a^b f(x)\,dx</m> is read as “the integral of <m>f(x)</m> from <m>a</m> to <m>b</m> with respect to <m>x</m>.”
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\int</m> is the integral sign,
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>a</m> is the lower limit of integration,
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>b</m> is the upper limit of integration,
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x)</m> is the integrand, 
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x</m> is the variable of integration.
+          </p>
+        </li>
+      </ul> 
     </p>
-  </subsection>
+    <p>The variable of integration is just a name, so changing it does not change the value:
+      <me>\int_a^b f(x)\,dx=\int_a^b f(t)\,dt=\int_a^b f(r)\,dr</me>
+    </p>
+  </statement>
+</note>
+
+<p>Visually we are taking the limit of the sum of the areas of many many thin rectangles (remember <m>n\to \infty</m>). 
+
+
+  
+
+
+
+
+<p>
+While this limiting process provides a precise definition of the definite integral,
+it is not very convenient for actually computing values by hand. Determining the exact
+value of the limit of many increasingly thin rectangles is typically something that
+requires a computer or calculator.
+</p>
+
+<p>
+Because of this, we will not usually use this definition to compute the true area under
+a curve or the total accumulation of a quantity. Instead, in the next section we will
+develop a powerful result called the <term>Fundamental Theorem of Calculus</term>,
+which provides a far more efficient way to evaluate definite integrals.
+</p>
+
+<p>
+There are a few special cases we can handle already. If the region described by the
+integral corresponds to a familiar geometric shape—such as a rectangle, triangle,
+or part of a circle—we can compute the value of the integral using basic formulas
+from geometry.
+</p>
+
+<p>
+In this section we will focus on interpreting definite integral notation and learning
+some of the fundamental properties that definite integrals satisfy.
+</p>
+
+
+
+
+
+</subsection>
+
+<subsection xml:id="ssec-signed-area">
+<title>Signed Area</title>
+
+<p>In the last section we required that <m>f(x)\ge 0</m> so that the integral would represent the area under the curve.
+However in this section we will allow <m>f(x)</m> to take on negative values as well. Therefore the definite integral will 
+not always represent area in the usual sense, but it will still have a geometric interpretation as a type of area, called 
+<term>signed area</term>.
+</p>
+
+<ul>
+<li>
+If the graph of <m>f(x)</m> lies above the <m>x</m>-axis, the integral
+contributes positive area.
+</li>
+
+<li>
+If the graph lies below the <m>x</m>-axis, the integral contributes
+negative area.
+</li>
+</ul>
+
+<figure xml:id="fig-signed-area">
+<caption>
+Positive and negative contributions to a definite integral.
+</caption>
+<image source="images/signed-area.png" width="80%"/>
+<shortdescription>
+A graph showing regions above and below the x-axis where areas above
+the axis count positively and areas below count negatively.
+</shortdescription>
+</figure>
+
+<p>
+Therefore, the definite integral represents the <term>net area</term>
+between the graph and the axis.
+</p>
+
+</subsection>
+
+<subsection xml:id="ssec-integrals-geometry">
+<title>Definite Integrals from Geometry</title>
+
+<p>
+Sometimes the region described by a definite integral corresponds
+to a simple geometric shape. In those cases we can compute the integral
+exactly using formulas from geometry.
+</p>
+
+<example xml:id="ex-integral-rectangle">
+<statement>
+<p>
+Evaluate
+</p>
+
+<me>
+\displaystyle\int_0^4 3\,dx
+</me>
+
+<p>
+by interpreting it as an area.
+</p>
+</statement>
+
+<solution>
+
+<p>
+The graph of <m>f(x)=3</m> is a horizontal line.
+The region between the graph and the <m>x</m>-axis from
+<m>x=0</m> to <m>x=4</m> forms a rectangle.
+</p>
+
+<me>
+\text{Area} = \text{base}\times\text{height} = 4 \times 3 = 12
+</me>
+
+<p>
+Therefore
+</p>
+
+<me>
+\displaystyle\int_0^4 3\,dx = 12.
+</me>
+
+</solution>
+</example>
+
+
 
   <subsection xml:id="ssec-defint-integrable-functions">
     <title>Integrable Functions</title>
