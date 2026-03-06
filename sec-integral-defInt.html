@@ -517,13 +517,10 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-integral-defInt.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The Definite Integral</span></a></div>
 <ul class="structural toc-item-list active">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-precise-definition" class="internal"><span class="title">Precise Definition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-integrable-functions" class="internal"><span class="title">Integrable Functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-negative-integrand" class="internal"><span class="title">Negative Integrands and Signed Area</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-reversing-limits" class="internal"><span class="title">Reversing Limits of Integration</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-rules" class="internal"><span class="title">Integral Rules</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-basic-integrals" class="internal"><span class="title">Basic Integrals</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-defint-examples" class="internal"><span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-definite-integral-definition" class="internal"><span class="title">The Definition of the Definite Integral</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-signed-area" class="internal"><span class="title">Signed Area</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-integrals-geometry" class="internal"><span class="title">Definite Integrals from Geometry</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#ssec-definite-integral-properties" class="internal"><span class="title">Properties of Definite Integrals</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-integral-defInt.html#additional-worked-problems-integral-defInt" class="internal"><span class="title">Additional Worked-Out Examples</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-integral-defInt.html#exercises-definite-integral" class="internal"><span class="title">Practice / Study Problems</span></a></div></li>
 </ul>
@@ -589,261 +586,397 @@ eBookConfig.enable_chatcodes =  false;
 <article class="objectives goal-like" id="sec-integral-defInt-2"><h3 class="heading"><span class="type">Objectives</span></h3>
 <ul class="disc" id="sec-integral-defInt-2-1">
 <li id="sec-integral-defInt-2-1-1">
-<div class="para" id="p-derived-sec-integral-defInt-2-1-1">State the Riemann-sum definition of <span class="process-math">\(\displaystyle \int_a^b f(x)\,dx\)</span> and identify the parts of the notation.</div>
+<div class="para" id="sec-integral-defInt-2-1-1-1">Understand the definition of the definite integral as the limit of Riemann sums.<div class="autopermalink" data-description="Paragraph"><a href="#sec-integral-defInt-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-defInt-2-1-1" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 <li id="sec-integral-defInt-2-1-2">
-<div class="para" id="p-derived-sec-integral-defInt-2-1-2">Explain (at a conceptual level) what it means for a function to be integrable on <span class="process-math">\([a,b]\text{.}\)</span>
+<div class="para" id="sec-integral-defInt-2-1-2-1">Correctly interpret the notation <span class="process-math">\(\displaystyle\int_a^b f(x)\,dx\text{,}\)</span> including the meaning of the integrand, limits of integration, and variable of integration.<div class="autopermalink" data-description="Paragraph"><a href="#sec-integral-defInt-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-defInt-2-1-2" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 <li id="sec-integral-defInt-2-1-3">
-<div class="para" id="p-derived-sec-integral-defInt-2-1-3">Interpret <span class="process-math">\(\displaystyle \int_a^b f(x)\,dx\)</span> as total change and as signed area.</div>
+<div class="para" id="sec-integral-defInt-2-1-3-1">Explain the geometric interpretation of the definite integral as signed area (or net area), recognizing that regions above the <span class="process-math">\(x\)</span>-axis contribute positive area and regions below the <span class="process-math">\(x\)</span>-axis contribute negative area.<div class="autopermalink" data-description="Paragraph"><a href="#sec-integral-defInt-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-defInt-2-1-3" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 <li id="sec-integral-defInt-2-1-4">
-<div class="para" id="p-derived-sec-integral-defInt-2-1-4">Use basic integral rules (linearity, bounds, domination, splitting, reversing limits) to simplify and estimate integrals.</div>
+<div class="para" id="sec-integral-defInt-2-1-4-1">Evaluate definite integrals that correspond to simple geometric regions such as rectangles, triangles, or circles by using formulas from geometry.<div class="autopermalink" data-description="Paragraph"><a href="#sec-integral-defInt-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-defInt-2-1-4" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 <li id="sec-integral-defInt-2-1-5">
-<div class="para" id="p-derived-sec-integral-defInt-2-1-5">Compute simple definite integrals using basic integral formulas and the rules.</div>
+<div class="para" id="sec-integral-defInt-2-1-5-1">Use definite integral notation and its properties to compute unknown integrals from known ones.<div class="autopermalink" data-description="Paragraph"><a href="#sec-integral-defInt-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="autopermalink" data-description="Objective"><a href="#sec-integral-defInt-2-1-5" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
-</ul>
-<div class="autopermalink" data-description="Objectives 4.3"><a href="#sec-integral-defInt-2" title="Copy heading and permalink for Objectives 4.3" aria-label="Copy heading and permalink for Objectives 4.3">🔗</a></div></article><section class="subsection" id="ssec-defint-precise-definition"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Precise Definition</span>
-</h3>
-<div class="para" id="ssec-defint-precise-definition-2">We have described the integral <span class="process-math">\(\displaystyle \int_a^b f(x)\,dx\)</span> as a number that can be approximated by Riemann sums. The integral is useful because it measures accumulation: given a velocity function it computes distance traveled, and given a nonnegative graph it computes the area between the graph and the <span class="process-math">\(x\)</span>-axis. More generally, if <span class="process-math">\(f\)</span> is a varying rate of change, then the integral computes total change; if <span class="process-math">\(f\)</span> represents a varying influence, then the integral computes cumulative effect.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-precise-definition-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="sec-integral-defInt-2-1-6">
+<div class="para" id="sec-integral-defInt-2-1-6-1">Use comparison and bounds properties to estimate or bound the value of a definite integral.<div class="autopermalink" data-description="Paragraph"><a href="#sec-integral-defInt-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ssec-defint-precise-definition-3">The parts of the notation <span class="process-math">\(\displaystyle \int_a^b f(x)\,dx\)</span> have standard names: <span class="process-math">\(\int\)</span> is the integral sign, <span class="process-math">\(a\)</span> is the <em class="emphasis">lower limit of integration</em>, <span class="process-math">\(b\)</span> is the <em class="emphasis">upper limit of integration</em>, <span class="process-math">\(f(x)\)</span> is the <em class="emphasis">integrand</em>, and <span class="process-math">\(x\)</span> is the <em class="emphasis">variable of integration</em>. The variable of integration is just a name, so changing it does not change the value: <span class="process-math">\(\int_a^b f(x)\,dx=\int_a^b f(t)\,dt=\int_a^b f(r)\,dr\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-precise-definition-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="definition definition-like" id="def-riemann-integral"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definite Integral (Riemann Sum Definition).</span>
-</h4>
-<div class="para" id="def-riemann-integral-2-1">Let <span class="process-math">\(f\)</span> be a function and let <span class="process-math">\(a\le b\text{.}\)</span> For each positive integer <span class="process-math">\(n\text{,}\)</span> divide the interval <span class="process-math">\([a,b]\)</span> into <span class="process-math">\(n\)</span> subintervals of equal width <span class="process-math">\(\Delta x=\dfrac{b-a}{n}\text{,}\)</span> with division points<div class="autopermalink" data-description="Paragraph"><a href="#def-riemann-integral-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="def-riemann-integral-2-2">
-\begin{equation*}
-a &lt; a+\Delta x &lt; a+2\Delta x &lt; \cdots &lt; a+n\Delta x=b.
-\end{equation*}
-</div>
-<div class="para" id="def-riemann-integral-2-3">Choose sample points <span class="process-math">\(x_1,\ldots,x_n\)</span> with <span class="process-math">\(x_i\)</span> anywhere in the <span class="process-math">\(i\)</span>th subinterval: <span class="process-math">\(a+(i-1)\Delta x \le x_i \le a+i\Delta x\text{.}\)</span> If the limit exists, we define<div class="autopermalink" data-description="Paragraph"><a href="#def-riemann-integral-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="def-riemann-integral-2-4">
-\begin{equation*}
-\int_a^b f(x)\,dx
-\stackrel{\text{def}}=
-\lim_{n\to\infty}\sum_{i=1}^n f(x_i)\,\Delta x
-=
-\lim_{n\to\infty}\left(f(x_1)\Delta x+\cdots+f(x_n)\Delta x\right).
-\end{equation*}
-</div>
-<div class="para" id="def-riemann-integral-2-5">We say <span class="process-math">\(f\)</span> is <em class="emphasis">integrable</em> on <span class="process-math">\([a,b]\)</span> if this limit exists and has the same value for every possible choice of sample points <span class="process-math">\(x_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-riemann-integral-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Definition 4.3.1: Definite Integral (Riemann Sum Definition)"><a href="#def-riemann-integral" title="Copy heading and permalink for Definition 4.3.1: Definite Integral (Riemann Sum Definition)" aria-label="Copy heading and permalink for Definition 4.3.1: Definite Integral (Riemann Sum Definition)">🔗</a></div></article><div class="para" id="ssec-defint-precise-definition-5">(More formally, writing <span class="process-math">\(\int_a^b f(x)\,dx=L\)</span> means: for any error tolerance <span class="process-math">\(\epsilon&gt;0\text{,}\)</span> there is a number <span class="process-math">\(N\)</span> such that any Riemann sum with <span class="process-math">\(n&gt;N\)</span> terms is within <span class="process-math">\(\epsilon\)</span> of <span class="process-math">\(L\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-precise-definition-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection: Precise Definition"><a href="#ssec-defint-precise-definition" title="Copy heading and permalink for Subsection: Precise Definition" aria-label="Copy heading and permalink for Subsection: Precise Definition">🔗</a></div></section><section class="subsection" id="ssec-defint-integrable-functions"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integrable Functions</span>
-</h3>
-<div class="para" id="ssec-defint-integrable-functions-2">Most functions you meet in calculus are integrable on a closed interval as long as they do not blow up to infinity. In particular, continuous functions are integrable. (A full proof belongs to a Real Analysis course.)<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-integrable-functions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ssec-defint-integrable-functions-3">To see what can go wrong, consider <span class="process-math">\(f(x)=\dfrac{1}{x^2}\)</span> on <span class="process-math">\([0,1]\text{.}\)</span> The function has a vertical asymptote at <span class="process-math">\(x=0\text{,}\)</span> so the area under the curve is not finite. If we try a Riemann sum with <span class="process-math">\(\Delta x=\dfrac{1}{n}\)</span> and sample points <span class="process-math">\(x_i=\dfrac{i}{n}\text{,}\)</span> we get<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-integrable-functions-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="ssec-defint-integrable-functions-4">
-\begin{equation*}
-\begin{array}{rcl}
-\displaystyle \sum_{i=1}^n \frac{1}{x_i^2}\,\Delta x
-&amp;=&amp;
-\displaystyle \sum_{i=1}^n \frac{1}{(i/n)^2}\,\frac{1}{n}
-\\[0.6em]
-&amp;=&amp;
-\displaystyle \sum_{i=1}^n \frac{n^2}{i^2}\,\frac{1}{n}
-\ =\
-\sum_{i=1}^n n\,\frac{1}{i^2}
-\\[0.6em]
-&amp;&gt;&amp;
-n.
-\end{array}
-\end{equation*}
-</div>
-<div class="para" id="ssec-defint-integrable-functions-5">As <span class="process-math">\(n\to\infty\text{,}\)</span> this grows without bound, so the Riemann sums do not approach a finite limit. Geometrically, this reflects infinite area near the vertical asymptote.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-integrable-functions-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection: Integrable Functions"><a href="#ssec-defint-integrable-functions" title="Copy heading and permalink for Subsection: Integrable Functions" aria-label="Copy heading and permalink for Subsection: Integrable Functions">🔗</a></div></section><section class="subsection" id="ssec-defint-negative-integrand"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Negative Integrands and Signed Area</span>
-</h3>
-<div class="para" id="ssec-defint-negative-integrand-2">So far we have emphasized integrals with <span class="process-math">\(f(x)\ge 0\text{,}\)</span> where the integral is positive and equals an area. The definition still works when <span class="process-math">\(f(x)\le 0\text{,}\)</span> but the value becomes negative. For example, if <span class="process-math">\(f(x)=-1\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-negative-integrand-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="ssec-defint-negative-integrand-3">
-\begin{equation*}
-\begin{array}{rcl}
-\displaystyle \int_1^3 (-1)\,dx
-&amp;=&amp;
-\displaystyle \lim_{n\to\infty}\sum_{i=1}^n (-1)\left(\frac{3-1}{n}\right)
-\\[0.8em]
-&amp;=&amp;
-\displaystyle \lim_{n\to\infty}\left(\frac{-2}{n}\right)\sum_{i=1}^n 1
-\ =\
-\lim_{n\to\infty}\left(\frac{-2}{n}\right)n
-\\[0.6em]
-&amp;=&amp;
--2.
-\end{array}
-\end{equation*}
-</div>
-<div class="para" id="ssec-defint-negative-integrand-4">Geometrically, we think of each term <span class="process-math">\(f(x_i)\Delta x\)</span> as (height)<span class="process-math">\(\times\)</span>(width). When the graph lies below the <span class="process-math">\(x\)</span>-axis, the “height” is negative, so it contributes negative area. In general, <span class="process-math">\(\int_a^b f(x)\,dx\)</span> is the <em class="emphasis">signed area</em> between the graph and the <span class="process-math">\(x\)</span>-axis: regions above count positive, and regions below count negative.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-negative-integrand-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="example example-like" id="ex-signed-area-line"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="ex-signed-area-line-1-1">Evaluate <span class="process-math">\(\displaystyle \int_0^3 (2-x)\,dx\)</span> using geometry.<div class="autopermalink" data-description="Paragraph"><a href="#ex-signed-area-line-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="solutions"><details id="ex-signed-area-line-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-signed-area-line-2-1">The line <span class="process-math">\(y=2-x\)</span> crosses the <span class="process-math">\(x\)</span>-axis at <span class="process-math">\(x=2\text{.}\)</span> It is above the axis on <span class="process-math">\([0,2]\)</span> and below the axis on <span class="process-math">\([2,3]\text{.}\)</span> So the integral is (area of a triangle above) minus (area of a triangle below):<div class="autopermalink" data-description="Paragraph"><a href="#ex-signed-area-line-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="ex-signed-area-line-2-2">
-\begin{equation*}
-\int_0^3 (2-x)\,dx
-\ =\
-\frac12(2)(2)\;-\;\frac12(1)(1)
-\ =\
-\frac32.
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Solution 4.3.2.1"><a href="#ex-signed-area-line-2" title="Copy heading and permalink for Solution 4.3.2.1" aria-label="Copy heading and permalink for Solution 4.3.2.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.3.2"><a href="#ex-signed-area-line" title="Copy heading and permalink for Example 4.3.2" aria-label="Copy heading and permalink for Example 4.3.2">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Negative Integrands and Signed Area"><a href="#ssec-defint-negative-integrand" title="Copy heading and permalink for Subsection: Negative Integrands and Signed Area" aria-label="Copy heading and permalink for Subsection: Negative Integrands and Signed Area">🔗</a></div></section><section class="subsection" id="ssec-defint-reversing-limits"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reversing Limits of Integration</span>
-</h3>
-<div class="para" id="ssec-defint-reversing-limits-2">If the limits of integration are the same, then every Riemann sum has width <span class="process-math">\(\Delta x=0\text{,}\)</span> so <span class="process-math">\(\int_a^a f(x)\,dx=0\text{.}\)</span> We also define switching limits by <span class="process-math">\(\int_b^a f(x)\,dx=-\int_a^b f(x)\,dx\text{.}\)</span> This convention makes several rules cleaner, especially the splitting rule.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-reversing-limits-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection: Reversing Limits of Integration"><a href="#ssec-defint-reversing-limits" title="Copy heading and permalink for Subsection: Reversing Limits of Integration" aria-label="Copy heading and permalink for Subsection: Reversing Limits of Integration">🔗</a></div></section><section class="subsection" id="ssec-defint-rules"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integral Rules</span>
-</h3>
-<div class="para" id="ssec-defint-rules-2">Later we will learn powerful methods for computing integrals. For now, we will rely on a small collection of basic integrals and the following rules. Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be integrable on <span class="process-math">\([a,b]\text{,}\)</span> and let <span class="process-math">\(A,B,C\)</span> be constants.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-rules-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="theorem theorem-like" id="thm-integral-rules"><h4 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Rules for Definite Integrals.</span>
-</h4>
-<ul class="disc" id="thm-integral-rules-2-1">
-<li id="thm-integral-rules-2-1-1">
-<div class="para" id="thm-integral-rules-2-1-1-1">
-<em class="emphasis">Sum:</em> <span class="process-math">\(\displaystyle \int_a^b (f(x)+g(x))\,dx=\int_a^b f(x)\,dx+\int_a^b g(x)\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-integral-rules-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#thm-integral-rules-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="thm-integral-rules-2-1-2">
-<div class="para" id="thm-integral-rules-2-1-2-1">
-<em class="emphasis">Difference:</em> <span class="process-math">\(\displaystyle \int_a^b (f(x)-g(x))\,dx=\int_a^b f(x)\,dx-\int_a^b g(x)\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-integral-rules-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#thm-integral-rules-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="thm-integral-rules-2-1-3">
-<div class="para" id="thm-integral-rules-2-1-3-1">
-<em class="emphasis">Constant Multiple:</em> <span class="process-math">\(\displaystyle \int_a^b C\,f(x)\,dx=C\int_a^b f(x)\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-integral-rules-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#thm-integral-rules-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="thm-integral-rules-2-1-4">
-<div class="para" id="thm-integral-rules-2-1-4-1">
-<em class="emphasis">Domination:</em> If <span class="process-math">\(f(x)\le g(x)\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> then <span class="process-math">\(\displaystyle \int_a^b f(x)\,dx \le \int_a^b g(x)\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-integral-rules-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#thm-integral-rules-2-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="thm-integral-rules-2-1-5">
-<div class="para" id="thm-integral-rules-2-1-5-1">
-<em class="emphasis">Bounds:</em> If <span class="process-math">\(A\le f(x)\le B\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> then <span class="process-math">\(\displaystyle (b-a)A \le \int_a^b f(x)\,dx \le (b-a)B\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-integral-rules-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#thm-integral-rules-2-1-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="thm-integral-rules-2-1-6">
-<div class="para" id="thm-integral-rules-2-1-6-1">
-<em class="emphasis">Splitting:</em> For any <span class="process-math">\(a,b,c\text{,}\)</span> <span class="process-math">\(\displaystyle \int_a^c f(x)\,dx=\int_a^b f(x)\,dx+\int_b^c f(x)\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-integral-rules-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#thm-integral-rules-2-1-6" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-integral-defInt-2-1-6" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
 </li>
 </ul>
-<div class="autopermalink" data-description="Theorem 4.3.3: Rules for Definite Integrals"><a href="#thm-integral-rules" title="Copy heading and permalink for Theorem 4.3.3: Rules for Definite Integrals" aria-label="Copy heading and permalink for Theorem 4.3.3: Rules for Definite Integrals">🔗</a></div></article><div class="para" id="ssec-defint-rules-4">The sum, difference, and constant multiple rules follow from the corresponding properties of sums. The bounds and domination rules match the geometric idea that a function trapped between two horizontal lines has area trapped between rectangles. The splitting rule matches “area over a big interval equals area over pieces,” and the sign convention for reversed limits makes it valid no matter the order of <span class="process-math">\(a,b,c\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-rules-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Objectives 4.3"><a href="#sec-integral-defInt-2" title="Copy heading and permalink for Objectives 4.3" aria-label="Copy heading and permalink for Objectives 4.3">🔗</a></div></article><div class="para" id="sec-integral-defInt-3">In our last section we used Riemann sums to try to approximate the area under a curve (or more generally, the total change of a quantity). As we took more and more terms, the approximation got better and better. In this section we will give a precise definition of the limit of Riemann sums, to create a mathematical tool used to measure this value exactly. This tool is called the <dfn class="terminology">definite integral</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-integral-defInt-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection: Integral Rules"><a href="#ssec-defint-rules" title="Copy heading and permalink for Subsection: Integral Rules" aria-label="Copy heading and permalink for Subsection: Integral Rules">🔗</a></div></section><section class="subsection" id="ssec-defint-basic-integrals"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic Integrals</span>
+<div class="para" id="sec-integral-defInt-4">Throughout this section, it is helpful to keep both interpretations in mind. Sometimes <span class="process-math">\(\displaystyle\int_a^b f(x)\,dx\)</span> will represent a geometric quantity such as area, and sometimes it will represent the total accumulation of a changing quantity. These two viewpoints are closely connected: the geometry helps us visualize the integral, while the accumulation viewpoint helps us interpret what the integral means in applications.<div class="autopermalink" data-description="Paragraph"><a href="#sec-integral-defInt-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="subsection" id="ssec-definite-integral-definition"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Definition of the Definite Integral</span>
 </h3>
-<div class="para" id="ssec-defint-basic-integrals-2">Here are three basic definite integrals that we can justify directly from Riemann sums:<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-basic-integrals-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="ssec-defint-basic-integrals-3">
-\begin{equation*}
-\int_a^b 1\,dx = b-a,
-\qquad
-\int_a^b x\,dx = \frac12 b^2-\frac12 a^2,
-\qquad
-\int_a^b x^2\,dx = \frac13 b^3-\frac13 a^3.
-\end{equation*}
-</div>
-<div class="para" id="ssec-defint-basic-integrals-4">Later, these will fall out quickly from the Fundamental Theorem of Calculus. For now, they give us a working toolkit.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-defint-basic-integrals-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Subsection: Basic Integrals"><a href="#ssec-defint-basic-integrals" title="Copy heading and permalink for Subsection: Basic Integrals" aria-label="Copy heading and permalink for Subsection: Basic Integrals">🔗</a></div></section><section class="subsection" id="ssec-defint-examples"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Examples</span>
-</h3>
-<article class="example example-like" id="ex-defint-expand-square"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<article class="definition definition-like" id="def-definite-integral"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="ex-defint-expand-square-1-1">Evaluate <span class="process-math">\(\displaystyle \int_{-2}^{7} (3t-5)^2\,dt\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-defint-expand-square-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="def-definite-integral-1-1">Let <span class="process-math">\(f\)</span> be a function and let <span class="process-math">\(a\le b\text{.}\)</span> For any positive integer <span class="process-math">\(n\text{,}\)</span> divide the interval <span class="process-math">\([a,b]\)</span> into <span class="process-math">\(n\)</span> subintervals of equal width <span class="process-math">\(\Delta x\text{.}\)</span> In each subinterval, choose a sample point <span class="process-math">\(x_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-definite-integral-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="def-definite-integral-1-2">Then we define the <dfn class="terminology">definite integral</dfn> of <span class="process-math">\(f\)</span> from <span class="process-math">\(a\)</span> to <span class="process-math">\(b\)</span> as:<div class="autopermalink" data-description="Paragraph"><a href="#def-definite-integral-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-defint-expand-square-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-defint-expand-square-2-1">Since <span class="process-math">\(\int (f(t))^2\,dt\)</span> is not equal to <span class="process-math">\(\left(\int f(t)\,dt\right)^2\text{,}\)</span> we expand the integrand and use the rules:<div class="autopermalink" data-description="Paragraph"><a href="#ex-defint-expand-square-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="ex-defint-expand-square-2-2">
+<div class="displaymath process-math" id="def-definite-integral-1-3">
 \begin{equation*}
-\begin{array}{rcl}
-\displaystyle \int_{-2}^{7} (3t-5)^2\,dt
-&amp;=&amp;
-\displaystyle \int_{-2}^{7} (9t^2-30t+25)\,dt
-\\[0.8em]
-&amp;=&amp;
-\displaystyle 9\int_{-2}^{7} t^2\,dt \;-\;30\int_{-2}^{7} t\,dt \;+\;25\int_{-2}^{7} 1\,dt
-\\[0.8em]
-&amp;=&amp;
-\displaystyle 9\left(\frac13 7^3-\frac13(-2)^3\right)
-\;-\;
-30\left(\frac12 7^2-\frac12(-2)^2\right)
-\;+\;
-25\left(7-(-2)\right)
-\\[0.8em]
-&amp;=&amp;
-603.
-\end{array}
+\int_a^b f(x)\,dx = \lim_{n\to\infty} \left(f(x_1)\Delta x + f(x_2)\Delta x + \cdots + f(x_n)\Delta x\right)
 \end{equation*}
 </div>
-<div class="para" id="ex-defint-expand-square-2-3">(Notice again: the variable of integration is just a name.)<div class="autopermalink" data-description="Paragraph"><a href="#ex-defint-expand-square-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="def-definite-integral-1-4">If this limit exists then we say that <span class="process-math">\(f\)</span> is <dfn class="terminology">integrable</dfn> on <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-definite-integral-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.3.4.1"><a href="#ex-defint-expand-square-2" title="Copy heading and permalink for Solution 4.3.4.1" aria-label="Copy heading and permalink for Solution 4.3.4.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.3.4"><a href="#ex-defint-expand-square" title="Copy heading and permalink for Example 4.3.4" aria-label="Copy heading and permalink for Example 4.3.4">🔗</a></div></article><article class="example example-like" id="ex-defint-upper-bound"><h4 class="heading">
+<div class="autopermalink" data-description="Definition 4.3.1"><a href="#def-definite-integral" title="Copy heading and permalink for Definition 4.3.1" aria-label="Copy heading and permalink for Definition 4.3.1">🔗</a></div></article><article class="note remark-like" id="note-definite-integral-notation"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="note-definite-integral-notation-1-1">
+<ul class="disc" id="note-definite-integral-notation-1-1-1">
+<li id="note-definite-integral-notation-1-1-1-1">
+<div class="para" id="note-definite-integral-notation-1-1-1-1-1">The notation <span class="process-math">\(\int_a^b f(x)\,dx\)</span> is read as “the integral of <span class="process-math">\(f(x)\)</span> from <span class="process-math">\(a\)</span> to <span class="process-math">\(b\)</span> with respect to <span class="process-math">\(x\text{.}\)</span>”<div class="autopermalink" data-description="Paragraph"><a href="#note-definite-integral-notation-1-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#note-definite-integral-notation-1-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="note-definite-integral-notation-1-1-1-2">
+<div class="para" id="note-definite-integral-notation-1-1-1-2-1">
+<span class="process-math">\(\int\)</span> is the integral sign,<div class="autopermalink" data-description="Paragraph"><a href="#note-definite-integral-notation-1-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#note-definite-integral-notation-1-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="note-definite-integral-notation-1-1-1-3">
+<div class="para" id="note-definite-integral-notation-1-1-1-3-1">
+<span class="process-math">\(a\)</span> is the lower limit of integration,<div class="autopermalink" data-description="Paragraph"><a href="#note-definite-integral-notation-1-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#note-definite-integral-notation-1-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="note-definite-integral-notation-1-1-1-4">
+<div class="para" id="note-definite-integral-notation-1-1-1-4-1">
+<span class="process-math">\(b\)</span> is the upper limit of integration,<div class="autopermalink" data-description="Paragraph"><a href="#note-definite-integral-notation-1-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#note-definite-integral-notation-1-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="note-definite-integral-notation-1-1-1-5">
+<div class="para" id="note-definite-integral-notation-1-1-1-5-1">
+<span class="process-math">\(f(x)\)</span> is the integrand,<div class="autopermalink" data-description="Paragraph"><a href="#note-definite-integral-notation-1-1-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#note-definite-integral-notation-1-1-1-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="note-definite-integral-notation-1-1-1-6">
+<div class="para" id="note-definite-integral-notation-1-1-1-6-1">
+<span class="process-math">\(x\)</span> is the variable of integration.<div class="autopermalink" data-description="Paragraph"><a href="#note-definite-integral-notation-1-1-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#note-definite-integral-notation-1-1-1-6" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#note-definite-integral-notation-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="note-definite-integral-notation-1-2">
+<div class="para">The variable of integration is just a name, so changing it does not change the value:</div>
+<div class="displaymath process-math" id="note-definite-integral-notation-1-2-1">
+\begin{equation*}
+\int_a^b f(x)\,dx=\int_a^b f(t)\,dt=\int_a^b f(r)\,dr
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#note-definite-integral-notation-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 4.3.2"><a href="#note-definite-integral-notation" title="Copy heading and permalink for Note 4.3.2" aria-label="Copy heading and permalink for Note 4.3.2">🔗</a></div></article><div class="para" id="ssec-definite-integral-definition-4">Visually, we are taking the limit of the sum of the areas of many very thin rectangles (remember <span class="process-math">\(n\to\infty\)</span>), which approximates the area under the graph of <span class="process-math">\(f\)</span> on the interval <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-definite-integral-definition-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-definite-integral-definition-5">But it is also useful to think of each term <span class="process-math">\(f(x_i)\Delta x\)</span> as a small amount of <em class="emphasis">accumulation</em>: a rate or density <span class="process-math">\(f(x_i)\)</span> multiplied by a small width <span class="process-math">\(\Delta x\text{.}\)</span> Adding these little pieces together gives the total accumulated change over the interval. So even though the picture is geometric, the definite integral is not only about area.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-definite-integral-definition-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="ssec-definite-integral-definition-6"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/RiemannSumXsquared2.gif" class="contained" alt="Animated graph showing the function f(x) = x^2 on the interval [0,2] with rectangles approximating the area under the curve. As the number of rectangles increases, they become thinner and the approximation of the area under the curve becomes more accurate. The animation illustrates how the Riemann sum approaches the value of the definite integral as n approaches infinity."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The area under the graph of <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\)</span> is approximated by the sum of the areas of many thin rectangles. As we take more and more rectangles, the approximation gets better and better. The definite integral is defined as the limit of these sums as the rectangles get thinner and thinner.<div class="autopermalink" data-description="Figure 4.3.3"><a href="#ssec-definite-integral-definition-6" title="Copy heading and permalink for Figure 4.3.3" aria-label="Copy heading and permalink for Figure 4.3.3">🔗</a></div></figcaption></figure><article class="remark remark-like" id="remark-interpreting-definite-integral"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interpreting the Definition.</span>
+</h4>
+<div class="para" id="remark-interpreting-definite-integral-2">While this limiting process provides a precise definition of the definite integral, it is not very convenient for actually computing values by hand. Determining the exact value of the limit of many increasingly thin rectangles is typically something that requires a computer or calculator.<div class="autopermalink" data-description="Paragraph"><a href="#remark-interpreting-definite-integral-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="remark-interpreting-definite-integral-3">Because of this, we will not usually use this definition to compute the true area under a curve or the total accumulation of a quantity. Instead, in the next section we will develop a powerful result called the <dfn class="terminology">Fundamental Theorem of Calculus</dfn>, which provides a far more efficient way to evaluate definite integrals.<div class="autopermalink" data-description="Paragraph"><a href="#remark-interpreting-definite-integral-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.3.4: Interpreting the Definition"><a href="#remark-interpreting-definite-integral" title="Copy heading and permalink for Remark 4.3.4: Interpreting the Definition" aria-label="Copy heading and permalink for Remark 4.3.4: Interpreting the Definition">🔗</a></div></article><div class="para" id="ssec-definite-integral-definition-8">There are a few special cases we can handle already. If the region described by the integral corresponds to a familiar geometric shape—such as a rectangle, triangle, or part of a circle—we can compute the value of the integral using basic formulas from geometry.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-definite-integral-definition-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-definite-integral-definition-9">In this section we will focus on interpreting definite integral notation and learning some of the fundamental properties that definite integrals satisfy.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-definite-integral-definition-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: The Definition of the Definite Integral"><a href="#ssec-definite-integral-definition" title="Copy heading and permalink for Subsection: The Definition of the Definite Integral" aria-label="Copy heading and permalink for Subsection: The Definition of the Definite Integral">🔗</a></div></section><section class="subsection" id="ssec-signed-area"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Signed Area</span>
+</h3>
+<div class="para" id="ssec-signed-area-2">In the last section we required that <span class="process-math">\(f(x)\ge 0\)</span> so that the integral would represent the area under the curve. However in this section we will allow <span class="process-math">\(f(x)\)</span> to take on negative values as well. Therefore the definite integral will not always represent area in the usual sense, but it will still have a geometric interpretation as a type of area, called <dfn class="terminology">signed area</dfn> (or <dfn class="terminology">net area</dfn>).<div class="autopermalink" data-description="Paragraph"><a href="#ssec-signed-area-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-signed-area-3">From the accumulation point of view, negative values of <span class="process-math">\(f(x)\)</span> are not strange at all. If <span class="process-math">\(f(x)\)</span> represents a rate of change, then a negative value simply means the quantity is decreasing rather than increasing. In that setting, a negative definite integral represents a negative net accumulation, or equivalently, an overall decrease over the interval.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-signed-area-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-signed-area-4">We think of each term <span class="process-math">\(f(x_i)\Delta x\)</span> as (height)<span class="process-math">\(\times\)</span>(width). When the graph lies below the <span class="process-math">\(x\)</span>-axis, the "<em class="emphasis">height</em>" is negative, so it contributes negative area.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-signed-area-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="ssec-signed-area-5">
+<li id="ssec-signed-area-5-1">
+<div class="para" id="p-derived-ssec-signed-area-5-1">If the graph of <span class="process-math">\(f(x)\)</span> lies above the <span class="process-math">\(x\)</span>-axis, the integral contributes positive area.</div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-signed-area-5-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ssec-signed-area-5-2">
+<div class="para" id="p-derived-ssec-signed-area-5-2">If the graph lies below the <span class="process-math">\(x\)</span>-axis, the integral contributes negative area.</div>
+<div class="autopermalink" data-description="Item"><a href="#ssec-signed-area-5-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<article class="example example-like" id="ex-integral-signed-area"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="ex-defint-upper-bound-1-1">Find an upper bound for <span class="process-math">\(\displaystyle \int_{-2}^{7} (3x-5)^2\,(1+\cos(x^2))\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-defint-upper-bound-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-integral-signed-area-1-1">The graph of <span class="process-math">\(f(x)\)</span> on the interval <span class="process-math">\([0,8]\)</span> is shown below, with several signed areas indicated. Use these areas to evaluate <span class="process-math">\(\displaystyle\int_0^8 f(x)\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-signed-area-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="generated/latex-image/ex-integral-signed-area-1-2.svg" role="img" class="contained" alt='Graph of a function f(x) with areas under the curve shaded in green and areas above the curve shaded in red. The area under the curve from x=0 to x=3 is labeled "Area = 5" and is shaded green, indicating it contributes positive area. The area above the curve from x=3 to x=8 is labeled "Area = -12" and is shaded red, indicating it contributes negative area. The function f(x) is also labeled on the graph.'></div>
+<div class="solutions"><details id="ex-integral-signed-area-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-integral-signed-area-2-1">The graph first contributes positive signed area, then it dips below the <span class="process-math">\(x\)</span>-axis and contributes negative signed area. So the integral measures the <em class="emphasis">net</em> result after these contributions are combined. From an accumulation point of view, this means the negative contribution outweighs the positive contribution overall. Therefore<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-signed-area-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex-defint-upper-bound-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex-defint-upper-bound-2-1">Since <span class="process-math">\(-1\le \cos(x^2)\le 1\text{,}\)</span> we have <span class="process-math">\(1+\cos(x^2)\le 2\text{.}\)</span> By domination,<div class="autopermalink" data-description="Paragraph"><a href="#ex-defint-upper-bound-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="displaymath process-math" id="ex-integral-signed-area-2-2">
+\begin{equation*}
+\int_0^8 f(x)~ dx = 5 + (-12) = -7.
+\end{equation*}
 </div>
-<div class="displaymath process-math" id="ex-defint-upper-bound-2-2">
+<div class="autopermalink" data-description="Solution 4.3.5.1"><a href="#ex-integral-signed-area-2" title="Copy heading and permalink for Solution 4.3.5.1" aria-label="Copy heading and permalink for Solution 4.3.5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.3.5"><a href="#ex-integral-signed-area" title="Copy heading and permalink for Example 4.3.5" aria-label="Copy heading and permalink for Example 4.3.5">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Signed Area"><a href="#ssec-signed-area" title="Copy heading and permalink for Subsection: Signed Area" aria-label="Copy heading and permalink for Subsection: Signed Area">🔗</a></div></section><section class="subsection" id="ssec-integrals-geometry"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definite Integrals from Geometry</span>
+</h3>
+<div class="para" id="ssec-integrals-geometry-2">Sometimes the region described by a definite integral corresponds to a simple geometric shape. In those cases we can compute the integral exactly using formulas from geometry. Even when we use geometry, however, the answer can still be interpreted as a total accumulation. The geometry gives us a convenient way to compute the value, while the integral itself may still represent a net change in some applied quantity.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-integrals-geometry-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-integral-rectangle"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-integral-rectangle-1-1">Evaluate <span class="process-math">\(\quad  
+\displaystyle\int_0^4 3\,dx
+\quad \)</span> by interpreting it as a geometric area.<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-rectangle-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-integral-rectangle-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-integral-rectangle-2-1">The graph of <span class="process-math">\(f(x)=3\)</span> is a horizontal line. The region between the graph and the <span class="process-math">\(x\)</span>-axis from <span class="process-math">\(x=0\)</span> to <span class="process-math">\(x=4\)</span> forms a rectangle.<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-rectangle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-integral-rectangle-2-2">
+\begin{equation*}
+\text{Area} = \text{base}\times\text{height} = 4 \times 3 = 12
+\end{equation*}
+</div>
+<div class="para" id="ex-integral-rectangle-2-3">Therefore<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-rectangle-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-integral-rectangle-2-4">
+\begin{equation*}
+\displaystyle\int_0^4 3\,dx = 12.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 4.3.6.1"><a href="#ex-integral-rectangle-2" title="Copy heading and permalink for Solution 4.3.6.1" aria-label="Copy heading and permalink for Solution 4.3.6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.3.6"><a href="#ex-integral-rectangle" title="Copy heading and permalink for Example 4.3.6" aria-label="Copy heading and permalink for Example 4.3.6">🔗</a></div></article><article class="example example-like" id="ex-integral-triangle"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-integral-triangle-1-1">Evaluate <span class="process-math">\(\displaystyle\int_1^5 (2-x)\,dx\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-triangle-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-integral-triangle-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-integral-triangle-2-1">Let’s quickly sketch the graph of <span class="process-math">\(f(x)=2-x\)</span> to understand the region described by the integral.<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-triangle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="generated/latex-image/ex-integral-triangle-2-2.svg" role="img" class="contained" alt="Graph of the function f(x) = 2 - x, which is a straight line with a negative slope. The line intersects the y-axis at (0, 2) and the x-axis at (2, 0). The area under the curve from x=1 to x=2 forms a triangle above the x-axis, while the area from x=2 to x=5 forms a triangle below the x-axis."></div>
+<div class="para" id="ex-integral-triangle-2-3">Notice that the graph forms a triangle above the <span class="process-math">\(x\)</span>-axis on the interval <span class="process-math">\([1,2]\)</span> and a triangle below the <span class="process-math">\(x\)</span>-axis on the interval <span class="process-math">\([2,5]\text{.}\)</span> Therefore:<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-triangle-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-integral-triangle-2-4">The positive part represents accumulation in one direction, while the negative part represents accumulation in the opposite direction. Since the negative portion is larger in magnitude, the overall accumulation on <span class="process-math">\([1,5]\)</span> will be negative.<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-triangle-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-integral-triangle-2-5">
+\begin{equation*}
+\begin{aligned}
+\int_1^5 (2-x)\,dx \amp = \text{(area of triangle above)} - \text{(area of triangle below)}\\
+\amp = \frac{1}{2}(1)(1) - \frac{1}{2}(3)(3) \\
+\amp = \frac{1}{2} - \frac{9}{2} = -4.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 4.3.7.1"><a href="#ex-integral-triangle-2" title="Copy heading and permalink for Solution 4.3.7.1" aria-label="Copy heading and permalink for Solution 4.3.7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.3.7"><a href="#ex-integral-triangle" title="Copy heading and permalink for Example 4.3.7" aria-label="Copy heading and permalink for Example 4.3.7">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Definite Integrals from Geometry"><a href="#ssec-integrals-geometry" title="Copy heading and permalink for Subsection: Definite Integrals from Geometry" aria-label="Copy heading and permalink for Subsection: Definite Integrals from Geometry">🔗</a></div></section><section class="subsection" id="ssec-definite-integral-properties"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of Definite Integrals</span>
+</h3>
+<div class="para" id="ssec-definite-integral-properties-2">Definite integrals satisfy several useful algebraic and comparison properties. These allow us to break complicated integrals into simpler ones and to estimate their values using bounds on the function.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-definite-integral-properties-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-definite-integral-properties"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic Properties of Definite Integrals.</span>
+</h4>
+<div class="para" id="thm-definite-integral-properties-2-1">Suppose <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are integrable on <span class="process-math">\([a,b]\)</span> and <span class="process-math">\(C\)</span> is a constant. Then the following properties hold.<div class="autopermalink" data-description="Paragraph"><a href="#thm-definite-integral-properties-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ul class="disc" id="thm-definite-integral-properties-2-2">
+<li id="thm-definite-integral-properties-2-2-1">
+<div class="para" id="thm-definite-integral-properties-2-2-1-1">
+<em class="emphasis">Sum:</em> <span class="process-math">\(\displaystyle \int_a^b (f(x)+g(x))\,dx
+=
+\int_a^b f(x)\,dx
++
+\int_a^b g(x)\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-definite-integral-properties-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-definite-integral-properties-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-definite-integral-properties-2-2-2">
+<div class="para" id="thm-definite-integral-properties-2-2-2-1">
+<em class="emphasis">Difference:</em> <span class="process-math">\(\displaystyle \int_a^b (f(x)-g(x))\,dx
+=
+\int_a^b f(x)\,dx
+-
+\int_a^b g(x)\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-definite-integral-properties-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-definite-integral-properties-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-definite-integral-properties-2-2-3">
+<div class="para" id="thm-definite-integral-properties-2-2-3-1">
+<em class="emphasis">Constant Multiple:</em> <span class="process-math">\(\displaystyle \int_a^b C\,f(x)\,dx
+=
+C\int_a^b f(x)\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-definite-integral-properties-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-definite-integral-properties-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-definite-integral-properties-2-2-4">
+<div class="para" id="thm-definite-integral-properties-2-2-4-1">
+<em class="emphasis">Domination:</em> If <span class="process-math">\(f(x)\le g(x)\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\([a,b]\text{,}\)</span> then <span class="process-math">\(\displaystyle
+\int_a^b f(x)\,dx
+\le
+\int_a^b g(x)\,dx
+\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-definite-integral-properties-2-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-definite-integral-properties-2-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-definite-integral-properties-2-2-5">
+<div class="para" id="thm-definite-integral-properties-2-2-5-1">
+<em class="emphasis">Bounds:</em> If <span class="process-math">\(A\le f(x)\le B\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\([a,b]\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#thm-definite-integral-properties-2-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="thm-definite-integral-properties-2-2-5-2">
+\begin{equation*}
+(b-a)A \le \displaystyle\int_a^b f(x)\,dx \le (b-a)B.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-definite-integral-properties-2-2-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="thm-definite-integral-properties-2-2-6">
+<div class="para" id="thm-definite-integral-properties-2-2-6-1">
+<em class="emphasis">Splitting an Interval:</em> If <span class="process-math">\(a \le b \le c\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#thm-definite-integral-properties-2-2-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="thm-definite-integral-properties-2-2-6-2">
+\begin{equation*}
+\displaystyle\int_a^c f(x)\,dx
+=
+\displaystyle\int_a^b f(x)\,dx
++
+\displaystyle\int_b^c f(x)\,dx.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Item"><a href="#thm-definite-integral-properties-2-2-6" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Theorem 4.3.8: Basic Properties of Definite Integrals"><a href="#thm-definite-integral-properties" title="Copy heading and permalink for Theorem 4.3.8: Basic Properties of Definite Integrals" aria-label="Copy heading and permalink for Theorem 4.3.8: Basic Properties of Definite Integrals">🔗</a></div></article><div class="para" id="ssec-definite-integral-properties-4">Two additional conventions are useful when working with definite integrals.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-definite-integral-properties-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-definite-integral-properties-5">If the limits of integration are the same, then every Riemann sum has width <span class="process-math">\(\Delta x = 0\text{.}\)</span> Therefore <span class="process-math">\(\displaystyle\int_a^a f(x)\,dx = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ssec-definite-integral-properties-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-definite-integral-properties-6">If the limits are reversed, we define <span class="process-math">\(\displaystyle\int_b^a f(x)\,dx = -\int_a^b f(x)\,dx\text{.}\)</span> This convention keeps many formulas simple and makes the splitting rule work cleanly even when the limits appear in different orders.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-definite-integral-properties-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-definite-integral-properties-7">All of these properties are consistent with interpreting the definite integral both as signed area and as total accumulation. Geometrically, areas over adjacent intervals add together. From an accumulation point of view, the total change over a larger interval is the sum of the changes over its pieces, multiplying a function by a constant scales the accumulation, and larger functions produce larger total accumulation.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-definite-integral-properties-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec-definite-integral-properties-8">Now let’s see what sort of problems we can solve using these properties.<div class="autopermalink" data-description="Paragraph"><a href="#ssec-definite-integral-properties-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-integral-properties1"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-integral-properties1-1-1">Suppose <span class="process-math">\(\displaystyle \int_0^2 f(x)\,dx = 3\)</span> and <span class="process-math">\(\displaystyle \int_0^2 g(x)\,dx = 1\text{.}\)</span> Use the properties of integrals to find the following values.<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-properties1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-integral-properties1-1-2">(a) <span class="process-math">\(\displaystyle \int_0^2 (f(x)+g(x))\,dx\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-properties1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-integral-properties1-1-3">(b) <span class="process-math">\(\displaystyle \int_0^2 2f(x)-3g(x)\,dx\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-properties1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-integral-properties1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-integral-properties1-2-1">
+<div class="para">(a) By the sum rule,</div>
+<div class="displaymath process-math" id="ex-integral-properties1-2-1-1">
+\begin{equation*}
+\int_0^2 (f(x)+g(x))\,dx
+=
+\int_0^2 f(x)\,dx
++
+\int_0^2 g(x)\,dx
+=
+3 + 1 = 4.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-properties1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-integral-properties1-2-2">
+<div class="para">(b) By the difference and constant multiple rules,</div>
+<div class="displaymath process-math" id="ex-integral-properties1-2-2-1">
+\begin{equation*}
+\begin{aligned}
+\int_0^2 2f(x)-3g(x)\,dx
+\amp =
+\int_0^2 2f(x)\,dx
+-
+\int_0^2 3g(x)\,dx\\
+\amp =
+2\int_0^2 f(x)\,dx
+-
+3\int_0^2 g(x)\,dx\\
+\amp =
+2(3) - 3(1) = 6 - 3 = 3.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-properties1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.3.9.1"><a href="#ex-integral-properties1-2" title="Copy heading and permalink for Solution 4.3.9.1" aria-label="Copy heading and permalink for Solution 4.3.9.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.3.9"><a href="#ex-integral-properties1" title="Copy heading and permalink for Example 4.3.9" aria-label="Copy heading and permalink for Example 4.3.9">🔗</a></div></article><article class="example example-like" id="ex-integral-properties2"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-integral-properties2-1-1">Suppose <span class="process-math">\(2\leq f(x)\leq 5\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\([0,3]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-properties2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-integral-properties2-1-2">Use the properties of integrals to find bounds for <span class="process-math">\(\displaystyle \int_0^3 f(x)\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-properties2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-integral-properties2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-integral-properties2-2-1">
+<div class="para">Since <span class="process-math">\(2\leq f(x)\leq 5\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\([0,3]\text{,}\)</span> we can apply the bounds rule.</div>
+<div class="displaymath process-math" id="ex-integral-properties2-2-1-4">
 \begin{equation*}
 \begin{array}{rcl}
-\displaystyle \int_{-2}^{7} (3x-5)^2(1+\cos(x^2))\,dx
-&amp;\le&amp;
-\displaystyle \int_{-2}^{7} (3x-5)^2(2)\,dx
-\\[0.7em]
-&amp;=&amp;
-2\int_{-2}^{7} (3x-5)^2\,dx
-\ =\
-2(603)
-\ =\
-1206.
+2\leq \amp  f(x) \amp \le 5 \\
+\displaystyle \int_0^3 2\,dx \leq \amp \displaystyle\int_0^3 f(x)\,dx \amp \leq \displaystyle\int_0^3 5\,dx\\
+\displaystyle 2(3-0) \leq \amp \displaystyle\int_0^3 f(x)\,dx \amp \leq 5(3-0)\\
+\displaystyle 6 \leq \amp \displaystyle\int_0^3 f(x)\,dx \amp \leq 15
 \end{array}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Solution 4.3.5.1"><a href="#ex-defint-upper-bound-2" title="Copy heading and permalink for Solution 4.3.5.1" aria-label="Copy heading and permalink for Solution 4.3.5.1">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-properties2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-integral-properties2-2-2">So we have found that <span class="process-math">\(\displaystyle \int_0^3 f(x)\,dx\)</span> is trapped between 6 and 15.<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-properties2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.3.10.1"><a href="#ex-integral-properties2-2" title="Copy heading and permalink for Solution 4.3.10.1" aria-label="Copy heading and permalink for Solution 4.3.10.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.3.5"><a href="#ex-defint-upper-bound" title="Copy heading and permalink for Example 4.3.5" aria-label="Copy heading and permalink for Example 4.3.5">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Examples"><a href="#ssec-defint-examples" title="Copy heading and permalink for Subsection: Examples" aria-label="Copy heading and permalink for Subsection: Examples">🔗</a></div></section><section class="subsection" id="additional-worked-problems-integral-defInt"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 4.3.10"><a href="#ex-integral-properties2" title="Copy heading and permalink for Example 4.3.10" aria-label="Copy heading and permalink for Example 4.3.10">🔗</a></div></article><article class="example example-like" id="ex-integral-properties3"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-integral-properties3-1-1">Suppose <span class="process-math">\(\displaystyle \int_1^9 f(x)\,dx = 4\)</span> and <span class="process-math">\(\displaystyle \int_5^9 f(x)\,dx = 7\text{.}\)</span> Use the properties of integrals to find <span class="process-math">\(\displaystyle \int_1^5 f(x)\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-properties3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-integral-properties3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-integral-properties3-2-1">
+<div class="para">We can use the splitting rule to write</div>
+<div class="displaymath process-math" id="ex-integral-properties3-2-1-1">
+\begin{equation*}
+\int_1^9 f(x)\,dx = \int_1^5 f(x)\,dx + \int_5^9 f(x)\,dx.
+\end{equation*}
+</div>
+<div class="para">Substituting the known values,</div>
+<div class="displaymath process-math" id="ex-integral-properties3-2-1-2">
+\begin{equation*}
+4 = \int_1^5 f(x)\,dx + 7.
+\end{equation*}
+</div>
+<div class="para">Solving for the unknown integral,</div>
+<div class="displaymath process-math" id="ex-integral-properties3-2-1-3">
+\begin{equation*}
+\int_1^5 f(x)\,dx = 4 - 7 = -3.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-integral-properties3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.3.11.1"><a href="#ex-integral-properties3-2" title="Copy heading and permalink for Solution 4.3.11.1" aria-label="Copy heading and permalink for Solution 4.3.11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.3.11"><a href="#ex-integral-properties3" title="Copy heading and permalink for Example 4.3.11" aria-label="Copy heading and permalink for Example 4.3.11">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Properties of Definite Integrals"><a href="#ssec-definite-integral-properties" title="Copy heading and permalink for Subsection: Properties of Definite Integrals" aria-label="Copy heading and permalink for Subsection: Properties of Definite Integrals">🔗</a></div></section><section class="subsection" id="additional-worked-problems-integral-defInt"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additional Worked-Out Examples</span>
 </h3>
 <div class="para" id="additional-worked-problems-integral-defInt-2">To keep this section at a reasonable length, we include only a few representative examples directly in the text. If you find yourself stuck on a homework problem, or if you are studying before a quiz or exam, additional fully worked-out examples are available via: <em class="alert"><a href="sec-integral-ww.html#subsec-integral-defInt" class="internal" title="Subsection: Section 4.3 Definite Integrals">Additional Worked-Out Problems for Definite Integrals </a></em><div class="autopermalink" data-description="Paragraph"><a href="#additional-worked-problems-integral-defInt-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -852,65 +985,187 @@ n.
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Practice / Study Problems</span>
 </h3>
 <div class="exercisegroup" id="exercises-definite-integral-2">
-<h4 class="heading"><span class="title">Concepts and Interpretation.</span></h4>
+<h4 class="heading"><span class="title">Some True/False Problems.</span></h4>
+<div class="introduction" id="exercises-definite-integral-2-2"><div class="para" id="exercises-definite-integral-2-2-1">Determine whether each statement is true or false and briefly justify your reasoning.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-definite-integral-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
 <div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="prob-defint-01"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-defint-01-1-1">In the notation <span class="process-math">\(\displaystyle \int_a^b f(x)\,dx\text{,}\)</span> identify the lower limit, upper limit, integrand, and variable of integration.<div class="autopermalink" data-description="Paragraph"><a href="#prob-defint-01-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="exercise exercise-like" id="exercise-definite-integral-true-false1"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercise-definite-integral-true-false1-1-1">Computing a definite integral directly from its definition usually requires evaluating a limit of many rectangle area approximations.<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1"><a href="#prob-defint-01" title="Copy heading and permalink for Exercise 1" aria-label="Copy heading and permalink for Exercise 1">🔗</a></div></article><article class="exercise exercise-like" id="prob-defint-02"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-defint-02-1-1">Explain in a sentence or two what “signed area” means.<div class="autopermalink" data-description="Paragraph"><a href="#prob-defint-02-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="exercise-definite-integral-true-false1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="exercise-definite-integral-true-false1-2-1">
+<em class="emphasis">True</em>. The definition of the definite integral is the limit of Riemann sums, which are sums of areas of rectangles.<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2"><a href="#prob-defint-02" title="Copy heading and permalink for Exercise 2" aria-label="Copy heading and permalink for Exercise 2">🔗</a></div></article><article class="exercise exercise-like" id="prob-defint-03"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-defint-03-1-1">Without computing exactly, decide whether <span class="process-math">\(\displaystyle \int_0^4 (2-x)\,dx\)</span> is positive, negative, or zero. Briefly justify your answer from the graph of <span class="process-math">\(y=2-x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-defint-03-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 1.1"><a href="#exercise-definite-integral-true-false1-2" title="Copy heading and permalink for Solution 1.1" aria-label="Copy heading and permalink for Solution 1.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1"><a href="#exercise-definite-integral-true-false1" title="Copy heading and permalink for Exercise 1" aria-label="Copy heading and permalink for Exercise 1">🔗</a></div></article><article class="exercise exercise-like" id="exercise-definite-integral-true-false2"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercise-definite-integral-true-false2-1-1">
+<span class="process-math">\(\displaystyle\int_1^4 2x\,dx = 15\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3"><a href="#prob-defint-03" title="Copy heading and permalink for Exercise 3" aria-label="Copy heading and permalink for Exercise 3">🔗</a></div></article>
+<div class="solutions"><details id="exercise-definite-integral-true-false2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="exercise-definite-integral-true-false2-2-1">
+<em class="emphasis">True</em>. Sketching <span class="process-math">\(f(x)=2x\)</span> on the interval <span class="process-math">\([1,4]\text{,}\)</span> we see that the region described by the integral forms a trapezoid (a combination of a rectangle and a triangle). The base has width of <span class="process-math">\(4-1=3\text{.}\)</span> For the rectangle portion the height is <span class="process-math">\(f(1) = 2(1) = 2\)</span> so the rectangle has an area of <span class="process-math">\(3 \times 2 = 6\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise Group 1–3: Concepts and Interpretation"><a href="#exercises-definite-integral-2" title="Copy heading and permalink for Exercise Group 1–3: Concepts and Interpretation" aria-label="Copy heading and permalink for Exercise Group 1–3: Concepts and Interpretation">🔗</a></div>
+<div class="para" id="exercise-definite-integral-true-false2-2-2">For the triangle portion the height is <span class="process-math">\(f(4) - f(1) = 8 - 2 = 6\text{,}\)</span> so the triangle has an area of <span class="process-math">\(\frac{1}{2} \times 3 \times 6 = 9\text{.}\)</span> Therefore the total area is <span class="process-math">\(6 + 9 = 15\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="exercisegroup" id="exercises-definite-integral-3">
-<h4 class="heading"><span class="title">Rules Practice.</span></h4>
-<div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="prob-defint-04"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-defint-04-1-1">Use the splitting rule to rewrite <span class="process-math">\(\displaystyle \int_{-1}^{5} f(x)\,dx\)</span> as a sum of two integrals split at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-defint-04-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exercise-definite-integral-true-false2-2-3">Since the graph of <span class="process-math">\(f(x)=2x\)</span> lies above the <span class="process-math">\(x\)</span>-axis on the interval <span class="process-math">\([1,4]\text{,}\)</span> the integral contributes positive area. Therefore:<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false2-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4"><a href="#prob-defint-04" title="Copy heading and permalink for Exercise 4" aria-label="Copy heading and permalink for Exercise 4">🔗</a></div></article><article class="exercise exercise-like" id="prob-defint-05"><h5 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-defint-05-1-1">Suppose <span class="process-math">\(3\le f(x)\le 8\)</span> on <span class="process-math">\([2,7]\text{.}\)</span> Use the bounds rule to trap <span class="process-math">\(\displaystyle \int_2^7 f(x)\,dx\)</span> between two numbers.<div class="autopermalink" data-description="Paragraph"><a href="#prob-defint-05-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="displaymath process-math" id="exercise-definite-integral-true-false2-2-4">
+\begin{equation*}
+\displaystyle\int_1^4 2x\,dx = 15.
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Exercise 5"><a href="#prob-defint-05" title="Copy heading and permalink for Exercise 5" aria-label="Copy heading and permalink for Exercise 5">🔗</a></div></article><article class="exercise exercise-like" id="prob-defint-06"><h5 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-defint-06-1-1">If <span class="process-math">\(f(x)\le g(x)\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> explain what the domination rule says about the two integrals.<div class="autopermalink" data-description="Paragraph"><a href="#prob-defint-06-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 2.1"><a href="#exercise-definite-integral-true-false2-2" title="Copy heading and permalink for Solution 2.1" aria-label="Copy heading and permalink for Solution 2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 2"><a href="#exercise-definite-integral-true-false2" title="Copy heading and permalink for Exercise 2" aria-label="Copy heading and permalink for Exercise 2">🔗</a></div></article><article class="exercise exercise-like" id="exercise-definite-integral-true-false3"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercise-definite-integral-true-false3-1-1">If <span class="process-math">\(\displaystyle\int_0^3 f(x)\,dx = 2\)</span> and <span class="process-math">\(\displaystyle\int_0^3 g(x)\,dx = 5\text{,}\)</span> then <span class="process-math">\(\displaystyle\int_0^3 (f(x)+g(x))\,dx = 7\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6"><a href="#prob-defint-06" title="Copy heading and permalink for Exercise 6" aria-label="Copy heading and permalink for Exercise 6">🔗</a></div></article>
+<div class="solutions"><details id="exercise-definite-integral-true-false3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="exercise-definite-integral-true-false3-2-1">
+<div class="para">
+<em class="emphasis">True</em>. By the sum rule for integrals,</div>
+<div class="displaymath process-math" id="exercise-definite-integral-true-false3-2-1-2">
+\begin{equation*}
+\displaystyle\int_0^3 (f(x)+g(x))\,dx
+=   \displaystyle\int_0^3 f(x)\,dx
++   \displaystyle\int_0^3 g(x)\,dx
+= 2 + 5 = 7.
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Exercise Group 4–6: Rules Practice"><a href="#exercises-definite-integral-3" title="Copy heading and permalink for Exercise Group 4–6: Rules Practice" aria-label="Copy heading and permalink for Exercise Group 4–6: Rules Practice">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="exercisegroup" id="exercises-definite-integral-4">
-<h4 class="heading"><span class="title">Basic Integrals.</span></h4>
-<div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="prob-defint-07"><h5 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-defint-07-1-1">Compute <span class="process-math">\(\displaystyle \int_{-3}^{4} 1\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-defint-07-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 3.1"><a href="#exercise-definite-integral-true-false3-2" title="Copy heading and permalink for Solution 3.1" aria-label="Copy heading and permalink for Solution 3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 3"><a href="#exercise-definite-integral-true-false3" title="Copy heading and permalink for Exercise 3" aria-label="Copy heading and permalink for Exercise 3">🔗</a></div></article><article class="exercise exercise-like" id="exercise-definite-integral-true-false4"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercise-definite-integral-true-false4-1-1">If <span class="process-math">\(f(x)\le g(x)\)</span> for all <span class="process-math">\(x\in[a,b]\text{,}\)</span> then <span class="process-math">\(\displaystyle\int_a^b f(x)\,dx \le \int_a^b g(x)\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 7"><a href="#prob-defint-07" title="Copy heading and permalink for Exercise 7" aria-label="Copy heading and permalink for Exercise 7">🔗</a></div></article><article class="exercise exercise-like" id="prob-defint-08"><h5 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-defint-08-1-1">Compute <span class="process-math">\(\displaystyle \int_{0}^{5} x\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-defint-08-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="exercise-definite-integral-true-false4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="exercise-definite-integral-true-false4-2-1">
+<div class="para">
+<em class="emphasis">True</em>. By the domination rule for integrals, if <span class="process-math">\(f(x)\le g(x)\)</span> for all <span class="process-math">\(x\in[a,b]\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="exercise-definite-integral-true-false4-2-1-4">
+\begin{equation*}
+\displaystyle\int_a^b f(x)\,dx \le \int_a^b g(x)\,dx
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Exercise 8"><a href="#prob-defint-08" title="Copy heading and permalink for Exercise 8" aria-label="Copy heading and permalink for Exercise 8">🔗</a></div></article><article class="exercise exercise-like" id="prob-defint-09"><h5 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-defint-09-1-1">Compute <span class="process-math">\(\displaystyle \int_{-2}^{3} x^2\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-defint-09-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 9"><a href="#prob-defint-09" title="Copy heading and permalink for Exercise 9" aria-label="Copy heading and permalink for Exercise 9">🔗</a></div></article>
+<div class="autopermalink" data-description="Solution 4.1"><a href="#exercise-definite-integral-true-false4-2" title="Copy heading and permalink for Solution 4.1" aria-label="Copy heading and permalink for Solution 4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 4"><a href="#exercise-definite-integral-true-false4" title="Copy heading and permalink for Exercise 4" aria-label="Copy heading and permalink for Exercise 4">🔗</a></div></article><article class="exercise exercise-like" id="exercise-definite-integral-true-false5"><h5 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercise-definite-integral-true-false5-1-1">If <span class="process-math">\(\displaystyle\int_1^5 f(x)\,dx = 4\)</span> and <span class="process-math">\(\displaystyle\int_5^9 f(x)\,dx = 3\text{,}\)</span> then <span class="process-math">\(\displaystyle\int_1^9 f(x)\,dx = 7\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise Group 7–9: Basic Integrals"><a href="#exercises-definite-integral-4" title="Copy heading and permalink for Exercise Group 7–9: Basic Integrals" aria-label="Copy heading and permalink for Exercise Group 7–9: Basic Integrals">🔗</a></div>
+<div class="solutions"><details id="exercise-definite-integral-true-false5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="exercise-definite-integral-true-false5-2-1">
+<div class="para">
+<em class="emphasis">True</em>. By the splitting rule for integrals, since <span class="process-math">\(1 \le 5 \le 9\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="exercise-definite-integral-true-false5-2-1-3">
+\begin{equation*}
+\displaystyle\int_1^9 f(x)\,dx
+=
+\displaystyle\int_1^5 f(x)\,dx
++
+\displaystyle\int_5^9 f(x)\,dx
+= 4 + 3 = 7.
+\end{equation*}
 </div>
-<div class="exercisegroup" id="exercises-definite-integral-5">
-<h4 class="heading"><span class="title">Putting It Together.</span></h4>
-<div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="prob-defint-10"><h5 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-defint-10-1-1">Evaluate <span class="process-math">\(\displaystyle \int_{1}^{4} (2x-1)^2\,dx\)</span> by expanding the integrand and using basic integrals.<div class="autopermalink" data-description="Paragraph"><a href="#prob-defint-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 10"><a href="#prob-defint-10" title="Copy heading and permalink for Exercise 10" aria-label="Copy heading and permalink for Exercise 10">🔗</a></div></article><article class="exercise exercise-like" id="prob-defint-11"><h5 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="prob-defint-11-1-1">Find an upper bound for <span class="process-math">\(\displaystyle \int_{0}^{2} (x^2+1)(3+\sin(x))\,dx\text{.}\)</span> (You do not need the exact value.)<div class="autopermalink" data-description="Paragraph"><a href="#prob-defint-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 5.1"><a href="#exercise-definite-integral-true-false5-2" title="Copy heading and permalink for Solution 5.1" aria-label="Copy heading and permalink for Solution 5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 5"><a href="#exercise-definite-integral-true-false5" title="Copy heading and permalink for Exercise 5" aria-label="Copy heading and permalink for Exercise 5">🔗</a></div></article><article class="exercise exercise-like" id="exercise-definite-integral-true-false6"><h5 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercise-definite-integral-true-false6-1-1">If <span class="process-math">\(\displaystyle\int_2^6 f(x)\,dx = 5\text{,}\)</span> then <span class="process-math">\(\displaystyle\int_6^2 f(x)\,dx = -5\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11"><a href="#prob-defint-11" title="Copy heading and permalink for Exercise 11" aria-label="Copy heading and permalink for Exercise 11">🔗</a></div></article>
+<div class="solutions"><details id="exercise-definite-integral-true-false6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="exercise-definite-integral-true-false6-2-1">
+<div class="para">
+<em class="emphasis">True</em>. By the convention for reversed limits of integration, we have</div>
+<div class="displaymath process-math" id="exercise-definite-integral-true-false6-2-1-2">
+\begin{equation*}
+\displaystyle\int_6^2 f(x)\,dx = -\int_2^6 f(x)\,dx = -5.
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Exercise Group 10–11: Putting It Together"><a href="#exercises-definite-integral-5" title="Copy heading and permalink for Exercise Group 10–11: Putting It Together" aria-label="Copy heading and permalink for Exercise Group 10–11: Putting It Together">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.1"><a href="#exercise-definite-integral-true-false6-2" title="Copy heading and permalink for Solution 6.1" aria-label="Copy heading and permalink for Solution 6.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 6"><a href="#exercise-definite-integral-true-false6" title="Copy heading and permalink for Exercise 6" aria-label="Copy heading and permalink for Exercise 6">🔗</a></div></article><article class="exercise exercise-like" id="exercise-definite-integral-true-false7"><h5 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercise-definite-integral-true-false7-1-1">
+<span class="process-math">\(\displaystyle\int_{-2}^2 \sqrt{4-x^2}~dx = \pi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="exercise-definite-integral-true-false7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="exercise-definite-integral-true-false7-2-1">
+<em class="emphasis">False</em>. To solve this it first helps to realize that <span class="process-math">\(f(x)=\sqrt{4-x^2}\)</span> is the top half of a circle of radius 2.<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="exercise-definite-integral-true-false7-2-2">
+<div class="para">The region described by the integral is a semicircle of radius 2, so the area is half the area of a circle of radius 2:</div>
+<div class="displaymath process-math" id="exercise-definite-integral-true-false7-2-2-1">
+\begin{equation*}
+\displaystyle\int_{-2}^2 \sqrt{4-x^2}~dx = \frac{1}{2}\pi (2)^2 = 2\pi.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 7.1"><a href="#exercise-definite-integral-true-false7-2" title="Copy heading and permalink for Solution 7.1" aria-label="Copy heading and permalink for Solution 7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 7"><a href="#exercise-definite-integral-true-false7" title="Copy heading and permalink for Exercise 7" aria-label="Copy heading and permalink for Exercise 7">🔗</a></div></article><article class="exercise exercise-like" id="exercise-definite-integral-true-false8"><h5 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercise-definite-integral-true-false8-1-1">If <span class="process-math">\(-2 \le f(x) \le 4\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\([0,5]\text{,}\)</span> then <span class="process-math">\(-10 \le \displaystyle\int_0^5 f(x)\,dx \le 20\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="exercise-definite-integral-true-false8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="exercise-definite-integral-true-false8-2-1">
+<div class="para">
+<em class="emphasis">True</em>. By the bounds rule for integrals, since <span class="process-math">\(-2 \le f(x) \le 4\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\([0,5]\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="exercise-definite-integral-true-false8-2-1-5">
+\begin{equation*}
+\begin{aligned}
+(5-0)(-2) \le \amp \displaystyle\int_0^5 f(x)\,dx \amp \le (5-0)(4)\\
+-10 \le \amp \displaystyle\int_0^5 f(x)\,dx \amp \le 20.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 8.1"><a href="#exercise-definite-integral-true-false8-2" title="Copy heading and permalink for Solution 8.1" aria-label="Copy heading and permalink for Solution 8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 8"><a href="#exercise-definite-integral-true-false8" title="Copy heading and permalink for Exercise 8" aria-label="Copy heading and permalink for Exercise 8">🔗</a></div></article><article class="exercise exercise-like" id="exercise-definite-integral-true-false9"><h5 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercise-definite-integral-true-false9-1-1">If <span class="process-math">\(f(x)\)</span> is integrable on <span class="process-math">\([a,b]\text{,}\)</span> then the definite integral <span class="process-math">\(\displaystyle\int_a^b f(x)\,dx\)</span> must always be positive.<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="exercise-definite-integral-true-false9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="exercise-definite-integral-true-false9-2-1">
+<em class="emphasis">False</em>. The definite integral can be negative if the graph of <span class="process-math">\(f(x)\)</span> lies below the <span class="process-math">\(x\)</span>-axis on the interval <span class="process-math">\([a,b]\text{,}\)</span> since then the integral contributes negative signed area. From an accumulation point of view, this corresponds to a negative net change, or an overall decrease, over the interval.<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 9.1"><a href="#exercise-definite-integral-true-false9-2" title="Copy heading and permalink for Solution 9.1" aria-label="Copy heading and permalink for Solution 9.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 9"><a href="#exercise-definite-integral-true-false9" title="Copy heading and permalink for Exercise 9" aria-label="Copy heading and permalink for Exercise 9">🔗</a></div></article><article class="exercise exercise-like" id="exercise-definite-integral-true-false10"><h5 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercise-definite-integral-true-false10-1-1">If <span class="process-math">\(f(x)\)</span> is negative on <span class="process-math">\([a,b]\text{,}\)</span> then <span class="process-math">\(\displaystyle\int_a^b f(x)\,dx\)</span> is negative.<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="exercise-definite-integral-true-false10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="exercise-definite-integral-true-false10-2-1">
+<em class="emphasis">True</em>. If <span class="process-math">\(f(x)\)</span> is negative on <span class="process-math">\([a,b]\text{,}\)</span> then the graph of <span class="process-math">\(f(x)\)</span> lies below the <span class="process-math">\(x\)</span>-axis on the interval <span class="process-math">\([a,b]\text{.}\)</span> Therefore the integral contributes negative signed area, so <span class="process-math">\(\displaystyle\int_a^b f(x)\,dx\)</span> is negative. In an application where <span class="process-math">\(f(x)\)</span> represents a rate of change, this would mean the total accumulation is negative, so the quantity decreases overall.<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 10.1"><a href="#exercise-definite-integral-true-false10-2" title="Copy heading and permalink for Solution 10.1" aria-label="Copy heading and permalink for Solution 10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 10"><a href="#exercise-definite-integral-true-false10" title="Copy heading and permalink for Exercise 10" aria-label="Copy heading and permalink for Exercise 10">🔗</a></div></article><article class="exercise exercise-like" id="exercise-definite-integral-true-false11"><h5 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercise-definite-integral-true-false11-1-1">If <span class="process-math">\(\displaystyle\int_0^4 f(x)\,dx = -3\text{,}\)</span> then the graph of <span class="process-math">\(f(x)\)</span> must lie entirely below the <span class="process-math">\(x\)</span>-axis on <span class="process-math">\([0,4]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="exercise-definite-integral-true-false11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="exercise-definite-integral-true-false11-2-1">
+<em class="emphasis">False</em>. The definite integral can be negative even it is not the case that <span class="process-math">\(f(x)\)</span> is negative on the entire interval. For example, look back at <a href="sec-integral-defInt.html#ex-integral-triangle" class="xref" data-knowl="./knowl/xref/ex-integral-triangle.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.7">Example 4.3.7</a><div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 11.1"><a href="#exercise-definite-integral-true-false11-2" title="Copy heading and permalink for Solution 11.1" aria-label="Copy heading and permalink for Solution 11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 11"><a href="#exercise-definite-integral-true-false11" title="Copy heading and permalink for Exercise 11" aria-label="Copy heading and permalink for Exercise 11">🔗</a></div></article><article class="exercise exercise-like" id="exercise-definite-integral-true-false12"><h5 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="exercise-definite-integral-true-false12-1-1">If <span class="process-math">\(\displaystyle\int_a^b f(x)\,dx = 0\text{,}\)</span> and <span class="process-math">\(f(x)\)</span> is continuous then the graph of <span class="process-math">\(f(x)\)</span> must intersect the <span class="process-math">\(x\)</span>-axis somewhere in the interval <span class="process-math">\([a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="exercise-definite-integral-true-false12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="exercise-definite-integral-true-false12-2-1">
+<em class="emphasis">True</em>. If <span class="process-math">\(\displaystyle\int_a^b f(x)\,dx = 0\text{,}\)</span> then the total signed area under the graph of <span class="process-math">\(f(x)\)</span> on the interval <span class="process-math">\([a,b]\)</span> is zero. If for instance, <span class="process-math">\(f(x)\gt 0\)</span> on the entire interval then <span class="process-math">\(\displaystyle\int_a^b f(x) \, dx \gt 0\text{.}\)</span> And similarly it cannot be exclusively negative.<div class="autopermalink" data-description="Paragraph"><a href="#exercise-definite-integral-true-false12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 12.1"><a href="#exercise-definite-integral-true-false12-2" title="Copy heading and permalink for Solution 12.1" aria-label="Copy heading and permalink for Solution 12.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 12"><a href="#exercise-definite-integral-true-false12" title="Copy heading and permalink for Exercise 12" aria-label="Copy heading and permalink for Exercise 12">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 1–12: Some True/False Problems"><a href="#exercises-definite-integral-2" title="Copy heading and permalink for Exercise Group 1–12: Some True/False Problems" aria-label="Copy heading and permalink for Exercise Group 1–12: Some True/False Problems">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Exercises: Practice / Study Problems"><a href="#exercises-definite-integral" title="Copy heading and permalink for Exercises: Practice / Study Problems" aria-label="Copy heading and permalink for Exercises: Practice / Study Problems">🔗</a></div></section><div class="autopermalink" data-description="Section 4.3: The Definite Integral"><a href="#sec-integral-defInt" title="Copy heading and permalink for Section 4.3: The Definite Integral" aria-label="Copy heading and permalink for Section 4.3: The Definite Integral">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
