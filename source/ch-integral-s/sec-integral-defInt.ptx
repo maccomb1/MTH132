@@ -55,6 +55,15 @@ mathematical tool used to measure this value exactly. This tool is called the
 <term>definite integral</term>.
 </p>
 
+<p>
+Throughout this section, it is helpful to keep both interpretations in mind. Sometimes
+<m>\displaystyle\int_a^b f(x)\,dx</m> will represent a geometric quantity such as area,
+and sometimes it will represent the total accumulation of a changing quantity. These two viewpoints
+are closely connected: the geometry helps us visualize the integral, while the accumulation viewpoint
+helps us interpret what the integral means in applications.
+</p>
+
+
 <subsection xml:id="ssec-definite-integral-definition">
 <title>The Definition of the Definite Integral</title>
 
@@ -122,9 +131,18 @@ mathematical tool used to measure this value exactly. This tool is called the
   </statement>
 </note>
 
-<p>Visually we are taking the limit of the sum of the areas of many many thin rectangles (remember <m>n\to \infty</m>), 
-  which approximates the area under the graph of <m>f</m> on the interval <m>[a,b]</m>.</p>
+<p>
+Visually, we are taking the limit of the sum of the areas of many very thin rectangles
+(remember <m>n\to\infty</m>), which approximates the area under the graph of <m>f</m> on the interval
+<m>[a,b]</m>.
+</p>
 
+<p>
+But it is also useful to think of each term <m>f(x_i)\Delta x</m> as a small amount of
+<em>accumulation</em>: a rate or density <m>f(x_i)</m> multiplied by a small width <m>\Delta x</m>.
+Adding these little pieces together gives the total accumulated change over the interval.
+So even though the picture is geometric, the definite integral is not only about area.
+</p>
 
       <figure>
 <caption>
@@ -189,6 +207,15 @@ not always represent area in the usual sense, but it will still have a geometric
 <term>signed area</term> (or <term>net area</term>).
 </p>
 
+<p>
+From the accumulation point of view, negative values of <m>f(x)</m> are not strange at all.
+If <m>f(x)</m> represents a rate of change, then a negative value simply means the quantity is
+decreasing rather than increasing. In that setting, a negative definite integral represents a
+negative net accumulation, or equivalently, an overall decrease over the interval.
+</p>
+
+
+
     <p>
       We think of each term <m>f(x_i)\Delta x</m> as (height)<m>\times</m>(width).
       When the graph lies below the <m>x</m>-axis, the "<em>height</em>" is negative, so it contributes negative area.
@@ -243,10 +270,11 @@ signed areas indicated. Use these areas to evaluate
 
   </statement>
   <solution>
-    <p>
-      The area under the curve initially contributes positive area, then it dips below the <m>x</m>-axis so it contributes negative area.
-      Therefore
-    </p>
+<p>
+  The graph first contributes positive signed area, then it dips below the <m>x</m>-axis and contributes negative signed area.
+  So the integral measures the <em>net</em> result after these contributions are combined. From an accumulation point of view,
+  this means the negative contribution outweighs the positive contribution overall. Therefore
+</p>
     <me>
       \int_0^8 f(x)~ dx = 5 + (-12) = -7.
     </me>
@@ -262,9 +290,11 @@ signed areas indicated. Use these areas to evaluate
 <title>Definite Integrals from Geometry</title>
 
 <p>
-Sometimes the region described by a definite integral corresponds
-to a simple geometric shape. In those cases we can compute the integral
-exactly using formulas from geometry.
+Sometimes the region described by a definite integral corresponds to a simple geometric shape.
+In those cases we can compute the integral exactly using formulas from geometry. Even when we use
+geometry, however, the answer can still be interpreted as a total accumulation. The geometry gives
+us a convenient way to compute the value, while the integral itself may still represent a net change
+in some applied quantity.
 </p>
 
 <example xml:id="ex-integral-rectangle">
@@ -343,6 +373,12 @@ Evaluate <m>\displaystyle\int_1^5 (2-x)\,dx</m>
   <p>
     Notice that the graph forms a triangle above the <m>x</m>-axis on the interval <m>[1,2]</m> 
     and a triangle below the <m>x</m>-axis on the interval <m>[2,5]</m>. Therefore: 
+</p>
+
+<p>
+The positive part represents accumulation in one direction, while the negative part represents
+accumulation in the opposite direction. Since the negative portion is larger in magnitude, the
+overall accumulation on <m>[1,5]</m> will be negative.
 </p>
 
 <me>
@@ -476,10 +512,11 @@ work cleanly even when the limits appear in different orders.
 </p>
 
 <p>
-All of these properties are consistent with interpreting the definite integral
-as signed area. Areas add together over adjacent intervals, multiplying a
-function scales the accumulated area, and larger functions produce larger
-total accumulation.
+All of these properties are consistent with interpreting the definite integral both as signed area
+and as total accumulation. Geometrically, areas over adjacent intervals add together. From an
+accumulation point of view, the total change over a larger interval is the sum of the changes over
+its pieces, multiplying a function by a constant scales the accumulation, and larger functions
+produce larger total accumulation.
 </p>
 
 <p> Now let's see what sort of problems we can solve using these properties.</p>
@@ -619,7 +656,7 @@ total accumulation.
       </p>
     </introduction>
 
-    <exercise>
+    <exercise xml:id="exercise-definite-integral-true-false1">
       <statement>
 <p>
 Computing a definite integral directly from its definition usually requires
@@ -632,7 +669,7 @@ evaluating a limit of many rectangle area approximations.
 </exercise>   
 
 
-<exercise>
+<exercise xml:id="exercise-definite-integral-true-false2">
   <statement>
     <p>
      <m>\displaystyle\int_1^4 2x\,dx = 15</m>.
@@ -656,7 +693,7 @@ evaluating a limit of many rectangle area approximations.
 
 
 
-<exercise> <statement> 
+<exercise xml:id="exercise-definite-integral-true-false3"> <statement> 
 <p>
 If <m>\displaystyle\int_0^3 f(x)\,dx = 2</m> and
 <m>\displaystyle\int_0^3 g(x)\,dx = 5</m>, then
@@ -676,7 +713,7 @@ If <m>\displaystyle\int_0^3 f(x)\,dx = 2</m> and
 </solution>
 </exercise>
 
-<exercise> <statement> 
+<exercise xml:id="exercise-definite-integral-true-false4"> <statement> 
 <p>
 If <m>f(x)\le g(x)</m> for all <m>x\in[a,b]</m>, then
 <m>\displaystyle\int_a^b f(x)\,dx \le \int_a^b g(x)\,dx</m>.
@@ -691,7 +728,7 @@ If <m>f(x)\le g(x)</m> for all <m>x\in[a,b]</m>, then
 </exercise>
 
 
-<exercise> <statement> 
+<exercise xml:id="exercise-definite-integral-true-false5"> <statement> 
 <p>
 If
 <m>\displaystyle\int_1^5 f(x)\,dx = 4</m> and
@@ -716,7 +753,7 @@ then
 
  
 
-<exercise> <statement>
+<exercise xml:id="exercise-definite-integral-true-false6"> <statement>
 <p>
 If <m>\displaystyle\int_2^6 f(x)\,dx = 5</m>, then
 <m>\displaystyle\int_6^2 f(x)\,dx = -5</m>.
@@ -730,10 +767,27 @@ If <m>\displaystyle\int_2^6 f(x)\,dx = 5</m>, then
 </solution>
 </exercise>
 
+<exercise xml:id="exercise-definite-integral-true-false7">
+  <statement>
+    <p>
+      <m>\displaystyle\int_{-2}^2 \sqrt{4-x^2}~dx = \pi</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <em>False</em>. To solve this it first helps to realize that <m>f(x)=\sqrt{4-x^2}</m> is the top half of a circle 
+      of radius 2. 
+    </p>
+    <p>The region described by the integral is a semicircle of radius 2, so the area is half the area of a circle of radius 2:
+<me>
+\displaystyle\int_{-2}^2 \sqrt{4-x^2}~dx = \frac{1}{2}\pi (2)^2 = 2\pi.
+</me>
+    </p>
+  </solution>
+</exercise>
 
 
-
-<exercise><statement>
+<exercise xml:id="exercise-definite-integral-true-false8"><statement>
 <p>
 If <m>-2 \le f(x) \le 4</m> for all <m>x</m> in <m>[0,5]</m>, then
 <m>-10 \le \displaystyle\int_0^5 f(x)\,dx \le 20</m>.
@@ -752,34 +806,38 @@ If <m>-2 \le f(x) \le 4</m> for all <m>x</m> in <m>[0,5]</m>, then
 </solution> 
 </exercise>
 
-<exercise> <statement> 
+<exercise xml:id="exercise-definite-integral-true-false9"> <statement> 
 <p>
 If <m>f(x)</m> is integrable on <m>[a,b]</m>, then the definite integral
 <m>\displaystyle\int_a^b f(x)\,dx</m> must always be positive.
 </p>
 </statement> 
 <solution> 
-<p><em>False</em>.  The definite integral can be negative if the graph of <m>f(x)</m> lies below the 
-  <m>x</m>-axis on the interval <m>[a,b]</m>, since then the integral contributes negative area.</p>
+<p><em>False</em>. The definite integral can be negative if the graph of <m>f(x)</m> lies below the 
+<m>x</m>-axis on the interval <m>[a,b]</m>, since then the integral contributes negative signed area.
+From an accumulation point of view, this corresponds to a negative net change, or an overall decrease,
+over the interval.</p>
 </solution> 
 </exercise>
 
-<exercise> <statement> 
+<exercise xml:id="exercise-definite-integral-true-false10"> <statement> 
 <p>
 If <m>f(x)</m> is negative on <m>[a,b]</m>, then
 <m>\displaystyle\int_a^b f(x)\,dx</m> is negative.
 </p>
 </statement> 
 <solution>
-  <p>
-    <em>True</em>. If <m>f(x)</m> is negative on <m>[a,b]</m>, then the graph of <m>f(x)</m> lies below the <m>x</m>-axis on the interval <m>[a,b]</m>.
-    Therefore the integral contributes negative area, so <m>\displaystyle\int_a^b f(x)\,dx</m> is negative.
-  </p>
+<p>
+  <em>True</em>. If <m>f(x)</m> is negative on <m>[a,b]</m>, then the graph of <m>f(x)</m> lies below the <m>x</m>-axis on the interval <m>[a,b]</m>.
+  Therefore the integral contributes negative signed area, so <m>\displaystyle\int_a^b f(x)\,dx</m> is negative.
+  In an application where <m>f(x)</m> represents a rate of change, this would mean the total accumulation is negative,
+  so the quantity decreases overall.
+</p>
 </solution>
 </exercise>
 
 
-<exercise> <statement>
+<exercise xml:id="exercise-definite-integral-true-false11"> <statement>
 <p>
 If <m>\displaystyle\int_0^4 f(x)\,dx = -3</m>, then the graph of <m>f(x)</m> must lie entirely below the <m>x</m>-axis on <m>[0,4]</m>.
 </p>
@@ -794,7 +852,7 @@ If <m>\displaystyle\int_0^4 f(x)\,dx = -3</m>, then the graph of <m>f(x)</m> mus
 
 
 
-<exercise>
+<exercise xml:id="exercise-definite-integral-true-false12">
   <statement>
 <p>
 If <m>\displaystyle\int_a^b f(x)\,dx = 0</m>, and <m>f(x)</m> is continuous then the graph of <m>f(x)</m> must intersect the <m>x</m>-axis somewhere in the interval <m>[a,b]</m>.
