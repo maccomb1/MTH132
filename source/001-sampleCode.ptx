@@ -23,7 +23,7 @@
 
 <!-- TIKZ IMAGE WITH < and > ALLOWED 
 
-        <image>
+  <image width="60%">
   <shortdescription>
     Graph of y equals arctangent of x with horizontal asymptotes at y equals pi over 2 and negative pi over 2.
   </shortdescription>

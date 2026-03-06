@@ -5,11 +5,43 @@
 
   <objectives>
     <ul>
-      <li>State the Riemann-sum definition of <m>\displaystyle \int_a^b f(x)\,dx</m> and identify the parts of the notation.</li>
-      <li>Explain (at a conceptual level) what it means for a function to be integrable on <m>[a,b]</m>.</li>
-      <li>Interpret <m>\displaystyle \int_a^b f(x)\,dx</m> as total change and as signed area.</li>
-      <li>Use basic integral rules (linearity, bounds, domination, splitting, reversing limits) to simplify and estimate integrals.</li>
-      <li>Compute simple definite integrals using basic integral formulas and the rules.</li>
+
+<li>
+<p>
+Understand the definition of the definite integral as the limit of Riemann sums.
+</p>
+</li>
+
+<li>
+<p>
+Correctly interpret the notation <m>\displaystyle\int_a^b f(x)\,dx</m>, including the meaning of the integrand, limits of integration, and variable of integration.
+</p>
+</li>
+
+<li>
+<p>
+Explain the geometric interpretation of the definite integral as signed area (or net area), recognizing that regions above the <m>x</m>-axis contribute positive area and regions below the <m>x</m>-axis contribute negative area.
+</p>
+</li>
+
+<li>
+<p>
+Evaluate definite integrals that correspond to simple geometric regions such as rectangles, triangles, or circles by using formulas from geometry.
+</p>
+</li>
+
+<li>
+<p>
+Use definite integral notation and its properties to compute unknown integrals from known ones.
+</p>
+</li>
+
+<li>
+<p>
+Use comparison and bounds properties to estimate or bound the value of a definite integral.
+</p>
+</li>
+
     </ul>
   </objectives>
 
@@ -48,7 +80,7 @@ mathematical tool used to measure this value exactly. This tool is called the
 </statement>
 </definition>
 
-<note>
+<note xml:id="note-definite-integral-notation">
   <statement>
     <p>
       <ul>
@@ -90,15 +122,30 @@ mathematical tool used to measure this value exactly. This tool is called the
   </statement>
 </note>
 
-<p>Visually we are taking the limit of the sum of the areas of many many thin rectangles (remember <m>n\to \infty</m>). 
+<p>Visually we are taking the limit of the sum of the areas of many many thin rectangles (remember <m>n\to \infty</m>), 
+  which approximates the area under the graph of <m>f</m> on the interval <m>[a,b]</m>.</p>
 
 
-  
+      <figure>
+<caption>
+  The area under the graph of <m>f</m> on <m>[a,b]</m> is approximated by the sum of the areas of many thin rectangles.
+  As we take more and more rectangles, the approximation gets better and better.
+  The definite integral is defined as the limit of these sums as the rectangles get thinner and thinner.
+</caption>
+        <image width="100%" source="images/RiemannSumXsquared2.gif">
+<shortdescription>
+  Animated graph showing the function f(x) = x^2 on the interval [0,2] with rectangles approximating the area under the curve.
+  As the number of rectangles increases, they become thinner and the approximation of the area under the curve becomes more accurate.
+  The animation illustrates how the Riemann sum approaches the value of the definite integral as n approaches infinity.
+</shortdescription>
+        </image>
+      </figure>
 
 
 
-
-<p>
+<remark xml:id="remark-interpreting-definite-integral">
+  <title>Interpreting the Definition</title>
+  <p>
 While this limiting process provides a precise definition of the definite integral,
 it is not very convenient for actually computing values by hand. Determining the exact
 value of the limit of many increasingly thin rectangles is typically something that
@@ -111,6 +158,9 @@ a curve or the total accumulation of a quantity. Instead, in the next section we
 develop a powerful result called the <term>Fundamental Theorem of Calculus</term>,
 which provides a far more efficient way to evaluate definite integrals.
 </p>
+
+</remark>
+
 
 <p>
 There are a few special cases we can handle already. If the region described by the
@@ -136,8 +186,14 @@ some of the fundamental properties that definite integrals satisfy.
 <p>In the last section we required that <m>f(x)\ge 0</m> so that the integral would represent the area under the curve.
 However in this section we will allow <m>f(x)</m> to take on negative values as well. Therefore the definite integral will 
 not always represent area in the usual sense, but it will still have a geometric interpretation as a type of area, called 
-<term>signed area</term>.
+<term>signed area</term> (or <term>net area</term>).
 </p>
+
+    <p>
+      We think of each term <m>f(x_i)\Delta x</m> as (height)<m>\times</m>(width).
+      When the graph lies below the <m>x</m>-axis, the "<em>height</em>" is negative, so it contributes negative area.
+  </p>
+
 
 <ul>
 <li>
@@ -151,21 +207,54 @@ negative area.
 </li>
 </ul>
 
-<figure xml:id="fig-signed-area">
-<caption>
-Positive and negative contributions to a definite integral.
-</caption>
-<image source="images/signed-area.png" width="80%"/>
-<shortdescription>
-A graph showing regions above and below the x-axis where areas above
-the axis count positively and areas below count negatively.
-</shortdescription>
-</figure>
 
+<example xml:id="ex-integral-signed-area">
+  <statement>
 <p>
-Therefore, the definite integral represents the <term>net area</term>
-between the graph and the axis.
+The graph of <m>f(x)</m> on the interval <m>[0,8]</m> is shown below, with several
+signed areas indicated. Use these areas to evaluate
+<m>\displaystyle\int_0^8 f(x)\,dx</m>.
 </p>
+
+        <image width="90%">
+  <shortdescription>
+    Graph of a function f(x) with areas under the curve shaded in green and areas above the curve shaded in red.
+    The area under the curve from x=0 to x=3 is labeled "Area = 5" and is shaded green, indicating it contributes positive area.
+    The area above the curve from x=3 to x=8 is labeled "Area = -12" and is shaded red, indicating it contributes negative area.
+    The function f(x) is also labeled on the graph.
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}
+	\draw[fill=green!20] plot[domain=0:3, smooth] (\x, {.1*(\x)*(\x-3)*(\x-8)});
+	\draw[fill=red!20] plot[domain=3:8, smooth] (\x, {.1*(\x)*(\x-3)*(\x-8)});
+	\draw[->, thick] (-.3,0) -- (8.3,0) node [right] {$x$} ;
+	\draw[->, thick] (0,-4) -- (0,3);
+	\draw[very thick] plot[domain=0:8, smooth] (\x, {.1*(\x)*(\x-3)*(\x-8)});
+	\draw (1.3, .6) node {Area = 5};
+	\draw (5.7, -1.3) node {Area = $-12$};	
+	\draw (2.5,1.5) node {$f(x)$};
+		\draw (8, -2pt) -- (8, 2pt) node[font=\small, above] {8};	
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+
+
+  </statement>
+  <solution>
+    <p>
+      The area under the curve initially contributes positive area, then it dips below the <m>x</m>-axis so it contributes negative area.
+      Therefore
+    </p>
+    <me>
+      \int_0^8 f(x)~ dx = 5 + (-12) = -7.
+    </me>
+  </solution>
+</example>
+
+
+
 
 </subsection>
 
@@ -182,14 +271,10 @@ exactly using formulas from geometry.
 <statement>
 <p>
 Evaluate
-</p>
-
-<me>
+<m>\quad  
 \displaystyle\int_0^4 3\,dx
-</me>
-
-<p>
-by interpreting it as an area.
+ \quad </m>
+by interpreting it as a geometric area.
 </p>
 </statement>
 
@@ -217,231 +302,289 @@ Therefore
 </example>
 
 
+<example xml:id="ex-integral-triangle">
+<statement>
+<p>
+Evaluate <m>\displaystyle\int_1^5 (2-x)\,dx</m>
+</p>
+</statement>
 
-  <subsection xml:id="ssec-defint-integrable-functions">
-    <title>Integrable Functions</title>
+<solution>
+<p> Let's quickly sketch the graph of <m>f(x)=2-x</m> to understand the region described by the integral.</p>
 
+  <image width="90%">
+  <shortdescription>
+    Graph of the function f(x) = 2 - x, which is a straight line with a negative slope.
+    The line intersects the y-axis at (0, 2) and the x-axis at (2, 0).
+    The area under the curve from x=1 to x=2 forms a triangle above the x-axis, while the area from x=2 to x=5 forms a triangle below the x-axis.
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}
+	\draw[thin, fill = white] (0,-4) rectangle (6,3);
+  \fill[fill=green!20] (1,1)--(2,0)--(1,0)--cycle;
+	\fill[fill=red!20] (2,0)--(5,0) -- (5,-3) --cycle;
+	\draw[thin] (0,-4) grid (6,3);
+\foreach \x in {1,2} 
+\draw (\x, 2pt) -- (\x, -2pt) node[font=\small, below,  yshift=-2pt, fill =white] {\x};
+\foreach \x in {3,...,6} 
+\draw (\x, -2pt) -- (\x, 2pt) node[font=\small, above,  yshift=2pt, fill =white] {\x};
+	\draw[->, thick] (0,0) -- (6.3,0);
+	\draw[->, thick] (0,-4.3) -- (0,3.3);
+	\draw[thick] (0,2) -- (6,-4);
+	\draw (2,1.5) node [fill=white, inner sep = 1pt, font=\small] {$f(x) = 2-x$};
+	\foreach \y in {-4,...,3} 
+	\draw (2pt, \y) -- ( -2pt, \y) node[font=\small, left] {$\y$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+
+  <p>
+    Notice that the graph forms a triangle above the <m>x</m>-axis on the interval <m>[1,2]</m> 
+    and a triangle below the <m>x</m>-axis on the interval <m>[2,5]</m>. Therefore: 
+</p>
+
+<me>
+  \begin{aligned}
+\int_1^5 (2-x)\,dx \amp = \text{(area of triangle above)} - \text{(area of triangle below)}\\
+\amp = \frac{1}{2}(1)(1) - \frac{1}{2}(3)(3) \\
+\amp = \frac{1}{2} - \frac{9}{2} = -4.
+  \end{aligned}
+</me>
+
+</solution>
+</example>
+
+
+</subsection> 
+
+
+  
+<subsection xml:id="ssec-definite-integral-properties">
+<title>Properties of Definite Integrals</title>
+
+<p>
+Definite integrals satisfy several useful algebraic and comparison properties.
+These allow us to break complicated integrals into simpler ones and to estimate
+their values using bounds on the function.
+</p>
+
+<theorem xml:id="thm-definite-integral-properties">
+<title>Basic Properties of Definite Integrals</title>
+
+<statement>
+
+<p>
+Suppose <m>f</m> and <m>g</m> are integrable on <m>[a,b]</m> and <m>C</m> is a constant.
+Then the following properties hold.
+</p>
+
+<ul>
+
+<li>
+<p>
+<em>Sum:</em>
+<m>\displaystyle \int_a^b (f(x)+g(x))\,dx
+=
+\int_a^b f(x)\,dx
++
+\int_a^b g(x)\,dx</m>.
+</p>
+</li>
+
+<li>
+<p>
+<em>Difference:</em>
+<m>\displaystyle \int_a^b (f(x)-g(x))\,dx
+=
+\int_a^b f(x)\,dx
+-
+\int_a^b g(x)\,dx</m>.
+</p>
+</li>
+
+<li>
+<p>
+<em>Constant Multiple:</em>
+<m>\displaystyle \int_a^b C\,f(x)\,dx
+=
+C\int_a^b f(x)\,dx</m>.
+</p>
+</li>
+
+<li>
+<p>
+<em>Domination:</em>
+If <m>f(x)\le g(x)</m> for all <m>x</m> in <m>[a,b]</m>, then
+<m>\displaystyle
+\int_a^b f(x)\,dx
+\le
+\int_a^b g(x)\,dx
+</m>.
+</p>
+</li>
+
+<li>
+<p>
+<em>Bounds:</em>
+If <m>A\le f(x)\le B</m> for all <m>x</m> in <m>[a,b]</m>, then
+</p>
+
+<me>
+(b-a)A \le \displaystyle\int_a^b f(x)\,dx \le (b-a)B.
+</me>
+
+</li>
+
+<li>
+<p>
+<em>Splitting an Interval:</em>
+If <m>a \le b \le c</m>, then
+</p>
+
+<me>
+\displaystyle\int_a^c f(x)\,dx
+=
+\displaystyle\int_a^b f(x)\,dx
++
+\displaystyle\int_b^c f(x)\,dx.
+</me>
+
+</li>
+
+</ul>
+
+</statement>
+</theorem>
+
+<p>
+Two additional conventions are useful when working with definite integrals.
+</p>
+
+<p>
+If the limits of integration are the same, then every Riemann sum has width
+<m>\Delta x = 0</m>. Therefore
+<m>\displaystyle\int_a^a f(x)\,dx = 0</m>.
+</p>
+
+<p>
+If the limits are reversed, we define
+<m>\displaystyle\int_b^a f(x)\,dx = -\int_a^b f(x)\,dx</m>.
+This convention keeps many formulas simple and makes the splitting rule
+work cleanly even when the limits appear in different orders.
+</p>
+
+<p>
+All of these properties are consistent with interpreting the definite integral
+as signed area. Areas add together over adjacent intervals, multiplying a
+function scales the accumulated area, and larger functions produce larger
+total accumulation.
+</p>
+
+<p> Now let's see what sort of problems we can solve using these properties.</p>
+
+
+<example xml:id="ex-integral-properties1">
+  <statement>
     <p>
-      Most functions you meet in calculus are integrable on a closed interval as long as they do not blow up to infinity.
-      In particular, continuous functions are integrable.
-      (A full proof belongs to a Real Analysis course.)
+      Suppose <m>\displaystyle \int_0^2 f(x)\,dx = 3</m> and <m>\displaystyle \int_0^2 g(x)\,dx = 1</m>.
+      Use the properties of integrals to find the following values.
+    </p>
+    <p>(a) <m>\displaystyle \int_0^2 (f(x)+g(x))\,dx</m></p>
+    <p>(b) <m>\displaystyle \int_0^2 2f(x)-3g(x)\,dx</m></p>
+  </statement>
+  <solution>
+    <p>
+      (a) By the sum rule,
+      <me>
+        \int_0^2 (f(x)+g(x))\,dx
+        =
+        \int_0^2 f(x)\,dx
+        +
+        \int_0^2 g(x)\,dx
+        =
+        3 + 1 = 4.
+      </me>
     </p>
 
     <p>
-      To see what can go wrong, consider <m>f(x)=\dfrac{1}{x^2}</m> on <m>[0,1]</m>.
-      The function has a vertical asymptote at <m>x=0</m>, so the area under the curve is not finite.
-      If we try a Riemann sum with <m>\Delta x=\dfrac{1}{n}</m> and sample points <m>x_i=\dfrac{i}{n}</m>, we get
+      (b) By the difference and constant multiple rules,
+      <me>
+        \begin{aligned}
+          \int_0^2 2f(x)-3g(x)\,dx
+          \amp =
+          \int_0^2 2f(x)\,dx
+          -
+          \int_0^2 3g(x)\,dx\\
+          \amp =
+          2\int_0^2 f(x)\,dx
+          -
+          3\int_0^2 g(x)\,dx\\
+          \amp =
+          2(3) - 3(1) = 6 - 3 = 3.
+        \end{aligned}
+      </me> 
     </p>
+  </solution>
+</example>
 
-    <me>
-      \begin{array}{rcl}
-      \displaystyle \sum_{i=1}^n \frac{1}{x_i^2}\,\Delta x
-      &amp;=&amp;
-      \displaystyle \sum_{i=1}^n \frac{1}{(i/n)^2}\,\frac{1}{n}
-      \\[0.6em]
-      &amp;=&amp;
-      \displaystyle \sum_{i=1}^n \frac{n^2}{i^2}\,\frac{1}{n}
-      \ =\
-      \sum_{i=1}^n n\,\frac{1}{i^2}
-      \\[0.6em]
-      &amp;&gt;&amp;
-      n.
-      \end{array}
-    </me>
 
+<example xml:id="ex-integral-properties2">
+  <statement>
     <p>
-      As <m>n\to\infty</m>, this grows without bound, so the Riemann sums do not approach a finite limit.
-      Geometrically, this reflects infinite area near the vertical asymptote.
+      Suppose <m>2\leq f(x)\leq 5</m> for all <m>x</m> in <m>[0,3]</m>.</p><p>
+      Use the properties of integrals to find bounds for
+      <m>\displaystyle \int_0^3 f(x)\,dx</m>.
     </p>
-  </subsection>
-
-  <subsection xml:id="ssec-defint-negative-integrand">
-    <title>Negative Integrands and Signed Area</title>
-
+  </statement>
+  <solution>
     <p>
-      So far we have emphasized integrals with <m>f(x)\ge 0</m>, where the integral is positive and equals an area.
-      The definition still works when <m>f(x)\le 0</m>, but the value becomes negative.
-      For example, if <m>f(x)=-1</m>, then
+      Since <m>2\leq f(x)\leq 5</m> for all <m>x</m> in <m>[0,3]</m>, we can apply the bounds rule.
+      <me>
+        \begin{array}{rcl}
+          2\leq \amp  f(x) \amp \le 5 \\
+          \displaystyle \int_0^3 2\,dx \leq \amp \displaystyle\int_0^3 f(x)\,dx \amp \leq \displaystyle\int_0^3 5\,dx\\
+          \displaystyle 2(3-0) \leq \amp \displaystyle\int_0^3 f(x)\,dx \amp \leq 5(3-0)\\
+          \displaystyle 6 \leq \amp \displaystyle\int_0^3 f(x)\,dx \amp \leq 15
+        \end{array}
+      </me>
     </p>
+    <p> So we have found that <m>\displaystyle \int_0^3 f(x)\,dx</m> is trapped between 6 and 15.</p>
+  </solution>
+</example>
 
-    <me>
-      \begin{array}{rcl}
-      \displaystyle \int_1^3 (-1)\,dx
-      &amp;=&amp;
-      \displaystyle \lim_{n\to\infty}\sum_{i=1}^n (-1)\left(\frac{3-1}{n}\right)
-      \\[0.8em]
-      &amp;=&amp;
-      \displaystyle \lim_{n\to\infty}\left(\frac{-2}{n}\right)\sum_{i=1}^n 1
-      \ =\
-      \lim_{n\to\infty}\left(\frac{-2}{n}\right)n
-      \\[0.6em]
-      &amp;=&amp;
-      -2.
-      \end{array}
-    </me>
 
+<example xml:id="ex-integral-properties3">
+  <statement>
     <p>
-      Geometrically, we think of each term <m>f(x_i)\Delta x</m> as (height)<m>\times</m>(width).
-      When the graph lies below the <m>x</m>-axis, the “height” is negative, so it contributes negative area.
-      In general, <m>\int_a^b f(x)\,dx</m> is the <em>signed area</em> between the graph and the <m>x</m>-axis:
-      regions above count positive, and regions below count negative.
+      Suppose <m>\displaystyle \int_1^9 f(x)\,dx = 4</m> and <m>\displaystyle \int_5^9 f(x)\,dx = 7</m>.
+      Use the properties of integrals to find <m>\displaystyle \int_1^5 f(x)\,dx</m>.
     </p>
-
-    <example xml:id="ex-signed-area-line">
-      <statement>
-        <p>
-          Evaluate <m>\displaystyle \int_0^3 (2-x)\,dx</m> using geometry.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          The line <m>y=2-x</m> crosses the <m>x</m>-axis at <m>x=2</m>.
-          It is above the axis on <m>[0,2]</m> and below the axis on <m>[2,3]</m>.
-          So the integral is (area of a triangle above) minus (area of a triangle below):
-        </p>
-
-        <me>
-          \int_0^3 (2-x)\,dx
-          \ =\
-          \frac12(2)(2)\;-\;\frac12(1)(1)
-          \ =\
-          \frac32.
-        </me>
-      </solution>
-    </example>
-  </subsection>
-
-  <subsection xml:id="ssec-defint-reversing-limits">
-    <title>Reversing Limits of Integration</title>
-
+  </statement>
+  <solution>
     <p>
-      If the limits of integration are the same, then every Riemann sum has width <m>\Delta x=0</m>, so
-      <m>\int_a^a f(x)\,dx=0</m>.
-      We also define switching limits by
-      <m>\int_b^a f(x)\,dx=-\int_a^b f(x)\,dx</m>.
-      This convention makes several rules cleaner, especially the splitting rule.
+      We can use the splitting rule to write
+      <me>
+        \int_1^9 f(x)\,dx = \int_1^5 f(x)\,dx + \int_5^9 f(x)\,dx.
+      </me>
+      Substituting the known values,
+      <me>
+        4 = \int_1^5 f(x)\,dx + 7.
+      </me>
+      Solving for the unknown integral,
+      <me>
+        \int_1^5 f(x)\,dx = 4 - 7 = -3.
+      </me>
     </p>
-  </subsection>
+  </solution>
+</example> 
 
-  <subsection xml:id="ssec-defint-rules">
-    <title>Integral Rules</title>
 
-    <p>
-      Later we will learn powerful methods for computing integrals.
-      For now, we will rely on a small collection of basic integrals and the following rules.
-      Let <m>f</m> and <m>g</m> be integrable on <m>[a,b]</m>, and let <m>A,B,C</m> be constants.
-    </p>
+</subsection>
 
-    <theorem xml:id="thm-integral-rules">
-      <title>Rules for Definite Integrals</title>
-      <statement>
-        <ul>
-          <li><p><em>Sum:</em> <m>\displaystyle \int_a^b (f(x)+g(x))\,dx=\int_a^b f(x)\,dx+\int_a^b g(x)\,dx</m>.</p></li>
-          <li><p><em>Difference:</em> <m>\displaystyle \int_a^b (f(x)-g(x))\,dx=\int_a^b f(x)\,dx-\int_a^b g(x)\,dx</m>.</p></li>
-          <li><p><em>Constant Multiple:</em> <m>\displaystyle \int_a^b C\,f(x)\,dx=C\int_a^b f(x)\,dx</m>.</p></li>
-          <li><p><em>Domination:</em> If <m>f(x)\le g(x)</m> on <m>[a,b]</m>, then <m>\displaystyle \int_a^b f(x)\,dx \le \int_a^b g(x)\,dx</m>.</p></li>
-          <li><p><em>Bounds:</em> If <m>A\le f(x)\le B</m> on <m>[a,b]</m>, then <m>\displaystyle (b-a)A \le \int_a^b f(x)\,dx \le (b-a)B</m>.</p></li>
-          <li><p><em>Splitting:</em> For any <m>a,b,c</m>, <m>\displaystyle \int_a^c f(x)\,dx=\int_a^b f(x)\,dx+\int_b^c f(x)\,dx</m>.</p></li>
-        </ul>
-      </statement>
-    </theorem>
 
-    <p>
-      The sum, difference, and constant multiple rules follow from the corresponding properties of sums.
-      The bounds and domination rules match the geometric idea that a function trapped between two horizontal lines has area trapped between rectangles.
-      The splitting rule matches “area over a big interval equals area over pieces,” and the sign convention for reversed limits makes it valid no matter the order of <m>a,b,c</m>.
-    </p>
-  </subsection>
 
-  <subsection xml:id="ssec-defint-basic-integrals">
-    <title>Basic Integrals</title>
-
-    <p>
-      Here are three basic definite integrals that we can justify directly from Riemann sums:
-    </p>
-
-    <me>
-      \int_a^b 1\,dx = b-a,
-      \qquad
-      \int_a^b x\,dx = \frac12 b^2-\frac12 a^2,
-      \qquad
-      \int_a^b x^2\,dx = \frac13 b^3-\frac13 a^3.
-    </me>
-
-    <p>
-      Later, these will fall out quickly from the Fundamental Theorem of Calculus.
-      For now, they give us a working toolkit.
-    </p>
-  </subsection>
-
-  <subsection xml:id="ssec-defint-examples">
-    <title>Examples</title>
-
-    <example xml:id="ex-defint-expand-square">
-      <statement>
-        <p>Evaluate <m>\displaystyle \int_{-2}^{7} (3t-5)^2\,dt</m>.</p>
-      </statement>
-      <solution>
-        <p>
-          Since <m>\int (f(t))^2\,dt</m> is not equal to <m>\left(\int f(t)\,dt\right)^2</m>, we expand the integrand and use the rules:
-        </p>
-
-        <me>
-          \begin{array}{rcl}
-          \displaystyle \int_{-2}^{7} (3t-5)^2\,dt
-          &amp;=&amp;
-          \displaystyle \int_{-2}^{7} (9t^2-30t+25)\,dt
-          \\[0.8em]
-          &amp;=&amp;
-          \displaystyle 9\int_{-2}^{7} t^2\,dt \;-\;30\int_{-2}^{7} t\,dt \;+\;25\int_{-2}^{7} 1\,dt
-          \\[0.8em]
-          &amp;=&amp;
-          \displaystyle 9\left(\frac13 7^3-\frac13(-2)^3\right)
-          \;-\;
-          30\left(\frac12 7^2-\frac12(-2)^2\right)
-          \;+\;
-          25\left(7-(-2)\right)
-          \\[0.8em]
-          &amp;=&amp;
-          603.
-          \end{array}
-        </me>
-
-        <p>
-          (Notice again: the variable of integration is just a name.)
-        </p>
-      </solution>
-    </example>
-
-    <example xml:id="ex-defint-upper-bound">
-      <statement>
-        <p>
-          Find an upper bound for <m>\displaystyle \int_{-2}^{7} (3x-5)^2\,(1+\cos(x^2))\,dx</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Since <m>-1\le \cos(x^2)\le 1</m>, we have <m>1+\cos(x^2)\le 2</m>.
-          By domination,
-        </p>
-
-        <me>
-          \begin{array}{rcl}
-          \displaystyle \int_{-2}^{7} (3x-5)^2(1+\cos(x^2))\,dx
-          &amp;\le&amp;
-          \displaystyle \int_{-2}^{7} (3x-5)^2(2)\,dx
-          \\[0.7em]
-          &amp;=&amp;
-          2\int_{-2}^{7} (3x-5)^2\,dx
-          \ =\
-          2(603)
-          \ =\
-          1206.
-          \end{array}
-        </me>
-      </solution>
-    </example>
-  </subsection>
 
 <subsection xml:id="additional-worked-problems-integral-defInt">
   <title>Additional Worked-Out Examples</title>
@@ -464,105 +607,210 @@ Therefore
   <exercises xml:id="exercises-definite-integral">
     <title>Practice / Study Problems</title>
 
-    <exercisegroup>
-      <title>Concepts and Interpretation</title>
+  
 
-      <exercise xml:id="prob-defint-01">
-        <statement>
-          <p>
-            In the notation <m>\displaystyle \int_a^b f(x)\,dx</m>, identify the lower limit, upper limit, integrand, and variable of integration.
-          </p>
-        </statement>
-      </exercise>
 
-      <exercise xml:id="prob-defint-02">
-        <statement>
-          <p>
-            Explain in a sentence or two what “signed area” means.
-          </p>
-        </statement>
-      </exercise>
+  <exercisegroup>
+    <title>Some True/False Problems</title>
 
-      <exercise xml:id="prob-defint-03">
-        <statement>
-          <p>
-            Without computing exactly, decide whether <m>\displaystyle \int_0^4 (2-x)\,dx</m> is positive, negative, or zero.
-            Briefly justify your answer from the graph of <m>y=2-x</m>.
-          </p>
-        </statement>
-      </exercise>
-    </exercisegroup>
+    <introduction>
+      <p>
+        Determine whether each statement is true or false and briefly justify your reasoning.
+      </p>
+    </introduction>
 
-    <exercisegroup>
-      <title>Rules Practice</title>
+    <exercise>
+      <statement>
+<p>
+Computing a definite integral directly from its definition usually requires
+evaluating a limit of many rectangle area approximations.
+</p>
+      </statement>
+      <solution>
+        <p><em>True</em>. The definition of the definite integral is the limit of Riemann sums, which are sums of areas of rectangles.</p>
+      </solution>
+</exercise>   
 
-      <exercise xml:id="prob-defint-04">
-        <statement>
-          <p>
-            Use the splitting rule to rewrite <m>\displaystyle \int_{-1}^{5} f(x)\,dx</m> as a sum of two integrals split at <m>x=2</m>.
-          </p>
-        </statement>
-      </exercise>
 
-      <exercise xml:id="prob-defint-05">
-        <statement>
-          <p>
-            Suppose <m>3\le f(x)\le 8</m> on <m>[2,7]</m>.
-            Use the bounds rule to trap <m>\displaystyle \int_2^7 f(x)\,dx</m> between two numbers.
-          </p>
-        </statement>
-      </exercise>
+<exercise>
+  <statement>
+    <p>
+     <m>\displaystyle\int_1^4 2x\,dx = 15</m>.
+    </p>
+  </statement>
+  <solution>
+    <p> <em>True</em>.
+      Sketching <m>f(x)=2x</m> on the interval <m>[1,4]</m>, we see that the region described by the integral forms a trapezoid 
+      (a combination of a rectangle and a triangle). The base has width of <m>4-1=3</m>. For the rectangle portion the height is 
+      <m>f(1) = 2(1) = 2</m> so the rectangle has an area of <m>3 \times 2 = 6</m>. </p>
+      <p>For the triangle portion the height is <m>f(4) - f(1) = 8 - 2 = 6</m>, 
+        so the triangle has an area of <m>\frac{1}{2} \times 3 \times 6 = 9</m>. Therefore the total area is <m>6 + 9 = 15</m>.
+    </p>
+    <p>Since the graph of <m>f(x)=2x</m> lies above the <m>x</m>-axis on the interval <m>[1,4]</m>, 
+      the integral contributes positive area. Therefore:</p>
+    <me>
+\displaystyle\int_1^4 2x\,dx = 15.
+    </me>
+  </solution>
+</exercise>
 
-      <exercise xml:id="prob-defint-06">
-        <statement>
-          <p>
-            If <m>f(x)\le g(x)</m> on <m>[a,b]</m>, explain what the domination rule says about the two integrals.
-          </p>
-        </statement>
-      </exercise>
-    </exercisegroup>
 
-    <exercisegroup>
-      <title>Basic Integrals</title>
 
-      <exercise xml:id="prob-defint-07">
-        <statement>
-          <p>Compute <m>\displaystyle \int_{-3}^{4} 1\,dx</m>.</p>
-        </statement>
-      </exercise>
+<exercise> <statement> 
+<p>
+If <m>\displaystyle\int_0^3 f(x)\,dx = 2</m> and
+<m>\displaystyle\int_0^3 g(x)\,dx = 5</m>, then
+<m>\displaystyle\int_0^3 (f(x)+g(x))\,dx = 7</m>.
+</p>
+</statement>
+<solution>
+<p> 
+ <em>True</em>. By the sum rule for integrals,
+<me>
+\displaystyle\int_0^3 (f(x)+g(x))\,dx
+=   \displaystyle\int_0^3 f(x)\,dx
++   \displaystyle\int_0^3 g(x)\,dx
+= 2 + 5 = 7.
+</me>
+</p>
+</solution>
+</exercise>
 
-      <exercise xml:id="prob-defint-08">
-        <statement>
-          <p>Compute <m>\displaystyle \int_{0}^{5} x\,dx</m>.</p>
-        </statement>
-      </exercise>
+<exercise> <statement> 
+<p>
+If <m>f(x)\le g(x)</m> for all <m>x\in[a,b]</m>, then
+<m>\displaystyle\int_a^b f(x)\,dx \le \int_a^b g(x)\,dx</m>.
+</p>
+</statement>
+<solution>
+  <p>
+    <em>True</em>. By the domination rule for integrals, if <m>f(x)\le g(x)</m> for all <m>x\in[a,b]</m>, then
+    <me>\displaystyle\int_a^b f(x)\,dx \le \int_a^b g(x)\,dx</me>
+  </p>
+</solution>
+</exercise>
 
-      <exercise xml:id="prob-defint-09">
-        <statement>
-          <p>Compute <m>\displaystyle \int_{-2}^{3} x^2\,dx</m>.</p>
-        </statement>
-      </exercise>
-    </exercisegroup>
 
-    <exercisegroup>
-      <title>Putting It Together</title>
+<exercise> <statement> 
+<p>
+If
+<m>\displaystyle\int_1^5 f(x)\,dx = 4</m> and
+<m>\displaystyle\int_5^9 f(x)\,dx = 3</m>,
+then
+<m>\displaystyle\int_1^9 f(x)\,dx = 7</m>.
+</p>
+</statement> 
+<solution>
+<p>  <em>True</em>. By the splitting rule for integrals, since <m>1 \le 5 \le 9</m>, then
+<me>\displaystyle\int_1^9 f(x)\,dx
+=
+\displaystyle\int_1^5 f(x)\,dx
++
+\displaystyle\int_5^9 f(x)\,dx
+= 4 + 3 = 7.</me>
+</p>
+</solution>
+</exercise>
 
-      <exercise xml:id="prob-defint-10">
-        <statement>
-          <p>
-            Evaluate <m>\displaystyle \int_{1}^{4} (2x-1)^2\,dx</m> by expanding the integrand and using basic integrals.
-          </p>
-        </statement>
-      </exercise>
 
-      <exercise xml:id="prob-defint-11">
-        <statement>
-          <p>
-            Find an upper bound for <m>\displaystyle \int_{0}^{2} (x^2+1)(3+\sin(x))\,dx</m>.
-            (You do not need the exact value.)
-          </p>
-        </statement>
-      </exercise>
+
+ 
+
+<exercise> <statement>
+<p>
+If <m>\displaystyle\int_2^6 f(x)\,dx = 5</m>, then
+<m>\displaystyle\int_6^2 f(x)\,dx = -5</m>.
+</p>
+</statement> 
+<solution>
+  <p>
+    <em>True</em>. By the convention for reversed limits of integration, we have
+<me>\displaystyle\int_6^2 f(x)\,dx = -\int_2^6 f(x)\,dx = -5.</me>
+  </p>
+</solution>
+</exercise>
+
+
+
+
+<exercise><statement>
+<p>
+If <m>-2 \le f(x) \le 4</m> for all <m>x</m> in <m>[0,5]</m>, then
+<m>-10 \le \displaystyle\int_0^5 f(x)\,dx \le 20</m>.
+</p>
+</statement>
+<solution>
+<p>
+<em>True</em>. By the bounds rule for integrals, since <m>-2 \le f(x) \le 4</m> for all <m>x</m> in <m>[0,5]</m>, then
+<me>
+\begin{aligned}
+(5-0)(-2) \le \amp \displaystyle\int_0^5 f(x)\,dx \amp \le (5-0)(4)\\
+-10 \le \amp \displaystyle\int_0^5 f(x)\,dx \amp \le 20.
+\end{aligned}
+</me>
+</p>
+</solution> 
+</exercise>
+
+<exercise> <statement> 
+<p>
+If <m>f(x)</m> is integrable on <m>[a,b]</m>, then the definite integral
+<m>\displaystyle\int_a^b f(x)\,dx</m> must always be positive.
+</p>
+</statement> 
+<solution> 
+<p><em>False</em>.  The definite integral can be negative if the graph of <m>f(x)</m> lies below the 
+  <m>x</m>-axis on the interval <m>[a,b]</m>, since then the integral contributes negative area.</p>
+</solution> 
+</exercise>
+
+<exercise> <statement> 
+<p>
+If <m>f(x)</m> is negative on <m>[a,b]</m>, then
+<m>\displaystyle\int_a^b f(x)\,dx</m> is negative.
+</p>
+</statement> 
+<solution>
+  <p>
+    <em>True</em>. If <m>f(x)</m> is negative on <m>[a,b]</m>, then the graph of <m>f(x)</m> lies below the <m>x</m>-axis on the interval <m>[a,b]</m>.
+    Therefore the integral contributes negative area, so <m>\displaystyle\int_a^b f(x)\,dx</m> is negative.
+  </p>
+</solution>
+</exercise>
+
+
+<exercise> <statement>
+<p>
+If <m>\displaystyle\int_0^4 f(x)\,dx = -3</m>, then the graph of <m>f(x)</m> must lie entirely below the <m>x</m>-axis on <m>[0,4]</m>.
+</p>
+</statement>
+<solution>
+  <p>
+    <em>False</em>. The definite integral can be negative even it is not the case that <m>f(x)</m> is negative on the entire interval. 
+    For example, look back at <xref ref="ex-integral-triangle"/>
+  </p>
+</solution>
+</exercise>
+
+
+
+<exercise>
+  <statement>
+<p>
+If <m>\displaystyle\int_a^b f(x)\,dx = 0</m>, and <m>f(x)</m> is continuous then the graph of <m>f(x)</m> must intersect the <m>x</m>-axis somewhere in the interval <m>[a,b]</m>.
+</p>
+  </statement>
+<solution>
+  <p>
+     <em>True</em>. If <m>\displaystyle\int_a^b f(x)\,dx = 0</m>, then the total signed area under the graph of <m>f(x)</m> 
+     on the interval <m>[a,b]</m> is zero. If for instance, <m>f(x)\gt 0</m> on the entire interval then <m>\displaystyle\int_a^b f(x) \, dx \gt 0</m>. 
+     And similarly it cannot be exclusively negative.
+  </p>
+</solution>
+</exercise>
+
+
+
     </exercisegroup>
   </exercises>
 
