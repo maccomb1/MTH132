@@ -1909,37 +1909,182 @@ S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
       <title><xref ref="sec-derivApp-curve1"/> Curve Sketching Part 1</title>
 
       
+<example xml:id="ex-abs-value-analysis">
+  <statement>
+    <p>
+      Let <m>f(x)=5-|x+2|</m>.
+    </p>
+        <p>
+          (a) Find the critical number(s) of <m>f</m>.
+        </p>
+        <p>         (b) Determine the intervals where <m>f</m> is increasing and decreasing.</p>
+          <p>        (c) Find the local maxima and minima of <m>f</m>.</p>
+  </statement>
 
-      <example xml:id="prob-cs1-poly">
-        <statement>
-          <p>
-            Let <m>f(x)=x^4-4x^2</m>.
-            Find the critical points, intervals of increase/decrease, concavity, and inflection points.
-            Then sketch a graph.
-          </p>
-        </statement>
-      </example>
+  <solution>
+    <p>
+      (a) First rewrite the absolute value as a piecewise function.
+    </p>
 
-      <example xml:id="prob-cs1-rational">
-        <statement>
-          <p>
-            Let <m>f(x)=\dfrac{x}{x^2+1}</m>.
-            Find where <m>f</m> is increasing or decreasing and where it is concave up or concave down.
-            Then sketch a graph.
-          </p>
-        </statement>
-      </example>
+    <me>
+      f(x)=
+      \begin{cases}
+      5-(x+2) = 3-x &amp; \text{if } x \ge -2 \\
+      5-(-(x+2)) = x+7 &amp; \text{if } x &lt; -2
+      \end{cases}
+    </me>
 
-      <example xml:id="prob-cs1-sign-chart">
-        <statement>
-          <p>
-            A differentiable function has critical points at <m>x=-2</m> and <m>x=1</m>.
-            The sign of <m>f'(x)</m> is positive on <m>(-\infty,-2)</m>, negative on <m>(-2,1)</m>,
-            and positive on <m>(1,\infty)</m>.
-            Describe the behavior of the graph and classify the critical points.
-          </p>
-        </statement>
-      </example>
+    <p>
+      The domain of <m>f</m> is all real numbers.
+    </p>
+
+    <p>
+      The derivative on each interval is
+    </p>
+
+    <me>
+      f'(x)=
+      \begin{cases}
+      -1 &amp; x&gt;-2 \\
+      1 &amp; x&lt;-2
+      \end{cases}
+    </me>
+
+    <p>
+      The derivative does not exist at <m>x=-2</m>, so this is a critical number.
+    </p>
+
+    <p>
+      (b) Since <m>f'(x)&gt;0</m> for <m>x \in (-\infty, -2)</m> and <m>f'(x)&lt;0</m> for <m>x \in (-2, \infty)</m>,
+      the function increases on the interval <m>(-\infty, -2)</m> and decreases on the interval <m>(-2, \infty)</m>.
+    </p>
+
+    <p>
+      (c) By the First Derivative Test, since <m>f'(x)</m> changes from positive to negative at <m>x=-2</m>, the function has a local maximum 
+      at <m>x=-2</m>.
+      There are no local minima.
+    </p>
+
+  </solution>
+</example>
+      
+
+<example xml:id="ex-increasing-decreasing-cos2x">
+  <statement>
+    <p>
+      Consider <m>f(x)=\sqrt{2}x+\cos(2x)</m> on the interval <m>[0,\pi]</m>.
+    </p>
+
+           <p>
+          (a) Find the critical number(s) of <m>f</m>.
+        </p>
+        <p>         (b) Determine the intervals where <m>f</m> is increasing and decreasing.</p>
+          <p>        (c) Find the local maxima and minima of <m>f</m>.</p>
+  </statement>
+
+  <solution>
+   <p> (a) To find the critical numbers, compute the derivative.</p>
+
+    <me>
+      f'(x)=\sqrt{2}-2\sin(2x).
+    </me>
+
+    <p>
+      This is always defined, so the only critical numbers will come from <m>f'(x)=0</m>, solve
+    </p>
+
+    <me>\begin{aligned}
+      0 \amp = \sqrt{2}-2\sin(2x) \\
+      2\sin(2x) \amp = \sqrt{2} \\
+      \sin(2x) \amp = \frac{\sqrt{2}}{2}\\ 
+      2x \amp = \dfrac{\pi}{4}, \dfrac{3\pi}{4}, \dfrac{9\pi}{4}, \dfrac{11\pi}{4}, \ldots \\
+      x \amp = \dfrac{\pi}{8}, \dfrac{3\pi}{8}, \dfrac{9\pi}{8}, \dfrac{11\pi}{8}, \ldots
+    \end{aligned}
+    </me>
+
+    <p> Of these solutions, only <m>x=\frac{\pi}{8}</m> and <m>x=\frac{3\pi}{8}</m> lie in the interval <m>[0,\pi]</m>, 
+      so these are the critical numbers.</p>
+
+      <p> (b) To determine where the function is increasing and decreasing, we can use the critical numbers to 
+        divide the interval into three subintervals: <m>[0,\frac{\pi}{8})</m>, <m>(\frac{\pi}{8},\frac{3\pi}{8})</m>, 
+        and <m>(\frac{3\pi}{8},\pi]</m>.  We can test a point in each interval to determine the sign of the derivative.</p>
+        <ul><li> For <m>x=0</m>, <m>f'(0)=\sqrt{2}-2\sin(0)=\sqrt{2}\gt 0</m>, so the function is increasing on <m>[0,\frac{\pi}{8})</m>.</li>
+          <li> For <m>x=\frac{\pi}{4}</m>, <m>f'(\frac{\pi}{4})=\sqrt{2}-2\sin(\frac{\pi}{2})=\sqrt{2}-2\lt 0</m>, so the function is decreasing on <m>(\frac{\pi}{8},\frac{3\pi}{8})</m>.</li>
+            <li> For <m>x=\pi</m>, <m>f'(\pi)=\sqrt{2}-2\sin(2\pi)=\sqrt{2}\gt 0</m>, so the function is increasing on <m>(\frac{3\pi}{8},\pi]</m>.</li></ul>
+    <p> (c) By the First Derivative Test, since <m>f'(x)</m> changes from positive to negative at <m>x=\frac{\pi}{8}</m>, the function has a local maximum at <m>x=\frac{\pi}{8}</m>.  
+      Since <m>f'(x)</m> changes from negative to positive at <m>x=\frac{3\pi}{8}</m>, the function has a local minimum at <m>x=\frac{3\pi}{8}</m>.</p>
+  </solution>
+</example>
+
+<example xml:id="ex-curve-sketching-exp">
+  <statement>
+    <p>
+      Consider the function <m>f(x)=xe^{-x}</m>.
+    </p>
+    <p> (a) Find the critical number(s) of <m>f</m>.</p>
+    <p> (b) Determine the intervals where <m>f</m> is increasing and decreasing.</p>
+    <p> (c) Find the local maxima and minima of <m>f</m>.</p>
+    <p> (d) Determine the intervals where <m>f</m> is concave up and concave down, and find any inflection points.</p>
+    <p> (e) Sketch the graph of <m>f</m> using the information from parts (a)-(d).</p>
+  </statement>
+  <solution>
+    <p>
+      (a) To find the critical numbers, compute the derivative. 
+    </p>
+    <me>
+      f'(x)=e^{-x}-xe^{-x}=(1-x)e^{-x}.
+    </me>
+    <p> This is always defined, so the only critical numbers will come from <m>f'(x)=0</m>, solve
+    </p>
+    <me>\begin{aligned}
+      0 \amp = (1-x)e^{-x} \\
+      1-x \amp = 0 \\
+      x \amp = 1.
+    \end{aligned}
+    </me>
+    <p> Thus the only critical number is <m>x=1</m>.</p>
+    <p> (b) To determine where the function is increasing and decreasing, we can use the critical number to 
+      divide the interval into two subintervals: <m>(-\infty,1)</m> and <m>(1,\infty)</m>.  We can test a point in each interval to determine the sign of the derivative.</p>
+      <ul><li> For <m>x=0</m>, <m>f'(0)=(1-0)e^{0}=1\gt 0</m>, so the function is increasing on <m>(-\infty,1)</m>.</li>
+        <li> For <m>x=2</m>, <m>f'(2)=(1-2)e^{-2}=-e^{-2}\lt 0</m>, so the function is decreasing on <m>(1,\infty)</m>.</li></ul>
+    <p> (c) By the First Derivative Test, since <m>f'(x)</m> changes from positive to negative at <m>x=1</m>, the function has a local maximum at <m>x=1</m>.  
+      There are no local minima.</p>
+    <p> (d) To determine where the function is concave up and concave down, compute the second derivative.</p>
+    <me>
+      f''(x)=-e^{-x}-(1-x)e^{-x}=(x-2)e^{-x}.
+    </me>
+    <p> This is always defined, so the only points of inflection will come from <m>f''(x)=0</m>, solve
+    </p>
+    <me>\begin{aligned}
+      0 \amp = (x-2)e^{-x} \\
+      x-2 \amp = 0 \\
+      x \amp = 2.
+    \end{aligned}
+    </me>
+    <p> To determine the concavity, we can
+      divide the interval into two subintervals: <m>(-\infty,2)</m> and <m>(2,\infty)</m>.  We can test a point in each interval to determine the sign of the second derivative.</p>
+      <ul><li> For <m>x=0</m>, <m>f''(0)=(0-2)e^{0}=-2\lt 0</m>, so the function is concave down on <m>(-\infty,2)</m>.</li>
+        <li> For <m>x=3</m>, <m>f''(3)=(3-2)e^{-3}=e^{-3}\gt 0</m>, so the function is concave up on <m>(2,\infty)</m>.</li></ul>
+    <p> Thus the function is concave down on <m>(-\infty,2)</m> and concave up on <m>(2,\infty)</m>, and there is an inflection point at <m>x=2</m>.</p>
+    <p> (e) To sketch the graph of <m>f</m>, we can use the information from parts (a)-(d).  
+      <ul> 
+        <li> <m>f(0)=0\cdot e^{0}=0</m>, so the graph passes through the point <m>(0,0)</m>.</li>
+        <li> The function is increasing on <m>(-\infty,1)</m> and decreasing on <m>(1,\infty)</m>. </li>
+        <li> There is a local maximum at <m>x=1</m>.</li>
+        <li> The function is concave down on <m>(-\infty,2)</m> and concave up on <m>(2,\infty)</m>.</li>
+        <li> There is an inflection point at <m>x=2</m>.</li>
+      </ul>
+    </p>
+
+    <p> Combining all this we can sketch the graph of <m>f</m>.</p>
+
+          <image source="images/asymp01.png" width="90%">
+        <shortdescription>
+          Graph of a function that gets closer and closer to a horizontal line as x increases.
+        </shortdescription>
+      </image>
+  </solution>
+</example>
 
 
     </subsection>

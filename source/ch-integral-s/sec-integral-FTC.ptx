@@ -4,13 +4,23 @@
   <title>The Fundamental Theorem of Calculus</title>
 
   <objectives>
-    <ul>
-      <li>Explain how an integral with a variable upper limit defines an antiderivative.</li>
-      <li>Use the First Fundamental Theorem of Calculus to differentiate integral functions.</li>
-      <li>Use the Second Fundamental Theorem of Calculus to evaluate definite integrals from an antiderivative.</li>
-      <li>Interpret <m>\displaystyle \int_a^b f(x)\,dx</m> as total change <m>F(b)-F(a)</m> when <m>F'(x)=f(x)</m>.</li>
-      <li>Sketch an integral function <m>\displaystyle I(x)=\int_a^x f(t)\,dt</m> using the fact that <m>I'(x)=f(x)</m>.</li>
-    </ul>
+  <ul>
+    <li>
+      State and apply the First Fundamental Theorem of Calculus to compute derivatives of functions defined by integrals.
+    </li>
+    <li>
+      Interpret accumulation functions
+      <m>\displaystyle F(x)=\int_a^x f(t)\,dt</m>
+      as total accumulated (signed) change from <m>a</m> to <m>x</m> and recognize them as antiderivatives.
+    </li>
+    <li>
+      Use the relationship <m>F'(x)=f(x)</m> to analyze accumulation functions,
+      including determining where they are increasing, decreasing, concave up, and concave down.
+    </li>
+    <li>
+      State and apply the Second Fundamental Theorem of Calculus to evaluate definite integrals using antiderivatives.
+    </li>
+  </ul>
   </objectives>
 
   <subsection xml:id="ssec-ftoc-integral-as-antiderivative">
@@ -336,13 +346,13 @@
       </solution>
     </example>
 
-<p>We can also do curve sketching style problems with accumulation functions.
+<p>Thanks to the First Fundamental Theorem of Calculus, we can also do curve sketching style problems with accumulation functions.
 </p>
 
 <example xml:id="ex-accumulation-curve-sketching"> 
   <statement>
     <p>
-      Consider the function <m>H(x)=\int_0^x (1-t)e^t \,dt</m>. 
+      Consider the function <m>H(x)=\displaystyle\int_0^x (1-t)e^t \,dt</m>. 
     </p>
     <p> (a) Evaluate <m>H(0)</m>.</p>
     <p> (b) Find where <m>H(x)</m> is increasing and where it is decreasing.</p>
@@ -351,23 +361,26 @@
   </statement>
   <solution>
     <p>
-      (a) <m>H(0)=\int_0^0 (1-t)e^t\,dt=0</m>.
+      <alert>Part (a):</alert></p>
+      <p> <m>H(0)=\int_0^0 (1-t)e^t\,dt=0</m> Since the lower and upper bound of the integral are the same.
     </p>
     <p>
-      (b) By the First Fundamental Theorem, <m>H'(x)=(1-x)e^x</m>.
+      <alert>Part (b):</alert></p>
+      <p> By the First Fundamental Theorem, <me>H'(x)=(1-x)e^x</me>
       Since <m>e^x\gt 0</m> for all <m>x</m>, the sign of <m>H'(x)</m> is determined by the sign of <m>1-x</m>.
-      So <m>H'(x)\gt 0</m> when <m>x\lt 1</m>, and <m>H'(x)\lt 0</m> when <m>x\gt 1</m>.
+      So <m>H'(x)\gt 0</m> when <m>x\lt 1</m>, and <m>H'(x)\lt 0</m> when <m>x\gt 1</m>. </p><p>
       Therefore <m>H(x)</m> is increasing on <m>(-\infty,1)</m> and decreasing on <m>(1,\infty)</m>.
     </p>
-    <p>
-      (c) To find where <m>H</m> is concave up or down, we need to find the second derivative. 
-      We have <m>H''(x)=((1-x)e^x)' = -e^x+(1-x)e^x=-xe^x</m>.
-      Since <m>e^x\gt 0</m> for all <m>x</m>, the sign of <m>H''(x)</m> is determined by the sign of <m>-x</m>.
+    <p> <alert> Part (c)</alert></p> <p>
+     To find where <m>H</m> is concave up or down, we need to find the second derivative. 
+      We have <me>H''(x)=((1-x)e^x)' = -e^x+(1-x)e^x=-xe^x</me>
+      Since <m>e^x\gt 0</m> for all <m>x</m>, the sign of <m>H''(x)</m> is determined by the sign of <m>-x</m>. </p>
+      <p>
       So <m>H''(x)\gt 0</m> when <m>x\lt 0</m>, and <m>H''(x)\lt 0</m> when <m>x\gt 0</m>.
       Therefore <m>H(x)</m> is concave up on <m>(-\infty,0)</m> and concave down on <m>(0,\infty)</m>.
     </p>
-    <p>
-      (d) We have the following information about the graph of <m>y=H(x)</m>:
+    <p> <alert>Part (d)</alert></p><p>
+    We have the following information about the graph of <m>y=H(x)</m>:
       <ul>
         <li> <m>H(0)=0</m>, so the graph passes through the origin.</li>
         <li> <m>H(x)</m> is increasing on <m>(-\infty,1)</m> and decreasing on <m>(1,\infty)</m>, so the graph has a local maximum at <m>x=1</m>.</li>
@@ -377,9 +390,11 @@
 
         <image width="90%" source="images/curveSketch11.png">
 <shortdescription>
-  Animated graph showing the cube root function with tangent lines at various points.
-  For each point, the slope of the tangent line is recorded and plotted separately.
-  As these slope values are connected, they form a new curve representing the derivative function.
+  Graph of the accumulation function H(x). 
+  The graph passes through the origin, has a local maximum at x=1, 
+  and an inflection point at x=0. 
+  The graph is increasing and concave up for x less than 0, increasing and concave down for x between 0 and 1, 
+  and decreasing and concave down for x larger than 1.
 </shortdescription>
         </image>
 
@@ -406,7 +421,7 @@
       <title>Second Fundamental Theorem of Calculus</title>
       <statement>
         <p>
-          Suppose <m>F</m> is an antiderivative of <m>f</m> on <m>[a,b]</m>, so <m>F'(x)=f(x)</m>.
+          Suppose <m>F</m> is an antiderivative of a continuous function <m>f</m> on <m>[a,b]</m>, so <m>F'(x)=f(x)</m>.
           Then
         </p>
         <me>
@@ -416,76 +431,114 @@
           That is, the integral of a rate of change is the total change.
         </p>
       </statement>
+      <proof>
+        <p>
+          By the First Fundamental Theorem, <m>I(x)=\int_a^x f(t)\,dt</m> is an antiderivative of <m>f</m>.
+          Any two antiderivatives differ by a constant, so <m>I(x)=F(x)+C</m>.
+          Since <m>I(a)=0</m>, we get <m>0=F(a)+C</m>, so <m>C=-F(a)</m>.
+          Thus <m>I(x)=F(x)-F(a)</m>, and evaluating at <m>x=b</m> gives
+          <me>\int_a^b f(x)\,dx=I(b)=F(b)-F(a)</me>
+        </p>
+      </proof>
     </theorem>
 
-    <p>
-      <em>Proof idea.</em>
-      The First Fundamental Theorem says <m>I(x)=\int_a^x f(t)\,dt</m> is an antiderivative of <m>f</m>.
-      Any two antiderivatives differ by a constant, so <m>I(x)=F(x)+C</m>.
-      Since <m>I(a)=0</m>, we get <m>0=F(a)+C</m>, so <m>C=-F(a)</m>.
-      Thus <m>I(x)=F(x)-F(a)</m>, and evaluating at <m>x=b</m> gives
-      <m>\int_a^b f(x)\,dx=I(b)=F(b)-F(a)</m>.
-    </p>
 
-    <example xml:id="ex-ftc-evaluate-even-poly">
+
+    <example xml:id="ex-ftc-evaluate-integral">
       <statement>
         <p>
-          Evaluate <m>\displaystyle \int_{-\sqrt{5}}^{\sqrt{5}} \left(5+4x^2-x^4\right)\,dx</m>.
+          Evaluate <m>\displaystyle \int_{0}^{1} \left(5+x^2-e^x\right)\,dx</m>.
         </p>
       </statement>
       <solution>
         <p>
-          An antiderivative is <m>F(x)=5x+\frac{4}{3}x^3-\frac{1}{5}x^5</m>.
-          Apply the theorem:
+          An antiderivative is <m>F(x)=5x+\frac{1}{3}x^3-e^x</m>.
+          Apply the Second Fundamental Theorem of Calculus:
         </p>
 
         <me>
           \begin{array}{rcl}
-          \displaystyle \int_{-\sqrt{5}}^{\sqrt{5}} (5+4x^2-x^4)\,dx
+          \displaystyle \int_{0}^{1} (5+x^2-e^x)\,dx
           &amp;=&amp;
-          F(\sqrt{5})-F(-\sqrt{5})
+          F(1)-F(0)
           \\[0.6em]
           &amp;=&amp;
-          2F(\sqrt{5})
+          \left(5+\frac{1}{3}-e\right)-\left(0-0-1\right)
           \\[0.6em]
           &amp;=&amp;
-          2\left(5\sqrt{5}+\frac{4}{3}(5\sqrt{5})-\frac{1}{5}(25\sqrt{5})\right)
-          \\[0.6em]
-          &amp;=&amp;
-          2\left(\frac{20}{3}\sqrt{5}\right)
-          \ =\
-          \frac{40}{3}\sqrt{5}.
+          6+\frac{1}{3}-e.
           \end{array}
         </me>
+
+        <remark>
+          <p> 
+          Another antiderivative is <m>F(x)=5x+\frac{1}{3}x^3-e^x+7</m>. See that you get the same answer 
+          if you use this antiderivative instead:
+          </p> 
+          <me>
+            \begin{array}{rcl}
+            \displaystyle \int_{0}^{1} (5+x^2-e^x)\,dx
+            &amp;=&amp;
+            F(1)-F(0)
+            \\[0.6em]
+            &amp;=&amp;
+            \left(5+\frac{1}{3}-e + 7 \right)-\left(0-0-1 +7\right)
+            \\[0.6em]
+            &amp;=&amp;
+            6+\frac{1}{3}-e.
+            \end{array}
+          </me>
+          <p>No matter the value of the constant, the difference <m>F(b)-F(a)</m> will always be the same, 
+            so we get the same answer for the integral.</p>
+        </remark>
+
+
       </solution>
     </example>
 
-    <example xml:id="ex-ftc-area-poly">
+    <remark xml:id="remark-ftc-evaluation-notation">
+       
+      <p>
+        The Second Fundamental Theorem of Calculus allows us to evaluate a definite integral by finding an antiderivative.
+        In practice, we often write the evaluation of the integral as
+      </p>
+
+      <me>
+        \int_a^b f(x)\,dx \ =\ F(b)-F(a) \ =\ \left. F(x)\right|_a^b.
+      </me>
+
+      <p>
+        The notation <m>\left. F(x)\right|_a^b</m> is read as "F of x evaluated from a to b" and means <m>F(b)-F(a)</m>.
+        This is just a convenient shorthand for writing the difference of the antiderivative at the endpoints.
+      </p>
+    </remark>
+
+    <example xml:id="ex-ftc-area-evaluate">
       <statement>
         <p>
-          Determine the area under <m>y=5+4x^2-x^4</m> and above the <m>x</m>-axis.
+          Determine the net area between <m>y=\dfrac{1+\sqrt{x}}{x}</m> and the <m>x</m>-axis on the interval <m>[1,4]</m>.
         </p>
       </statement>
       <solution>
         <p>
-          First find where the graph meets the <m>x</m>-axis:
-          <m>5+4x^2-x^4=0</m>. Let <m>u=x^2</m>, so the equation becomes
-          <m>5+4u-u^2=0</m>, which has solutions <m>u=-1</m> and <m>u=5</m>.
-          Only <m>u=5</m> gives real <m>x</m>, so the intercepts are <m>x=\pm\sqrt{5}</m>.
-          The function is nonnegative between these intercepts, so the area is
+          The net area is given by a definite integral
         </p>
-
         <me>
-          \text{Area}
-          \ =\
-          \int_{-\sqrt{5}}^{\sqrt{5}} (5+4x^2-x^4)\,dx
-          \ =\
-          \frac{40}{3}\sqrt{5}.
+          \begin{array}{rcl}
+          \text{net area} &amp;=&amp;
+          \displaystyle \int_1^4 \frac{1+\sqrt{x}}{x}\,dx \\[0.6em] 
+          &amp;=&amp;
+          \displaystyle \int_1^4 \frac{1}{x} + \frac{1}{\sqrt{x}}\,dx
+          \\[0.6em]
+          &amp;=&amp;
+          \left. \ln|x|+2\sqrt{x}\right|_1^4   \\[0.6em] 
+          &amp;=&amp;
+          \left(\ln(4)+4\right)-\left(\ln(1)+2\right) \\[0.6em] 
+          &amp;=&amp;
+          \ln(4)+2       
+          \end{array}
         </me>
-
-        <p>
-          Quick check: the base is about <m>2\sqrt{5}\approx 4.47</m> and the average height is around <m>7</m>, so an area near <m>31</m> is reasonable.
-        </p>
+        <p> So the net area is <m>\ln(4)+2</m>.</p> 
       </solution>
     </example>
   </subsection>
@@ -510,55 +563,233 @@
   <exercises xml:id="exercises-ftoc">
     <title>Practice / Study Problems</title>
 
-    <exercisegroup>
-      <title>Using the First Fundamental Theorem</title>
 
-      <exercise xml:id="prob-ftoc-01">
-        <statement>
-          <p>
-            Let <m>\displaystyle I(x)=\int_{1}^{x} (t^3-2t)\,dt</m>.
-            Compute <m>I'(x)</m>.
-          </p>
-        </statement>
-      </exercise>
+  <exercisegroup>
+    <title>Some True/False Problems</title>
 
-      <exercise xml:id="prob-ftoc-02">
-        <statement>
-          <p>
-            Compute <m>\displaystyle \frac{d}{dx}\left(\int_{0}^{x^2} \cos(t)\,dt\right)</m>.
-          </p>
-        </statement>
-      </exercise>
+    <introduction>
+      <p>
+        Determine whether each statement is true or false and briefly justify your reasoning.
+      </p>
+    </introduction>
 
-      <exercise xml:id="prob-ftoc-03">
-        <statement>
-          <p>
-            Compute <m>\displaystyle \frac{d}{dx}\left(\int_{\sin(x)}^{3} \sqrt{1+t^2}\,dt\right)</m>.
-          </p>
-        </statement>
-      </exercise>
-    </exercisegroup>
 
-    <exercisegroup>
-      <title>Using the Second Fundamental Theorem</title>
+<exercise xml:id="ex-ftc-true-false-1">
+  <statement>
+    <p>
+      The notation <m>\left. F(x)\right|_a^b</m> means <m>F(a)-F(b)</m>.
+    </p>
+  </statement>
+  <solution>
+    <p><alert>False.</alert> The notation <m>\left. F(x)\right|_a^b</m> means <m>F(b)-F(a)</m>.</p>
+  </solution>
+</exercise>
 
-      <exercise xml:id="prob-ftoc-04">
-        <statement>
-          <p>Evaluate <m>\displaystyle \int_{0}^{2} (3x^2-4)\,dx</m>.</p>
-        </statement>
-      </exercise>
 
-      <exercise xml:id="prob-ftoc-05">
-        <statement>
-          <p>Evaluate <m>\displaystyle \int_{-1}^{1} (x^3+2x)\,dx</m>.</p>
-        </statement>
-      </exercise>
+<exercise xml:id="ex-ftc-true-false-2">
+  <statement>
+    <p>
+      <m>\displaystyle\int_0^{\pi/4} \sec^2(x)~dx = 1</m>
+    </p>
+  </statement>
+  <solution>
+    <p><alert>True.</alert> An antiderivative of <m>\sec^2(x)</m> is <m>\tan(x)</m>, so evaluating from <m>0</m> to <m>\pi/4</m> gives <m>\tan(\pi/4)-\tan(0)=1-0=1</m>.</p>
+  </solution>
 
-      <exercise xml:id="prob-ftoc-06">
-        <statement>
-          <p>Find the area between <m>y=x^2-4</m> and the <m>x</m>-axis on the interval <m>[0,3]</m>.</p>
-        </statement>
-      </exercise>
+</exercise>
+
+<exercise xml:id="ex-ftc-true-false-3" >
+  <statement>
+    <p>
+      <m>\displaystyle\int_1^{e} \dfrac{1}{x}~dx  \lt \displaystyle\int_0^{1} \dfrac{1}{1+x^2} ~dx </m>
+    </p>
+  </statement>
+  <solution>
+    <p><alert>False.</alert>
+      Using the Second Fundamental Theorem of Calculus, we can evaluate both integrals. 
+      The left integral evaluates to 
+    </p> 
+    <me>
+      \begin{array}{rcl}
+      \displaystyle\int_1^{e} \frac{1}{x}~dx
+      &amp;=&amp;
+       \ln|x|\Bigg|_1^e
+      \\[0.6em]
+      &amp;=&amp;       \ln(e)-\ln(1) = 1-0 = 1
+\end{array}
+    </me>
+    <p>The right integral evaluates to </p> 
+    <me> 
+      \begin{array}{rcl}
+      \displaystyle\int_0^{1} \dfrac{1}{1+x^2} ~dx
+      &amp;=&amp;
+      \left. \arctan(x)\right|_0^1 
+      \\[0.6em]
+      &amp;=&amp; \arctan(1)-\arctan(0)
+      \\[0.6em]
+      &amp;=&amp; \frac{\pi}{4}-0 = \frac{\pi}{4}
+      \end{array}
+    </me>
+    <p> 
+      Since we know <m>\pi\lt 4</m> we have <m>\frac{\pi}{4}\lt 1</m>, so <m>\displaystyle\int_1^{e} \dfrac{1}{x}~dx \gt \displaystyle\int_0^{1} \dfrac{1}{1+x^2} ~dx </m>.
+    </p>
+  </solution>
+</exercise>
+
+
+<exercise xml:id="ex-ftc-true-false-4">
+  <statement>
+    <p> The area between <m>y=5^x</m> and the <m>x</m>-axis on the interval <m>[0,1]</m> is <m>5</m>.</p>
+    </statement>
+    <solution>
+      <p>
+        <alert>False.</alert> The area is given by the integral <m>\displaystyle\int_0^1 5^x\,dx</m>.
+        An antiderivative of <m>5^x</m> is <m>\frac{5^x}{\ln(5)}</m>, so evaluating from 0 to 1 gives
+        <me>
+  \begin{array}{rcl}
+  \displaystyle\int_0^1 5^x\,dx
+  &amp;=&amp;
+  \left. \frac{5^x}{\ln(5)}\right|_0^1
+  \\[0.6em]
+  &amp;=&amp;
+  \frac{5}{\ln(5)}-\frac{1}{\ln(5)} 
+  \\[0.6em]
+  &amp;=&amp;
+  \frac{4}{\ln(5)}
+  \end{array}
+        </me>
+        Which is certainly not the same as 5.
+      </p>
+    </solution>
+</exercise>
+
+
+
+
+<exercise xml:id="ex-ftc-true-false-5">
+  <statement>
+    <p>
+      If <m>F(x)=\displaystyle\int_2^x e^{t-2}\,dt</m>, then <m>F(2)=1</m>.
+    </p>
+  </statement>
+  <solution>
+    <p><alert>False.</alert> Since the lower and upper limits are the same, <m>F(2)=\displaystyle\int_2^2 e^{t-2}\,dt=0</m>.</p>
+  </solution>
+</exercise>
+    
+
+
+
+<exercise xml:id="ex-ftc-true-false-6">
+  <statement>
+    <p>
+      If <m>F'(x)=f(x)</m>, then <m>\displaystyle\int_a^b f(x)\,dx</m> represents the total change in <m>F</m> from <m>x=a</m> to <m>x=b</m>.
+    </p>
+  </statement>
+  <solution>
+    <p><alert>True.</alert> By the Second Fundamental Theorem of Calculus, <m>\displaystyle\int_a^b f(x)\,dx=F(b)-F(a)</m>.</p>
+  </solution>
+</exercise>
+
+<exercise xml:id="ex-ftc-true-false-7">
+  <statement>
+    <p>
+      Water flows into a tank at a rate of <m>r(t)=1+\sqrt{t}</m> liters per minute, where <m>t</m> is the time in minutes. 
+      The total amount of water that flows into the tank in the first 9 minutes is 27 liters.
+    </p>
+  </statement>
+  <solution>
+    <p><alert>True.</alert> The integral <m>\displaystyle\int_0^9 r(t)\,dt</m> gives the total amount of water that flows into 
+      the tank from time <m>t=0</m> to time <m>t=9</m> minutes. Evaluate</p>
+      <me> 
+        \begin{array}{rcl}
+        \displaystyle\int_0^9 (1+\sqrt{t})\,dt
+        &amp;=&amp;
+        \displaystyle\int_0^9 1 + t^{1/2}\,dt
+        \\[0.6em]
+        &amp;=&amp;
+        \left. t+\frac{2}{3}t^{3/2}\right|_0^9
+        \\[0.6em]
+        &amp;=&amp;
+        (9+\frac{2}{3}\cdot 27) - (0+0)
+        \\[0.6em]
+        &amp;=&amp;
+        27
+        \end{array}
+      </me> <p> 
+      So the total amount of water that flows into the tank in the first 9 minutes is 27 liters.
+  </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="ex-ftc-true-false-8">
+  <statement>
+    <p>
+      If <m>F(x)=\displaystyle\int_0^x f(t)\,dt</m> and <m>f(x)&gt;0</m> on an interval, then <m>F(x)</m> is increasing on that interval.
+    </p>
+  </statement>
+  <solution>
+    <p><alert>True.</alert> Since <m>F'(x)=f(x)</m>, if <m>f(x)&gt;0</m>, then <m>F</m> is increasing.</p>
+  </solution>
+</exercise>
+
+<exercise xml:id="ex-ftc-true-false-9">
+  <statement>
+    <p>
+      If <m>F(x)=\displaystyle\int_0^x f(t)\,dt</m> and <m>F(x)&gt;0</m> on an interval, then <m>f(x)</m> is increasing on that interval.
+    </p>
+  </statement>
+  <solution>
+    <p><alert>False.</alert> The condition <m>F(x)&gt;0</m> does not imply that <m>f(x)</m> is increasing. 
+      For example, consider <m>F(x)=1+\tfrac13 x^3</m> on <m>(-1,0)</m>. Then <m>F(x) &gt;0</m>, and yet <m>f(x) = x^2</m> is decreasing 
+      on <m>(-1,0)</m></p>
+  </solution>
+</exercise>
+
+<exercise xml:id="ex-ftc-true-false-10">
+  <statement>
+    <p>Consider the graph of <m>f(t)</m> below and let <m>F(x)=\displaystyle\int_0^x f(t)\,dt</m>.</p>
+    <sidebyside width="80%">
+  <image>
+  <shortdescription>
+  Graph of a function f(t). The curve starts of positive from t=0 to t=3 and the graph has a 
+  labeled area of 5. The curve then goes negative from t=3 to t=8 and has a labeled area of -12. 
+  The graph passes through the points (0,0), (3,0), and (8,0).
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}
+	\draw[fill=green!20] plot[domain=0:3, smooth] (\x, {.1*(\x)*(\x-3)*(\x-8)});
+	\draw[fill=red!20] plot[domain=3:8, smooth] (\x, {.1*(\x)*(\x-3)*(\x-8)});
+	\draw[->, thick] (-.3,0) -- (8.3,0) node [right] {$t$} ;
+	\draw[->, thick] (0,-4) -- (0,3);
+	\draw[very thick] plot[domain=0:8, smooth] (\x, {.1*(\x)*(\x-3)*(\x-8)});
+	\draw (1.3, .6) node {Area = 5};
+	\draw (5.7, -1.3) node {Area = $-12$};	
+	\draw (2.5,1.5) node {$f(t)$};
+	\foreach \x in {8} {
+		\draw (\x, -2pt) -- (\x, 2pt) node[font=\small, above] {\x};	
+	} 
+	
+\end{tikzpicture}
+
+ ]]>
+    </latex-image>
+  </image>
+      </sidebyside>
+      <p> Then <m>F'(8) \gt F(8)</m>.</p>
+
+  </statement>
+  <solution>
+    <p><alert>True.</alert>
+    We can evaluate <m>F(8)</m> by finding the signed area under the graph of <m>f(t)</m> from <m>t=0</m> to <m>t=8</m> which is 
+    <m>5 + (-12)=-7</m>. Since <m>F'(8)=f(8)=0\gt -7=F(8)</m>, we have <m>F'(8)\gt F(8)</m>.
+    </p> 
+  </solution>
+</exercise>
+
+
+
+
     </exercisegroup>
   </exercises>
 
