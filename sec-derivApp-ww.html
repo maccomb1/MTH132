@@ -1959,22 +1959,220 @@ c=\sqrt{7}.
 <div class="autopermalink" data-description="Example 3.9.20"><a href="#ex-mvt-rational" title="Copy heading and permalink for Example 3.9.20" aria-label="Copy heading and permalink for Example 3.9.20">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 3.5 Mean Value Theorem"><a href="#subsec-derivApp-mvt" title="Copy heading and permalink for Subsection: Section 3.5 Mean Value Theorem" aria-label="Copy heading and permalink for Subsection: Section 3.5 Mean Value Theorem">🔗</a></div></section><section class="subsection" id="subsec-derivApp-curve1"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 3.6 Curve Sketching Part 1</span>
 </h3>
-<article class="example example-like" id="prob-cs1-poly"><h4 class="heading">
+<article class="example example-like" id="ex-abs-value-analysis"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="prob-cs1-poly-1-1">Let <span class="process-math">\(f(x)=x^4-4x^2\text{.}\)</span> Find the critical points, intervals of increase/decrease, concavity, and inflection points. Then sketch a graph.<div class="autopermalink" data-description="Paragraph"><a href="#prob-cs1-poly-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-abs-value-analysis-1-1">Let <span class="process-math">\(f(x)=5-|x+2|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-analysis-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-abs-value-analysis-1-2">(a) Find the critical number(s) of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-analysis-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-abs-value-analysis-1-3">(b) Determine the intervals where <span class="process-math">\(f\)</span> is increasing and decreasing.<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-analysis-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-abs-value-analysis-1-4">(c) Find the local maxima and minima of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-analysis-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.9.21"><a href="#prob-cs1-poly" title="Copy heading and permalink for Example 3.9.21" aria-label="Copy heading and permalink for Example 3.9.21">🔗</a></div></article><article class="example example-like" id="prob-cs1-rational"><h4 class="heading">
+<div class="solutions"><details id="ex-abs-value-analysis-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-abs-value-analysis-2-1">(a) First rewrite the absolute value as a piecewise function.<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-analysis-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-abs-value-analysis-2-2">
+\begin{equation*}
+f(x)=
+\begin{cases}
+5-(x+2) = 3-x &amp; \text{if } x \ge -2 \\
+5-(-(x+2)) = x+7 &amp; \text{if } x &lt; -2
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="ex-abs-value-analysis-2-3">The domain of <span class="process-math">\(f\)</span> is all real numbers.<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-analysis-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-abs-value-analysis-2-4">The derivative on each interval is<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-analysis-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-abs-value-analysis-2-5">
+\begin{equation*}
+f'(x)=
+\begin{cases}
+-1 &amp; x&gt;-2 \\
+1 &amp; x&lt;-2
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="ex-abs-value-analysis-2-6">The derivative does not exist at <span class="process-math">\(x=-2\text{,}\)</span> so this is a critical number.<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-analysis-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-abs-value-analysis-2-7">(b) Since <span class="process-math">\(f'(x)&gt;0\)</span> for <span class="process-math">\(x \in (-\infty, -2)\)</span> and <span class="process-math">\(f'(x)&lt;0\)</span> for <span class="process-math">\(x \in (-2, \infty)\text{,}\)</span> the function increases on the interval <span class="process-math">\((-\infty, -2)\)</span> and decreases on the interval <span class="process-math">\((-2, \infty)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-analysis-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-abs-value-analysis-2-8">(c) By the First Derivative Test, since <span class="process-math">\(f'(x)\)</span> changes from positive to negative at <span class="process-math">\(x=-2\text{,}\)</span> the function has a local maximum at <span class="process-math">\(x=-2\text{.}\)</span> There are no local minima.<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-analysis-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.9.21.1"><a href="#ex-abs-value-analysis-2" title="Copy heading and permalink for Solution 3.9.21.1" aria-label="Copy heading and permalink for Solution 3.9.21.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 3.9.21"><a href="#ex-abs-value-analysis" title="Copy heading and permalink for Example 3.9.21" aria-label="Copy heading and permalink for Example 3.9.21">🔗</a></div></article><article class="example example-like" id="ex-increasing-decreasing-cos2x"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="prob-cs1-rational-1-1">Let <span class="process-math">\(f(x)=\dfrac{x}{x^2+1}\text{.}\)</span> Find where <span class="process-math">\(f\)</span> is increasing or decreasing and where it is concave up or concave down. Then sketch a graph.<div class="autopermalink" data-description="Paragraph"><a href="#prob-cs1-rational-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-increasing-decreasing-cos2x-1-1">Consider <span class="process-math">\(f(x)=\sqrt{2}x+\cos(2x)\)</span> on the interval <span class="process-math">\([0,\pi]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-increasing-decreasing-cos2x-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-increasing-decreasing-cos2x-1-2">(a) Find the critical number(s) of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-increasing-decreasing-cos2x-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-increasing-decreasing-cos2x-1-3">(b) Determine the intervals where <span class="process-math">\(f\)</span> is increasing and decreasing.<div class="autopermalink" data-description="Paragraph"><a href="#ex-increasing-decreasing-cos2x-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-increasing-decreasing-cos2x-1-4">(c) Find the local maxima and minima of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-increasing-decreasing-cos2x-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.9.22"><a href="#prob-cs1-rational" title="Copy heading and permalink for Example 3.9.22" aria-label="Copy heading and permalink for Example 3.9.22">🔗</a></div></article><article class="example example-like" id="prob-cs1-sign-chart"><h4 class="heading">
+<div class="solutions"><details id="ex-increasing-decreasing-cos2x-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-increasing-decreasing-cos2x-2-1">(a) To find the critical numbers, compute the derivative.<div class="autopermalink" data-description="Paragraph"><a href="#ex-increasing-decreasing-cos2x-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-increasing-decreasing-cos2x-2-2">
+\begin{equation*}
+f'(x)=\sqrt{2}-2\sin(2x).
+\end{equation*}
+</div>
+<div class="para" id="ex-increasing-decreasing-cos2x-2-3">This is always defined, so the only critical numbers will come from <span class="process-math">\(f'(x)=0\text{,}\)</span> solve<div class="autopermalink" data-description="Paragraph"><a href="#ex-increasing-decreasing-cos2x-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-increasing-decreasing-cos2x-2-4">
+\begin{equation*}
+\begin{aligned}
+0 \amp = \sqrt{2}-2\sin(2x) \\
+2\sin(2x) \amp = \sqrt{2} \\
+\sin(2x) \amp = \frac{\sqrt{2}}{2}\\ 
+2x \amp = \dfrac{\pi}{4}, \dfrac{3\pi}{4}, \dfrac{9\pi}{4}, \dfrac{11\pi}{4}, \ldots \\
+x \amp = \dfrac{\pi}{8}, \dfrac{3\pi}{8}, \dfrac{9\pi}{8}, \dfrac{11\pi}{8}, \ldots
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-increasing-decreasing-cos2x-2-5">Of these solutions, only <span class="process-math">\(x=\frac{\pi}{8}\)</span> and <span class="process-math">\(x=\frac{3\pi}{8}\)</span> lie in the interval <span class="process-math">\([0,\pi]\text{,}\)</span> so these are the critical numbers.<div class="autopermalink" data-description="Paragraph"><a href="#ex-increasing-decreasing-cos2x-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-increasing-decreasing-cos2x-2-6">(b) To determine where the function is increasing and decreasing, we can use the critical numbers to divide the interval into three subintervals: <span class="process-math">\([0,\frac{\pi}{8})\text{,}\)</span> <span class="process-math">\((\frac{\pi}{8},\frac{3\pi}{8})\text{,}\)</span> and <span class="process-math">\((\frac{3\pi}{8},\pi]\text{.}\)</span>  We can test a point in each interval to determine the sign of the derivative.<div class="autopermalink" data-description="Paragraph"><a href="#ex-increasing-decreasing-cos2x-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="ex-increasing-decreasing-cos2x-2-7">
+<li id="ex-increasing-decreasing-cos2x-2-7-1">
+<div class="para" id="p-derived-ex-increasing-decreasing-cos2x-2-7-1">For <span class="process-math">\(x=0\text{,}\)</span> <span class="process-math">\(f'(0)=\sqrt{2}-2\sin(0)=\sqrt{2}\gt 0\text{,}\)</span> so the function is increasing on <span class="process-math">\([0,\frac{\pi}{8})\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-increasing-decreasing-cos2x-2-7-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-increasing-decreasing-cos2x-2-7-2">
+<div class="para" id="p-derived-ex-increasing-decreasing-cos2x-2-7-2">For <span class="process-math">\(x=\frac{\pi}{4}\text{,}\)</span> <span class="process-math">\(f'(\frac{\pi}{4})=\sqrt{2}-2\sin(\frac{\pi}{2})=\sqrt{2}-2\lt 0\text{,}\)</span> so the function is decreasing on <span class="process-math">\((\frac{\pi}{8},\frac{3\pi}{8})\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-increasing-decreasing-cos2x-2-7-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-increasing-decreasing-cos2x-2-7-3">
+<div class="para" id="p-derived-ex-increasing-decreasing-cos2x-2-7-3">For <span class="process-math">\(x=\pi\text{,}\)</span> <span class="process-math">\(f'(\pi)=\sqrt{2}-2\sin(2\pi)=\sqrt{2}\gt 0\text{,}\)</span> so the function is increasing on <span class="process-math">\((\frac{3\pi}{8},\pi]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-increasing-decreasing-cos2x-2-7-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="ex-increasing-decreasing-cos2x-2-8">(c) By the First Derivative Test, since <span class="process-math">\(f'(x)\)</span> changes from positive to negative at <span class="process-math">\(x=\frac{\pi}{8}\text{,}\)</span> the function has a local maximum at <span class="process-math">\(x=\frac{\pi}{8}\text{.}\)</span> Since <span class="process-math">\(f'(x)\)</span> changes from negative to positive at <span class="process-math">\(x=\frac{3\pi}{8}\text{,}\)</span> the function has a local minimum at <span class="process-math">\(x=\frac{3\pi}{8}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-increasing-decreasing-cos2x-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 3.9.22.1"><a href="#ex-increasing-decreasing-cos2x-2" title="Copy heading and permalink for Solution 3.9.22.1" aria-label="Copy heading and permalink for Solution 3.9.22.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 3.9.22"><a href="#ex-increasing-decreasing-cos2x" title="Copy heading and permalink for Example 3.9.22" aria-label="Copy heading and permalink for Example 3.9.22">🔗</a></div></article><article class="example example-like" id="ex-curve-sketching-exp"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9.23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="prob-cs1-sign-chart-1-1">A differentiable function has critical points at <span class="process-math">\(x=-2\)</span> and <span class="process-math">\(x=1\text{.}\)</span> The sign of <span class="process-math">\(f'(x)\)</span> is positive on <span class="process-math">\((-\infty,-2)\text{,}\)</span> negative on <span class="process-math">\((-2,1)\text{,}\)</span> and positive on <span class="process-math">\((1,\infty)\text{.}\)</span> Describe the behavior of the graph and classify the critical points.<div class="autopermalink" data-description="Paragraph"><a href="#prob-cs1-sign-chart-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-curve-sketching-exp-1-1">Consider the function <span class="process-math">\(f(x)=xe^{-x}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-curve-sketching-exp-1-2">(a) Find the critical number(s) of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-curve-sketching-exp-1-3">(b) Determine the intervals where <span class="process-math">\(f\)</span> is increasing and decreasing.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-curve-sketching-exp-1-4">(c) Find the local maxima and minima of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-curve-sketching-exp-1-5">(d) Determine the intervals where <span class="process-math">\(f\)</span> is concave up and concave down, and find any inflection points.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-curve-sketching-exp-1-6">(e) Sketch the graph of <span class="process-math">\(f\)</span> using the information from parts (a)-(d).<div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.9.23"><a href="#prob-cs1-sign-chart" title="Copy heading and permalink for Example 3.9.23" aria-label="Copy heading and permalink for Example 3.9.23">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 3.6 Curve Sketching Part 1"><a href="#subsec-derivApp-curve1" title="Copy heading and permalink for Subsection: Section 3.6 Curve Sketching Part 1" aria-label="Copy heading and permalink for Subsection: Section 3.6 Curve Sketching Part 1">🔗</a></div></section><section class="subsection" id="subsec-derivApp-curve2"><h3 class="heading hide-type">
+<div class="solutions"><details id="ex-curve-sketching-exp-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-curve-sketching-exp-2-1">(a) To find the critical numbers, compute the derivative.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-curve-sketching-exp-2-2">
+\begin{equation*}
+f'(x)=e^{-x}-xe^{-x}=(1-x)e^{-x}.
+\end{equation*}
+</div>
+<div class="para" id="ex-curve-sketching-exp-2-3">This is always defined, so the only critical numbers will come from <span class="process-math">\(f'(x)=0\text{,}\)</span> solve<div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-curve-sketching-exp-2-4">
+\begin{equation*}
+\begin{aligned}
+(1-x)e^{-x} \amp  = 0  \\
+1-x \amp = 0 \\
+1 \amp = x.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-curve-sketching-exp-2-5">Thus the only critical number is <span class="process-math">\(x=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-curve-sketching-exp-2-6">(b) To determine where the function is increasing and decreasing, we can use the critical number to divide the interval into two subintervals: <span class="process-math">\((-\infty,1)\)</span> and <span class="process-math">\((1,\infty)\text{.}\)</span>  We can test a point in each interval to determine the sign of the derivative.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="ex-curve-sketching-exp-2-7">
+<li id="ex-curve-sketching-exp-2-7-1">
+<div class="para" id="p-derived-ex-curve-sketching-exp-2-7-1">For <span class="process-math">\(x=0\text{,}\)</span> <span class="process-math">\(f'(0)=(1-0)e^{0}=1\gt 0\text{,}\)</span> so the function is increasing on <span class="process-math">\((-\infty,1)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-curve-sketching-exp-2-7-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-curve-sketching-exp-2-7-2">
+<div class="para" id="p-derived-ex-curve-sketching-exp-2-7-2">For <span class="process-math">\(x=2\text{,}\)</span> <span class="process-math">\(f'(2)=(1-2)e^{-2}=-e^{-2}\lt 0\text{,}\)</span> so the function is decreasing on <span class="process-math">\((1,\infty)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-curve-sketching-exp-2-7-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="ex-curve-sketching-exp-2-8">(c) By the First Derivative Test, since <span class="process-math">\(f'(x)\)</span> changes from positive to negative at <span class="process-math">\(x=1\text{,}\)</span> the function has a local maximum at <span class="process-math">\(x=1\text{.}\)</span> There are no local minima.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-curve-sketching-exp-2-9">(d) To determine where the function is concave up and concave down, compute the second derivative.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-curve-sketching-exp-2-10">
+\begin{equation*}
+f''(x)=-e^{-x}-(1-x)e^{-x}=(x-2)e^{-x}.
+\end{equation*}
+</div>
+<div class="para" id="ex-curve-sketching-exp-2-11">This is always defined, so the only points of inflection will come from <span class="process-math">\(f''(x)=0\text{,}\)</span> solve<div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-curve-sketching-exp-2-12">
+\begin{equation*}
+\begin{aligned}
+(x-2)e^{-x} \amp = 0 \\
+x-2 \amp = 0 \\
+x \amp = 2.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-curve-sketching-exp-2-13">To determine the concavity, we can divide the interval into two subintervals: <span class="process-math">\((-\infty,2)\)</span> and <span class="process-math">\((2,\infty)\text{.}\)</span>  We can test a point in each interval to determine the sign of the second derivative.<div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="ex-curve-sketching-exp-2-14">
+<li id="ex-curve-sketching-exp-2-14-1">
+<div class="para" id="p-derived-ex-curve-sketching-exp-2-14-1">For <span class="process-math">\(x=0\text{,}\)</span> <span class="process-math">\(f''(0)=(0-2)e^{0}=-2\lt 0\text{,}\)</span> so the function is concave down on <span class="process-math">\((-\infty,2)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-curve-sketching-exp-2-14-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-curve-sketching-exp-2-14-2">
+<div class="para" id="p-derived-ex-curve-sketching-exp-2-14-2">For <span class="process-math">\(x=3\text{,}\)</span> <span class="process-math">\(f''(3)=(3-2)e^{-3}=e^{-3}\gt 0\text{,}\)</span> so the function is concave up on <span class="process-math">\((2,\infty)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-curve-sketching-exp-2-14-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="ex-curve-sketching-exp-2-15">Thus the function is concave down on <span class="process-math">\((-\infty,2)\)</span> and concave up on <span class="process-math">\((2,\infty)\text{,}\)</span> and there is an inflection point at <span class="process-math">\(x=2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-curve-sketching-exp-2-16">
+<div class="para">(e) To sketch the graph of <span class="process-math">\(f\text{,}\)</span> we can use the information from parts (a)-(d).</div>
+<ul class="disc" id="ex-curve-sketching-exp-2-16-2">
+<li id="ex-curve-sketching-exp-2-16-2-1">
+<div class="para" id="p-derived-ex-curve-sketching-exp-2-16-2-1">
+<span class="process-math">\(f(0)=0\cdot e^{0}=0\text{,}\)</span> so the graph passes through the point <span class="process-math">\((0,0)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-curve-sketching-exp-2-16-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-curve-sketching-exp-2-16-2-2">
+<div class="para" id="p-derived-ex-curve-sketching-exp-2-16-2-2">The function is increasing on <span class="process-math">\((-\infty,1)\)</span> and decreasing on <span class="process-math">\((1,\infty)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-curve-sketching-exp-2-16-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-curve-sketching-exp-2-16-2-3">
+<div class="para" id="p-derived-ex-curve-sketching-exp-2-16-2-3">There is a local maximum at <span class="process-math">\(x=1\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-curve-sketching-exp-2-16-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-curve-sketching-exp-2-16-2-4">
+<div class="para" id="p-derived-ex-curve-sketching-exp-2-16-2-4">The function is concave down on <span class="process-math">\((-\infty,2)\)</span> and concave up on <span class="process-math">\((2,\infty)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-curve-sketching-exp-2-16-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-curve-sketching-exp-2-16-2-5">
+<div class="para" id="p-derived-ex-curve-sketching-exp-2-16-2-5">There is an inflection point at <span class="process-math">\(x=2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-curve-sketching-exp-2-16-2-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-2-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-curve-sketching-exp-2-17">Combining all this we can sketch the graph of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-curve-sketching-exp-2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/images/curveSketch12.png" class="contained" alt="A graph of f(x)=xe^(-x). The graph starts at (0,0), increases to a local maximum at x=1, then decreases and has an inflection point at x=2, after which it continues to decrease but is concave up."></div>
+<div class="autopermalink" data-description="Solution 3.9.23.1"><a href="#ex-curve-sketching-exp-2" title="Copy heading and permalink for Solution 3.9.23.1" aria-label="Copy heading and permalink for Solution 3.9.23.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 3.9.23"><a href="#ex-curve-sketching-exp" title="Copy heading and permalink for Example 3.9.23" aria-label="Copy heading and permalink for Example 3.9.23">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 3.6 Curve Sketching Part 1"><a href="#subsec-derivApp-curve1" title="Copy heading and permalink for Subsection: Section 3.6 Curve Sketching Part 1" aria-label="Copy heading and permalink for Subsection: Section 3.6 Curve Sketching Part 1">🔗</a></div></section><section class="subsection" id="subsec-derivApp-curve2"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 3.7 Curve Sketching Part 2</span>
 </h3>
 <div class="para" id="subsec-derivApp-curve2-2">test more<div class="autopermalink" data-description="Paragraph"><a href="#subsec-derivApp-curve2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
