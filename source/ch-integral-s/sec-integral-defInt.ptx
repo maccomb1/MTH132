@@ -182,13 +182,13 @@ which provides a far more efficient way to evaluate definite integrals.
 
 <p>
 There are a few special cases we can handle already. If the region described by the
-integral corresponds to a familiar geometric shape—such as a rectangle, triangle,
-or part of a circle—we can compute the value of the integral using basic formulas
+integral corresponds to a familiar geometric shape such as a rectangle, triangle,
+or part of a circle. In those cases we can compute the value of the integral using basic formulas
 from geometry.
 </p>
 
 <p>
-In this section we will focus on interpreting definite integral notation and learning
+In this section we will largely focus on interpreting definite integral notation and learning
 some of the fundamental properties that definite integrals satisfy.
 </p>
 

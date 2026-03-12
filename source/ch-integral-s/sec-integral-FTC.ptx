@@ -14,21 +14,23 @@
   </objectives>
 
   <subsection xml:id="ssec-ftoc-integral-as-antiderivative">
-    <title>Integral as Antiderivative</title>
+    <title>Introduction to the Integral as an Antiderivative</title>
 
     <p>
-      In the previous section we used a velocity function <m>v(t)</m> to compute distance traveled over a time interval <m>[a,b]</m>.
+      In the previous section we used a velocity function <m>v(t)</m> to compute the change in position (displacement) over a time interval <m>[a,b]</m>.
       The distance is an integral defined as a limit of Riemann sums, adding up (velocity)<m>\times</m>(time) over many small time increments:
     </p>
 
     <me>
-      \text{distance traveled}
-      \ =\
-      s(b)-s(a)
-      \ =\
-      \lim_{\Delta t\to 0}\sum_{i=1}^n v(t_i)\,\Delta t
-      \ =\
-      \int_a^b v(t)\,dt.
+      \begin{array}{rcl}
+       \text{displacement}
+      \amp = \amp
+      s(b)-s(a)\\[0.8em]
+      \amp = \amp
+      \displaystyle\lim_{\Delta t\to 0} (v(t_1)\Delta t + v(t_2)\Delta t + \cdots + v(t_n)\Delta t) \\ 
+      \amp = \amp
+      \displaystyle\int_a^b v(t)\,dt
+      \end{array}
     </me>
 
     <p>
@@ -57,64 +59,138 @@
           Let <m>f</m> be continuous on <m>[a,b]</m> and define
         </p>
         <me>
-          I(x)\ =\ \int_a^x f(t)\,dt.
+          F(x)\ =\ \int_a^x f(t)\,dt.
         </me>
         <p>
-          Then <m>I'(x)=f(x)</m> for <m>x\in(a,b)</m>.
-          In particular, <m>I</m> is the unique antiderivative of <m>f</m> satisfying <m>I(a)=0</m>.
+          Then <m>F'(x)=f(x)</m> for <m>x\in(a,b)</m>.
+          In particular, <m>F</m> is the unique antiderivative of <m>f</m> satisfying <m>F(a)=0</m>.
         </p>
       </statement>
-    </theorem>
-
+      <proof>
+        <title>Idea of a Proof</title>
     <p>
-      In physical language: the rate of change of a cumulative effect up to time <m>x</m> is the strength of the effect at time <m>x</m>.
-    </p>
-
-    <p>
-      <em>Proof idea.</em>
       We start from the definition of the derivative:
-      <m>I'(x)=\lim_{h\to 0}\dfrac{I(x+h)-I(x)}{h}</m>.
+      <me>F'(x)=\lim_{h\to 0}\dfrac{F(x+h)-F(x)}{h}</me>
       Using the splitting rule for integrals,
-      <m>\int_a^{x+h}=\int_a^x+\int_x^{x+h}</m>, so:
+      <me>\int_a^{x+h} f(t) ~dt =\int_a^x f(t) ~dt +\int_x^{x+h}f(t) ~dt </me> 
+      So we have:
     </p>
 
     <me>
       \begin{array}{rcl}
-      \displaystyle \frac{I(x+h)-I(x)}{h}
+      \displaystyle \frac{F(x+h)-F(x)}{h}
       &amp;=&amp;
       \displaystyle \frac{1}{h}\left(\int_a^{x+h} f(t)\,dt-\int_a^x f(t)\,dt\right)
+      \\[0.8em]
+      &amp;=&amp;
+      \displaystyle \frac{1}{h}\left(\int_a^x f(t) ~dt +\int_x^{x+h}f(t) ~dt -\int_a^x f(t)\,dt\right)
       \\[0.8em]
       &amp;=&amp;
       \displaystyle \frac{1}{h}\int_x^{x+h} f(t)\,dt.
       \end{array}
     </me>
 
-    <p>
-      When <m>h</m> is small, the integral <m>\int_x^{x+h} f(t)\,dt</m> is the area under <m>f</m> over a very short interval, so it behaves like (height)<m>\times</m>(width).
-      To make that precise, let <m>N_h</m> be the minimum value of <m>f</m> on <m>[x,x+h]</m> and <m>M_h</m> be the maximum value on <m>[x,x+h]</m>.
-      Since <m>N_h\le f(t)\le M_h</m> on this interval, the bounds rule gives
+    <p>Here is a sketch of the graph of <m>f</m> to illustrate the idea:</p>
+
+      <image width="90%">
+  <shortdescription>
+    Graph of a continuous function f with a small interval [x, x+h] highlighted. 
+    The area under the curve of f from x to x+h is shaded in blue, 
+    representing the integral \int_x^{x+h} f(t) dt. 
+    As h approaches 0, this area approximates a rectangle with height f(x) and width h, 
+    leading to the conclusion that the limit of (1/h) times this area equals f(x).
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[xscale=2]
+	\fill[blue!20] plot[domain=2:2.4, smooth] (\x, {1+.4*(\x)^2}) -- (2.4,0)--(2,0) -- cycle;
+	\draw[->, thick] (-1.3,0) -- (3.3,0) node [right] {$t$};
+	\draw[->, thick] (0,-.3) -- (0,5.3);
+	%\draw[thin] (0,0) grid (5,5);
+	\draw (-.7,1.7) node {$f(t)$};
+	\begin{scope}
+		\clip (-3.3,0) rectangle (5.3,5.3); 
+		\draw[very thick] plot[domain=-1:3, smooth] (\x, {1+.4*(\x)^2});
+		\draw[dashed] (2,4) node {\textbar}  -- (2.4,4) node {\textbar} node[pos=.5, above] {$h$};
+		\draw (2,0) -- (2, {1+.4*4}) node [pos=.5, left] {$f(x)$} -- (2.4, {1+.4*4}) -- (2.4,0);
+	\end{scope}
+	\draw (2,2pt)--(2,-2pt) node[below] {$x$};
+	\draw (2.4,2pt)--(2.4,-2pt) node[below, font=\small] {$x+h$};
+	\begin{scope}
+		\clip (2,0) rectangle (2.4, {1+.4*4});
+		\foreach \a in {2, 2.08, ..., 4.4} 
+		\draw[blue] plot[domain=2:2.4, smooth] (\x, {-2*(\x-\a)});
+	\end{scope}
+\end{tikzpicture}
+
+ ]]>
+    </latex-image>
+  </image>
+
+  <p>Geometrically, the integral <m>\int_x^{x+h} f(t)\,dt</m> is the area under the curve of <m>f</m> from <m>x</m> to <m>x+h</m> 
+    (shaded in blue above). When <m>h</m> is small, this area is approximately a rectangle with width <m>h</m> and height <m>f(x)</m> (the hatched rectangle in the image above).
+    So therefore</p>
+    <me>
+      \begin{array}{rcl}
+      \displaystyle \frac{1}{h}\int_x^{x+h} f(t)\,dt
+      &amp;\approx&amp;
+      \displaystyle \frac{1}{h}\cdot (f(x)\cdot h)
+      \ =\
+      f(x).
+      \end{array}
+    </me>
+
+    <p>As <m>h\to 0</m>, the approximation becomes exact, so <m>F'(x)=f(x)</m>.</p> 
+
+    <p>For those worried that this is not a rigorous proof, please see the "Finer Details of the Proof" below.</p>
+
+
+      </proof>
+      <proof>
+        <title>Finer Details of the Proof</title>
+  <p>
+    In the proof idea, we used the approximation that <m>\int_x^{x+h} f(t)\,dt\approx f(x)\cdot h</m> when <m>h</m> is small. 
+    But how do we know that the limit of the approximation is correct? 
+  </p> 
+  <p> 
+    To control the errors, let's take the absolute minimum value <m>N</m> and absolte maximum value <m>M</m> of the continuous function 
+    <m>f</m> on the closed interval <m>[x,x+h]</m> (we can do this by the Extreme Value Theorem). To indicate that these values
+    depend on <m>h</m>, we write <m>N_h</m> and <m>M_h</m>. Therefore 
+    <me> 
+      N_h\le f(t)\le M_h, \quad \text{ for  } t\in [x,x+h]</me> 
+    So the bounds rules for definite integrals give
     </p>
 
     <me>
-      \begin{array}{c}
+      \begin{array}{rcl}
       \displaystyle
-      N_h \le \frac{1}{h}\int_x^{x+h} f(t)\,dt \le M_h.
+      N_h\le \amp f(t) \amp \le M_h \\ 
+      N_h((x+h)-x) \le \amp \displaystyle\int_x^{x+h} f(t)\,dt \amp \le M_h ((x+h)-x) \\
+      N_h(h) \le \amp \displaystyle\int_x^{x+h} f(t)\,dt \amp \le M_h (h) \\
+      N_h \le \amp \dfrac{1}{h}\displaystyle\int_x^{x+h} f(t)\,dt \amp \le M_h 
       \end{array}
     </me>
 
     <p>
       As <m>h\to 0</m>, the interval shrinks to the point <m>x</m>, so by continuity
-      <m>\lim_{h\to 0}N_h=\lim_{h\to 0}M_h=f(x)</m>.
+      <me>\lim_{h\to 0}N_h=\lim_{h\to 0}M_h=f(x)</me>
       By the squeeze theorem,
-      <m>\displaystyle \lim_{h\to 0}\frac{1}{h}\int_x^{x+h} f(t)\,dt=f(x)</m>,
-      hence <m>I'(x)=f(x)</m>.
-      The condition <m>I(a)=\int_a^a f(t)\,dt=0</m> and the antiderivative uniqueness theorem give the uniqueness statement.
+      <me>\displaystyle \lim_{h\to 0}\frac{1}{h}\int_x^{x+h} f(t)\,dt = \lim_{h\to 0}N_h=\lim_{h\to 0}M_h=f(x)</me>,
+      hence <m>F'(x)=f(x)</m>.
     </p>
-  </subsection>
+    <p> 
+      The condition <m>F(a)=\int_a^a f(t)\,dt=0</m> and the antiderivative uniqueness theorem give the uniqueness statement.
+    </p>
+      </proof>
 
-  <subsection xml:id="ssec-ftoc-derivative-of-integral-functions">
-    <title>Derivatives of Integral Functions</title>
+    </theorem>
 
+    <remark>
+    <p>
+      In physical language: the rate of change of a cumulative effect up to time <m>x</m> is the strength of the effect at time <m>x</m>.
+    </p>
+    </remark>
+
+    <remark>
     <p>
       The First Fundamental Theorem can be used as a basic derivative rule:
       if <m>f</m> is continuous, then
@@ -126,111 +202,202 @@
 
     <p>
       Here <m>a</m> is a constant, <m>x</m> is the input, and <m>t</m> is a dummy variable that only matters inside the integral.
-      If the upper limit is a function <m>g(x)</m>, then the chain rule gives
+    </p>
+    </remark>
+
+    <example xml:id="ex-ftoc-problem2">
+      <statement>
+        <p>
+          Find the derivative of <m>\displaystyle F(x)=\int_{5}^{x}\sin^4(t)\,dt</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          By the First Fundamental Theorem, <m>F'(x)=\sin^4(x)</m>.
+        </p>
+        <p> Note that we never needed to evaluate the integral or find an explicit formula for <m>F(x)</m>.
+         The First Fundamental Theorem allows us to find the derivative without needing an explicit formula for <m>F</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-accumulation-functions">
+    <title>Accumulation Functions</title>
+    
+    <p>
+      The First Fundamental Theorem of Calculus tells us that integrals with a variable
+      upper limit naturally produce antiderivatives. 
+      Because of this, functions of the form
     </p>
 
     <me>
-      \frac{d}{dx}\left(\int_a^{g(x)} f(t)\,dt\right) \ =\ f(g(x))\,g'(x).
+      F(x)=\int_a^x f(t)\,dt
     </me>
 
-    <example xml:id="ex-ftoc-derivative-variable-limits">
-      <statement>
-        <p>
-          Find the derivative of <m>\displaystyle F(x)=\int_{2x}^{x^3}\sin(t)\,dt</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Rewrite with a fixed lower limit and then differentiate:
-        </p>
-
-        <me>
-          \begin{array}{rcl}
-          \displaystyle F(x)
-          &amp;=&amp;
-          \displaystyle \int_{2x}^{x^3}\sin(t)\,dt
-          \ =\
-          \int_{0}^{x^3}\sin(t)\,dt - \int_{0}^{2x}\sin(t)\,dt.
-          \end{array}
-        </me>
-
-        <me>
-          \begin{array}{rcl}
-          \displaystyle F'(x)
-          &amp;=&amp;
-          \displaystyle \sin(x^3)\cdot (x^3)' \;-\; \sin(2x)\cdot (2x)'
-          \\[0.6em]
-          &amp;=&amp;
-          3x^2\sin(x^3)-2\sin(2x).
-          \end{array}
-        </me>
-      </solution>
-    </example>
-
-    <example xml:id="ex-ftoc-constant-limits">
-      <statement>
-        <p>
-          Let <m>a</m> and <m>b</m> be constants. Find <m>F'(x)</m> if <m>\displaystyle F(x)=\int_{2a}^{b^3}\sin(t)\,dt</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          The expression <m>\int_{2a}^{b^3}\sin(t)\,dt</m> is a number that does not depend on <m>x</m>, so <m>F</m> is constant and <m>F'(x)=0</m>.
-        </p>
-      </solution>
-    </example>
-  </subsection>
-
-  <subsection xml:id="ssec-ftoc-sketching-integral-functions">
-    <title>Sketching Integral Functions</title>
-
     <p>
-      An integral function <m>I(x)=\int_a^x f(t)\,dt</m> may not have an elementary formula.
-      Even so, it can be understood: its derivative is <m>I'(x)=f(x)</m>.
-      In other words, the slope of <m>y=I(x)</m> is determined by the height of <m>y=f(x)</m>.
-      This lets us use the same curve-sketching ideas from earlier sections.
+      appear frequently in calculus. Such functions are called
+      <term>accumulation functions</term> because they measure the
+      total accumulated change of the quantity <m>f(t)</m> from
+      <m>t=a</m> up to <m>t=x</m>.
     </p>
 
-    <example xml:id="ex-ftoc-sketch-sin-x2">
+    <p>
+      As we found in our last section, the value of
+      <m>\displaystyle F(x)=\int_a^x f(t)\,dt</m>
+      represents the <em>signed area</em> between the graph of
+      <m>y=f(t)</m> and the <m>t</m>-axis from <m>a</m> to <m>x</m>.
+      Areas above the axis contribute positively,
+      while areas below the axis contribute negatively.
+    </p>
+
+    <p>Let's get some more practice with accumulation functions and their relationship to the original function.</p>
+
+    <example xml:id="ex-accumulation-graph-analysis">
       <statement>
         <p>
-          Sketch the function <m>\displaystyle I(x)=\int_0^x \sin(t^2)\,dt</m>.
+          Suppose the graph of <m>g(t)</m> is shown below.
+          And let
+        <m>
+          A(x)=\displaystyle \int_0^x g(t)\,dt.
+        </m>
         </p>
+
+        <sidebyside width="90%">
+      <figure>
+<caption>
+  A graph of <m>g(t)</m> on the interval <m>[0,5]</m> shown on a grid with spacing <m>1</m> in both the horizontal and vertical directions. 
+  The signed areas between the curve and the <m>t</m>-axis are labeled.
+</caption>        
+  <image>
+<shortdescription>
+  Graph of a function g(t) on a grid with unit spacing. The curve passes through the points 
+  (1,0), (2,-2), (3,0), and (4,4). The region above the axis from the left endpoint to t=1 has labeled area 
+  0.3. The region below the axis from t=1 to t=3 has labeled area -2.5. The region above the axis from 
+  t=3 to t=4 has labeled area 2.3. A dashed vertical line at t=4 marks the endpoint of the accumulated area.
+</shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[xscale = 2]
+	\fill[blue!20] plot[domain=0:1, smooth] (\x, {(\x)*cos(pi/2 * \x r)});
+	\fill[red!20] plot[domain=1:3, smooth] (\x, {(\x)*cos(pi/2 * \x r)});
+	\fill[green!20] plot[domain=3:4, smooth] (\x, {(\x)*cos(pi/2 * \x r)}) -- (4,0);
+	\draw[thin] (0,-3) grid (5,5);
+	\draw[->, thick] (-.15,0) -- (5.15,0) node [right] {$t$} ;
+	\draw[->, thick] (0,-3) -- (0,5);
+	\draw[very thick] plot[domain=0:5, smooth] (\x, {(\x)*cos(pi/2 * \x r)});
+	\draw (.5, 1.5) node {Area = 0.3};
+	\draw (2, -.6) node {Area = $-2.5$};
+	\draw[very thick, dashed] (4,0) -- (4,4);
+	\draw (3.53, .4) node {Area = $2.3$};	
+	\draw[->] (0.5,1.2) -- (0.5, 0.6); 
+	\draw (3.7,4.4) node {$g(t)$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+        </figure>
+       </sidebyside>
+
+
+        <p>
+          Use the graph to answer the following questions.
+        </p>
+
+        <p>(a) Find <m>A(4) - A(3)</m>.</p>
+        <p>(b) Find <m>A'(2)</m>.</p>
+        <p>(c) On which intervals is <m>A(x)</m> increasing?</p>
+        <p>(d) On which intervals is <m>A(x)</m> decreasing?</p>
+        <p>(e) Where does <m>A(x)</m> have a local maximum?</p>
       </statement>
+
       <solution>
-        <p>
-          By the First Fundamental Theorem, <m>I'(x)=\sin(x^2)</m>.
-          Critical points occur where <m>I'(x)=0</m>, that is where <m>\sin(x^2)=0</m>.
-          This happens when <m>x^2=k\pi</m> for integers <m>k</m>, so
-          <m>x=0,\pm\sqrt{\pi},\pm\sqrt{2\pi},\ldots</m>.
-        </p>
+          <p> (a) By the definition of <m>A</m>, we have
+          <me>A(4)-A(3) = \int_0^4 g(t)\,dt - \int_0^3 g(t)\,dt = \int_3^4 g(t)\,dt.</me>
+          The integral from 3 to 4 is the area of the green shaded region, which is 2.3.
+          So <m>A(4)-A(3)=2.3</m>.
+          </p>
+          <p> (b) By the First Fundamental Theorem, <m>A'(2)=g(2)</m>.
+          From the graph, <m>g(2)=-2</m>, so <m>A'(2)=-2</m>.
+          </p>
+          <p> (c) The function <m>A(x)</m> is increasing where <m>A'(x)=g(x)\gt 0</m>.
+          From the graph, this happens on the intervals <m>(0,1)</m> and <m>(3,5)</m>.
+          </p>
+          <p> (d) The function <m>A(x)</m> is decreasing where <m>A'(x)=g(x)\lt 0</m>.
+          From the graph, this happens on the interval <m>(1,3)</m>.
+          </p>
+          <p> (e) Local maxima of <m>A(x)</m> occur where <m>A'(x)=g(x)</m> changes from positive to negative.
+          From the graph, this happens at <m>x=1</m>, so <m>A(x)</m> has a local maximum at <m>x=1</m>. We 
+          can also check the endpoints. Since <m>g(x)\gt 0</m> for <m>x\in(0,1)</m>, <m>A(x)</m> is increasing on <m>(0,1)</m>,
 
-        <p>
-          For concavity, <m>I''(x)=(\sin(x^2))'=2x\cos(x^2)</m>.
-          So possible inflection points occur when <m>2x\cos(x^2)=0</m>, i.e.
-          <m>x=0</m> or <m>\cos(x^2)=0</m>, which means <m>x^2=\frac{\pi}{2}+k\pi</m>.
-        </p>
-
-        <p>
-          Using the sign of <m>I'(x)=\sin(x^2)</m> gives the rough shape:
-        </p>
-
-        <me>
-          \begin{array}{c|c|c|c|c|c|c|c|c|c|c|c}
-          x     &amp;\quad &amp; -\sqrt{2\pi} &amp;\quad &amp; -\sqrt{\pi} &amp;\quad &amp; 0 &amp;\quad &amp; \sqrt{\pi} &amp;\quad &amp; \sqrt{2\pi} &amp;\quad \\ \hline
-          I'(x) &amp; + &amp; 0 &amp; - &amp; 0 &amp; + &amp; 0 &amp; + &amp; 0 &amp; - &amp; 0 &amp; + \\
-          \hline
-          I(x)  &amp; \nearrow &amp;  &amp; \searrow &amp;  &amp; \nearrow &amp; 0 &amp; \nearrow &amp;  &amp; \searrow &amp;  &amp; \nearrow
-          \end{array}
-        </me>
-
-        <p>
-          Because <m>\sin(x^2)</m> is even, the integral function is odd:
-          <m>I(-x)=-I(x)</m>. So the graph has <m>180^\circ</m> rotational symmetry about the origin.
-        </p>
+          so <m>x=0</m> is a local minimum. Since <m>g(x)\gt 0</m> for <m>x\in(3,5)</m>, <m>A(x)</m> is increasing on <m>(3,5)</m>, 
+          so <m>x=5</m> is a local maximum.
+           Therefore the local maxima of <m>A(x)</m> are at <m>x=1</m> and <m>x=5</m>.
+          </p>
       </solution>
     </example>
+
+<p>We can also do curve sketching style problems with accumulation functions.
+</p>
+
+<example xml:id="ex-accumulation-curve-sketching"> 
+  <statement>
+    <p>
+      Consider the function <m>H(x)=\int_0^x (1-t)e^t \,dt</m>. 
+    </p>
+    <p> (a) Evaluate <m>H(0)</m>.</p>
+    <p> (b) Find where <m>H(x)</m> is increasing and where it is decreasing.</p>
+    <p> (c) Find where <m>H(x)</m> is concave up and where it is concave down.</p>
+    <p> (d) Use the information from parts (a)-(c) to find a rough sketch the graph of <m>y=H(x)</m>.</p>
+  </statement>
+  <solution>
+    <p>
+      (a) <m>H(0)=\int_0^0 (1-t)e^t\,dt=0</m>.
+    </p>
+    <p>
+      (b) By the First Fundamental Theorem, <m>H'(x)=(1-x)e^x</m>.
+      Since <m>e^x\gt 0</m> for all <m>x</m>, the sign of <m>H'(x)</m> is determined by the sign of <m>1-x</m>.
+      So <m>H'(x)\gt 0</m> when <m>x\lt 1</m>, and <m>H'(x)\lt 0</m> when <m>x\gt 1</m>.
+      Therefore <m>H(x)</m> is increasing on <m>(-\infty,1)</m> and decreasing on <m>(1,\infty)</m>.
+    </p>
+    <p>
+      (c) To find where <m>H</m> is concave up or down, we need to find the second derivative. 
+      We have <m>H''(x)=((1-x)e^x)' = -e^x+(1-x)e^x=-xe^x</m>.
+      Since <m>e^x\gt 0</m> for all <m>x</m>, the sign of <m>H''(x)</m> is determined by the sign of <m>-x</m>.
+      So <m>H''(x)\gt 0</m> when <m>x\lt 0</m>, and <m>H''(x)\lt 0</m> when <m>x\gt 0</m>.
+      Therefore <m>H(x)</m> is concave up on <m>(-\infty,0)</m> and concave down on <m>(0,\infty)</m>.
+    </p>
+    <p>
+      (d) We have the following information about the graph of <m>y=H(x)</m>:
+      <ul>
+        <li> <m>H(0)=0</m>, so the graph passes through the origin.</li>
+        <li> <m>H(x)</m> is increasing on <m>(-\infty,1)</m> and decreasing on <m>(1,\infty)</m>, so the graph has a local maximum at <m>x=1</m>.</li>
+        <li> <m>H(x)</m> is concave up on <m>(-\infty,0)</m> and concave down on <m>(0,\infty)</m>, so the graph has an inflection point at <m>x=0</m>.</li>
+      </ul>
+      Putting this all together, we get the following sketch of the graph of <m>y=H(x)</m>.
+
+        <image width="90%" source="images/curveSketch11.png">
+<shortdescription>
+  Animated graph showing the cube root function with tangent lines at various points.
+  For each point, the slope of the tangent line is recorded and plotted separately.
+  As these slope values are connected, they form a new curve representing the derivative function.
+</shortdescription>
+        </image>
+
+
+</p>
+
+  </solution>
+</example> 
+
+
+
+<p>Now let's move on to the second part of the Fundamental Theorem of Calculus, which allows us to evaluate definite 
+  integrals from an antiderivative (instead of having to take a limit of a Riemann sum).</p>
+
+
   </subsection>
+
+
 
   <subsection xml:id="ssec-ftoc-second-ftc">
     <title>The Second Fundamental Theorem of Calculus</title>
