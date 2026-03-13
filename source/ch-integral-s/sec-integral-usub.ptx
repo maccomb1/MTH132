@@ -26,7 +26,7 @@
     Let's see an example of this in action before we develop a systematic method for applying it.
   </p>     
 
-  <example >
+  <example xml:id="ex-reverse-chain-01">
     <task>
       <statement>
         <p>
@@ -34,7 +34,9 @@
         </p>
       </statement>
       <solution>
-
+        <p>
+          By the Chain Rule, <m>F'(x) = \cos(x^2)\cdot 2x</m>.
+        </p>
       </solution>
     </task>
     <task>
@@ -43,16 +45,106 @@
           Use you answer from (a) to help evaluate <m>\displaystyle \int x\cos(x^2)\,dx</m>.
         </p>
       </statement>
+      <solution>
+        <p>
+          Since <m>F'(x) = \cos(x^2)\cdot 2x</m>, we have
+          </p>
+          <me>
+            \begin{aligned}
+            \displaystyle \int x\cos(x^2)\,dx 
+            \amp =   \displaystyle \int \tfrac{1}{2}(2x)\cos(x^2)\,dx \\
+          \amp = \tfrac12\sin(x^2)+C
+            \end{aligned}
+          </me>
+        <p> 
+          We can check this by differentiating: <m>\dfrac{d}{dx}\big(\tfrac12\sin(x^2)+C\big)=\tfrac12\cos(x^2)\cdot 2x=x\cos(x^2)</m>.
+        </p>
+      </solution>
     </task>
     
   </example>
 
     <p>
-      For example, consider the indefinite integral
-      <m>\displaystyle \int x\cos(x^2)\,dx</m>.
-      The inside function <m>g(x)=x^2</m> appears inside the cosine, and its derivative is <m>g'(x)=2x</m>.
-      Since the integrand contains a factor <m>x</m>, we rewrite it to match the Chain Rule pattern:
+      Notice in our last example, the 
+      inside function <m>g(x)=x^2</m> appears inside the cosine, and its derivative is <m>g'(x)=2x</m>
+      also appeared in the integrand (off by only a constant) so were were able to rewrite it to match the Chain Rule pattern.
     </p>
+
+    
+    <insight>
+      <title>U-Substitution Technique</title>
+       <ol>
+      <li>
+        <p>
+          Given an integral <m>\int h(x)\,dx</m>. Try to identify an inside function <m>g(x)</m>
+          so that <m>g'(x)</m> appears as a factor (possibly after multiplying and dividing by a constant):
+        </p>
+        <me>
+          h(x)\ =\ f(g(x))\cdot g'(x).
+        </me>
+        <p>
+          After factoring out <m>g'(x)</m>, rewrite the remaining part as a function of <m>u=g(x)</m>.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Using the symbolic notation <m>u=g(x)</m> and 
+          <me> du = \dfrac{du}{dx} dx = g'(x) dx</me> 
+        Then rewrite the integral in <m>u</m>:
+        </p>
+        <me>
+          \int h(x)\,dx
+          \ =\
+          \int f(g(x))g'(x)\,dx
+          \ =\
+          \int f(u)\,du.
+        </me>
+      </li><li>
+        <p>
+          Compute <m>\int f(u)\,du</m> using basic antiderivatives and rules.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Substitute back <m>u=g(x)</m> to express the final answer in terms of <m>x</m>:
+        </p>
+        <me>
+          \int h(x)\,dx
+          \ =\
+          F(u)+C
+          \ =\
+          F(g(x))+C.
+        </me>
+      </li>
+    </ol>
+      
+      
+    </insight>
+
+
+    <p> Let's try <xref ref="ex-reverse-chain-01">Example</xref> again this time with the substitution method in mind. 
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Evaluate <m>\displaystyle \int x\cos(x^2)\,dx</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We want to identify an inside function <m>g(x)</m> so that <m>g'(x)</m> appears as a factor in the integrand.
+          The only reasonable choice is <m>u=x^2</m>, since it appears inside the cosine and its derivative is a constant multiple of the other factor in the integrand:
+        </p>
+        <p>  
+
+    </example>
+
+
+
+
 
     <me>
       x\cos(x^2)
@@ -86,54 +178,9 @@
   <subsection xml:id="ssec-substitution-method">
     <title>Substitution Method</title>
 
-    <p>
-      Substitution is a structured way to reverse the Chain Rule. The goal is to rewrite the integrand so it looks like
-      <m>f(g(x))g'(x)</m>.
-    </p>
 
-    <ol>
-      <li>
-        <p>
-          Start with an integral <m>\int h(x)\,dx</m>. Look for an inside function <m>g(x)</m>
-          so that <m>g'(x)</m> appears as a factor (possibly after multiplying and dividing by a constant):
-        </p>
-        <me>
-          h(x)\ =\ f(g(x))\cdot g'(x).
-        </me>
-        <p>
-          After factoring out <m>g'(x)</m>, rewrite the remaining part as a function of <m>u=g(x)</m>.
-        </p>
-      </li>
 
-      <li>
-        <p>
-          Let <m>u=g(x)</m>, so <m>du=g'(x)\,dx</m>. Then rewrite the integral in <m>u</m>:
-        </p>
-        <me>
-          \int h(x)\,dx
-          \ =\
-          \int f(g(x))g'(x)\,dx
-          \ =\
-          \int f(u)\,du.
-        </me>
-        <p>
-          Compute <m>\int f(u)\,du</m> using basic antiderivatives and rules.
-        </p>
-      </li>
-
-      <li>
-        <p>
-          Substitute back <m>u=g(x)</m> to express the final answer in terms of <m>x</m>:
-        </p>
-        <me>
-          \int h(x)\,dx
-          \ =\
-          F(u)+C
-          \ =\
-          F(g(x))+C.
-        </me>
-      </li>
-    </ol>
+   
   </subsection>
 
   <subsection xml:id="ssec-substitution-examples">
