@@ -58,6 +58,9 @@ Before moving on to more formal ideas, we start with an intuitive definition of 
 <figure xml:id="fig-limit-graph">
   <caption>Reading a limit from a graph: <m>\displaystyle\lim_{x\to a} f(x)=L</m>.</caption>
   <image width="60%" xml:id="limit-graph">
+    <shortdescription>
+Graph of a smooth increasing function labeled y = f(x). A point on the curve highlights a value that the function approaches as x approaches a nearby input, illustrating the idea of a limit.
+</shortdescription>
 <latex-image>
 \begin{tikzpicture}
 	% axes
@@ -212,6 +215,9 @@ We have seen a few problems where a limit exists, but in fact, as the 2004 movie
     The limit does not exist GIF
   </caption>
   <image width = "100%" source="images/NoLimit.gif">
+    <shortdescription>
+Animated GIF showing a person looking shocked and puzzled, often used humorously when a math problem produces an unexpected outcome.
+</shortdescription>
   </image>
 </figure>
 </sidebyside>
@@ -243,6 +249,9 @@ We have seen a few problems where a limit exists, but in fact, as the 2004 movie
 <figure xml:id="fig-sgn-tikz">
     <caption>The sign function <m>\text{sgn}(x)</m>.</caption>
       <image width="100%" xml:id="sgn-tikz">
+        <shortdescription>
+Plot representing the sign function sgn(x). The function takes the value 1 for x greater than 0 and −1 for x less than 0, and is not defined at x = 0.
+</shortdescription>
         <latex-image>
         \begin{tikzpicture}
           % Axes
@@ -300,6 +309,9 @@ the limit only notices values of <m>f(x)</m> for <m>x \neq a</m>. As a quick min
 <figure xml:id="fig-removable-discontinuity-tikz">
   <caption>The function <m>g(x)=1</m> for <m>x\neq 3</m> with <m>g(3)=2</m>.</caption>
   <image width="90%" xml:id="g-removable-tikz">
+    <shortdescription>
+Graph of a function equal to 1 for all x except at x = 3, where the function value is 2. The graph shows a horizontal line at y = 1 with a single point above it at x = 3.
+</shortdescription>
     <latex-image>
 \begin{tikzpicture}
   % Axes
@@ -543,6 +555,9 @@ the function doesn’t have a finite limit, but the way it “blows up” is sti
 <figure xml:id="fig-inv-abs">
   <caption>The graph of <m>y = \dfrac{1}{|x|}</m>.</caption>
   <image width="90%" xml:id="inv-abs-tikz">
+    <shortdescription>
+Graph showing a function approaching a vertical asymptote. As x approaches a specific value, the function increases without bound, illustrating an infinite limit.
+</shortdescription>
     <latex-image>
 \begin{tikzpicture}
   % Axes

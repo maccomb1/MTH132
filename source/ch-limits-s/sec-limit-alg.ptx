@@ -170,6 +170,9 @@ Here is a Desmos graph of the function, along with a table of values near <m>x=2
     Graph of <m>f(x)=\dfrac{x^2-4x+4}{x^2-x-2}</m>
   </caption>
   <image width = "100%" source="images/LimitOfFunction001.gif">
+    <shortdescription>
+      Desmos gif showcasing two points getting closer and closer to x=2 and that the height of the graph gets closer and closer to 0
+    </shortdescription>
   </image>
 </figure>
 </sidebyside>
@@ -292,6 +295,9 @@ Keep in mind, however, that on quizzes and exams you may not have access to a ca
     <m>y = x \pm 4(x-1)^2</m> (dashed).
   </caption>
   <image width = "100%" source="images/0102-g1.PNG">
+    <shortdescription>
+Graph illustrating the Squeeze Theorem near x=1. A wavy curve labeled y = x + 4(x-1)^2 sin(1/(x-1)) oscillates between two dashed curves labeled y = x - 4(x-1)^2 and y = x + 4(x-1)^2, and all three approach the point (1,1).
+</shortdescription>
   </image>
 </figure>
 </sidebyside>

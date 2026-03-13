@@ -41,6 +41,9 @@
     between <m>f(a)</m> and <m>f(b)</m>, and at least one point <m>c</m> with <m>f(c)=r</m>.</caption>
 
   <image xml:id="ivt-ill">
+    <shortdescription>
+Graph of a continuous function f(x) with a horizontal line y = r intersecting the curve. The intersection point shows that the function takes the value r at some point between two x-values, illustrating the Intermediate Value Theorem.
+</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=.3]
 		

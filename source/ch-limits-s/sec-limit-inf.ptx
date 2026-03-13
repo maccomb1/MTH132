@@ -76,7 +76,11 @@
     <m>x\to\infty</m>.
   </caption>
 
-      <image source="images/asymp01.png" width="90%"/>
+      <image source="images/asymp01.png" width="90%">
+      <shortdescription>
+Graph of a function approaching a dashed horizontal line as x increases. The dashed line represents a horizontal asymptote that the curve approaches but does not reach.
+</shortdescription>
+      </image> 
   
 
 
@@ -95,7 +99,11 @@
         A function that increases without bound and does not approach a
         horizontal asymptote.
       </caption>
-     <image source="images/asymp02.png" width="90%"/>
+     <image source="images/asymp02.png" width="90%">
+      <shortdescription>
+Graph of a function that increases without bound as x increases. The curve continues rising and does not level off, illustrating a function with no horizontal asymptote.
+</shortdescription>
+     </image> 
     </figure>
 
     <p>

@@ -17,12 +17,35 @@
     <title>Reversing the Chain Rule</title>
 
     <p>
-      By the Second Fundamental Theorem of Calculus, one efficient way to evaluate a definite integral
-      <m>\displaystyle \int_a^b f(x)\,dx</m> is to find an antiderivative <m>F</m> and compute
-      <m>F(b)-F(a)</m>. In this section we develop a powerful method for finding antiderivatives by
+      In this section we develop a powerful method for finding antiderivatives by
       reversing the Chain Rule:
-      <m>\dfrac{d}{dx}\big(F(g(x))\big)=F'(g(x))g'(x)</m>.
     </p>
+
+      <me>\dfrac{d}{dx}\big(f(g(x))\big)=f'(g(x))g'(x)</me>
+  <p>  
+    Let's see an example of this in action before we develop a systematic method for applying it.
+  </p>     
+
+  <example >
+    <task>
+      <statement>
+        <p>
+          Find the derivative of <m>F(x) = \sin(x^2)</m>
+        </p>
+      </statement>
+      <solution>
+
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Use you answer from (a) to help evaluate <m>\displaystyle \int x\cos(x^2)\,dx</m>.
+        </p>
+      </statement>
+    </task>
+    
+  </example>
 
     <p>
       For example, consider the indefinite integral

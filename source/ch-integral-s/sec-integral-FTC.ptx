@@ -447,45 +447,45 @@
     <example xml:id="ex-ftc-evaluate-integral">
       <statement>
         <p>
-          Evaluate <m>\displaystyle \int_{0}^{1} \left(5+x^2-e^x\right)\,dx</m>.
+          Evaluate <m>\displaystyle \int_{0}^{2} \left(5+x^2-e^{\tfrac12 x}\right)\,dx</m>.
         </p>
       </statement>
       <solution>
         <p>
-          An antiderivative is <m>F(x)=5x+\frac{1}{3}x^3-e^x</m>.
+          An antiderivative is <m>F(x)=5x+\frac{1}{3}x^3-2e^{\tfrac12 x}</m>.
           Apply the Second Fundamental Theorem of Calculus:
         </p>
 
         <me>
           \begin{array}{rcl}
-          \displaystyle \int_{0}^{1} (5+x^2-e^x)\,dx
+          \displaystyle \int_{0}^{2} (5+x^2-2e^{\tfrac12 x})\,dx
           &amp;=&amp;
-          F(1)-F(0)
+          F(2)-F(0)
           \\[0.6em]
           &amp;=&amp;
-          \left(5+\frac{1}{3}-e\right)-\left(0-0-1\right)
+          \left(10+\frac{8}{3}-2e\right)-\left(0-0-2\right)
           \\[0.6em]
           &amp;=&amp;
-          6+\frac{1}{3}-e.
+          12+\frac{8}{3}-2e.
           \end{array}
         </me>
 
         <remark>
           <p> 
-          Another antiderivative is <m>F(x)=5x+\frac{1}{3}x^3-e^x+7</m>. See that you get the same answer 
+          Another antiderivative is <m>F(x)=5x+\frac{1}{3}x^3-2e^{\tfrac12 x}+7</m>. See that you get the same answer 
           if you use this antiderivative instead:
           </p> 
           <me>
             \begin{array}{rcl}
-            \displaystyle \int_{0}^{1} (5+x^2-e^x)\,dx
+            \displaystyle \int_{0}^{2} (5+x^2-e^{\tfrac12 x})\,dx
             &amp;=&amp;
-            F(1)-F(0)
+            F(2)-F(0)
             \\[0.6em]
             &amp;=&amp;
-            \left(5+\frac{1}{3}-e + 7 \right)-\left(0-0-1 +7\right)
+            \left(10+\frac{8}{3}-2e + 7 \right)-\left(0-0-2 +7\right)
             \\[0.6em]
             &amp;=&amp;
-            6+\frac{1}{3}-e.
+            12+\frac{8}{3}-2e.
             \end{array}
           </me>
           <p>No matter the value of the constant, the difference <m>F(b)-F(a)</m> will always be the same, 

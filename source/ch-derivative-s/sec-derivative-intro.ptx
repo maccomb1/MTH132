@@ -238,7 +238,13 @@ the instantaneous velocity.
         A secant line connecting the points <m>(1,f(1))</m> and <m>(7,f(7))</m>,
         representing the average rate of change of <m>f</m> on the interval <m>[1,7]</m>.
       </caption>
-      <image source="images/secant01.png" width="100%"/>
+      <image source="images/secant01.png" width="100%">
+      <shortdescription>
+Graph of a curve f(x) with a straight line passing through two points on the curve labeled (1, f(1)) and (7, f(7)). 
+The line represents the secant line connecting these two points.
+</shortdescription>
+      
+      </image>
     </figure>
   </sidebyside>
 
@@ -274,7 +280,12 @@ the instantaneous velocity.
         A tangent line through the point <m>(1,f(1))</m>,
         representing the instantaneous rate of change of <m>f</m> at <m>x=1</m>.
       </caption>
-      <image source="images/tangent01.png" width="100%"/>
+      <image source="images/tangent01.png" width="100%">
+      <shortdescription>
+Graph of a curve f(x) with a straight line tangent to the curve at the point (1, f(1)). 
+The line represents the tangent line at that point.
+</shortdescription>
+      </image>
     </figure>
   </sidebyside>
 

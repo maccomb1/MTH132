@@ -77,8 +77,17 @@
     and one where the value <m>f(a)</m> does not equal the limit.
   </caption>
   <sidebyside widths="45% 45%">
-    <image source="images/1-8-Discont-i.png" />
-    <image source="images/1-8-Discont-ii.png" />
+    <image source="images/1-8-Discont-i.png" >
+      <shortdescription>
+Graph of a smooth increasing curve with an open circle at x = a. The curve approaches the same value from both sides, but the point (a, f(a)) is missing, illustrating a removable discontinuity.
+</shortdescription>
+    </image>
+
+    <image source="images/1-8-Discont-ii.png">
+<shortdescription>
+Graph of a smooth increasing curve with a hole at x = a and a filled point directly above it. The open circle shows the limit value of the function at x = a, while the filled point indicates that f(a) is defined at a different value, illustrating a removable discontinuity.
+</shortdescription>
+    </image> 
   </sidebyside>
 </figure>
     </definition>
@@ -140,7 +149,11 @@
 
     <figure xml:id="discont-jump">
       <caption>A jump discontinuity where left and right limits differ.</caption>
-      <image source="images/1-8-Discont-iii.png" width="60%"/>
+      <image source="images/1-8-Discont-iii.png" width="60%">
+      <shortdescription>
+Graph of a function with a jump discontinuity at x = a. The curve approaching from the left ends at an open circle, while a filled point above it shows the value of the function and the branch for x greater than a.
+</shortdescription>
+      </image>
     </figure>
     </definition>
 
@@ -187,7 +200,11 @@
       <p> Graphically, an infinite discontinuity appears as a vertical asymptote in the curve <m>y=f(x)</m> at <m>x=a</m>. </p>
     <figure xml:id="discont-infinite">
       <caption>A discontinuity caused by a vertical asymptote.</caption>
-      <image source="images/1-8-Discont-iv.png" width="60%"/>
+      <image source="images/1-8-Discont-iv.png" width="60%">
+      <shortdescription>
+Graph of a function with a vertical asymptote at x = a. The curve approaches negative infinity from the left and positive infinity from the right, illustrating an infinite discontinuity.
+</shortdescription>
+      </image>
     </figure>
 
 
@@ -229,7 +246,11 @@
       <p> Graphically, an essential discontinuity quite often appears as a wild oscillation in the curve <m>y=f(x)</m> at <m>x=a</m>. </p>
     <figure xml:id="discont-essential" >
       <caption>An essential discontinuity where one-sided limits fail to exist.</caption>
-      <image source="images/1-8-Discont-v.png" width="60%"/>
+      <image source="images/1-8-Discont-v.png" width="60%">
+      <shortdescription>
+Graph of a function that oscillates increasingly rapidly near x = a. As x approaches a, the function does not approach a single value but instead fluctuates between many values, illustrating an essential discontinuity.
+</shortdescription>
+      </image>
     </figure>
 
 
@@ -520,7 +541,11 @@
   <sidebyside width="80%">
   <figure xml:id="fun-graph">
     <caption>Graph of <m>g(x)</m> showing its domain of continuity.</caption>
-    <image source="images/1-8-Fun.png" />
+    <image source="images/1-8-Fun.png" >
+    <shortdescription>
+Coordinate graph of a function defined starting at x = -1 with a filled endpoint and continuous until a vertical asymptote at x = 3. The function continues on the other side of the asymptote for x greater than 3.
+</shortdescription>
+    </image>
   </figure>
    </sidebyside>
 </solution>

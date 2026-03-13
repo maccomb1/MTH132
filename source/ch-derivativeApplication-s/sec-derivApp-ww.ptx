@@ -2037,9 +2037,9 @@ S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
     <p> This is always defined, so the only critical numbers will come from <m>f'(x)=0</m>, solve
     </p>
     <me>\begin{aligned}
-      0 \amp = (1-x)e^{-x} \\
+      (1-x)e^{-x} \amp  = 0  \\
       1-x \amp = 0 \\
-      x \amp = 1.
+      1 \amp = x.
     \end{aligned}
     </me>
     <p> Thus the only critical number is <m>x=1</m>.</p>
@@ -2056,7 +2056,7 @@ S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
     <p> This is always defined, so the only points of inflection will come from <m>f''(x)=0</m>, solve
     </p>
     <me>\begin{aligned}
-      0 \amp = (x-2)e^{-x} \\
+      (x-2)e^{-x} \amp = 0 \\
       x-2 \amp = 0 \\
       x \amp = 2.
     \end{aligned}
@@ -2078,9 +2078,10 @@ S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
 
     <p> Combining all this we can sketch the graph of <m>f</m>.</p>
 
-          <image source="images/asymp01.png" width="90%">
+          <image source="images/curveSketch12.png" width="90%">
         <shortdescription>
-          Graph of a function that gets closer and closer to a horizontal line as x increases.
+  A graph of f(x)=xe^(-x). The graph starts at (0,0), increases to a local maximum at x=1, 
+  then decreases and has an inflection point at x=2, after which it continues to decrease but is concave up.
         </shortdescription>
       </image>
   </solution>

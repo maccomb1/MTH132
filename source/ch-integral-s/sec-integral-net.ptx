@@ -3,340 +3,713 @@
 <section xml:id="sec-integral-net" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Net Change Theorem and Indefinite Integrals</title>
 
+<objectives>
+<ul>
+<li>
+State and interpret the Net Change Theorem, and explain how a definite integral
+<m>\displaystyle \int_a^b f(x)\,dx</m> represents the net change of a quantity whose rate is <m>f(x)</m>.
+</li>
+<li>
+Understand and use indefinite integrals as notation for families of antiderivatives,
+including the role of the constant of integration <m>C</m>.
+</li>
 
-  <objectives>
-    <ul>
-      <li>Interpret a definite integral as net change of a quantity whose rate of change is known.</li>
-      <li>Use indefinite integral notation to represent the family of all antiderivatives.</li>
-      <li>Compute net change from a velocity (or rate) function using <m>F(b)-F(a)</m>.</li>
-      <li>Compute the average value of a function on an interval.</li>
-      <li>State and use the Mean Value Theorem for Integrals.</li>
-    </ul>
-  </objectives>
+<li>
+Evaluate indefinite integrals using basic antiderivative formulas.
+</li>
 
-  <subsection xml:id="ssec-net-change-review">
-    <title>Review: Four Meanings of the Definite Integral</title>
 
+<li>
+Compute total distance traveled from a velocity function using
+<m>\displaystyle \int_a^b |v(t)|\,dt</m>, including splitting integrals at points where the velocity changes sign.
+</li>
+
+<li>
+Distinguish between <em>net change</em> (signed area) and <em>total accumulated quantity</em> (total area).
+</li>
+
+
+
+</ul>
+</objectives>
+
+
+<warning xml:id="wrn-intNet-prereq">
+  <title>Prerequisite Review</title>
+
+<p>
+  In this section we will be integrating functions with absolute values.   
+  If you feel a bit out of practice with absolute values and piecewise functions, it may be helpful
+  to revisit those ideas before diving into the calculus.
+
+<ul>
+  <li>
+    <p><xref ref="ssec-abs-definitions">Review section on absolute values</xref></p>
+  </li>
+
+  <!-- 
+  <li>
+    <p><xref ref="ssec-log-def">Review section on logarithmic functions</xref></p>
+  </li>
+  -->
+</ul>
+</p>
+</warning>
+
+
+
+
+<p>
+In the previous section we introduced the 
+<term>Fundamental Theorem of Calculus</term>,
+which connects derivatives and integrals.  
+One of the most important interpretations of the definite integral is that it measures 
+the <em>total change</em> of a quantity when we know its rate of change.
+</p>
+
+<p>
+This idea appears in many settings. For example:
+</p>
+
+<ul>
+<li>a velocity function tells us how position changes,</li>
+<li>a growth rate tells us how a population changes,</li>
+<li>a flow rate tells us how much fluid enters or leaves a tank.</li>
+</ul>
+
+<p>
+In each case the integral accumulates the effect of a rate over time.
+</p>
+
+
+<subsection xml:id="subsec-net-change-theorem">
+<title>The Net Change Theorem</title>
+
+<p>
+Suppose a quantity <m>F(t)</m> changes over time and its rate of change is
+<m>F'(t)=f(t)</m>.
+</p>
+
+<p>
+If we want to know how much the quantity changes between times
+<m>a</m> and <m>b</m>, we can integrate the rate of change.
+</p>
+
+<theorem xml:id="thm-net-change">
+<title>Net Change Theorem</title>
+
+<statement>
+<p>
+If <m>F'(x)=f(x)</m>, then
+</p>
+
+<me>
+F(b)-F(a)=\displaystyle \int_a^b f(x)\,dx.
+</me>
+
+<p>
+In words, the definite integral of a rate of change gives the
+<em>net change</em> of the original quantity.
+</p>
+</statement>
+</theorem>
+
+
+<example xml:id="ex-net-change-simple">
+
+<statement>
+<p>
+The rate at which water flows into a tank is
+<m>r(t)=5t+2</m> liters per minute.
+How much water enters the tank between
+<m>t=0</m> and <m>t=4</m> minutes?
+</p>
+</statement>
+
+<solution>
+
+<p>
+The total change is the integral of the rate:
+</p>
+
+<me>
+\displaystyle \int_0^4 (5t+2)\,dt
+</me>
+
+<p>
+Compute using antiderivatives:
+</p>
+
+<me>
+\begin{aligned}
+\int_0^4 (5t+2)\,dt
+\amp = \left[\frac{5}{2}t^2+2t\right]_0^4 \\
+\amp = \left(\frac{5}{2}(16)+8\right)-0 \\
+\amp =40+8 \\
+\amp =48.
+\end{aligned}
+</me>
+
+<p>
+So the tank receives <m>48</m> liters of water during this time.
+</p>
+
+</solution>
+</example>
+
+
+
+<example xml:id="ex-net-change-velocity">
+<statement>
+<p>
+  Suppose a car with position <m>s(t)</m> at time <m>t</m> has velocity <m>v(t)=10t+10\sin(\pi t)</m> m/sec. How far is the car from
+  its starting position at <m>t=3</m> seconds?
+</p>
+</statement>
+
+<solution>
+<p>
+The net change in position is the integral of velocity:
+</p>
+<me>
+\displaystyle \int_0^3 (10t+10\sin(\pi t))\,dt
+</me> 
+<p>
+Compute using antiderivatives:
+</p>
+<me>
+\begin{aligned}
+\int_0^3 (10t+10\sin(\pi t))\,dt
+\amp = \left[5t^2-\frac{10}{\pi}\cos(\pi t)\right]_0^3 \\
+\amp = \left(45-\frac{10}{\pi}\cos(3\pi)\right)-\left(0-\frac{10}{\pi}\cos(0)\right) \\
+\amp = 45+\frac{20}{\pi}.
+\end{aligned}
+</me>
+<p>
+The car is <m>45+\frac{20}{\pi} \approx 51.4</m> meters from its starting position at <m>t=3</m> seconds.
+</p>
+</solution>
+</example>
+
+</subsection>
+
+<subsection xml:id="subsec-indefinite-integrals">
+<title>Indefinite Integrals</title>
+
+<definition xml:id="def-indefinite-integral">
+<statement>
+
+  <p>
+When we write an integral without limits,
+</p>
+
+<me>
+\displaystyle \int f(x)\,dx
+</me>
+
+<p>
+we call this an <term>indefinite integral</term>.
+It represents the family of all antiderivatives of <m>f(x)</m>.
+</p>
+
+
+
+<p>
+That is, if <m>F'(x)=f(x)</m>, then
+</p>
+
+<me>
+\displaystyle \int f(x)\,dx = F(x)+C
+</me>
+
+<p>
+where <m>C</m> is an arbitrary constant.
+</p>
+</statement>
+
+</definition>
+
+<p>
+The constant <m>C</m> appears because derivatives of constants are zero,
+so many functions share the same derivative.
+</p>
+
+
+
+
+<p>Now that we have this nice notation for families of antiderivatives, we can
+  rewrite <xref ref="thm-antiderivative-rules">Theorem</xref> in terms of indefinite integrals:</p>
+
+
+  <theorem xml:id="thm-indefinite-basic-rules">
+<title>Basic Rules for Indefinite Integrals</title>
+
+<statement>
+
+<p>
+The following formulas describe common indefinite integrals.
+</p>
+
+<ul>
+
+<li>
+<p>
+<alert>Power Rule</alert>:
+If <m>n\neq -1</m>, then
+</p>
+
+<me>
+\displaystyle \int x^n\,dx=\frac{1}{n+1}x^{n+1}+C.
+</me>
+
+</li>
+
+
+<li>
+<p>
+<alert>Logarithmic Rule</alert>:
+</p>
+
+<me>
+\displaystyle \int \frac{1}{x}\,dx=\ln|x|+C.
+</me>
+
+</li>
+
+
+<li>
+<p>
+<alert>Trigonometric Functions</alert>:
+</p>
+
+<ul>
+
+<li>
+<m>
+\displaystyle \int \cos(x)\,dx=\sin(x)+C
+</m>
+</li>
+
+<li>
+<m>
+\displaystyle \int \sin(x)\,dx=-\cos(x)+C
+</m>
+</li>
+
+<li>
+<m>
+\displaystyle \int \sec^2(x)\,dx=\tan(x)+C
+</m>
+</li>
+
+<li>
+<m>
+\displaystyle \int \sec(x)\tan(x)\,dx=\sec(x)+C
+</m>
+</li>
+
+</ul>
+
+</li>
+
+
+<li>
+<p>
+<alert>Exponential Functions</alert>:
+</p>
+
+<ul>
+
+<li>
+<m>
+\displaystyle \int e^x\,dx=e^x+C
+</m>
+</li>
+
+<li>
+<m>
+\displaystyle \int a^x\,dx=\frac{1}{\ln(a)}a^x+C
+</m>
+
+<p>
+where <m>a&gt;0</m> and <m>a\neq 1</m>.
+</p>
+
+</li>
+
+</ul>
+
+</li>
+
+
+<li>
+<p>
+<alert>Inverse Trigonometric Functions</alert>:
+</p>
+
+<ul>
+
+<li>
+<m>
+\displaystyle \int \frac{1}{\sqrt{1-x^2}}\,dx=\arcsin(x)+C
+</m>
+</li>
+
+<li>
+<m>
+\displaystyle \int \frac{1}{1+x^2}\,dx=\arctan(x)+C
+</m>
+</li>
+
+</ul>
+
+</li>
+
+</ul>
+
+</statement>
+
+<proof>
+
+<p>
+Each formula can be verified by differentiating the result.
+For example, since
+<m>\dfrac{d}{dx}\bigl(\sin(x)\bigr)=\cos(x)</m>,
+it follows that
+<m>\displaystyle \int \cos(x)\,dx=\sin(x)+C</m>.
+</p>
+
+</proof>
+
+</theorem>
+
+<p>We can also rewrite the fact that you can split up integrals accross addition and subtraction, and pull out constants in terms of 
+  indefinite integrals:
+</p>
+
+<theorem xml:id="thm-indefinite-linearity">
+<title>Sums and Constants in Indefinite Integral</title>
+
+<statement>
+
+<p>
+If <m>f(x)</m> and <m>g(x)</m> are integrable functions and
+<m>a</m> and <m>b</m> are constants, then
+</p>
+
+<me>
+\displaystyle \int \bigl(af(x)+bg(x)\bigr)\,dx
+=
+a\int f(x)\,dx
++
+b\int g(x)\,dx.
+</me>
+
+</statement>
+
+<proof>
+
+<p>
+This follows from the linearity of derivatives.
+If
+<m>F'(x)=f(x)</m> and <m>G'(x)=g(x)</m>, then
+</p>
+
+<me>
+\frac{d}{dx}\bigl(aF(x)+bG(x)\bigr)
+=
+af(x)+bg(x).
+</me>
+
+<p>
+Therefore <m>aF(x)+bG(x)</m> is an antiderivative of
+<m>af(x)+bg(x)</m>, which proves the rule.
+</p>
+
+</proof>
+
+</theorem>
+
+<example xml:id="ex-indefinite-basic">
+
+<introduction>
+<p>
+Evaluate the following indefinite integrals
+</p>
+</introduction>
+<task>
+  <statement>
     <p>
-      The definite integral <m>\displaystyle \int_a^b f(x)\,dx</m> has several complementary interpretations.
+      <m>
+\displaystyle \int \left(4x^3-2x + \dfrac{1}{\sqrt{3x}}\right)\,dx
+</m>
     </p>
-
-    <ul>
-      <li>
-        <p>
-          <em>Physical:</em> Suppose <m>y</m> and <m>z</m> are physical quantities that depend continuously on an independent variable <m>x</m>,
-          with <m>y=f(x)</m> and <m>z=F(x)</m>. If <m>y</m> is the rate of change of <m>z</m>, meaning <m>y=\dfrac{dz}{dx}</m>,
-          then the integral of <m>y</m> over <m>[a,b]</m> is the total change in <m>z</m> from <m>x=a</m> to <m>x=b</m>.
-        </p>
-
-        <p>
-          In Leibniz notation, this is written
-        </p>
-
-        <me>
-          \int_a^b y\,dx \ =\ \left.z\right|_{x=a}^{x=b}.
-        </me>
-
-        <p>
-          In Newton notation, if <m>f(x)=F'(x)</m>, then
-        </p>
-
-        <me>
-          \int_a^b f(x)\,dx \ =\ F(b)-F(a),
-        </me>
-
-        <p>
-          which is the Second Fundamental Theorem of Calculus.
-          If an initial value <m>F(a)</m> is known, then
-        </p>
-
-        <me>
-          F(x)\ =\ F(a) + \int_a^x f(t)\,dt
-          \qquad\text{and}\qquad
-          F'(x)\ =\ \frac{d}{dx}\left(\int_a^x f(t)\,dt\right)\ =\ f(x),
-        </me>
-
-        <p>
-          which is the First Fundamental Theorem of Calculus.
-        </p>
-      </li>
-
-      <li>
-        <p>
-          <em>Geometric:</em> The integral is the signed area between the graph <m>y=f(x)</m> and the <m>x</m>-axis on <m>[a,b]</m>,
-          counting regions above the axis as positive and regions below as negative.
-        </p>
-      </li>
-
-      <li>
-        <p>
-          <em>Numerical:</em> Divide <m>[a,b]</m> into <m>n</m> increments of width <m>\Delta x=\dfrac{b-a}{n}</m>.
-          Choose sample points <m>x_1,\ldots,x_n</m> (one in each increment).
-          Then the integral is approximated by a Riemann sum:
-        </p>
-
-        <me>
-          \int_a^b f(x)\,dx \ \approx\ \sum_{i=1}^n f(x_i)\,\Delta x
-          \ =\ f(x_1)\Delta x + \cdots + f(x_n)\Delta x,
-        </me>
-
-        <p>
-          and the exact integral is the limit as <m>n\to\infty</m> (so <m>\Delta x\to 0</m>).
-        </p>
-      </li>
-
-      <li>
-        <p>
-          <em>Algebraic:</em> If we can find an antiderivative <m>F</m> with <m>F'(x)=f(x)</m>, then
-          <m>\displaystyle \int_a^b f(x)\,dx = F(b)-F(a)</m>.
-          Later we will develop systematic methods for finding antiderivatives (for example, substitution, which reverses the Chain Rule).
-        </p>
-      </li>
-    </ul>
-  </subsection>
-
-  <subsection xml:id="ssec-net-change">
-    <title>The Net Change Theorem</title>
-
-    <theorem xml:id="thm-net-change">
-      <title>Net Change Theorem</title>
-      <statement>
-        <p>
-          If a quantity <m>z</m> changes with respect to <m>x</m> at a rate <m>\dfrac{dz}{dx}=f(x)</m>,
-          then the net change in <m>z</m> on <m>[a,b]</m> is
-        </p>
-
-        <me>
-          z(b)-z(a)\ =\ \int_a^b f(x)\,dx.
-        </me>
-
-        <p>
-          Equivalently, if <m>F'(x)=f(x)</m>, then <m>z(b)-z(a)=F(b)-F(a)</m>.
-        </p>
-      </statement>
-    </theorem>
-
+  </statement>
+  <solution>
+    <p><me> 
+\begin{aligned}
+\int \left(4x^3-2x + \dfrac{1}{\sqrt{3x}}\right)\,dx
+\amp = \int 4x^3\,dx - \int 2x\,dx + \int \frac{1}{\sqrt{3x}}\,dx \\
+\amp = \int 4x^3\,dx - \int 2x\,dx + \int \frac{1}{\sqrt{3}}x^{-1/2}\,dx \\
+\amp = x^4 - x^2 + \frac{2}{\sqrt{3}}\sqrt{x} + C.
+\end{aligned}</me>
+    </p>
+  </solution>
+</task> 
+<task>
+  <statement>
     <p>
-      The phrase <em>net change</em> emphasizes that increases and decreases both count:
-      if the rate <m>f(x)</m> is sometimes positive and sometimes negative, the integral records the overall effect.
+      <m>
+\displaystyle \int \left((x-1)^2 + 2^x \right)\,dx
+</m>
     </p>
-  </subsection>
+  </statement>
+  <solution>
+    <p> First let's expand the polynomial to simplify the integral: 
+      <me>
+\begin{aligned}
+\int \left((x-1)^2 + 2^x \right)\,dx
+\amp = \int x^2-2x+1 + 2^x\,dx \\
+\amp = \int x^2\,dx - \int 2x\,dx + \int 1\,dx + \int 2^x\,dx \\
+\amp = \frac{1}{3}x^3 - x^2 + x + \frac{1}{\ln(2)}2^x + C \\
+\end{aligned}</me>
+    </p>
+  </solution>
+</task>
 
-  <subsection xml:id="ssec-indefinite-integrals">
-    <title>Indefinite Integral Notation</title>
 
+
+</example>
+
+
+
+
+
+</subsection>
+
+<subsection xml:id="subsec-total-distance">
+<title>Total Distance Traveled</title>
+
+<p>
+When integrating velocity, the definite integral gives the
+<em>net change in position</em> (displacement).
+However, this does not always represent the total distance traveled.
+</p>
+
+<p>
+If velocity becomes negative, the particle moves in the opposite direction.
+Negative velocity subtracts from the integral.
+</p>
+
+<p>
+To compute the total distance traveled we integrate the
+<em>absolute value</em> of velocity.
+</p>
+
+
+
+<definition xml:id="def-distance-traveled">
+  <statement>
+<p>
+If velocity is <m>v(t)</m>, then
+</p>
+
+<ul>
+<li>Net change in position (displacement):
+<m>\displaystyle \int_a^b v(t)\,dt</m></li>
+
+<li>Total distance traveled:
+<m>\displaystyle \int_a^b |v(t)|\,dt</m></li>
+</ul>
+  </statement>
+</definition>
+
+
+
+<example xml:id="ex-distance">
+
+<statement>
+<p>
+A particle has velocity
+<m>v(t)=t-2</m>.
+Find the total distance traveled from
+<m>t=0</m> to <m>t=4</m>.
+</p>
+</statement>
+
+<solution>
+
+<p>
+First find where velocity changes sign:
+</p>
+
+<me>
+t-2=0 \quad\Rightarrow\quad t=2.
+</me>
+
+<p>
+Split the integral and evaluate:
+</p>
+
+<me>
+  \begin{aligned}
+\int_0^4 |t-2|\,dt
+ \amp = \int_0^2 -(t-2)\,dt   +\int_2^4 (t-2)\,dt\\
+ \amp = \int_0^2 -t+2 \,dt   +\int_2^4 (t-2)\,dt\\
+\amp =  \left(-\tfrac12 t^2+2t\right)\Big|_0^2 +  \left(\tfrac12 t^2-2t\right)\Big|_2^4\\
+\amp = (2-0) + (0 - (-2))  = 2+2 = 4
+\end{aligned}
+</me>
+
+
+<p>
+Total distance traveled:
+<m>2+2=4</m>.
+</p>
+
+</solution>
+
+</example>
+
+<remark xml:id="remark-abs-value-integrals">
+  <p>  
+    Similar to when we took limits or derivatives of functions involving absolute value, 
+    we need to split up integrals involving absolute value into pieces where the function is positive and negative.
+  </p> 
+</remark>
+
+
+
+
+<p>
+Another way to understand this distinction is geometrically.
+Recall that the definite integral
+<m>\displaystyle \int_a^b f(x)\,dx</m>
+represents the <em>net area</em> (or <em>signed area</em>) between the graph of
+<m>f(x)</m> and the <m>x</m>-axis.
+</p>
+
+<p>
+When the function is positive, the graph lies above the axis and the
+integral contributes a positive area. When the function is negative,
+the graph lies below the axis and the integral contributes a negative
+area. 
+</p>
+
+<p>
+If we apply absolute values then all the area is counted positively:
+</p>
+
+<definition xml:id="def-total-area">
+  <statement>
     <p>
-      Because antiderivatives and integrals are linked by the Fundamental Theorems, we use the integral sign as notation for the most general antiderivative:
+      If <m>f(x)</m> is a function, then the <term>total area between the curve and the axis</term> on <m>[a,b]</m> is given by 
     </p>
-
     <me>
-      \int f(x)\,dx \ =\ F(x)+C,
-      \qquad\text{where }F'(x)=f(x)\text{ and }C\text{ is any constant}.
+      \text{Total Area} = \displaystyle \int_a^b |f(x)|\,dx.
     </me>
+  </statement>
+</definition>
 
+<p>
+Taking the absolute value flips any portion of the graph that lies
+below the axis upward, so every region contributes positively to the
+area.
+</p>
+
+
+<example xml:id="ex-integral-totalArea">
+  <statement>
+<p>
+The graph of <m>f(x)</m> on the interval <m>[0,8]</m> is shown below, with several
+signed areas indicated. Use these areas to evaluate
+<m>\displaystyle\int_0^8 |f(x)|\,dx</m>.
+</p>
+
+        <image width="90%">
+  <shortdescription>
+    Graph of a function f(x) with areas under the curve shaded in green and areas above the curve shaded in red.
+    The area under the curve from x=0 to x=3 is labeled "Area = 5" and is shaded green.
+    The area above the curve from x=3 to x=8 is labeled "Area = -12" and is shaded red.
+    The function f(x) is also labeled on the graph.
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}
+	\draw[fill=green!20] plot[domain=0:3, smooth] (\x, {.1*(\x)*(\x-3)*(\x-8)});
+	\draw[fill=red!20] plot[domain=3:8, smooth] (\x, {.1*(\x)*(\x-3)*(\x-8)});
+	\draw[->, thick] (-.3,0) -- (8.3,0) node [right] {$x$} ;
+	\draw[->, thick] (0,-4) -- (0,3);
+	\draw[very thick] plot[domain=0:8, smooth] (\x, {.1*(\x)*(\x-3)*(\x-8)});
+	\draw (1.3, .6) node {Area = 5};
+	\draw (5.7, -1.3) node {Area = $-12$};	
+	\draw (2.5,1.5) node {$f(x)$};
+		\draw (8, -2pt) -- (8, 2pt) node[font=\small, above] {8};	
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+
+
+  </statement>
+  <solution>
     <p>
-      The expression <m>\displaystyle \int f(x)\,dx</m> is called an <em>indefinite integral</em>.
-      It represents a family of functions (all antiderivatives), not a single number.
+      The total area is the sum of the absolute values of the areas:
     </p>
-
-    <example xml:id="ex-indef-int-power">
-      <statement>
-        <p>
-          Compute <m>\displaystyle \int x^2\,dx</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Since <m>\dfrac{d}{dx}\left(\tfrac13 x^3\right)=x^2</m>, we have
-        </p>
-        <me>
-          \int x^2\,dx \ =\ \tfrac13 x^3 + C.
-        </me>
-      </solution>
-    </example>
-
-    <example xml:id="ex-net-change-velocity">
-      <statement>
-        <p>
-          A car has velocity <m>v(t)=10t+10\sin(\pi t)</m> (meters per second).
-          How far does it travel from <m>t=0</m> to <m>t=3</m>?
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Distance traveled is net change in position:
-          <m>\displaystyle s(3)-s(0)=\int_0^3 v(t)\,dt</m>.
-          First find an antiderivative:
-        </p>
-
-        <me>
-          \int \left(10t+10\sin(\pi t)\right)\,dt
-          \ =\ 5t^2 - \frac{10}{\pi}\cos(\pi t) + C.
-        </me>
-
-        <p>
-          Now evaluate as a definite integral:
-        </p>
-
-        <me>
-          \begin{array}{rcl}
-          \displaystyle \int_0^3 \left(10t+10\sin(\pi t)\right)\,dt
-          &amp;=&amp;
-          \left. \left(5t^2 - \frac{10}{\pi}\cos(\pi t)\right)\right|_{t=0}^{t=3}
-          \\[0.9em]
-          &amp;=&amp;
-          \left(5(3^2) - \frac{10}{\pi}\cos(3\pi)\right)
-          - \left(5(0^2) - \frac{10}{\pi}\cos(0)\right)
-          \\[0.9em]
-          &amp;=&amp;
-          \left(45 - \frac{10}{\pi}(-1)\right) - \left(0 - \frac{10}{\pi}(1)\right)
-          \\[0.9em]
-          &amp;=&amp;
-          45 + \frac{20}{\pi}
-          \ \approx\ 51.4\ \text{meters.}
-          \end{array}
-        </me>
-      </solution>
-    </example>
-  </subsection>
-
-  <subsection xml:id="ssec-average-value">
-    <title>Average Value of a Function</title>
-
-    <p>
-      In a Riemann sum approximation,
-      <m>\sum_{i=1}^n f(x_i)\Delta x</m> can be rewritten to highlight an average of the sample values:
-    </p>
-
     <me>
-      \begin{array}{rcl}
-      \displaystyle \sum_{i=1}^n f(x_i)\Delta x
-      &amp;=&amp;
-      \displaystyle \sum_{i=1}^n f(x_i)\,\frac{b-a}{n}
-      \\[0.9em]
-      &amp;=&amp;
-      \displaystyle (b-a)\,\frac{f(x_1)+\cdots+f(x_n)}{n}.
-      \end{array}
+\begin{aligned}
+\int_0^8 |f(x)|\,dx
+\amp = 5 + |-12| \\
+\amp = 5 + 12 \\
+\amp = 17.
+\end{aligned}
     </me>
+  </solution>
+</example>
 
-    <p>
-      Taking the limit as <m>n\to\infty</m> motivates the definition of the average value of <m>f</m> on <m>[a,b]</m>:
-    </p>
 
-    <definition xml:id="def-average-value">
-      <statement>
-        <p>
-          The <em>average value</em> of <m>f</m> on <m>[a,b]</m> is
-        </p>
-        <me>
-          f_{\text{avg}}
-          \ =\
-          \frac{1}{b-a}\int_a^b f(x)\,dx.
-        </me>
-      </statement>
-    </definition>
+<example xml:id="ex-distance-geometry">
+<statement>
+<p>
+ Find the total area between <m>y=e^x-1</m> and the <m>x</m>-axis on <m>[-2,2]</m>.
+</p>
 
-    <example xml:id="ex-average-sqrt">
-      <statement>
-        <p>
-          Find the average value of <m>f(x)=\sqrt{x}</m> on <m>[0,4]</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          An antiderivative is <m>\int x^{1/2}\,dx=\frac{2}{3}x^{3/2}+C</m>. Therefore,
-        </p>
+</statement>
+<solution>
+  <p>  
+    Total area is given by the integral of the absolute value:
+  </p>
+  <me>
+    \text{Total Area} = \int_{-2}^2 |e^x-1|\,dx.
+  </me> 
+  <p> In order to evaluate this integral, we need to find where the function changes sign and then split the integral into pieces:
+  </p>
+  <me>
+\begin{aligned}
+e^x-1 \amp = 0 \\
+e^x \amp = 1 \\
+x \amp = 0
+\end{aligned}
+  </me>
+  <p> We can verify that the function is negative on <m>[-2,0]</m> and positive on <m>[0,2]</m>, so we can split the integral as follows:
+  </p>
+  <me>
+\begin{aligned}
+\int_{-2}^2 |e^x-1|\,dx
+\amp = \int_{-2}^0 -(e^x-1)\,dx + \int_0^2 (e^x-1)\,dx \\
+\amp = \int_{-2}^0 -e^x+1\,dx + \int_0^2 e^x-1\,dx \\
+\amp = \left(-e^x+x\right)\Big|_{-2}^0 + \left(e^x-x\right)\Big|_0^2 \\
+\amp = (0-0 -(-e^{-2}+(-2))) + (e^2-2 - (1-0)) \\
+\amp = e^{-2}+2 + e^2-3 \\
+\amp = e^{-2}+e^2-1.
+\end{aligned}
+  </me>
+</solution>
 
-        <me>
-          \begin{array}{rcl}
-          \displaystyle f_{\text{avg}}
-          &amp;=&amp;
-          \displaystyle \frac{1}{4-0}\int_0^4 \sqrt{x}\,dx
-          \\[0.9em]
-          &amp;=&amp;
-          \displaystyle \frac{1}{4}\left.\left(\frac{2}{3}x^{3/2}\right)\right|_{x=0}^{x=4}
-          \\[0.9em]
-          &amp;=&amp;
-          \displaystyle \frac{1}{4}\cdot\frac{2}{3}\cdot 4^{3/2}
-          \ =\
-          \frac{1}{4}\cdot\frac{2}{3}\cdot 8
-          \ =\
-          \frac{4}{3}
-          \ \approx\ 1.3.
-          \end{array}
-        </me>
+</example>
 
-        <p>
-          Even though <m>\sqrt{x}</m> ranges from 0 to 2 on <m>[0,4]</m>, the average is above 1 because the graph bulges upward.
-        </p>
-      </solution>
-    </example>
 
-    <example xml:id="ex-average-velocity">
-      <statement>
-        <p>
-          Let <m>s(t)</m> be a position function with velocity <m>v(t)=s'(t)</m>.
-          Show that the average value of <m>v</m> on <m>[a,b]</m> equals total distance traveled divided by elapsed time.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Using the definition of average value and the Second Fundamental Theorem:
-        </p>
-
-        <me>
-          \begin{array}{rcl}
-          \displaystyle v_{\text{avg}}
-          &amp;=&amp;
-          \displaystyle \frac{1}{b-a}\int_a^b v(t)\,dt
-          \\[0.9em]
-          &amp;=&amp;
-          \displaystyle \frac{1}{b-a}\int_a^b s'(t)\,dt
-          \\[0.9em]
-          &amp;=&amp;
-          \displaystyle \frac{1}{b-a}\left(s(b)-s(a)\right)
-          \ =\
-          \frac{s(b)-s(a)}{b-a}.
-          \end{array}
-        </me>
-      </solution>
-    </example>
-  </subsection>
-
-  <subsection xml:id="ssec-mvt-integrals">
-    <title>Mean Value Theorem for Integrals</title>
-
-    <theorem xml:id="thm-mvt-integrals">
-      <title>Mean Value Theorem for Integrals</title>
-      <statement>
-        <p>
-          If <m>f</m> is continuous on <m>[a,b]</m>, then there exists a point <m>c\in(a,b)</m> such that
-        </p>
-
-        <me>
-          f(c)\ =\ \frac{1}{b-a}\int_a^b f(x)\,dx.
-        </me>
-
-        <p>
-          In words: at some point, the function attains its average value.
-        </p>
-      </statement>
-    </theorem>
-
-    <p>
-      <em>Proof idea.</em>
-      Let <m>F(x)=\int_a^x f(t)\,dt</m>. By the Mean Value Theorem for derivatives, there is <m>c\in(a,b)</m> such that
-      <m>F'(c)=\dfrac{F(b)-F(a)}{b-a}</m>.
-      By the First Fundamental Theorem, <m>F'(c)=f(c)</m>.
-      Also <m>F(b)-F(a)=\int_a^b f(x)\,dx</m>. Substituting gives the result.
-    </p>
-
-    <p>
-      In the example <m>f(x)=\sqrt{x}</m> on <m>[0,4]</m>, we found <m>f_{\text{avg}}=\frac{4}{3}</m>.
-      So there is <m>c\in(0,4)</m> with <m>\sqrt{c}=\frac{4}{3}</m>, meaning <m>c=\frac{16}{9}</m>.
-    </p>
-  </subsection>
-
+</subsection>
 
 <subsection xml:id="additional-worked-problems-integral-net">
   <title>Additional Worked-Out Examples</title>
@@ -358,50 +731,184 @@
   <exercises xml:id="exercises-net-change-indef">
     <title>Practice / Study Problems</title>
 
-    <exercisegroup>
-      <title>Net Change and Indefinite Integrals</title>
 
-      <exercise xml:id="prob-net-change-01">
-        <statement>
-          <p>
-            A bacteria culture grows at rate <m>r(t)=200e^{0.1t}</m> (cells per hour).
-            Interpret <m>\displaystyle \int_0^5 r(t)\,dt</m> in words.
-          </p>
-        </statement>
-      </exercise>
+  <exercisegroup>
+    <title>Some True/False Problems</title>
 
-      <exercise xml:id="prob-indef-01">
-        <statement>
-          <p>Compute <m>\displaystyle \int (6x^5-4\sec^2 x)\,dx</m>.</p>
-        </statement>
-      </exercise>
+    <introduction>
+      <p>
+        Determine whether each statement is true or false and briefly justify your reasoning.
+      </p>
+    </introduction>
+    
 
-      <exercise xml:id="prob-indef-02">
-        <statement>
-          <p>Compute <m>\displaystyle \int \left(3\cos(2x)-\frac{1}{x}\right)\,dx</m>.</p>
-        </statement>
-      </exercise>
-    </exercisegroup>
 
-    <exercisegroup>
-      <title>Average Value</title>
+<exercise xml:id="tf-net-01">
+  <statement>
+    <p>
+      If <m>r(t)</m> is measured in gallons per minute, then
+      <m>\displaystyle \int_2^7 r(t)\,dt</m> is measured in gallons.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <alert>True.</alert> Rate times time gives total change in the accumulated quantity. Here, gallons per minute times minutes gives gallons.
+    </p>
+  </solution>
+</exercise>
 
-      <exercise xml:id="prob-avg-01">
-        <statement>
-          <p>
-            Find the average value of <m>f(x)=x^2</m> on <m>[1,4]</m>.
-          </p>
-        </statement>
-      </exercise>
+<exercise xml:id="tf-net-02">
+  <statement>
+    <p>
+      Suppose <m>P'(t)</m> is measured in people per year. Then
+      <m>\displaystyle \int_0^{10} P'(t)\,dt</m> represents the population after 10 years.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <alert>False.</alert> The integral gives the <em>change</em> in population over the 10-year period, not the population itself. To find the final population, one would need to add the initial population.
+    </p>
+  </solution>
+</exercise>
 
-      <exercise xml:id="prob-avg-02">
-        <statement>
-          <p>
-            Let <m>f</m> be continuous on <m>[a,b]</m> and suppose <m>0\le f(x)\le 10</m>.
-            Use the bounds rule to give an inequality for <m>f_{\text{avg}}</m>.
-          </p>
-        </statement>
-      </exercise>
+
+<exercise xml:id="tf-net-03">
+  <statement>
+    <p>
+      If a particle has velocity <m>v(t)</m> and
+      <m>\displaystyle \int_0^5 v(t)\,dt=0</m>, then the particle did not move during the interval <m>[0,5]</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <alert>False.</alert> The integral of velocity gives net change in position. A value of 0 means the particle ended where it started, but it may still have moved back and forth during the interval.
+    </p>
+  </solution>
+</exercise>
+
+
+<exercise xml:id="tf-net-04">
+  <statement>
+    <p>
+      If <m>\displaystyle \int_a^b f(x)\,dx = 6</m> and
+      <m>\displaystyle \int_a^b g(x)\,dx = -2</m>, then
+      <m>\displaystyle \int_a^b \bigl(3f(x)-2g(x)\bigr)\,dx = 14</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <alert>False.</alert> By linearity of definite integrals,
+      <m>\displaystyle \int_a^b \bigl(3f(x)-2g(x)\bigr)\,dx
+      = 3\int_a^b f(x)\,dx - 2\int_a^b g(x)\,dx
+      = 3(6)-2(-2)=18+4=22</m>.
+    </p>
+  </solution>
+</exercise>
+
+
+
+
+
+<exercise xml:id="tf-net-05">
+  <statement>
+    <p>
+      If
+      <m>\displaystyle \int f(x)\,dx = \int g(x)\,dx</m>,
+      then <m>f(x)=g(x)</m> for all <m>x</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <alert>False.</alert> Two indefinite integrals may differ by a constant. More precisely, if two antiderivative families are equal as written, the statement is ambiguous. The safer fact is that if two antiderivatives differ only by a constant, then they have the same derivative. Indefinite integrals represent families, not single functions.
+    </p>
+  </solution>
+</exercise>
+
+
+<exercise xml:id="tf-net-06">
+  <statement>
+    <p>
+      <m>\displaystyle \int (x^{-1}+x^{-2})\,dx = \ln|x|-\frac{1}{x}+C</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <alert>True.</alert> We use
+      <m>\displaystyle \int x^{-1}\,dx=\ln|x|+C</m>
+      and
+      <m>\displaystyle \int x^{-2}\,dx=-x^{-1}+C</m>.
+    </p>
+  </solution>
+</exercise>
+
+
+<exercise xml:id="tf-net-07">
+  <statement>
+    <p>
+      <m>\displaystyle \int \left(5e^x-3\sec^2(x)+4\right)\,dx
+      = 5e^x-3\tan(x)+4x+C</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <alert>True.</alert> This follows directly from the basic antiderivative rules and linearity.
+    </p>
+  </solution>
+</exercise>
+
+<exercise xml:id="tf-net-08">
+  <statement>
+    <p>
+      If a particle has velocity <m>v(t)</m> and <m>v(t)&gt;0</m> for all <m>t\in[a,b]</m>, then its total distance traveled on <m>[a,b]</m> equals its displacement on <m>[a,b]</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <alert>True.</alert> If velocity is always positive, the particle never reverses direction, so
+      <m>|v(t)|=v(t)</m> and therefore total distance equals net change in position.
+    </p>
+  </solution>
+</exercise>
+
+
+
+
+<exercise xml:id="tf-net-09">
+  <statement>
+    <p>
+      If <m>v(t)\leq 0</m> for all <m>t\in[a,b]</m>, then
+      <m>\displaystyle \int_a^b |v(t)|\,dt = -\int_a^b v(t)\,dt</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <alert>True.</alert> When <m>v(t)\leq 0</m>, we have <m>|v(t)|=-v(t)</m> everywhere on the interval, so integrating both sides gives the result.
+    </p>
+  </solution>
+</exercise>
+
+
+
+
+
+
+
+<exercise xml:id="tf-net-10">
+  <statement>
+    <p>
+      If <m>f(x)</m> changes sign at <m>x=c</m> in the interval <m>[a,b]</m>, then
+      <me>\displaystyle \int_a^b |f(x)|\,dx
+      =
+      \int_a^c f(x)\,dx + \int_c^b f(x)\,dx</me>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <alert>False.</alert> When <m>f</m> changes sign, one of those pieces must be negated when replacing <m>|f(x)|</m> by a piecewise expression. Simply splitting the integral without changing signs gives <m>\int_a^b f(x)\,dx</m>, which is the signed area, not the total area.
+    </p>
+  </solution>
+</exercise>
+
     </exercisegroup>
   </exercises>
 
