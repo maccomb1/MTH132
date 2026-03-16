@@ -5752,27 +5752,27 @@ var ptx_lunr_docs = [
   "body": "  If a cost function is increasing for all in its domain, then the minimum cost occurs at the left endpoint.     True. If the function is increasing everywhere, the smallest value occurs at the smallest allowable .   "
 },
 {
-  "id": "exercises-optimization-2-9",
+  "id": "tf-opt-11",
   "level": "2",
-  "url": "sec-derivApp-opt.html#exercises-optimization-2-9",
+  "url": "sec-derivApp-opt.html#tf-opt-11",
   "type": "Exercise",
   "number": "7",
   "title": "",
   "body": "  Suppose that two positive numbers and sum to . Then the maximum value of their product is .     False. Since the numbers sum to , we know that   Therefore, the product is . In order for both and to be positive, we must have . So yields the derivative , which is never undefined and is zero at . So the only critical point is at . Since the domain is an open interval, we can use the First Derivative Test for Absolute Extrema.   So the derivative changes from positive to negative at the critical point, so the critical point is an absolute maximum by the First Derivative Test for Absolute Extrema . Therefore the maximum value of the product is (not 100).   "
 },
 {
-  "id": "exercises-optimization-2-10",
+  "id": "tf-opt-12",
   "level": "2",
-  "url": "sec-derivApp-opt.html#exercises-optimization-2-10",
+  "url": "sec-derivApp-opt.html#tf-opt-12",
   "type": "Exercise",
   "number": "8",
   "title": "",
   "body": "  Suppose that two positive numbers and have a product of . Then the minimum value of their sum is .    False. Since the product is , we know that   Therefore, the sum is . In order for both and to be positive, we must have . So yields the derivative . The derivative is undefined at , but that is not in the domain. Setting the derivative equal to zero gives , so and . Since we require , we have as the only critical point in the domain. The second derivative is , so , so the critical point yields the absolute minimum.  The minimum value of the sum is .   "
 },
 {
-  "id": "exercises-optimization-2-11",
+  "id": "tf-opt-13",
   "level": "2",
-  "url": "sec-derivApp-opt.html#exercises-optimization-2-11",
+  "url": "sec-derivApp-opt.html#tf-opt-13",
   "type": "Exercise",
   "number": "9",
   "title": "",
