@@ -140,8 +140,9 @@ Graph of a smooth increasing function labeled y = f(x). A point on the curve hig
         <p>
           <alert>Check Your Answers:</alert>
         </p>
+        <p>  
           <ol marker="(a)">
-            <li><p> </p> 
+            <li><p> 
 
               <me>
                 \begin{array}{|c|c|c|c|c|c|c|c|}
@@ -153,7 +154,7 @@ Graph of a smooth increasing function labeled y = f(x). A point on the curve hig
             \end{array}
               </me>
               
-          
+          </p> 
             </li>
 
             <li><m>\displaystyle\lim_{x\to 2} \dfrac{x^3-2x^2+x-2}{x-2} = 5</m></li>
@@ -162,6 +163,7 @@ Graph of a smooth increasing function labeled y = f(x). A point on the curve hig
                 Although <m>f(2)</m> is undefined (there is a hole in the graph), the limit still exists and equals <m>5</m>.
             </li>
           </ol>
+        </p> 
           
           <p><alert>Step by Step Video Solution:</alert></p>
           <p>
@@ -214,7 +216,9 @@ We have seen a few problems where a limit exists, but in fact, as the 2004 movie
   <caption>
     The limit does not exist GIF
   </caption>
-  <image width = "100%" source="images/NoLimit.gif">
+  <image>
+    <gif source="images/NoLimit.gif"/>
+    <png source="images/NoLimit.png"/>
     <shortdescription>
 Animated GIF showing a person looking shocked and puzzled, often used humorously when a math problem produces an unexpected outcome.
 </shortdescription>

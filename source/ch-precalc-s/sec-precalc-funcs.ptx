@@ -111,11 +111,9 @@ f(3) &amp; = &amp; 2(3) + 1 \\
           if
         </p>
         <me>
-\begin{array}{rcl}
-f(f^{-1}(x)) &amp; = &amp; x
+f(f^{-1}(x)) = x
 \quad \text{and} \quad
-f^{-1}(f(x)) &amp; = &amp; x.
-\end{array}
+f^{-1}(f(x)) = x.
         </me>
       </statement>
     </definition>
