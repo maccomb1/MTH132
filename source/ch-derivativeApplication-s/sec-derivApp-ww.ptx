@@ -2093,8 +2093,186 @@ S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
 
        <subsection xml:id="subsec-derivApp-curve2">
       <title><xref ref="sec-derivApp-curve2"/> Curve Sketching Part 2</title>
-      <p> test more 
+
+      
+<example xml:id="ex-curve-sketch-x13-xminus3">
+  <statement>
+    <p>
+      Let <m>f(x)=x^{1/3}(x-3)</m>.
+    </p>
+
+    <ol marker="(a)">
+      <li>
+        <p>
+          Determine the domain of <m>f</m>.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Determine any vertical or horizontal asymptotes.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Determine whether <m>f</m> has any symmetry (even/odd/neither).
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Determine the intervals where <m>f</m> is increasing and decreasing.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Find and classify all critical points (local maxima, local minima, or neither).
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Determine the intervals where <m>f</m> is concave up and concave down, and identify any inflection points.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Use the information above to sketch the graph of <m>f</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+      (a) The function <m>f(x)=x^{1/3}(x-3)</m> is defined for all real numbers, so the domain is <m{(-\infty,\infty)}</m>.
+    </p>
+    <p>
+      (b) There are no vertical asymptotes since the function is defined for all real numbers.  
+      To find horizontal asymptotes, we can compute the limits as <m>x\to\pm\infty</m>.
+    </p>
+    <me>
+    \begin{aligned}
+    \lim_{x\to\infty} x^{1/3}(x-3) \amp = \infty \\ 
+    \lim_{x\to-\infty} x^{1/3}(x-3) \amp= \infty
+    \end{aligned}
+    </me>
+    Thus there are no horizontal asymptotes.
+    <p>
+      (c) To determine symmetry, we can check whether <m>f(-x)=f(x)</m> or <m>f(-x)=-f(x)</m>.
+    </p>
+    <me>
+    \begin{aligned}
+    f(-x) \amp= (-x)^{1/3}(-x-3) \\
+    \amp= -x^{1/3}(-x-3) \\
+    \amp= x^{1/3}(x+3).
+    \end{aligned}
+    </me>
+    Since <m>f(-x)\neq f(x)</m> and <m>f(-x)\neq -f(x)</m>, the function is neither even nor odd.
+    <p>
+      (d) To determine where the function is increasing and decreasing, we can compute the derivative and find the critical points.
+    </p>
+    <me>
+    \begin{aligned}
+      f(x) \amp= x^{1/3}(x-3) \\
+      f(x) \amp= x^{4/3}-3x^{1/3} \\
+      f'(x) \amp= \frac{4}{3}x^{1/3}-x^{-2/3} \\
+      f'(x) \amp= \frac{4}{3}x^{1/3}-\frac{1}{x^{2/3}} \\
+      f'(x) \amp= \dfrac{\frac{4}{3}x-1}{x^{2/3}} 
+      \end{aligned}
+    </me>
+    <p> The derivative is undefined at <m>x=0</m>, and to find where the derivative is zero, we can solve
+    </p>
+    <me>
+    \begin{aligned}
+    \frac{4}{3}x-1 \amp= 0 \\
+    \frac{4}{3}x \amp= 1 \\
+    x \amp= \frac{3}{4}.
+    \end{aligned}
+    </me>
+    Thus the critical points are <m>x=0</m> and <m>x=\frac{3}{4}</m>.
+    <p> To determine where the function is increasing and decreasing, we can use the critical points to divide the interval
+      into three subintervals: <m>(-\infty,0)</m>, <m>(0,\frac{3}{4})</m>, and <m>(\frac{3}{4},\infty)</m>.  
+      We can test a point in each interval to determine the sign of the derivative.</p>
+      
+      <ul>
+        <li> For <m>x=-1</m>, <m>f'(-1)=\frac{\frac{4}{3}(-1)-1}{(-1)^{2/3}}=\frac{-\frac{7}{3}}{1}=-\frac{7}{3}\lt 0</m>, so the function is decreasing on <m>(-\infty,0)</m>.</li>
+        <li> For <m>x=\frac{1}{2}</m>, <m>f'(\frac{1}{2})=\frac{\frac{4}{3}(\frac{1}{2})-1}{(\frac{1}{2})^{2/3}}=\frac{-\frac{1}{3}}{\left(\frac{1}{2}\right)^{2/3}}\lt 0</m>, so the function is decreasing on <m>(0,\frac{3}{4})</m>.</li>
+        <li> For <m>x=1</m>, <m>f'(1)=\frac{\frac{4}{3}(1)-1}{(1)^{2/3}}=\frac{\frac{1}{3}}{1}=\frac{1}{3}\gt 0</m>, so the function is increasing on <m>(\frac{3}{4},\infty)</m>.</li>
+      </ul> 
+      <p> 
+        Therefore the function is decreasing on <m>(-\infty,0)</m> and <m>(0,\frac{3}{4})</m>, and increasing on <m>(\frac{3}{4},\infty)</m>.
       </p>
+    <p>
+      (e) To find and classify the critical points, we can use the First Derivative Test.  
+      <ul>
+        <li> At <m>x=0</m>, the derivative changes from negative to negative, so there is neither a local maximum nor a local minimum at <m>x=0</m>.</li>
+        <li> At <m>x=\frac{3}{4}</m>, the derivative changes from negative to positive, so there is a local minimum at <m>x=\frac{3}{4}</m>.</li>
+      </ul>
+      Thus there is a local minimum at <m>x=\frac{3}{4}</m>.
+    </p>
+    <p>
+      (f) To determine where the function is concave up and concave down, we can compute the second derivative and find the inflection points.
+    </p>
+    <me>
+    \begin{aligned}
+    f'(x) \amp= \frac{4}{3}x^{1/3}-x^{-2/3} \\
+    f''(x) \amp= \frac{4}{9}x^{-2/3}+\frac{2}{3}x^{-5/3} \\
+    f''(x) \amp= \dfrac{4}{9x^{2/3}} + \dfrac{2}{3x^{5/3}} \\
+    f''(x) \amp= \dfrac{4x+6}{9x^{5/3}}.
+    \end{aligned}
+    </me>
+    <p> The second derivative is undefined at <m>x=0</m>, and to find where the second derivative is zero, we can solve
+    </p>
+    <me>
+    \begin{aligned}
+    4x+6 \amp= 0 \\
+    4x \amp= -6 \\
+    x \amp= -\frac{3}{2}.
+    \end{aligned}
+    </me>
+    <p> Thus the possible points of inflection are <m>x=0</m> and <m>x=-\frac{3}{2}</m>.</p>
+    <p> To determine the concavity of the function, we can use the possible points of inflection to divide the interval into three subintervals: <m>(-\infty,-\frac{3}{2})</m>, <m>(-\frac{3}{2},0)</m>, and <m>(0,\infty)</m>.  
+      We can test a point in each interval to determine the sign of the second derivative.</p>
+      
+      <ul>
+        <li> For <m>x=-2</m>, <m>f''(-2)=\frac{4(-2)+6}{9(-2)^{5/3}}=\frac{-2}{9(-2)^{5/3}}\gt 0</m>, so the function is concave up on <m>(-\infty,-\frac{3}{2})</m>.</li>
+        <li> For <m>x=-1</m>, <m>f''(-1)=\frac{4(-1)+6}{9(-1)^{5/3}}=\frac{2}{9(-1)^{5/3}}\lt 0</m>, so the function is concave down on <m>(-\frac{3}{2},0)</m>.</li>
+        <li> For <m>x=1</m>, <m>f''(1)=\frac{4(1)+6}{9(1)^{5/3}}=\frac{10}{9}\gt 0</m>, so the function is concave up on <m>(0,\infty)</m>.</li>
+      </ul> 
+      <p> 
+        Therefore the function is concave up on <m>(-\infty,-\frac{3}{2})</m> and <m>(0,\infty)</m>, and concave down on <m>(-\frac{3}{2},0)</m>.  
+        There are inflection points at <m>x=-\frac{3}{2}</m> and <m>x=0</m>.
+      </p>
+      <p> 
+        (g) To sketch the graph of <m>f</m>, we can use the information from parts (a)-(f).  
+        <ul>
+          <li> The domain is all real numbers.</li>
+          <li> There are no asymptotes.</li>
+          <li> The function is neither even nor odd.</li>
+          <li> The function is decreasing on <m>(-\infty,0)</m> and <m>(0,\frac{3}{4})</m>, and increasing on <m>(\frac{3}{4},\infty)</m>.</li>
+          <li> There is a local minimum at <m>x=\frac{3}{4}</m>.</li>
+          <li> The function is concave up on <m>(-\infty,-\frac{3}{2})</m> and <m>(0,\infty)</m>, and concave down on <m>(-\frac{3}{2},0)</m>.  There are inflection points at <m>x=-\frac{3}{2}</m> and <m>x=0</m>.</li>
+        </ul>
+      </p>
+      <p> Combining all this we can sketch the graph of <m>f</m>.</p>
+
+      <image source="images/curveSketch13.png" width="90%">
+        <shortdescription>
+A graph of f(x)=x^(1/3)(x-3). The graph decreases and is concave up on (-infinity, -3/2), 
+  continues to decrease but is now concave down on (-3/2, 0), continues to decrease and is concave up on (0, 3/4), 
+  then increases and is concave up on (3/4, infinity). There is a local minimum at x=3/4, and inflection points at x=-3/2 and x=0.
+        </shortdescription>
+      </image>
+  </solution>
+
+  </example>
+
+
+
+
     </subsection>
 
 
