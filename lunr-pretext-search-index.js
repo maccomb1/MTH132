@@ -5698,18 +5698,18 @@ var ptx_lunr_docs = [
   "body": "  A small insect starts at the lower-left corner of a cm by cm square of carpet and wants to reach the upper-right corner. It first travels along the bottom edge for centimeters. From that point, it moves in a straight line directly to the upper-right corner.   A diagram of a 10 cm by 10 cm square representing a carpet. An insect starts at the lower-left corner and travels along the bottom edge for a distance of a centimeters. From that point, it moves in a straight line directly to the upper-right corner of the square.    The insect moves at a speed of cm\/sec while traveling along the bottom edge, and at a slower speed of cm\/sec once it begins crossing the carpet.  (a) Find the value of that minimizes the total distance traveled.  (b) Find the value of that minimizes the total travel time.    First it will help us to add a few labels to the diagram:   A 10 cm by 10 cm square. The insect starts at the lower-left corner and travels along the bottom edge a distance labeled a to a point on the bottom side. From that point, a straight line segment labeled b goes to the upper-right corner. The remaining portion of the bottom edge is labeled 10 minus a. The right side and top side of the square are labeled 10 cm.    (a) The total distance traveled is the sum of the distance along the edge and the distance across the carpet. The diagonal segment across the carpet has length . From the right triangle using the Pythagorean Theorem, we have   Therefore   The domain is . The total distance is   Differentiate:   Set :   So there are no critical points from setting the derivative equal to zero. To make the derivative undefined, we would need , which would require which is not possible since squares are nonnegative.  Therefore we have no critical points in the interior of the domain. Since our function is continuous on a closed interval, we can use the Closed Interval Method and so we only need to check the endpoints:   Since , the minimum distance occurs at cm. In other words, the straight diagonal is the shortest path (unsurprisingly).  (b) Using (distance) = (speed) x (time), we can write time as distance divided by speed. The distance along the edge is and the distance across the carpet is . The speed along the edge is cm\/sec and the speed across the carpet is cm\/sec.   The domain is still . And the value for is still just like the first part. Differentiate to get:   Similar to the first part, there are no critical points from when the derivative is undefined (when the denominator is zero), however we will see this time that there are critical points from setting the derivative equal to zero.   Struggling to factor the left-hand side, we can use the quadratic formula to find the critical points.   Only the negative root lies in the interval , so we have one critical point:   Since the domain is a closed interval, we could the Closed Interval Method to find the absolute minimum but without a calculator it may be difficult to compare the values. So instead we'll try the First Derivative Test for Absolute Extrema. We can analyze the sign of the derivative on either side of the critical point.   Since the derivative changes from negative to positive at the critical point, the critical point is an absolute minimum by the First Derivative Test for Absolute Extrema . Therefore the minimum time occurs at cm.  For those who are curious, this is about 4.2 cm, so the insect travels about 4.2 cm along the edge and then cuts across the carpet for the rest of the journey.   Minimizing distance and minimizing time are different problems because the speed changes. The insect save time by traveling partway along the faster edge and then cutting across the slower carpet.    "
 },
 {
-  "id": "tf-opt-17",
+  "id": "tf-opt-01",
   "level": "2",
-  "url": "sec-derivApp-opt.html#tf-opt-17",
+  "url": "sec-derivApp-opt.html#tf-opt-01",
   "type": "Exercise",
   "number": "1",
   "title": "",
   "body": "  In an optimization problem, units of the final answer are irrelevant as long as the numerical value is correct.     False. Units are essential for interpreting the answer correctly.   "
 },
 {
-  "id": "tf-opt-00",
+  "id": "tf-opt-02",
   "level": "2",
-  "url": "sec-derivApp-opt.html#tf-opt-00",
+  "url": "sec-derivApp-opt.html#tf-opt-02",
   "type": "Exercise",
   "number": "2",
   "title": "",
@@ -5725,54 +5725,54 @@ var ptx_lunr_docs = [
   "body": "  If the domain is , then an absolute minimum cannot exist.     False. An absolute minimum may exist on an open or unbounded domain, but we must justify it by analyzing critical points and either the First or Second Derivative Test for Absolute Extrema.   "
 },
 {
-  "id": "exercises-optimization-2-6",
+  "id": "tf-opt-04",
   "level": "2",
-  "url": "sec-derivApp-opt.html#exercises-optimization-2-6",
+  "url": "sec-derivApp-opt.html#tf-opt-04",
   "type": "Exercise",
   "number": "4",
   "title": "",
   "body": "  Suppose that is the only critical point for a function on the domain . If , then is an absolute minimum of on .     False. In order to conclude that is an absolute minimum (and apply the Second Derivative Test for Absolute Extrema), we would need to know that is continuous on . For example here is a Desmos graph of a counterexample .   "
 },
 {
-  "id": "tf-opt-04",
+  "id": "tf-opt-05",
   "level": "2",
-  "url": "sec-derivApp-opt.html#tf-opt-04",
+  "url": "sec-derivApp-opt.html#tf-opt-05",
   "type": "Exercise",
   "number": "5",
   "title": "",
   "body": "  If , then must give either a maximum or a minimum value of .     False. A critical point is only a candidate. It may correspond to a maximum, a minimum, or neither.   "
 },
 {
-  "id": "tf-opt-10",
+  "id": "tf-opt-06",
   "level": "2",
-  "url": "sec-derivApp-opt.html#tf-opt-10",
+  "url": "sec-derivApp-opt.html#tf-opt-06",
   "type": "Exercise",
   "number": "6",
   "title": "",
   "body": "  If a cost function is increasing for all in its domain, then the minimum cost occurs at the left endpoint.     True. If the function is increasing everywhere, the smallest value occurs at the smallest allowable .   "
 },
 {
-  "id": "tf-opt-11",
+  "id": "tf-opt-07",
   "level": "2",
-  "url": "sec-derivApp-opt.html#tf-opt-11",
+  "url": "sec-derivApp-opt.html#tf-opt-07",
   "type": "Exercise",
   "number": "7",
   "title": "",
   "body": "  Suppose that two positive numbers and sum to . Then the maximum value of their product is .     False. Since the numbers sum to , we know that   Therefore, the product is . In order for both and to be positive, we must have . So yields the derivative , which is never undefined and is zero at . So the only critical point is at . Since the domain is an open interval, we can use the First Derivative Test for Absolute Extrema.   So the derivative changes from positive to negative at the critical point, so the critical point is an absolute maximum by the First Derivative Test for Absolute Extrema . Therefore the maximum value of the product is (not 100).   "
 },
 {
-  "id": "tf-opt-12",
+  "id": "tf-opt-08",
   "level": "2",
-  "url": "sec-derivApp-opt.html#tf-opt-12",
+  "url": "sec-derivApp-opt.html#tf-opt-08",
   "type": "Exercise",
   "number": "8",
   "title": "",
   "body": "  Suppose that two positive numbers and have a product of . Then the minimum value of their sum is .    False. Since the product is , we know that   Therefore, the sum is . In order for both and to be positive, we must have . So yields the derivative . The derivative is undefined at , but that is not in the domain. Setting the derivative equal to zero gives , so and . Since we require , we have as the only critical point in the domain. The second derivative is , so , so the critical point yields the absolute minimum.  The minimum value of the sum is .   "
 },
 {
-  "id": "tf-opt-13",
+  "id": "tf-opt-09",
   "level": "2",
-  "url": "sec-derivApp-opt.html#tf-opt-13",
+  "url": "sec-derivApp-opt.html#tf-opt-09",
   "type": "Exercise",
   "number": "9",
   "title": "",
