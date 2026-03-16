@@ -3,11 +3,28 @@
 <chapter xml:id="ch-derivativeApplications" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Applications of the Derivative</title>
 
-  <!-- 
+
   <introduction>
-    <p> Text before the first section. </p>
-  </introduction>
--->
+    <p> In the previous chapters we developed the rules and techniques for computing derivatives. However, the true 
+      power of derivatives lies not just in calculating slopes, but in using those slopes to understand and solve 
+      meaningful problems. Derivatives provide information about how quantities change, and that information allows us 
+      to analyze the behavior of functions, make predictions, and determine optimal outcomes in many different contexts.
+    </p>
+    <p>
+In this chapter we explore several important applications of derivatives. We begin by using derivatives to identify 
+maximum and minimum values of functions and to understand the overall shape of graphs through curve sketching. These 
+tools allow us to describe where a function increases or decreases, where it bends upward or downward, and how these 
+features combine to form a complete picture of the graph.
+</p>
+    <p>
+We then extend these ideas to a variety of practical settings. Derivatives help us solve optimization problems, 
+analyze rates of change in related quantities, and interpret motion in physics. Along the way we develop important 
+theoretical results such as the Mean Value Theorem, and we see how derivatives can be used both to approximate complicated 
+functions and to evaluate difficult limits using L'Hôpital's Rule. Together, these topics illustrate how derivatives serve 
+as one of the most powerful tools in calculus for understanding change.
+    </p>
+</introduction>
+
   
   <!-- include sections -->
 <xi:include href="./ch-derivativeApplication-s/sec-derivApp-motion.ptx" />

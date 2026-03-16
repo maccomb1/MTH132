@@ -35,8 +35,117 @@
 
        <subsection xml:id="subsec-integral-usub">
       <title><xref ref="sec-integral-usub"/> Substitution Rule for Integration</title>
-      <p> test
-      </p>
+
+      
+    <example xml:id="ex-sub-02">
+      <statement>
+        <p>
+          Evaluate <m>\displaystyle \int x\sqrt{3x+4}\,dx</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>u=3x+4</m>, so <m>du=3\,dx</m> and <m>dx=\tfrac13\,du</m>.
+          We also solve for <m>x</m>: <m>u=3x+4</m> gives <m>x=\tfrac13u-\tfrac43</m>.
+        </p>
+
+        <me>
+          \begin{array}{rcl}
+          \displaystyle \int x\sqrt{3x+4}\,dx
+          &amp;=&amp;
+          \displaystyle \int \left(\tfrac13u-\tfrac43\right)\sqrt{u}\cdot \tfrac13\,du
+          \\[0.9em]
+          &amp;=&amp;
+          \displaystyle \int \left(\tfrac19u^{3/2}-\tfrac49u^{1/2}\right)\,du
+          \\[0.9em]
+          &amp;=&amp;
+          \displaystyle \tfrac19\cdot \tfrac{2}{5}u^{5/2}-\tfrac49\cdot \tfrac{2}{3}u^{3/2}+C
+          \\[0.9em]
+          &amp;=&amp;
+          \displaystyle \tfrac{2}{45}(3x+4)^{5/2}-\tfrac{8}{27}(3x+4)^{3/2}+C.
+          \end{array}
+        </me>
+      </solution>
+    </example>
+
+   
+
+    <example xml:id="ex-sub-04">
+      <statement>
+        <p>
+          Evaluate <m>\displaystyle \int \frac{\sin(x)}{(1+\cos(x))^2}\,dx</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>u=1+\cos(x)</m>. Then <m>du=-\sin(x)\,dx</m>, so <m>\sin(x)\,dx=-du</m>.
+        </p>
+
+        <me>
+          \begin{array}{rcl}
+          \displaystyle \int \frac{\sin(x)}{(1+\cos(x))^2}\,dx
+          &amp;=&amp;
+          \displaystyle -\int \frac{1}{u^2}\,du
+          \\[0.9em]
+          &amp;=&amp;
+          \displaystyle -\left(\frac{u^{-1}}{-1}\right)+C
+          \ =\
+          \frac{1}{u}+C
+          \\[0.9em]
+          &amp;=&amp;
+          \displaystyle \frac{1}{1+\cos(x)}+C.
+          \end{array}
+        </me>
+      </solution>
+    </example>
+
+    <example xml:id="ex-sub-05">
+      <statement>
+        <p>
+          Evaluate <m>\displaystyle \int \sec^2(x)\tan(x)\,dx</m> in two ways, and explain why the answers agree.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Method 1: Let <m>u=\tan(x)</m>. Then <m>du=\sec^2(x)\,dx</m>.
+        </p>
+
+        <me>
+          \begin{array}{rcl}
+          \displaystyle \int \sec^2(x)\tan(x)\,dx
+          &amp;=&amp;
+          \displaystyle \int u\,du
+          \ =\
+          \tfrac12 u^2 + C
+          \ =\
+          \tfrac12\tan^2(x)+C.
+          \end{array}
+        </me>
+
+        <p>
+          Method 2: Write the integrand as <m>\sec(x)\cdot (\tan(x)\sec(x))</m> and let <m>z=\sec(x)</m>.
+          Then <m>dz=\tan(x)\sec(x)\,dx</m>.
+        </p>
+
+        <me>
+          \begin{array}{rcl}
+          \displaystyle \int \sec^2(x)\tan(x)\,dx
+          &amp;=&amp;
+          \displaystyle \int z\,dz
+          \ =\
+          \tfrac12 z^2 + C
+          \ =\
+          \tfrac12\sec^2(x)+C.
+          \end{array}
+        </me>
+
+        <p>
+          These differ by a constant because <m>\sec^2(x)=\tan^2(x)+1</m>.
+          So <m>\tfrac12\sec^2(x)=\tfrac12\tan^2(x)+\tfrac12</m>, meaning the two antiderivative families are the same.
+        </p>
+      </solution>
+    </example>
+
     </subsection>
 
 

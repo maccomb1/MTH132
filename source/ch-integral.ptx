@@ -3,7 +3,30 @@
 <chapter xml:id="ch-integral" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Integrals and the Fundamental Theorem of Calculus</title>
 
+  <introduction>
+    <p>
+      In the previous chapters we studied derivatives, which measure rates of change. In many applications, however, we 
+      encounter the opposite problem: instead of knowing a quantity and computing its rate of change, we know the rate 
+      and want to determine the total change that accumulates over an interval. The mathematics that allows us to recover 
+      quantities from their rates of change is called integration.
+    </p>
+    <p> 
+    This chapter develops the central ideas behind integrals. We begin by introducing antiderivatives, which reverse 
+    the process of differentiation. At the same time, we explore the concept of accumulated change, where a quantity 
+    is built up by continuously adding many small contributions. Using Riemann sums, we approximate this accumulation 
+    and then define the definite integral as the limit of these approximations.
+    </p> 
+    <p> 
+    The most important result of the chapter is the Fundamental Theorem of Calculus, which reveals a remarkable 
+    connection between derivatives and integrals. This theorem shows that integration and differentiation are 
+    essentially inverse processes. With this connection established, integrals become practical tools for computation 
+    and modeling, and techniques such as substitution allow us to evaluate many integrals that arise in mathematics, 
+    science, and engineering.
+    </p>
+  </introduction>
 
+
+  <!--
   <introduction>
      <p>
       A function <m>y=f(x)</m> has a derivative <m>f'(c)</m> with several complementary meanings.
@@ -45,6 +68,10 @@
       For example, to find maximum values of <m>f(x)</m>, we look for places where the tangent slope is zero, so we solve <m>f'(x)=0</m>.
     </p>
   </introduction>
+-->
+
+
+
 
   
   <!-- include sections -->
