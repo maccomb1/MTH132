@@ -2095,6 +2095,129 @@ S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
       <title><xref ref="sec-derivApp-curve2"/> Curve Sketching Part 2</title>
 
       
+<example xml:id="ex-curve-sketch-cubic-01">
+  <statement>
+    <p>
+      Let <m>f(x)=-2x^3+24x-5</m>.
+    </p>
+
+    <p>
+      Analyze the function by determining the following.
+    </p>
+
+    <ol marker="(a)">
+      <li>
+        <p>Domain of <m>f</m>.</p>
+      </li>
+
+      <li>
+        <p>Any vertical or horizontal asymptotes.</p>
+      </li>
+
+      <li>
+        <p>Whether <m>f</m> is even, odd, or neither.</p>
+      </li>
+
+      <li>
+        <p>Intervals where <m>f</m> is increasing and decreasing.</p>
+      </li>
+
+      <li>
+        <p>All critical points and classify them as local maxima, local minima, or neither.</p>
+      </li>
+
+      <li>
+        <p>Intervals of concavity and any inflection points.</p>
+      </li>
+
+      <li>
+        <p>Use the information above to sketch the graph of <m>f</m>.</p>
+      </li>
+    </ol>
+  </statement>
+
+  <solution>
+    <p> (a) The function <m>f(x)=-2x^3+24x-5</m> is a polynomial, so it is defined for all real numbers.  Thus the domain is <m>(-\infty,\infty)</m>.</p>
+    <p> (b) Since the function is defined for all real numbers, there are no vertical asymptotes.  To find horizontal asymptotes, we can compute the limits as <m>x\to\pm\infty</m>.</p>
+    <me>
+    \begin{aligned}
+    \lim_{x\to\infty} -2x^3+24x-5 \amp = -\infty \\ 
+    \lim_{x\to-\infty} -2x^3+24x-5 \amp= \infty
+    \end{aligned}
+    </me>
+    <p> Thus there are no horizontal asymptotes.</p>
+    <p> (c) To determine symmetry, we can check whether <m>f(-x)=f(x)</m> or <m>f(-x)=-f(x)</m>.</p>
+    <me>
+    \begin{aligned}
+    f(-x) \amp= -2(-x)^3+24(-x)-5 \\
+    \amp= 2x^3-24x-5.
+    \end{aligned}
+    </me>
+    <p> Since <m>f(-x)\neq f(x)</m> and <m>f(-x)\neq -f(x)</m>, the function is neither even nor odd.</p>
+    <p> (d) To determine where the function is increasing and decreasing, we can compute the derivative and find the critical points.</p>
+    <me>
+    \begin{aligned}
+    f(x) \amp= -2x^3+24x-5 \\
+    f'(x) \amp= -6x^2+24 
+    \end{aligned}
+    </me>
+    <p> The derivative is defined for all real numbers, and to find where the derivative is zero, we can solve
+    </p>
+    <me>
+    \begin{aligned}
+    -6x^2+24 \amp= 0 \\
+    -6(x-2)(x+2) \amp= 0 \\
+    (x-2)(x+2) \amp= 0 
+    \end{aligned}
+    </me>
+    <p> Thus the critical points are <m>x=-2</m> and <m>x=2</m>.</p>
+    <p> To determine where the function is increasing and decreasing, we can use the critical points to divide the interval into three subintervals: 
+      <m>(-\infty,-2)</m>, <m>(-2,2)</m>, and <m>(2,\infty)</m>.  We can test a point in each interval to determine the sign of the derivative.</p>
+      <ul><li> For <m>x=-3</m>, <m>f'(-3)=-6(-3)^2+24=-30 \lt 0</m>, so the function is decreasing on <m>(-\infty,-2)</m>.</li>
+        <li> For <m>x=0</m>, <m>f'(0)=-6(0)^2+24=24\gt 0</m>, so the function is increasing on <m>(-2,2)</m>.</li>
+          <li> For <m>x=3</m>, <m>f'(3)=-6(3)^2+24=-30\lt 0</m>, so the function is decreasing on <m>(2,\infty)</m>.</li></ul>
+    <p> (e) By the First Derivative Test, since <m>f'(x)</m> changes from negative to positive at <m>x=-2</m>, the function has a local minimum at <m>x=-2</m>.  
+      Since <m>f'(x)</m> changes from positive to negative at <m>x=2</m>, the function has a local maximum at <m>x=2</m>.</p>
+    <p> (f) To determine where the function is concave up and concave down, compute the second derivative.</p>
+    <me>
+    f''(x)=-12x.
+    </me>
+    <p> This is defined for all real numbers, so the only points of inflection will come from <m>f''(x)=0</m>, solve
+    </p>
+    <me>
+    -12x=0.
+    </me>
+    <p> So the only point of inflection is at <m>x=0</m>.</p>
+    <p> To determine the concavity, we can divide the interval into two subintervals: <m>(-\infty,0)</m> and <m>(0,\infty)</m>.  We can test a point in each interval to determine the sign of the second derivative.</p>
+      <ul><li> For <m>x=-1</m>, <m>f''(-1)=-12(-1)=12\gt 0</m>, so the function is concave up on <m>(-\infty,0)</m>.</li>
+        <li> For <m>x=1</m>, <m>f''(1)=-12(1)=-12\lt 0</m>, so the function is concave down on <m>(0,\infty)</m>.</li></ul>
+    <p> Thus the function is concave up on <m>(-\infty,0)</m> and concave down on <m>(0,\infty)</m>, and there is an inflection point at <m>x=0</m>.</p>
+    <p> (g) To sketch the graph of <m>f</m>, we can use the information from parts (a)-(f).  
+      <ul>
+        <li> <m>f(0)=-5</m>, so the graph passes through the point <m>(0,-5)</m>.</li>
+        <li> There is no symmetry or asymptotes.</li>
+        <li> The function is decreasing on <m>(-\infty,-2)</m>, increasing on <m>(-2,2)</m>, and decreasing on <m>(2,\infty)</m>.</li>
+        <li> There is a local minimum at <m>x=-2</m> and a local maximum at <m>x=2</m>.</li>
+        <li> The function is concave up on <m>(-\infty,0)</m> and concave down on <m>(0,\infty)</m>.</li>
+        <li> There is an inflection point at <m>x=0</m>.</li>
+      </ul>
+    </p>
+    <p> Combining all this we can sketch the graph of <m>f</m>.</p>
+
+          <image source="images/curveSketch14.png" width="90%">
+        <shortdescription>
+  A graph of f(x)=-2x^3+24x-5. The graph has a local minimum at x=-2, a local maximum at x=2, and an inflection point at x=0. The graph is concave up on (-infinity,0) and concave down on (0,infinity).
+        </shortdescription>
+      </image>
+  </solution>
+</example>
+
+
+
+
+
+
+
 <example xml:id="ex-curve-sketch-x13-xminus3">
   <statement>
     <p>
@@ -2147,7 +2270,7 @@ S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
   </statement>
   <solution>
     <p>
-      (a) The function <m>f(x)=x^{1/3}(x-3)</m> is defined for all real numbers, so the domain is <m{(-\infty,\infty)}</m>.
+      (a) The function <m>f(x)=x^{1/3}(x-3)</m> is defined for all real numbers, so the domain is <m>(-\infty,\infty)</m>.
     </p>
     <p>
       (b) There are no vertical asymptotes since the function is defined for all real numbers.  
@@ -2159,7 +2282,7 @@ S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
     \lim_{x\to-\infty} x^{1/3}(x-3) \amp= \infty
     \end{aligned}
     </me>
-    Thus there are no horizontal asymptotes.
+    <p> Thus there are no horizontal asymptotes.</p>
     <p>
       (c) To determine symmetry, we can check whether <m>f(-x)=f(x)</m> or <m>f(-x)=-f(x)</m>.
     </p>
@@ -2170,8 +2293,9 @@ S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
     \amp= x^{1/3}(x+3).
     \end{aligned}
     </me>
+    <p> 
     Since <m>f(-x)\neq f(x)</m> and <m>f(-x)\neq -f(x)</m>, the function is neither even nor odd.
-    <p>
+    </p> <p>
       (d) To determine where the function is increasing and decreasing, we can compute the derivative and find the critical points.
     </p>
     <me>
@@ -2191,8 +2315,8 @@ S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
     \frac{4}{3}x \amp= 1 \\
     x \amp= \frac{3}{4}.
     \end{aligned}
-    </me>
-    Thus the critical points are <m>x=0</m> and <m>x=\frac{3}{4}</m>.
+    </me> <p> 
+    Thus the critical points are <m>x=0</m> and <m>x=\frac{3}{4}</m>.</p> 
     <p> To determine where the function is increasing and decreasing, we can use the critical points to divide the interval
       into three subintervals: <m>(-\infty,0)</m>, <m>(0,\frac{3}{4})</m>, and <m>(\frac{3}{4},\infty)</m>.  
       We can test a point in each interval to determine the sign of the derivative.</p>
@@ -2233,7 +2357,9 @@ S &amp; = &amp; 600L^{0.3}(81)^{0.6} \\
     x \amp= -\frac{3}{2}.
     \end{aligned}
     </me>
-    <p> Thus the possible points of inflection are <m>x=0</m> and <m>x=-\frac{3}{2}</m>.</p>
+    <p> Thus the possible points of inflection are <m>x=0</m> and <m>x=-\frac{3}{2}</m> but we need to check 
+      if they change concavity by testing
+      the sign of the second derivative in each interval.</p>
     <p> To determine the concavity of the function, we can use the possible points of inflection to divide the interval into three subintervals: <m>(-\infty,-\frac{3}{2})</m>, <m>(-\frac{3}{2},0)</m>, and <m>(0,\infty)</m>.  
       We can test a point in each interval to determine the sign of the second derivative.</p>
       
