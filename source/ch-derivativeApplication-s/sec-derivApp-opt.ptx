@@ -725,7 +725,7 @@ The right side and top side of the square are labeled 10 cm.
     </introduction>
 
 
-<exercise xml:id="tf-opt-17">
+<exercise xml:id="tf-opt-01">
   <statement>
     <p>
       In an optimization problem, units of the final answer are irrelevant as long as the numerical value is correct.
@@ -739,7 +739,7 @@ The right side and top side of the square are labeled 10 cm.
 </exercise>
 
 
-    <exercise xml:id="tf-opt-00">
+    <exercise xml:id="tf-opt-02">
       <statement>
         <p>
         In previous semesters, students who identified a critical point and immediately claimed it was an 
@@ -777,7 +777,7 @@ The right side and top side of the square are labeled 10 cm.
 
 
 
-      <exercise>
+      <exercise xml:id="tf-opt-04">
         <statement>
           <p>
             Suppose that <m>x=1</m> is the only critical point for a function <m>f</m> on the domain <m>(-1,\infty)</m>. 
@@ -794,7 +794,7 @@ The right side and top side of the square are labeled 10 cm.
           </solution>
       </exercise>
 
-<exercise xml:id="tf-opt-04">
+<exercise xml:id="tf-opt-05">
   <statement>
     <p>
       If <m>T'(c)=0</m>, then <m>x=c</m> must give either a maximum or a minimum value of <m>T</m>.
@@ -809,7 +809,7 @@ The right side and top side of the square are labeled 10 cm.
 
 
 
-<exercise xml:id="tf-opt-10">
+<exercise xml:id="tf-opt-06">
   <statement>
     <p>
       If a cost function is increasing for all <m>x</m> in its domain, then the minimum cost occurs at the left endpoint.
@@ -823,7 +823,7 @@ The right side and top side of the square are labeled 10 cm.
 </exercise>
 
 
-<exercise>
+<exercise xml:id="tf-opt-07">
   <statement>
     <p>
       Suppose that two positive numbers <m>a</m> and <m>b</m> sum to <m>10</m>. 
@@ -861,7 +861,7 @@ The right side and top side of the square are labeled 10 cm.
 </exercise>
 
 
-<exercise>
+<exercise xml:id="tf-opt-08">
   <statement>
     <p>
       Suppose that two positive numbers <m>a</m> and <m>b</m> have a product of <m>10</m>. 
@@ -890,7 +890,7 @@ The right side and top side of the square are labeled 10 cm.
     </solution>
     </exercise>
 
-    <exercise>
+    <exercise xml:id="tf-opt-09">
       <statement>
         <p>
           The smallest distance from the point <m>(2,0)</m> to the curve <m>y=\sqrt{x}</m> is <m>\sqrt{7}/2</m>.
@@ -943,7 +943,7 @@ The right side and top side of the square are labeled 10 cm.
   </exercises>
 
 
-  <remark>
+  <remark xml:id="rmk-opt-true-false">
 <p>
   There are relatively few True/False questions that effectively assess understanding of optimization.
   Because optimization problems typically require several steps and careful reasoning,

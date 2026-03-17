@@ -2404,8 +2404,454 @@ A graph of f(x)=x^(1/3)(x-3). The graph decreases and is concave up on (-infinit
 
        <subsection xml:id="subsec-derivApp-opt">
       <title><xref ref="sec-derivApp-opt"/> Optimization Problems</title>
-      <p> test
-      </p>
+
+<example xml:id="ex-optimization-triangle-axes">
+  <title>Maximizing the Area of a Triangle Formed with the Axes</title>
+
+  <statement>
+    <p>
+      Find the point on the curve <m>y = 6 - x^2</m> in the first quadrant that forms a triangle
+      with the coordinate axes having the largest possible area.
+    </p>
+
+
+  <image width="90%">
+  <shortdescription>
+A graph of the curve y=6-x^2. A point (x,y) on the curve forms a triangle with the x axis, and we want to find the point that maximizes the area of this triangle.
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[xscale=2]
+	\fill[blue!20] (0,0) -- (1,0) -- (1,5) -- cycle;
+	\draw[->] (-3.5,0)-- (3.5,0) node[right] {$x$};
+	\draw[->] (0,-1)-- (0,7,0) node[left] {$y$};
+	\begin{scope}
+		\clip (-4,-1) rectangle (4,7);
+		\draw plot[domain=-3:3, smooth] (\x, {6-(\x)^2});
+	\end{scope}
+	\draw (0,0) -- (1,0) -- (1,5) -- cycle;
+	\draw (1,5) node {$\bullet$} node[above right] {$(x,y)$};
+	\draw (1,0) rectangle (.9,.2);
+	\draw (0,0) node {$\bullet$} node[above left] {$(0,0)$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+
+
+  </statement>
+
+  <solution>
+    <p>
+      Let <m>(x,y)</m> be a point on the curve in the first quadrant. This point,
+      together with the coordinate axes, forms a right triangle with vertices
+      <m>(0,0)</m> and <m>(x,0)</m>.
+    </p>
+
+    <p>
+      The base of the triangle is <m>x</m> and the height is <m>y</m>, so the area is
+    </p>
+
+    <me>
+      A = \frac{1}{2}xy.
+    </me>
+
+    <p>
+      Since the point lies on the curve <m>y = 6 - x^2</m>, we substitute to write the
+      area as a function of <m>x</m>:
+    </p>
+
+    <me>
+      A(x) = \frac{1}{2}x(6 - x^2).
+    </me>
+
+    <p>
+      Simplifying,
+    </p>
+
+    <me>
+      A(x) = 3x - \frac{1}{2}x^3.
+    </me>
+
+    <p>
+      Because the point lies in the first quadrant, we require <m>x &gt; 0</m> and
+      <m>y &gt; 0</m>. From <m>y = 6 - x^2 &gt; 0</m>, we obtain
+    </p>
+
+    <me>
+      0 &lt; x &lt; \sqrt{6}.
+    </me>
+
+    <p>
+      To find the maximum area, differentiate:
+    </p>
+
+    <me>
+      \begin{aligned}
+      A'(x) \amp = 3 - \frac{3}{2}x^2.
+      \end{aligned}
+    </me>
+
+    <p>
+      Set the derivative equal to zero:
+    </p>
+
+    <me>
+      \begin{aligned}
+      3 - \tfrac{3}{2}x^2 \amp = 0 \\
+      \tfrac{3}{2}x^2 \amp = 3 \\
+      x^2 \amp = 2 \\
+      x \amp = \sqrt{2}.
+      \end{aligned}
+    </me>
+
+    <p>
+      Since we are in the first quadrant, we take the positive value
+      <m>x = \sqrt{2}</m>.
+    </p>
+
+    <p>
+      Now find the corresponding <m>y</m>-value:
+    </p>
+
+    <me>
+      y = 6 - (\sqrt{2})^2 = 4.
+    </me>
+
+    <p>
+      Thus the point on the curve is
+      <m>(\sqrt{2}, 4)</m>.
+    </p>
+
+    <p>
+      To confirm this gives a maximum, compute the second derivative:
+    </p>
+
+    <me>
+      A''(x) = -3x.
+    </me>
+
+    <p>
+      Since <m>A''(\sqrt{2}) = -3\sqrt{2} &lt; 0</m>, the area function is concave down
+      at this point, so the area is maximized there.
+    </p>
+
+    <p>
+      The maximum area is
+    </p>
+
+    <me>
+      A = \frac{1}{2}(\sqrt{2})(4) = 2\sqrt{2}.
+    </me>
+
+  </solution>
+</example>      
+
+
+<example xml:id="ex-opt-right-triangle-fixed-hypotenuse">
+  <statement>
+    <p>
+      A ladder of length <m>8</m> feet is leaning against a wall.  The foot of the ladder is being pulled away from the wall, 
+      and we want to determine how to pull the ladder to maximize the area of the triangle formed by the ladder, the wall, and the ground.
+    </p>
+
+    <p>
+      <ol marker="(a)">
+        <li>
+          Find an equation for the area of the triangle that only relies on the variable <m>x</m> 
+          (the distance from the wall to the foot of the ladder).
+        </li>
+        <li>
+          What is the largest possible area of such a triangle, and what are the lengths of the legs when the area is maximized?
+        </li>
+      </ol>
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      (a) Since the triangle is right, the legs <m>x</m> and <m>y</m> and the hypotenuse <m>8</m> satisfy the Pythagorean Theorem:
+    </p>
+
+    <me>
+      x^2+y^2=8^2=64.
+    </me>
+
+    <p>
+      Solving for <m>y</m>, we get
+    </p>
+
+    <me>
+      y=\sqrt{64-x^2}.
+    </me>
+
+    <p>
+      The area of a right triangle is
+    </p>
+
+    <me>
+      A=\frac{1}{2}xy.
+    </me>
+
+    <p>
+      Substituting <m>y=\sqrt{64-x^2}</m> gives
+    </p>
+
+    <me>
+      A(x)=\frac{1}{2}x\sqrt{64-x^2},
+    </me>
+
+    <p>
+      where <m>x\in[0,8]</m>.
+    </p>
+
+    <p>
+      (b) To maximize the area, we differentiate:
+    </p>
+
+    <me>
+      A'(x)=\frac{1}{2}\left(x\sqrt{64-x^2}\right)'.
+    </me>
+
+    <p>
+      Using the product rule,
+    </p>
+
+    <me>
+      A'(x)=\frac{1}{2}\left(\sqrt{64-x^2}+x\left(\frac{-2x}{2\sqrt{64-x^2}}\right)\right).
+    </me>
+
+    <p>
+      Simplifying,
+    </p>
+
+    <me>
+      A'(x)=\frac{1}{2}\left(\sqrt{64-x^2}-\frac{x^2}{\sqrt{64-x^2}}\right).
+    </me>
+
+    <p>
+      Combine the terms into a single fraction:
+    </p>
+
+    <me>
+      A'(x)=\frac{1}{2}\left(\frac{64-x^2-x^2}{\sqrt{64-x^2}}\right)
+      =\frac{1}{2}\left(\frac{64-2x^2}{\sqrt{64-x^2}}\right).
+    </me>
+
+    <p>
+      Critical points occur when <m>A'(x)=0</m> or when <m>A'(x)</m> is undefined. 
+      On the interval <m>(0,8)</m>, the denominator is positive, so we set the numerator equal to zero:
+    </p>
+
+    <me>
+      64-2x^2=0.
+    </me>
+
+    <me>
+      2x^2=64.
+    </me>
+
+    <me>
+      x^2=32.
+    </me>
+
+    <me>
+      x=\pm 4\sqrt{2}.
+    </me>
+
+    <p>
+      Since <m>x</m> must be positive, we take <m>x=4\sqrt{2}</m>.
+    </p>
+
+    <p>
+      To confirm this gives a maximum, we will use the Closed Interval Test.  We will evaluate the area at the critical point and at the endpoints of the interval.
+    </p>
+
+    <me> \begin{aligned}
+      A(0) \amp= \frac{1}{2}(0)\sqrt{64-0^2}=0 \\
+      A(4\sqrt{2}) \amp= \frac{1}{2}(4\sqrt{2})\sqrt{64-(4\sqrt{2})^2} \\
+      \amp= 2\sqrt{2}\sqrt{64-32} \\
+      \amp= 2\sqrt{2}\sqrt{32} \\
+      \amp= 16. \\
+      A(8) \amp= \frac{1}{2}(8)\sqrt{64-8^2}=0.
+    \end{aligned}
+    </me>
+
+    <p>
+      Thus the maximum area is <m>16</m> square feet, and this occurs when <m>x=4\sqrt{2}</m>.  To find the corresponding value of <m>y</m>, we can substitute into the Pythagorean Theorem:
+    </p>
+
+    <me>
+      y=\sqrt{64-(4\sqrt{2})^2}
+      =\sqrt{64-32}
+      =\sqrt{32}
+      =4\sqrt{2}.
+    </me>
+    <p>
+      Therefore the area is maximized when the legs of the triangle are both <m>4\sqrt{2}</m> feet.
+    </p>
+  </solution>
+</example>
+
+
+
+<example xml:id="ex-opt-box-no-top">
+  <statement>
+    <p>
+      A box with a square base and no top must have a volume of 
+      <m>500</m> cubic inches.
+    </p>
+
+
+  <image width="40%">
+  <shortdescription>
+    A 3D rectangular box with a square base. The base edges are labeled x, and the vertical edge is labeled 
+    y, indicating the height of the box.
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}
+	\draw (0,0,0) -- (2,0,0);
+	\draw (0,0,0) -- (0,3,0);
+	\draw (2,0,0) -- (2,3,0);
+	\draw (0,3,0) -- (2,3,0);
+	\draw (0,0,2) -- (2,0,2);
+	\draw (0,0,2) -- (0,3,2);
+	\draw (2,0,2) -- (2,3,2);
+	\draw (0,3,2) -- (2,3,2);
+	\draw (0,0,0) -- (0,0,2);
+	\draw (2,0,0) -- (2,0,2);
+	\draw (0,3,0) -- (0,3,2);
+	\draw (2,3,0) -- (2,3,2);
+	\node at (.2,-1.1,0) {$x$};
+	\node at (2.3,1.5,0) {$h$};
+	\node at (2.2,-.3,0.5) {$x$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+
+
+    <ol marker="(a)">
+      <li>
+        <p>
+          Write the surface area of the box as a function of the base side length <m>x</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the dimensions of the box that minimize the amount of material used.
+        </p>
+      </li>
+    </ol>
+  </statement>
+
+  <solution>
+    <p> (a) 
+      Let <m>x</m> be the side length of the square base and <m>h</m> be the height of the box.
+      The volume is given by
+    </p>
+
+    <me>
+      x^2 h = 500.
+    </me>
+
+    <p>
+      Solving for <m>h</m>, we obtain
+    </p>
+
+    <me>
+      h = \frac{500}{x^2}.
+    </me>
+
+    <p>
+      Since the box has no top, the surface area consists of the base and four sides:
+    </p>
+
+    <me>
+      S = x^2 + 4xh.
+    </me>
+
+    <p>
+      Substituting <m>h = \frac{500}{x^2}</m> gives
+    </p>
+
+    <me>
+      S(x) = x^2 + 4x\left(\frac{500}{x^2}\right).
+    </me>
+
+    <p>
+      Simplifying,
+    </p>
+
+    <me>
+      S(x) = x^2 + \frac{2000}{x}, \qquad x &gt; 0.
+    </me>
+
+    <p>
+      (b) To minimize the surface area, differentiate:
+    </p>
+
+    <me>
+      \begin{aligned}
+      S'(x) 
+      &amp;= 2x - \frac{2000}{x^2}.
+      \end{aligned}
+    </me>
+
+    <p>
+      Set the derivative equal to zero:
+    </p>
+
+    <me>
+      \begin{aligned}
+      2x - \frac{2000}{x^2} \amp = 0 \\
+      2x^3 - 2000 \amp = 0 \\
+      2x^3 \amp = 2000 \\
+      x^3 \amp = 1000 \\
+      x \amp = 10.
+      \end{aligned}
+    </me>
+
+    <p>
+      Now find the height:
+    </p>
+
+    <me>
+      \begin{aligned}
+      h 
+      &amp;= \frac{500}{x^2} \\
+      &amp;= \frac{500}{100} \\
+      &amp;= 5.
+      \end{aligned}
+    </me>
+
+    <p> To show that the surface area is minimized at this critical point, 
+      we can compute the second derivative:</p>
+    <me>
+      S''(x) = 2 + \frac{4000}{x^3}.
+    </me>
+
+    <p> Plugin in <m>x=10</m> gives <m>S''(10) = 2 + \frac{4000}{1000} = 6 &gt; 0</m>.</p>
+
+
+    <p>
+      So this critical point gives a minimum.
+    </p>
+
+    <p>
+      Therefore, the dimensions that minimize the amount of material used are
+    </p>
+
+    <me>
+      x = 10 \qquad \text{and} \qquad h = 5.
+    </me>
+  </solution>
+</example>
+
+
+
+
     </subsection>
 
 

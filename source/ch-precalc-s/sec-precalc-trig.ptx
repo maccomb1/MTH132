@@ -37,7 +37,24 @@
         <caption>
           A right triangle illustrating the definitions of sine and cosine for an acute angle <m>\theta</m>.
         </caption>
-        <image source="images/trigRightTriangle.PNG" width="60%"/>
+  <image width="60%">
+  <shortdescription>
+    A right triangle labeled with opposite, adjacent, and hypotenuse sides, illustrating the Pythagorean theorem.
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}
+	\draw[thick] (0,0) -- 
+	(5,0) node[pos=.5, below, yshift=-2pt] {adj} -- 
+	(5,3) node[pos=.5, right, xshift=2pt] {opp} -- 
+	(0,0) node[pos=.5, above left, xshift=2pt] {hyp};
+	\draw (4.6,0) -- (4.6,0.4) -- (5,0.4);
+	\draw (1,0) arc[start angle=0,end angle=31,radius=1];
+	\node at (0.7,0.2) {$\theta$};
+	\node at (1.9,2.9) {$\text{opp}^2 + \text{adj}^2 = \text{hyp}^2$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
       </figure>
     </definition>
 
@@ -100,7 +117,39 @@
           <m>x = \cos(\theta)</m>, <m>y = \sin(\theta)</m>, and
           <m>\cos^2(\theta) + \sin^2(\theta) = 1</m>.
         </caption>
-        <image source="images/trigUnitCircle.PNG" width="60%"/>
+  <image width="60%">
+  <shortdescription>
+    Unit circle diagram showing a point (cos(theta), sin(theta)) and illustrating the identity cos^2(theta) + sin^2(theta) = 1
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[scale=4]
+	\draw[blue, ->, thick] (-1.2,0) -- (1.2,0) node[right] {$x$};
+	\draw[blue, ->, thick] (0,-1.2) -- (0,1.2) node[above] {$y$};
+	\draw[thick] (0,0) circle (1);
+	\draw[thick] (0,0) -- (0.75,0.66) node[pos=.55, above left] {1};
+	\draw[dashed] (0.75,0) -- (0.75,0.66) node[pos=.5, rotate=90, below] {$\sin\theta$};
+	\draw[dashed] (0,-.01) -- (0.75,-.01)  node[pos=.5, below, yshift=-2pt] {$\cos\theta$};
+	\draw (0.75,0) rectangle (.7, 0.05);
+	
+	\draw (0.75,0.66) node {$\bullet$};
+	\node[above right] at (0.75,0.66) {$(x,y)=(\cos\theta,\sin\theta)$};
+	\draw (0.25,0) arc[start angle=0,end angle=41,radius=.25];
+	\node at (0.29,0.11) {$\theta$};
+
+	\node[below left] at (-1,0) {$-1$};
+	\node[below right] at (1,0) {$1$};
+	\node[above left] at (0,1) {$1$};
+	\node[below left] at (0,-1) {$-1$};
+	
+	\draw (0,0) node {$\bullet$};
+	\node at (0,1.45) {$\cos^2\theta + \sin^2\theta = 1$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+        
+
+
       </figure>
     </definition>
 
