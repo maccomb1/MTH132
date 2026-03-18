@@ -290,7 +290,7 @@ illustrating vertical shifts corresponding to different constants of integration
       <statement>
         <p>
           Find a general antiderivative of
-          <m>f(x)=7x^3-x\sqrt{x}+\dfrac{3}{x^2}-\dfrac{4}{\cos^2(x)} + e^x</m>.
+          <me>f(x)=7x^3-x\sqrt{x}+\dfrac{3}{x^2}-\dfrac{4}{\cos^2(x)} + e^x</me>
         </p>
       </statement>
       <solution>
@@ -481,6 +481,87 @@ into sums of Basic Antiderivatives.
       </solution>
     </example>
   </subsection>
+
+<subsection>
+  <title>Going Beyond the Equations</title>
+  <p>
+    In the previous example, we found explicit formulas for velocity and position. 
+    However, in many cases we may not be able to find a nice formula for the antiderivative.
+    Even when we can find a formula, it may be more useful to understand the behavior of the function 
+    by looking at its graph or by using numerical approximations.
+  </p>
+  <p> Remember <xref ref="ssec-increasing-decreasing">we have been trained</xref> to be able to sketch the graph of a function given information about its derivative. 
+    Now we can reverse this process and sketch the graph of an antiderivative given information about the original function.
+  </p> 
+
+  <example>
+    <statement>
+      <p>
+        The graph of <m>f(x)</m> is shown below. Sketch the graph of an antiderivative <m>F(x)</m> that satisfies <m>F(0)=0</m>.
+      </p>
+
+  <image width="60%">
+  <shortdescription>
+A graph of a function made of connected line segments. The graph decreases from (0,2) to (2,-2), rises to (3,-1), 
+stays flat from x=3 to x=4 at y=-1, and then increases to (6,1).
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}
+	\draw[thin] (0,-3) grid (6,3);
+	\foreach \x in {1,...,6} 
+	\draw (\x, 2pt) -- (\x, -2pt) node[font=\small, below,  yshift=-2pt, fill =white] {\x};
+	\draw[->, thick] (-.3,0) -- (6.3,0);
+	\draw[->, thick] (0,-3.3) -- (0,3.3);
+	\draw[thick] (0,2) -- (2,-2) -- (3,-1)--(4,-1)--(6,1);
+	\foreach \y in {-3,...,3} 
+	\draw (2pt, \y) -- ( -2pt, \y) node[font=\small, left, fill=white, inner sep = 1] {$\y$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+    </statement>
+    <solution>
+      <p>
+        Before we sketch the graph of <m>F(x)</m>, let's think about what it should look like. 
+        Remember that the slope of <m>F(x)</m> at any point is given by the value of <m>f(x)</m> at that point.
+      </p>
+      <p>
+        From the graph of <m>f(x)</m>, we can see that:
+        <ul>
+          <li>On the interval <m>[0,1]</m>, <m>F'(x)=f(x)</m> is positive, so <m>F(x)</m> is increasing. 
+          But <m>f(x)</m> is decreasing so the slope of <m>F(x)</m> is getting less positive, so <m>F(x)</m> is concave down.</li>
+          <li>On the interval <m>[1,2]</m>, <m>F'(x)=f(x)</m> is negative, so <m>F(x)</m> is decreasing.
+          In addition, <m>f(x)</m> continues to be decreasing, so the slope of <m>F(x)</m> is getting more negative, so <m>F(x)</m> is still concave down.
+          </li>
+          <li>On the interval <m>[2,3]</m>, <m>F'(x)=f(x)</m> is still negative, so <m>F(x)</m> is still decreasing. 
+            However, <m>f(x)</m> is increasing, so the slope of <m>F(x)</m> is getting less negative, so <m>F(x)</m> is concave up 
+            (because the switch in concavity we know there is an inflection point at <m>x=2</m>).
+          </li>
+          <li>On the interval <m>[3,4]</m>, <m>F'(x)=f(x)</m> has a constant value of <m>-1</m>, so <m>F(x)</m> is decreasing at a constant rate 
+            (like a line with slope <m>-1</m>).</li>
+          <li>On the interval <m>[4,5]</m>, <m>F'(x)=f(x)</m> is negative, so <m>F(x)</m> is decreasing. 
+            However, <m>f(x)</m> is increasing, so the slope of <m>F(x)</m> is getting less negative, so <m>F(x)</m> is concave up.</li>
+            <li>
+                On the interval <m>[5,6]</m>, <m>F'(x)=f(x)</m> is positive, so <m>F(x)</m> is increasing. 
+                In addition, <m>f(x)</m> continues to be increasing, so the slope of <m>F(x)</m> is getting more positive, so <m>F(x)</m> is still concave up.
+              </li>
+        </ul>
+      </p>
+      <p> 
+        We also know that <m>F(0)=0</m>, so we can start our sketch at the point (0,0).
+        Then we can use the information about where the function is increasing or decreasing to sketch the graph of <m>F(x)</m>.
+      </p>
+    </solution>
+
+
+  </example> 
+
+
+  </subsection>
+
+
+
 
 <subsection xml:id="additional-worked-problems-integral-antiderivatives">
   <title>Additional Worked-Out Examples</title>
