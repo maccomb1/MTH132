@@ -973,9 +973,260 @@ P(3) = 75e^{-0.6} + 425
 <div class="autopermalink" data-description="Example 4.7.6"><a href="#ex-antiderivative-population-model" title="Copy heading and permalink for Example 4.7.6" aria-label="Copy heading and permalink for Example 4.7.6">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 4.1 Antiderivatives"><a href="#subsec-integral-antiderivatives" title="Copy heading and permalink for Subsection: Section 4.1 Antiderivatives" aria-label="Copy heading and permalink for Subsection: Section 4.1 Antiderivatives">🔗</a></div></section><section class="subsection" id="subsec-integral-riemannSums"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 4.2 Riemann Sums and Areas</span>
 </h3>
-<div class="para" id="subsec-integral-riemannSums-2">test<div class="autopermalink" data-description="Paragraph"><a href="#subsec-integral-riemannSums-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="example example-like" id="ex-riemann-all-sums"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Comparing Left, Right, Upper, and Lower Sums.</span>
+</h4>
+<div class="para" id="ex-riemann-all-sums-2-1">Estimate the area under the graph of <span class="process-math">\(f(x)=5-x^2\)</span> on the interval <span class="process-math">\([-2,1]\)</span> using <span class="process-math">\(n=3\)</span> rectangles of equal width.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/ex-riemann-all-sums-2-2.svg" role="img" class="contained" alt="Graph of a downward-opening parabola labeled f(x) with shaded area under the curve from x = -2 to x = 1"></div> <div class="para" id="ex-riemann-all-sums-2-3">Compute:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="lower-alpha ol-marker-1" id="ex-riemann-all-sums-2-4">
+<li id="ex-riemann-all-sums-2-4-1">
+<div class="para" id="p-derived-ex-riemann-all-sums-2-4-1">the left Riemann sum</div>
+<div class="autopermalink" data-description="Item a"><a href="#ex-riemann-all-sums-2-4-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="ex-riemann-all-sums-2-4-2">
+<div class="para" id="p-derived-ex-riemann-all-sums-2-4-2">the right Riemann sum</div>
+<div class="autopermalink" data-description="Item b"><a href="#ex-riemann-all-sums-2-4-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="ex-riemann-all-sums-2-4-3">
+<div class="para" id="p-derived-ex-riemann-all-sums-2-4-3">an overestimate (upper sum)</div>
+<div class="autopermalink" data-description="Item c"><a href="#ex-riemann-all-sums-2-4-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="ex-riemann-all-sums-2-4-4">
+<div class="para" id="p-derived-ex-riemann-all-sums-2-4-4">an underestimate (lower sum)</div>
+<div class="autopermalink" data-description="Item d"><a href="#ex-riemann-all-sums-2-4-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="solutions"><details id="ex-riemann-all-sums-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-riemann-all-sums-3-1">First compute the width of each rectangle:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection: Section 4.2 Riemann Sums and Areas"><a href="#subsec-integral-riemannSums" title="Copy heading and permalink for Subsection: Section 4.2 Riemann Sums and Areas" aria-label="Copy heading and permalink for Subsection: Section 4.2 Riemann Sums and Areas">🔗</a></div></section><section class="subsection" id="subsec-integral-defInt"><h3 class="heading hide-type">
+<div class="displaymath process-math" id="ex-riemann-all-sums-3-2">
+\begin{equation*}
+\displaystyle \Delta x=\frac{1-(-2)}{3}=1.
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-all-sums-3-3">The partition points are:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-all-sums-3-4">
+\begin{equation*}
+-2,\;-1,\;0,\;1.
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-all-sums-3-5">The subintervals are:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-all-sums-3-6">
+\begin{equation*}
+[-2,-1],\quad [-1,0],\quad [0,1].
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-all-sums-3-7">
+<em class="alert">(a) Left Riemann Sum</em><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-all-sums-3-8">
+\begin{equation*}
+\begin{aligned}
+f(-2)\amp=1,\\
+f(-1)\amp=4,\\
+f(0)\amp=5
+\end{aligned}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-riemann-all-sums-3-9">
+\begin{equation*}
+\displaystyle
+\text{Left Riemann Sum }  =(1+4+5)(1)=10.
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-all-sums-3-10">Graphically, the left sum corresponds to rectangles that touch the curve at the left endpoints of the subintervals.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/ex-riemann-all-sums-3-11.svg" role="img" class="contained" alt="Graph of a downward-opening parabola labeled f(x) with shaded area under the curve from x = -2 to x = 1, with rectangles drawn touching the curve at the left endpoints of the subintervals [-2,-1], [-1,0], and [0,1]"></div>
+<div class="para" id="ex-riemann-all-sums-3-12">
+<em class="alert">(b) Right Riemann Sum</em><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-all-sums-3-13">
+\begin{equation*}
+\begin{aligned}
+f(-1)\amp=4,\\
+f(0)\amp=5,\\
+f(1)\amp=4
+\end{aligned}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-riemann-all-sums-3-14">
+\begin{equation*}
+\displaystyle
+\text{Right Riemann Sum }=(4+5+4)(1)=13.
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-all-sums-3-15">Graphically, the right sum corresponds to rectangles that touch the curve at the right endpoints of the subintervals.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/ex-riemann-all-sums-3-16.svg" role="img" class="contained" alt="Graph of a downward-opening parabola labeled f(x) with shaded area under the curve from x = -2 to x = 1, with rectangles drawn touching the curve at the right endpoints of the subintervals [-2,-1], [-1,0], and [0,1]"></div>
+<div class="para" id="ex-riemann-all-sums-3-17">
+<em class="alert">(c) Upper Sum (Overestimate)</em><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-all-sums-3-18">To determine upper and lower sums, note that <span class="process-math">\(f(x)=5-x^2\)</span> is increasing on <span class="process-math">\([-2,0]\)</span> and decreasing on <span class="process-math">\([0,1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-all-sums-3-19">Use the maximum value on each subinterval:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-all-sums-3-20">
+\begin{equation*}
+\begin{aligned}
+f(-1)\amp=4,\\
+f(0)\amp=5,\\
+f(0)\amp=5
+\end{aligned}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-riemann-all-sums-3-21">
+\begin{equation*}
+\displaystyle
+\text{Upper Sum }=(4+5+5)(1)=14.
+\end{equation*}
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/ex-riemann-all-sums-3-22.svg" role="img" class="contained" alt="Graph of a downward-opening parabola labeled f(x) with shaded area under the curve from x = -2 to x = 1, with rectangles drawn touching the curve at the maximum value on each subinterval: at x = -1 for [-2,-1], at x = 0 for [-1,0], and at x = 0 for [0,1]"></div>
+<div class="para" id="ex-riemann-all-sums-3-23">
+<em class="alert">(d) Lower Sum (Underestimate)</em><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-all-sums-3-24">Use the minimum value on each subinterval:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-all-sums-3-25">
+\begin{equation*}
+\begin{aligned}
+f(-2)\amp=1,\\
+f(-1)\amp=4,\\
+f(1)\amp =4
+\end{aligned}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-riemann-all-sums-3-26">
+\begin{equation*}
+\displaystyle
+\text{Lower Sum }=(1+4+4)(1)=9.
+\end{equation*}
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/ex-riemann-all-sums-3-27.svg" role="img" class="contained" alt="Graph of a downward-opening parabola labeled f(x) with shaded area under the curve from x = -2 to x = 1, with rectangles drawn touching the curve at the minimum value on each subinterval: at x = -2 for [-2,-1], at x = -1 for [-1,0], and at x = 1 for [0,1]"></div>
+<div class="para" id="ex-riemann-all-sums-3-28">So we have:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-all-sums-3-29">
+\begin{equation*}
+\displaystyle
+\text{Lower Sum}=9 \le \text{Actual Area} \le 14=\text{Upper Sum}.
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-all-sums-3-30">The left and right sums, <span class="process-math">\(10\)</span> and <span class="process-math">\(13\text{,}\)</span> fall between these bounds.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-all-sums-3-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.7.7.1"><a href="#ex-riemann-all-sums-3" title="Copy heading and permalink for Solution 4.7.7.1" aria-label="Copy heading and permalink for Solution 4.7.7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.7.7: Comparing Left, Right, Upper, and Lower Sums"><a href="#ex-riemann-all-sums" title="Copy heading and permalink for Example 4.7.7: Comparing Left, Right, Upper, and Lower Sums" aria-label="Copy heading and permalink for Example 4.7.7: Comparing Left, Right, Upper, and Lower Sums">🔗</a></div></article><article class="example example-like" id="ex-riemann-velocity-table"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Estimating Distance from a Velocity Table.</span>
+</h4>
+<div class="para" id="ex-riemann-velocity-table-2-1">The following table gives the velocity <span class="process-math">\(v(t)\)</span> (in ft/s) of a particle moving along a horizontal axis at different times <span class="process-math">\(t\)</span> (in seconds).<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-velocity-table-2-2">
+\begin{equation*}
+\begin{array}{c|ccccc}
+t &amp; 20 &amp; 23 &amp; 26 &amp; 29 &amp; 32 \\
+\hline
+v(t) &amp; 15 &amp; 10 &amp; 7 &amp; 9 &amp; 12
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-velocity-table-2-3">Estimate the distance traveled by the particle from <span class="process-math">\(t=20\)</span> to <span class="process-math">\(t=32\)</span> using 4 subintervals of equal width.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="lower-alpha ol-marker-1" id="ex-riemann-velocity-table-2-4">
+<li id="ex-riemann-velocity-table-2-4-1">
+<div class="para" id="p-derived-ex-riemann-velocity-table-2-4-1">Use left endpoints.</div>
+<div class="autopermalink" data-description="Item a"><a href="#ex-riemann-velocity-table-2-4-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="ex-riemann-velocity-table-2-4-2">
+<div class="para" id="p-derived-ex-riemann-velocity-table-2-4-2">Use right endpoints.</div>
+<div class="autopermalink" data-description="Item b"><a href="#ex-riemann-velocity-table-2-4-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="ex-riemann-velocity-table-2-4-3">
+<div class="para" id="p-derived-ex-riemann-velocity-table-2-4-3">Find an overestimate of the distance assuming all minimums and maximums are at the endpoints.</div>
+<div class="autopermalink" data-description="Item c"><a href="#ex-riemann-velocity-table-2-4-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="solutions"><details id="ex-riemann-velocity-table-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-riemann-velocity-table-3-1">First compute the width of each subinterval:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-velocity-table-3-2">
+\begin{equation*}
+\displaystyle \Delta t = \frac{32-20}{4} = 3.
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-velocity-table-3-3">
+<em class="alert">(a) Left Endpoint Approximation</em><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-velocity-table-3-4">The left endpoints are:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-velocity-table-3-5">
+\begin{equation*}
+20,\;23,\;26,\;29.
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-velocity-table-3-6">So the estimated distance is:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-velocity-table-3-7">
+\begin{equation*}
+\begin{aligned}
+\text{Distance} 
+&amp;\approx 3\bigl[v(20)+v(23)+v(26)+v(29)\bigr] \\
+&amp;= 3(15+10+7+9) \\
+&amp;= 3(41) = 123 \text{ ft}. 
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-velocity-table-3-8">
+<em class="alert">(b) Right Endpoint Approximation</em><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-velocity-table-3-9">The right endpoints are:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-velocity-table-3-10">
+\begin{equation*}
+23,\;26,\;29,\;32.
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-velocity-table-3-11">So the estimated distance is:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-velocity-table-3-12">
+\begin{equation*}
+\begin{aligned}
+\text{Distance} 
+&amp;\approx 3\bigl[v(23)+v(26)+v(29)+v(32)\bigr] \\
+&amp;= 3(10+7+9+12) \\
+&amp;= 3(38) = 114 \text{ ft}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-velocity-table-3-13">
+<em class="alert">(c) Overestimate</em><div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-3-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-riemann-velocity-table-3-14">To find an overestimate, take the maximum velocity on each subinterval. Because we are told that all minimums and maximums are at the endpoints, we only need to look at the values in the table:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-3-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-velocity-table-3-15">
+\begin{equation*}
+\begin{array}{c|cccc}
+\text{Interval} &amp; [20,23] &amp; [23,26] &amp; [26,29] &amp; [29,32] \\
+\hline
+\text{Max } v(t) &amp; 15 &amp; 10 &amp; 9 &amp; 12
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-velocity-table-3-16">So the overestimate is:<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-3-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-riemann-velocity-table-3-17">
+\begin{equation*}
+\begin{aligned}
+\text{Distance} 
+&amp;\approx 3(15+10+9+12) \\
+&amp;= 3(46) = 138 \text{ ft}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-riemann-velocity-table-3-18">Therefore, the distance traveled is approximately between <span class="process-math">\(114\)</span> feet and <span class="process-math">\(138\)</span> feet, with the left sum giving <span class="process-math">\(123\)</span> feet.<div class="autopermalink" data-description="Paragraph"><a href="#ex-riemann-velocity-table-3-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.7.8.1"><a href="#ex-riemann-velocity-table-3" title="Copy heading and permalink for Solution 4.7.8.1" aria-label="Copy heading and permalink for Solution 4.7.8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.7.8: Estimating Distance from a Velocity Table"><a href="#ex-riemann-velocity-table" title="Copy heading and permalink for Example 4.7.8: Estimating Distance from a Velocity Table" aria-label="Copy heading and permalink for Example 4.7.8: Estimating Distance from a Velocity Table">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 4.2 Riemann Sums and Areas"><a href="#subsec-integral-riemannSums" title="Copy heading and permalink for Subsection: Section 4.2 Riemann Sums and Areas" aria-label="Copy heading and permalink for Subsection: Section 4.2 Riemann Sums and Areas">🔗</a></div></section><section class="subsection" id="subsec-integral-defInt"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 4.3 Definite Integrals</span>
 </h3>
 <div class="para" id="subsec-integral-defInt-2">test<div class="autopermalink" data-description="Paragraph"><a href="#subsec-integral-defInt-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -994,7 +1245,7 @@ P(3) = 75e^{-0.6} + 425
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 4.6 Substitution Rule for Integration</span>
 </h3>
 <article class="example example-like" id="ex-sub-02"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-sub-02-1-1">Evaluate <span class="process-math">\(\displaystyle \int x\sqrt{3x+4}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-sub-02-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -1019,10 +1270,10 @@ P(3) = 75e^{-0.6} + 425
 \end{array}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Solution 4.7.7.1"><a href="#ex-sub-02-2" title="Copy heading and permalink for Solution 4.7.7.1" aria-label="Copy heading and permalink for Solution 4.7.7.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.7.9.1"><a href="#ex-sub-02-2" title="Copy heading and permalink for Solution 4.7.9.1" aria-label="Copy heading and permalink for Solution 4.7.9.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.7.7"><a href="#ex-sub-02" title="Copy heading and permalink for Example 4.7.7" aria-label="Copy heading and permalink for Example 4.7.7">🔗</a></div></article><article class="example example-like" id="ex-sub-04"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 4.7.9"><a href="#ex-sub-02" title="Copy heading and permalink for Example 4.7.9" aria-label="Copy heading and permalink for Example 4.7.9">🔗</a></div></article><article class="example example-like" id="ex-sub-04"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-sub-04-1-1">Evaluate <span class="process-math">\(\displaystyle \int \frac{\sin(x)}{(1+\cos(x))^2}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-sub-04-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -1046,10 +1297,10 @@ P(3) = 75e^{-0.6} + 425
 \end{array}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Solution 4.7.8.1"><a href="#ex-sub-04-2" title="Copy heading and permalink for Solution 4.7.8.1" aria-label="Copy heading and permalink for Solution 4.7.8.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.7.10.1"><a href="#ex-sub-04-2" title="Copy heading and permalink for Solution 4.7.10.1" aria-label="Copy heading and permalink for Solution 4.7.10.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.7.8"><a href="#ex-sub-04" title="Copy heading and permalink for Example 4.7.8" aria-label="Copy heading and permalink for Example 4.7.8">🔗</a></div></article><article class="example example-like" id="ex-sub-05"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 4.7.10"><a href="#ex-sub-04" title="Copy heading and permalink for Example 4.7.10" aria-label="Copy heading and permalink for Example 4.7.10">🔗</a></div></article><article class="example example-like" id="ex-sub-05"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-sub-05-1-1">Evaluate <span class="process-math">\(\displaystyle \int \sec^2(x)\tan(x)\,dx\)</span> in two ways, and explain why the answers agree.<div class="autopermalink" data-description="Paragraph"><a href="#ex-sub-05-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -1086,9 +1337,9 @@ P(3) = 75e^{-0.6} + 425
 </div>
 <div class="para" id="ex-sub-05-2-5">These differ by a constant because <span class="process-math">\(\sec^2(x)=\tan^2(x)+1\text{.}\)</span> So <span class="process-math">\(\tfrac12\sec^2(x)=\tfrac12\tan^2(x)+\tfrac12\text{,}\)</span> meaning the two antiderivative families are the same.<div class="autopermalink" data-description="Paragraph"><a href="#ex-sub-05-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.7.9.1"><a href="#ex-sub-05-2" title="Copy heading and permalink for Solution 4.7.9.1" aria-label="Copy heading and permalink for Solution 4.7.9.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.7.11.1"><a href="#ex-sub-05-2" title="Copy heading and permalink for Solution 4.7.11.1" aria-label="Copy heading and permalink for Solution 4.7.11.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.7.9"><a href="#ex-sub-05" title="Copy heading and permalink for Example 4.7.9" aria-label="Copy heading and permalink for Example 4.7.9">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 4.6 Substitution Rule for Integration"><a href="#subsec-integral-usub" title="Copy heading and permalink for Subsection: Section 4.6 Substitution Rule for Integration" aria-label="Copy heading and permalink for Subsection: Section 4.6 Substitution Rule for Integration">🔗</a></div></section><div class="autopermalink" data-description="Section 4.7: Additional Worked-Out Problems"><a href="#sec-integral-ww" title="Copy heading and permalink for Section 4.7: Additional Worked-Out Problems" aria-label="Copy heading and permalink for Section 4.7: Additional Worked-Out Problems">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Example 4.7.11"><a href="#ex-sub-05" title="Copy heading and permalink for Example 4.7.11" aria-label="Copy heading and permalink for Example 4.7.11">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 4.6 Substitution Rule for Integration"><a href="#subsec-integral-usub" title="Copy heading and permalink for Subsection: Section 4.6 Substitution Rule for Integration" aria-label="Copy heading and permalink for Subsection: Section 4.6 Substitution Rule for Integration">🔗</a></div></section><div class="autopermalink" data-description="Section 4.7: Additional Worked-Out Problems"><a href="#sec-integral-ww" title="Copy heading and permalink for Section 4.7: Additional Worked-Out Problems" aria-label="Copy heading and permalink for Section 4.7: Additional Worked-Out Problems">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-integral-usub.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
