@@ -126,7 +126,7 @@
     <p> Let's try <xref ref="ex-reverse-chain-01">Example</xref> again this time with the substitution method in mind. 
     </p>
 
-    <example>
+    <example xml:id="ex-sub-00">
       <statement>
         <p>
           Evaluate <m>\displaystyle \int x\cos(x^2)\,dx</m>.

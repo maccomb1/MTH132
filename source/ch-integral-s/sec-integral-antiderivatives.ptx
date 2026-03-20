@@ -277,13 +277,6 @@ illustrating vertical shifts corresponding to different constants of integration
         </p>
       </proof>
     </theorem>
-
-
-    <p> Now let's see some examples!</p> 
-
-</subsection>
-<subsection xml:id="subsec-SelectExamples">
-  <title>Select Examples</title>
   
 
     <example xml:id="ex-antiderivative-linearity">
@@ -494,7 +487,7 @@ into sums of Basic Antiderivatives.
     Now we can reverse this process and sketch the graph of an antiderivative given information about the original function.
   </p> 
 
-  <example>
+  <example xml:id="ex-antiderivative-sketch">
     <statement>
       <p>
         The graph of <m>f(x)</m> is shown below. Sketch the graph of an antiderivative <m>F(x)</m> that satisfies <m>F(0)=0</m>.
@@ -524,7 +517,10 @@ stays flat from x=3 to x=4 at y=-1, and then increases to (6,1).
     <solution>
       <p>
         Before we sketch the graph of <m>F(x)</m>, let's think about what it should look like. 
-        Remember that the slope of <m>F(x)</m> at any point is given by the value of <m>f(x)</m> at that point.
+        Remember that 
+        by the definition of antiderivative, <m>F'(x)=f(x)</m>, so the slope of <m>F(x)</m> at any point is 
+        given by the value of <m>f(x)</m> at that point. And likewise <m>F''(x)=f'(x)</m>, 
+        so the concavity of <m>F(x)</m> at any point is given by the slope of <m>f(x)</m> at that point.
       </p>
       <p>
         From the graph of <m>f(x)</m>, we can see that:
@@ -552,6 +548,20 @@ stays flat from x=3 to x=4 at y=-1, and then increases to (6,1).
         We also know that <m>F(0)=0</m>, so we can start our sketch at the point (0,0).
         Then we can use the information about where the function is increasing or decreasing to sketch the graph of <m>F(x)</m>.
       </p>
+
+      <image source="images/curveSketch15.png" width="90%">
+        <shortdescription>
+A graph of a function made of connected curves. The graph starts at (0,0), increases and is concave down until x=1,
+then decreases and is concave down until x=2, then decreases and is concave up until x=3, then decreases at a constant rate until x=4,
+then decreases and is concave up until x=5, then increases and is concave up until x=6.
+        </shortdescription>
+      </image>
+
+      <p>We cannot yet determine the specific heights of many of these points (so your sketch may look slightly different), but we can get a good 
+        qualitative picture of the graph of <m>F(x)</m> and know where it is increasing, decreasing, concave up, and concave down
+         just from the graph of <m>f(x)</m>.</p>
+
+
     </solution>
 
 

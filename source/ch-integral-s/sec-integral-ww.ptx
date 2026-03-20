@@ -453,26 +453,1010 @@
 
        <subsection xml:id="subsec-integral-riemannSums">
       <title><xref ref="sec-integral-riemannSums"/> Riemann Sums and Areas</title>
-      <p> test
-      </p>
+
+      
+
+<example xml:id="ex-riemann-all-sums">
+  <title>Comparing Left, Right, Upper, and Lower Sums</title>
+
+  <statement>
+    <p>
+      Estimate the area under the graph of 
+      <m>f(x)=5-x^2</m> on the interval <m>[-2,1]</m> using 
+      <m>n=3</m> rectangles of equal width.
+    </p>
+
+
+  <image width="80%">
+  <shortdescription>
+    Graph of a downward-opening parabola labeled f(x) with shaded area under the curve from x = -2 to x = 1
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[xscale=2]
+	\draw[fill=green!20] plot[domain=-2:1, smooth] (\x, {5-(\x)^2}) -- (1,0)--(-2,0) -- (-2,1);
+	\draw[->, thick] (-2.5,0) -- (2.5,0) node [right] {$x$} ;
+	\draw[->, thick] (0,0) -- (0,5.5);
+	\draw[very thick] plot[domain=-2.3:2.3, smooth] (\x, {5-(\x)^2});
+	\draw (2.2,1.5) node {$f(x)$};
+	\foreach \x in {-2,...,2}
+	\draw (\x,2pt)--(\x,-2pt)node[below, font=\small] {$\x$};
+	
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+    <p>
+      Compute:
+    </p>
+    <ol marker="(a)">
+      <li>the left Riemann sum</li>
+      <li>the right Riemann sum</li>
+      <li>an overestimate (upper sum)</li>
+      <li>an underestimate (lower sum)</li>
+    </ol>
+  </statement>
+
+  <solution>
+    <p>
+      First compute the width of each rectangle:
+    </p>
+
+    <me>
+      \displaystyle \Delta x=\frac{1-(-2)}{3}=1.
+    </me>
+
+    <p>
+      The partition points are:
+    </p>
+
+    <me>
+      -2,\;-1,\;0,\;1.
+    </me>
+
+    <p>
+      The subintervals are:
+    </p>
+
+    <me>
+      [-2,-1],\quad [-1,0],\quad [0,1].
+    </me>
+
+    <p><alert>(a) Left Riemann Sum</alert></p>
+
+    <me>
+      \begin{aligned}
+      f(-2)\amp=1,\\
+      f(-1)\amp=4,\\
+      f(0)\amp=5
+      \end{aligned}
+    </me>
+
+    <me>
+      \displaystyle
+      \text{Left Riemann Sum }  =(1+4+5)(1)=10.
+    </me>
+
+    <p> Graphically, the left sum corresponds to rectangles that touch the curve at the left endpoints of the subintervals. 
+    </p> 
+
+      <image width="80%">
+  <shortdescription>
+    Graph of a downward-opening parabola labeled f(x) with shaded area under the curve from x = -2 to x = 1, 
+    with rectangles drawn touching the curve at the left endpoints of the subintervals [-2,-1], [-1,0], and [0,1]
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[xscale=2] %left
+	\draw[fill=green!20] plot[domain=-2:1, smooth] (\x, {5-(\x)^2}) -- (1,0)--(-2,0) -- (-2,1);
+	\draw[->, thick] (-2.5,0) -- (2.5,0) node [right] {$x$} ;
+	\draw[->, thick] (0,0) -- (0,5.5);
+	\draw[very thick] plot[domain=-2.3:2.3, smooth] (\x, {5-(\x)^2});
+	\draw (2.2,1.5) node {$f(x)$};
+	\foreach \x in {-2,...,2}
+	\draw (\x,2pt)--(\x,-2pt)node[below, font=\small] {$\x$};
+	
+	\draw[black, fill=blue, fill opacity=.2] (-2,0) rectangle (-1,1); 
+	\draw[black, fill=blue, fill opacity=.2] (-1,0) rectangle (0,4); 
+	\draw[black, fill=blue, fill opacity=.2] (0,0) rectangle (1,5); 
+	\draw[dashed] (-1.5,0) -- (-1.5,1) node [right, pos=.5] {$1$};
+	\draw[dashed] (-.5,0) -- (-.5,4) node [right, pos=.5] {$4$};
+	\draw[dashed] (.5,0) -- (.5,5) node [right, pos=.5] {$5$};
+	\draw (-2,1) node {$\bullet$};
+	\draw (-1,4) node {$\bullet$};
+	\draw (0,5) node {$\bullet$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+    
+    <p><alert>(b) Right Riemann Sum</alert></p>
+
+    <me>
+      \begin{aligned}
+      f(-1)\amp=4,\\
+      f(0)\amp=5,\\
+      f(1)\amp=4
+      \end{aligned}
+    </me>
+
+    <me>
+      \displaystyle
+      \text{Right Riemann Sum }=(4+5+4)(1)=13.
+    </me>
+
+    <p>  Graphically, the right sum corresponds to rectangles that touch the curve at the right endpoints of the subintervals.
+    </p>
+
+     <image width="80%">
+  <shortdescription>
+    Graph of a downward-opening parabola labeled f(x) with shaded area under the curve from x = -2 to x = 1, 
+    with rectangles drawn touching the curve at the right endpoints of the subintervals [-2,-1], [-1,0], and [0,1]
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[xscale=2] %right
+	\draw[fill=green!20] plot[domain=-2:1, smooth] (\x, {5-(\x)^2}) -- (1,0)--(-2,0) -- (-2,1);
+	\draw[->, thick] (-2.5,0) -- (2.5,0) node [right] {$x$} ;
+	\draw[->, thick] (0,0) -- (0,5.5);
+	\draw[very thick] plot[domain=-2.3:2.3, smooth] (\x, {5-(\x)^2});
+	\draw (2.2,1.5) node {$f(x)$};
+	\foreach \x in {-2,...,2}
+	\draw (\x,2pt)--(\x,-2pt)node[below, font=\small] {$\x$};
+	\draw[black, fill=blue, fill opacity=.2] (-2,0) rectangle (-1,4); 
+	\draw[black, fill=blue, fill opacity=.2] (-1,0) rectangle (0,5); 
+	\draw[black, fill=blue, fill opacity=.2] (0,0) rectangle (1,4); 
+	\draw[dashed] (-1.5,0) -- (-1.5,4) node [right, pos=.5] {$4$};
+	\draw[dashed] (-.5,0) -- (-.5,5) node [right, pos=.5] {$5$};
+	\draw[dashed] (.5,0) -- (.5,4) node [right, pos=.5] {$4$};
+	\draw (-2,1) node {$\bullet$};
+	\draw (-1,4) node {$\bullet$};
+	\draw (1,4) node {$\bullet$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+    <p><alert>(c) Upper Sum (Overestimate)</alert></p>
+
+    <p>
+      To determine upper and lower sums, note that <m>f(x)=5-x^2</m> is increasing on <m>[-2,0]</m>
+      and decreasing on <m>[0,1]</m>.
+    </p>
+
+    <p>
+      Use the maximum value on each subinterval:
+    </p>
+
+    <me>
+      \begin{aligned}
+      f(-1)\amp=4,\\
+      f(0)\amp=5,\\
+      f(0)\amp=5
+      \end{aligned}
+    </me>
+
+    <me>
+      \displaystyle
+      \text{Upper Sum }=(4+5+5)(1)=14.
+    </me>
+
+         <image width="80%">
+  <shortdescription>
+    Graph of a downward-opening parabola labeled f(x) with shaded area under the curve from x = -2 to x = 1, 
+    with rectangles drawn touching the curve at the maximum value on each subinterval: at x = -1 for [-2,-1], at x = 0 for [-1,0],
+    and at x = 0 for [0,1]
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[xscale=2] %upper
+	\draw[fill=green!20] plot[domain=-2:1, smooth] (\x, {5-(\x)^2}) -- (1,0)--(-2,0) -- (-2,1);
+	\draw[->, thick] (-2.5,0) -- (2.5,0) node [right] {$x$} ;
+	\draw[->, thick] (0,0) -- (0,5.5);
+	\draw[very thick] plot[domain=-2.3:2.3, smooth] (\x, {5-(\x)^2});
+	\draw (2.2,1.5) node {$f(x)$};
+	\foreach \x in {-2,...,2}
+	\draw (\x,2pt)--(\x,-2pt)node[below, font=\small] {$\x$};
+	\draw[black, fill=blue, fill opacity=.2] (-2,0) rectangle (-1,4); 
+	\draw[black, fill=blue, fill opacity=.2] (-1,0) rectangle (0,5); 
+	\draw[black, fill=blue, fill opacity=.2] (0,0) rectangle (1,5); 
+		\draw[dashed] (-1.5,0) -- (-1.5,4) node [right, pos=.5] {$4$};
+	\draw[dashed] (-.5,0) -- (-.5,5) node [right, pos=.5] {$5$};
+	\draw[dashed] (.5,0) -- (.5,5) node [right, pos=.5] {$5$};
+	\draw (-1,4) node {$\bullet$};
+	\draw (0,5) node {$\bullet$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+    
+
+    <p><alert>(d) Lower Sum (Underestimate)</alert></p>
+
+    <p>
+      Use the minimum value on each subinterval:
+    </p>
+
+    <me>
+      \begin{aligned}
+      f(-2)\amp=1,\\
+      f(-1)\amp=4,\\
+      f(1)\amp =4
+      \end{aligned}
+    </me>
+
+    <me>
+      \displaystyle
+      \text{Lower Sum }=(1+4+4)(1)=9.
+    </me>
+
+
+       <image width="80%">
+  <shortdescription>
+    Graph of a downward-opening parabola labeled f(x) with shaded area under the curve from x = -2 to x = 1, 
+    with rectangles drawn touching the curve at the minimum value on each subinterval: 
+    at x = -2 for [-2,-1], at x = -1 for [-1,0], and at x = 1 for [0,1]
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[xscale=2] %lower
+	\draw[fill=green!20] plot[domain=-2:1, smooth] (\x, {5-(\x)^2}) -- (1,0)--(-2,0) -- (-2,1);
+	\draw[->, thick] (-2.5,0) -- (2.5,0) node [right] {$x$} ;
+	\draw[->, thick] (0,0) -- (0,5.5);
+	\draw[very thick] plot[domain=-2.3:2.3, smooth] (\x, {5-(\x)^2});
+	\draw (2.2,1.5) node {$f(x)$};
+	\foreach \x in {-2,...,2}
+	\draw (\x,2pt)--(\x,-2pt)node[below, font=\small] {$\x$};
+	\draw[black, fill=blue, fill opacity=.2] (-2,0) rectangle (-1,1); 
+	\draw[black, fill=blue, fill opacity=.2] (-1,0) rectangle (0,4); 
+	\draw[black, fill=blue, fill opacity=.2] (0,0) rectangle (1,4); 
+		\draw[dashed] (-1.5,0) -- (-1.5,1) node [right, pos=.5] {$1$};
+	\draw[dashed] (-.5,0) -- (-.5,4) node [right, pos=.5] {$4$};
+	\draw[dashed] (.5,0) -- (.5,4) node [right, pos=.5] {$4$};
+	\draw (-2,1) node {$\bullet$};
+	\draw (-1,4) node {$\bullet$};
+	\draw (1,4) node {$\bullet$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+
+    <p>
+      So we have:
+    </p>
+
+    <me>
+      \displaystyle
+      \text{Lower Sum}=9 \le \text{Actual Area} \le 14=\text{Upper Sum}.
+    </me>
+
+    <p>
+      The left and right sums, <m>10</m> and <m>13</m>, fall between these bounds.
+    </p>
+
+  </solution>
+</example>
+
+<example xml:id="ex-riemann-velocity-table">
+  <title>Estimating Distance from a Velocity Table</title>
+
+  <statement>
+    <p>
+      The following table gives the velocity <m>v(t)</m> (in ft/s) of a particle 
+      moving along a horizontal axis at different times <m>t</m> (in seconds).
+    </p>
+
+    <me>
+      \begin{array}{c|ccccc}
+      t &amp; 20 &amp; 23 &amp; 26 &amp; 29 &amp; 32 \\
+      \hline
+      v(t) &amp; 15 &amp; 10 &amp; 7 &amp; 9 &amp; 12
+      \end{array}
+    </me>
+
+    <p>
+      Estimate the distance traveled by the particle from <m>t=20</m> to <m>t=32</m>
+      using 4 subintervals of equal width.
+    </p>
+
+    <ol marker="(a)">
+      <li>Use left endpoints.</li>
+      <li>Use right endpoints.</li>
+      <li>Find an overestimate of the distance assuming all minimums and maximums are at the endpoints.</li>
+    </ol>
+  </statement>
+
+  <solution>
+    <p>
+      First compute the width of each subinterval:
+    </p>
+
+    <me>
+      \displaystyle \Delta t = \frac{32-20}{4} = 3.
+    </me>
+
+    <p><alert>(a) Left Endpoint Approximation</alert></p>
+
+    <p>
+      The left endpoints are:
+    </p>
+
+    <me>
+      20,\;23,\;26,\;29.
+    </me>
+
+    <p>
+      So the estimated distance is:
+    </p>
+
+    <me>
+      \begin{aligned}
+      \text{Distance} 
+      &amp;\approx 3\bigl[v(20)+v(23)+v(26)+v(29)\bigr] \\
+      &amp;= 3(15+10+7+9) \\
+      &amp;= 3(41) = 123 \text{ ft}. 
+      \end{aligned}
+    </me>
+
+    <p><alert>(b) Right Endpoint Approximation</alert></p>
+
+    <p>
+      The right endpoints are:
+    </p>
+
+    <me>
+      23,\;26,\;29,\;32.
+    </me>
+
+    <p>
+      So the estimated distance is:
+    </p>
+
+    <me>
+      \begin{aligned}
+      \text{Distance} 
+      &amp;\approx 3\bigl[v(23)+v(26)+v(29)+v(32)\bigr] \\
+      &amp;= 3(10+7+9+12) \\
+      &amp;= 3(38) = 114 \text{ ft}.
+      \end{aligned}
+    </me>
+
+    <p><alert>(c) Overestimate</alert></p>
+
+    <p>
+      To find an overestimate, take the maximum velocity on each subinterval. 
+      Because we are told that all minimums and maximums are at the endpoints, we only need to look at the values in the table:
+    </p>
+
+    <me>
+      \begin{array}{c|cccc}
+      \text{Interval} &amp; [20,23] &amp; [23,26] &amp; [26,29] &amp; [29,32] \\
+      \hline
+      \text{Max } v(t) &amp; 15 &amp; 10 &amp; 9 &amp; 12
+      \end{array}
+    </me>
+
+    <p>
+      So the overestimate is:
+    </p>
+
+    <me>
+      \begin{aligned}
+      \text{Distance} 
+      &amp;\approx 3(15+10+9+12) \\
+      &amp;= 3(46) = 138 \text{ ft}.
+      \end{aligned}
+    </me>
+
+    <p>
+      Therefore, the distance traveled is approximately between 
+      <m>114</m> feet and <m>138</m> feet, with the left sum giving <m>123</m> feet.
+    </p>
+
+  </solution>
+</example>
+
+
+
+
     </subsection>
+
+
+
+
+
+
+
+
 
        <subsection xml:id="subsec-integral-defInt">
       <title><xref ref="sec-integral-defInt"/> Definite Integrals</title>
-      <p> test
-      </p>
+
+<example xml:id="ex-accum-temp-rate">
+<statement>
+  <p>
+    The graph of the rate of change of temperature <m>r(t)</m> (in degrees Fahrenheit per hour)
+    over a 5-hour period can be viewed at the following link:
+    <url href="https://www.desmos.com/calculator/hymf4b8vsh">Interactive Desmos Graph</url>.</p>
+    <p> 
+    Here, <m>t</m> is measured in hours. Positive values of <m>r(t)</m> mean the temperature is increasing,
+    while negative values mean the temperature is decreasing.
+  </p>
+
+  <p>
+    Use the interactive graph to explore the accumulation of <m>r(t)</m> and answer the following questions.
+  </p>
+
+  <ol marker="(a)">
+    <li>
+      If the temperature is <m>60^\circ</m> at <m>t=0</m>, what is the temperature after 5 hours?
+    </li>
+    <li>
+      After how many hours is the temperature highest?
+    </li>
+    <li>
+      What is the highest temperature reached during the 5-hour period?
+    </li>
+  </ol>
+
+</statement>
+<solution>
+  <p>
+    (a) The temperature after 5 hours is the initial temperature plus the accumulation of the rate of change over the 5-hour period. 
+    This can be expressed as:
+  </p>
+  <me>
+    \text{Temperature}\Big|_{t=5} = 60 + \int_0^5 r(t)\,dt
+  </me>
+  <p>
+    Using the interactive graph, we can estimate the value of the integral. 
+    By adjusting the bounds of integration and observing the accumulated area under the curve of <m>r(t)</m>, we find that:
+  </p>
+  <me>
+    \int_0^5 r(t)\,dt \approx 5.54.
+  </me>
+  <p>
+    Therefore, the temperature after 5 hours is approximately:
+  </p>
+  <me>
+    \text{Temperature}\Big|_{t=5} \approx 60 + 5.54 = 65.54^\circ.
+  </me>
+  <p> (b) To find when the temperature is highest, we need to look for the time at which the accumulation of <m>r(t)</m> reaches its maximum. 
+    This occurs when the integral of <m>r(t)</m> from 0 to <m>t</m> is at its maximum value. 
+    By exploring the graph, we can see that the temperature reaches its highest point around <m>t=4</m> hours.
+  </p>
+  <p>
+    (c) To find the highest temperature reached, we can evaluate the temperature at <m>t=4</m> hours:
+  </p>
+  <me>
+    \text{Temperature}\Big|_{t=4} = 60 + \int_0^4 r(t)\,dt
+  </me>
+  <p>
+    Using the interactive graph, we estimate:
+  </p>
+  <me>
+    \int_0^4 r(t)\,dt \approx 7.28.
+  </me>
+  <p>
+    Therefore, the highest temperature reached during the 5-hour period is approximately:
+  </p>
+  <me>
+    \text{Temperature}\Big|_{t=4} \approx 60 + 7.28 = 67.28^\circ.
+  </me>
+</solution>
+
+</example>      
+
+
+<example xml:id="ex-area-abs-signed">
+  <statement>
+    <p>
+      Evaluate the integral below by interpreting it in terms of areas.
+      In other words, sketch the graph of the integrand and compute the
+      integral using geometry.
+    </p>
+
+    <me>
+      \displaystyle \int_{-1}^{3} |3x-6|\,dx
+    </me>
+  </statement>
+
+  <solution>
+    <p> First let's sketch the function <m>f(x)=|3x-6|</m>. These absolute value functions are V-shaped, 
+      and the vertex occurs where the expression inside the absolute value is zero.
+    </p>
+    <p>
+      Setting <m>3x-6=0</m> gives <m>x=2</m>. So the vertex is at the point <m>(2,0)</m>.
+    </p>
+    <p> We can also plot the endpoints of the interval:
+      <m>f(-1)=|3(-1)-6|=9</m> and <m>f(3)=|3(3)-6|=3</m>. and connect these points with straight lines to get the graph of <m>f(x)</m>.
+    </p>
+
+  <image width="60%">
+  <shortdescription>
+Graph of the function f(x) = |3x - 6|, which is a V-shaped graph with a vertex at (2, 0), and points at (-1, 9) and (3, 3).
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[xscale=2]
+	\draw[fill=green!20] (-1,9) -- (2,0) -- (3,3) -- (3,0) -- (-1,0) -- cycle;
+	\draw (-1,9) node{$\bullet$} -- (2,0) -- (3,3) node{$\bullet$};
+	\draw[->, thick] (-1.5,0) -- (3.5,0) node [right] {$x$} ;
+	\draw[->, thick] (0,0) -- (0,9.5);
+	%\draw[very thick] plot[domain=-1.3:3.3, smooth] (\x, {5-(\x)^2});
+	\draw (2.2,1.5) node {$f(x)$};
+	\foreach \x in {-1,...,3}
+	\draw (\x,2pt)--(\x,-2pt)node[below, font=\small] {$\x$};
+	\foreach \x in {1,...,9}
+	\draw (2pt, \x)--(-2pt,\x)node[left, font=\small] {$\x$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+  <p>We can see from the graph that the region under the function forms 2 triangles both above the <m>x</m>-axis. 
+    The area of the triangle on the left is:</p>
+  <me>
+  \text{Area}_1 = \frac{1}{2} \cdot \text{base} \cdot \text{height} = \frac{1}{2} \cdot 3 \cdot 9 = \frac{27}{2}.
+  </me>
+  <p>
+    The area of the triangle on the right is:
+  </p>
+  <me>
+  \text{Area}_2 = \frac{1}{2} \cdot \text{base} \cdot \text{height} = \frac{1}{2} \cdot 1 \cdot 3 = \frac{3}{2}.  
+  </me>
+  <p>
+    Therefore, the value of the integral is the sum of these two areas:
+  </p>
+  <me>
+  \int_{-1}^{3} |3x-6|\,dx = \text{Area}_1 + \text{Area}_2 = \frac{27}{2} + \frac{3}{2} = 15.
+  </me> 
+      
+  
+  </solution>
+</example>
+
     </subsection>
 
        <subsection xml:id="subsec-integral-FTC">
       <title><xref ref="sec-integral-FTC"/> The Fundamental Theorem of Calculus</title>
-      <p> test
-      </p>
+
+<example xml:id="ex-definite-integral-polynomial">
+
+  <statement>
+    <p>
+      Evaluate the definite integral:
+    </p>
+
+    <me>
+      \displaystyle \int_{-1}^{3} 2(x+1)^2\,dx
+    </me>
+  </statement>
+
+  <solution>
+    <p>
+      First expand the integrand:
+    </p>
+
+    <me>
+      2(x+1)^2 = 2(x^2+2x+1) = 2x^2+4x+2.
+    </me>
+
+    <p>
+      Now apply the Fundamental Theorem of Calculus:
+    </p>
+
+    <me>
+      \begin{aligned}
+      \displaystyle \int_{-1}^{3} 2(x+1)^2\,dx
+      &amp;= \displaystyle \int_{-1}^{3} (2x^2+4x+2)\,dx \\
+      &amp;= \left[\frac{2x^3}{3} + \frac{4x^2}{2} + 2x \right]_{-1}^{3}.
+      \end{aligned}
+    </me>
+
+    <p>
+      Evaluate at the bounds:
+    </p>
+
+    <me>
+      \begin{aligned}
+      &amp;= \left( \frac{2(3)^3}{3} + 2(3)^2 + 2(3) \right)
+      - \left( \frac{2(-1)^3}{3} + 2(-1)^2 + 2(-1) \right) \\
+      &amp;= (18 + 18 + 6) - \left( -\frac{2}{3} + 2 - 2 \right) \\
+      &amp;= 42 - \left( -\frac{2}{3} \right) \\
+      &amp;= \frac{128}{3}.
+      \end{aligned}
+    </me>
+
+    <p>
+      Therefore,
+    </p>
+
+    <me>
+      \displaystyle \int_{-1}^{3} 2(x+1)^2\,dx = \frac{128}{3}.
+    </me>
+
+  </solution>
+</example>
+
+
+<example xml:id="ex-area-parabola">
+  <statement>
+    <p>
+      Use a definite integral to find the area of the region that lies under the curve
+      <m>y = 12 - 4x^2</m> and above the <m>x</m>-axis.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      First determine where the curve intersects the <m>x</m>-axis by solving:
+    </p>
+
+    <me>
+      12 - 4x^2 = 0.
+    </me>
+
+    <me>
+      x^2 = 3 \quad \Rightarrow \quad x = \pm \sqrt{3}.
+    </me>
+
+    <p>
+      The curve is above the <m>x</m>-axis on the interval <m>(-\sqrt{3}, \sqrt{3})</m>,
+      so the area is given by:
+    </p>
+
+    <me>
+      \displaystyle \int_{-\sqrt{3}}^{\sqrt{3}} (12 - 4x^2)\,dx.
+    </me>
+
+    <p>
+      Evaluate the integral and simplify:
+    </p>
+
+    <me>
+      \begin{aligned}
+      &amp; 
+      \displaystyle \int_{-\sqrt{3}}^{\sqrt{3}} (12 - 4x^2)\,dx \\
+      &amp;= \left[ 12x - \frac{4x^3}{3} \right]_{-\sqrt{3}}^{\sqrt{3}} \\
+      &amp;= \left( 12\sqrt{3} - \frac{4(\sqrt{3})^3}{3} \right)
+      - \left( -12\sqrt{3} - \frac{4(-\sqrt{3})^3}{3} \right).\\
+      &amp;= \left( 12\sqrt{3} - \frac{4 \cdot 3\sqrt{3}}{3} \right)
+      - \left( -12\sqrt{3} + \frac{4 \cdot 3\sqrt{3}}{3} \right) \\
+      &amp;= (12\sqrt{3} - 4\sqrt{3}) - (-12\sqrt{3} + 4\sqrt{3}) \\
+      &amp;= 8\sqrt{3} - (-8\sqrt{3}) \\
+      &amp;= 16\sqrt{3}.
+      \end{aligned}
+    </me>
+
+    <p>
+      Therefore, the area of the region is
+      <m>16\sqrt{3}</m>.
+    </p>
+
+  </solution>
+</example>
+
+
+
+<example xml:id="ex-abs-value-integral">
+
+  <statement>
+    <p>
+      Evaluate the definite integral:
+    </p>
+
+    <me>
+      \displaystyle \int_{-2}^{1} |x+1|\,dx
+    </me>
+  </statement>
+
+  <solution>
+
+    <p> We saw in <xref ref="ex-area-abs-signed">a previous example</xref> that this can also be solved by 
+      using a geometric approach, but here we will evaluate the integral using the definition of the absolute value 
+      function and the Fundamental Theorem of Calculus. Of course if such a problem appears on an exam and it 
+      does not specify a method, you can choose either approach.
+    </p>
+    <p>
+      First determine where the expression inside the absolute value is zero:
+    </p>
+
+    <me>
+      x+1=0 \quad \Rightarrow \quad x=-1.
+    </me>
+
+    <p>
+      So we write <m>|x+1|</m> as a piecewise function:
+    </p>
+
+    <me>
+      |x+1|=
+      \begin{cases}
+      -(x+1), &amp; x &lt; -1, \\
+      x+1, &amp; x \ge -1.
+      \end{cases}
+    </me>
+
+    <p>
+      Split the integral at <m>x=-1</m>:
+    </p>
+
+    <me>
+      \displaystyle \int_{-2}^{1} |x+1|\,dx
+      = \displaystyle \int_{-2}^{-1} -(x+1)\,dx
+      + \displaystyle \int_{-1}^{1} (x+1)\,dx.
+    </me>
+
+    <p>
+      Evaluate each integral:
+    </p>
+
+    <me>
+      \begin{aligned}
+      \displaystyle \int_{-2}^{-1} -(x+1)\,dx
+      &amp;= \left[-\left(\frac{x^2}{2}+x\right)\right]_{-2}^{-1}, \\
+      \displaystyle \int_{-1}^{1} (x+1)\,dx
+      &amp;= \left[\frac{x^2}{2}+x\right]_{-1}^{1}.
+      \end{aligned}
+    </me>
+
+    <p>
+      Compute the values:
+    </p>
+
+    <me>
+      \begin{aligned}
+      \displaystyle \int_{-2}^{-1} -(x+1)\,dx
+      &amp;= -\left[\left(\frac{(-1)^2}{2}+(-1)\right)
+      - \left(\frac{(-2)^2}{2}+(-2)\right)\right] \\
+      &amp;= -\left[\left(\frac{1}{2}-1\right) - (2-2)\right]
+      = -\left(-\frac{1}{2}\right)
+      = \frac{1}{2},\\
+      \displaystyle \int_{-1}^{1} (x+1)\,dx
+      &amp;= \left[\left(\frac{1}{2}+1\right)
+      - \left(\frac{1}{2}-1\right)\right] \\
+      &amp;= \frac{3}{2} - \left(-\frac{1}{2}\right)
+      = 2.
+      \end{aligned}
+    </me>
+
+    <p>
+      Add the results:
+    </p>
+
+    <me>
+      \displaystyle \int_{-2}^{1} |x+1|\,dx
+      = \frac{1}{2} + 2 = \frac{5}{2}.
+    </me>
+  </solution>
+</example>
+
+
+<example xml:id="ex-definite-integral-trig">
+  <statement>
+    <p>
+      Evaluate the integral <m> \displaystyle \int_{0}^{\pi/12} \sec(3x)\tan(3x) \,dx</m> 
+    </p>
+  </statement>
+  <solution> 
+    <p>
+      Thinking back to <xref ref="thm-antiderivative-rules">our antiderivative rules</xref>, we know that the derivative of <m>\sec(3x)</m> is <m>3\sec(3x)\tan(3x)</m>.
+      So we can use the Fundamental Theorem of Calculus to evaluate the integral:
+    </p>
+    <me>
+      \begin{aligned}
+      \displaystyle \int_{0}^{\pi/12} \sec(3x)\tan(3x) \,dx
+      &amp;= \left[\frac{\sec(3x)}{3}\right]_{0}^{\pi/12} \\
+      &amp;= \frac{\sec(\pi/4)}{3} - \frac{\sec(0)}{3} \\
+      &amp;= \frac{\sqrt{2}}{3} - \frac{1}{3} \\
+      &amp;= \frac{\sqrt{2}-1}{3}.
+      \end{aligned}
+    </me>
+  </solution>
+</example>
+
+
+
     </subsection>
 
        <subsection xml:id="subsec-integral-net">
       <title><xref ref="sec-integral-net"/> Net Change Theorem and Indefinite Integrals</title>
-      <p> test
-      </p>
+
+<example xml:id="ex-units-integral-mixed">
+  <statement>
+    <p>
+      Complete each statement below by determining the correct units of the definite integral.
+    </p>
+
+    <ol marker="(a)">
+      <li>
+        If <m>h(t)</m> is measured in degrees Fahrenheit per hour and <m>t</m> is measured in hours, then
+        <m>\displaystyle \int_a^b h(t)\,dt</m> has what units?
+      </li>
+
+      <li>
+        If <m>k(x)</m> is measured in pounds per square foot and <m>x</m> is measured in feet, then
+        <m>\displaystyle \int_a^b k(x)\,dx</m> has what units?
+      </li>
+    </ol>
+  </statement>
+
+  <solution>
+    <p>
+      (a) The units of <m>h(t)\,dt</m> are the product of the units of <m>h(t)</m> and <m>dt</m>. 
+      Since <m>h(t)</m> is in degrees Fahrenheit per hour and <m>dt</m> is in hours, the units of the integral are:
+    </p>
+
+    <me>
+      \text{degrees Fahrenheit per hour} \times \text{hours} = \text{degrees Fahrenheit}.
+    </me>
+
+    <p>
+      (b) The units of <m>k(x)\,dx</m> are the product of the units of <m>k(x)</m> and <m>dx</m>. 
+      Since <m>k(x)</m> is in pounds per square foot and <m>dx</m> is in feet, the units of the integral are:
+    </p>
+
+    <me>
+      \text{pounds per square foot} \times \text{feet} = \text{pounds per foot}.
+    </me>
+    </solution>
+  </example>
+      
+
+
+<example xml:id="ex-mice-race-charlie-frank">
+  <statement>
+    <p>
+      Two mice, Charlie and Frank, race down a straight hallway as far as they can for 30 seconds.
+      Let their velocity functions be denoted by <m>c(t)</m> and <m>f(t)</m> respectively,
+      where velocity is measured in centimeters per second and time <m>t</m>
+      is measured in seconds.
+    </p>
+
+    <p>
+      Open this <url href="https://www.desmos.com/calculator/e8eobb7zep">Desmos interactive graph</url> and 
+      use it to answer the following questions.
+    </p>
+
+    <ol marker="(a)">
+      <li>
+        During the race, what is the maximum velocity of each mouse?
+      </li>
+      <li>
+        Which mouse was ahead <m>8</m> seconds into the race, and by how much?
+      </li>
+      <li>
+        At what time during the race does Charlie first pull ahead of Frank?
+      </li>
+      <li>Who won the race (who is ahead at <m>t=30</m>)?</li>
+    </ol>
+  </statement>
+
+  <solution>
+    <p>(a) To find the maximum velocity of each mouse, look for the highest point on each velocity graph. 
+      The y-coordinate of this point will give the maximum velocity in centimeters per second.
+    </p>
+    <p> For Charlie, the maximum velocity is approximately <m>116</m> cm/s, and for Frank, 
+      the maximum velocity is approximately <m>150</m> cm/s. 
+    </p>
+    <p>  (b) To determine which mouse is ahead at time <m>t=8</m>, we need to compute the accumulated distance 
+      traveled by each mouse up to that time. 
+      The distance traveled by a mouse from time 0 to time 8 can be found by evaluating the definite integral of its velocity function:
+    </p>
+    <me> 
+      \begin{aligned}
+      \text{Distance traveled by Charlie} \amp = \int_0^8 c(t)\,dt \approx 775.5 \text{ cm}  \\
+      \text{Distance traveled by Frank} \amp = \int_0^8 f(t)\,dt \approx 968.5 \text{ cm}
+      \end{aligned}
+    </me>
+
+    <p>
+      (c) To find when Charlie first pulls ahead of Frank, look for the first time <m>b</m> at which
+      <m>\displaystyle \int_0^b c(t)\,dt</m> becomes larger than
+      <m>\displaystyle \int_0^b f(t)\,dt</m>. Using the slider we can find that this occurs at approximately <m>t=15.9</m> seconds.
+    </p>
+
+    <p> (d) To determine who won the race, we need to compare the total distance traveled by each mouse at <m>t=30</m>. 
+      This can be found by evaluating the definite integrals:
+    </p>
+    <me>
+      \begin{aligned}
+      \text{Total distance traveled by Charlie} \amp = \int_0^{30} c(t)\,dt \approx 3096.4 \text{ cm}  \\
+      \text{Total distance traveled by Frank} \amp = \int_0^{30} f(t)\,dt \approx 2003.3 \text{ cm }
+      \end{aligned}
+    </me>
+    <p>   Therefore, Charlie won the race
+    </p> 
+
+
+    
+  </solution>
+</example>
+
+
+
+
+<example xml:id="ex-netchange-fish-population">
+  <statement>
+    <p>
+      A fish population in a lake is <m>2500</m> at time <m>t=0</m>.
+      The population is changing at a rate of
+    </p>
+
+    <me>
+      r(t)=300e^{-t/5}
+    </me>
+
+    <p>
+      fish per month, where <m>t</m> is measured in months.
+      What is the fish population after <m>6</m> months?
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Since <m>r(t)</m> is the rate of change of the population, the total change in population
+      from <m>t=0</m> to <m>t=6</m> is(according to the Net Change Theorem):
+    </p>
+
+    <me>
+      P(6)-P(0)=
+      \displaystyle \int_0^6 r(t)\,dt
+      =
+      \displaystyle \int_0^6 300e^{-t/5}\,dt.
+    </me>
+
+    <p>
+      Now evaluate the integral (by finding the antiderivative).
+    </p>
+
+    <me>
+      \displaystyle \int 300e^{-t/5}\,dt
+      =
+      -1500e^{-t/5}+C.
+    </me>
+
+    <p>
+      Therefore the change in population from <m>t=0</m> to <m>t=6</m> is,
+    </p>
+
+    <me>
+      \begin{aligned}
+      P(6)-P(0) 
+      \amp =\displaystyle \int_0^6 300e^{-t/5}\,dt\\
+      \amp = \left.-1500e^{-t/5}\right|_0^6\\
+      \amp =      -1500e^{-6/5}+1500
+      \end{aligned}
+    </me>
+
+    <p>
+      Thus, the fish population after <m>6</m> months is the initial population plus the change in population:
+    </p>
+
+    <me>
+      \begin{aligned}
+      P(6) \amp =P(0)+\left(-1500e^{-6/5}+1500\right)\\
+      \amp =2500+\left(-1500e^{-6/5}+1500\right)\\
+      \amp =4000-1500e^{-6/5}
+      \end{aligned}
+    </me>
+
+    <p>
+      Using a calculator to approximate,
+    </p>
+
+    <me>
+      P(6)\approx 4000-1500(0.3010)\approx 3548.2.
+    </me>
+
+    <p>
+      So after <m>6</m> months, the fish population is about <m>3548</m>. 
+      If you did not have a calculator (like on an exam), you should leave the answer in the form <m>4000-1500e^{-6/5}</m>.
+    </p>
+  </solution>
+</example>
+
+
+
+
+
     </subsection>
 
        <subsection xml:id="subsec-integral-usub">
@@ -587,6 +1571,68 @@
         </p>
       </solution>
     </example>
+
+    <example xml:id="ex-sub-06">
+      <statement>
+        <p>
+          Consider the function <m>f(x)=\dfrac{1}{x([\ln(x)]^2+1)}</m>
+        </p>
+        <ol marker="(a)">
+          <li>
+            Find an antiderivative of <m>f(x)</m>.
+          </li>
+          <li>
+            Evaluate <m>\displaystyle \int_1^e f(x)\,dx</m>.
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          (a) Let <m>u=\ln(x)</m>. Then <m>du=\frac{1}{x}\,dx</m>.
+        </p>
+        <me>
+          \begin{array}{rcl}
+          \displaystyle \int f(x)\,dx
+          &amp;=&amp;
+          \displaystyle \int \frac{1}{x([\ln(x)]^2+1)}\,dx
+          \\
+          &amp;=&amp;
+          \displaystyle \int \frac{1}{u^2+1}\,du 
+          \\
+          &amp;=&amp;
+          \tan^{-1}(u)+C
+          \\
+          &amp;=&amp;
+          \tan^{-1}(\ln(x))+C
+          \end{array}
+        </me>
+        <p>
+          (b) Now we can evaluate the definite integral:
+        </p>
+        <me>
+          \begin{array}{rcl}
+          \displaystyle \int_1^e f(x)\,dx
+          &amp;=&amp;
+          \displaystyle \left[\tan^{-1}(\ln(x))\right]_1^e
+          \\
+          &amp;=&amp;
+          \tan^{-1}(\ln(e)) - \tan^{-1}(\ln(1))
+          \\
+          &amp;=&amp;
+          \tan^{-1}(1) - \tan^{-1}(0)
+          \\
+          &amp;=&amp;
+          \frac{\pi}{4} - 0
+          \\
+          &amp;=&amp;
+          \frac{\pi}{4}
+          \end{array}
+        </me>
+      </solution>
+    </example>
+
+
+
 
     </subsection>
 
