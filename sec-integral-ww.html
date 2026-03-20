@@ -1229,23 +1229,476 @@ v(t) &amp; 15 &amp; 10 &amp; 7 &amp; 9 &amp; 12
 <div class="autopermalink" data-description="Example 4.7.8: Estimating Distance from a Velocity Table"><a href="#ex-riemann-velocity-table" title="Copy heading and permalink for Example 4.7.8: Estimating Distance from a Velocity Table" aria-label="Copy heading and permalink for Example 4.7.8: Estimating Distance from a Velocity Table">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 4.2 Riemann Sums and Areas"><a href="#subsec-integral-riemannSums" title="Copy heading and permalink for Subsection: Section 4.2 Riemann Sums and Areas" aria-label="Copy heading and permalink for Subsection: Section 4.2 Riemann Sums and Areas">🔗</a></div></section><section class="subsection" id="subsec-integral-defInt"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 4.3 Definite Integrals</span>
 </h3>
-<div class="para" id="subsec-integral-defInt-2">test<div class="autopermalink" data-description="Paragraph"><a href="#subsec-integral-defInt-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="example example-like" id="ex-accum-temp-rate"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-accum-temp-rate-1-1">The graph of the rate of change of temperature <span class="process-math">\(r(t)\)</span> (in degrees Fahrenheit per hour) over a 5-hour period can be viewed at the following link: <a class="external" href="https://www.desmos.com/calculator/hymf4b8vsh" target="_blank">Interactive Desmos Graph</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-accum-temp-rate-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-accum-temp-rate-1-2">Here, <span class="process-math">\(t\)</span> is measured in hours. Positive values of <span class="process-math">\(r(t)\)</span> mean the temperature is increasing, while negative values mean the temperature is decreasing.<div class="autopermalink" data-description="Paragraph"><a href="#ex-accum-temp-rate-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-accum-temp-rate-1-3">Use the interactive graph to explore the accumulation of <span class="process-math">\(r(t)\)</span> and answer the following questions.<div class="autopermalink" data-description="Paragraph"><a href="#ex-accum-temp-rate-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="lower-alpha ol-marker-1" id="ex-accum-temp-rate-1-4">
+<li id="ex-accum-temp-rate-1-4-1">
+<div class="para" id="p-derived-ex-accum-temp-rate-1-4-1">If the temperature is <span class="process-math">\(60^\circ\)</span> at <span class="process-math">\(t=0\text{,}\)</span> what is the temperature after 5 hours?</div>
+<div class="autopermalink" data-description="Item a"><a href="#ex-accum-temp-rate-1-4-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="ex-accum-temp-rate-1-4-2">
+<div class="para" id="p-derived-ex-accum-temp-rate-1-4-2">After how many hours is the temperature highest?</div>
+<div class="autopermalink" data-description="Item b"><a href="#ex-accum-temp-rate-1-4-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="ex-accum-temp-rate-1-4-3">
+<div class="para" id="p-derived-ex-accum-temp-rate-1-4-3">What is the highest temperature reached during the 5-hour period?</div>
+<div class="autopermalink" data-description="Item c"><a href="#ex-accum-temp-rate-1-4-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="solutions"><details id="ex-accum-temp-rate-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-accum-temp-rate-2-1">(a) The temperature after 5 hours is the initial temperature plus the accumulation of the rate of change over the 5-hour period. This can be expressed as:<div class="autopermalink" data-description="Paragraph"><a href="#ex-accum-temp-rate-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection: Section 4.3 Definite Integrals"><a href="#subsec-integral-defInt" title="Copy heading and permalink for Subsection: Section 4.3 Definite Integrals" aria-label="Copy heading and permalink for Subsection: Section 4.3 Definite Integrals">🔗</a></div></section><section class="subsection" id="subsec-integral-FTC"><h3 class="heading hide-type">
+<div class="displaymath process-math" id="ex-accum-temp-rate-2-2">
+\begin{equation*}
+\text{Temperature}\Big|_{t=5} = 60 + \int_0^5 r(t)\,dt
+\end{equation*}
+</div>
+<div class="para" id="ex-accum-temp-rate-2-3">Using the interactive graph, we can estimate the value of the integral. By adjusting the bounds of integration and observing the accumulated area under the curve of <span class="process-math">\(r(t)\text{,}\)</span> we find that:<div class="autopermalink" data-description="Paragraph"><a href="#ex-accum-temp-rate-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-accum-temp-rate-2-4">
+\begin{equation*}
+\int_0^5 r(t)\,dt \approx 5.54.
+\end{equation*}
+</div>
+<div class="para" id="ex-accum-temp-rate-2-5">Therefore, the temperature after 5 hours is approximately:<div class="autopermalink" data-description="Paragraph"><a href="#ex-accum-temp-rate-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-accum-temp-rate-2-6">
+\begin{equation*}
+\text{Temperature}\Big|_{t=5} \approx 60 + 5.54 = 65.54^\circ.
+\end{equation*}
+</div>
+<div class="para" id="ex-accum-temp-rate-2-7">(b) To find when the temperature is highest, we need to look for the time at which the accumulation of <span class="process-math">\(r(t)\)</span> reaches its maximum. This occurs when the integral of <span class="process-math">\(r(t)\)</span> from 0 to <span class="process-math">\(t\)</span> is at its maximum value. By exploring the graph, we can see that the temperature reaches its highest point around <span class="process-math">\(t=4\)</span> hours.<div class="autopermalink" data-description="Paragraph"><a href="#ex-accum-temp-rate-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-accum-temp-rate-2-8">(c) To find the highest temperature reached, we can evaluate the temperature at <span class="process-math">\(t=4\)</span> hours:<div class="autopermalink" data-description="Paragraph"><a href="#ex-accum-temp-rate-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-accum-temp-rate-2-9">
+\begin{equation*}
+\text{Temperature}\Big|_{t=4} = 60 + \int_0^4 r(t)\,dt
+\end{equation*}
+</div>
+<div class="para" id="ex-accum-temp-rate-2-10">Using the interactive graph, we estimate:<div class="autopermalink" data-description="Paragraph"><a href="#ex-accum-temp-rate-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-accum-temp-rate-2-11">
+\begin{equation*}
+\int_0^4 r(t)\,dt \approx 7.28.
+\end{equation*}
+</div>
+<div class="para" id="ex-accum-temp-rate-2-12">Therefore, the highest temperature reached during the 5-hour period is approximately:<div class="autopermalink" data-description="Paragraph"><a href="#ex-accum-temp-rate-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-accum-temp-rate-2-13">
+\begin{equation*}
+\text{Temperature}\Big|_{t=4} \approx 60 + 7.28 = 67.28^\circ.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 4.7.9.1"><a href="#ex-accum-temp-rate-2" title="Copy heading and permalink for Solution 4.7.9.1" aria-label="Copy heading and permalink for Solution 4.7.9.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.7.9"><a href="#ex-accum-temp-rate" title="Copy heading and permalink for Example 4.7.9" aria-label="Copy heading and permalink for Example 4.7.9">🔗</a></div></article><article class="example example-like" id="ex-area-abs-signed"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-area-abs-signed-1-1">Evaluate the integral below by interpreting it in terms of areas. In other words, sketch the graph of the integrand and compute the integral using geometry.<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-abs-signed-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-area-abs-signed-1-2">
+\begin{equation*}
+\displaystyle \int_{-1}^{3} |3x-6|\,dx
+\end{equation*}
+</div>
+<div class="solutions"><details id="ex-area-abs-signed-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-area-abs-signed-2-1">First let’s sketch the function <span class="process-math">\(f(x)=|3x-6|\text{.}\)</span> These absolute value functions are V-shaped, and the vertex occurs where the expression inside the absolute value is zero.<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-abs-signed-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-area-abs-signed-2-2">Setting <span class="process-math">\(3x-6=0\)</span> gives <span class="process-math">\(x=2\text{.}\)</span> So the vertex is at the point <span class="process-math">\((2,0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-area-abs-signed-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-area-abs-signed-2-3">We can also plot the endpoints of the interval: <span class="process-math">\(f(-1)=|3(-1)-6|=9\)</span> and <span class="process-math">\(f(3)=|3(3)-6|=3\text{.}\)</span> and connect these points with straight lines to get the graph of <span class="process-math">\(f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-area-abs-signed-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/latex-image/ex-area-abs-signed-2-4.svg" role="img" class="contained" alt="Graph of the function f(x) = |3x - 6|, which is a V-shaped graph with a vertex at (2, 0), and points at (-1, 9) and (3, 3)."></div>
+<div class="para" id="ex-area-abs-signed-2-5">We can see from the graph that the region under the function forms 2 triangles both above the <span class="process-math">\(x\)</span>-axis. The area of the triangle on the left is:<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-abs-signed-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-area-abs-signed-2-6">
+\begin{equation*}
+\text{Area}_1 = \frac{1}{2} \cdot \text{base} \cdot \text{height} = \frac{1}{2} \cdot 3 \cdot 9 = \frac{27}{2}.
+\end{equation*}
+</div>
+<div class="para" id="ex-area-abs-signed-2-7">The area of the triangle on the right is:<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-abs-signed-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-area-abs-signed-2-8">
+\begin{equation*}
+\text{Area}_2 = \frac{1}{2} \cdot \text{base} \cdot \text{height} = \frac{1}{2} \cdot 1 \cdot 3 = \frac{3}{2}.  
+\end{equation*}
+</div>
+<div class="para" id="ex-area-abs-signed-2-9">Therefore, the value of the integral is the sum of these two areas:<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-abs-signed-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-area-abs-signed-2-10">
+\begin{equation*}
+\int_{-1}^{3} |3x-6|\,dx = \text{Area}_1 + \text{Area}_2 = \frac{27}{2} + \frac{3}{2} = 15.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 4.7.10.1"><a href="#ex-area-abs-signed-2" title="Copy heading and permalink for Solution 4.7.10.1" aria-label="Copy heading and permalink for Solution 4.7.10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.7.10"><a href="#ex-area-abs-signed" title="Copy heading and permalink for Example 4.7.10" aria-label="Copy heading and permalink for Example 4.7.10">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 4.3 Definite Integrals"><a href="#subsec-integral-defInt" title="Copy heading and permalink for Subsection: Section 4.3 Definite Integrals" aria-label="Copy heading and permalink for Subsection: Section 4.3 Definite Integrals">🔗</a></div></section><section class="subsection" id="subsec-integral-FTC"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 4.4 The Fundamental Theorem of Calculus</span>
 </h3>
-<div class="para" id="subsec-integral-FTC-2">test<div class="autopermalink" data-description="Paragraph"><a href="#subsec-integral-FTC-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="example example-like" id="ex-definite-integral-polynomial"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-definite-integral-polynomial-1-1">Evaluate the definite integral:<div class="autopermalink" data-description="Paragraph"><a href="#ex-definite-integral-polynomial-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection: Section 4.4 The Fundamental Theorem of Calculus"><a href="#subsec-integral-FTC" title="Copy heading and permalink for Subsection: Section 4.4 The Fundamental Theorem of Calculus" aria-label="Copy heading and permalink for Subsection: Section 4.4 The Fundamental Theorem of Calculus">🔗</a></div></section><section class="subsection" id="subsec-integral-net"><h3 class="heading hide-type">
+<div class="displaymath process-math" id="ex-definite-integral-polynomial-1-2">
+\begin{equation*}
+\displaystyle \int_{-1}^{3} 2(x+1)^2\,dx
+\end{equation*}
+</div>
+<div class="solutions"><details id="ex-definite-integral-polynomial-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-definite-integral-polynomial-2-1">First expand the integrand:<div class="autopermalink" data-description="Paragraph"><a href="#ex-definite-integral-polynomial-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-definite-integral-polynomial-2-2">
+\begin{equation*}
+2(x+1)^2 = 2(x^2+2x+1) = 2x^2+4x+2.
+\end{equation*}
+</div>
+<div class="para" id="ex-definite-integral-polynomial-2-3">Now apply the Fundamental Theorem of Calculus:<div class="autopermalink" data-description="Paragraph"><a href="#ex-definite-integral-polynomial-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-definite-integral-polynomial-2-4">
+\begin{equation*}
+\begin{aligned}
+\displaystyle \int_{-1}^{3} 2(x+1)^2\,dx
+&amp;= \displaystyle \int_{-1}^{3} (2x^2+4x+2)\,dx \\
+&amp;= \left[\frac{2x^3}{3} + \frac{4x^2}{2} + 2x \right]_{-1}^{3}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-definite-integral-polynomial-2-5">Evaluate at the bounds:<div class="autopermalink" data-description="Paragraph"><a href="#ex-definite-integral-polynomial-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-definite-integral-polynomial-2-6">
+\begin{equation*}
+\begin{aligned}
+&amp;= \left( \frac{2(3)^3}{3} + 2(3)^2 + 2(3) \right)
+- \left( \frac{2(-1)^3}{3} + 2(-1)^2 + 2(-1) \right) \\
+&amp;= (18 + 18 + 6) - \left( -\frac{2}{3} + 2 - 2 \right) \\
+&amp;= 42 - \left( -\frac{2}{3} \right) \\
+&amp;= \frac{128}{3}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-definite-integral-polynomial-2-7">Therefore,<div class="autopermalink" data-description="Paragraph"><a href="#ex-definite-integral-polynomial-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-definite-integral-polynomial-2-8">
+\begin{equation*}
+\displaystyle \int_{-1}^{3} 2(x+1)^2\,dx = \frac{128}{3}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 4.7.11.1"><a href="#ex-definite-integral-polynomial-2" title="Copy heading and permalink for Solution 4.7.11.1" aria-label="Copy heading and permalink for Solution 4.7.11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.7.11"><a href="#ex-definite-integral-polynomial" title="Copy heading and permalink for Example 4.7.11" aria-label="Copy heading and permalink for Example 4.7.11">🔗</a></div></article><article class="example example-like" id="ex-area-parabola"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-area-parabola-1-1">Use a definite integral to find the area of the region that lies under the curve <span class="process-math">\(y = 12 - 4x^2\)</span> and above the <span class="process-math">\(x\)</span>-axis.<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-parabola-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-area-parabola-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-area-parabola-2-1">First determine where the curve intersects the <span class="process-math">\(x\)</span>-axis by solving:<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-parabola-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-area-parabola-2-2">
+\begin{equation*}
+12 - 4x^2 = 0.
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="ex-area-parabola-2-3">
+\begin{equation*}
+x^2 = 3 \quad \Rightarrow \quad x = \pm \sqrt{3}.
+\end{equation*}
+</div>
+<div class="para" id="ex-area-parabola-2-4">The curve is above the <span class="process-math">\(x\)</span>-axis on the interval <span class="process-math">\((-\sqrt{3}, \sqrt{3})\text{,}\)</span> so the area is given by:<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-parabola-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-area-parabola-2-5">
+\begin{equation*}
+\displaystyle \int_{-\sqrt{3}}^{\sqrt{3}} (12 - 4x^2)\,dx.
+\end{equation*}
+</div>
+<div class="para" id="ex-area-parabola-2-6">Evaluate the integral and simplify:<div class="autopermalink" data-description="Paragraph"><a href="#ex-area-parabola-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-area-parabola-2-7">
+\begin{equation*}
+\begin{aligned}
+&amp; 
+\displaystyle \int_{-\sqrt{3}}^{\sqrt{3}} (12 - 4x^2)\,dx \\
+&amp;= \left[ 12x - \frac{4x^3}{3} \right]_{-\sqrt{3}}^{\sqrt{3}} \\
+&amp;= \left( 12\sqrt{3} - \frac{4(\sqrt{3})^3}{3} \right)
+- \left( -12\sqrt{3} - \frac{4(-\sqrt{3})^3}{3} \right).\\
+&amp;= \left( 12\sqrt{3} - \frac{4 \cdot 3\sqrt{3}}{3} \right)
+- \left( -12\sqrt{3} + \frac{4 \cdot 3\sqrt{3}}{3} \right) \\
+&amp;= (12\sqrt{3} - 4\sqrt{3}) - (-12\sqrt{3} + 4\sqrt{3}) \\
+&amp;= 8\sqrt{3} - (-8\sqrt{3}) \\
+&amp;= 16\sqrt{3}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-area-parabola-2-8">Therefore, the area of the region is <span class="process-math">\(16\sqrt{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-area-parabola-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.7.12.1"><a href="#ex-area-parabola-2" title="Copy heading and permalink for Solution 4.7.12.1" aria-label="Copy heading and permalink for Solution 4.7.12.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.7.12"><a href="#ex-area-parabola" title="Copy heading and permalink for Example 4.7.12" aria-label="Copy heading and permalink for Example 4.7.12">🔗</a></div></article><article class="example example-like" id="ex-abs-value-integral"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-abs-value-integral-1-1">Evaluate the definite integral:<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-integral-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-abs-value-integral-1-2">
+\begin{equation*}
+\displaystyle \int_{-2}^{1} |x+1|\,dx
+\end{equation*}
+</div>
+<div class="solutions"><details id="ex-abs-value-integral-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-abs-value-integral-2-1">We saw in <a href="sec-integral-ww.html#ex-area-abs-signed" class="xref" data-knowl="./knowl/xref/ex-area-abs-signed.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.7.10">a previous example 4.7.10</a> that this can also be solved by using a geometric approach, but here we will evaluate the integral using the definition of the absolute value function and the Fundamental Theorem of Calculus. Of course if such a problem appears on an exam and it does not specify a method, you can choose either approach.<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-integral-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-abs-value-integral-2-2">First determine where the expression inside the absolute value is zero:<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-integral-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-area-abs-signed.html" id="ex-abs-value-integral-2-3">
+\begin{equation*}
+x+1=0 \quad \Rightarrow \quad x=-1.
+\end{equation*}
+</div>
+<div class="para" id="ex-abs-value-integral-2-4">So we write <span class="process-math">\(|x+1|\)</span> as a piecewise function:<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-integral-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-area-abs-signed.html" id="ex-abs-value-integral-2-5">
+\begin{equation*}
+|x+1|=
+\begin{cases}
+-(x+1), &amp; x &lt; -1, \\
+x+1, &amp; x \ge -1.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="ex-abs-value-integral-2-6">Split the integral at <span class="process-math">\(x=-1\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-integral-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-area-abs-signed.html" id="ex-abs-value-integral-2-7">
+\begin{equation*}
+\displaystyle \int_{-2}^{1} |x+1|\,dx
+= \displaystyle \int_{-2}^{-1} -(x+1)\,dx
++ \displaystyle \int_{-1}^{1} (x+1)\,dx.
+\end{equation*}
+</div>
+<div class="para" id="ex-abs-value-integral-2-8">Evaluate each integral:<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-integral-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-area-abs-signed.html" id="ex-abs-value-integral-2-9">
+\begin{equation*}
+\begin{aligned}
+\displaystyle \int_{-2}^{-1} -(x+1)\,dx
+&amp;= \left[-\left(\frac{x^2}{2}+x\right)\right]_{-2}^{-1}, \\
+\displaystyle \int_{-1}^{1} (x+1)\,dx
+&amp;= \left[\frac{x^2}{2}+x\right]_{-1}^{1}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-abs-value-integral-2-10">Compute the values:<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-integral-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-area-abs-signed.html" id="ex-abs-value-integral-2-11">
+\begin{equation*}
+\begin{aligned}
+\displaystyle \int_{-2}^{-1} -(x+1)\,dx
+&amp;= -\left[\left(\frac{(-1)^2}{2}+(-1)\right)
+- \left(\frac{(-2)^2}{2}+(-2)\right)\right] \\
+&amp;= -\left[\left(\frac{1}{2}-1\right) - (2-2)\right]
+= -\left(-\frac{1}{2}\right)
+= \frac{1}{2},\\
+\displaystyle \int_{-1}^{1} (x+1)\,dx
+&amp;= \left[\left(\frac{1}{2}+1\right)
+- \left(\frac{1}{2}-1\right)\right] \\
+&amp;= \frac{3}{2} - \left(-\frac{1}{2}\right)
+= 2.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-abs-value-integral-2-12">Add the results:<div class="autopermalink" data-description="Paragraph"><a href="#ex-abs-value-integral-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-area-abs-signed.html" id="ex-abs-value-integral-2-13">
+\begin{equation*}
+\displaystyle \int_{-2}^{1} |x+1|\,dx
+= \frac{1}{2} + 2 = \frac{5}{2}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 4.7.13.1"><a href="#ex-abs-value-integral-2" title="Copy heading and permalink for Solution 4.7.13.1" aria-label="Copy heading and permalink for Solution 4.7.13.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.7.13"><a href="#ex-abs-value-integral" title="Copy heading and permalink for Example 4.7.13" aria-label="Copy heading and permalink for Example 4.7.13">🔗</a></div></article><article class="example example-like" id="ex-definite-integral-trig"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-definite-integral-trig-1-1">Evaluate the integral <span class="process-math">\(\displaystyle \int_{0}^{\pi/12} \sec(3x)\tan(3x) \,dx\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-definite-integral-trig-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-definite-integral-trig-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-definite-integral-trig-2-1">Thinking back to <a href="sec-integral-antiderivatives.html#thm-antiderivative-rules" class="xref" data-knowl="./knowl/xref/thm-antiderivative-rules.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.6: Basic Antiderivative Rules">our antiderivative rules 4.1.6</a>, we know that the derivative of <span class="process-math">\(\sec(3x)\)</span> is <span class="process-math">\(3\sec(3x)\tan(3x)\text{.}\)</span> So we can use the Fundamental Theorem of Calculus to evaluate the integral:<div class="autopermalink" data-description="Paragraph"><a href="#ex-definite-integral-trig-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-antiderivative-rules.html" id="ex-definite-integral-trig-2-2">
+\begin{equation*}
+\begin{aligned}
+\displaystyle \int_{0}^{\pi/12} \sec(3x)\tan(3x) \,dx
+&amp;= \left[\frac{\sec(3x)}{3}\right]_{0}^{\pi/12} \\
+&amp;= \frac{\sec(\pi/4)}{3} - \frac{\sec(0)}{3} \\
+&amp;= \frac{\sqrt{2}}{3} - \frac{1}{3} \\
+&amp;= \frac{\sqrt{2}-1}{3}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 4.7.14.1"><a href="#ex-definite-integral-trig-2" title="Copy heading and permalink for Solution 4.7.14.1" aria-label="Copy heading and permalink for Solution 4.7.14.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.7.14"><a href="#ex-definite-integral-trig" title="Copy heading and permalink for Example 4.7.14" aria-label="Copy heading and permalink for Example 4.7.14">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 4.4 The Fundamental Theorem of Calculus"><a href="#subsec-integral-FTC" title="Copy heading and permalink for Subsection: Section 4.4 The Fundamental Theorem of Calculus" aria-label="Copy heading and permalink for Subsection: Section 4.4 The Fundamental Theorem of Calculus">🔗</a></div></section><section class="subsection" id="subsec-integral-net"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 4.5 Net Change Theorem and Indefinite Integrals</span>
 </h3>
-<div class="para" id="subsec-integral-net-2">test<div class="autopermalink" data-description="Paragraph"><a href="#subsec-integral-net-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="example example-like" id="ex-units-integral-mixed"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-units-integral-mixed-1-1">Complete each statement below by determining the correct units of the definite integral.<div class="autopermalink" data-description="Paragraph"><a href="#ex-units-integral-mixed-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="lower-alpha ol-marker-1" id="ex-units-integral-mixed-1-2">
+<li id="ex-units-integral-mixed-1-2-1">
+<div class="para" id="p-derived-ex-units-integral-mixed-1-2-1">If <span class="process-math">\(h(t)\)</span> is measured in degrees Fahrenheit per hour and <span class="process-math">\(t\)</span> is measured in hours, then <span class="process-math">\(\displaystyle \int_a^b h(t)\,dt\)</span> has what units?</div>
+<div class="autopermalink" data-description="Item a"><a href="#ex-units-integral-mixed-1-2-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="ex-units-integral-mixed-1-2-2">
+<div class="para" id="p-derived-ex-units-integral-mixed-1-2-2">If <span class="process-math">\(k(x)\)</span> is measured in pounds per square foot and <span class="process-math">\(x\)</span> is measured in feet, then <span class="process-math">\(\displaystyle \int_a^b k(x)\,dx\)</span> has what units?</div>
+<div class="autopermalink" data-description="Item b"><a href="#ex-units-integral-mixed-1-2-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+</ol>
+<div class="solutions"><details id="ex-units-integral-mixed-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-units-integral-mixed-2-1">(a) The units of <span class="process-math">\(h(t)\,dt\)</span> are the product of the units of <span class="process-math">\(h(t)\)</span> and <span class="process-math">\(dt\text{.}\)</span> Since <span class="process-math">\(h(t)\)</span> is in degrees Fahrenheit per hour and <span class="process-math">\(dt\)</span> is in hours, the units of the integral are:<div class="autopermalink" data-description="Paragraph"><a href="#ex-units-integral-mixed-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection: Section 4.5 Net Change Theorem and Indefinite Integrals"><a href="#subsec-integral-net" title="Copy heading and permalink for Subsection: Section 4.5 Net Change Theorem and Indefinite Integrals" aria-label="Copy heading and permalink for Subsection: Section 4.5 Net Change Theorem and Indefinite Integrals">🔗</a></div></section><section class="subsection" id="subsec-integral-usub"><h3 class="heading hide-type">
+<div class="displaymath process-math" id="ex-units-integral-mixed-2-2">
+\begin{equation*}
+\text{degrees Fahrenheit per hour} \times \text{hours} = \text{degrees Fahrenheit}.
+\end{equation*}
+</div>
+<div class="para" id="ex-units-integral-mixed-2-3">(b) The units of <span class="process-math">\(k(x)\,dx\)</span> are the product of the units of <span class="process-math">\(k(x)\)</span> and <span class="process-math">\(dx\text{.}\)</span> Since <span class="process-math">\(k(x)\)</span> is in pounds per square foot and <span class="process-math">\(dx\)</span> is in feet, the units of the integral are:<div class="autopermalink" data-description="Paragraph"><a href="#ex-units-integral-mixed-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-units-integral-mixed-2-4">
+\begin{equation*}
+\text{pounds per square foot} \times \text{feet} = \text{pounds per foot}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 4.7.15.1"><a href="#ex-units-integral-mixed-2" title="Copy heading and permalink for Solution 4.7.15.1" aria-label="Copy heading and permalink for Solution 4.7.15.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.7.15"><a href="#ex-units-integral-mixed" title="Copy heading and permalink for Example 4.7.15" aria-label="Copy heading and permalink for Example 4.7.15">🔗</a></div></article><article class="example example-like" id="ex-mice-race-charlie-frank"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-mice-race-charlie-frank-1-1">Two mice, Charlie and Frank, race down a straight hallway as far as they can for 30 seconds. Let their velocity functions be denoted by <span class="process-math">\(c(t)\)</span> and <span class="process-math">\(f(t)\)</span> respectively, where velocity is measured in centimeters per second and time <span class="process-math">\(t\)</span> is measured in seconds.<div class="autopermalink" data-description="Paragraph"><a href="#ex-mice-race-charlie-frank-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-mice-race-charlie-frank-1-2">Open this <a class="external" href="https://www.desmos.com/calculator/e8eobb7zep" target="_blank">Desmos interactive graph</a> and use it to answer the following questions.<div class="autopermalink" data-description="Paragraph"><a href="#ex-mice-race-charlie-frank-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="lower-alpha ol-marker-1" id="ex-mice-race-charlie-frank-1-3">
+<li id="ex-mice-race-charlie-frank-1-3-1">
+<div class="para" id="p-derived-ex-mice-race-charlie-frank-1-3-1">During the race, what is the maximum velocity of each mouse?</div>
+<div class="autopermalink" data-description="Item a"><a href="#ex-mice-race-charlie-frank-1-3-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="ex-mice-race-charlie-frank-1-3-2">
+<div class="para" id="p-derived-ex-mice-race-charlie-frank-1-3-2">Which mouse was ahead <span class="process-math">\(8\)</span> seconds into the race, and by how much?</div>
+<div class="autopermalink" data-description="Item b"><a href="#ex-mice-race-charlie-frank-1-3-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="ex-mice-race-charlie-frank-1-3-3">
+<div class="para" id="p-derived-ex-mice-race-charlie-frank-1-3-3">At what time during the race does Charlie first pull ahead of Frank?</div>
+<div class="autopermalink" data-description="Item c"><a href="#ex-mice-race-charlie-frank-1-3-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="ex-mice-race-charlie-frank-1-3-4">
+<div class="para" id="p-derived-ex-mice-race-charlie-frank-1-3-4">Who won the race (who is ahead at <span class="process-math">\(t=30\)</span>)?</div>
+<div class="autopermalink" data-description="Item d"><a href="#ex-mice-race-charlie-frank-1-3-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="solutions"><details id="ex-mice-race-charlie-frank-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-mice-race-charlie-frank-2-1">(a) To find the maximum velocity of each mouse, look for the highest point on each velocity graph. The y-coordinate of this point will give the maximum velocity in centimeters per second.<div class="autopermalink" data-description="Paragraph"><a href="#ex-mice-race-charlie-frank-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-mice-race-charlie-frank-2-2">For Charlie, the maximum velocity is approximately <span class="process-math">\(116\)</span> cm/s, and for Frank, the maximum velocity is approximately <span class="process-math">\(150\)</span> cm/s.<div class="autopermalink" data-description="Paragraph"><a href="#ex-mice-race-charlie-frank-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-mice-race-charlie-frank-2-3">(b) To determine which mouse is ahead at time <span class="process-math">\(t=8\text{,}\)</span> we need to compute the accumulated distance traveled by each mouse up to that time. The distance traveled by a mouse from time 0 to time 8 can be found by evaluating the definite integral of its velocity function:<div class="autopermalink" data-description="Paragraph"><a href="#ex-mice-race-charlie-frank-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-mice-race-charlie-frank-2-4">
+\begin{equation*}
+\begin{aligned}
+\text{Distance traveled by Charlie} \amp = \int_0^8 c(t)\,dt \approx 775.5 \text{ cm}  \\
+\text{Distance traveled by Frank} \amp = \int_0^8 f(t)\,dt \approx 968.5 \text{ cm}
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-mice-race-charlie-frank-2-5">(c) To find when Charlie first pulls ahead of Frank, look for the first time <span class="process-math">\(b\)</span> at which <span class="process-math">\(\displaystyle \int_0^b c(t)\,dt\)</span> becomes larger than <span class="process-math">\(\displaystyle \int_0^b f(t)\,dt\text{.}\)</span> Using the slider we can find that this occurs at approximately <span class="process-math">\(t=15.9\)</span> seconds.<div class="autopermalink" data-description="Paragraph"><a href="#ex-mice-race-charlie-frank-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-mice-race-charlie-frank-2-6">(d) To determine who won the race, we need to compare the total distance traveled by each mouse at <span class="process-math">\(t=30\text{.}\)</span> This can be found by evaluating the definite integrals:<div class="autopermalink" data-description="Paragraph"><a href="#ex-mice-race-charlie-frank-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-mice-race-charlie-frank-2-7">
+\begin{equation*}
+\begin{aligned}
+\text{Total distance traveled by Charlie} \amp = \int_0^{30} c(t)\,dt \approx 3096.4 \text{ cm}  \\
+\text{Total distance traveled by Frank} \amp = \int_0^{30} f(t)\,dt \approx 2003.3 \text{ cm }
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-mice-race-charlie-frank-2-8">Therefore, Charlie won the race<div class="autopermalink" data-description="Paragraph"><a href="#ex-mice-race-charlie-frank-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.7.16.1"><a href="#ex-mice-race-charlie-frank-2" title="Copy heading and permalink for Solution 4.7.16.1" aria-label="Copy heading and permalink for Solution 4.7.16.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.7.16"><a href="#ex-mice-race-charlie-frank" title="Copy heading and permalink for Example 4.7.16" aria-label="Copy heading and permalink for Example 4.7.16">🔗</a></div></article><article class="example example-like" id="ex-netchange-fish-population"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-netchange-fish-population-1-1">A fish population in a lake is <span class="process-math">\(2500\)</span> at time <span class="process-math">\(t=0\text{.}\)</span> The population is changing at a rate of<div class="autopermalink" data-description="Paragraph"><a href="#ex-netchange-fish-population-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-netchange-fish-population-1-2">
+\begin{equation*}
+r(t)=300e^{-t/5}
+\end{equation*}
+</div>
+<div class="para" id="ex-netchange-fish-population-1-3">fish per month, where <span class="process-math">\(t\)</span> is measured in months. What is the fish population after <span class="process-math">\(6\)</span> months?<div class="autopermalink" data-description="Paragraph"><a href="#ex-netchange-fish-population-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-netchange-fish-population-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-netchange-fish-population-2-1">Since <span class="process-math">\(r(t)\)</span> is the rate of change of the population, the total change in population from <span class="process-math">\(t=0\)</span> to <span class="process-math">\(t=6\)</span> is(according to the Net Change Theorem):<div class="autopermalink" data-description="Paragraph"><a href="#ex-netchange-fish-population-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-netchange-fish-population-2-2">
+\begin{equation*}
+P(6)-P(0)=
+\displaystyle \int_0^6 r(t)\,dt
+=
+\displaystyle \int_0^6 300e^{-t/5}\,dt.
+\end{equation*}
+</div>
+<div class="para" id="ex-netchange-fish-population-2-3">Now evaluate the integral (by finding the antiderivative).<div class="autopermalink" data-description="Paragraph"><a href="#ex-netchange-fish-population-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-netchange-fish-population-2-4">
+\begin{equation*}
+\displaystyle \int 300e^{-t/5}\,dt
+=
+-1500e^{-t/5}+C.
+\end{equation*}
+</div>
+<div class="para" id="ex-netchange-fish-population-2-5">Therefore the change in population from <span class="process-math">\(t=0\)</span> to <span class="process-math">\(t=6\)</span> is,<div class="autopermalink" data-description="Paragraph"><a href="#ex-netchange-fish-population-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-netchange-fish-population-2-6">
+\begin{equation*}
+\begin{aligned}
+P(6)-P(0) 
+\amp =\displaystyle \int_0^6 300e^{-t/5}\,dt\\
+\amp = \left.-1500e^{-t/5}\right|_0^6\\
+\amp =      -1500e^{-6/5}+1500
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-netchange-fish-population-2-7">Thus, the fish population after <span class="process-math">\(6\)</span> months is the initial population plus the change in population:<div class="autopermalink" data-description="Paragraph"><a href="#ex-netchange-fish-population-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-netchange-fish-population-2-8">
+\begin{equation*}
+\begin{aligned}
+P(6) \amp =P(0)+\left(-1500e^{-6/5}+1500\right)\\
+\amp =2500+\left(-1500e^{-6/5}+1500\right)\\
+\amp =4000-1500e^{-6/5}
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-netchange-fish-population-2-9">Using a calculator to approximate,<div class="autopermalink" data-description="Paragraph"><a href="#ex-netchange-fish-population-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-netchange-fish-population-2-10">
+\begin{equation*}
+P(6)\approx 4000-1500(0.3010)\approx 3548.2.
+\end{equation*}
+</div>
+<div class="para" id="ex-netchange-fish-population-2-11">So after <span class="process-math">\(6\)</span> months, the fish population is about <span class="process-math">\(3548\text{.}\)</span> If you did not have a calculator (like on an exam), you should leave the answer in the form <span class="process-math">\(4000-1500e^{-6/5}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-netchange-fish-population-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.7.17.1"><a href="#ex-netchange-fish-population-2" title="Copy heading and permalink for Solution 4.7.17.1" aria-label="Copy heading and permalink for Solution 4.7.17.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.7.17"><a href="#ex-netchange-fish-population" title="Copy heading and permalink for Example 4.7.17" aria-label="Copy heading and permalink for Example 4.7.17">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 4.5 Net Change Theorem and Indefinite Integrals"><a href="#subsec-integral-net" title="Copy heading and permalink for Subsection: Section 4.5 Net Change Theorem and Indefinite Integrals" aria-label="Copy heading and permalink for Subsection: Section 4.5 Net Change Theorem and Indefinite Integrals">🔗</a></div></section><section class="subsection" id="subsec-integral-usub"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Section 4.6 Substitution Rule for Integration</span>
 </h3>
 <article class="example example-like" id="ex-sub-02"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-sub-02-1-1">Evaluate <span class="process-math">\(\displaystyle \int x\sqrt{3x+4}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-sub-02-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -1270,10 +1723,10 @@ v(t) &amp; 15 &amp; 10 &amp; 7 &amp; 9 &amp; 12
 \end{array}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Solution 4.7.9.1"><a href="#ex-sub-02-2" title="Copy heading and permalink for Solution 4.7.9.1" aria-label="Copy heading and permalink for Solution 4.7.9.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.7.18.1"><a href="#ex-sub-02-2" title="Copy heading and permalink for Solution 4.7.18.1" aria-label="Copy heading and permalink for Solution 4.7.18.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.7.9"><a href="#ex-sub-02" title="Copy heading and permalink for Example 4.7.9" aria-label="Copy heading and permalink for Example 4.7.9">🔗</a></div></article><article class="example example-like" id="ex-sub-04"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 4.7.18"><a href="#ex-sub-02" title="Copy heading and permalink for Example 4.7.18" aria-label="Copy heading and permalink for Example 4.7.18">🔗</a></div></article><article class="example example-like" id="ex-sub-04"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-sub-04-1-1">Evaluate <span class="process-math">\(\displaystyle \int \frac{\sin(x)}{(1+\cos(x))^2}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-sub-04-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -1297,10 +1750,10 @@ v(t) &amp; 15 &amp; 10 &amp; 7 &amp; 9 &amp; 12
 \end{array}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Solution 4.7.10.1"><a href="#ex-sub-04-2" title="Copy heading and permalink for Solution 4.7.10.1" aria-label="Copy heading and permalink for Solution 4.7.10.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.7.19.1"><a href="#ex-sub-04-2" title="Copy heading and permalink for Solution 4.7.19.1" aria-label="Copy heading and permalink for Solution 4.7.19.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.7.10"><a href="#ex-sub-04" title="Copy heading and permalink for Example 4.7.10" aria-label="Copy heading and permalink for Example 4.7.10">🔗</a></div></article><article class="example example-like" id="ex-sub-05"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Example 4.7.19"><a href="#ex-sub-04" title="Copy heading and permalink for Example 4.7.19" aria-label="Copy heading and permalink for Example 4.7.19">🔗</a></div></article><article class="example example-like" id="ex-sub-05"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex-sub-05-1-1">Evaluate <span class="process-math">\(\displaystyle \int \sec^2(x)\tan(x)\,dx\)</span> in two ways, and explain why the answers agree.<div class="autopermalink" data-description="Paragraph"><a href="#ex-sub-05-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -1337,9 +1790,71 @@ v(t) &amp; 15 &amp; 10 &amp; 7 &amp; 9 &amp; 12
 </div>
 <div class="para" id="ex-sub-05-2-5">These differ by a constant because <span class="process-math">\(\sec^2(x)=\tan^2(x)+1\text{.}\)</span> So <span class="process-math">\(\tfrac12\sec^2(x)=\tfrac12\tan^2(x)+\tfrac12\text{,}\)</span> meaning the two antiderivative families are the same.<div class="autopermalink" data-description="Paragraph"><a href="#ex-sub-05-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.7.11.1"><a href="#ex-sub-05-2" title="Copy heading and permalink for Solution 4.7.11.1" aria-label="Copy heading and permalink for Solution 4.7.11.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.7.20.1"><a href="#ex-sub-05-2" title="Copy heading and permalink for Solution 4.7.20.1" aria-label="Copy heading and permalink for Solution 4.7.20.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.7.11"><a href="#ex-sub-05" title="Copy heading and permalink for Example 4.7.11" aria-label="Copy heading and permalink for Example 4.7.11">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 4.6 Substitution Rule for Integration"><a href="#subsec-integral-usub" title="Copy heading and permalink for Subsection: Section 4.6 Substitution Rule for Integration" aria-label="Copy heading and permalink for Subsection: Section 4.6 Substitution Rule for Integration">🔗</a></div></section><div class="autopermalink" data-description="Section 4.7: Additional Worked-Out Problems"><a href="#sec-integral-ww" title="Copy heading and permalink for Section 4.7: Additional Worked-Out Problems" aria-label="Copy heading and permalink for Section 4.7: Additional Worked-Out Problems">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Example 4.7.20"><a href="#ex-sub-05" title="Copy heading and permalink for Example 4.7.20" aria-label="Copy heading and permalink for Example 4.7.20">🔗</a></div></article><article class="example example-like" id="ex-sub-06"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.7.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="ex-sub-06-1-1">Consider the function <span class="process-math">\(f(x)=\dfrac{1}{x([\ln(x)]^2+1)}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-sub-06-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="lower-alpha ol-marker-1" id="ex-sub-06-1-2">
+<li id="ex-sub-06-1-2-1">
+<div class="para" id="p-derived-ex-sub-06-1-2-1">Find an antiderivative of <span class="process-math">\(f(x)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#ex-sub-06-1-2-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="ex-sub-06-1-2-2">
+<div class="para" id="p-derived-ex-sub-06-1-2-2">Evaluate <span class="process-math">\(\displaystyle \int_1^e f(x)\,dx\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#ex-sub-06-1-2-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+</ol>
+<div class="solutions"><details id="ex-sub-06-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-sub-06-2-1">(a) Let <span class="process-math">\(u=\ln(x)\text{.}\)</span> Then <span class="process-math">\(du=\frac{1}{x}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-sub-06-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-sub-06-2-2">
+\begin{equation*}
+\begin{array}{rcl}
+\displaystyle \int f(x)\,dx
+&amp;=&amp;
+\displaystyle \int \frac{1}{x([\ln(x)]^2+1)}\,dx
+\\
+&amp;=&amp;
+\displaystyle \int \frac{1}{u^2+1}\,du 
+\\
+&amp;=&amp;
+\tan^{-1}(u)+C
+\\
+&amp;=&amp;
+\tan^{-1}(\ln(x))+C
+\end{array}
+\end{equation*}
+</div>
+<div class="para" id="ex-sub-06-2-3">(b) Now we can evaluate the definite integral:<div class="autopermalink" data-description="Paragraph"><a href="#ex-sub-06-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-sub-06-2-4">
+\begin{equation*}
+\begin{array}{rcl}
+\displaystyle \int_1^e f(x)\,dx
+&amp;=&amp;
+\displaystyle \left[\tan^{-1}(\ln(x))\right]_1^e
+\\
+&amp;=&amp;
+\tan^{-1}(\ln(e)) - \tan^{-1}(\ln(1))
+\\
+&amp;=&amp;
+\tan^{-1}(1) - \tan^{-1}(0)
+\\
+&amp;=&amp;
+\frac{\pi}{4} - 0
+\\
+&amp;=&amp;
+\frac{\pi}{4}
+\end{array}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 4.7.21.1"><a href="#ex-sub-06-2" title="Copy heading and permalink for Solution 4.7.21.1" aria-label="Copy heading and permalink for Solution 4.7.21.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.7.21"><a href="#ex-sub-06" title="Copy heading and permalink for Example 4.7.21" aria-label="Copy heading and permalink for Example 4.7.21">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Section 4.6 Substitution Rule for Integration"><a href="#subsec-integral-usub" title="Copy heading and permalink for Subsection: Section 4.6 Substitution Rule for Integration" aria-label="Copy heading and permalink for Subsection: Section 4.6 Substitution Rule for Integration">🔗</a></div></section><div class="autopermalink" data-description="Section 4.7: Additional Worked-Out Problems"><a href="#sec-integral-ww" title="Copy heading and permalink for Section 4.7: Additional Worked-Out Problems" aria-label="Copy heading and permalink for Section 4.7: Additional Worked-Out Problems">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-integral-usub.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
