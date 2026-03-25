@@ -237,7 +237,7 @@ Graph of a function that increases without bound as x increases. The curve conti
     </me>
 
     <p>
-      Since <m>\lim_{x\to\infty} \frac34 x = \infty</m>, we conclude that
+      Since <m>\displaystyle\lim_{x\to\infty} \frac34 x = \infty</m>, we conclude that
     </p>
 
     <me>
