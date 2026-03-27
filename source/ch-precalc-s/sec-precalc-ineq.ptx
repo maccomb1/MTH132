@@ -38,18 +38,13 @@
           <li>Rewrite the inequality so that one side is zero.</li>
           <li>Find all values of <m>x</m> where the expression equals zero or is undefined.</li>
           <li>Use these values to divide the number line into intervals.</li>
-          <li>Choose one test point from each interval.</li>
-          <li>Determine which intervals satisfy the inequality.</li>
+          <li>Choose one test point from each interval and determine the sign of the expression.</li>
+          <li>State your conclusion: Determine which intervals satisfy the inequality.</li>
         </ol>
       </statement>
     </algorithm>
 
-    <remark>
-      <p>
-        The test point method works best when the expression is factored.
-        This is why factoring is a critical prerequisite for inequalities.
-      </p>
-    </remark>
+
   </subsection>
 
   <!-- ======================================================= -->
@@ -57,88 +52,209 @@
     <title>Several Examples</title>
     <p> Now let's see this modeled in several examples!</p>
     
-    <example>
+    <example xml:id="ex-ineq-linear">
     <title>Linear Example</title>      
       <statement>
         <p>
-          Solve <m>2x - 4 &gt; 0</m>.
+          Solve <m>2x - 4 &gt; 0</m>. Write your answer in interval notation.
         </p>
       </statement>
       <solution>
-        <p>
-          Step 1: Identify where the expression equals zero.
+        <p> 
+          <alert>Step 1:</alert> Rewrite the inequality so one side is zero (already done).
         </p>
+        <p>
+          <alert>Step 2:</alert> Identify where the expression equals zero or is undefined.
         <me>
           2x - 4 = 0 \quad \Rightarrow \quad x = 2.
         </me>
+        There are no values of <m>x</m> where the expression is undefined.
+        </p>
+        
+        <p>
+          <alert>Step 3:</alert> Use <m>x = 2</m> to divide the number line into intervals <m>(-\infty, 2)</m> and <m>(2, \infty)</m>. 
+          Visually this looks like:
+        </p>
+
+
+          <image width="80%">
+  <shortdescription>
+    Number line divided at x equals 2.
+  </shortdescription>
+    <latex-image><![CDATA[
+	\begin{tikzpicture}
+		\draw[<->, thick] (-2,0)-- (2,0) node {$|$} node[below, yshift=-4pt] {$2$}-- (6,0) node[right] {$x$};
+	\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
+
+
 
         <p>
-          Step 2: Use <m>x = 2</m> to divide the number line into intervals.
+          <alert>Step 4:</alert> Choose a test point from each interval and determine the sign of the expression.
+        </p>
+        <ul><li>
+          For the interval <m>(-\infty, 2)</m>, we can test <m>x = 0</m>. Plugging this into 
+          our expression gives <m>2(0) - 4 = -4</m>, which is negative.
+        </li>
+        <li>
+          For the interval <m>(2, \infty)</m>, we can test <m>x = 3</m>. Plugging this into
+          our expression gives <m>2(3) - 4 = 2</m>, which is positive.
+        </li></ul>
+
+          <p>Visually, this looks like:</p>
+
+                    <image width="80%">
+  <shortdescription>
+    Number line divided at x equals 2. The interval to the left of 2 is labeled negative, 
+    while the interval to the right of 2 is labeled positive. Test points at x equals 0 and x equals 3 are marked with their 
+    respective signs.
+  </shortdescription>
+    <latex-image><![CDATA[
+	\begin{tikzpicture}
+		\draw[<->, thick] (-2,0)-- (2,0) node {$|$} node[below, yshift=-4pt] {$2$}-- (6,0) node[right] {$x$};
+		\draw (0,0) 
+		node[above, yshift=4pt] {$(-)$}
+		node[below, yshift=-4pt] {$0$};
+		\draw (4,0) 
+		node[above, yshift=4pt] {$(+)$}
+		node[below, yshift=-4pt] {$3$};
+	\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+        
+
+        <p>
+          <alert>Step 5:</alert> State your conclusion: Choose the interval(s) where the expression is positive.
         </p>
 
         <p>
-          Step 3: Test a point from each interval.
-        </p>
-
-        <me>
-\begin{array}{rcl}
-x = 0: &amp; 2(0) - 4 = -4 &amp; \text{negative} \\
-x = 3: &amp; 2(3) - 4 = 2 &amp; \text{positive}
-\end{array}
-        </me>
-
-        <p>
-          Step 4: Choose the interval where the expression is positive.
-        </p>
-
-        <p>
-          The solution is <m>x &gt; 2</m>.
+          The solution is <m>x &gt; 2</m>. In interval notation, this is <m>(2, \infty)</m>.
         </p>
       </solution>
     </example>
+
+    <remark xml:id="rmk-ineq-factoring">
+      <p>
+        The test point method works best when the expression is factored.
+        This is why factoring is a critical prerequisite for inequalities. Let's see how this plays out in the next example.
+      </p>
+    </remark>
 
 
     <example>
     <title>Quadratic Example</title> 
       <statement>
         <p>
-          Solve <m>x^2 - 5x + 6 \le 0</m>.
+          Solve <m>x^2 - 5x  \le -6</m>. Write your answer in interval notation.
         </p>
       </statement>
       <solution>
-        <p>
-          Step 1: Factor the expression.
+        <p> <alert>Step 1:</alert> Rewrite the inequality so one side is zero.
         </p>
         <me>
-          x^2 - 5x + 6 = (x - 2)(x - 3).
+          x^2 - 5x + 6 \le 0.
         </me>
 
+
         <p>
-          Step 2: Identify critical points.
+          <alert>Step 2:</alert> Find all values of <m>x</m> where the expression equals zero or is undefined.
         </p>
-        <me>
-          x = 2, \quad x = 3.
+        <me> 
+          \begin{aligned}
+            x^2 - 5x + 6 &amp;= 0 \\
+            (x - 2)(x - 3) &amp;= 0 \\
+            x &amp;= 2 \text{ or } x = 3
+          \end{aligned}
         </me>
+        <p> There are no values of <m>x</m> where the expression is undefined.</p>
 
-        <p>
-          Step 3: Test one point in each interval.
+         <p>
+          <alert>Step 3:</alert> Use these values to divide the number line into intervals.
         </p>
 
-        <me>
-\begin{array}{rcl}
-x = 0: &amp; (0 - 2)(0 - 3) = (+) &amp; \text{positive} \\
-x = 2.5: &amp; (0.5)(-0.5) = (-) &amp; \text{negative} \\
-x = 4: &amp; (2)(1) = (+) &amp; \text{positive}
-\end{array}
-        </me>
+        <p> The values <m>2</m> and <m>3</m> divide the number line into three intervals: <m>(-\infty, 2)</m>, <m>(2, 3)</m>, and <m>(3, \infty)</m>. 
+          Visually this looks like:</p>
+
+          <image width="80%">
+  <shortdescription>
+    Number line divided at x equals 2 and x equals 3.
+  </shortdescription>
+    <latex-image><![CDATA[
+	\begin{tikzpicture}[xscale=1.5]
+		\draw[<->, thick] (0,0)-- 
+		(2,0) node {$|$} node[below, yshift=-4pt] {$2$}-- 
+		(3,0) node {$|$} node[below, yshift=-4pt] {$3$}-- 
+		(5,0) node[right] {$x$};
+	\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+          
+        <p>
+          <alert>Step 4:</alert> Choose a test point from each interval and determine the sign of the expression.
+        </p>
+
+        <ul><li>
+          For the interval <m>(-\infty, 2)</m>, we can test <m>x = 0</m>. Plugging this into 
+          our expression gives <m>0^2 - 5(0) + 6 = 6</m>, which is positive.
+        </li>
+        <li>
+          For the interval <m>(2, 3)</m>, we can test <m>x = 2.5 = \frac{5}{2}</m>. Plugging this into
+          our expression gives <m>(\tfrac{5}{2})^2 - 5(\tfrac{5}{2}) + 6 = \tfrac{25}{4} - \tfrac{25}{2} + 6 = -\tfrac{1}{4}</m>, 
+          which is negative.
+        </li>
+        <li>
+          For the interval <m>(3, \infty)</m>, we can test <m>x = 4</m>. Plugging this into
+          our expression gives <m>4^2 - 5(4) + 6 = 16 - 20 + 6 = 2</m>, which is positive.
+        </li></ul>
+
+        <p> Visually, this looks like:</p>
+
+        
+          <image width="80%">
+  <shortdescription>
+    Number line divided at x equals 2 and x equals 3. The interval to the left of 2 is labeled positive,
+    the interval between 2 and 3 is labeled negative, and the interval to the right
+    of 3 is labeled positive. Test points at x equals 0, x equals 2.5, and x equals 4 are marked with their respective signs.
+  </shortdescription>
+    <latex-image><![CDATA[
+	\begin{tikzpicture}[xscale=1.5]
+		\draw[<->, thick] (0,0)-- 
+		(2,0) node {$|$} node[below, yshift=-4pt] {$2$}-- 
+		(3,0) node {$|$} node[below, yshift=-4pt] {$3$}-- 
+		(5,0) node[right] {$x$};
+		\draw (1,0) 
+		node[above, yshift=4pt] {$(+)$}
+		node[below, yshift=-4pt] {$0$};
+		\draw (2.5,0) 
+		node[above, yshift=4pt] {$(-)$}
+		node[below, yshift=-4pt] {$\tfrac52$};
+		\draw (4,0) 
+		node[above, yshift=4pt] {$(+)$}
+		node[below, yshift=-4pt] {$4$};
+		
+	\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image>
+
 
         <p>
-          Step 4: Include intervals where the expression is zero or negative.
+          <alert>Step 5:</alert> State your conclusion: Choose the interval(s) where the expression is negative or zero 
+          (since the inequality is less than or equal to zero).
         </p>
 
         <p>
-          The solution is <m>2 \le x \le 3</m>.
+          The expression is negative on the interval <m>(2, 3)</m> and equals zero at <m>x = 2</m> and <m>x = 3</m>.
+          Since the inequality is less than or equal to zero, we include the endpoints.
+          The solution is <m>[2, 3]</m>.
         </p>
+        
+        
       </solution>
     </example>
 
@@ -149,72 +265,125 @@ x = 4: &amp; (2)(1) = (+) &amp; \text{positive}
     As we saw in our technique, these values must always be considered when dividing the number line into intervals.
   </p>
 
-  <example>
+  <example xml:id="ex-ineq-rational">
     <title>Rational Example</title> 
     <statement>
       <p>
-        Solve <m>1 - \dfrac{4}{x^2} &gt; 0</m>.
+        Solve <m>1 - \dfrac{4}{x^2} &gt; 0</m>. Write your answer in interval notation.
       </p>
     </statement>
     <solution>
-      <p>
-        Step 1: Rewrite the inequality so it is a single rational expression.
+      <p>  <alert>Step 1:</alert> Rewrite the inequality so one side is zero (already done).
       </p>
 
-      <me>
-        1 - \dfrac{4}{x^2}
-        =
-        \dfrac{x^2 - 4}{x^2}.
-      </me>
+      <p> <alert>Step 2:</alert> Identify where the expression equals zero or is undefined.
+        
+        <p>
+          The expression is undefined where the denominator is zero, which occurs at <m>x = 0</m>.
+          To find where the expression equals zero, we set solve:
+        </p>
+        <me>
+          \begin{aligned}
+            1 - \dfrac{4}{x^2} &amp;= 0 \\
+            \dfrac{4}{x^2} &amp;= 1 \\
+            x^2 &amp;= 4 \\
+            x &amp;= \pm 2 
+          \end{aligned}
+        </me>
+        
+        </p>
+
 
       <p>
-        Step 2: Identify where the expression is zero or undefined.
+        <alert>Step 3:</alert> Use these values to divide the number line into intervals.
       </p>
 
-      <me>
-\begin{array}{rcl}
-x^2 - 4 = 0 &amp; \Rightarrow &amp; x = \pm 2 \\
-x^2 = 0 &amp; \Rightarrow &amp; x = 0 \text{ (undefined)}
-\end{array}
-      </me>
+  =   <p>
+        The values <m>-2</m>, <m>0</m>, and <m>2</m> divide the number line into four intervals: <m>(-\infty, -2)</m>, <m>(-2, 0)</m>, <m>(0, 2)</m>, and <m>(2, \infty)</m>. 
+          Visually this looks like:</p>
 
-      <p>
-        Step 3: Use these values to divide the number line into intervals.
-      </p>
 
-      <p>
-        The critical points are <m>-2</m>, <m>0</m>, and <m>2</m>.
-      </p>
+          <image width="80%">
+  <shortdescription>
+    Number line divided  at x equals -2, x equals 0, and x equals 2.
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}
+	\draw[<->, thick] (-4,0)-- 
+	(-2,0) node {$|$} node[below, yshift=-4pt] {$-2$}-- 
+	(0,0) node {$|$} node[below, yshift=-4pt] {$0$}-- 
+	(2,0) node {$|$} node[below, yshift=-4pt] {$2$}-- 
+	(4,0) node[right] {$x$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image> 
 
-      <p>
-        Step 4: Choose a test point in each interval.
-      </p>
 
-      <me>
-\begin{array}{rcl}
-x = -3: &amp; \dfrac{9 - 4}{9} = \dfrac{5}{9} &amp; \text{positive} \\
-x = -1: &amp; \dfrac{1 - 4}{1} = -3 &amp; \text{negative} \\
-x = 1:  &amp; \dfrac{1 - 4}{1} = -3 &amp; \text{negative} \\
-x = 3:  &amp; \dfrac{9 - 4}{9} = \dfrac{5}{9} &amp; \text{positive}
-\end{array}
-      </me>
+        <p>
+          <alert>Step 4:</alert> Choose a test point from each interval and determine the sign of the expression.
+        </p>
+        <ul><li>
+          For the interval <m>(-\infty, -2)</m>, we can test <m>x = -3</m>. Plugging this into 
+          our expression gives <m>1 - \dfrac{4}{(-3)^2} = 1 - \dfrac{4}{9} = \dfrac{5}{9}</m>, which is positive.
+        </li>
+        <li>
+          For the interval <m>(-2, 0)</m>, we can test <m>x = -1</m>. Plugging this into
+          our expression gives <m>1 - \dfrac{4}{(-1)^2} = 1 - 4 = -3</m>, which is negative.
+        </li>
+        <li>
+          For the interval <m>(0, 2)</m>, we can test <m>x = 1</m>. Plugging this into
+          our expression gives <m>1 - \dfrac{4}{(1)^2} = 1 - 4 = -3</m>, which is negative.
+        </li>
+        <li>
+          For the interval <m>(2, \infty)</m>, we can test <m>x = 3</m>. Plugging this into
+          our expression gives <m>1 - \dfrac{4}{(3)^2} = 1 - \dfrac{4}{9} = \dfrac{5}{9}</m>, which is positive.
+        </li></ul>
 
-      <p>
-        Step 5: Select intervals where the expression is positive.
-      </p>
+        <p> Visually, this looks like:</p>
 
-      <p>
-        Since the inequality is strict, points where the expression equals zero
-        are not included.
-      </p>
+        
+          <image width="80%">
+  <shortdescription>
+    Number line divided  at x equals -2, x equals 0, and x equals 2. The interval to the left of -2 is labeled positive, 
+    the interval between -2 and 0 is labeled negative, the interval between 0 and 2 is labeled negative, 
+    and the interval to the right of 2 is labeled positive. 
+    Test points at x equals -3, x equals -1, x equals 1, and x equals 3 are marked with their respective signs.
+  </shortdescription>
+    <latex-image><![CDATA[
+\begin{tikzpicture}
+	\draw[<->, thick] (-4,0)-- 
+	(-2,0) node {$|$} node[below, yshift=-4pt] {$-2$}-- 
+	(0,0) node {$|$} node[below, yshift=-4pt] {$0$}-- 
+	(2,0) node {$|$} node[below, yshift=-4pt] {$2$}-- 
+	(4,0) node[right] {$x$};
+	\draw (-3,0) 
+	node[above, yshift=4pt] {$(+)$}
+	node[below, yshift=-4pt] {$-3$};
+	\draw (-1,0) 
+	node[above, yshift=4pt] {$(-)$}
+	node[below, yshift=-4pt] {$-1$};
+	\draw (1,0) 
+	node[above, yshift=4pt] {$(-)$}
+	node[below, yshift=-4pt] {$1$};
+	\draw (3,0) 
+	node[above, yshift=4pt] {$(+)$}
+	node[below, yshift=-4pt] {$3$};
+\end{tikzpicture}
+ ]]>
+    </latex-image>
+  </image> 
 
-      <p>
-        The solution is
-      </p>
 
-      <p>
-        <m>x &lt; -2</m> or <m>x &gt; 2</m>.
-      </p>
+        <p>
+          <alert>Step 5:</alert> State your conclusion: Choose the interval(s) where the expression is positive.
+        </p>
+
+        <p>
+          The expression is positive on the intervals <m>(-\infty, -2)</m> and <m>(2, \infty)</m>.
+          The solution is <m>(-\infty, -2) \cup (2, \infty)</m>.
+        </p>  
+  
     </solution>
   </example>
 
