@@ -169,9 +169,9 @@
     <remark>
       <p>
         The function <m>e^x</m> has the special property that its derivative
-        is equal to itself.
-        Because of this, it is often algebraically simpler to work with
-        base <m>e</m> when taking derivatives and integrals.
+        is equal to itself (<em>we will be learning about derivatives in this Calculus course</em>).
+        Because of this, it is often simpler to work with
+        base <m>e</m>.
       </p>
     </remark>
 

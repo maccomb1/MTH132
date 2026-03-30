@@ -58,7 +58,7 @@
       </figure>
     </definition>
 
-    <example>
+    <example xml:id="ex-trig-right-triangle">
       <statement>
         <p>
           In a right triangle, the side opposite <m>\theta</m> has length 3,
@@ -75,7 +75,7 @@
       </solution>
     </example>
 
-    <remark>
+    <remark xml:id="rmk-trig-acute">
       <p>
         While these definitions are intuitive, they apply only to acute angles.
         To extend trigonometric functions to all real numbers,
@@ -161,7 +161,7 @@
       </p>
     </remark>
 
-    <example>
+    <example xml:id="ex-unit-circle-values">
       <statement>
         <p>
           Evaluate <m>\sin(\pi/2)</m> and <m>\cos(\pi)</m>.
@@ -176,7 +176,7 @@
       </solution>
     </example>
 
-    <remark>
+    <remark xml:id="rmk-trig-definitions-agree">
       <p>
         For acute angles, the unit circle and right triangle definitions of sine
         and cosine agree. The unit circle framework extends these ideas
@@ -184,7 +184,7 @@
       </p>
     </remark>
 
-    <remark>
+    <remark xml:id="rmk-trig-periodicity">
       <p>
         Because rotating by <m>2\pi</m> returns to the same point on the unit circle,
         sine and cosine are periodic with period <m>2\pi</m>.
@@ -221,7 +221,7 @@
       </statement>
     </definition>
 
-    <remark>
+    <remark xml:id="rmk-trig-undefined">
       <p>
         Because these functions are defined as ratios,
         they are undefined whenever their denominators are zero.
@@ -263,7 +263,7 @@
       \end{array}
     </me>
 
-  <example>
+  <example xml:id="ex-unit-circle-values2">
     <statement>
       <p>
         Evaluate <m>\sin(\pi/3)</m> and <m>\cos(\pi/4)</m>.
@@ -289,7 +289,7 @@
       </p>
       
 
-  <example>
+  <example xml:id="ex-unit-circle-values3">
     <statement>
       <p>
         Evaluate <m>\sin(5\pi/6)</m> and <m>\cos(5\pi/6)</m>.
@@ -335,7 +335,7 @@
       </statement>
     </theorem>
 
-    <remark>
+    <remark xml:id="rmk-sin-cos-range">
       <p>
         This boundedness property is used frequently in calculus,
         especially when applying the Squeeze Theorem to evaluate limits.
@@ -378,7 +378,7 @@
 
 
 
-    <remark>
+    <remark xml:id="rmk-pythagorean-identities">
       <p>
         These identities provide different ways to express the same
         geometric relationship. In calculus, choosing the appropriate
@@ -386,7 +386,7 @@
       </p>
     </remark>
 
-    <example>
+    <example xml:id="ex-pythagorean-identity">
       <statement>
         <p>
           Simplify the expression <m>1 + \tan^2(\theta)</m>.
@@ -439,6 +439,25 @@
       </me>
     </statement>
   </theorem>
+
+  <example xml:id="ex-angle-sum">
+    <statement>
+      <p>
+        Simplify <m>\sin(\tfrac{\pi}{2}+x)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>We can use the angle sum formula for sine:</p>
+      <me>
+\begin{aligned}
+\sin\left(\frac{\pi}{2}+x\right) &amp; = \sin\left(\frac{\pi}{2}\right)\cos(x) + \cos\left(\frac{\pi}{2}\right)\sin(x) \\
+&amp; = 1 \cdot \cos(x) + 0 \cdot \sin(x) \\
+&amp; = \cos(x)
+\end{aligned}
+      </me>
+    </solution>
+  </example>
+
 
 </subsection>
 

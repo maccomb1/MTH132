@@ -572,8 +572,8 @@ and they can provide valuable information about the behavior of a function even 
     </statement>
     <solution>
       <p>
-        <em>False</em>. If <m>f'(-5)=0</m>, it means that the tangent line to the graph of <m>f</m> at <m>x=-5</m> is horizontal, but this does not necessarily imply that there is a local maximum or minimum at that point.
-        The function could have an inflection point at <m>x=-5</m>, where the concavity changes but there is no local extremum.
+        <em>False</em>. If <m>f'(-5)=0</m>, it means that the tangent line to the graph of <m>f</m> at <m>x=-5</m> is horizontal, but 
+        that does not necessarily imply that there is a local maximum or minimum at that point. 
         For example, the function <m>f(x)=(x-5)^3</m> has a critical point at <m>x=5</m> where the derivative is zero, but it is neither a local maximum nor a local minimum.
       </p>
     </solution>
