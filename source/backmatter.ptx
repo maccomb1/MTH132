@@ -1,6 +1,7 @@
+<!-- 
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- This file contains all of the "backmatter" material -->
+This file contains all of the "backmatter" material -->
 <!-- In comments, we show examples of how to have hints to divisional -->
 <!-- excercies appear in a section, and then their -->
 <!-- solutions in the next. Then there is an appendix -->
@@ -22,6 +23,8 @@
   </colophon>
   -->
 
+
+  <!-- 
   <appendix xml:id="formula-sheet">
     <title>Quiz / Exam Formula Sheet</title>
 
@@ -38,4 +41,4 @@
 
 
 </backmatter>
-
+-->

@@ -9,14 +9,20 @@
   
   <bibinfo>
 
+    <!--
     <author>
       <personname>Ryan Maccombs</personname>
       <department>Department of Mathematics</department>
       <institution>Michigan State University</institution>
     </author>    
-
+  --> 
     <credit>
       <title>Contributing Authors</title>
+          <author>
+      <personname>Ryan Maccombs</personname>
+      <department>Department of Mathematics</department>
+      <institution>Michigan State University</institution>
+    </author> 
     <author>
       <personname>Peter Magyar</personname>
       <department>Department of Mathematics</department>
@@ -57,6 +63,7 @@
   </colophon>
   -->
 
+  <!-- 
  <acknowledgement>
 <p>
   This project was made possible in large part by the support of Michigan State University and the College of Natural Science through the 
@@ -74,13 +81,7 @@ In many places, this text builds directly on his structure, ideas, and expositio
   can be. Their work and examples played an important role in lowering the barrier to getting this project off the ground.
 </p>
 
-<p>
-If you spot any errors or unclear explanations please let me know. 
-I welcome suggestions for improvement and corrections, and I would be grateful if readers would share feedback using the following
- <url href="https://forms.gle/YpmAhEjVguPXamtw6" visual="true">Google Feedback Form</url>.
 
-
-</p>
 
 <p>   </p>
 
@@ -95,8 +96,9 @@ I welcome suggestions for improvement and corrections, and I would be grateful i
 
 
  </acknowledgement>
+-->
 
-
+  
   <preface >
     <title>Students: How to Use this Book</title>
     
@@ -121,15 +123,8 @@ I welcome suggestions for improvement and corrections, and I would be grateful i
     <li><em>After class:</em> Revisit the examples, complete the exercises, and check solutions or hints when provided.</li>
   </ul>
 
-  <p><alert>Exercises and Practice</alert></p>
-  <p>Exercises are a central part of learning calculus. You will find:</p>
-  <ul>
-    <li><em>Conceptual checks</em> to test your understanding of definitions and theorems.</li>
-    <li><em>Computational practice</em> to build fluency with calculations and algebraic techniques.</li>
-    <li><em>Applications</em> that connect calculus to real-world situations.</li>
-  </ul>
-  <p>Some exercises will resemble questions on WeBWorK, quizzes, or exams, while others are meant for practice and exploration.</p>
 
+  
 <p><alert>Technology and Tools</alert></p>
 <p>This book makes use of graphs, figures, and sometimes interactive elements (such as Desmos activities). 
   A scientific calculator or graphing tool may be helpful, especially when you are first learning new concepts. 
@@ -160,6 +155,16 @@ I welcome suggestions for improvement and corrections, and I would be grateful i
 
   <p><alert>Accessibility and Flexibility</alert></p>
   <p>This book has been designed with accessibility in mind. Figures include alt text, and the content can be navigated easily.</p>
+
+
+<p>
+If you spot any errors or unclear explanations please let us know. 
+We welcome suggestions for improvement and corrections via the
+ <url href="https://forms.gle/YpmAhEjVguPXamtw6" visual="true">Google Feedback Form</url>.
+
+
+</p>
+
 
   <p><alert>Final Encouragement</alert></p>
   <p>Remember: this book is a tool, not just a reference. Stay engaged, practice often, and combine it with the support of your instructors, TAs, and the Math Learning Center. With steady effort, you will succeed in calculus.</p>
