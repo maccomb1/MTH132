@@ -30,8 +30,9 @@ Suppose we know that both <m>\displaystyle \lim_{x\to a} f(x)</m> and <m>\displa
 <li><em>Difference:</em> <m>\displaystyle \lim_{x\to a} (f(x) - g(x)) = \lim_{x\to a} f(x) - \lim_{x\to a} g(x)</m>.</li>
 <li><em>Constant Multiple:</em> <m>\displaystyle \lim_{x\to a} (c f(x)) = c \cdot \lim_{x\to a} f(x)</m>, for a constant <m>c</m>.</li>
 <li><em>Product:</em> <m>\displaystyle \lim_{x\to a} f(x) g(x) = (\lim_{x\to a} f(x))(\lim_{x\to a} g(x))</m>.</li>
-<li><em>Quotient:</em> <m>\displaystyle \lim_{x\to a} \frac{f(x)}{g(x)} = \frac{\lim_{x\to a} f(x)}{\lim_{x\to a} g(x)}</m>, provided <m>\lim_{x\to a} g(x) \
-eq 0</m>.</li>
+<li><em>Quotient:</em> <m>\displaystyle \lim_{x\to a} \frac{f(x)}{g(x)} = \frac{\displaystyle\lim_{x\to a} f(x)}{\displaystyle\lim_{x\to a} g(x)}</m>, provided 
+<m>\displaystyle\lim_{x\to a} g(x) \
+\neq 0</m>.</li>
 <li><em>Power:</em> <m>\displaystyle \lim_{x\to a} (f(x))^n = (\lim_{x\to a} f(x))^n</m>, for a whole number <m>n</m>.</li>
 <li><em>Root:</em> <m>\displaystyle \lim_{x\to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x\to a} f(x)}</m>, for a whole number<fn>If <m>n</m> is even, we assume <m>\displaystyle\lim_{x\to a} f(x) &gt; 0</m></fn> <m>n</m>.</li>
 </ul>
