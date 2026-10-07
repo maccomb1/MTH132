@@ -15,6 +15,7 @@
           format="pdf"
           source="main.ptx"
           publication="publication-print.ptx"
+          output-filename="MTH132-Textbook.pdf"
           xsl="print-style.xsl"/>
 
     <!-- <target name="print" format="pdf" /> -->

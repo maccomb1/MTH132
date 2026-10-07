@@ -53,7 +53,7 @@
             coltitle=white,
             fonttitle=\bfseries,
             boxrule=0.8pt,
-            arc=2mm,
+            arc=0mm,
             left=2mm,
             right=2mm,
             top=1.5mm,
