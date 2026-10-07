@@ -218,7 +218,8 @@ We have seen a few problems where a limit exists, but in fact, as the 2004 movie
   <!-- <image source="images/NoLimit.png"> -->
    <image 
       source="images/NoLimit.gif"
-      preview="images/NoLimit.png"> 
+      preview="images/NoLimit.png"
+      width="100%">> 
     <shortdescription>
 Animated GIF showing a person looking shocked and puzzled, often used humorously when a math problem produces an unexpected outcome.
 </shortdescription>
