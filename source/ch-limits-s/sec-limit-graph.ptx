@@ -216,10 +216,14 @@ We have seen a few problems where a limit exists, but in fact, as the 2004 movie
     The limit does not exist GIF
   </caption>
   <!-- <image source="images/NoLimit.png"> -->
-   <image 
-      source="images/NoLimit.gif"
-      preview="images/NoLimit.png"
-      width="100%">> 
+
+<image component="html"
+       source="images/NoLimit.gif"
+       width="100%"/>
+<image component="print"
+       source="images/NoLimit.png"
+       width="100%"/>
+
     <shortdescription>
 Animated GIF showing a person looking shocked and puzzled, often used humorously when a math problem produces an unexpected outcome.
 </shortdescription>

@@ -53,7 +53,7 @@
     <!-- See
     https://pretextbook.org/doc/guide/html/publication-file-source.html#publication-file-source-version -->
       <!-- <version include="videos labs"/> -->
-
+    <version include="html"/>
   </source>
 
   <numbering>
@@ -114,6 +114,7 @@
   </latex>
 
   <html>
+
     <css theme="denver" palette="leaves" color-main='#18453B'/>
     <!-- A possible attribute for the html tag above is @short-answer-responses, with values either "always" or "graded".  As in: -->
     <!--<html short-answer-responses="always">-->
