@@ -90,7 +90,7 @@
         latex-style="CLP">
       <!-- any existing latex settings -->
     <page> 
-    <geometry>letterpaper,inner=1.1in,outer=0.9in,top=0.75in,bottom=0.8in</geometry>
+      <geometry>letterpaper,inner=.8in,outer=0.5in,top=0.75in,bottom=0.8in</geometry>
     </page>
 
     </latex>
