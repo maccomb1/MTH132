@@ -170,12 +170,20 @@ Here is a Desmos graph of the function, along with a table of values near <m>x=2
   <caption>
     Graph of <m>f(x)=\dfrac{x^2-4x+4}{x^2-x-2}</m>
   </caption>
-  <image width = "100%" source="images/LimitOfFunction001.gif">
+
+<image component="html"
+       source="images/LimitOfFunction001.gif"
+       width="100%"/>
+
+<image component="print"
+       source="images/LimitOfFunction001.png"
+       width="100%"/>
+
     <shortdescription>
       Desmos gif showcasing two points getting closer and closer to 
       x=2 and that the height of the graph gets closer and closer to 0
     </shortdescription>
-  </image>
+
 </figure>
 </sidebyside>
 </url>

@@ -220,14 +220,16 @@ We have seen a few problems where a limit exists, but in fact, as the 2004 movie
 <image component="html"
        source="images/NoLimit.gif"
        width="100%"/>
+
 <image component="print"
        source="images/NoLimit.png"
        width="100%"/>
 
     <shortdescription>
-Animated GIF showing a person looking shocked and puzzled, often used humorously when a math problem produces an unexpected outcome.
+Animated GIF showing a person looking shocked and puzzled, 
+often used humorously when a math problem produces an unexpected outcome.
 </shortdescription>
-  </image>
+
 
 </figure>
 </sidebyside>
