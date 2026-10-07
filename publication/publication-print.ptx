@@ -89,9 +89,9 @@
         font-size="11"
         latex-style="CLP">
       <!-- any existing latex settings -->
-
+    <page> 
     <geometry>letterpaper,inner=1.1in,outer=0.9in,top=0.75in,bottom=0.8in</geometry>
-
+    </page>
 
     </latex>
   <!--
