@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsl:stylesheet
+    version="1.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <!-- Import the normal PreTeXt LaTeX conversion -->
+    <xsl:import href="./core/pretext-latex.xsl"/>
+
+    <xsl:output method="text"/>
+
+    <!-- ========================================================= -->
+    <!-- THEOREMS, LEMMAS, PROPOSITIONS, COROLLARIES, ETC.         -->
+    <!-- ========================================================= -->
+
+    <xsl:template
+        match="theorem|lemma|corollary|proposition|claim|fact|identity|algorithm|
+               axiom|conjecture|principle|heuristic|hypothesis|assumption"
+        mode="tcb-style">
+
+        <xsl:text>
+            enhanced,
+            breakable,
+            colback=blue!3!white,
+            colframe=blue!55!black,
+            colbacktitle=blue!12!white,
+            coltitle=black,
+            fonttitle=\bfseries,
+            boxrule=0.8pt,
+            arc=2mm,
+            left=2mm,
+            right=2mm,
+            top=1.5mm,
+            bottom=1.5mm,
+            before skip=10pt,
+            after skip=10pt,
+        </xsl:text>
+    </xsl:template>
+
+
+    <!-- ========================================================= -->
+    <!-- DEFINITIONS                                                -->
+    <!-- ========================================================= -->
+
+    <xsl:template match="definition" mode="tcb-style">
+
+        <xsl:text>
+            enhanced,
+            breakable,
+            colback=green!3!white,
+            colframe=green!40!black,
+            colbacktitle=green!12!white,
+            coltitle=black,
+            fonttitle=\bfseries,
+            boxrule=0.8pt,
+            arc=2mm,
+            left=2mm,
+            right=2mm,
+            top=1.5mm,
+            bottom=1.5mm,
+            before skip=10pt,
+            after skip=10pt,
+        </xsl:text>
+    </xsl:template>
+
+
+    <!-- ========================================================= -->
+    <!-- EXAMPLES, QUESTIONS, PROBLEMS, AND COMPUTATIONS            -->
+    <!-- ========================================================= -->
+
+    <xsl:template
+        match="example|question|problem|computation|technology"
+        mode="tcb-style">
+
+        <xsl:text>
+            enhanced,
+            breakable,
+            colback=black!2!white,
+            colframe=black!35!white,
+            colbacktitle=black!8!white,
+            coltitle=black,
+            fonttitle=\bfseries,
+            boxrule=0.6pt,
+            arc=1mm,
+            left=2mm,
+            right=2mm,
+            top=1.5mm,
+            bottom=1.5mm,
+            before skip=10pt,
+            after skip=10pt,
+        </xsl:text>
+    </xsl:template>
+
+
+    <!-- ========================================================= -->
+    <!-- REMARKS, NOTES, OBSERVATIONS, AND INSIGHTS                 -->
+    <!-- ========================================================= -->
+
+    <xsl:template
+        match="remark|note|observation|insight|convention"
+        mode="tcb-style">
+
+        <xsl:text>
+            enhanced,
+            breakable,
+            colback=yellow!5!white,
+            colframe=yellow!45!black,
+            colbacktitle=yellow!12!white,
+            coltitle=black,
+            fonttitle=\bfseries,
+            boxrule=0.5pt,
+            sharp corners,
+            left=2mm,
+            right=2mm,
+            top=1.5mm,
+            bottom=1.5mm,
+            before skip=10pt,
+            after skip=10pt,
+        </xsl:text>
+    </xsl:template>
+
+
+    <!-- ========================================================= -->
+    <!-- WARNINGS                                                   -->
+    <!-- ========================================================= -->
+
+    <xsl:template match="warning" mode="tcb-style">
+
+        <xsl:text>
+            enhanced,
+            breakable,
+            colback=red!3!white,
+            colframe=red!55!black,
+            colbacktitle=red!12!white,
+            coltitle=black,
+            fonttitle=\bfseries,
+            boxrule=0.9pt,
+            sharp corners,
+            left=2mm,
+            right=2mm,
+            top=1.5mm,
+            bottom=1.5mm,
+            before skip=10pt,
+            after skip=10pt,
+        </xsl:text>
+    </xsl:template>
+
+</xsl:stylesheet>

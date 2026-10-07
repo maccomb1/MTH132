@@ -128,16 +128,16 @@ through every value <m>r</m> between <m>f(a)</m> and <m>f(b)</m>.</p>
           Solve <m>f(x)=2</m>:
         </p>
         <p></p>
-  
-        <m>
+          <p> 
+        <md>
           \begin{align*}
           \dfrac{x-1}{x-5} \amp = 2 \\
           \Longrightarrow\quad x-1 \amp = 2(x-5) \\
           \Longrightarrow\quad x-1 \amp = 2x-10 \\
            x \amp = 9.
         \end{align*}
-        </m>
-      
+        </md>
+      </p>
  
         <p>
           Since <m>9 \notin [1,6]</m>, the equation <m>f(x)=2</m> has no solution in <m>[1,6]</m>. So <alert>No</alert>, <m>f(x)</m> does not take the value <m>2</m> on <m>[1,6]</m>.

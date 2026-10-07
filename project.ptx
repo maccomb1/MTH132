@@ -14,7 +14,8 @@
   <target name="print"
           format="pdf"
           source="main.ptx"
-          publication="publication-print.ptx"/>
+          publication="publication-print.ptx"
+          xsl="print-style.xsl"/>
 
     <!-- <target name="print" format="pdf" /> -->
   </targets>
