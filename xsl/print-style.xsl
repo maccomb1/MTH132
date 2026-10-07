@@ -90,16 +90,6 @@
             after skip=10pt,
         </xsl:text>
     </xsl:template>
-
-    <xsl:template
-        match="example[statement and solution]"
-        mode="exercise-component-separator">
-
-        <xsl:text>\par\smallskip%&#xa;</xsl:text>
-        <xsl:text>{\color{black!35!white}\hrule height 0.6pt}%&#xa;</xsl:text>
-        <xsl:text>\smallskip%&#xa;</xsl:text>
-
-    </xsl:template>
     
     <!-- ========================================================= -->
     <!-- REMARKS, NOTES, OBSERVATIONS, AND INSIGHTS                 -->
@@ -112,9 +102,9 @@
         <xsl:text>
             enhanced,
             breakable,
-            colback=red!3!white,
-            colframe=red!60!black,
-            colbacktitle=red!60!black,
+            colback=orange!3!white,
+            colframe=orange!60!black,
+            colbacktitle=orange!60!black,
             coltitle=white,
             fonttitle=\bfseries,
             boxrule=0.5pt,
