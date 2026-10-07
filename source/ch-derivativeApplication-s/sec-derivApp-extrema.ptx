@@ -731,6 +731,7 @@ and they can provide valuable information about the behavior of a function even 
             \begin{array}{rcl}
             f(0) \amp = \amp \frac{1}{(0-2)^2} = \frac{1}{4} \\
             f(4) \amp = \amp \frac{1}{(4-2)^2} = \frac{1}{4}
+            \end{array}
           </me>
           The function has a vertical asymptote at <m>x=2</m>, where the function values increase without bound as <m>x</m> approaches 2 from either side.
           Therefore, the absolute minimum value of the function on the interval <m>[0,4]</m> is <m>1/4</m>, occurring at both endpoints <m>x=0</m> and <m>x=4</m>.      
