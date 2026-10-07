@@ -80,7 +80,7 @@
             colbacktitle=black!8!white,
             coltitle=black,
             fonttitle=\bfseries,
-            boxrule=0.6pt,
+            boxrule=0.8pt,
             arc=0mm,
             left=2mm,
             right=2mm,
