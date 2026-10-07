@@ -82,7 +82,6 @@
   <!-- for printing; set @sides="two" if the printing would be two- -->
   <!-- sided.  @pageref="yes/no" controls whether page number are   -->
   <!-- included in cross-references                                 -->
-  <latex>
   <!-- Replace the <latex> tag above with the one below to try these-->
     <latex print="yes"
         sides="two"
@@ -90,7 +89,7 @@
       >
       <!-- any existing latex settings -->
     <page> 
-      <geometry>letterpaper,inner=.8in,outer=0.5in,top=0.75in,bottom=0.8in</geometry>
+      <geometry>letterpaper,inner=1.1in,outer=0.9in,top=0.75in,bottom=0.8in</geometry>
     </page>
 
     </latex>
