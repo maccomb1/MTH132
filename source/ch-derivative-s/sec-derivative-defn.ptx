@@ -306,16 +306,15 @@
 <p>
  Graphically this is what we have accomplished
 </p>
-
+<p> 
       <url href="https://www.desmos.com/calculator/8bbhwk4mrq">
-    <sidebyside width="100%">
       <figure>
 <caption>
   The function <m>f(x)=x(x-2)</m> with tangent lines drawn at several points.
   The slopes of these tangent lines are labeled and shown to align with the values
   of the derivative function <m>f'(x)=2x-2</m>.
 </caption>
-        <image width="100%" source="images/funcAndDerivative01.png">
+        <image width="100%" source="images/funcAndDerivative01.png"/>
 <shortdescription>
   Graph showing the quadratic function f(x)=x(x-2).
   At several points along the curve, tangent lines are drawn and their slopes are labeled
@@ -323,11 +322,9 @@
   A separate straight line representing the derivative f'(x)=2x-2 is shown, illustrating how
   each slope of f corresponds to a point on the derivative graph.
 </shortdescription>
-        </image>
       </figure>
-    </sidebyside>
   </url>
-
+</p> 
 
       </solution>
     </example>
