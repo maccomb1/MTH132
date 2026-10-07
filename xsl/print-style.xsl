@@ -81,7 +81,7 @@
             coltitle=black,
             fonttitle=\bfseries,
             boxrule=0.6pt,
-            arc=1mm,
+            arc=0mm,
             left=2mm,
             right=2mm,
             top=1.5mm,
@@ -91,7 +91,16 @@
         </xsl:text>
     </xsl:template>
 
+    <xsl:template
+        match="example[statement and solution]"
+        mode="exercise-component-separator">
 
+        <xsl:text>\par\smallskip%&#xa;</xsl:text>
+        <xsl:text>{\color{black!35!white}\hrule height 0.6pt}%&#xa;</xsl:text>
+        <xsl:text>\smallskip%&#xa;</xsl:text>
+
+    </xsl:template>
+    
     <!-- ========================================================= -->
     <!-- REMARKS, NOTES, OBSERVATIONS, AND INSIGHTS                 -->
     <!-- ========================================================= -->
@@ -103,13 +112,13 @@
         <xsl:text>
             enhanced,
             breakable,
-            colback=yellow!5!white,
-            colframe=yellow!45!black,
-            colbacktitle=yellow!12!white,
-            coltitle=black,
+            colback=red!3!white,
+            colframe=red!60!black,
+            colbacktitle=red!60!black,
+            coltitle=white,
             fonttitle=\bfseries,
             boxrule=0.5pt,
-            sharp corners,
+            arc=0mm,
             left=2mm,
             right=2mm,
             top=1.5mm,
