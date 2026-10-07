@@ -72,13 +72,18 @@
   from its tangent line at sufficiently small scales. This visual shows why using the linearization, 
   the tangent line, is an effective strategy for estimating the function’s values at nearby <m>x</m>-values.
 </caption>
-        <image width="100%" source="images/GraphZoomingIn.gif">
+
+  <image component="html"
+         source="images/GraphZoomingIn.gif"/>
+
+  <image component="print"
+         source="images/GraphZoomingIn.png"/>
+
 <shortdescription>
   An animated graph showing a red curve and a purple straight line touching at a single point. As the view zooms in closer to that point, 
   the red curve and the purple line overlap more closely until they are nearly indistinguishable. This illustrates that near a point of tangency, 
   a differentiable function behaves almost linearly, which justifies using the tangent line to approximate the function at nearby points.
 </shortdescription>
-        </image>
       </figure>
     </sidebyside>
  
