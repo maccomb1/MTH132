@@ -130,13 +130,19 @@ through every value <m>r</m> between <m>f(a)</m> and <m>f(b)</m>.</p>
         <p></p>
           <p> 
         <md>
-          \begin{align*}
-          \dfrac{x-1}{x-5} \amp = 2 \\
-          \Longrightarrow\quad x-1 \amp = 2(x-5) \\
-          \Longrightarrow\quad x-1 \amp = 2x-10 \\
-           x \amp = 9.
-        \end{align*}
-        </md>
+  <mrow>
+    \dfrac{x-1}{x-5} \amp = 2
+  </mrow>
+  <mrow>
+    \Longrightarrow\quad x-1 \amp = 2(x-5)
+  </mrow>
+  <mrow>
+    \Longrightarrow\quad x-1 \amp = 2x-10
+  </mrow>
+  <mrow>
+    x \amp = 9.
+  </mrow>
+</md>
       </p>
  
         <p>
