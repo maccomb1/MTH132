@@ -90,7 +90,27 @@
             after skip=10pt,
         </xsl:text>
     </xsl:template>
-    
+
+<!-- Separator between components inside examples -->
+<xsl:template name="exercise-component-separator">
+  <xsl:choose>
+
+    <!-- Use a visible rule inside examples -->
+    <xsl:when test="ancestor-or-self::example">
+      <xsl:text>\par\smallskip%&#xa;</xsl:text>
+      <xsl:text>\noindent{\color{black!35!white}\rule{\linewidth}{0.6pt}}\par%&#xa;</xsl:text>
+      <xsl:text>\smallskip%&#xa;</xsl:text>
+    </xsl:when>
+
+    <!-- Retain PreTeXt's normal separator elsewhere -->
+    <xsl:otherwise>
+      <xsl:text>\par\smallskip%&#xa;</xsl:text>
+    </xsl:otherwise>
+
+  </xsl:choose>
+</xsl:template>
+
+
     <!-- ========================================================= -->
     <!-- REMARKS, NOTES, OBSERVATIONS, AND INSIGHTS                 -->
     <!-- ========================================================= -->
@@ -143,5 +163,8 @@
             after skip=10pt,
         </xsl:text>
     </xsl:template>
+
+
+
 
 </xsl:stylesheet>
