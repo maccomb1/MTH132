@@ -150,13 +150,19 @@ So even though the picture is geometric, the definite integral is not only about
   As we take more and more rectangles, the approximation gets better and better.
   The definite integral is defined as the limit of these sums as the rectangles get thinner and thinner.
 </caption>
-        <image width="100%" source="images/RiemannSumXsquared2.gif">
+        <image width="100%" component="html" source="images/RiemannSumXsquared2.gif">
 <shortdescription>
   Animated graph showing the function f(x) = x^2 on the interval [0,2] with rectangles approximating the area under the curve.
   As the number of rectangles increases, they become thinner and the approximation of the area under the curve becomes more accurate.
   The animation illustrates how the Riemann sum approaches the value of the definite integral as n approaches infinity.
 </shortdescription>
         </image>
+
+
+  <image component="print"
+         source="images/RiemannSumXsquared2.png"/>
+
+
       </figure>
 
 

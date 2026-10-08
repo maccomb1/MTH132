@@ -559,12 +559,17 @@
   A GIF the area under the curve <m>y=x^2</m> on the interval <m>[0,2]</m> with more and more rectangles. Click on 
   the image to be taken to the Desmos graph where you can adjust the number of rectangles yourself.
 </caption>
-        <image width="100%" source="images/RiemannSumXsquared.gif">
+        <image width="100%" component="html" source="images/RiemannSumXsquared.gif">
 <shortdescription>
   Animated graph showing the area under the curve y equals x squared on the interval [0,2] being approximated by rectangles. 
   As the number of rectangles increases, the approximation becomes more accurate.
 </shortdescription>
         </image>
+
+  <image component="print"
+         source="images/RiemannSumXsquared.png"/>
+
+
       </figure>
   </url>
 
