@@ -72,18 +72,22 @@
 
         <image component="html"
          source="images/RelatedRates1.gif"
-         width="80%"/>
+         width="80%">
+
+             <shortdescription>
+      An animation on a coordinate grid showing a circle centered at the origin expanding outward over time, modeling a circular puddle that is widening.
+      The circle represents the puddle’s boundary and grows smoothly, indicating increasing radius and diameter.
+      The situation corresponds to the instant when the puddle’s diameter is 1 meter and the area is increasing at 2 square meters per minute, and the goal is to determine how fast the radius is increasing at that instant.
+    </shortdescription>
+
+    </image>
 
   <image component="print"
          source="images/RelatedRates1.png"
          width="80%"/>
 
 
-    <shortdescription>
-      An animation on a coordinate grid showing a circle centered at the origin expanding outward over time, modeling a circular puddle that is widening.
-      The circle represents the puddle’s boundary and grows smoothly, indicating increasing radius and diameter.
-      The situation corresponds to the instant when the puddle’s diameter is 1 meter and the area is increasing at 2 square meters per minute, and the goal is to determine how fast the radius is increasing at that instant.
-    </shortdescription>
+
 
     </figure>
 
@@ -151,13 +155,8 @@
 
         <image component="html"
          source="images/RelatedRates2.gif"
-         width="100%"/>
-
-  <image component="print"
-         source="images/RelatedRates2.png"
-         width="100%"/>
-
-    <shortdescription>
+         width="100%">
+             <shortdescription>
       An animated diagram on a grid showing a pulley mounted above the floor with a rope passing over it.
       On the left, a weight hangs vertically from the pulley down to the floor.
       On the right, a person holds the other end of the rope at a point 3 feet above the floor and moves horizontally to the right.
@@ -165,6 +164,13 @@
       As the person moves farther away, the rope segment from the pulley to the person lengthens and the vertical rope segment shortens,
       illustrating that the hanging weight is rising.
     </shortdescription>
+    </image> 
+
+  <image component="print"
+         source="images/RelatedRates2.png"
+         width="100%"/>
+
+
     </figure>
 
       </statement>

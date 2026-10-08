@@ -304,17 +304,20 @@ The line represents the tangent line at that point.
                           </caption>
 
   <image component="html"
-         source="images/tangentSecant.gif"/>
+         source="images/tangentSecant.gif">
+         <shortdescription>
+                          Animated graph of a smooth curve with two points marked on it. A secant line passes
+                                      through the two points. As the points move closer together along the curve,
+                                                  the secant line rotates and converges to the tangent line at that point, illustrating how the tangent
+                                                              line arises as a limit of secant lines.
+            </shortdescription>
+
+            </image> 
 
   <image component="print"
          source="images/tangentSecant.png"/>
 
-                                              <shortdescription>
-                                                            Animated graph of a smooth curve with two points marked on it. A secant line passes
-                                                                        through the two points. As the points move closer together along the curve,
-                                                                                    the secant line rotates and converges to the tangent line at that point, illustrating how the tangent
-                                                                                                line arises as a limit of secant lines.
-                                              </shortdescription>
+            
                                           </figure>
                                         </sidebyside>
                                       </url>

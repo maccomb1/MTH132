@@ -29,15 +29,17 @@ The derivative of <m>\sin(x)</m> visualized: the slope of the tangent line to <m
 </caption>
 
   <image component="html"
-         source="images/DerivSineVsCosine.gif"/>
+         source="images/DerivSineVsCosine.gif">
+               <shortdescription>
+    An animated graph showing a sine curve and a cosine curve. As a point moves along the sine curve, a tangent line is drawn. 
+    The steepness of the tangent line changes and matches the height of the cosine curve at the same horizontal position.
+      </shortdescription>
+      </image>
 
   <image component="print"
          source="images/DerivSineVsCosine.png"/>
 
-      <shortdescription>
-    An animated graph showing a sine curve and a cosine curve. As a point moves along the sine curve, a tangent line is drawn. 
-    The steepness of the tangent line changes and matches the height of the cosine curve at the same horizontal position.
-      </shortdescription>
+
 
       </figure>
   </url>
