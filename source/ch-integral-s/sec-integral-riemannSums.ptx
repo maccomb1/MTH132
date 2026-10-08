@@ -132,7 +132,7 @@
       <statement>
         <p>
         <m> \quad 
-          \begin{array}{c|ccc}
+          \begin{array}{c|ccccc}
             t  &amp; 0 &amp; 2 &amp; 4 &amp; 6 &amp; 8 \\
             \hline
             v(t)  &amp; 2 &amp; 10 &amp; 14 &amp; 22 &amp; 20 
@@ -169,7 +169,7 @@
           <statement>
             <p>
         <m> \quad 
-          \begin{array}{c|ccc}
+          \begin{array}{c|ccccccccc}
             t  &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 \\
             \hline
             v(t)  &amp; 2 &amp; 7 &amp; 10 &amp; 11 &amp; 14 &amp; 19 &amp; 22 &amp; 20 &amp; 20 
