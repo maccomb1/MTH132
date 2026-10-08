@@ -422,6 +422,10 @@ s(-x) \amp =\amp -x-2\sin(-x)\\
   A GIF showing the graph of <m>s(x)=x-2\sin(x)</m> first on the interval <m>[0,2\pi]</m> then using symmetry to complete the graph.
 </caption>
 
+
+
+  <image component="html"
+         source="images/curveSketch10.gif">
 <shortdescription>
 Animated graph of s of x equals x minus 2 sine x. 
 The curve has a local minimum near x equals pi over 3 and a local maximum near x equals 5 pi over 3. 
@@ -429,12 +433,12 @@ There are inflection points at x equals 0 and x equals pi.
 The graph decreases to the minimum, then increases to the maximum, and changes concavity at the inflection points. The graph is odd, so the 
 portion on the left side of the y-axis is a rotationally symmetric image of the portion on the right side, reflected across the origin.
 </shortdescription>
-
-  <image component="html"
-         source="images/curveSketch10.gif"/>
+         </image>
 
   <image component="print"
          source="images/curveSketch10.png"/>
+
+
 
 
       </figure>

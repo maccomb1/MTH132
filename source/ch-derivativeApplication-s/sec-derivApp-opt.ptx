@@ -51,13 +51,21 @@
   The animation illustrates how the area changes for different length and width combinations, 
   helping to visualize the optimization problem and understand which dimensions yield the maximum area.
 </caption>
-        <image width="100%" source="images/Optimization01.gif">
+
+
+        <image width="100%" component="html" source="images/Optimization01.gif">
 <shortdescription>
   Animated graph showing rectangles with a perimeter of 40 meters. As the length and width of the rectangle change, the area is calculated and displayed. 
   The animation helps visualize how the area changes for different dimensions, guiding us towards understanding which dimensions maximize the area. 
   It appears that the area is maximized when the rectangle is a square, with both length and width equal to 10 meters.
 </shortdescription>
         </image>
+
+
+  <image component="print"
+         source="images/Optimization01.png"/>
+
+
       </figure>
   </url>
 
@@ -256,13 +264,20 @@
   A GIF showing various cylinders with a fixed volume of 10 quarts. As the radius and height of the cylinder change, the surface area is calculated and displayed.
   The animation helps visualize how the surface area changes for different dimensions, guiding us towards understanding which dimensions minimize the surface area. 
 </caption>
-        <image width="100%" source="images/Optimization02.gif">
+
+        <image width="100%" component="html" source="images/Optimization02.gif">
   <shortdescription>
   A GIF showing various cylinders with a fixed volume of 10 quarts. As the radius and height of the cylinder change, the surface area is calculated and displayed.
   The animation helps visualize how the surface area changes for different dimensions, guiding us towards understanding which dimensions minimize the surface area.
   It appears that the surface area is minimized when the radius is about 5.5 inches. At this point the Surface Area is around 300 square inches.
 </shortdescription>
         </image>
+
+
+  <image component="print"
+         source="images/examplePrint.png"/>
+
+
       </figure>
   </url>
           </li>
