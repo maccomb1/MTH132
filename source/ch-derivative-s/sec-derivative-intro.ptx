@@ -699,23 +699,6 @@ The line represents the tangent line at that point.
   </solution>
 </exercise>
 
-<exercise xml:id="tf-deriv-intro-10">
-  <statement>
-    <p>
-      If average rates of change computed using <m>h=0.1</m> and <m>h=0.01</m>
-      are very close in value, then that common value is a reasonable estimate
-      of the instantaneous rate of change.
-    </p>
-  </statement>
-  <solution>
-    <p>
-      <em>True.</em> The instantaneous rate of change is defined as a limit of average rates of change as
-      <m>h\to 0</m>.
-      If two average rates from small values of <m>h</m> are close, that suggests the values are stabilizing,
-      and the shared value is a reasonable estimate of the limiting value.
-    </p>
-  </solution>
-</exercise>
 
 <exercise xml:id="tf-deriv-intro-11">
   <statement>

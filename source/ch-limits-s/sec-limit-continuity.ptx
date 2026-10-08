@@ -241,7 +241,6 @@ Graph of a function with a vertical asymptote at x = a. The curve approaches neg
         <p>
           A function has an <term>essential discontinuity</term> at <m>x=a</m> if one or both one-sided limits fail to exist in any sense. 
         </p>
-      </statement>
 
       <p> Graphically, an essential discontinuity quite often appears as a wild oscillation in the curve <m>y=f(x)</m> at <m>x=a</m>. </p>
     <figure xml:id="discont-essential" >
@@ -253,8 +252,9 @@ Graph of a function that oscillates increasingly rapidly near x = a. As x approa
       </image>
     </figure>
 
-
+      </statement>
 </definition>
+
 
 <example xml:id="ex-essential-sinx-over-x">
   <statement>
@@ -368,7 +368,7 @@ Graph of a function that oscillates increasingly rapidly near x = a. As x approa
     <example>
   <statement>
     <p>
-      Suppose a weight is winched from the ground at a constant speed 
+      Suppose a weight is winched from the ground at a constant speed <m>v</m>
       for 8 seconds, is dropped, and lands 2 seconds later.
     </p>
     <p>
@@ -559,7 +559,7 @@ Coordinate graph of a function defined starting at x = -1 with a filled endpoint
       <title>Composition Law</title>
       <statement>
         <p>If <m>\displaystyle\lim_{x\to a} g(x)=b</m> and <m>f</m> is continuous at <m>x=b</m>, then
-        <me>\lim_{x\to a} f(g(x)) = f(\lim_{x\to a} g(x)).</me></p>
+        <me>\lim_{x\to a} f(g(x)) = f(\lim_{x\to a} g(x)) = f(b).</me></p>
       </statement>
     <proof>
   <p>

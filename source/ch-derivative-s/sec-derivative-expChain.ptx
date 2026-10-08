@@ -312,6 +312,13 @@
       <m>g(x)</m> and then through the outer function <m>f</m>. The Chain Rule formalizes this by multiplying the
       rate of change of <m>f</m> with respect to <m>g</m> by the rate of change of <m>g</m> with respect to <m>x</m>.
     </p>
+    <p> 
+      One can also quickly verify that the units work out correctly. That is, 
+      <md>
+        \dfrac{\text{units of } f}{\text{units of } x} = \dfrac{\text{units of } f}{\text{units of } g} \cdot \dfrac{\text{units of } g}{\text{units of } x}
+      </md>
+    </p>
+    
   </proof>
 
     </theorem>
@@ -326,6 +333,28 @@
     <p>
       Now let's see the chain rule applied with a few examples.
     </p>
+
+  <example xml:id="ex-expChain-basic-00">
+      <statement>
+        <p>
+          Compute the derivative of <m>f(x)=\tan(x^3+1)</m>.
+        </p> 
+      </statement>
+
+      <solution>
+        <p>
+          Apply the Chain Rule. Let <m>u=x^3+1</m>, then <m>f(u)=\tan(u)</m> and <m>f'(u)=\sec^2(u)</m> so: 
+        </p>
+
+        <me>
+          u' = 3x^2
+        </me>
+
+          Therefore <m>f'(x) = \sec^2(x^3+1)\cdot 3x^2</m>
+      </solution>
+    
+  </example>
+
 
   <example xml:id="ex-expChain-basic-01">
       <statement>
@@ -653,12 +682,12 @@ x &amp; f(x) &amp; f'(x) &amp; g(x) &amp; g'(x) \\
 <exercise xml:id="tf-expChain-ap-08">
   <statement>
     <p>
-      If <m>f'(x)&gt;0</m> and <m>g'(x)&lt;0</m> on an interval, then <m>f(g(x))</m> is decreasing on that interval.
+      If <m>f'(x)&gt;0</m> and <m>g'(x)&lt;0</m> for all real values of <m>x</m>, then <m>f(g(x))</m> is decreasing.
     </p>
   </statement>
   <solution>
     <p>
-      <em>True (where the composition is defined).</em>
+      <em>True.</em>
       By the Chain Rule,
       <m>(f(g(x)))'=f'(g(x))\,g'(x)</m>.
       Since <m>f'(g(x))&gt;0</m> and <m>g'(x)&lt;0</m>, their product is negative, so <m>f(g(x))</m> is decreasing.

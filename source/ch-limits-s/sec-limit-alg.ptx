@@ -73,7 +73,8 @@ Using the Difference, Constant Multiple, and Power Limit Laws:
     <title>Limits by Plugging In</title>
 
     <p>
-      Assuming the Limit Laws and the Basic Limits <m>\displaystyle\lim_{x\to a} x = a</m> and <m>\displaystyle\lim_{x\to a} c = c</m>, we can prove that most functions are continuous, meaning the limit can be obtained by direct substitution.
+      Assuming the Limit Laws and the Basic Limits <m>\displaystyle\lim_{x\to a} x = a</m> 
+      and <m>\displaystyle\lim_{x\to a} c = c</m>, for any constant <m>c</m>, we can prove that most functions are continuous, meaning the limit can be obtained by direct substitution.
     </p>
 
     <example xml:id="ex-limit-plug-in">

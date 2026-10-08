@@ -671,6 +671,8 @@ These topics are covered in more detail in MTH 320.
 \displaystyle \frac{dV}{dt}
 \amp=\amp \displaystyle \frac{d}{dt}(\ell w h)
 \\[0.8em]
+\amp=\amp \displaystyle \ell'(wh)+\ell(wh)'
+\\[0.8em]
 \amp=\amp \displaystyle \ell'wh+\ell w'h+\ell w h'.
 \end{array}
         </me>

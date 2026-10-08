@@ -233,7 +233,7 @@
 <remark xml:id="remark-derivative-inverse-trig-domains">
   <title>Notations of Inverse Trigonometric Functions</title>
       <p>
-    Note that some both <m>\sin^{-1}(x)</m>, <m>\cos^{-1}(x)</m>, and <m>\tan^{-1}(x)</m> along with 
+    Note that <m>\sin^{-1}(x)</m>, <m>\cos^{-1}(x)</m>, and <m>\tan^{-1}(x)</m> along with 
     <m>\arcsin(x)</m>, <m>\arccos(x)</m>, and <m>\arctan(x)</m> are valid notations for the inverse trigonometric functions.
     We will use them interchangeably in our course. Students are expected to be comfortable with both notations.
   </p>

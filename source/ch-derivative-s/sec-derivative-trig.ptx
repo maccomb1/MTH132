@@ -8,8 +8,7 @@
       <li>Use geometric and graphical reasoning to understand why <m>\sin'(x)=\cos(x)</m> and <m>\cos'(x)=-\sin(x)</m>.</li>
       <li>Use these results with the product and quotient rules to differentiate the remaining trigonometric functions.</li>
       <li>Evaluate basic trigonometric limits by rewriting them in terms of <m>\displaystyle \frac{\sin(u)}{u}</m>.</li>
-      <li>Remember that standard trigonometric derivative formulas assume angles are measured in radians.</li>
-    </ul>
+     </ul>
   </objectives>
 
   <subsection xml:id="derivative-of-sine-and-cosine">
@@ -62,7 +61,7 @@ The derivative of <m>\sin(x)</m> visualized: the slope of the tangent line to <m
     <p>
       The first half of this argument is presented clearly in the video
       <url href="https://youtu.be/j1n6AMuMQso?si=rOoM1UxhMYV6VoXW">Derivatives of Sine and Cosine from First Principles</url>.
-      As you will see, completing the proof requires evaluating limits such as the limit of sine of x over x as x approaches zero, 
+      As you will see, completing the proof requires evaluating limits such as the limit <m> \displaystyle \lim_{u\to 0}\frac{\sin(u)}{u}</m>, 
       which we will develop later in this section.
     </p>
   </proof>
@@ -148,7 +147,7 @@ The derivative of <m>\sin(x)</m> visualized: the slope of the tangent line to <m
 
     <remark xml:id="rem-radians-warning">
       <p>
-        Again remember, the derivative formulas in this section are valid when <m>x</m> is measured in <em>radians</em>, not degrees.
+        The derivative formulas in this section are valid only when <m>x</m> is measured in <em>radians</em>, not degrees.
       </p>
     </remark>
 
