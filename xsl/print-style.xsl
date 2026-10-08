@@ -165,9 +165,10 @@
     </xsl:template>
 
 
-<!-- Start every section on a new page -->
+<!-- Start every section on a new page 
 <xsl:template match="section" mode="newpage">
   <xsl:text>\newpage%&#xa;</xsl:text>
 </xsl:template>
+-->
 
 </xsl:stylesheet>
